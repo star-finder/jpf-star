@@ -7,6 +7,7 @@ public class MyClassTest extends TestJPF {
 	@Test
 	public void testMain() {
 		if (verifyNoPropertyViolation(
+				"+listener=.star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+report.console.property_violation=error,trace")) {
