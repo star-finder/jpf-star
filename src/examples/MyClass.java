@@ -4,8 +4,10 @@ public class MyClass {
 	public Node myMethod(Node x) {
 		if (x == null)
 			return null;
-		else
-			return x.next;
+		else {
+			Node y = x;
+			return y.next;
+		}
 	}
 
 	// The test driver
