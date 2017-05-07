@@ -4,7 +4,12 @@ import gov.nasa.jpf.formula.Formula;
 
 public class InductivePred {
 	
-	// inductive predicate definition has form of a formula
-	private Formula formula;
+	// inductive predicate definition has form of multiple formulas
+	// example: root::sll() === root = null \/ root -> Node(next) * next::sll()
+	// this predicate has two formulas
+	// first one: heap part = empty, pure part = EqNullTerm(root)
+	// second one: heap part = [PointToTerm(root, next, Node),
+	// InductiveTerm(next, [], sll)], pure part = True
+	private Formula[] formula;
 
 }

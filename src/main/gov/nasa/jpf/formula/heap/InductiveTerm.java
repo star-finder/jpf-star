@@ -6,8 +6,13 @@ import gov.nasa.jpf.formula.Variable;
 
 public class InductiveTerm extends HeapTerm {
 	
+	// root node
 	private Variable root;
 	
+	// other parameters of predicate
 	private Variable[] vars;
+	
+	// name of predicate: sll
+	public String predName;
 
 }

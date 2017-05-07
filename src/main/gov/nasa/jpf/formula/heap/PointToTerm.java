@@ -6,8 +6,13 @@ import gov.nasa.jpf.formula.Variable;
 
 public class PointToTerm extends HeapTerm {
 	
+	// root node
 	private Variable root;
 	
+	// fields of pointed node
 	private Variable[] vars;
+	
+	// type of pointed node, e.g. Node
+	private String type;
 
 }
