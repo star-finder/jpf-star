@@ -21,13 +21,18 @@ public class EqNullTerm extends PureTerm {
 		
 		int index = Utility.contains(fromVars, oldVar);
 		
+		Variable newVar = null;
+		
 		if (index != -1) {
-			return new EqNullTerm(new Variable(toVars[index]));
+			newVar = new Variable(toVars[index]);
 		} else {
 			Variable freshVar = Utility.freshVar(oldVar);
 			existVarSubMap.put(oldVar.getName(), freshVar.getName());
-			return new EqNullTerm(freshVar);
+			newVar = freshVar;
 		}
+		
+		EqNullTerm newEqNullTerm = new EqNullTerm(newVar);
+		return newEqNullTerm;
 	}
 
 }
