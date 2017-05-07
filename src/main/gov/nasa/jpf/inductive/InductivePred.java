@@ -1,8 +1,12 @@
 package gov.nasa.jpf.inductive;
 
 import gov.nasa.jpf.formula.Formula;
+import gov.nasa.jpf.formula.Variable;
 
 public class InductivePred {
+	
+	// e.g. sll
+	private String predName;
 	
 	// inductive predicate definition has form of multiple formulas
 	// example: root::sll() === root = null \/ root -> Node(next) * next::sll()
@@ -12,11 +16,15 @@ public class InductivePred {
 	// InductiveTerm(next, [], sll)], pure part = True
 	private Formula[] formulas;
 	
-	// e.g. sll
-	private String predName;
+	// parameters of predicate, e.g. root
+	private Variable[] params;
 	
 	public Formula[] getFormulas() {
 		return formulas;
+	}
+	
+	public Variable[] getParams() {
+		return params;
 	}
 
 }

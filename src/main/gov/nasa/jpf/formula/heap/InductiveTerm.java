@@ -9,10 +9,7 @@ import gov.nasa.jpf.inductive.InductivePredMap;
 
 public class InductiveTerm extends HeapTerm {
 	
-	// root node
-	private Variable root;
-	
-	// other parameters of predicate
+	// variables of current term, first variable is the root
 	private Variable[] vars;
 	
 	// name of predicate: sll
@@ -24,10 +21,20 @@ public class InductiveTerm extends HeapTerm {
 	// unfold should returns x = null \/ x->Node(next) * next::sll()
 	public Formula[] unfold() {
 		InductivePred pred = InductivePredMap.find(predName);
+		
 		Formula[] formulas = pred.getFormulas();
+		Variable[] params = pred.getParams();
+		
+		int length = formulas.length;
+		Formula[] newFormulas = new Formula[length];
+		
+		for (int i = 0; i < length; i++) {
+			// substitute the parameters inside the predicate with current vars
+			newFormulas[i] = formulas[i].substitute(params, vars);
+		}
 		
 		// should substitute the variables inside formulas
-		return formulas;
+		return newFormulas;
 	}
 
 }
