@@ -1,8 +1,8 @@
-package gov.nasa.jpf.formula.pure;
+package gov.nasa.jpf.star.formula.pure;
 
 import java.util.Map;
 
-import gov.nasa.jpf.formula.Variable;
+import gov.nasa.jpf.star.formula.Variable;
 
 public abstract class PureTerm {
 	

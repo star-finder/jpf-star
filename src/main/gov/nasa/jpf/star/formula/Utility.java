@@ -1,4 +1,4 @@
-package gov.nasa.jpf.formula;
+package gov.nasa.jpf.star.formula;
 
 public class Utility {
 	

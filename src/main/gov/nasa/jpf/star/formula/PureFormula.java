@@ -1,8 +1,8 @@
-package gov.nasa.jpf.formula;
+package gov.nasa.jpf.star.formula;
 
 import java.util.Map;
 
-import gov.nasa.jpf.formula.pure.PureTerm;
+import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a pure formula includes multiple pure terms
 

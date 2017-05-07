@@ -1,9 +1,9 @@
-package gov.nasa.jpf.formula.heap;
+package gov.nasa.jpf.star.formula.heap;
 
-import gov.nasa.jpf.formula.Formula;
-import gov.nasa.jpf.formula.Variable;
-import gov.nasa.jpf.inductive.InductivePred;
-import gov.nasa.jpf.inductive.InductivePredMap;
+import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.star.inductive.InductivePred;
+import gov.nasa.jpf.star.inductive.InductivePredMap;
 
 // x::sll(), ... term
 

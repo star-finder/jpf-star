@@ -1,6 +1,6 @@
-package gov.nasa.jpf.formula.pure;
+package gov.nasa.jpf.star.formula.pure;
 
-import gov.nasa.jpf.formula.Variable;
+import gov.nasa.jpf.star.formula.Variable;
 
 // x != null term
 

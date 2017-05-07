@@ -1,9 +1,9 @@
-package gov.nasa.jpf.formula.heap;
+package gov.nasa.jpf.star.formula.heap;
 
 import java.util.Map;
 
-import gov.nasa.jpf.formula.Utility;
-import gov.nasa.jpf.formula.Variable;
+import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Variable;
 
 // x -> Node(...) term
 

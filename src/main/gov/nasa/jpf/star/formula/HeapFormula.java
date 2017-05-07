@@ -1,8 +1,8 @@
-package gov.nasa.jpf.formula;
+package gov.nasa.jpf.star.formula;
 
 import java.util.Map;
 
-import gov.nasa.jpf.formula.heap.HeapTerm;
+import gov.nasa.jpf.star.formula.heap.HeapTerm;
 
 // a heap formula includes multiple heap terms
 

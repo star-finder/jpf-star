@@ -1,7 +1,7 @@
-package gov.nasa.jpf.inductive;
+package gov.nasa.jpf.star.inductive;
 
-import gov.nasa.jpf.formula.Formula;
-import gov.nasa.jpf.formula.Variable;
+import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.formula.Variable;
 
 public class InductivePred {
 	
