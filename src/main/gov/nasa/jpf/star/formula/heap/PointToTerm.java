@@ -39,10 +39,13 @@ public class PointToTerm extends HeapTerm {
 			} else {
 				Variable freshVar = Utility.freshVar(oldVar);
 				existVarSubMap.put(oldVar.getName(), freshVar.getName());
+				newVars[i] = new Variable(freshVar);
 			}
 		}
 		
-		return this;
+		PointToTerm newPointToTerm = new PointToTerm(newVars, type);
+		
+		return newPointToTerm;
 	}
 	
 }
