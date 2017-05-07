@@ -18,6 +18,11 @@ public class InductiveTerm extends HeapTerm {
 	// name of predicate: sll
 	public String predName;
 	
+	public InductiveTerm(Variable[] vars, String predName) {
+		this.vars = vars;
+		this.predName = predName;
+	}
+	
 	// very imporant function
 	// if we have x::sll()
 	// and predicate root::sll() === root = null \/ root->Node(next) * next::sll()
@@ -61,9 +66,9 @@ public class InductiveTerm extends HeapTerm {
 			}
 		}
 		
-		PointToTerm newPointToTerm = new PointToTerm(newVars, predName);
+		InductiveTerm newInductiveTerm = new InductiveTerm(newVars, predName);
 		
-		return newPointToTerm;
+		return newInductiveTerm;
 	}
 
 }
