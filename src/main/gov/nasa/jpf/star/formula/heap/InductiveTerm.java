@@ -1,6 +1,9 @@
 package gov.nasa.jpf.star.formula.heap;
 
+import java.util.Map;
+
 import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.formula.Utility;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.inductive.InductivePred;
 import gov.nasa.jpf.star.inductive.InductivePredMap;
@@ -35,6 +38,32 @@ public class InductiveTerm extends HeapTerm {
 		
 		// should substitute the variables inside formulas
 		return newFormulas;
+	}
+	
+	@Override
+	public HeapTerm substitute(Variable[] fromVars, Variable[] toVars,
+			Map<String,String> existVarSubMap) {
+		int length = vars.length;
+		
+		Variable[] newVars = new Variable[length];
+		
+		for (int i = 0; i < length; i++) {
+			Variable oldVar = vars[i];
+			
+			if (Utility.contains(fromVars, oldVar)) {
+				newVars[i] = new Variable(toVars[i]);
+			} else if (existVarSubMap.containsKey(oldVar.getName())) {
+				newVars[i] = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
+			} else {
+				Variable freshVar = Utility.freshVar(oldVar);
+				existVarSubMap.put(oldVar.getName(), freshVar.getName());
+				newVars[i] = new Variable(freshVar);
+			}
+		}
+		
+		PointToTerm newPointToTerm = new PointToTerm(newVars, predName);
+		
+		return newPointToTerm;
 	}
 
 }
