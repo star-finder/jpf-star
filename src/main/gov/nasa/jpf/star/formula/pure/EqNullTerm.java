@@ -15,6 +15,7 @@ public class EqNullTerm extends PureTerm {
 		this.var = var;
 	}
 	
+	@Override
 	public PureTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		Variable oldVar = var;
