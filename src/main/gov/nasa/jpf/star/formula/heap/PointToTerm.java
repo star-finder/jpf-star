@@ -32,8 +32,10 @@ public class PointToTerm extends HeapTerm {
 		for (int i = 0; i < length; i++) {
 			Variable oldVar = vars[i];
 			
-			if (Utility.contains(fromVars, oldVar)) {
-				newVars[i] = new Variable(toVars[i]);
+			int index = Utility.contains(fromVars, oldVar);
+			
+			if (index != -1) {
+				newVars[i] = new Variable(toVars[index]);
 			} else if (existVarSubMap.containsKey(oldVar.getName())) {
 				newVars[i] = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
 			} else {
