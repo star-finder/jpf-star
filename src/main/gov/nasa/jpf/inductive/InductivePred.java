@@ -10,6 +10,13 @@ public class InductivePred {
 	// first one: heap part = empty, pure part = EqNullTerm(root)
 	// second one: heap part = [PointToTerm(root, next, Node),
 	// InductiveTerm(next, [], sll)], pure part = True
-	private Formula[] formula;
+	private Formula[] formulas;
+	
+	// e.g. sll
+	private String predName;
+	
+	public Formula[] getFormulas() {
+		return formulas;
+	}
 
 }
