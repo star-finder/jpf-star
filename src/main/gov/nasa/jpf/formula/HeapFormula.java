@@ -14,13 +14,13 @@ public class HeapFormula {
 		this.heapTerms = heapTerms;
 	}
 	
-	public HeapFormula substitute(Variable[] params, Variable[] vars,
+	public HeapFormula substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		int length = heapTerms.length;
 		HeapTerm[] newHeapTerms = new HeapTerm[length];
 		
 		for (int i = 0; i < length; i++) {
-			newHeapTerms[i] = heapTerms[i].substitute(params, vars, existVarSubMap);
+			newHeapTerms[i] = heapTerms[i].substitute(fromVars, toVars, existVarSubMap);
 		}
 		
 		HeapFormula newHeapFormula = new HeapFormula(newHeapTerms);

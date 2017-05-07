@@ -6,7 +6,7 @@ import gov.nasa.jpf.formula.Variable;
 
 public abstract class HeapTerm {
 	
-	public HeapTerm substitute(Variable[] params, Variable[] vars,
+	public HeapTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		return null;
 	}

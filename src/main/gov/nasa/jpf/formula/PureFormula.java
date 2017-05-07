@@ -14,13 +14,13 @@ public class PureFormula {
 		this.pureTerms = pureTerms;
 	}
 	
-	public PureFormula substitute(Variable[] params, Variable[] vars,
+	public PureFormula substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		int length = pureTerms.length;
 		PureTerm[] newPureTerms = new PureTerm[length];
 		
 		for (int i = 0; i < length; i++) {
-			newPureTerms[i] = pureTerms[i].substitute(params, vars, existVarSubMap);
+			newPureTerms[i] = pureTerms[i].substitute(fromVars, toVars, existVarSubMap);
 		}
 		
 		PureFormula newPureFormula = new PureFormula(newPureTerms);

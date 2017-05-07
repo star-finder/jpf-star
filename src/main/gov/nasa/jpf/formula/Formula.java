@@ -17,7 +17,7 @@ public class Formula {
 	}
 	
 	// substitute parameters with new vars
-	public Formula substitute(Variable[] params, Variable[] vars) {
+	public Formula substitute(Variable[] fromVars, Variable[] toVars) {
 		// currently not do anything
 		
 		// besides parameters, formula may contain other existential variables
@@ -25,8 +25,8 @@ public class Formula {
 		// the same old variable should be substituted to the same new variables
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		HeapFormula newHeapFormula = heapFormula.substitute(params, vars, existVarSubMap);
-		PureFormula newPureFormula = pureFormula.substitute(params, vars, existVarSubMap);
+		HeapFormula newHeapFormula = heapFormula.substitute(fromVars, toVars, existVarSubMap);
+		PureFormula newPureFormula = pureFormula.substitute(fromVars, toVars, existVarSubMap);
 		
 		Formula newFormula = new Formula(newHeapFormula, newPureFormula);
 		

@@ -6,7 +6,7 @@ import gov.nasa.jpf.formula.Variable;
 
 public abstract class PureTerm {
 	
-	public PureTerm substitute(Variable[] params, Variable[] vars,
+	public PureTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		return null;
 	}
