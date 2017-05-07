@@ -10,9 +10,22 @@ public class PureFormula {
 	
 	private PureTerm[] pureTerms;
 	
+	public PureFormula(PureTerm[] pureTerms) {
+		this.pureTerms = pureTerms;
+	}
+	
 	public PureFormula substitute(Variable[] params, Variable[] vars,
 			Map<String,String> existVarSubMap) {
-		return this;
+		int length = pureTerms.length;
+		PureTerm[] newPureTerms = new PureTerm[length];
+		
+		for (int i = 0; i < length; i++) {
+			newPureTerms[i] = pureTerms[i].substitute(params, vars, existVarSubMap);
+		}
+		
+		PureFormula newPureFormula = new PureFormula(newPureTerms);
+		
+		return newPureFormula;
 	}
 
 }

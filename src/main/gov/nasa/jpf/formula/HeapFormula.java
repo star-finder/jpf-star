@@ -25,7 +25,7 @@ public class HeapFormula {
 		
 		HeapFormula newHeapFormula = new HeapFormula(newHeapTerms);
 		
-		return this;
+		return newHeapFormula;
 	}
 
 }
