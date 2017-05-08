@@ -4,12 +4,12 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
 
-public class True extends PureTerm {
+public class TrueTerm extends PureTerm {
 	
 	@Override
 	public PureTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
-		return new True();
+		return new TrueTerm();
 	}
 	
 	@Override
