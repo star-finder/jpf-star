@@ -49,5 +49,10 @@ public class NEqTerm extends PureTerm {
 		NEqTerm newNEqTerm = new NEqTerm(newVar1, newVar2);
 		return newNEqTerm;
 	}
+	
+	@Override
+	public String toString() {
+		return var1.toString() + " != " + var2.toString();
+	}
 
 }

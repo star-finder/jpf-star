@@ -11,5 +11,10 @@ public class True extends PureTerm {
 			Map<String,String> existVarSubMap) {
 		return new True();
 	}
+	
+	@Override
+	public String toString() {
+		return "true";
+	}
 
 }
