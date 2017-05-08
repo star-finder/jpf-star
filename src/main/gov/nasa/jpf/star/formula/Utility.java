@@ -8,7 +8,8 @@ public class Utility {
 		int length = vars.length;
 		
 		for (int i = 0; i < length; i++) {
-			if (vars[i].getName().equals(var.getName()))
+			if (vars[i].getName().equals(var.getName()) &&
+					vars[i].getType().equals(var.getType()))
 				return i;
 		}
 		
