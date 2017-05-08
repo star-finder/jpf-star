@@ -8,6 +8,7 @@ import gov.nasa.jpf.star.formula.heap.HeapTerm;
 
 public class HeapFormula {
 	
+	// contains array of heap term, empty mean the heap is empty
 	private HeapTerm[] heapTerms;
 	
 	public HeapFormula(HeapTerm[] heapTerms) {

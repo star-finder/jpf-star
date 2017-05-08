@@ -8,6 +8,7 @@ import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 public class PureFormula {
 	
+	// contains array of pure terms, empty means true
 	private PureTerm[] pureTerms;
 	
 	public PureFormula(PureTerm[] pureTerms) {
