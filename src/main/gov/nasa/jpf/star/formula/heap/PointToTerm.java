@@ -9,17 +9,17 @@ import gov.nasa.jpf.star.formula.Variable;
 
 public class PointToTerm extends HeapTerm {
 	
+	// type of pointed node, e.g. Node
+	private String type;
+	
 	// variables of current PointToTerm,
 	// first var is the root node
 	// other var is the fields of pointed node
 	private Variable[] vars;
 	
-	// type of pointed node, e.g. Node
-	private String type;
-
-	public PointToTerm(Variable[] vars, String type) {
-		this.vars = vars;
+	public PointToTerm(String type, Variable... vars) {
 		this.type = type;
+		this.vars = vars;
 	}
 	
 	@Override
@@ -45,9 +45,27 @@ public class PointToTerm extends HeapTerm {
 			}
 		}
 		
-		PointToTerm newPointToTerm = new PointToTerm(newVars, type);
+		PointToTerm newPointToTerm = new PointToTerm(type, newVars);
 		
 		return newPointToTerm;
+	}
+	
+	@Override
+	public String toString() {
+		assert vars.length > 0;
+		
+		Variable root = vars[0];
+		
+		String params = "";
+		for (int i = 1; i < vars.length; i++) {
+			params += vars[i] + ",";
+		}
+		
+		if (params.length() > 0)
+			params = params.substring(0, params.length() - 1);
+		
+		String ret = root + "::" + type + "(" + params + ")";
+		return ret;
 	}
 	
 }
