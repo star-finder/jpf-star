@@ -11,7 +11,7 @@ public class PureFormula {
 	// contains array of pure terms, empty means true
 	private PureTerm[] pureTerms;
 	
-	public PureFormula(PureTerm[] pureTerms) {
+	public PureFormula(PureTerm... pureTerms) {
 		this.pureTerms = pureTerms;
 	}
 	
@@ -29,4 +29,22 @@ public class PureFormula {
 		return newPureFormula;
 	}
 
+	@Override
+	public String toString() {
+		if (pureTerms.length == 0)
+			return "true";
+		else {
+			int length = pureTerms.length;
+			String ret = "";
+			
+			for (int i = 0; i < length; i++) {
+				ret += pureTerms[i] + " & ";
+			}
+			
+			ret = ret.substring(0, ret.length() - 3);
+			
+			return ret;
+		}
+	}
+	
 }

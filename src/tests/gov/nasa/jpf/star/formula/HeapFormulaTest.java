@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
@@ -12,6 +13,11 @@ import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 
 public class HeapFormulaTest {
+	
+	@Before
+	public void init() {
+		Utility.reset();
+	}
 
 	@Test
 	public void testToString1() {
