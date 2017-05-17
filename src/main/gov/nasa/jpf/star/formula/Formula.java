@@ -32,5 +32,18 @@ public class Formula {
 		
 		return newFormula;
 	}
+	
+	@Override
+	public String toString() {
+		String heapString = heapFormula.toString();
+		String pureString = pureFormula.toString();
+		
+		if (heapString.equals("emp"))
+			return pureString;
+		else if (pureString.equals("true"))
+			return heapString;
+		else
+			return heapString + " & " + pureString;
+	}
 
 }
