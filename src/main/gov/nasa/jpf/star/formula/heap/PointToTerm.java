@@ -64,7 +64,7 @@ public class PointToTerm extends HeapTerm {
 		if (params.length() > 0)
 			params = params.substring(0, params.length() - 1);
 		
-		String ret = root + "::" + type + "(" + params + ")";
+		String ret = root + "->" + type + "(" + params + ")";
 		return ret;
 	}
 	

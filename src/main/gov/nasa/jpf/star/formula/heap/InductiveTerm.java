@@ -12,15 +12,15 @@ import gov.nasa.jpf.star.inductive.InductivePredMap;
 
 public class InductiveTerm extends HeapTerm {
 	
+	// name of predicate: sll
+	private String predName;
+	
 	// variables of current term, first variable is the root
 	private Variable[] vars;
 	
-	// name of predicate: sll
-	public String predName;
-	
-	public InductiveTerm(Variable[] vars, String predName) {
-		this.vars = vars;
+	public InductiveTerm(String predName, Variable... vars) {
 		this.predName = predName;
+		this.vars = vars;
 	}
 	
 	// very imporant function
@@ -68,9 +68,27 @@ public class InductiveTerm extends HeapTerm {
 			}
 		}
 		
-		InductiveTerm newInductiveTerm = new InductiveTerm(newVars, predName);
+		InductiveTerm newInductiveTerm = new InductiveTerm(predName, newVars);
 		
 		return newInductiveTerm;
 	}
-
+	
+	@Override
+	public String toString() {
+		assert vars.length > 0;
+		
+		Variable root = vars[0];
+		
+		String params = "";
+		for (int i = 1; i < vars.length; i++) {
+			params += vars[i] + ",";
+		}
+		
+		if (params.length() > 0)
+			params = params.substring(0, params.length() - 1);
+		
+		String ret = root + "::" + predName + "(" + params + ")";
+		return ret;
+	}
+	
 }
