@@ -2,14 +2,18 @@ package gov.nasa.jpf.star.formula;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class UtilityTest {
+	
+	@Before
+	public void init() {
+		Utility.reset();
+	}
 
 	@Test
 	public void testFreshVar1() {
-		Utility.reset();
-		
 		Variable var = new Variable("x", "");
 		Variable newVar = Utility.freshVar(var);
 		
@@ -18,8 +22,6 @@ public class UtilityTest {
 	
 	@Test
 	public void testFreshVar2() {
-		Utility.reset();
-		
 		Variable var = new Variable("xyz", "");
 		Variable newVar1 = Utility.freshVar(var);
 		Variable newVar2 = Utility.freshVar(var);
@@ -30,8 +32,6 @@ public class UtilityTest {
 	
 	@Test
 	public void testFreshVar3() {
-		Utility.reset();
-		
 		Variable var = new Variable("abc", "");
 		Variable newVar1 = Utility.freshVar(var);
 		Variable newVar2 = Utility.freshVar(newVar1);
@@ -42,8 +42,6 @@ public class UtilityTest {
 	
 	@Test
 	public void testFreshVar4() {
-		Utility.reset();
-		
 		Variable var = new Variable("myVar", "");
 		Variable newVar1 = Utility.freshVar(var);
 		Variable newVar2 = Utility.freshVar(newVar1);
@@ -61,8 +59,6 @@ public class UtilityTest {
 	
 	@Test
 	public void testContains1() {
-		Utility.reset();
-		
 		Variable[] vars = {new Variable("myVar", ""), new Variable("myVar1", "")};
 		Variable var = new Variable("myVar", "");
 		
@@ -71,8 +67,6 @@ public class UtilityTest {
 	
 	@Test
 	public void testContains2() {
-		Utility.reset();
-		
 		Variable[] vars = {new Variable("myVar", ""), new Variable("myVar1", "")};
 		Variable var = new Variable("myVar1", "");
 		
@@ -81,8 +75,6 @@ public class UtilityTest {
 	
 	@Test
 	public void testContains3() {
-		Utility.reset();
-		
 		Variable[] vars = {new Variable("myVar", ""), new Variable("myVar1", "")};
 		Variable var = new Variable("myVar2", "");
 		
