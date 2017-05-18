@@ -1,4 +1,8 @@
-grammar Pred;
+grammar InductivePred;
+
+@header {
+package gov.nasa.jpf.star.inductive;
+}
 
 // parser
 pred : PRED ID LB params RB EQEQ formulas ;
@@ -40,4 +44,4 @@ ID      : [a-zA-Z]+ ;
 WS      : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
 // tests
-pred sll(x) == x = null || x->Node(next) * sll(next)
+// pred sll(x) == x = null || x->Node(next) * sll(next)
