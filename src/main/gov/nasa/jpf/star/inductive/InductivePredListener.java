@@ -14,6 +14,26 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface InductivePredListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link InductivePredParser#preds}.
+	 * @param ctx the parse tree
+	 */
+	void enterPreds(InductivePredParser.PredsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link InductivePredParser#preds}.
+	 * @param ctx the parse tree
+	 */
+	void exitPreds(InductivePredParser.PredsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link InductivePredParser#tail}.
+	 * @param ctx the parse tree
+	 */
+	void enterTail(InductivePredParser.TailContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link InductivePredParser#tail}.
+	 * @param ctx the parse tree
+	 */
+	void exitTail(InductivePredParser.TailContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link InductivePredParser#pred}.
 	 * @param ctx the parse tree
 	 */

@@ -23,26 +23,26 @@ public class InductivePredParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		PRED=1, NULL=2, EQEQ=3, EQ=4, NE=5, LB=6, RB=7, CM=8, OR=9, AND=10, PT=11, 
-		STAR=12, ID=13, WS=14;
+		PRED=1, NULL=2, EQEQ=3, EQ=4, NE=5, LB=6, RB=7, CM=8, SM=9, OR=10, AND=11, 
+		PT=12, STAR=13, ID=14, WS=15;
 	public static final int
-		RULE_pred = 0, RULE_params = 1, RULE_param = 2, RULE_formulas = 3, RULE_formula = 4, 
-		RULE_heapTerms = 5, RULE_heapTerm = 6, RULE_pointToTerm = 7, RULE_inductiveTerm = 8, 
-		RULE_pureTerms = 9, RULE_pureTerm = 10, RULE_eqNullTerm = 11, RULE_neNullTerm = 12, 
-		RULE_eqTerm = 13, RULE_neTerm = 14;
+		RULE_preds = 0, RULE_tail = 1, RULE_pred = 2, RULE_params = 3, RULE_param = 4, 
+		RULE_formulas = 5, RULE_formula = 6, RULE_heapTerms = 7, RULE_heapTerm = 8, 
+		RULE_pointToTerm = 9, RULE_inductiveTerm = 10, RULE_pureTerms = 11, RULE_pureTerm = 12, 
+		RULE_eqNullTerm = 13, RULE_neNullTerm = 14, RULE_eqTerm = 15, RULE_neTerm = 16;
 	public static final String[] ruleNames = {
-		"pred", "params", "param", "formulas", "formula", "heapTerms", "heapTerm", 
-		"pointToTerm", "inductiveTerm", "pureTerms", "pureTerm", "eqNullTerm", 
+		"preds", "tail", "pred", "params", "param", "formulas", "formula", "heapTerms", 
+		"heapTerm", "pointToTerm", "inductiveTerm", "pureTerms", "pureTerm", "eqNullTerm", 
 		"neNullTerm", "eqTerm", "neTerm"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
 		null, "'pred'", "'null'", "'=='", "'='", "'!='", "'('", "')'", "','", 
-		"'||'", "'&'", "'->'", "'*'"
+		"';'", "'||'", "'&'", "'->'", "'*'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "PRED", "NULL", "EQEQ", "EQ", "NE", "LB", "RB", "CM", "OR", "AND", 
-		"PT", "STAR", "ID", "WS"
+		null, "PRED", "NULL", "EQEQ", "EQ", "NE", "LB", "RB", "CM", "SM", "OR", 
+		"AND", "PT", "STAR", "ID", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -93,6 +93,157 @@ public class InductivePredParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+	public static class PredsContext extends ParserRuleContext {
+		public InductivePred[] ips;
+		public PredContext pred;
+		public TailContext tail;
+		public PredContext pred() {
+			return getRuleContext(PredContext.class,0);
+		}
+		public TailContext tail() {
+			return getRuleContext(TailContext.class,0);
+		}
+		public PredsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_preds; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof InductivePredListener ) ((InductivePredListener)listener).enterPreds(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof InductivePredListener ) ((InductivePredListener)listener).exitPreds(this);
+		}
+	}
+
+	public final PredsContext preds() throws RecognitionException {
+		PredsContext _localctx = new PredsContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_preds);
+		try {
+			setState(41);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(34);
+				((PredsContext)_localctx).pred = pred();
+
+						((PredsContext)_localctx).ips =  new InductivePred[1];
+						_localctx.ips[0] = ((PredsContext)_localctx).pred.ip;
+					
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(37);
+				((PredsContext)_localctx).pred = pred();
+				setState(38);
+				((PredsContext)_localctx).tail = tail();
+
+						int length = ((PredsContext)_localctx).tail.ips.length + 1;
+						((PredsContext)_localctx).ips =  new InductivePred[length];
+						
+						for (int i = 0; i < length; i++) {
+							if (i == 0) _localctx.ips[0] = ((PredsContext)_localctx).pred.ip;
+							else _localctx.ips[i] = ((PredsContext)_localctx).tail.ips[i - 1];
+						}
+					
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class TailContext extends ParserRuleContext {
+		public InductivePred[] ips;
+		public PredContext pred;
+		public TailContext tail;
+		public TerminalNode SM() { return getToken(InductivePredParser.SM, 0); }
+		public PredContext pred() {
+			return getRuleContext(PredContext.class,0);
+		}
+		public TailContext tail() {
+			return getRuleContext(TailContext.class,0);
+		}
+		public TailContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_tail; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof InductivePredListener ) ((InductivePredListener)listener).enterTail(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof InductivePredListener ) ((InductivePredListener)listener).exitTail(this);
+		}
+	}
+
+	public final TailContext tail() throws RecognitionException {
+		TailContext _localctx = new TailContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_tail);
+		try {
+			setState(52);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(43);
+				match(SM);
+				setState(44);
+				((TailContext)_localctx).pred = pred();
+
+						((TailContext)_localctx).ips =  new InductivePred[1];
+						_localctx.ips[0] = ((TailContext)_localctx).pred.ip;
+					
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(47);
+				match(SM);
+				setState(48);
+				((TailContext)_localctx).pred = pred();
+				setState(49);
+				((TailContext)_localctx).tail = tail();
+
+						int length = ((TailContext)_localctx).tail.ips.length + 1;
+						((TailContext)_localctx).ips =  new InductivePred[length];
+						
+						for (int i = 0; i < length; i++) {
+							if (i == 0) _localctx.ips[0] = ((TailContext)_localctx).pred.ip;
+							else _localctx.ips[i] = ((TailContext)_localctx).tail.ips[i - 1];
+						}
+					
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static class PredContext extends ParserRuleContext {
 		public InductivePred ip;
 		public Token ID;
@@ -125,23 +276,23 @@ public class InductivePredParser extends Parser {
 
 	public final PredContext pred() throws RecognitionException {
 		PredContext _localctx = new PredContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_pred);
+		enterRule(_localctx, 4, RULE_pred);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(30);
+			setState(54);
 			match(PRED);
-			setState(31);
+			setState(55);
 			((PredContext)_localctx).ID = match(ID);
-			setState(32);
+			setState(56);
 			match(LB);
-			setState(33);
+			setState(57);
 			((PredContext)_localctx).params = params();
-			setState(34);
+			setState(58);
 			match(RB);
-			setState(35);
+			setState(59);
 			match(EQEQ);
-			setState(36);
+			setState(60);
 			((PredContext)_localctx).formulas = formulas();
 
 					Variable[] ps = ((PredContext)_localctx).params.vars;
@@ -189,15 +340,15 @@ public class InductivePredParser extends Parser {
 
 	public final ParamsContext params() throws RecognitionException {
 		ParamsContext _localctx = new ParamsContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_params);
+		enterRule(_localctx, 6, RULE_params);
 		try {
-			setState(47);
+			setState(71);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(39);
+				setState(63);
 				((ParamsContext)_localctx).param = param();
 
 						((ParamsContext)_localctx).vars =  new Variable[1];
@@ -208,11 +359,11 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(42);
+				setState(66);
 				((ParamsContext)_localctx).param = param();
-				setState(43);
+				setState(67);
 				match(CM);
-				setState(44);
+				setState(68);
 				((ParamsContext)_localctx).params = params();
 
 						int length = ((ParamsContext)_localctx).params.vars.length + 1;
@@ -258,11 +409,11 @@ public class InductivePredParser extends Parser {
 
 	public final ParamContext param() throws RecognitionException {
 		ParamContext _localctx = new ParamContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_param);
+		enterRule(_localctx, 8, RULE_param);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(73);
 			((ParamContext)_localctx).ID = match(ID);
 
 					((ParamContext)_localctx).var =  new Variable((((ParamContext)_localctx).ID!=null?((ParamContext)_localctx).ID.getText():null), "");
@@ -307,15 +458,15 @@ public class InductivePredParser extends Parser {
 
 	public final FormulasContext formulas() throws RecognitionException {
 		FormulasContext _localctx = new FormulasContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_formulas);
+		enterRule(_localctx, 10, RULE_formulas);
 		try {
-			setState(60);
+			setState(84);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(52);
+				setState(76);
 				((FormulasContext)_localctx).formula = formula();
 
 						((FormulasContext)_localctx).fs =  new Formula[1];
@@ -326,11 +477,11 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(55);
+				setState(79);
 				((FormulasContext)_localctx).formula = formula();
-				setState(56);
+				setState(80);
 				match(OR);
-				setState(57);
+				setState(81);
 				((FormulasContext)_localctx).formulas = formulas();
 
 						int length = ((FormulasContext)_localctx).formulas.fs.length + 1;
@@ -383,15 +534,15 @@ public class InductivePredParser extends Parser {
 
 	public final FormulaContext formula() throws RecognitionException {
 		FormulaContext _localctx = new FormulaContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_formula);
+		enterRule(_localctx, 12, RULE_formula);
 		try {
-			setState(73);
+			setState(97);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(62);
+				setState(86);
 				((FormulaContext)_localctx).heapTerms = heapTerms();
 
 						HeapFormula hFormula = ((FormulaContext)_localctx).heapTerms.hFormula;
@@ -403,7 +554,7 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(65);
+				setState(89);
 				((FormulaContext)_localctx).pureTerms = pureTerms();
 
 						HeapFormula hFormula = new HeapFormula();
@@ -415,11 +566,11 @@ public class InductivePredParser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(68);
+				setState(92);
 				((FormulaContext)_localctx).heapTerms = heapTerms();
-				setState(69);
+				setState(93);
 				match(AND);
-				setState(70);
+				setState(94);
 				((FormulaContext)_localctx).pureTerms = pureTerms();
 
 						HeapFormula hFormula = ((FormulaContext)_localctx).heapTerms.hFormula;
@@ -468,15 +619,15 @@ public class InductivePredParser extends Parser {
 
 	public final HeapTermsContext heapTerms() throws RecognitionException {
 		HeapTermsContext _localctx = new HeapTermsContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_heapTerms);
+		enterRule(_localctx, 14, RULE_heapTerms);
 		try {
-			setState(83);
+			setState(107);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(75);
+				setState(99);
 				((HeapTermsContext)_localctx).heapTerm = heapTerm();
 
 						((HeapTermsContext)_localctx).hFormula =  new HeapFormula(((HeapTermsContext)_localctx).heapTerm.term);
@@ -486,11 +637,11 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(78);
+				setState(102);
 				((HeapTermsContext)_localctx).heapTerm = heapTerm();
-				setState(79);
+				setState(103);
 				match(STAR);
-				setState(80);
+				setState(104);
 				((HeapTermsContext)_localctx).heapTerms = heapTerms();
 
 						HeapFormula oldHeapFormula = ((HeapTermsContext)_localctx).heapTerms.hFormula;
@@ -547,15 +698,15 @@ public class InductivePredParser extends Parser {
 
 	public final HeapTermContext heapTerm() throws RecognitionException {
 		HeapTermContext _localctx = new HeapTermContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_heapTerm);
+		enterRule(_localctx, 16, RULE_heapTerm);
 		try {
-			setState(91);
+			setState(115);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(85);
+				setState(109);
 				((HeapTermContext)_localctx).pointToTerm = pointToTerm();
 
 						((HeapTermContext)_localctx).term =  ((HeapTermContext)_localctx).pointToTerm.term;
@@ -565,7 +716,7 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(88);
+				setState(112);
 				((HeapTermContext)_localctx).inductiveTerm = inductiveTerm();
 
 						((HeapTermContext)_localctx).term =  ((HeapTermContext)_localctx).inductiveTerm.term;
@@ -616,21 +767,21 @@ public class InductivePredParser extends Parser {
 
 	public final PointToTermContext pointToTerm() throws RecognitionException {
 		PointToTermContext _localctx = new PointToTermContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_pointToTerm);
+		enterRule(_localctx, 18, RULE_pointToTerm);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(93);
+			setState(117);
 			((PointToTermContext)_localctx).root = match(ID);
-			setState(94);
+			setState(118);
 			match(PT);
-			setState(95);
+			setState(119);
 			((PointToTermContext)_localctx).type = match(ID);
-			setState(96);
+			setState(120);
 			match(LB);
-			setState(97);
+			setState(121);
 			((PointToTermContext)_localctx).params = params();
-			setState(98);
+			setState(122);
 			match(RB);
 
 					int length = ((PointToTermContext)_localctx).params.vars.length + 1;
@@ -682,17 +833,17 @@ public class InductivePredParser extends Parser {
 
 	public final InductiveTermContext inductiveTerm() throws RecognitionException {
 		InductiveTermContext _localctx = new InductiveTermContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_inductiveTerm);
+		enterRule(_localctx, 20, RULE_inductiveTerm);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(101);
+			setState(125);
 			((InductiveTermContext)_localctx).ID = match(ID);
-			setState(102);
+			setState(126);
 			match(LB);
-			setState(103);
+			setState(127);
 			((InductiveTermContext)_localctx).params = params();
-			setState(104);
+			setState(128);
 			match(RB);
 
 					((InductiveTermContext)_localctx).term =  new InductiveTerm((((InductiveTermContext)_localctx).ID!=null?((InductiveTermContext)_localctx).ID.getText():null), ((InductiveTermContext)_localctx).params.vars);
@@ -737,15 +888,15 @@ public class InductivePredParser extends Parser {
 
 	public final PureTermsContext pureTerms() throws RecognitionException {
 		PureTermsContext _localctx = new PureTermsContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_pureTerms);
+		enterRule(_localctx, 22, RULE_pureTerms);
 		try {
-			setState(115);
+			setState(139);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(107);
+				setState(131);
 				((PureTermsContext)_localctx).pureTerm = pureTerm();
 
 						((PureTermsContext)_localctx).pFormula =  new PureFormula(((PureTermsContext)_localctx).pureTerm.term);
@@ -755,11 +906,11 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(110);
+				setState(134);
 				((PureTermsContext)_localctx).pureTerm = pureTerm();
-				setState(111);
+				setState(135);
 				match(AND);
-				setState(112);
+				setState(136);
 				((PureTermsContext)_localctx).pureTerms = pureTerms();
 
 						PureFormula oldPureFormula = ((PureTermsContext)_localctx).pureTerms.pFormula;
@@ -824,15 +975,15 @@ public class InductivePredParser extends Parser {
 
 	public final PureTermContext pureTerm() throws RecognitionException {
 		PureTermContext _localctx = new PureTermContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_pureTerm);
+		enterRule(_localctx, 24, RULE_pureTerm);
 		try {
-			setState(129);
+			setState(153);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(117);
+				setState(141);
 				((PureTermContext)_localctx).eqNullTerm = eqNullTerm();
 
 						((PureTermContext)_localctx).term =  ((PureTermContext)_localctx).eqNullTerm.term;
@@ -842,7 +993,7 @@ public class InductivePredParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(120);
+				setState(144);
 				((PureTermContext)_localctx).neNullTerm = neNullTerm();
 
 						((PureTermContext)_localctx).term =  ((PureTermContext)_localctx).neNullTerm.term;
@@ -852,7 +1003,7 @@ public class InductivePredParser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(123);
+				setState(147);
 				((PureTermContext)_localctx).eqTerm = eqTerm();
 
 						((PureTermContext)_localctx).term =  ((PureTermContext)_localctx).eqTerm.term;
@@ -862,7 +1013,7 @@ public class InductivePredParser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(126);
+				setState(150);
 				((PureTermContext)_localctx).neTerm = neTerm();
 
 						((PureTermContext)_localctx).term =  ((PureTermContext)_localctx).neTerm.term;
@@ -904,15 +1055,15 @@ public class InductivePredParser extends Parser {
 
 	public final EqNullTermContext eqNullTerm() throws RecognitionException {
 		EqNullTermContext _localctx = new EqNullTermContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_eqNullTerm);
+		enterRule(_localctx, 26, RULE_eqNullTerm);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(131);
+			setState(155);
 			((EqNullTermContext)_localctx).ID = match(ID);
-			setState(132);
+			setState(156);
 			match(EQ);
-			setState(133);
+			setState(157);
 			match(NULL);
 
 					Variable var = new Variable((((EqNullTermContext)_localctx).ID!=null?((EqNullTermContext)_localctx).ID.getText():null), "");
@@ -954,15 +1105,15 @@ public class InductivePredParser extends Parser {
 
 	public final NeNullTermContext neNullTerm() throws RecognitionException {
 		NeNullTermContext _localctx = new NeNullTermContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_neNullTerm);
+		enterRule(_localctx, 28, RULE_neNullTerm);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(136);
+			setState(160);
 			((NeNullTermContext)_localctx).ID = match(ID);
-			setState(137);
+			setState(161);
 			match(NE);
-			setState(138);
+			setState(162);
 			match(NULL);
 
 					Variable var = new Variable((((NeNullTermContext)_localctx).ID!=null?((NeNullTermContext)_localctx).ID.getText():null), "");
@@ -1007,15 +1158,15 @@ public class InductivePredParser extends Parser {
 
 	public final EqTermContext eqTerm() throws RecognitionException {
 		EqTermContext _localctx = new EqTermContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_eqTerm);
+		enterRule(_localctx, 30, RULE_eqTerm);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(141);
+			setState(165);
 			((EqTermContext)_localctx).var1 = match(ID);
-			setState(142);
+			setState(166);
 			match(EQ);
-			setState(143);
+			setState(167);
 			((EqTermContext)_localctx).var2 = match(ID);
 
 					Variable var1 = new Variable((((EqTermContext)_localctx).var1!=null?((EqTermContext)_localctx).var1.getText():null), "");
@@ -1061,15 +1212,15 @@ public class InductivePredParser extends Parser {
 
 	public final NeTermContext neTerm() throws RecognitionException {
 		NeTermContext _localctx = new NeTermContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_neTerm);
+		enterRule(_localctx, 32, RULE_neTerm);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(146);
+			setState(170);
 			((NeTermContext)_localctx).var1 = match(ID);
-			setState(147);
+			setState(171);
 			match(NE);
-			setState(148);
+			setState(172);
 			((NeTermContext)_localctx).var2 = match(ID);
 
 					Variable var1 = new Variable((((NeTermContext)_localctx).var1!=null?((NeTermContext)_localctx).var1.getText():null), "");
@@ -1091,45 +1242,54 @@ public class InductivePredParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20\u009a\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21\u00b2\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
-		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\3\2\3\2\3\2\3\2\3"+
-		"\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\62\n\3\3\4\3\4"+
-		"\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5?\n\5\3\6\3\6\3\6\3\6\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\3\6\5\6L\n\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7V\n\7"+
-		"\3\b\3\b\3\b\3\b\3\b\3\b\5\b^\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\n"+
-		"\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13v\n\13"+
-		"\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\f\u0084\n\f\3\r\3\r"+
-		"\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\20\3"+
-		"\20\3\20\3\20\3\20\3\20\2\2\21\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36"+
-		"\2\2\2\u0094\2 \3\2\2\2\4\61\3\2\2\2\6\63\3\2\2\2\b>\3\2\2\2\nK\3\2\2"+
-		"\2\fU\3\2\2\2\16]\3\2\2\2\20_\3\2\2\2\22g\3\2\2\2\24u\3\2\2\2\26\u0083"+
-		"\3\2\2\2\30\u0085\3\2\2\2\32\u008a\3\2\2\2\34\u008f\3\2\2\2\36\u0094\3"+
-		"\2\2\2 !\7\3\2\2!\"\7\17\2\2\"#\7\b\2\2#$\5\4\3\2$%\7\t\2\2%&\7\5\2\2"+
-		"&\'\5\b\5\2\'(\b\2\1\2(\3\3\2\2\2)*\5\6\4\2*+\b\3\1\2+\62\3\2\2\2,-\5"+
-		"\6\4\2-.\7\n\2\2./\5\4\3\2/\60\b\3\1\2\60\62\3\2\2\2\61)\3\2\2\2\61,\3"+
-		"\2\2\2\62\5\3\2\2\2\63\64\7\17\2\2\64\65\b\4\1\2\65\7\3\2\2\2\66\67\5"+
-		"\n\6\2\678\b\5\1\28?\3\2\2\29:\5\n\6\2:;\7\13\2\2;<\5\b\5\2<=\b\5\1\2"+
-		"=?\3\2\2\2>\66\3\2\2\2>9\3\2\2\2?\t\3\2\2\2@A\5\f\7\2AB\b\6\1\2BL\3\2"+
-		"\2\2CD\5\24\13\2DE\b\6\1\2EL\3\2\2\2FG\5\f\7\2GH\7\f\2\2HI\5\24\13\2I"+
-		"J\b\6\1\2JL\3\2\2\2K@\3\2\2\2KC\3\2\2\2KF\3\2\2\2L\13\3\2\2\2MN\5\16\b"+
-		"\2NO\b\7\1\2OV\3\2\2\2PQ\5\16\b\2QR\7\16\2\2RS\5\f\7\2ST\b\7\1\2TV\3\2"+
-		"\2\2UM\3\2\2\2UP\3\2\2\2V\r\3\2\2\2WX\5\20\t\2XY\b\b\1\2Y^\3\2\2\2Z[\5"+
-		"\22\n\2[\\\b\b\1\2\\^\3\2\2\2]W\3\2\2\2]Z\3\2\2\2^\17\3\2\2\2_`\7\17\2"+
-		"\2`a\7\r\2\2ab\7\17\2\2bc\7\b\2\2cd\5\4\3\2de\7\t\2\2ef\b\t\1\2f\21\3"+
-		"\2\2\2gh\7\17\2\2hi\7\b\2\2ij\5\4\3\2jk\7\t\2\2kl\b\n\1\2l\23\3\2\2\2"+
-		"mn\5\26\f\2no\b\13\1\2ov\3\2\2\2pq\5\26\f\2qr\7\f\2\2rs\5\24\13\2st\b"+
-		"\13\1\2tv\3\2\2\2um\3\2\2\2up\3\2\2\2v\25\3\2\2\2wx\5\30\r\2xy\b\f\1\2"+
-		"y\u0084\3\2\2\2z{\5\32\16\2{|\b\f\1\2|\u0084\3\2\2\2}~\5\34\17\2~\177"+
-		"\b\f\1\2\177\u0084\3\2\2\2\u0080\u0081\5\36\20\2\u0081\u0082\b\f\1\2\u0082"+
-		"\u0084\3\2\2\2\u0083w\3\2\2\2\u0083z\3\2\2\2\u0083}\3\2\2\2\u0083\u0080"+
-		"\3\2\2\2\u0084\27\3\2\2\2\u0085\u0086\7\17\2\2\u0086\u0087\7\6\2\2\u0087"+
-		"\u0088\7\4\2\2\u0088\u0089\b\r\1\2\u0089\31\3\2\2\2\u008a\u008b\7\17\2"+
-		"\2\u008b\u008c\7\7\2\2\u008c\u008d\7\4\2\2\u008d\u008e\b\16\1\2\u008e"+
-		"\33\3\2\2\2\u008f\u0090\7\17\2\2\u0090\u0091\7\6\2\2\u0091\u0092\7\17"+
-		"\2\2\u0092\u0093\b\17\1\2\u0093\35\3\2\2\2\u0094\u0095\7\17\2\2\u0095"+
-		"\u0096\7\7\2\2\u0096\u0097\7\17\2\2\u0097\u0098\b\20\1\2\u0098\37\3\2"+
-		"\2\2\t\61>KU]u\u0083";
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\3\2\3\2\3\2\3\2\3\2\3\2\3\2\5\2,\n\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\3\5\3\67\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3"+
+		"\5\3\5\3\5\3\5\5\5J\n\5\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5"+
+		"\7W\n\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\bd\n\b\3\t\3\t\3"+
+		"\t\3\t\3\t\3\t\3\t\3\t\5\tn\n\t\3\n\3\n\3\n\3\n\3\n\3\n\5\nv\n\n\3\13"+
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3"+
+		"\r\3\r\3\r\3\r\3\r\3\r\5\r\u008e\n\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\5\16\u009c\n\16\3\17\3\17\3\17\3\17\3\17\3\20"+
+		"\3\20\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\2\2\23\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"\2\2\2\u00ac\2+"+
+		"\3\2\2\2\4\66\3\2\2\2\68\3\2\2\2\bI\3\2\2\2\nK\3\2\2\2\fV\3\2\2\2\16c"+
+		"\3\2\2\2\20m\3\2\2\2\22u\3\2\2\2\24w\3\2\2\2\26\177\3\2\2\2\30\u008d\3"+
+		"\2\2\2\32\u009b\3\2\2\2\34\u009d\3\2\2\2\36\u00a2\3\2\2\2 \u00a7\3\2\2"+
+		"\2\"\u00ac\3\2\2\2$%\5\6\4\2%&\b\2\1\2&,\3\2\2\2\'(\5\6\4\2()\5\4\3\2"+
+		")*\b\2\1\2*,\3\2\2\2+$\3\2\2\2+\'\3\2\2\2,\3\3\2\2\2-.\7\13\2\2./\5\6"+
+		"\4\2/\60\b\3\1\2\60\67\3\2\2\2\61\62\7\13\2\2\62\63\5\6\4\2\63\64\5\4"+
+		"\3\2\64\65\b\3\1\2\65\67\3\2\2\2\66-\3\2\2\2\66\61\3\2\2\2\67\5\3\2\2"+
+		"\289\7\3\2\29:\7\20\2\2:;\7\b\2\2;<\5\b\5\2<=\7\t\2\2=>\7\5\2\2>?\5\f"+
+		"\7\2?@\b\4\1\2@\7\3\2\2\2AB\5\n\6\2BC\b\5\1\2CJ\3\2\2\2DE\5\n\6\2EF\7"+
+		"\n\2\2FG\5\b\5\2GH\b\5\1\2HJ\3\2\2\2IA\3\2\2\2ID\3\2\2\2J\t\3\2\2\2KL"+
+		"\7\20\2\2LM\b\6\1\2M\13\3\2\2\2NO\5\16\b\2OP\b\7\1\2PW\3\2\2\2QR\5\16"+
+		"\b\2RS\7\f\2\2ST\5\f\7\2TU\b\7\1\2UW\3\2\2\2VN\3\2\2\2VQ\3\2\2\2W\r\3"+
+		"\2\2\2XY\5\20\t\2YZ\b\b\1\2Zd\3\2\2\2[\\\5\30\r\2\\]\b\b\1\2]d\3\2\2\2"+
+		"^_\5\20\t\2_`\7\r\2\2`a\5\30\r\2ab\b\b\1\2bd\3\2\2\2cX\3\2\2\2c[\3\2\2"+
+		"\2c^\3\2\2\2d\17\3\2\2\2ef\5\22\n\2fg\b\t\1\2gn\3\2\2\2hi\5\22\n\2ij\7"+
+		"\17\2\2jk\5\20\t\2kl\b\t\1\2ln\3\2\2\2me\3\2\2\2mh\3\2\2\2n\21\3\2\2\2"+
+		"op\5\24\13\2pq\b\n\1\2qv\3\2\2\2rs\5\26\f\2st\b\n\1\2tv\3\2\2\2uo\3\2"+
+		"\2\2ur\3\2\2\2v\23\3\2\2\2wx\7\20\2\2xy\7\16\2\2yz\7\20\2\2z{\7\b\2\2"+
+		"{|\5\b\5\2|}\7\t\2\2}~\b\13\1\2~\25\3\2\2\2\177\u0080\7\20\2\2\u0080\u0081"+
+		"\7\b\2\2\u0081\u0082\5\b\5\2\u0082\u0083\7\t\2\2\u0083\u0084\b\f\1\2\u0084"+
+		"\27\3\2\2\2\u0085\u0086\5\32\16\2\u0086\u0087\b\r\1\2\u0087\u008e\3\2"+
+		"\2\2\u0088\u0089\5\32\16\2\u0089\u008a\7\r\2\2\u008a\u008b\5\30\r\2\u008b"+
+		"\u008c\b\r\1\2\u008c\u008e\3\2\2\2\u008d\u0085\3\2\2\2\u008d\u0088\3\2"+
+		"\2\2\u008e\31\3\2\2\2\u008f\u0090\5\34\17\2\u0090\u0091\b\16\1\2\u0091"+
+		"\u009c\3\2\2\2\u0092\u0093\5\36\20\2\u0093\u0094\b\16\1\2\u0094\u009c"+
+		"\3\2\2\2\u0095\u0096\5 \21\2\u0096\u0097\b\16\1\2\u0097\u009c\3\2\2\2"+
+		"\u0098\u0099\5\"\22\2\u0099\u009a\b\16\1\2\u009a\u009c\3\2\2\2\u009b\u008f"+
+		"\3\2\2\2\u009b\u0092\3\2\2\2\u009b\u0095\3\2\2\2\u009b\u0098\3\2\2\2\u009c"+
+		"\33\3\2\2\2\u009d\u009e\7\20\2\2\u009e\u009f\7\6\2\2\u009f\u00a0\7\4\2"+
+		"\2\u00a0\u00a1\b\17\1\2\u00a1\35\3\2\2\2\u00a2\u00a3\7\20\2\2\u00a3\u00a4"+
+		"\7\7\2\2\u00a4\u00a5\7\4\2\2\u00a5\u00a6\b\20\1\2\u00a6\37\3\2\2\2\u00a7"+
+		"\u00a8\7\20\2\2\u00a8\u00a9\7\6\2\2\u00a9\u00aa\7\20\2\2\u00aa\u00ab\b"+
+		"\21\1\2\u00ab!\3\2\2\2\u00ac\u00ad\7\20\2\2\u00ad\u00ae\7\7\2\2\u00ae"+
+		"\u00af\7\20\2\2\u00af\u00b0\b\22\1\2\u00b0#\3\2\2\2\13+\66IVcmu\u008d"+
+		"\u009b";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

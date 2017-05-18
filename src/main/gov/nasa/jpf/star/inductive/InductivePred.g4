@@ -9,7 +9,44 @@ import gov.nasa.jpf.star.formula.pure.*;
 }
 
 // parser
-pred returns [InductivePred ip]: PRED ID LB params RB EQEQ formulas
+preds returns [InductivePred[] ips] :
+	pred
+	{
+		$ips = new InductivePred[1];
+		$ips[0] = $pred.ip;
+	}
+	| pred tail
+	{
+		int length = $tail.ips.length + 1;
+		$ips = new InductivePred[length];
+		
+		for (int i = 0; i < length; i++) {
+			if (i == 0) $ips[0] = $pred.ip;
+			else $ips[i] = $tail.ips[i - 1];
+		}
+	}
+;
+
+tail returns [InductivePred[] ips] :
+	SM pred
+	{
+		$ips = new InductivePred[1];
+		$ips[0] = $pred.ip;
+	}
+	| SM pred tail
+	{
+		int length = $tail.ips.length + 1;
+		$ips = new InductivePred[length];
+		
+		for (int i = 0; i < length; i++) {
+			if (i == 0) $ips[0] = $pred.ip;
+			else $ips[i] = $tail.ips[i - 1];
+		}
+	}
+;
+
+pred returns [InductivePred ip] :
+	PRED ID LB params RB EQEQ formulas
 	{
 		Variable[] ps = $params.vars;
 		Formula[] fs = $formulas.fs;
@@ -218,12 +255,13 @@ NE      : '!=' ;
 LB      : '(' ;
 RB      : ')' ;
 CM      : ',' ;
+SM      : ';' ;
 OR      : '||' ;
 AND     : '&' ;
 PT      : '->' ;
 STAR    : '*' ;
 ID      : [a-zA-Z]+ ;
-WS      : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
+WS      : [ \t\r\n]+ -> skip ;
 
 // tests
 // pred sll(x) == x = null || x->Node(next) * sll(next)
