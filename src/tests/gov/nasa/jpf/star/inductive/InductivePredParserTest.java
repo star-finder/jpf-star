@@ -1,8 +1,9 @@
 package gov.nasa.jpf.star.inductive;
 
+import static org.junit.Assert.assertTrue;
+
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Test;
 
 @SuppressWarnings("deprecation")
@@ -17,8 +18,8 @@ public class InductivePredParserTest {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         InductivePredParser parser = new InductivePredParser(tokens);
         
-        ParseTree tree = parser.pred();
-        System.out.println(tree.toStringTree(parser));
+        InductivePred ip = parser.pred().ip;
+        assertTrue(ip.toString().equals(pred));
 	}
 
 }

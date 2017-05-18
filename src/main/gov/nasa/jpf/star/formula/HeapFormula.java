@@ -3,6 +3,7 @@ package gov.nasa.jpf.star.formula;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
+import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a heap formula includes multiple heap terms
 
@@ -13,6 +14,10 @@ public class HeapFormula {
 	
 	public HeapFormula(HeapTerm... heapTerms) {
 		this.heapTerms = heapTerms;
+	}
+	
+	public HeapTerm[] getHeapTerms() {
+		return heapTerms;
 	}
 	
 	public HeapFormula substitute(Variable[] fromVars, Variable[] toVars,

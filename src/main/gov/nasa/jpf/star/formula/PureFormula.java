@@ -15,6 +15,10 @@ public class PureFormula {
 		this.pureTerms = pureTerms;
 	}
 	
+	public PureTerm[] getPureTerms() {
+		return pureTerms;
+	}
+	
 	public PureFormula substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		int length = pureTerms.length;

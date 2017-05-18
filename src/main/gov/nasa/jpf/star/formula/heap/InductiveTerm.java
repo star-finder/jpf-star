@@ -77,17 +77,15 @@ public class InductiveTerm extends HeapTerm {
 	public String toString() {
 		assert vars.length > 0;
 		
-		Variable root = vars[0];
-		
 		String params = "";
-		for (int i = 1; i < vars.length; i++) {
+		for (int i = 0; i < vars.length; i++) {
 			params += vars[i] + ",";
 		}
 		
 		if (params.length() > 0)
 			params = params.substring(0, params.length() - 1);
 		
-		String ret = root + "::" + predName + "(" + params + ")";
+		String ret = predName + "(" + params + ")";
 		return ret;
 	}
 	

@@ -23,7 +23,7 @@ public class InductiveTermTest {
 		Variable root = new Variable("root", "");
 		HeapTerm pt = new InductiveTerm("sll", root);
 		
-		assertTrue(pt.toString().equals("root::sll()"));
+		assertTrue(pt.toString().equals("sll(root)"));
 	}
 	
 	@Test
@@ -32,7 +32,7 @@ public class InductiveTermTest {
 		Variable next = new Variable("next", "");
 		HeapTerm pt = new InductiveTerm("sll", root, next);
 		
-		assertTrue(pt.toString().equals("root::sll(next)"));
+		assertTrue(pt.toString().equals("sll(root,next)"));
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ public class InductiveTermTest {
 		Variable z = new Variable("z", "");
 		HeapTerm pt = new InductiveTerm("dll", root, y, z);
 		
-		assertTrue(pt.toString().equals("x::dll(y,z)"));
+		assertTrue(pt.toString().equals("dll(x,y,z)"));
 	}
 	
 	@Test
@@ -58,8 +58,8 @@ public class InductiveTermTest {
 		
 		HeapTerm pt2 = pt1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(pt1.toString().equals("root::sll(next)"));
-		assertTrue(pt2.toString().equals("next::sll(next1)"));
+		assertTrue(pt1.toString().equals("sll(root,next)"));
+		assertTrue(pt2.toString().equals("sll(next,next1)"));
 	}
 	
 	@Test
@@ -76,8 +76,8 @@ public class InductiveTermTest {
 		
 		HeapTerm pt2 = pt1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(pt1.toString().equals("root::dll(next,prev)"));
-		assertTrue(pt2.toString().equals("next::dll(next1,root)"));
+		assertTrue(pt1.toString().equals("dll(root,next,prev)"));
+		assertTrue(pt2.toString().equals("dll(next,next1,root)"));
 	}
 	
 	@Test
@@ -94,8 +94,8 @@ public class InductiveTermTest {
 		
 		HeapTerm pt2 = pt1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(pt1.toString().equals("root::sll(next,k)"));
-		assertTrue(pt2.toString().equals("next::sll(next1,k_1)"));
+		assertTrue(pt1.toString().equals("sll(root,next,k)"));
+		assertTrue(pt2.toString().equals("sll(next,next1,k_1)"));
 	}
 
 }

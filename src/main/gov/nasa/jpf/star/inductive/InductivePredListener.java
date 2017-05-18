@@ -2,6 +2,10 @@
 
 package gov.nasa.jpf.star.inductive;
 
+import gov.nasa.jpf.star.formula.*;
+import gov.nasa.jpf.star.formula.heap.*;
+import gov.nasa.jpf.star.formula.pure.*;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
