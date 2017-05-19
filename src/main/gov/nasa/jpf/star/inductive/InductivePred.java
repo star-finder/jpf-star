@@ -25,6 +25,10 @@ public class InductivePred {
 		this.formulas = formulas;
 	}
 	
+	public String getPredName() {
+		return predName;
+	}
+	
 	public Formula[] getFormulas() {
 		return formulas;
 	}
