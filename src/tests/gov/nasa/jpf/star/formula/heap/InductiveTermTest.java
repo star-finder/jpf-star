@@ -5,11 +5,18 @@ import static org.junit.Assert.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
+import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Utility;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.star.inductive.InductivePred;
+import gov.nasa.jpf.star.inductive.InductivePredLexer;
+import gov.nasa.jpf.star.inductive.InductivePredMap;
+import gov.nasa.jpf.star.inductive.InductivePredParser;
 
 public class InductiveTermTest {
 	
@@ -21,18 +28,18 @@ public class InductiveTermTest {
 	@Test
 	public void testToString1() {
 		Variable root = new Variable("root", "");
-		HeapTerm pt = new InductiveTerm("sll", root);
+		HeapTerm it = new InductiveTerm("sll", root);
 		
-		assertTrue(pt.toString().equals("sll(root)"));
+		assertTrue(it.toString().equals("sll(root)"));
 	}
 	
 	@Test
 	public void testToString2() {
 		Variable root = new Variable("root", "");
 		Variable next = new Variable("next", "");
-		HeapTerm pt = new InductiveTerm("sll", root, next);
+		HeapTerm it = new InductiveTerm("sll", root, next);
 		
-		assertTrue(pt.toString().equals("sll(root,next)"));
+		assertTrue(it.toString().equals("sll(root,next)"));
 	}
 	
 	@Test
@@ -40,9 +47,9 @@ public class InductiveTermTest {
 		Variable root = new Variable("x", "");
 		Variable y = new Variable("y", "");
 		Variable z = new Variable("z", "");
-		HeapTerm pt = new InductiveTerm("dll", root, y, z);
+		HeapTerm it = new InductiveTerm("dll", root, y, z);
 		
-		assertTrue(pt.toString().equals("dll(x,y,z)"));
+		assertTrue(it.toString().equals("dll(x,y,z)"));
 	}
 	
 	@Test
@@ -50,16 +57,16 @@ public class InductiveTermTest {
 		Variable root = new Variable("root", "");
 		Variable var = new Variable("next", "");
 		
-		HeapTerm pt1 = new InductiveTerm("sll", root, var);
+		HeapTerm it1 = new InductiveTerm("sll", root, var);
 		
 		Variable[] fromVars = {new Variable("root", ""), new Variable("next", "")};
 		Variable[] toVars = {new Variable("next", ""), new Variable("next1", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		HeapTerm pt2 = pt1.substitute(fromVars, toVars, existVarSubMap);
+		HeapTerm it2 = it1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(pt1.toString().equals("sll(root,next)"));
-		assertTrue(pt2.toString().equals("sll(next,next1)"));
+		assertTrue(it1.toString().equals("sll(root,next)"));
+		assertTrue(it2.toString().equals("sll(next,next1)"));
 	}
 	
 	@Test
@@ -68,16 +75,16 @@ public class InductiveTermTest {
 		Variable var1 = new Variable("next", "");
 		Variable var2 = new Variable("prev", "");
 		
-		HeapTerm pt1 = new InductiveTerm("dll", root, var1, var2);
+		HeapTerm it1 = new InductiveTerm("dll", root, var1, var2);
 		
 		Variable[] fromVars = {new Variable("root", ""), new Variable("next", ""), new Variable("prev", "")};
 		Variable[] toVars = {new Variable("next", ""), new Variable("next1", ""), new Variable("root", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		HeapTerm pt2 = pt1.substitute(fromVars, toVars, existVarSubMap);
+		HeapTerm it2 = it1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(pt1.toString().equals("dll(root,next,prev)"));
-		assertTrue(pt2.toString().equals("dll(next,next1,root)"));
+		assertTrue(it1.toString().equals("dll(root,next,prev)"));
+		assertTrue(it2.toString().equals("dll(next,next1,root)"));
 	}
 	
 	@Test
@@ -86,16 +93,37 @@ public class InductiveTermTest {
 		Variable var1 = new Variable("next", "");
 		Variable var2 = new Variable("k", "");
 		
-		HeapTerm pt1 = new InductiveTerm("sll", root, var1, var2);
+		HeapTerm it1 = new InductiveTerm("sll", root, var1, var2);
 		
 		Variable[] fromVars = {new Variable("root", ""), new Variable("next", "")};
 		Variable[] toVars = {new Variable("next", ""), new Variable("next1", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		HeapTerm pt2 = pt1.substitute(fromVars, toVars, existVarSubMap);
+		HeapTerm it2 = it1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(pt1.toString().equals("sll(root,next,k)"));
-		assertTrue(pt2.toString().equals("sll(next,next1,k_1)"));
+		assertTrue(it1.toString().equals("sll(root,next,k)"));
+		assertTrue(it2.toString().equals("sll(next,next1,k_1)"));
+	}
+	
+	@Test
+	public void testUnfold() {
+		String preds = "pred sll(root) == root = null || root->Node(next) * sll(next)";
+		
+		ANTLRInputStream in = new ANTLRInputStream(preds);
+        InductivePredLexer lexer = new InductivePredLexer(in);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        InductivePredParser parser = new InductivePredParser(tokens);
+        
+        InductivePred[] ips = parser.preds().ips;
+        InductivePredMap.put(ips);
+        
+        Variable root = new Variable("x", "");
+		
+		HeapTerm it = new InductiveTerm("sll", root);
+		Formula[] formulas = ((InductiveTerm) it).unfold();
+		
+		assertTrue(formulas[0].toString().equals("x = null"));
+		assertTrue(formulas[1].toString().equals("x->Node(next_1) * sll(next_1)"));
 	}
 
 }

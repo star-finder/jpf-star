@@ -41,7 +41,6 @@ public class InductiveTerm extends HeapTerm {
 			newFormulas[i] = formulas[i].substitute(params, vars);
 		}
 		
-		// should substitute the variables inside formulas
 		return newFormulas;
 	}
 	
