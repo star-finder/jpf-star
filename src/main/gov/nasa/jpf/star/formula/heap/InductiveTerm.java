@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.formula.heap;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Formula;
@@ -36,9 +37,15 @@ public class InductiveTerm extends HeapTerm {
 		int length = formulas.length;
 		Formula[] newFormulas = new Formula[length];
 		
+		// besides parameters, formula may contain other existential variables
+		// must guarantee all existential variables substitue to fresh variables
+		// the same old variable should be substituted to the same new variables
+		// should this map be here or in Formula???
+		Map<String,String> existVarSubMap = new HashMap<String,String>();
+		
 		for (int i = 0; i < length; i++) {
 			// substitute the parameters inside the predicate with current vars
-			newFormulas[i] = formulas[i].substitute(params, vars);
+			newFormulas[i] = formulas[i].substitute(params, vars, existVarSubMap);
 		}
 		
 		return newFormulas;

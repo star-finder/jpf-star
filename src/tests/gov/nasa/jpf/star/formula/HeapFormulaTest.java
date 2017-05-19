@@ -36,7 +36,7 @@ public class HeapFormulaTest {
 		
 		HeapFormula heapFormula = new HeapFormula(pt, ind);
 		
-		assertTrue(heapFormula.toString().equals("x->Node(next) * next::sll()"));
+		assertTrue(heapFormula.toString().equals("x->Node(next) * sll(next)"));
 	}
 	
 	@Test
@@ -55,8 +55,8 @@ public class HeapFormulaTest {
 		
 		HeapFormula heapFormula2 = heapFormula1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(heapFormula1.toString().equals("x->Node(next) * next::sll()"));
-		assertTrue(heapFormula2.toString().equals("y->Node(next_1) * next_1::sll()"));
+		assertTrue(heapFormula1.toString().equals("x->Node(next) * sll(next)"));
+		assertTrue(heapFormula2.toString().equals("y->Node(next_1) * sll(next_1)"));
 	}
 
 }

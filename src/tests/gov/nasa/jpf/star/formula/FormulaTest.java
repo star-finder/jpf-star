@@ -2,6 +2,9 @@ package gov.nasa.jpf.star.formula;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,7 +50,7 @@ public class FormulaTest {
 		
 		Formula formula = new Formula(heapFormula, pureFormula);
 		
-		assertTrue(formula.toString().equals("x->Node(next) * next::sll() & x = null & x != y"));
+		assertTrue(formula.toString().equals("x->Node(next) * sll(next) & x = null & x != y"));
 	}
 	
 	@Test
@@ -70,11 +73,12 @@ public class FormulaTest {
 		
 		Variable[] fromVars = {new Variable("x", "")};
 		Variable[] toVars = {new Variable("z", "")};
+		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		Formula formula2 = formula1.substitute(fromVars, toVars);
+		Formula formula2 = formula1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(formula1.toString().equals("x->Node(next) * next::sll() & x = null & x != y"));
-		assertTrue(formula2.toString().equals("z->Node(next_1) * next_1::sll() & z = null & z != y_2"));
+		assertTrue(formula1.toString().equals("x->Node(next) * sll(next) & x = null & x != y"));
+		assertTrue(formula2.toString().equals("z->Node(next_1) * sll(next_1) & z = null & z != y_2"));
 	}
 
 }
