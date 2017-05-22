@@ -5,8 +5,7 @@ public class MyClass {
 		if (x == null)
 			return null;
 		else {
-			Node y = x;
-			return y.next;
+			return x.next;
 		}
 	}
 
