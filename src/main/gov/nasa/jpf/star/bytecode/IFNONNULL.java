@@ -7,7 +7,7 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class IFNONNULL extends gov.nasa.jpf.jvm.bytecode.IFNONNULL {
+public class IFNONNULL extends gov.nasa.jpf.symbc.bytecode.IFNONNULL {
 
 	public IFNONNULL(int targetPc) {
 		super(targetPc);
@@ -26,6 +26,7 @@ public class IFNONNULL extends gov.nasa.jpf.jvm.bytecode.IFNONNULL {
 			if (!ti.isFirstStepInsn()) {
 				cg = new StarChoiceGenerator(2);
 				ti.getVM().getSystemState().setNextChoiceGenerator(cg);
+				sf.pop();
 				return this;
 			} else {
 				cg = ti.getVM().getSystemState().getChoiceGenerator();

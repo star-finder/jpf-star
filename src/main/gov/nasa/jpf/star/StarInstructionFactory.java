@@ -1,11 +1,19 @@
 package gov.nasa.jpf.star;
 
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.IFNONNULL;
 import gov.nasa.jpf.star.bytecode.IFNULL;
-import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.vm.Instruction;
 
-public class StarInstructionFactory extends gov.nasa.jpf.jvm.bytecode.InstructionFactory {
+// to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
+// because some instructions from SymbolicInstructionFactory perform initial set up for
+// symbolic execution
+public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructionFactory {
+
+	public StarInstructionFactory(Config conf) {
+		super(conf);
+	}
 
 	@Override
 	public Instruction aload(int localVarIndex) {
