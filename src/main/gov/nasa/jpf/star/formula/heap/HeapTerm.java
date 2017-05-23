@@ -10,5 +10,9 @@ public abstract class HeapTerm {
 			Map<String,String> existVarSubMap) {
 		return null;
 	}
+	
+	public HeapTerm copy() {
+		return null;
+	}
 
 }

@@ -39,6 +39,11 @@ public class NEqNullTerm extends PureTerm {
 	}
 	
 	@Override
+	public PureTerm copy() {
+		return new NEqNullTerm(var);
+	}
+	
+	@Override
 	public String toString() {
 		return var.toString() + " != null";
 	}

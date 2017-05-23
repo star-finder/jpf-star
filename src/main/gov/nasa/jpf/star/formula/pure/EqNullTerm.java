@@ -39,6 +39,11 @@ public class EqNullTerm extends PureTerm {
 	}
 	
 	@Override
+	public PureTerm copy() {
+		return new EqNullTerm(var);
+	}
+	
+	@Override
 	public String toString() {
 		return var.toString() + " = null";
 	}

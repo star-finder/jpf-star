@@ -10,5 +10,9 @@ public abstract class PureTerm {
 			Map<String,String> existVarSubMap) {
 		return null;
 	}
+	
+	public PureTerm copy() {
+		return null;
+	}
 
 }

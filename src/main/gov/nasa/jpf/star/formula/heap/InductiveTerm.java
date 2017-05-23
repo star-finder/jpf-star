@@ -80,6 +80,11 @@ public class InductiveTerm extends HeapTerm {
 	}
 	
 	@Override
+	public HeapTerm copy() {
+		return new InductiveTerm(predName, vars);
+	}
+	
+	@Override
 	public String toString() {
 		assert vars.length > 0;
 		

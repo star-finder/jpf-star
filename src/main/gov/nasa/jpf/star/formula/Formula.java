@@ -16,6 +16,11 @@ public class Formula {
 		this.pureFormula = pureFormula;
 	}
 	
+	public Formula() {
+		this.heapFormula = new HeapFormula();
+		this.pureFormula = new PureFormula();
+	}
+	
 	// substitute parameters with new vars
 	public Formula substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
@@ -25,6 +30,22 @@ public class Formula {
 		Formula newFormula = new Formula(newHeapFormula, newPureFormula);
 		
 		return newFormula;
+	}
+	
+	public Formula copy() {
+		HeapFormula newHeapFormula = heapFormula.copy();
+		PureFormula newPureFormula = pureFormula.copy();
+		
+		Formula newFormula = new Formula(newHeapFormula, newPureFormula);
+		return newFormula;
+	}
+	
+	public void addEqNullTerm(Variable var) {
+		pureFormula.addEqNullTerm(var);
+	}
+	
+	public void addNEqNullTerm(Variable var) {
+		pureFormula.addNEqNullTerm(var);
 	}
 	
 	@Override

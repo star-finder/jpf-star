@@ -34,6 +34,18 @@ public class HeapFormula {
 		return newHeapFormula;
 	}
 	
+	public HeapFormula copy() {
+		int length = heapTerms.length;
+		HeapTerm[] newHeapTerms = new HeapTerm[length];
+		
+		for (int i = 0; i < length; i++) {
+			newHeapTerms[i] = heapTerms[i].copy();
+		}
+		
+		HeapFormula newHeapFormula = new HeapFormula(newHeapTerms);
+		return newHeapFormula;
+	}
+	
 	@Override
 	public String toString() {
 		if (heapTerms.length == 0)

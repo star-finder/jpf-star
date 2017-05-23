@@ -51,6 +51,11 @@ public class PointToTerm extends HeapTerm {
 	}
 	
 	@Override
+	public HeapTerm copy() {
+		return new PointToTerm(type, vars);
+	}
+	
+	@Override
 	public String toString() {
 		assert vars.length > 0;
 		

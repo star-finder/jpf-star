@@ -55,6 +55,11 @@ public class EqTerm extends PureTerm {
 	}
 	
 	@Override
+	public PureTerm copy() {
+		return new EqTerm(var1, var2);
+	}
+	
+	@Override
 	public String toString() {
 		return var1.toString() + " = " + var2.toString();
 	}
