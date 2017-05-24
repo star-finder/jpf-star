@@ -12,7 +12,7 @@ public abstract class HeapTerm {
 	}
 	
 	public HeapTerm copy() {
-		return null;
+		return this;
 	}
 
 }

@@ -50,10 +50,10 @@ public class PointToTerm extends HeapTerm {
 		return newPointToTerm;
 	}
 	
-	@Override
-	public HeapTerm copy() {
-		return new PointToTerm(type, vars);
-	}
+//	@Override
+//	public HeapTerm copy() {
+//		return new PointToTerm(type, vars);
+//	}
 	
 	@Override
 	public String toString() {

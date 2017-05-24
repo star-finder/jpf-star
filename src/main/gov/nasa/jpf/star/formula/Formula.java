@@ -1,7 +1,10 @@
 package gov.nasa.jpf.star.formula;
 
-import java.util.HashMap;
 import java.util.Map;
+
+import gov.nasa.jpf.star.formula.heap.HeapTerm;
+import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a formula includes heap part and pure part
 
@@ -21,6 +24,14 @@ public class Formula {
 		this.pureFormula = new PureFormula();
 	}
 	
+	public HeapFormula getHeapFormula() {
+		return heapFormula;
+	}
+	
+	public PureFormula getPureFormula() {
+		return pureFormula;
+	}
+	
 	// substitute parameters with new vars
 	public Formula substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
@@ -38,6 +49,36 @@ public class Formula {
 		
 		Formula newFormula = new Formula(newHeapFormula, newPureFormula);
 		return newFormula;
+	}
+	
+	public void unfold(InductiveTerm it, int index) {
+		Formula[] unfoldedFormulas = it.getUnfoldedFormulas();
+		Formula f = unfoldedFormulas[index];
+		
+		int heapSize = f.heapFormula.getHeapTerms().length + heapFormula.getHeapTerms().length - 1;
+		int pureSize = f.pureFormula.getPureTerms().length + pureFormula.getPureTerms().length;
+		
+		HeapTerm[] newHeapTerms = new HeapTerm[heapSize];
+		PureTerm[] newPureTerms = new PureTerm[pureSize];
+		
+		int curr = 0;
+		for (int i = 0; i < heapFormula.getHeapTerms().length; i++) {
+			if (!heapFormula.getHeapTerms()[i].equals(it)) {
+				newHeapTerms[curr] = heapFormula.getHeapTerms()[i];
+				curr++;
+			}
+		}
+		
+		System.arraycopy(f.heapFormula.getHeapTerms(), 0,
+				newHeapTerms, heapFormula.getHeapTerms().length - 1, f.heapFormula.getHeapTerms().length);
+		
+		System.arraycopy(pureFormula.getPureTerms(), 0,
+				newPureTerms, 0, pureFormula.getPureTerms().length);
+		System.arraycopy(f.pureFormula.getPureTerms(), 0,
+				newPureTerms, pureFormula.getPureTerms().length, f.pureFormula.getPureTerms().length);
+		
+		heapFormula = new HeapFormula(newHeapTerms);
+		pureFormula = new PureFormula(newPureTerms);
 	}
 	
 	public void addEqNullTerm(Variable var) {

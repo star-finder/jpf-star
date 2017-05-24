@@ -19,9 +19,24 @@ public class InductiveTerm extends HeapTerm {
 	// variables of current term, first variable is the root
 	private Variable[] vars;
 	
+	// contains unfolded formulas for this term
+	private Formula[] unfoldedFormulas;
+	
 	public InductiveTerm(String predName, Variable... vars) {
 		this.predName = predName;
 		this.vars = vars;
+	}
+	
+	public String getPredName() {
+		return predName;
+	}
+	
+	public Variable getRoot() {
+		return vars[0];
+	}
+	
+	public Formula[] getUnfoldedFormulas() {
+		return unfoldedFormulas;
 	}
 	
 	// very imporant function
@@ -29,26 +44,30 @@ public class InductiveTerm extends HeapTerm {
 	// and predicate root::sll() === root = null \/ root->Node(next) * next::sll()
 	// unfold should returns x = null \/ x->Node(next) * next::sll()
 	public Formula[] unfold() {
-		InductivePred pred = InductivePredMap.find(predName);
-		
-		Formula[] formulas = pred.getFormulas();
-		Variable[] params = pred.getParams();
-		
-		int length = formulas.length;
-		Formula[] newFormulas = new Formula[length];
-		
-		// besides parameters, formula may contain other existential variables
-		// must guarantee all existential variables substitue to fresh variables
-		// the same old variable should be substituted to the same new variables
-		// should this map be here or in Formula???
-		Map<String,String> existVarSubMap = new HashMap<String,String>();
-		
-		for (int i = 0; i < length; i++) {
-			// substitute the parameters inside the predicate with current vars
-			newFormulas[i] = formulas[i].substitute(params, vars, existVarSubMap);
+		if (unfoldedFormulas == null) {
+			InductivePred pred = InductivePredMap.find(predName);
+			
+			Formula[] formulas = pred.getFormulas();
+			Variable[] params = pred.getParams();
+			
+			int length = formulas.length;
+			Formula[] newFormulas = new Formula[length];
+			
+			// besides parameters, formula may contain other existential variables
+			// must guarantee all existential variables substitue to fresh variables
+			// the same old variable should be substituted to the same new variables
+			// should this map be here or in Formula???
+			Map<String,String> existVarSubMap = new HashMap<String,String>();
+			
+			for (int i = 0; i < length; i++) {
+				// substitute the parameters inside the predicate with current vars
+				newFormulas[i] = formulas[i].substitute(params, vars, existVarSubMap);
+			}
+			
+			unfoldedFormulas = newFormulas;
 		}
 		
-		return newFormulas;
+		return unfoldedFormulas;
 	}
 	
 	@Override
@@ -79,10 +98,10 @@ public class InductiveTerm extends HeapTerm {
 		return newInductiveTerm;
 	}
 	
-	@Override
-	public HeapTerm copy() {
-		return new InductiveTerm(predName, vars);
-	}
+//	@Override
+//	public HeapTerm copy() {
+//		return new InductiveTerm(predName, vars);
+//	}
 	
 	@Override
 	public String toString() {

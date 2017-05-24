@@ -5,6 +5,7 @@ import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.IFNONNULL;
 import gov.nasa.jpf.star.bytecode.IFNULL;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
+import gov.nasa.jpf.star.bytecode.GETFIELD;
 import gov.nasa.jpf.vm.Instruction;
 
 // to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
@@ -34,6 +35,10 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction invokevirtual(String clsName, String methodName, String methodSignature) {
 		return new INVOKEVIRTUAL(clsName, methodName, methodSignature);
+	}
+
+	public Instruction getfield(String fieldName, String clsName, String fieldDescriptor) {
+		return new GETFIELD(fieldName, clsName, fieldDescriptor);
 	}
 
 }

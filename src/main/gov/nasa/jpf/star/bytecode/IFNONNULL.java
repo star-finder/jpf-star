@@ -18,7 +18,7 @@ public class IFNONNULL extends gov.nasa.jpf.symbc.bytecode.IFNONNULL {
 	@Override
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
-		IntegerExpression sym_v = (IntegerExpression) sf.getOperandAttr();
+		Object sym_v = sf.getOperandAttr();
 		
 		if(sym_v == null) {
 			return super.execute(ti);

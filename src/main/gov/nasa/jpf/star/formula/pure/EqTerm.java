@@ -54,10 +54,10 @@ public class EqTerm extends PureTerm {
 		return newEqTerm;
 	}
 	
-	@Override
-	public PureTerm copy() {
-		return new EqTerm(var1, var2);
-	}
+//	@Override
+//	public PureTerm copy() {
+//		return new EqTerm(var1, var2);
+//	}
 	
 	@Override
 	public String toString() {

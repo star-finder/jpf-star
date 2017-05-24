@@ -54,10 +54,10 @@ public class NEqTerm extends PureTerm {
 		return newNEqTerm;
 	}
 	
-	@Override
-	public PureTerm copy() {
-		return new NEqTerm(var1, var2);
-	}
+//	@Override
+//	public PureTerm copy() {
+//		return new NEqTerm(var1, var2);
+//	}
 	
 	@Override
 	public String toString() {

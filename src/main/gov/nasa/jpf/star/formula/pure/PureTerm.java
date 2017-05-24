@@ -12,7 +12,7 @@ public abstract class PureTerm {
 	}
 	
 	public PureTerm copy() {
-		return null;
+		return this;
 	}
 
 }

@@ -38,10 +38,10 @@ public class EqNullTerm extends PureTerm {
 		return newEqNullTerm;
 	}
 	
-	@Override
-	public PureTerm copy() {
-		return new EqNullTerm(var);
-	}
+//	@Override
+//	public PureTerm copy() {
+//		return new EqNullTerm(var);
+//	}
 	
 	@Override
 	public String toString() {
