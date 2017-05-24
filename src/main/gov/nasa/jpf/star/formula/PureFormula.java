@@ -3,7 +3,9 @@ package gov.nasa.jpf.star.formula;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
+import gov.nasa.jpf.star.formula.pure.EqTerm;
 import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
+import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a pure formula includes multiple pure terms
@@ -63,6 +65,34 @@ public class PureFormula {
 	
 	public void addNEqNullTerm(Variable var) {
 		NEqNullTerm term = new NEqNullTerm(var);
+		
+		int length = pureTerms.length + 1;
+		PureTerm[] newPureTerms = new PureTerm[length];
+		
+		for (int i = 0; i < length - 1; i++) {
+			newPureTerms[i] = pureTerms[i];
+		}
+		
+		newPureTerms[length - 1] = term;
+		pureTerms = newPureTerms;
+	}
+	
+	public void addEqTerm(Variable var1, Variable var2) {
+		EqTerm term = new EqTerm(var1, var2);
+		
+		int length = pureTerms.length + 1;
+		PureTerm[] newPureTerms = new PureTerm[length];
+		
+		for (int i = 0; i < length - 1; i++) {
+			newPureTerms[i] = pureTerms[i];
+		}
+		
+		newPureTerms[length - 1] = term;
+		pureTerms = newPureTerms;
+	}
+	
+	public void addNEqTerm(Variable var1, Variable var2) {
+		NEqTerm term = new NEqTerm(var1, var2);
 		
 		int length = pureTerms.length + 1;
 		PureTerm[] newPureTerms = new PureTerm[length];

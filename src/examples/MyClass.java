@@ -1,8 +1,8 @@
 
 public class MyClass {
 
-	public Node myMethod(Node x) {
-		if (x == null)
+	public Node myMethod(Node x, Node y) {
+		if (x != y)
 			return null;
 		else {
 			return x.next;
@@ -13,7 +13,7 @@ public class MyClass {
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
 		Node x = new Node();
-		mc.myMethod(x);
+		mc.myMethod(x, x);
 	}
 
 }

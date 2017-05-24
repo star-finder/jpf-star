@@ -20,7 +20,7 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 	@Override
 	public Instruction execute(ThreadInfo ti) {
 		// need a way to get method with preconditions
-		if (mname.toString().equals("myMethod(LNode;)LNode;")) {
+		if (mname.toString().equals("myMethod(LNode;LNode;)LNode;")) {
 			ChoiceGenerator<?> cg = null;
 			ChoiceGenerator<?> prevCG = null;
 			

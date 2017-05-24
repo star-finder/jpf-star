@@ -89,6 +89,14 @@ public class Formula {
 		pureFormula.addNEqNullTerm(var);
 	}
 	
+	public void addEqTerm(Variable var1, Variable var2) {
+		pureFormula.addEqTerm(var1, var2);
+	}
+	
+	public void addNEqTerm(Variable var1, Variable var2) {
+		pureFormula.addNEqTerm(var1, var2);
+	}
+	
 	@Override
 	public String toString() {
 		String heapString = heapFormula.toString();

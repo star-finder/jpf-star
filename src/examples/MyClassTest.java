@@ -9,6 +9,7 @@ import gov.nasa.jpf.star.inductive.InductivePredMap;
 import gov.nasa.jpf.star.inductive.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
+@SuppressWarnings("deprecation")
 public class MyClassTest extends TestJPF {
 	
 	@Before
@@ -27,10 +28,11 @@ public class MyClassTest extends TestJPF {
 	@Test
 	public void testMain() {
 		if (verifyNoPropertyViolation(
+//				"+listener=.symbc.heap.HeapSymbolicListener",
 				"+listener=.star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod(sym)",
+				"+symbolic.method = MyClass.myMethod(sym#sym)",
 				"+symbolic.lazy=true",
 				"+report.console.property_violation=error,trace")) {
 			MyClass.main(null);
