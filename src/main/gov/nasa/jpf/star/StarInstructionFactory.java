@@ -2,6 +2,7 @@ package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.bytecode.ALOAD;
+import gov.nasa.jpf.star.bytecode.ASTORE;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
 import gov.nasa.jpf.star.bytecode.IFNONNULL;
 import gov.nasa.jpf.star.bytecode.IFNULL;
@@ -22,6 +23,11 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction aload(int localVarIndex) {
 		return new ALOAD(localVarIndex);
+	}
+	
+	@Override
+	public Instruction astore(int localVarIndex) {
+		return new ASTORE(localVarIndex);
 	}
 
 	@Override

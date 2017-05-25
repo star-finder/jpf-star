@@ -5,6 +5,7 @@ public class MyClass {
 		if (x != y)
 			return null;
 		else {
+			y = x;
 			return x.next;
 		}
 	}
