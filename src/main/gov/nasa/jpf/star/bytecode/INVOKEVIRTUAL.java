@@ -1,5 +1,9 @@
 package gov.nasa.jpf.star.bytecode;
 
+import java.util.Arrays;
+import java.util.Vector;
+
+import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.HeapFormula;
@@ -7,8 +11,10 @@ import gov.nasa.jpf.star.formula.PureFormula;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.symbc.bytecode.BytecodeUtils;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
+import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 
 public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
@@ -19,8 +25,20 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 
 	@Override
 	public Instruction execute(ThreadInfo ti) {
+		Config conf = ti.getVM().getConfig();
+		
+		String mname = getInvokedMethodName();
+		String cname = getInvokedMethodClassName();
+		
+		MethodInfo mi = getInvokedMethod(ti);
+		String fname = mi.getFullName();
+		String[] argTypes = mi.getArgumentTypeNames();
+		
+		boolean isClassSymbolic = BytecodeUtils.isClassSymbolic(conf, cname, mi, mname);
+		boolean isMethodSymbolic = BytecodeUtils.isMethodSymbolic(conf, fname, argTypes.length, new Vector<String>());
+		
 		// need a way to get method with preconditions
-		if (mname.toString().equals("myMethod(LNode;LNode;)LNode;")) {
+		if (isClassSymbolic || isMethodSymbolic) {
 			ChoiceGenerator<?> cg = null;
 			ChoiceGenerator<?> prevCG = null;
 			

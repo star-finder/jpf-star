@@ -23,6 +23,8 @@ public class MyClassTest extends TestJPF {
         
         InductivePred[] ips = parser.preds().ips;
         InductivePredMap.put(ips);
+        
+        
 	}
 	
 	@Test
