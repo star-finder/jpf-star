@@ -3,6 +3,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
+import gov.nasa.jpf.star.PreconditionMap;
 import gov.nasa.jpf.star.inductive.InductivePred;
 import gov.nasa.jpf.star.inductive.InductivePredLexer;
 import gov.nasa.jpf.star.inductive.InductivePredMap;
@@ -24,7 +25,15 @@ public class MyClassTest extends TestJPF {
         InductivePred[] ips = parser.preds().ips;
         InductivePredMap.put(ips);
         
+        String prec = "pred myMethod(x) == sll(x)";
         
+        in = new ANTLRInputStream(prec);
+        lexer = new InductivePredLexer(in);
+        tokens = new CommonTokenStream(lexer);
+        parser = new InductivePredParser(tokens);
+        
+        ips = parser.preds().ips;
+        PreconditionMap.put(ips);
 	}
 	
 	@Test

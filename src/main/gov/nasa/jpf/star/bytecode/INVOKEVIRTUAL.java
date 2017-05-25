@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Vector;
 
 import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.PreconditionMap;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.HeapFormula;
@@ -32,6 +33,7 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 		
 		MethodInfo mi = getInvokedMethod(ti);
 		String fname = mi.getFullName();
+		
 		String[] argTypes = mi.getArgumentTypeNames();
 		
 		boolean isClassSymbolic = BytecodeUtils.isClassSymbolic(conf, cname, mi, mname);
@@ -55,13 +57,8 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 			Formula pc = null;
 			
 			if (prevCG == null) {
-				HeapTerm[] hts = new HeapTerm[1];
-				hts[0] = new InductiveTerm("sll", new Variable("x", ""));
-				HeapFormula hf = new HeapFormula(hts);
-				
-				pc = new Formula(hf, new PureFormula());
-			}
-			else {
+				pc = PreconditionMap.find(mi.getName());
+			} else {
 				pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
 			}
 			
