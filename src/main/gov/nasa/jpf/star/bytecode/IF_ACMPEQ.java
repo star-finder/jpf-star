@@ -36,7 +36,8 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 				conditionValue = (Integer) cg.getNextChoice() == 1 ? true: false;
 			}
 
-			sf.pop();
+			int	v2 = sf.pop();
+			int	v1 = sf.pop();
 			
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 			Formula pc = null;
@@ -47,11 +48,29 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 				pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
 			
 			if (conditionValue) {
-				pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+				if (sym_v1 != null) {
+					if (sym_v2 != null) {
+						pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+					} else {
+						pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
+					}
+				} else {
+					pc.addEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
+				}
+				
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				return getTarget();
 			} else {
-				pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+				if (sym_v1 != null) {
+					if (sym_v2 != null) {
+						pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+					} else {
+						pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
+					}
+				} else {
+					pc.addNEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
+				}
+
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				return getNext(ti);
 			}
