@@ -1,8 +1,12 @@
 package gov.nasa.jpf.star.bytecode;
 
+import java.util.List;
+
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.HeapFormula;
+import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.vm.ChoiceGenerator;
@@ -27,17 +31,22 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			ChoiceGenerator<?> cg;
 			ChoiceGenerator<?> prevCG;
 
+			// in the first round we check if we can unfold the formula
+			// if it is we create a choice generator with the number of choices
+			// is the length of unfolded formulas
+			// then in subsequent rounds we add each unfolded formula to the pc
 			if (!ti.isFirstStepInsn()) {
 				prevCG = ti.getVM().getSystemState().getChoiceGenerator();
 				if (prevCG instanceof StarChoiceGenerator) {
 					Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
 					HeapFormula hf = pc.getHeapFormula();
+					List<List<Variable>> alias = pc.getAlias();
 					
 					HeapTerm[] hts = hf.getHeapTerms();
 					for (int i = 0; i < hts.length; i++) {
 						if (hts[i] instanceof InductiveTerm) {
 							InductiveTerm it = (InductiveTerm) hts[i];
-							if (it.getRoot().getName().equals(sym_v.toString())) {
+							if (canUnfold(it, alias, sym_v.toString())) {
 								Formula[] fs = it.unfold();
 								
 								cg = new StarChoiceGenerator(fs.length);
@@ -55,12 +64,13 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				
 				Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
 				HeapFormula hf = pc.getHeapFormula();
+				List<List<Variable>> alias = pc.getAlias();
 				
 				HeapTerm[] hts = hf.getHeapTerms();
 				for (int i = 0; i < hts.length; i++) {
 					if (hts[i] instanceof InductiveTerm) {
 						InductiveTerm it = (InductiveTerm) hts[i];
-						if (it.getRoot().getName().equals(sym_v.toString())) {
+						if (canUnfold(it, alias, sym_v.toString())) {
 							pc.unfold(it, (Integer) cg.getNextChoice());
 							break;
 						}
@@ -71,6 +81,24 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				
 				return super.execute(ti);
 			}
+		}
+	}
+	
+	private boolean canUnfold(InductiveTerm it, List<List<Variable>> alias, String varName) {
+		if (it.getRoot().getName().equals(varName))
+			return true;
+		else {
+			for (List<Variable> vars : alias) {
+				if (Utility.contains(vars, it.getRoot())) {
+					for (Variable var : vars) {
+						if (var.getName().equals(varName)) {
+							return true;
+						}
+					}
+				}
+			}
+			
+			return false;
 		}
 	}
 

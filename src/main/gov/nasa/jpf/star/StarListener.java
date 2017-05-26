@@ -26,8 +26,6 @@ public class StarListener extends SymbolicListener {
 
 		if (!vm.getSystemState().isIgnored()) {
 			Instruction insn = executedInstruction;
-			// SystemState ss = vm.getSystemState();
-			ThreadInfo ti = currentThread;
 			Config conf = vm.getConfig();
 
 			if (insn instanceof JVMInvokeInstruction) {
@@ -35,10 +33,9 @@ public class StarListener extends SymbolicListener {
 			} else if (insn instanceof JVMReturnInstruction) {
 				MethodInfo mi = insn.getMethodInfo();
 				ClassInfo ci = mi.getClassInfo();
-				if (null != ci) {
+				if (ci != null) {
 					String className = ci.getName();
 					String methodName = mi.getName();
-					String longName = mi.getLongName();
 					int numberOfArgs = mi.getNumberOfArguments();
 
 					if (((BytecodeUtils.isClassSymbolic(conf, className, mi, methodName))

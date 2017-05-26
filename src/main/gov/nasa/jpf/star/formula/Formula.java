@@ -1,9 +1,14 @@
 package gov.nasa.jpf.star.formula;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.star.formula.pure.EqNullTerm;
+import gov.nasa.jpf.star.formula.pure.EqTerm;
+import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
+import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a formula includes heap part and pure part
@@ -30,6 +35,10 @@ public class Formula {
 	
 	public PureFormula getPureFormula() {
 		return pureFormula;
+	}
+	
+	public List<List<Variable>> getAlias() {
+		return pureFormula.getAlias();
 	}
 	
 	// substitute parameters with new vars
@@ -82,19 +91,23 @@ public class Formula {
 	}
 	
 	public void addEqNullTerm(Variable var) {
-		pureFormula.addEqNullTerm(var);
+		PureTerm term = new EqNullTerm(var);
+		pureFormula.addTerm(term);
 	}
 	
 	public void addNEqNullTerm(Variable var) {
-		pureFormula.addNEqNullTerm(var);
+		PureTerm term = new NEqNullTerm(var);
+		pureFormula.addTerm(term);
 	}
 	
 	public void addEqTerm(Variable var1, Variable var2) {
-		pureFormula.addEqTerm(var1, var2);
+		PureTerm term = new EqTerm(var1, var2);
+		pureFormula.addTerm(term);
 	}
 	
 	public void addNEqTerm(Variable var1, Variable var2) {
-		pureFormula.addNEqTerm(var1, var2);
+		PureTerm term = new NEqTerm(var1, var2);
+		pureFormula.addTerm(term);
 	}
 	
 	@Override

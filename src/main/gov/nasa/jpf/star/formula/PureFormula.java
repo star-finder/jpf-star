@@ -1,11 +1,10 @@
 package gov.nasa.jpf.star.formula;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.EqTerm;
-import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
-import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a pure formula includes multiple pure terms
@@ -15,12 +14,54 @@ public class PureFormula {
 	// contains array of pure terms, empty means true
 	private PureTerm[] pureTerms;
 	
+	private List<List<Variable>> alias;
+	
 	public PureFormula(PureTerm... pureTerms) {
 		this.pureTerms = pureTerms;
+		this.alias = new ArrayList<List<Variable>>();
+		
+		for (PureTerm term : pureTerms) {
+			if (term instanceof EqTerm) {
+				updateAlias((EqTerm) term);
+			}
+		}
 	}
 	
 	public PureTerm[] getPureTerms() {
 		return pureTerms;
+	}
+	
+	public List<List<Variable>> getAlias() {
+		return alias;
+	}
+	
+	private void updateAlias(EqTerm term) {
+		Variable var1 = term.getVar1();
+		Variable var2 = term.getVar2();
+
+		boolean done = false;
+
+		for (List<Variable> vars : alias) {
+			if (Utility.contains(vars, var1) && Utility.contains(vars, var2)) {
+				done = true;
+				break;
+			} else if (Utility.contains(vars, var1) && !Utility.contains(vars, var2)) {
+				done = true;
+				vars.add(var2);
+				break;
+			} else if (!Utility.contains(vars, var1) && Utility.contains(vars, var2)) {
+				done = true;
+				vars.add(var1);
+				break;
+			}
+		}
+
+		if (!done) {
+			List<Variable> vars = new ArrayList<Variable>();
+			vars.add(var1);
+			vars.add(var2);
+			alias.add(vars);
+		}
 	}
 	
 	public PureFormula substitute(Variable[] fromVars, Variable[] toVars,
@@ -49,9 +90,7 @@ public class PureFormula {
 		return newPureFormula;
 	}
 	
-	public void addEqNullTerm(Variable var) {
-		EqNullTerm term = new EqNullTerm(var);
-		
+	public void addTerm(PureTerm term) {
 		int length = pureTerms.length + 1;
 		PureTerm[] newPureTerms = new PureTerm[length];
 		
@@ -61,50 +100,12 @@ public class PureFormula {
 		
 		newPureTerms[length - 1] = term;
 		pureTerms = newPureTerms;
+		
+		if (term instanceof EqTerm) {
+			updateAlias((EqTerm) term);
+		}
 	}
 	
-	public void addNEqNullTerm(Variable var) {
-		NEqNullTerm term = new NEqNullTerm(var);
-		
-		int length = pureTerms.length + 1;
-		PureTerm[] newPureTerms = new PureTerm[length];
-		
-		for (int i = 0; i < length - 1; i++) {
-			newPureTerms[i] = pureTerms[i];
-		}
-		
-		newPureTerms[length - 1] = term;
-		pureTerms = newPureTerms;
-	}
-	
-	public void addEqTerm(Variable var1, Variable var2) {
-		EqTerm term = new EqTerm(var1, var2);
-		
-		int length = pureTerms.length + 1;
-		PureTerm[] newPureTerms = new PureTerm[length];
-		
-		for (int i = 0; i < length - 1; i++) {
-			newPureTerms[i] = pureTerms[i];
-		}
-		
-		newPureTerms[length - 1] = term;
-		pureTerms = newPureTerms;
-	}
-	
-	public void addNEqTerm(Variable var1, Variable var2) {
-		NEqTerm term = new NEqTerm(var1, var2);
-		
-		int length = pureTerms.length + 1;
-		PureTerm[] newPureTerms = new PureTerm[length];
-		
-		for (int i = 0; i < length - 1; i++) {
-			newPureTerms[i] = pureTerms[i];
-		}
-		
-		newPureTerms[length - 1] = term;
-		pureTerms = newPureTerms;
-	}
-
 	@Override
 	public String toString() {
 		if (pureTerms.length == 0)

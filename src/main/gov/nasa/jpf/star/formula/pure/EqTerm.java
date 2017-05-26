@@ -18,6 +18,14 @@ public class EqTerm extends PureTerm {
 		this.var2 = var2;
 	}
 	
+	public Variable getVar1() {
+		return var1;
+	}
+	
+	public Variable getVar2() {
+		return var2;
+	}
+	
 	@Override
 	public PureTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {

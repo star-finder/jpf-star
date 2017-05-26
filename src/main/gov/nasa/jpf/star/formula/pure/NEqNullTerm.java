@@ -15,6 +15,10 @@ public class NEqNullTerm extends PureTerm {
 		this.var = var;
 	}
 	
+	public Variable getVar() {
+		return var;
+	}
+	
 	@Override
 	public PureTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {

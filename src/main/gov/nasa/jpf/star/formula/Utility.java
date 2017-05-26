@@ -1,5 +1,7 @@
 package gov.nasa.jpf.star.formula;
 
+import java.util.List;
+
 public class Utility {
 	
 	private static int count = 1;
@@ -14,6 +16,18 @@ public class Utility {
 		}
 		
 		return -1;
+	}
+	
+	public static boolean contains(List<Variable> vars, Variable var) {
+		int length = vars.size();
+		
+		for (int i = 0; i < length; i++) {
+			if (vars.get(i).getName().equals(var.getName()) &&
+					vars.get(i).getType().equals(var.getType()))
+				return true;
+		}
+		
+		return false;
 	}
 	
 	// may have problem, but may be it is enough with Java name convention
