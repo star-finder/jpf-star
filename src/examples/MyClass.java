@@ -5,11 +5,24 @@ public class MyClass {
 		if (x == null) {
 			return null;
 		} else {
-			Node y = x.next;
-			if (y == null)
-				return y;
+			x = x.next;
+			if (x == null)
+				return x;
 			else
-				return y.next;
+				return x.next;
+		}
+	}
+	
+	public Node myMethod1(Node x, Node y) {
+		if (x != y) {
+			return null;
+		} else {
+			Node z = y.next;
+			if (z == null) {
+				return null;
+			} else {
+				return x;
+			}
 		}
 	}
 
@@ -17,7 +30,8 @@ public class MyClass {
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
 		Node x = new Node();
-		mc.myMethod(x);
+		Node y = new Node();
+		mc.myMethod1(x, y);
 	}
 
 }

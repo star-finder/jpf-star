@@ -25,7 +25,7 @@ public class MyClassTest extends TestJPF {
         InductivePred[] ips = parser.preds().ips;
         InductivePredMap.put(ips);
         
-        String prec = "pred myMethod(x) == sll(x)";
+        String prec = "pred myMethod1(x) == sll(x)";
         
         in = new ANTLRInputStream(prec);
         lexer = new InductivePredLexer(in);
@@ -44,6 +44,19 @@ public class MyClassTest extends TestJPF {
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod(sym)",
+				"+symbolic.lazy=true")) {
+			MyClass.main(null);
+		}
+	}
+	
+	@Test
+	public void testMain1() {
+		if (verifyNoPropertyViolation(
+//				"+listener=.symbc.SymbolicListener",
+				"+listener=.star.StarListener",
+				"+classpath=build/examples", 
+				"+sourcepath=src/examples",
+				"+symbolic.method = MyClass.myMethod1(sym#sym)",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}
