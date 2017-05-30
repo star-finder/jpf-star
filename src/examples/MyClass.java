@@ -1,11 +1,15 @@
 
 public class MyClass {
 
-	public Node myMethod(Node x, Node y) {
-		if (x != y)
+	public Node myMethod(Node x) {
+		if (x == null) {
 			return null;
-		else {
-			return y.next;
+		} else {
+			Node y = x.next;
+			if (y == null)
+				return y;
+			else
+				return y.next;
 		}
 	}
 
@@ -13,7 +17,7 @@ public class MyClass {
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
 		Node x = new Node();
-		mc.myMethod(x, x);
+		mc.myMethod(x);
 	}
 
 }

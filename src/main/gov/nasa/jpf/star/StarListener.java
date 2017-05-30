@@ -23,7 +23,6 @@ public class StarListener extends SymbolicListener {
 	@Override
 	public void instructionExecuted(VM vm, ThreadInfo currentThread, Instruction nextInstruction,
 			Instruction executedInstruction) {
-
 		if (!vm.getSystemState().isIgnored()) {
 			Instruction insn = executedInstruction;
 			Config conf = vm.getConfig();

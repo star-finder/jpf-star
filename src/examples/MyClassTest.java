@@ -39,13 +39,12 @@ public class MyClassTest extends TestJPF {
 	@Test
 	public void testMain() {
 		if (verifyNoPropertyViolation(
-//				"+listener=.symbc.heap.HeapSymbolicListener",
+//				"+listener=.symbc.SymbolicListener",
 				"+listener=.star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod(sym#sym)",
-				"+symbolic.lazy=true",
-				"+report.console.property_violation=error,trace")) {
+				"+symbolic.method = MyClass.myMethod(sym)",
+				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}
 	}

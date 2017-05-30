@@ -22,6 +22,18 @@ public class PointToTerm extends HeapTerm {
 		this.vars = vars;
 	}
 	
+	public String getType() {
+		return type;
+	}
+	
+	public Variable getRoot() {
+		return vars[0];
+	}
+	
+	public Variable[] getVars() {
+		return vars;
+	}
+	
 	@Override
 	public HeapTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {

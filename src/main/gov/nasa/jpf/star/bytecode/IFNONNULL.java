@@ -9,7 +9,7 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class IFNONNULL extends gov.nasa.jpf.symbc.bytecode.IFNONNULL {
+public class IFNONNULL extends gov.nasa.jpf.jvm.bytecode.IFNONNULL {
 
 	public IFNONNULL(int targetPc) {
 		super(targetPc);

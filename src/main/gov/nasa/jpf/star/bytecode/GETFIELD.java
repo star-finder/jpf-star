@@ -8,8 +8,13 @@ import gov.nasa.jpf.star.formula.HeapFormula;
 import gov.nasa.jpf.star.formula.Utility;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
-import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.star.formula.heap.PointToTerm;
+import gov.nasa.jpf.symbc.bytecode.BytecodeUtils.VarType;
+import gov.nasa.jpf.symbc.numeric.IntegerExpression;
+import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
 import gov.nasa.jpf.vm.ChoiceGenerator;
+import gov.nasa.jpf.vm.ElementInfo;
+import gov.nasa.jpf.vm.FieldInfo;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
@@ -19,87 +24,75 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 	public GETFIELD(String fieldName, String clsName, String fieldDescriptor) {
 		super(fieldName, clsName, fieldDescriptor);
 	}
-	
+
 	@Override
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 		Object sym_v = sf.getOperandAttr();
-		
+
 		if (sym_v == null) {
 			return super.execute(ti);
 		} else {
-			ChoiceGenerator<?> cg;
-			ChoiceGenerator<?> prevCG;
-
-			// in the first round we check if we can unfold the formula
-			// if it is we create a choice generator with the number of choices
-			// is the length of unfolded formulas
-			// then in subsequent rounds we add each unfolded formula to the pc
-			if (!ti.isFirstStepInsn()) {
-				prevCG = ti.getVM().getSystemState().getChoiceGenerator();
-				if (prevCG instanceof StarChoiceGenerator) {
-					Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
-					HeapFormula hf = pc.getHeapFormula();
-					List<List<Variable>> alias = pc.getAlias();
+			ChoiceGenerator<?> cg = ti.getVM().getSystemState().getChoiceGenerator();
+			if (cg instanceof StarChoiceGenerator) {
+				Formula pc = ((StarChoiceGenerator) cg).getCurrentPCStar();
+				PointToTerm pt = findPointToTerm(pc, sym_v.toString());
+				
+				if (pt == null) {
+					ti.getVM().getSystemState().setIgnored(true);
+					return getNext(ti);
+				} else {
+					Variable[] vars = pt.getVars();
+					Variable newVar = null;
+	
+					for (int i = 1; i < vars.length; i++) {
+						Variable var = vars[i];
+						if (var.getName().startsWith(fname)) {
+							newVar = var;
+							break;
+						}
+					}
 					
-					HeapTerm[] hts = hf.getHeapTerms();
-					for (int i = 0; i < hts.length; i++) {
-						if (hts[i] instanceof InductiveTerm) {
-							InductiveTerm it = (InductiveTerm) hts[i];
-							if (canUnfold(it, alias, sym_v.toString())) {
-								Formula[] fs = it.unfold();
-								
-								cg = new StarChoiceGenerator(fs.length);
-								ti.getVM().getSystemState().setNextChoiceGenerator(cg);
-								return this;
+					int objRef = sf.peek();
+					ElementInfo eiFieldOwner = ti.getModifiableElementInfo(objRef);
+				    FieldInfo fieldInfo = getFieldInfo();
+				    
+				    IntegerExpression newAttr = new SymbolicInteger(newVar.getName());
+				    eiFieldOwner.setFieldAttr(fieldInfo, newAttr);
+				}
+			}
+
+			return super.execute(ti);
+		}
+	}
+
+	private PointToTerm findPointToTerm(Formula pc, String varName) {
+		HeapFormula hf = pc.getHeapFormula();
+		List<List<Variable>> alias = pc.getAlias();
+
+		for (HeapTerm term : hf.getHeapTerms()) {
+			if (term instanceof PointToTerm) {
+				PointToTerm ptTerm = (PointToTerm) term;
+				Variable root = ptTerm.getRoot();
+				String rootName = root.getName();
+
+				if (rootName.equals(varName)) {
+					return ptTerm;
+				} else {
+					for (List<Variable> vars : alias) {
+						if (Utility.contains(vars, root)) {
+							for (Variable var : vars) {
+								if (var.getName().equals(varName)) {
+									return ptTerm;
+								}
 							}
 						}
 					}
 				}
-				
-				return super.execute(ti);
-			} else {
-				cg = ti.getVM().getSystemState().getChoiceGenerator();
-				prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
-				
-				Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
-				HeapFormula hf = pc.getHeapFormula();
-				List<List<Variable>> alias = pc.getAlias();
-				
-				HeapTerm[] hts = hf.getHeapTerms();
-				for (int i = 0; i < hts.length; i++) {
-					if (hts[i] instanceof InductiveTerm) {
-						InductiveTerm it = (InductiveTerm) hts[i];
-						if (canUnfold(it, alias, sym_v.toString())) {
-							pc.unfold(it, (Integer) cg.getNextChoice());
-							break;
-						}
-					}
-				}
-				
-				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
-				
-				return super.execute(ti);
 			}
 		}
-	}
-	
-	private boolean canUnfold(InductiveTerm it, List<List<Variable>> alias, String varName) {
-		if (it.getRoot().getName().equals(varName))
-			return true;
-		else {
-			for (List<Variable> vars : alias) {
-				if (Utility.contains(vars, it.getRoot())) {
-					for (Variable var : vars) {
-						if (var.getName().equals(varName)) {
-							return true;
-						}
-					}
-				}
-			}
-			
-			return false;
-		}
+
+		return null;
 	}
 
 }
