@@ -62,7 +62,7 @@ public class UtilityTest {
 		Variable[] vars = {new Variable("myVar", ""), new Variable("myVar1", "")};
 		Variable var = new Variable("myVar", "");
 		
-		assertTrue(Utility.contains(vars, var) == 0);
+		assertTrue(Utility.find(vars, var) == 0);
 	}
 	
 	@Test
@@ -70,7 +70,7 @@ public class UtilityTest {
 		Variable[] vars = {new Variable("myVar", ""), new Variable("myVar1", "")};
 		Variable var = new Variable("myVar1", "");
 		
-		assertTrue(Utility.contains(vars, var) == 1);
+		assertTrue(Utility.find(vars, var) == 1);
 	}
 	
 	@Test
@@ -78,7 +78,7 @@ public class UtilityTest {
 		Variable[] vars = {new Variable("myVar", ""), new Variable("myVar1", "")};
 		Variable var = new Variable("myVar2", "");
 		
-		assertTrue(Utility.contains(vars, var) == -1);
+		assertTrue(Utility.find(vars, var) == -1);
 	}
 
 }

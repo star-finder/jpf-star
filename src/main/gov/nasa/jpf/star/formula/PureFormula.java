@@ -42,14 +42,14 @@ public class PureFormula {
 		boolean done = false;
 
 		for (List<Variable> vars : alias) {
-			if (Utility.contains(vars, var1) && Utility.contains(vars, var2)) {
+			if (vars.contains(var1) && vars.contains(var2)) {
 				done = true;
 				break;
-			} else if (Utility.contains(vars, var1) && !Utility.contains(vars, var2)) {
+			} else if (vars.contains(var1) && !vars.contains(var2)) {
 				done = true;
 				vars.add(var2);
 				break;
-			} else if (!Utility.contains(vars, var1) && Utility.contains(vars, var2)) {
+			} else if (!vars.contains(var1) && vars.contains(var2)) {
 				done = true;
 				vars.add(var1);
 				break;

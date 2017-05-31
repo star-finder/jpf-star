@@ -24,7 +24,7 @@ public class EqNullTerm extends PureTerm {
 			Map<String,String> existVarSubMap) {
 		Variable oldVar = var;
 		
-		int index = Utility.contains(fromVars, oldVar);
+		int index = Utility.find(fromVars, oldVar);
 		
 		Variable newVar = null;
 		

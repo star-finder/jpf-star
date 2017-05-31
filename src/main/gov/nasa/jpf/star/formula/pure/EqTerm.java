@@ -32,8 +32,8 @@ public class EqTerm extends PureTerm {
 		Variable oldVar1 = var1;
 		Variable oldVar2 = var2;
 		
-		int index1 = Utility.contains(fromVars, oldVar1);
-		int index2 = Utility.contains(fromVars, oldVar2);
+		int index1 = Utility.find(fromVars, oldVar1);
+		int index2 = Utility.find(fromVars, oldVar2);
 		
 		Variable newVar1 = null;
 		Variable newVar2 = null;

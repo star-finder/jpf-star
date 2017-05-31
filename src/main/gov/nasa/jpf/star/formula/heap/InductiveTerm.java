@@ -80,7 +80,7 @@ public class InductiveTerm extends HeapTerm {
 		for (int i = 0; i < length; i++) {
 			Variable oldVar = vars[i];
 			
-			int index = Utility.contains(fromVars, oldVar);
+			int index = Utility.find(fromVars, oldVar);
 			
 			if (index != -1) {
 				newVars[i] = new Variable(toVars[index]);

@@ -143,7 +143,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					return true;
 				} else {
 					for (List<Variable> vars : alias) {
-						if (Utility.contains(vars, root)) {
+						if (vars.contains(root)) {
 							for (Variable var : vars) {
 								if (var.getName().equals(varName)) {
 									return true;
@@ -163,7 +163,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			return true;
 		else {
 			for (List<Variable> vars : alias) {
-				if (Utility.contains(vars, it.getRoot())) {
+				if (vars.contains(it.getRoot())) {
 					for (Variable var : vars) {
 						if (var.getName().equals(varName)) {
 							return true;

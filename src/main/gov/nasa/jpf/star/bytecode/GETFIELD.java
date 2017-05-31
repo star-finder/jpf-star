@@ -72,7 +72,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 					return ptTerm;
 				} else {
 					for (List<Variable> vars : alias) {
-						if (Utility.contains(vars, root)) {
+						if (vars.contains(root)) {
 							for (Variable var : vars) {
 								if (var.getName().equals(varName)) {
 									return ptTerm;

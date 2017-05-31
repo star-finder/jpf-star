@@ -36,5 +36,22 @@ public class Variable {
 	public String toString() {
 		return name;
 	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (this == other)
+			return true;
+		else if (!(other instanceof Variable)) {
+			return false;
+		} else {
+			Variable otherVar = (Variable) other;
+			if (type.equals("") || otherVar.getType().equals("")) {
+				return name.equals(otherVar.getName());
+			} else {
+				return name.equals(otherVar.getName()) &&
+						type.equals(otherVar.getType());
+			}
+		}
+	}
 
 }

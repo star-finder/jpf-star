@@ -6,29 +6,29 @@ public class Utility {
 	
 	private static int count = 1;
 	
-	public static int contains(Variable[] vars, Variable var) {
+	public static int find(Variable[] vars, Variable var) {
 		int length = vars.length;
 		
 		for (int i = 0; i < length; i++) {
-			if (vars[i].getName().equals(var.getName()) &&
-					vars[i].getType().equals(var.getType()))
+			if (vars[i].equals(var)) {
 				return i;
+			}
 		}
 		
 		return -1;
 	}
-	
-	public static boolean contains(List<Variable> vars, Variable var) {
-		int length = vars.size();
-		
-		for (int i = 0; i < length; i++) {
-			if (vars.get(i).getName().equals(var.getName()) &&
-					vars.get(i).getType().equals(var.getType()))
-				return true;
-		}
-		
-		return false;
-	}
+//	
+//	public static boolean contains(List<Variable> vars, Variable var) {
+//		int length = vars.size();
+//		
+//		for (int i = 0; i < length; i++) {
+//			if (vars.get(i).getName().equals(var.getName()) &&
+//					vars.get(i).getType().equals(var.getType()))
+//				return true;
+//		}
+//		
+//		return false;
+//	}
 	
 	// may have problem, but may be it is enough with Java name convention
 	public static Variable freshVar(Variable oldVar) {
