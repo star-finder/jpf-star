@@ -1,17 +1,12 @@
 package gov.nasa.jpf.star.bytecode;
 
-import java.util.Arrays;
 import java.util.Vector;
 
 import gov.nasa.jpf.Config;
-import gov.nasa.jpf.star.PreconditionMap;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapFormula;
-import gov.nasa.jpf.star.formula.PureFormula;
-import gov.nasa.jpf.star.formula.Variable;
-import gov.nasa.jpf.star.formula.heap.HeapTerm;
-import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.star.precondition.Precondition;
+import gov.nasa.jpf.star.precondition.PreconditionMap;
 import gov.nasa.jpf.symbc.bytecode.BytecodeUtils;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
@@ -57,7 +52,9 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 			Formula pc = null;
 			
 			if (prevCG == null) {
-				pc = PreconditionMap.find(mi.getName());
+				String methodName = mi.getName();
+				Precondition pre = PreconditionMap.find(methodName);
+				pc = pre.getFormula();
 			} else {
 				pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
 			}

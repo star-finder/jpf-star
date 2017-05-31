@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.inductive;
+package gov.nasa.jpf.star.predicate;
 
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Variable;

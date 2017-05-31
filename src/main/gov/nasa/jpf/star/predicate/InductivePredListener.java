@@ -1,6 +1,6 @@
 // Generated from InductivePred.g4 by ANTLR 4.7
 
-package gov.nasa.jpf.star.inductive;
+package gov.nasa.jpf.star.predicate;
 
 import gov.nasa.jpf.star.formula.*;
 import gov.nasa.jpf.star.formula.heap.*;

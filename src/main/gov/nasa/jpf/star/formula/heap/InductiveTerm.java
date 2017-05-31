@@ -6,8 +6,8 @@ import java.util.Map;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Utility;
 import gov.nasa.jpf.star.formula.Variable;
-import gov.nasa.jpf.star.inductive.InductivePred;
-import gov.nasa.jpf.star.inductive.InductivePredMap;
+import gov.nasa.jpf.star.predicate.InductivePred;
+import gov.nasa.jpf.star.predicate.InductivePredMap;
 
 // x::sll(), ... term
 

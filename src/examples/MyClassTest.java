@@ -3,18 +3,20 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.PreconditionMap;
-import gov.nasa.jpf.star.inductive.InductivePred;
-import gov.nasa.jpf.star.inductive.InductivePredLexer;
-import gov.nasa.jpf.star.inductive.InductivePredMap;
-import gov.nasa.jpf.star.inductive.InductivePredParser;
+import gov.nasa.jpf.star.precondition.Precondition;
+import gov.nasa.jpf.star.precondition.PreconditionLexer;
+import gov.nasa.jpf.star.precondition.PreconditionMap;
+import gov.nasa.jpf.star.precondition.PreconditionParser;
+import gov.nasa.jpf.star.predicate.InductivePred;
+import gov.nasa.jpf.star.predicate.InductivePredLexer;
+import gov.nasa.jpf.star.predicate.InductivePredMap;
+import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
 public class MyClassTest extends TestJPF {
 	
-	@Before
-	public void init() {
+	private void initPredicate() {
 		String pred = "pred sll(root) == root = null || root->Node(next) * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
@@ -24,16 +26,24 @@ public class MyClassTest extends TestJPF {
         
         InductivePred[] ips = parser.preds().ips;
         InductivePredMap.put(ips);
+	}
+	
+	private void initPrecondition() {
+		String pre = "pre myMethod == sll(x)";
+		
+		ANTLRInputStream in = new ANTLRInputStream(pre);
+		PreconditionLexer lexer = new PreconditionLexer(in);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        PreconditionParser parser = new PreconditionParser(tokens);
         
-        String prec = "pred myMethod1(x) == sll(x)";
-        
-        in = new ANTLRInputStream(prec);
-        lexer = new InductivePredLexer(in);
-        tokens = new CommonTokenStream(lexer);
-        parser = new InductivePredParser(tokens);
-        
-        ips = parser.preds().ips;
-        PreconditionMap.put(ips);
+        Precondition[] ps = parser.pres().ps;
+        PreconditionMap.put(ps);
+	}
+	
+	@Before
+	public void init() {
+		initPredicate();
+		initPrecondition();
 	}
 	
 	@Test

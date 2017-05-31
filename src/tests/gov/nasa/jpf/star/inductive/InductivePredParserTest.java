@@ -6,6 +6,10 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Test;
 
+import gov.nasa.jpf.star.predicate.InductivePred;
+import gov.nasa.jpf.star.predicate.InductivePredLexer;
+import gov.nasa.jpf.star.predicate.InductivePredParser;
+
 @SuppressWarnings("deprecation")
 public class InductivePredParserTest {
 

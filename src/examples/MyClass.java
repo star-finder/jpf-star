@@ -31,7 +31,8 @@ public class MyClass {
 		MyClass mc = new MyClass();
 		Node x = new Node();
 		Node y = new Node();
-		mc.myMethod1(x, y);
+		mc.myMethod(x);
+//		mc.myMethod1(x, y);
 	}
 
 }

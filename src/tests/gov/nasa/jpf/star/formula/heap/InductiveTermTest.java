@@ -13,10 +13,10 @@ import org.junit.Test;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Utility;
 import gov.nasa.jpf.star.formula.Variable;
-import gov.nasa.jpf.star.inductive.InductivePred;
-import gov.nasa.jpf.star.inductive.InductivePredLexer;
-import gov.nasa.jpf.star.inductive.InductivePredMap;
-import gov.nasa.jpf.star.inductive.InductivePredParser;
+import gov.nasa.jpf.star.predicate.InductivePred;
+import gov.nasa.jpf.star.predicate.InductivePredLexer;
+import gov.nasa.jpf.star.predicate.InductivePredMap;
+import gov.nasa.jpf.star.predicate.InductivePredParser;
 
 public class InductiveTermTest {
 	

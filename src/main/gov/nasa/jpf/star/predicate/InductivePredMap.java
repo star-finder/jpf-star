@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.inductive;
+package gov.nasa.jpf.star.predicate;
 
 import java.util.HashMap;
 import java.util.Map;
