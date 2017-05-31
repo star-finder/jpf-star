@@ -42,20 +42,12 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 					ti.getVM().getSystemState().setIgnored(true);
 					return getNext(ti);
 				} else {
-					Variable[] vars = pt.getVars();
-					Variable newVar = null;
-	
-					for (int i = 1; i < vars.length; i++) {
-						Variable var = vars[i];
-						if (var.getName().startsWith(fname)) {
-							newVar = var;
-							break;
-						}
-					}
-					
 					int objRef = sf.peek();
 					ElementInfo eiFieldOwner = ti.getModifiableElementInfo(objRef);
 				    FieldInfo fieldInfo = getFieldInfo();
+				    
+				    Variable[] vars = pt.getVars();
+					Variable newVar = vars[fieldInfo.getFieldIndex() + 1];
 				    
 				    IntegerExpression newAttr = new SymbolicInteger(newVar.getName());
 				    eiFieldOwner.setFieldAttr(fieldInfo, newAttr);

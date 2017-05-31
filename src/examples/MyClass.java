@@ -38,6 +38,5 @@ public class MyClass {
 }
 
 class Node {
-	int value;
 	Node next;
 }
