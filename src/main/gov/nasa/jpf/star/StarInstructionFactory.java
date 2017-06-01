@@ -8,6 +8,7 @@ import gov.nasa.jpf.star.bytecode.IFNONNULL;
 import gov.nasa.jpf.star.bytecode.IFNULL;
 import gov.nasa.jpf.star.bytecode.IF_ACMPEQ;
 import gov.nasa.jpf.star.bytecode.IF_ACMPNE;
+import gov.nasa.jpf.star.bytecode.IF_ICMPEQ;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
 import gov.nasa.jpf.vm.Instruction;
 
@@ -48,6 +49,11 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction if_acmpne(int targetPc) {
 		return new IF_ACMPNE(targetPc);
+	}
+	
+	@Override
+	public Instruction if_icmpeq(int targetPc) {
+		return new IF_ICMPEQ(targetPc);
 	}
 
 	@Override

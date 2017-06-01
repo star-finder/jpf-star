@@ -5,11 +5,14 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.star.formula.pure.ComparisonTerm;
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.EqTerm;
 import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
+import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.symbc.numeric.IntegerExpression;
 
 // a formula includes heap part and pure part
 
@@ -107,6 +110,11 @@ public class Formula {
 	
 	public void addNEqTerm(Variable var1, Variable var2) {
 		PureTerm term = new NEqTerm(var1, var2);
+		pureFormula.addTerm(term);
+	}
+	
+	public void addComparisonTerm(Comparator comp, IntegerExpression exp1, IntegerExpression exp2) {
+		PureTerm term = new ComparisonTerm(comp, exp1, exp2);
 		pureFormula.addTerm(term);
 	}
 	
