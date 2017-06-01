@@ -1,15 +1,31 @@
 package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.bytecode.ILOAD;
+import gov.nasa.jpf.star.bytecode.IMUL;
 import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.ASTORE;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
+import gov.nasa.jpf.star.bytecode.IADD;
+import gov.nasa.jpf.star.bytecode.IDIV;
+import gov.nasa.jpf.star.bytecode.IFEQ;
+import gov.nasa.jpf.star.bytecode.IFGE;
+import gov.nasa.jpf.star.bytecode.IFGT;
+import gov.nasa.jpf.star.bytecode.IFLE;
+import gov.nasa.jpf.star.bytecode.IFLT;
+import gov.nasa.jpf.star.bytecode.IFNE;
 import gov.nasa.jpf.star.bytecode.IFNONNULL;
 import gov.nasa.jpf.star.bytecode.IFNULL;
 import gov.nasa.jpf.star.bytecode.IF_ACMPEQ;
 import gov.nasa.jpf.star.bytecode.IF_ACMPNE;
 import gov.nasa.jpf.star.bytecode.IF_ICMPEQ;
+import gov.nasa.jpf.star.bytecode.IF_ICMPGE;
+import gov.nasa.jpf.star.bytecode.IF_ICMPGT;
+import gov.nasa.jpf.star.bytecode.IF_ICMPLE;
+import gov.nasa.jpf.star.bytecode.IF_ICMPLT;
+import gov.nasa.jpf.star.bytecode.IF_ICMPNE;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
+import gov.nasa.jpf.star.bytecode.ISUB;
 import gov.nasa.jpf.vm.Instruction;
 
 // to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
@@ -25,7 +41,7 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction aload(int localVarIndex) {
 		return new ALOAD(localVarIndex);
 	}
-	
+
 	@Override
 	public Instruction astore(int localVarIndex) {
 		return new ASTORE(localVarIndex);
@@ -50,10 +66,90 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction if_acmpne(int targetPc) {
 		return new IF_ACMPNE(targetPc);
 	}
-	
+
 	@Override
 	public Instruction if_icmpeq(int targetPc) {
 		return new IF_ICMPEQ(targetPc);
+	}
+
+	@Override
+	public Instruction if_icmpne(int targetPc) {
+		return new IF_ICMPNE(targetPc);
+	}
+
+	@Override
+	public Instruction if_icmpge(int targetPc) {
+		return new IF_ICMPGE(targetPc);
+	}
+
+	@Override
+	public Instruction if_icmplt(int targetPc) {
+		return new IF_ICMPLT(targetPc);
+	}
+
+	@Override
+	public Instruction if_icmpgt(int targetPc) {
+		return new IF_ICMPGT(targetPc);
+	}
+
+	@Override
+	public Instruction if_icmple(int targetPc) {
+		return new IF_ICMPLE(targetPc);
+	}
+
+	@Override
+	public Instruction ifeq(int targetPc) {
+		return new IFEQ(targetPc);
+	}
+
+	@Override
+	public Instruction ifne(int targetPc) {
+		return new IFNE(targetPc);
+	}
+
+	@Override
+	public Instruction ifgt(int targetPc) {
+		return new IFGT(targetPc);
+	}
+
+	@Override
+	public Instruction ifge(int targetPc) {
+		return new IFGE(targetPc);
+	}
+
+	@Override
+	public Instruction iflt(int targetPc) {
+		return new IFLT(targetPc);
+	}
+
+	@Override
+	public Instruction ifle(int targetPc) {
+		return new IFLE(targetPc);
+	}
+
+	@Override
+	public Instruction iload(int localVarIndex) {
+		return new ILOAD(localVarIndex);
+	}
+
+	@Override
+	public Instruction iadd() {
+		return new IADD();
+	}
+	
+	@Override
+	public Instruction isub() {
+		return new ISUB();
+	}
+	
+	@Override
+	public Instruction imul() {
+		return new IMUL();
+	}
+	
+	@Override
+	public Instruction idiv() {
+		return new IDIV();
 	}
 
 	@Override

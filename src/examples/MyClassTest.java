@@ -53,7 +53,7 @@ public class MyClassTest extends TestJPF {
 				"+listener=.star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod(sym)",
+				"+symbolic.method = MyClass.myMethod2(sym)",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}
@@ -67,6 +67,19 @@ public class MyClassTest extends TestJPF {
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod1(sym#sym)",
+				"+symbolic.lazy=true")) {
+			MyClass.main(null);
+		}
+	}
+	
+	@Test
+	public void testMain2() {
+		if (verifyNoPropertyViolation(
+//				"+listener=.symbc.SymbolicListener",
+				"+listener=.star.StarListener",
+				"+classpath=build/examples", 
+				"+sourcepath=src/examples",
+				"+symbolic.method = MyClass.myMethod2(sym)",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}

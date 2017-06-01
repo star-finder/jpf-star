@@ -54,7 +54,10 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 			if (prevCG == null) {
 				String methodName = mi.getName();
 				Precondition pre = PreconditionMap.find(methodName);
-				pc = pre.getFormula();
+				if (pre != null)
+					pc = pre.getFormula();
+				else
+					pc = new Formula();
 			} else {
 				pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
 			}

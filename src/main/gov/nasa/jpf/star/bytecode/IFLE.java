@@ -1,15 +1,15 @@
 package gov.nasa.jpf.star.bytecode;
 
-import gov.nasa.jpf.star.bytecode.IFInstrSymbHelper;
-import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.star.formula.expression.IntegerExpression;
+import gov.nasa.jpf.star.formula.expression.IntegerLiteral;
+import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class IF_ICMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ICMPEQ {
+public class IFLE extends gov.nasa.jpf.jvm.bytecode.IFLE {
 
-	public IF_ICMPEQ(int targetPc) {
+	public IFLE(int targetPc) {
 		super(targetPc);
 	}
 
@@ -17,14 +17,14 @@ public class IF_ICMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ICMPEQ {
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr(1);
-		IntegerExpression sym_v2 = (IntegerExpression) sf.getOperandAttr(0);
+		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr();
 
-		if (sym_v1 == null && sym_v2 == null) { // both conditions are concrete
+		if (sym_v1 == null) { // both conditions are concrete
 			return super.execute(ti);
 		} else { // at least one condition is symbolic
+			IntegerExpression sym_v2 = new IntegerLiteral(0);
 			Instruction nxtInstr = IFInstrSymbHelper.getNextInstructionAndSetPCChoice(ti, this, sym_v1, sym_v2,
-					Comparator.EQ, Comparator.NE);
+					Comparator.LE, Comparator.GT);
 			if (nxtInstr == getTarget())
 				conditionValue = true;
 			else

@@ -12,7 +12,7 @@ import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.symbc.numeric.IntegerExpression;
+import gov.nasa.jpf.star.formula.expression.IntegerExpression;
 
 // a formula includes heap part and pure part
 
