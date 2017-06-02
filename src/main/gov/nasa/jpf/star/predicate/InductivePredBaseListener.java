@@ -5,6 +5,9 @@ package gov.nasa.jpf.star.predicate;
 import gov.nasa.jpf.star.formula.*;
 import gov.nasa.jpf.star.formula.heap.*;
 import gov.nasa.jpf.star.formula.pure.*;
+import gov.nasa.jpf.star.formula.expression.*;
+import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.symbc.numeric.Operator;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -221,6 +224,54 @@ public class InductivePredBaseListener implements InductivePredListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNeTerm(InductivePredParser.NeTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComparisonTerm(InductivePredParser.ComparisonTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComparisonTerm(InductivePredParser.ComparisonTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComp(InductivePredParser.CompContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComp(InductivePredParser.CompContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExp(InductivePredParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExp(InductivePredParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTer(InductivePredParser.TerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTer(InductivePredParser.TerContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

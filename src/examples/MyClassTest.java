@@ -17,7 +17,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyClassTest extends TestJPF {
 	
 	private void initPredicate() {
-		String pred = "pred sll(root) == root = null || root->Node(next) * sll(next)";
+		String pred = "pred sll(root,len) == root = null & len = 0 || root->Node(next) * sll(next,len1) & len = len1 + 1";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -29,7 +29,8 @@ public class MyClassTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre myMethod == sll(x)";
+		String pre = "pre myMethod == sll(x,n)";
+//		String pre = "pre myMethod2 == sll(x) & i < 100";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -53,7 +54,7 @@ public class MyClassTest extends TestJPF {
 				"+listener=.star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod2(sym)",
+				"+symbolic.method = MyClass.myMethod(sym)",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}

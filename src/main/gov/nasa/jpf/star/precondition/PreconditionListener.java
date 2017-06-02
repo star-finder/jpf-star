@@ -5,6 +5,9 @@ package gov.nasa.jpf.star.precondition;
 import gov.nasa.jpf.star.formula.*;
 import gov.nasa.jpf.star.formula.heap.*;
 import gov.nasa.jpf.star.formula.pure.*;
+import gov.nasa.jpf.star.formula.expression.*;
+import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.symbc.numeric.Operator;
 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -173,4 +176,44 @@ public interface PreconditionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNeTerm(PreconditionParser.NeTermContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PreconditionParser#comparisonTerm}.
+	 * @param ctx the parse tree
+	 */
+	void enterComparisonTerm(PreconditionParser.ComparisonTermContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PreconditionParser#comparisonTerm}.
+	 * @param ctx the parse tree
+	 */
+	void exitComparisonTerm(PreconditionParser.ComparisonTermContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PreconditionParser#comp}.
+	 * @param ctx the parse tree
+	 */
+	void enterComp(PreconditionParser.CompContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PreconditionParser#comp}.
+	 * @param ctx the parse tree
+	 */
+	void exitComp(PreconditionParser.CompContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PreconditionParser#exp}.
+	 * @param ctx the parse tree
+	 */
+	void enterExp(PreconditionParser.ExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PreconditionParser#exp}.
+	 * @param ctx the parse tree
+	 */
+	void exitExp(PreconditionParser.ExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PreconditionParser#ter}.
+	 * @param ctx the parse tree
+	 */
+	void enterTer(PreconditionParser.TerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PreconditionParser#ter}.
+	 * @param ctx the parse tree
+	 */
+	void exitTer(PreconditionParser.TerContext ctx);
 }

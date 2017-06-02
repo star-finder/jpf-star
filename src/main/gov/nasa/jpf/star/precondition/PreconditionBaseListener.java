@@ -5,6 +5,9 @@ package gov.nasa.jpf.star.precondition;
 import gov.nasa.jpf.star.formula.*;
 import gov.nasa.jpf.star.formula.heap.*;
 import gov.nasa.jpf.star.formula.pure.*;
+import gov.nasa.jpf.star.formula.expression.*;
+import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.symbc.numeric.Operator;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -209,6 +212,54 @@ public class PreconditionBaseListener implements PreconditionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNeTerm(PreconditionParser.NeTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComparisonTerm(PreconditionParser.ComparisonTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComparisonTerm(PreconditionParser.ComparisonTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComp(PreconditionParser.CompContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComp(PreconditionParser.CompContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExp(PreconditionParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExp(PreconditionParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTer(PreconditionParser.TerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTer(PreconditionParser.TerContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

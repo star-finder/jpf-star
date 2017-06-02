@@ -6,6 +6,9 @@ package gov.nasa.jpf.star.precondition;
 import gov.nasa.jpf.star.formula.*;
 import gov.nasa.jpf.star.formula.heap.*;
 import gov.nasa.jpf.star.formula.pure.*;
+import gov.nasa.jpf.star.formula.expression.*;
+import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.symbc.numeric.Operator;
 }
 
 // parser
@@ -191,6 +194,10 @@ pureTerm returns [PureTerm term]:
 	{
 		$term = $neTerm.term;
 	}
+	| comparisonTerm
+	{
+		$term = $comparisonTerm.term;
+	}
 ;
 
 eqNullTerm returns [PureTerm term] : ID EQ NULL
@@ -227,12 +234,103 @@ neTerm returns [PureTerm term] : var1=ID NE var2=ID
 	}
 ;
 
+comparisonTerm returns [PureTerm term] : exp1=exp comp exp2=exp
+	{
+		$term = new ComparisonTerm($comp.c, $exp1.e, $exp2.e);
+	}
+;
+
+comp returns [Comparator c] :
+	EQ
+	{
+		$c = Comparator.EQ;
+	}
+	| NE
+	{
+		$c = Comparator.NE;
+	}
+	| GE
+	{
+		$c = Comparator.GE;
+	}
+	| GT
+	{
+		$c = Comparator.GT;
+	}
+	| LE
+	{
+		$c = Comparator.LE;
+	}
+	| LT
+	{
+		$c = Comparator.LT;
+	}
+;
+
+exp returns [IntegerExpression e] :
+	exp1=exp PLUS ter
+	{
+		IntegerExpression exp1 = $exp1.e;
+		IntegerExpression exp2 = $ter.e;
+		
+		$e = new IntegerBinaryExpression(Operator.PLUS, exp1, exp2);
+	}
+	| exp1=exp MINUS ter
+	{
+		IntegerExpression exp1 = $exp1.e;
+		IntegerExpression exp2 = $ter.e;
+		
+		$e = new IntegerBinaryExpression(Operator.MINUS, exp1, exp2);
+	}
+	| ter
+	{
+		$e = $ter.e;
+	}
+;
+	
+ter returns [IntegerExpression e] :
+	var1=ID MUL var2=ID
+	{
+		IntegerExpression exp1 = new IntegerVariable(new Variable($var1.text, ""));
+		IntegerExpression exp2 = new IntegerVariable(new Variable($var2.text, ""));
+		
+		$e = new IntegerBinaryExpression(Operator.MUL, exp1, exp2);
+	}
+	| var1=ID DIV var2=ID
+	{
+		IntegerExpression exp1 = new IntegerVariable(new Variable($var1.text, ""));
+		IntegerExpression exp2 = new IntegerVariable(new Variable($var2.text, ""));
+	
+		$e = new IntegerBinaryExpression(Operator.DIV, exp1, exp2);
+	}
+	| ID
+	{
+		$e = new IntegerVariable(new Variable($ID.text, ""));
+	}
+	| INT
+	{
+		$e = new IntegerLiteral(Integer.parseInt($INT.text));
+	}
+	| LB exp RB
+	{
+		$e = $exp.e;
+	}
+;
+
 // lexer
-PRE    : 'pre' ;
+PRE    	: 'pre' ;
 NULL    : 'null' ;
 EQEQ    : '==' ;
 EQ      : '=' ;
 NE      : '!=' ;
+GE		: '>=' ;
+GT		: '>' ;
+LE		: '<=' ;
+LT		: '<' ;
+PLUS	: '+' ;
+MINUS	: '-' ;
+MUL		: '**' ;
+DIV		: '/' ;
 LB      : '(' ;
 RB      : ')' ;
 CM      : ',' ;
@@ -242,6 +340,7 @@ AND     : '&' ;
 PT      : '->' ;
 STAR    : '*' ;
 ID      : [a-zA-Z_][a-zA-Z0-9_]* ;
+INT		: '0'|[1-9][0-9]* ;
 WS      : [ \t\r\n]+ -> skip ;
 
 // tests

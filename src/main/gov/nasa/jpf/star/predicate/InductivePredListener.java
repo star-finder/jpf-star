@@ -5,6 +5,9 @@ package gov.nasa.jpf.star.predicate;
 import gov.nasa.jpf.star.formula.*;
 import gov.nasa.jpf.star.formula.heap.*;
 import gov.nasa.jpf.star.formula.pure.*;
+import gov.nasa.jpf.star.formula.expression.*;
+import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.symbc.numeric.Operator;
 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -183,4 +186,44 @@ public interface InductivePredListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNeTerm(InductivePredParser.NeTermContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link InductivePredParser#comparisonTerm}.
+	 * @param ctx the parse tree
+	 */
+	void enterComparisonTerm(InductivePredParser.ComparisonTermContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link InductivePredParser#comparisonTerm}.
+	 * @param ctx the parse tree
+	 */
+	void exitComparisonTerm(InductivePredParser.ComparisonTermContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link InductivePredParser#comp}.
+	 * @param ctx the parse tree
+	 */
+	void enterComp(InductivePredParser.CompContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link InductivePredParser#comp}.
+	 * @param ctx the parse tree
+	 */
+	void exitComp(InductivePredParser.CompContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link InductivePredParser#exp}.
+	 * @param ctx the parse tree
+	 */
+	void enterExp(InductivePredParser.ExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link InductivePredParser#exp}.
+	 * @param ctx the parse tree
+	 */
+	void exitExp(InductivePredParser.ExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link InductivePredParser#ter}.
+	 * @param ctx the parse tree
+	 */
+	void enterTer(InductivePredParser.TerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link InductivePredParser#ter}.
+	 * @param ctx the parse tree
+	 */
+	void exitTer(InductivePredParser.TerContext ctx);
 }
