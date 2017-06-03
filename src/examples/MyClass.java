@@ -2,21 +2,15 @@
 public class MyClass {
 
 	public Node myMethod(Node x) {
-		while (x != null) {
+		if (x == null) {
+			return null;
+		} else {
 			x = x.next;
+			if (x == null)
+				return x;
+			else
+				return x.next;
 		}
-		
-		return x;
-		
-//		if (x == null) {
-//			return null;
-//		} else {
-//			x = x.next;
-//			if (x == null)
-//				return x;
-//			else
-//				return x.next;
-//		}
 	}
 	
 	public Node myMethod1(Node x, Node y) {

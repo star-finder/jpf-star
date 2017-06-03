@@ -3,7 +3,6 @@ package gov.nasa.jpf.star.bytecode;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Variable;
-import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
@@ -59,10 +58,7 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 					pc.addEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
 				}
 				
-				if (Solver.solve(pc, ti.getVM().getConfig()))
-					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
-				else
-					ti.getVM().getSystemState().setIgnored(true);
+				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				return getTarget();
 			} else {
 				if (sym_v1 != null) {
@@ -75,10 +71,7 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 					pc.addNEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
 				}
 
-				if (Solver.solve(pc, ti.getVM().getConfig()))
-					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
-				else
-					ti.getVM().getSystemState().setIgnored(true);
+				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				return getNext(ti);
 			}
 		}
