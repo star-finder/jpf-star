@@ -5,6 +5,7 @@ import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.expression.IntegerExpression;
 import gov.nasa.jpf.star.formula.expression.IntegerLiteral;
+import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.symbc.numeric.IntegerConstant;
 import gov.nasa.jpf.vm.ChoiceGenerator;
@@ -55,8 +56,10 @@ public class IFInstrSymbHelper {
 				pc.addComparisonTerm(trueComparator, new IntegerLiteral(v1), sym_v2);
 			}
 			
-			// change pc here
-			((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+			if (Solver.solve(pc, ti.getVM().getConfig()))
+				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+			else
+				ti.getVM().getSystemState().setIgnored(true);
 			return instr.getTarget();
 		} else {
 			if (sym_v1 != null) {
@@ -69,8 +72,10 @@ public class IFInstrSymbHelper {
 				pc.addComparisonTerm(falseComparator, new IntegerLiteral(v1), sym_v2);
 			}
 			
-			// change pc here
-			((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+			if (Solver.solve(pc, ti.getVM().getConfig()))
+				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+			else
+				ti.getVM().getSystemState().setIgnored(true);
 			return instr.getNext(ti);
 		}
 	}

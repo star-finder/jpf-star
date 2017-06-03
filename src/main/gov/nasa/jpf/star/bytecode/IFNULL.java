@@ -3,6 +3,7 @@ package gov.nasa.jpf.star.bytecode;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.numeric.IntegerExpression;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
@@ -48,11 +49,17 @@ public class IFNULL extends gov.nasa.jpf.jvm.bytecode.IFNULL {
 			
 			if (conditionValue) {
 				pc.addEqNullTerm(new Variable(sym_v.toString(), ""));
-				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				if (Solver.solve(pc, ti.getVM().getConfig()))
+					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				else
+					ti.getVM().getSystemState().setIgnored(true);
 				return getTarget();
 			} else {
 				pc.addNEqNullTerm(new Variable(sym_v.toString(), ""));
-				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				if (Solver.solve(pc, ti.getVM().getConfig()))
+					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				else
+					ti.getVM().getSystemState().setIgnored(true);
 				return getNext(ti);
 			}
 		}

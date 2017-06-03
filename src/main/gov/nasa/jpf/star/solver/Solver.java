@@ -3,7 +3,27 @@ package gov.nasa.jpf.star.solver;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.formula.HeapFormula;
+import gov.nasa.jpf.star.formula.PureFormula;
+
 public class Solver {
+	
+	private static int MAX_LENGTH = 10;
+	
+	public static boolean solve(Formula f, Config c) {
+		HeapFormula hf = f.getHeapFormula();
+		PureFormula pf = f.getPureFormula();
+		
+		int heapSize = hf.getHeapTerms().length;
+		int pureSize = pf.getPureTerms().length;
+		
+		if (heapSize + pureSize > MAX_LENGTH)
+			return false;
+		else
+			return true;
+	}
 	
 	public static boolean solve(String problem) {
 		boolean ret = false;
