@@ -23,12 +23,12 @@ public class MyClass {
 	
 	public Node myMethod(Node x) {
 //		return foo(x);
-		return foo1(x, x.next);
-//		while (x != null) {
-//			x = x.next;
-//		}
-//		
-//		return x;
+//		return foo1(x, x.next);
+		while (x != null) {
+			x = x.next;
+		}
+		
+		return x;
 		
 //		if (x == null) {
 //			return null;
@@ -65,11 +65,11 @@ public class MyClass {
 	// The test driver
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
-		Node x = new Node();
-		Node y = new Node();
-		mc.myMethod(x);
-//		int i = 0;
-//		mc.myMethod2(i);
+//		Node x = new Node();
+//		Node y = new Node();
+//		mc.myMethod(x);
+		int i = 0;
+		mc.myMethod2(i);
 //		mc.myMethod1(x, y);
 	}
 

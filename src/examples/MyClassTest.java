@@ -52,6 +52,9 @@ public class MyClassTest extends TestJPF {
 		if (verifyNoPropertyViolation(
 //				"+listener=.symbc.SymbolicListener",
 				"+listener=.star.StarListener",
+				"+star.max_len_pc=6",
+				"+star.min_int=-100",
+				"+star.max_int=100",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod(sym)",
@@ -78,6 +81,8 @@ public class MyClassTest extends TestJPF {
 		if (verifyNoPropertyViolation(
 //				"+listener=.symbc.SymbolicListener",
 				"+listener=.star.StarListener",
+//				"+star.min_int=-100",
+//				"+star.max_int=100",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod2(sym)",

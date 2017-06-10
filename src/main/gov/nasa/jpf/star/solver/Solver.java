@@ -12,6 +12,10 @@ public class Solver {
 	
 	private static int MAX_LENGTH = 10;
 	
+	private static int MIN_INT = Integer.MIN_VALUE;
+	
+	private static int MAX_INT = Integer.MAX_VALUE;
+	
 	public static boolean solve(Formula f, Config c) {
 		HeapFormula hf = f.getHeapFormula();
 		PureFormula pf = f.getPureFormula();
@@ -19,7 +23,14 @@ public class Solver {
 		int heapSize = hf.getHeapTerms().length;
 		int pureSize = pf.getPureTerms().length;
 		
-		if (heapSize + pureSize > MAX_LENGTH)
+		int maxLength = MAX_LENGTH;
+		
+		String s = c.getProperty("star.max_len_pc");
+		if (s != null) {
+			maxLength = Integer.parseInt(s);
+		}
+		
+		if (heapSize + pureSize > maxLength)
 			return false;
 		else
 			return true;
@@ -87,6 +98,28 @@ public class Solver {
 			e.printStackTrace();
 			return ret;
 		}
+	}
+	
+	public static int getMinInt(Config c) {
+		int min = MIN_INT;
+		
+		String s = c.getProperty("star.min_int");
+		if (s != null) {
+			min = Integer.parseInt(s);
+		}
+		
+		return min;
+	}
+	
+	public static int getMaxInt(Config c) {
+		int max = MAX_INT;
+		
+		String s = c.getProperty("star.max_int");
+		if (s != null) {
+			max = Integer.parseInt(s);
+		}
+		
+		return max;
 	}
 
 }
