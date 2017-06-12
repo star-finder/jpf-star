@@ -14,5 +14,9 @@ public abstract class HeapTerm {
 	public HeapTerm copy() {
 		return this;
 	}
+	
+	public String toS2SATString() {
+		return "";
+	}
 
 }

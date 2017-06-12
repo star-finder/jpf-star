@@ -130,5 +130,17 @@ public class Formula {
 		else
 			return heapString + " & " + pureString;
 	}
+	
+	public String toS2SATString() {
+		String heapString = heapFormula.toS2SATString();
+		String pureString = pureFormula.toS2SATString(); 
+		
+		if (heapString.equals("emp"))
+			return pureString;
+		else if (pureString.equals("true"))
+			return heapString;
+		else
+			return heapString + " & " + pureString;
+	}
 
 }

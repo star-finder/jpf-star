@@ -49,14 +49,14 @@ public class IFNULL extends gov.nasa.jpf.jvm.bytecode.IFNULL {
 			
 			if (conditionValue) {
 				pc.addEqNullTerm(new Variable(sym_v.toString(), ""));
-				if (Solver.solve(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc, ti.getVM().getConfig()))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
 				return getTarget();
 			} else {
 				pc.addNEqNullTerm(new Variable(sym_v.toString(), ""));
-				if (Solver.solve(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc, ti.getVM().getConfig()))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);

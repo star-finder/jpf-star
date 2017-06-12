@@ -63,5 +63,22 @@ public class HeapFormula {
 			return ret;
 		}
 	}
+	
+	public String toS2SATString() {
+		if (heapTerms.length == 0)
+			return "emp";
+		else {
+			int length = heapTerms.length;
+			String ret = "";
+			
+			for (int i = 0; i < length; i++) {
+				ret += heapTerms[i].toS2SATString() + " * ";
+			}
+			
+			ret = ret.substring(0, ret.length() - 3);
+			
+			return ret;
+		}
+	}
 
 }

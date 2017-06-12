@@ -3,6 +3,8 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
+import gov.nasa.jpf.star.data.DataNode;
+import gov.nasa.jpf.star.data.DataNodeMap;
 import gov.nasa.jpf.star.precondition.Precondition;
 import gov.nasa.jpf.star.precondition.PreconditionLexer;
 import gov.nasa.jpf.star.precondition.PreconditionMap;
@@ -16,8 +18,13 @@ import gov.nasa.jpf.util.test.TestJPF;
 @SuppressWarnings("deprecation")
 public class MyClassTest extends TestJPF {
 	
+	private void initDataNode() {
+		String data = "Node{Node}.";
+		DataNodeMap.parse(data);
+	}
+	
 	private void initPredicate() {
-		String pred = "pred sll(root,len) == root = null & len = 0 || root->Node(next) * sll(next,len1) & len = len1 + 1";
+		String pred = "pred sll(root) == root = null || root->Node(next) * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -29,7 +36,7 @@ public class MyClassTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre myMethod == sll(x,n)";
+		String pre = "pre myMethod == sll(x)";
 //		String pre = "pre myMethod2 == sll(x) & i < 100";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
@@ -43,6 +50,7 @@ public class MyClassTest extends TestJPF {
 	
 	@Before
 	public void init() {
+		initDataNode();
 		initPredicate();
 		initPrecondition();
 	}
@@ -52,9 +60,9 @@ public class MyClassTest extends TestJPF {
 		if (verifyNoPropertyViolation(
 //				"+listener=.symbc.SymbolicListener",
 				"+listener=.star.StarListener",
-				"+star.max_len_pc=6",
-				"+star.min_int=-100",
-				"+star.max_int=100",
+//				"+star.max_len_pc=6",
+//				"+star.min_int=-100",
+//				"+star.max_int=100",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod(sym)",

@@ -84,12 +84,16 @@ public class InductiveTerm extends HeapTerm {
 			
 			if (index != -1) {
 				newVars[i] = new Variable(toVars[index]);
-			} else if (existVarSubMap.containsKey(oldVar.getName())) {
-				newVars[i] = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
+			} else if (existVarSubMap == null) {
+				newVars[i] = oldVar;
 			} else {
-				Variable freshVar = Utility.freshVar(oldVar);
-				existVarSubMap.put(oldVar.getName(), freshVar.getName());
-				newVars[i] = new Variable(freshVar);
+				if (existVarSubMap.containsKey(oldVar.getName())) {
+					newVars[i] = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
+				} else {
+					Variable freshVar = Utility.freshVar(oldVar);
+					existVarSubMap.put(oldVar.getName(), freshVar.getName());
+					newVars[i] = new Variable(freshVar);
+				}
 			}
 		}
 		
@@ -116,6 +120,23 @@ public class InductiveTerm extends HeapTerm {
 			params = params.substring(0, params.length() - 1);
 		
 		String ret = predName + "(" + params + ")";
+		return ret;
+	}
+	
+	public String toS2SATString() {
+		assert vars.length > 0;
+		
+		Variable root = vars[0];
+		
+		String params = "";
+		for (int i = 1; i < vars.length; i++) {
+			params += vars[i] + ",";
+		}
+		
+		if (params.length() > 0)
+			params = params.substring(0, params.length() - 1);
+		
+		String ret = root + "::" + predName + "<" + params + ">";
 		return ret;
 	}
 	

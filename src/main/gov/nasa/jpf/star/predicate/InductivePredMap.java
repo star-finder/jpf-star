@@ -26,4 +26,9 @@ public class InductivePredMap {
 		return pred;
 	}
 	
+	public static InductivePred[] getAll() {
+		InductivePred[] ret = {};
+		return ((InductivePred[]) inductivePredMap.values().toArray(ret));
+	}
+	
 }

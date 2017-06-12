@@ -30,12 +30,16 @@ public class NEqNullTerm extends PureTerm {
 		
 		if (index != -1) {
 			newVar = new Variable(toVars[index]);
-		} else if (existVarSubMap.containsKey(oldVar.getName())) {
-			newVar = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
+		} else if (existVarSubMap == null) {
+			newVar = oldVar;
 		} else {
-			Variable freshVar = Utility.freshVar(oldVar);
-			existVarSubMap.put(oldVar.getName(), freshVar.getName());
-			newVar = freshVar;
+			if (existVarSubMap.containsKey(oldVar.getName())) {
+				newVar = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
+			} else {
+				Variable freshVar = Utility.freshVar(oldVar);
+				existVarSubMap.put(oldVar.getName(), freshVar.getName());
+				newVar = new Variable(freshVar);
+			}
 		}
 		
 		NEqNullTerm newNEqNullTerm = new NEqNullTerm(newVar);

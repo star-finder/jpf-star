@@ -40,22 +40,30 @@ public class NEqTerm extends PureTerm {
 		
 		if (index1 != -1) {
 			newVar1 = new Variable(toVars[index1]);
-		} else if (existVarSubMap.containsKey(oldVar1.getName())) {
-			newVar1 = new Variable(existVarSubMap.get(oldVar1.getName()), oldVar1.getType());
+		} else if (existVarSubMap == null) {
+			newVar1 = oldVar1;
 		} else {
-			Variable freshVar = Utility.freshVar(oldVar1);
-			existVarSubMap.put(oldVar1.getName(), freshVar.getName());
-			newVar1 = freshVar;
+			if (existVarSubMap.containsKey(oldVar1.getName())) {
+				newVar1 = new Variable(existVarSubMap.get(oldVar1.getName()), oldVar1.getType());
+			} else {
+				Variable freshVar = Utility.freshVar(oldVar1);
+				existVarSubMap.put(oldVar1.getName(), freshVar.getName());
+				newVar1 = new Variable(freshVar);
+			}
 		}
 		
 		if (index2 != -1) {
 			newVar2 = new Variable(toVars[index2]);
-		} else if (existVarSubMap.containsKey(oldVar2.getName())) {
-			newVar2 = new Variable(existVarSubMap.get(oldVar2.getName()), oldVar2.getType());
+		} else if (existVarSubMap == null) {
+			newVar2 = oldVar2;
 		} else {
-			Variable freshVar = Utility.freshVar(oldVar2);
-			existVarSubMap.put(oldVar2.getName(), freshVar.getName());
-			newVar2 = freshVar;
+			if (existVarSubMap.containsKey(oldVar2.getName())) {
+				newVar2 = new Variable(existVarSubMap.get(oldVar2.getName()), oldVar2.getType());
+			} else {
+				Variable freshVar = Utility.freshVar(oldVar2);
+				existVarSubMap.put(oldVar2.getName(), freshVar.getName());
+				newVar2 = new Variable(freshVar);
+			}
 		}
 		
 		NEqTerm newNEqTerm = new NEqTerm(newVar1, newVar2);

@@ -59,7 +59,7 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 					pc.addNEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
 				}
 
-				if (Solver.solve(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc, ti.getVM().getConfig()))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -75,7 +75,7 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 					pc.addEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
 				}
 				
-				if (Solver.solve(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc, ti.getVM().getConfig()))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);

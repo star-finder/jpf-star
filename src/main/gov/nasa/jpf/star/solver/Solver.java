@@ -1,22 +1,29 @@
 package gov.nasa.jpf.star.solver;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 
 import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.data.DataNode;
+import gov.nasa.jpf.star.data.DataNodeMap;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.HeapFormula;
 import gov.nasa.jpf.star.formula.PureFormula;
+import gov.nasa.jpf.star.predicate.InductivePred;
+import gov.nasa.jpf.star.predicate.InductivePredMap;
 
 public class Solver {
 	
-	private static int MAX_LENGTH = 10;
+	private static int MAX_LENGTH = 100;
 	
 	private static int MIN_INT = Integer.MIN_VALUE;
 	
 	private static int MAX_INT = Integer.MAX_VALUE;
 	
-	public static boolean solve(Formula f, Config c) {
+	public static boolean checkSat(Formula f, Config c) {
 		HeapFormula hf = f.getHeapFormula();
 		PureFormula pf = f.getPureFormula();
 		
@@ -32,16 +39,56 @@ public class Solver {
 		
 		if (heapSize + pureSize > maxLength)
 			return false;
-		else
+		else {
+			File file = printToFile(f);
+//			if (file != null) {
+//				return checkSat(file);
+//			}
+//			return false;
 			return true;
+		}
 	}
 	
-	public static boolean solve(String problem) {
+	private static File printToFile(Formula f) {
+		try {
+			File file = File.createTempFile("sat", null);
+			
+			System.out.println(file.getAbsolutePath());
+			
+			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
+
+			DataNode[] dns = DataNodeMap.getAll();
+			for (int i = 0; i < dns.length; i++) {
+				String dn = dns[i].toS2SATString();
+				bw.write(dn + "\n");
+			}
+			
+			InductivePred[] preds = InductivePredMap.getAll();
+			for (int i = 0; i < preds.length; i++) {
+				String pred = preds[i].toS2SATString();
+				bw.write(pred + "\n");
+			}
+			
+			String problem = "checksat " + f.toS2SATString() + ".\n";
+			bw.write(problem);
+			
+			bw.flush();
+			bw.close();
+			return file;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public static boolean checkSat(File file) {
 		boolean ret = false;
 		
 		try {
-			String cmd = "./s2sat " + problem;
-			Process p = Runtime.getRuntime().exec("ls");
+			String cmd = "./s2sat " + file.getAbsolutePath();
+			Process p = Runtime.getRuntime().exec(cmd);
 			
 			BufferedReader br = new BufferedReader(
 					new InputStreamReader(p.getInputStream()));
@@ -53,38 +100,6 @@ public class Solver {
 					break;
 				} else if (s.contains("UNSAT")) {
 					ret = false;
-					break;
-				}
-				s = br.readLine();
-			}
-			
-			br.close();
-			p.waitFor();
-			
-			return ret;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ret;
-		}
-	}
-	
-	public static String getTestCase(String problem) {
-		String ret = "";
-		
-		try {
-			String cmd = "./s2sat " + problem;
-			Process p = Runtime.getRuntime().exec("ls");
-			
-			BufferedReader br = new BufferedReader(
-					new InputStreamReader(p.getInputStream()));
-			
-			String s = br.readLine();
-			while (s != null) {
-				if (s.contains("SAT")) {
-					ret += s;
-					break;
-				} else if (s.contains("UNSAT")) {
-					ret += s;
 					break;
 				}
 				s = br.readLine();

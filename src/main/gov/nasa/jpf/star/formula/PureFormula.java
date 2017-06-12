@@ -124,4 +124,8 @@ public class PureFormula {
 		}
 	}
 	
+	public String toS2SATString() {
+		return this.toString();
+	}
+	
 }
