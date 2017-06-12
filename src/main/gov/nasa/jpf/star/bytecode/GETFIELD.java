@@ -9,6 +9,7 @@ import gov.nasa.jpf.star.formula.Utility;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
+import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.bytecode.BytecodeUtils.VarType;
 import gov.nasa.jpf.symbc.numeric.IntegerExpression;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
@@ -39,6 +40,11 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				PointToTerm pt = findPointToTerm(pc, sym_v.toString());
 				
 				if (pt == null) {
+					if (Solver.checkSat(pc, ti.getVM().getConfig())) {
+						System.out.println("Error: NullPointerException");
+						System.out.println(Solver.getModel());
+					}
+					
 					ti.getVM().getSystemState().setIgnored(true);
 					return getNext(ti);
 				} else {

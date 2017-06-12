@@ -12,6 +12,7 @@ import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
+import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.arrays.ArrayExpression;
 import gov.nasa.jpf.symbc.heap.HeapNode;
 import gov.nasa.jpf.symbc.heap.Helper;
@@ -100,32 +101,34 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				}
 			}
 
-			((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+			if (Solver.checkSat(pc, ti.getVM().getConfig())) {
+				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 
-			PathCondition symPC = new PathCondition();
-			SymbolicInputHeap symInputHeap = new SymbolicInputHeap();
-
-			HeapNode[] prevSymRefs = symInputHeap.getNodesOfType(typeClassInfo);
-			int numSymRefs = prevSymRefs.length;
-
-			boolean shared = (ei == null ? false : ei.isShared());
-
-			// add new object according to pc
-			int daIndex = 0; // index into JPF's dynamic area
-
-			if (isNull(pc, sym_v.toString())) {
-				daIndex = MJIEnv.NULL;
+				PathCondition symPC = new PathCondition();
+				SymbolicInputHeap symInputHeap = new SymbolicInputHeap();
+	
+				HeapNode[] prevSymRefs = symInputHeap.getNodesOfType(typeClassInfo);
+				int numSymRefs = prevSymRefs.length;
+	
+				boolean shared = (ei == null ? false : ei.isShared());
+	
+				// add new object according to pc
+				int daIndex = 0; // index into JPF's dynamic area
+	
+				if (isNull(pc, sym_v.toString())) {
+					daIndex = MJIEnv.NULL;
+				} else {
+					daIndex = Helper.addNewHeapNode(typeClassInfo, ti, sym_v, symPC, 
+							symInputHeap, numSymRefs, prevSymRefs, shared);
+				}
+	
+				sf.setLocalVariable(index, daIndex, true);
+				
+				return super.execute(ti);
 			} else {
-				daIndex = Helper.addNewHeapNode(typeClassInfo, ti, sym_v, symPC, 
-						symInputHeap, numSymRefs, prevSymRefs, shared);
+				ti.getVM().getSystemState().setIgnored(true);
+				return getNext(ti);
 			}
-
-			sf.setLocalVariable(index, daIndex, true);
-//			sf.setLocalAttr(index, null);
-//			sf.push(daIndex, true);
-
-//			return getNext(ti); 
-			return super.execute(ti);
 		}
 	}
 

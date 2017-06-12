@@ -84,7 +84,7 @@ public class Solver {
 		return null;
 	}
 	
-	public static boolean checkSat(File file) {
+	private static boolean checkSat(File file) {
 		boolean ret = false;
 		
 		try {
