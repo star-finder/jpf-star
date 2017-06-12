@@ -5,6 +5,7 @@ import gov.nasa.jpf.JPF;
 import gov.nasa.jpf.jvm.bytecode.JVMInvokeInstruction;
 import gov.nasa.jpf.jvm.bytecode.JVMReturnInstruction;
 import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.SymbolicListener;
 import gov.nasa.jpf.symbc.bytecode.BytecodeUtils;
 import gov.nasa.jpf.vm.ChoiceGenerator;
@@ -51,7 +52,11 @@ public class StarListener extends SymbolicListener {
 						
 						if (cg != null && cg instanceof StarChoiceGenerator && ((StarChoiceGenerator) cg).getCurrentPC() != null) {
 							Formula f = ((StarChoiceGenerator) cg).getCurrentPCStar();
-							System.out.println(f);
+							
+							if (Solver.checkSat(f, conf)) {
+								System.out.println(f);
+								System.out.println(Solver.getModel());
+							}
 						}
 					}	
 				}

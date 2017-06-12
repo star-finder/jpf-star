@@ -23,6 +23,10 @@ public class Solver {
 	
 	private static int MAX_INT = Integer.MAX_VALUE;
 	
+	private static String s2sat = "s2sat";
+	
+	private static String model = "";
+	
 	public static boolean checkSat(Formula f, Config c) {
 		HeapFormula hf = f.getHeapFormula();
 		PureFormula pf = f.getPureFormula();
@@ -41,19 +45,16 @@ public class Solver {
 			return false;
 		else {
 			File file = printToFile(f);
-//			if (file != null) {
-//				return checkSat(file);
-//			}
-//			return false;
-			return true;
+			if (file != null) {
+				return checkSat(file);
+			}
+			return false;
 		}
 	}
 	
 	private static File printToFile(Formula f) {
 		try {
 			File file = File.createTempFile("sat", null);
-			
-			System.out.println(file.getAbsolutePath());
 			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
 
@@ -87,21 +88,37 @@ public class Solver {
 		boolean ret = false;
 		
 		try {
-			String cmd = "./s2sat " + file.getAbsolutePath();
+			String cmd = s2sat + " " + file.getAbsolutePath();
 			Process p = Runtime.getRuntime().exec(cmd);
 			
 			BufferedReader br = new BufferedReader(
 					new InputStreamReader(p.getInputStream()));
 			
 			String s = br.readLine();
+			
+			model = "";
+			boolean readModel = false;
 			while (s != null) {
-				if (s.contains("SAT")) {
+//				System.out.println(s);
+				
+				if (s.contains("!!! cex:")) {
+					readModel = true;
+				}
+				
+				if (s.contains(": SAT")) {
 					ret = true;
+					readModel = false;
 					break;
-				} else if (s.contains("UNSAT")) {
+				} else if (s.contains(": UNSAT")) {
 					ret = false;
+					readModel = false;
 					break;
 				}
+				
+				if (readModel) {
+					model += s;
+				}
+				
 				s = br.readLine();
 			}
 			
@@ -113,6 +130,10 @@ public class Solver {
 			e.printStackTrace();
 			return ret;
 		}
+	}
+	
+	public static String getModel() {
+		return model;
 	}
 	
 	public static int getMinInt(Config c) {
