@@ -44,18 +44,6 @@ public class Formula {
 		return pureFormula.getAlias();
 	}
 	
-	public List<Variable> getAlias(String varName) {
-		Variable tempVar = new Variable(varName, "");
-		
-		for (List<Variable> vars : pureFormula.getAlias()) {
-			if (vars.contains(tempVar)) {
-				return vars;
-			}
-		}
-		
-		return null;
-	}
-	
 	// substitute parameters with new vars
 	public Formula substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
