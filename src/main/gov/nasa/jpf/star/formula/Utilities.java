@@ -7,6 +7,16 @@ import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
+import gov.nasa.jpf.symbc.heap.HeapNode;
+import gov.nasa.jpf.symbc.heap.Helper;
+import gov.nasa.jpf.symbc.heap.SymbolicInputHeap;
+import gov.nasa.jpf.symbc.numeric.IntegerExpression;
+import gov.nasa.jpf.symbc.numeric.PathCondition;
+import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
+import gov.nasa.jpf.vm.ClassInfo;
+import gov.nasa.jpf.vm.ElementInfo;
+import gov.nasa.jpf.vm.FieldInfo;
+import gov.nasa.jpf.vm.ThreadInfo;
 
 public class Utilities {
 	
@@ -85,44 +95,32 @@ public class Utilities {
 
 		return false;
 	}
-
-	public static boolean canUnfold(InductiveTerm it, List<List<Variable>> alias, String varName) {
-		if (it.getRoot().getName().equals(varName))
-			return true;
-		else {
-			for (List<Variable> vars : alias) {
-				if (vars.contains(it.getRoot())) {
-					for (Variable var : vars) {
-						if (var.getName().equals(varName)) {
-							return true;
-						}
-					}
-				}
-			}
-
-			return false;
-		}
-	}
 	
-	public static PointToTerm findPointToTerm(Formula pc, String varName) {
+	public static HeapTerm findHeapTerm(Formula pc, String varName) {
 		HeapFormula hf = pc.getHeapFormula();
 		List<List<Variable>> alias = pc.getAlias();
 
 		for (HeapTerm term : hf.getHeapTerms()) {
+			Variable root = null;
+			
 			if (term instanceof PointToTerm) {
 				PointToTerm ptTerm = (PointToTerm) term;
-				Variable root = ptTerm.getRoot();
-				String rootName = root.getName();
+				root = ptTerm.getRoot();
+			} else if (term instanceof InductiveTerm) {
+				InductiveTerm itTerm = (InductiveTerm) term;
+				root = itTerm.getRoot();
+			}
+			
+			String rootName = root.getName();
 
-				if (rootName.equals(varName)) {
-					return ptTerm;
-				} else {
-					for (List<Variable> vars : alias) {
-						if (vars.contains(root)) {
-							for (Variable var : vars) {
-								if (var.getName().equals(varName)) {
-									return ptTerm;
-								}
+			if (rootName.equals(varName)) {
+				return term;
+			} else {
+				for (List<Variable> vars : alias) {
+					if (vars.contains(root)) {
+						for (Variable var : vars) {
+							if (var.getName().equals(varName)) {
+								return term;
 							}
 						}
 					}
@@ -131,6 +129,38 @@ public class Utilities {
 		}
 
 		return null;
+	}
+	
+	public static int addNewHeapNode(ThreadInfo ti, ElementInfo ei, ClassInfo typeClassInfo,
+			Object attr, Formula pc) {
+		int daIndex = 0;
+		
+		PathCondition symPC = new PathCondition();
+		SymbolicInputHeap symInputHeap = new SymbolicInputHeap();
+
+		HeapNode[] prevSymRefs = symInputHeap.getNodesOfType(typeClassInfo);
+		int numSymRefs = prevSymRefs.length;
+
+		boolean shared = (ei == null ? false : ei.isShared());
+		
+		daIndex = Helper.addNewHeapNode(typeClassInfo, ti, attr, symPC, 
+				symInputHeap, numSymRefs, prevSymRefs, shared);
+		
+		PointToTerm pt = (PointToTerm) Utilities.findHeapTerm(pc, attr.toString());
+		Variable[] vars = pt.getVars();
+		
+		// change attribute of new node according to unfold result
+		ElementInfo newEi = ti.getModifiableElementInfo(daIndex);
+		int numberOfFields = newEi.getNumberOfFields();
+		
+		for (int i = 0; i < numberOfFields; i++) {
+			FieldInfo newFi = newEi.getFieldInfo(i);
+			// do we need to check type of the fields and add more precise symbolic value
+			IntegerExpression newAttr = new SymbolicInteger(vars[i + 1].getName());
+			newEi.setFieldAttr(newFi, newAttr);
+		}
+		
+		return daIndex;
 	}
 
 }
