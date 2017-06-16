@@ -37,6 +37,7 @@ public class MyClassTest extends TestJPF {
 	
 	private void initPrecondition() {
 		String pre = "pre myMethod == this_x->Node(next) * sll(next)";
+//		String pre = "pre myMethod1 == sll(x) & x=y";
 //		String pre = "pre myMethod2 == sll(x) & i < 100";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);

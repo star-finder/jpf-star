@@ -68,7 +68,7 @@ public class MyClass {
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
 		Node x = new Node();
-//		Node y = new Node();
+		Node y = new Node();
 		mc.myMethod();
 //		int i = 0;
 //		mc.myMethod2(i);

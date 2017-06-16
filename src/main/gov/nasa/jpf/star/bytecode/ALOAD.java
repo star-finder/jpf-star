@@ -74,8 +74,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					daIndex = MJIEnv.NULL;
 					
 					sf.setLocalVariable(index, daIndex, true);
-					sf.setLocalAttr(index, null);
-					sf.push(daIndex, true);
+					sf.pushLocal(index);
 					
 					return getNext(ti);
 				} else {
@@ -85,8 +84,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
 						
 						sf.setLocalVariable(index, daIndex, true);
-						sf.setLocalAttr(index, null);
-						sf.push(daIndex, true);
+						sf.pushLocal(index);
 						
 						return getNext(ti);
 					} else if (ht instanceof InductiveTerm) {
@@ -126,8 +124,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				}
 				
 				sf.setLocalVariable(index, daIndex, true);
-				sf.setLocalAttr(index, null);
-				sf.push(daIndex, true);
+				sf.pushLocal(index);
 				
 				return getNext(ti);
 			} else {

@@ -46,8 +46,8 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 		// --- check for obvious exceptions
 		if (objRef == MJIEnv.NULL) {
-			return ti.createAndThrowException("java.lang.NullPointerException",
-					"referencing field111 '" + fname + "' on null object");
+			ti.getVM().getSystemState().setIgnored(true);
+			return getNext(ti);
 		}
 
 		ElementInfo ei = ti.getModifiableElementInfo(objRef);
@@ -56,7 +56,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			return ti.createAndThrowException("java.lang.NoSuchFieldError",
 					"referencing field '" + fname + "' in " + ei);
 		}
-		
+
 		Object attr = ei.getFieldAttr(fi);
 
 		if (!(fi.isReference() && attr != null)) {
@@ -67,12 +67,12 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				|| attr instanceof ArrayExpression) {
 			return super.execute(ti);
 		}
-		
+
 		ChoiceGenerator<?> cg;
 		ChoiceGenerator<?> prevCG;
-		
+
 		ClassInfo typeClassInfo = fi.getTypeClassInfo();
-		
+
 		if (attr.toString().contains(".")) {
 			int index = attr.toString().indexOf('.') + 1;
 			int length = attr.toString().length();
@@ -87,32 +87,32 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			prevCG = ti.getVM().getSystemState().getChoiceGenerator();
 			if (prevCG instanceof StarChoiceGenerator) {
 				Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
-				
+
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
-				
+
 				if (Utilities.isNull(pc, attr.toString())) {
-					sf.pop(); // Ok, now we can remove the object ref from the stack
+					sf.pop();
 					
 					daIndex = MJIEnv.NULL;
-					
 					ei.setReferenceField(fi, daIndex);
-					ei.setFieldAttr(fi, null);
-					sf.push(daIndex, true);
 					
+					sf.pushRef(daIndex);
+					sf.setOperandAttr(attr);
+
 					return getNext(ti);
 				} else {
 					HeapTerm ht = Utilities.findHeapTerm(pc, attr.toString());
-					
+
 					if (ht instanceof PointToTerm) {
-						sf.pop(); // Ok, now we can remove the object ref from the stack
-						
+						sf.pop();
+
 						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
-						
 						ei.setReferenceField(fi, daIndex);
-						ei.setFieldAttr(fi, null);
-						sf.push(daIndex, true);
-						
+
+						sf.pushRef(daIndex);
+						sf.setOperandAttr(attr);
+
 						return getNext(ti);
 					} else if (ht instanceof InductiveTerm) {
 						InductiveTerm it = (InductiveTerm) ht;
@@ -120,7 +120,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 						cg = new StarChoiceGenerator(fs.length);
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
-						
+
 						return this;
 					}
 				}
@@ -128,34 +128,35 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 			return super.execute(ti);
 		} else {
-			sf.pop(); // Ok, now we can remove the object ref from the stack
-			
+			sf.pop();
+
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 
 			Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
 			HeapTerm ht = Utilities.findHeapTerm(pc, attr.toString());
-			
+
 			// in this case ht is inductive term;
 			InductiveTerm it = (InductiveTerm) ht;
 			pc.unfold(it, (Integer) cg.getNextChoice());
-			
+
 			if (Solver.checkSat(pc, conf)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
-	
+
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
-	
+
 				if (Utilities.isNull(pc, attr.toString())) {
 					daIndex = MJIEnv.NULL;
 				} else {
 					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
 				}
-				
+
 				ei.setReferenceField(fi, daIndex);
-				ei.setFieldAttr(fi, null);
-				sf.push(daIndex, true);
-				
+
+				sf.pushRef(daIndex);
+				sf.setOperandAttr(attr);
+
 				return getNext(ti);
 			} else {
 				ti.getVM().getSystemState().setIgnored(true);
@@ -163,7 +164,5 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			}
 		}
 	}
-	
-	
 
 }

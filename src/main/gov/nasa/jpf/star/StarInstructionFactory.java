@@ -47,15 +47,15 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 		return new ASTORE(localVarIndex);
 	}
 
-//	@Override
-//	public Instruction ifnonnull(int targetPc) {
-//		return new IFNONNULL(targetPc);
-//	}
-//
-//	@Override
-//	public Instruction ifnull(int targetPc) {
-//		return new IFNULL(targetPc);
-//	}
+	@Override
+	public Instruction ifnonnull(int targetPc) {
+		return new IFNONNULL(targetPc);
+	}
+
+	@Override
+	public Instruction ifnull(int targetPc) {
+		return new IFNULL(targetPc);
+	}
 
 	@Override
 	public Instruction if_acmpeq(int targetPc) {
