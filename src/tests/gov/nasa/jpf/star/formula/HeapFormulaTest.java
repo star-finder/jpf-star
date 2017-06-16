@@ -16,7 +16,7 @@ public class HeapFormulaTest {
 	
 	@Before
 	public void init() {
-		Utility.reset();
+		Utilities.reset();
 	}
 
 	@Test

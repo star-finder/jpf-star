@@ -2,7 +2,7 @@ package gov.nasa.jpf.star.formula.heap;
 
 import java.util.Map;
 
-import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 
 // x -> Node(...) term
@@ -44,7 +44,7 @@ public class PointToTerm extends HeapTerm {
 		for (int i = 0; i < length; i++) {
 			Variable oldVar = vars[i];
 			
-			int index = Utility.find(fromVars, oldVar);
+			int index = Utilities.find(fromVars, oldVar);
 			
 			if (index != -1) {
 				newVars[i] = new Variable(toVars[index]);
@@ -54,7 +54,7 @@ public class PointToTerm extends HeapTerm {
 				if (existVarSubMap.containsKey(oldVar.getName())) {
 					newVars[i] = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
 				} else {
-					Variable freshVar = Utility.freshVar(oldVar);
+					Variable freshVar = Utilities.freshVar(oldVar);
 					existVarSubMap.put(oldVar.getName(), freshVar.getName());
 					newVars[i] = new Variable(freshVar);
 				}

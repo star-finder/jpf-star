@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.predicate.InductivePred;
 import gov.nasa.jpf.star.predicate.InductivePredLexer;
@@ -22,7 +22,7 @@ public class InductiveTermTest {
 	
 	@Before
 	public void init() {
-		Utility.reset();
+		Utilities.reset();
 	}
 
 	@Test

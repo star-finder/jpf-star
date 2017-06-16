@@ -2,7 +2,7 @@ package gov.nasa.jpf.star.formula.expression;
 
 import java.util.Map;
 
-import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.symbc.numeric.Operator;
 

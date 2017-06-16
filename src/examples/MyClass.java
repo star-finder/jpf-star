@@ -1,6 +1,8 @@
 
 public class MyClass {
 	
+	Node x;
+		
 	public Node foo(Node x) {
 		if (x == null) {
 			return null;
@@ -21,7 +23,7 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod(Node x) {
+	public Node myMethod() {
 //		return foo(x);
 //		return foo1(x, x.next);
 //		while (x != null) {
@@ -67,7 +69,7 @@ public class MyClass {
 		MyClass mc = new MyClass();
 		Node x = new Node();
 //		Node y = new Node();
-		mc.myMethod(x);
+		mc.myMethod();
 //		int i = 0;
 //		mc.myMethod2(i);
 //		mc.myMethod1(x, y);

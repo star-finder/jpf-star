@@ -8,14 +8,14 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 
 public class NEqTermTest {
 
 	@Before
 	public void init() {
-		Utility.reset();
+		Utilities.reset();
 	}
 
 	@Test

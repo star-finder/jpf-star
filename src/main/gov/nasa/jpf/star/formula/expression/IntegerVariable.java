@@ -2,7 +2,7 @@ package gov.nasa.jpf.star.formula.expression;
 
 import java.util.Map;
 
-import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 
 public class IntegerVariable extends IntegerExpression {
@@ -18,7 +18,7 @@ public class IntegerVariable extends IntegerExpression {
 			Map<String,String> existVarSubMap) {
 		Variable oldVar = var;
 		
-		int index = Utility.find(fromVars, oldVar);
+		int index = Utilities.find(fromVars, oldVar);
 		
 		Variable newVar = null;
 		
@@ -30,7 +30,7 @@ public class IntegerVariable extends IntegerExpression {
 			if (existVarSubMap.containsKey(oldVar.getName())) {
 				newVar = new Variable(existVarSubMap.get(oldVar.getName()), oldVar.getType());
 			} else {
-				Variable freshVar = Utility.freshVar(oldVar);
+				Variable freshVar = Utilities.freshVar(oldVar);
 				existVarSubMap.put(oldVar.getName(), freshVar.getName());
 				newVar = new Variable(freshVar);
 			}

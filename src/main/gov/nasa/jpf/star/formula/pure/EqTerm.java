@@ -2,7 +2,7 @@ package gov.nasa.jpf.star.formula.pure;
 
 import java.util.Map;
 
-import gov.nasa.jpf.star.formula.Utility;
+import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 
 // x = y term
@@ -32,8 +32,8 @@ public class EqTerm extends PureTerm {
 		Variable oldVar1 = var1;
 		Variable oldVar2 = var2;
 		
-		int index1 = Utility.find(fromVars, oldVar1);
-		int index2 = Utility.find(fromVars, oldVar2);
+		int index1 = Utilities.find(fromVars, oldVar1);
+		int index2 = Utilities.find(fromVars, oldVar2);
 		
 		Variable newVar1 = null;
 		Variable newVar2 = null;
@@ -46,7 +46,7 @@ public class EqTerm extends PureTerm {
 			if (existVarSubMap.containsKey(oldVar1.getName())) {
 				newVar1 = new Variable(existVarSubMap.get(oldVar1.getName()), oldVar1.getType());
 			} else {
-				Variable freshVar = Utility.freshVar(oldVar1);
+				Variable freshVar = Utilities.freshVar(oldVar1);
 				existVarSubMap.put(oldVar1.getName(), freshVar.getName());
 				newVar1 = new Variable(freshVar);
 			}
@@ -60,7 +60,7 @@ public class EqTerm extends PureTerm {
 			if (existVarSubMap.containsKey(oldVar2.getName())) {
 				newVar2 = new Variable(existVarSubMap.get(oldVar2.getName()), oldVar2.getType());
 			} else {
-				Variable freshVar = Utility.freshVar(oldVar2);
+				Variable freshVar = Utilities.freshVar(oldVar2);
 				existVarSubMap.put(oldVar2.getName(), freshVar.getName());
 				newVar2 = new Variable(freshVar);
 			}

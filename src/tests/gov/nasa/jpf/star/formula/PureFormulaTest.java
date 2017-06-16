@@ -18,7 +18,7 @@ public class PureFormulaTest {
 	
 	@Before
 	public void init() {
-		Utility.reset();
+		Utilities.reset();
 	}
 
 	@Test

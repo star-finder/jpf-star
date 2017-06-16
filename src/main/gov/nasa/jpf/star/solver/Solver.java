@@ -44,11 +44,12 @@ public class Solver {
 		if (heapSize + pureSize > maxLength)
 			return false;
 		else {
-			File file = printToFile(f);
-			if (file != null) {
-				return checkSat(file);
-			}
-			return false;
+			return true;
+//			File file = printToFile(f);
+//			if (file != null) {
+//				return checkSat(file);
+//			}
+//			return false;
 		}
 	}
 	

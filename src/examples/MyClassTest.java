@@ -36,7 +36,7 @@ public class MyClassTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre myMethod == sll(x)";
+		String pre = "pre myMethod == sll(this_x)";
 //		String pre = "pre myMethod2 == sll(x) & i < 100";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
@@ -65,7 +65,8 @@ public class MyClassTest extends TestJPF {
 //				"+star.max_int=100",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod(sym)",
+				"+symbolic.method = MyClass.myMethod()",
+				"+symbolic.fields = instance",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}

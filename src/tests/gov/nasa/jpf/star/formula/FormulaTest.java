@@ -19,7 +19,7 @@ public class FormulaTest {
 	
 	@Before
 	public void init() {
-		Utility.reset();
+		Utilities.reset();
 	}
 
 	@Test
