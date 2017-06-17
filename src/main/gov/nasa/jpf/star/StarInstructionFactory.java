@@ -1,9 +1,17 @@
 package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.bytecode.IINC;
+import gov.nasa.jpf.star.bytecode.INEG;
+import gov.nasa.jpf.star.bytecode.IOR;
+import gov.nasa.jpf.star.bytecode.IREM;
+import gov.nasa.jpf.star.bytecode.ISHL;
+import gov.nasa.jpf.star.bytecode.ISHR;
+import gov.nasa.jpf.star.bytecode.IXOR;
 import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
 import gov.nasa.jpf.star.bytecode.IADD;
+import gov.nasa.jpf.star.bytecode.IAND;
 import gov.nasa.jpf.star.bytecode.IDIV;
 import gov.nasa.jpf.star.bytecode.IFEQ;
 import gov.nasa.jpf.star.bytecode.IFGE;
@@ -25,6 +33,7 @@ import gov.nasa.jpf.star.bytecode.ILOAD;
 import gov.nasa.jpf.star.bytecode.IMUL;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
 import gov.nasa.jpf.star.bytecode.ISUB;
+import gov.nasa.jpf.star.bytecode.IUSHR;
 import gov.nasa.jpf.vm.Instruction;
 
 // to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
@@ -130,20 +139,65 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction iadd() {
 		return new IADD();
 	}
-	
+
 	@Override
-	public Instruction isub() {
-		return new ISUB();
+	public Instruction iand() {
+		return new IAND();
 	}
-	
+
+	@Override
+	public Instruction idiv() {
+		return new IDIV();
+	}
+
+	@Override
+	public Instruction iinc(int localVarIndex, int incConstant) {
+		return new IINC(localVarIndex, incConstant);
+	}
+
 	@Override
 	public Instruction imul() {
 		return new IMUL();
 	}
-	
+
 	@Override
-	public Instruction idiv() {
-		return new IDIV();
+	public Instruction ineg() {
+		return new INEG();
+	}
+
+	@Override
+	public Instruction ior() {
+		return new IOR();
+	}
+
+	@Override
+	public Instruction irem() {
+		return new IREM();
+	}
+
+	@Override
+	public Instruction ishl() {
+		return new ISHL();
+	}
+
+	@Override
+	public Instruction ishr() {
+		return new ISHR();
+	}
+
+	@Override
+	public Instruction isub() {
+		return new ISUB();
+	}
+
+	@Override
+	public Instruction iushr() {
+		return new IUSHR();
+	}
+
+	@Override
+	public Instruction ixor() {
+		return new IXOR();
 	}
 
 	@Override
