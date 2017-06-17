@@ -8,21 +8,22 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class IMUL extends gov.nasa.jpf.jvm.bytecode.IMUL {
-	
+public class LMUL extends gov.nasa.jpf.jvm.bytecode.LMUL {
+
 	@Override
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
-		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr(1);
-		IntegerExpression sym_v2 = (IntegerExpression) sf.getOperandAttr(0);
-		
-		if (sym_v1 == null && sym_v2 == null) {
-			return super.execute(ti); // we'll still do the concrete execution
-		} else {
-			int v2 = sf.pop();
-			int v1 = sf.pop();
-			sf.push(0); // for symbolic expressions, the concrete value does not matter
-		
+
+		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr(3);
+		IntegerExpression sym_v2 = (IntegerExpression) sf.getOperandAttr(1);
+
+		if (sym_v1 == null && sym_v2 == null)
+			return super.execute(ti);// we'll still do the concrete execution
+		else {
+			long v2 = sf.popLong();
+			long v1 = sf.popLong();
+			sf.pushLong(0); // for symbolic expressions, the concrete value does not matter
+			
 			IntegerExpression result = null;
 			
 			if (sym_v1 != null) {
@@ -35,8 +36,8 @@ public class IMUL extends gov.nasa.jpf.jvm.bytecode.IMUL {
 				result = new IntegerBinaryExpression(Operator.MUL, new IntegerLiteral(v1), sym_v2);
 			}
 			
-			sf.setOperandAttr(result);
-		
+			sf.setLongOperandAttr(result);
+
 			return getNext(ti);
 		}
 	}

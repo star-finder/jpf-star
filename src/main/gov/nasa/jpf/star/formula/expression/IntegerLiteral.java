@@ -6,9 +6,9 @@ import gov.nasa.jpf.star.formula.Variable;
 
 public class IntegerLiteral extends IntegerExpression {
 	
-	private int value;
+	private long value;
 	
-	public IntegerLiteral(int value) {
+	public IntegerLiteral(long value) {
 		this.value = value;
 	}
 	

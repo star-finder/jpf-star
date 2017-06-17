@@ -56,7 +56,8 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod2(int i) {
+	public Node myMethod2(long i, long j) {
+		i = i + j;
 		if (i - 1 > 0) {
 			return null;
 		} else {
@@ -67,11 +68,12 @@ public class MyClass {
 	// The test driver
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
-		Node x = new Node();
-		Node y = new Node();
-		mc.myMethod();
-//		int i = 0;
-//		mc.myMethod2(i);
+//		Node x = new Node();
+//		Node y = new Node();
+//		mc.myMethod();
+		int i = 0;
+		int j = 0;
+		mc.myMethod2(i, j);
 //		mc.myMethod1(x, y);
 	}
 

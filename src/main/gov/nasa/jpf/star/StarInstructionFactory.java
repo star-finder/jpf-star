@@ -1,13 +1,6 @@
 package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
-import gov.nasa.jpf.star.bytecode.IINC;
-import gov.nasa.jpf.star.bytecode.INEG;
-import gov.nasa.jpf.star.bytecode.IOR;
-import gov.nasa.jpf.star.bytecode.IREM;
-import gov.nasa.jpf.star.bytecode.ISHL;
-import gov.nasa.jpf.star.bytecode.ISHR;
-import gov.nasa.jpf.star.bytecode.IXOR;
 import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
 import gov.nasa.jpf.star.bytecode.IADD;
@@ -29,11 +22,32 @@ import gov.nasa.jpf.star.bytecode.IF_ICMPGT;
 import gov.nasa.jpf.star.bytecode.IF_ICMPLE;
 import gov.nasa.jpf.star.bytecode.IF_ICMPLT;
 import gov.nasa.jpf.star.bytecode.IF_ICMPNE;
+import gov.nasa.jpf.star.bytecode.IINC;
 import gov.nasa.jpf.star.bytecode.ILOAD;
 import gov.nasa.jpf.star.bytecode.IMUL;
+import gov.nasa.jpf.star.bytecode.INEG;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
+import gov.nasa.jpf.star.bytecode.IOR;
+import gov.nasa.jpf.star.bytecode.IREM;
+import gov.nasa.jpf.star.bytecode.ISHL;
+import gov.nasa.jpf.star.bytecode.ISHR;
 import gov.nasa.jpf.star.bytecode.ISUB;
 import gov.nasa.jpf.star.bytecode.IUSHR;
+import gov.nasa.jpf.star.bytecode.IXOR;
+import gov.nasa.jpf.star.bytecode.LADD;
+import gov.nasa.jpf.star.bytecode.LAND;
+import gov.nasa.jpf.star.bytecode.LCMP;
+import gov.nasa.jpf.star.bytecode.LDIV;
+import gov.nasa.jpf.star.bytecode.LLOAD;
+import gov.nasa.jpf.star.bytecode.LMUL;
+import gov.nasa.jpf.star.bytecode.LNEG;
+import gov.nasa.jpf.star.bytecode.LOR;
+import gov.nasa.jpf.star.bytecode.LREM;
+import gov.nasa.jpf.star.bytecode.LSHL;
+import gov.nasa.jpf.star.bytecode.LSHR;
+import gov.nasa.jpf.star.bytecode.LSUB;
+import gov.nasa.jpf.star.bytecode.LUSHR;
+import gov.nasa.jpf.star.bytecode.LXOR;
 import gov.nasa.jpf.vm.Instruction;
 
 // to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
@@ -129,7 +143,7 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction ifle(int targetPc) {
 		return new IFLE(targetPc);
 	}
-
+	
 	@Override
 	public Instruction iload(int localVarIndex) {
 		return new ILOAD(localVarIndex);
@@ -200,6 +214,76 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 		return new IXOR();
 	}
 
+	@Override
+	public Instruction lload(int localVarIndex) {
+		return new LLOAD(localVarIndex);
+	}
+
+	@Override
+	public Instruction ladd() {
+		return new LADD();
+	}
+
+	@Override
+	public Instruction land() {
+		return new LAND();
+	}
+
+	@Override
+	public Instruction ldiv() {
+		return new LDIV();
+	}
+
+	@Override
+	public Instruction lmul() {
+		return new LMUL();
+	}
+
+	@Override
+	public Instruction lneg() {
+		return new LNEG();
+	}
+
+	@Override
+	public Instruction lor() {
+		return new LOR();
+	}
+
+	@Override
+	public Instruction lrem() {
+		return new LREM();
+	}
+
+	@Override
+	public Instruction lshl() {
+		return new LSHL();
+	}
+
+	@Override
+	public Instruction lshr() {
+		return new LSHR();
+	}
+
+	@Override
+	public Instruction lsub() {
+		return new LSUB();
+	}
+
+	@Override
+	public Instruction lushr() {
+		return new LUSHR();
+	}
+
+	@Override
+	public Instruction lxor() {
+		return new LXOR();
+	}
+	
+	@Override
+	public Instruction lcmp() {
+		return new LCMP();
+	}
+	
 	@Override
 	public Instruction invokevirtual(String clsName, String methodName, String methodSignature) {
 		return new INVOKEVIRTUAL(clsName, methodName, methodSignature);

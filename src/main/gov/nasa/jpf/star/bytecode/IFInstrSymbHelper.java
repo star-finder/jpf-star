@@ -32,51 +32,51 @@ public class IFInstrSymbHelper {
 		} else {
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			conditionValue = (Integer) cg.getNextChoice() == 1 ? true: false;
-		}	
 		
-		int v2 = sf.pop();
-		int v1 = sf.pop();
-		
-		prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
-		Formula pc = null;
-		
-		if (prevCG == null)
-			pc = new Formula();
-		else
-			pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
-		
-		if (conditionValue) {
-			if (sym_v1 != null) {
-				if (sym_v2 != null) {
-					pc.addComparisonTerm(trueComparator, sym_v1, sym_v2);
-				} else {
-					pc.addComparisonTerm(trueComparator, sym_v1, new IntegerLiteral(v2));
-				}
-			} else {
-				pc.addComparisonTerm(trueComparator, new IntegerLiteral(v1), sym_v2);
-			}
+			int v2 = sf.pop();
+			int v1 = sf.pop();
 			
-			if (Solver.checkSat(pc, ti.getVM().getConfig()))
-				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
-			else
-				ti.getVM().getSystemState().setIgnored(true);
-			return instr.getTarget();
-		} else {
-			if (sym_v1 != null) {
-				if (sym_v2 != null) {
-					pc.addComparisonTerm(falseComparator, sym_v1, sym_v2);
-				} else {
-					pc.addComparisonTerm(falseComparator, sym_v1, new IntegerLiteral(v2));
-				}
-			} else {
-				pc.addComparisonTerm(falseComparator, new IntegerLiteral(v1), sym_v2);
-			}
+			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
+			Formula pc = null;
 			
-			if (Solver.checkSat(pc, ti.getVM().getConfig()))
-				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+			if (prevCG == null)
+				pc = new Formula();
 			else
-				ti.getVM().getSystemState().setIgnored(true);
-			return instr.getNext(ti);
+				pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
+			
+			if (conditionValue) {
+				if (sym_v1 != null) {
+					if (sym_v2 != null) {
+						pc.addComparisonTerm(trueComparator, sym_v1, sym_v2);
+					} else {
+						pc.addComparisonTerm(trueComparator, sym_v1, new IntegerLiteral(v2));
+					}
+				} else {
+					pc.addComparisonTerm(trueComparator, new IntegerLiteral(v1), sym_v2);
+				}
+				
+				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				else
+					ti.getVM().getSystemState().setIgnored(true);
+				return instr.getTarget();
+			} else {
+				if (sym_v1 != null) {
+					if (sym_v2 != null) {
+						pc.addComparisonTerm(falseComparator, sym_v1, sym_v2);
+					} else {
+						pc.addComparisonTerm(falseComparator, sym_v1, new IntegerLiteral(v2));
+					}
+				} else {
+					pc.addComparisonTerm(falseComparator, new IntegerLiteral(v1), sym_v2);
+				}
+				
+				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				else
+					ti.getVM().getSystemState().setIgnored(true);
+				return instr.getNext(ti);
+			}
 		}
 	}
 

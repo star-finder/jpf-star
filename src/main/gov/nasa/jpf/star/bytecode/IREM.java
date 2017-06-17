@@ -16,20 +16,25 @@ public class IREM extends gov.nasa.jpf.jvm.bytecode.IREM {
 		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr(1);
 		IntegerExpression sym_v2 = (IntegerExpression) sf.getOperandAttr(0);
 		
-		if(sym_v1 == null && sym_v2 == null) {
+		if (sym_v1 == null && sym_v2 == null) {
 			return super.execute(ti); // we'll still do the concrete execution
 		} else {
 			int v2 = sf.pop();
 			int v1 = sf.pop();
-			sf.push(0, false); // for symbolic expressions, the concrete value does not matter
+			sf.push(0); // for symbolic expressions, the concrete value does not matter
 		
 			IntegerExpression result = null;
 			
-			if(sym_v1 != null) {
+			if (sym_v1 != null) {
 				if (sym_v2 != null) {
 					result = new IntegerBinaryExpression(Operator.REM, sym_v1, sym_v2);
 				} else {
-					result = new IntegerBinaryExpression(Operator.REM, sym_v1, new IntegerLiteral(v2));
+					if (v2 == 0) {
+						return ti.createAndThrowException("java.lang.ArithmeticException",
+						                                        "division by zero");
+					} else {
+						result = new IntegerBinaryExpression(Operator.REM, sym_v1, new IntegerLiteral(v2));
+					}
 				}
 			} else {
 				result = new IntegerBinaryExpression(Operator.REM, new IntegerLiteral(v1), sym_v2);

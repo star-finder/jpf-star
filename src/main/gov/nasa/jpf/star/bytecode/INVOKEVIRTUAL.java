@@ -85,6 +85,17 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 						
 						pc.addComparisonTerm(Comparator.GE, exp1, lit1);
 						pc.addComparisonTerm(Comparator.LE, exp2, lit2);
+					} else if (argTypes[i].equals("long")) {
+						String name =  argInfo[i + 1].getName();
+						
+						IntegerExpression exp1 = new IntegerVariable(new Variable(name, ""));
+						IntegerExpression exp2 = new IntegerVariable(new Variable(name, ""));
+						
+						IntegerExpression lit1 = new IntegerLiteral(Solver.getMinLong(conf));
+						IntegerExpression lit2 = new IntegerLiteral(Solver.getMaxLong(conf));
+						
+						pc.addComparisonTerm(Comparator.GE, exp1, lit1);
+						pc.addComparisonTerm(Comparator.LE, exp2, lit2);
 					}
 				}
 				

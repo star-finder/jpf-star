@@ -19,10 +19,6 @@ public class Solver {
 	
 	private static int MAX_LENGTH = 100;
 	
-	private static int MIN_INT = Integer.MIN_VALUE;
-	
-	private static int MAX_INT = Integer.MAX_VALUE;
-	
 	private static String s2sat = "s2sat";
 	
 	private static String model = "";
@@ -138,7 +134,7 @@ public class Solver {
 	}
 	
 	public static int getMinInt(Config c) {
-		int min = MIN_INT;
+		int min = Integer.MIN_VALUE;;
 		
 		String s = c.getProperty("star.min_int");
 		if (s != null) {
@@ -149,9 +145,31 @@ public class Solver {
 	}
 	
 	public static int getMaxInt(Config c) {
-		int max = MAX_INT;
+		int max = Integer.MAX_VALUE;;
 		
 		String s = c.getProperty("star.max_int");
+		if (s != null) {
+			max = Integer.parseInt(s);
+		}
+		
+		return max;
+	}
+	
+	public static long getMinLong(Config c) {
+		long min = Long.MIN_VALUE;;
+		
+		String s = c.getProperty("star.min_long");
+		if (s != null) {
+			min = Integer.parseInt(s);
+		}
+		
+		return min;
+	}
+	
+	public static long getMaxLong(Config c) {
+		long max = Long.MAX_VALUE;
+		
+		String s = c.getProperty("star.max_long");
 		if (s != null) {
 			max = Integer.parseInt(s);
 		}
