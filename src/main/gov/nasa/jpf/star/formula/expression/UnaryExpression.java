@@ -6,22 +6,22 @@ import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.symbc.numeric.Operator;
 
-public class IntegerUnaryExpression extends IntegerExpression {
+public class UnaryExpression extends Expression {
 	
 	private Operator op;
 	
-	private IntegerExpression exp;
+	private Expression exp;
 	
-	public IntegerUnaryExpression(Operator op, IntegerExpression exp) {
+	public UnaryExpression(Operator op, Expression exp) {
 		this.op = op;
 		this.exp = exp;
 	}
 	
 	@Override
-	public IntegerExpression substitute(Variable[] fromVars, Variable[] toVars,
+	public Expression substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
-		IntegerExpression newExp = exp.substitute(fromVars, toVars, existVarSubMap);
-		IntegerUnaryExpression newUnaryExp = new IntegerUnaryExpression(op, newExp);
+		Expression newExp = exp.substitute(fromVars, toVars, existVarSubMap);
+		UnaryExpression newUnaryExp = new UnaryExpression(op, newExp);
 		
 		return newUnaryExp;
 	}

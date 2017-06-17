@@ -1,7 +1,7 @@
 package gov.nasa.jpf.star.bytecode;
 
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
-import gov.nasa.jpf.star.formula.expression.IntegerUnaryExpression;
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.UnaryExpression;
 import gov.nasa.jpf.symbc.numeric.Operator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
@@ -13,7 +13,7 @@ public class INEG extends gov.nasa.jpf.jvm.bytecode.INEG {
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr();
+		Expression sym_v1 = (Expression) sf.getOperandAttr();
 		int v1 = sf.pop();
 
 		if (sym_v1 == null)
@@ -21,9 +21,9 @@ public class INEG extends gov.nasa.jpf.jvm.bytecode.INEG {
 		else
 			sf.push(0);
 
-		IntegerExpression result = null;
+		Expression result = null;
 		if (sym_v1 != null) {
-			result = new IntegerUnaryExpression(Operator.MINUS, sym_v1);
+			result = new UnaryExpression(Operator.MINUS, sym_v1);
 		}
 		
 		sf.setOperandAttr(result);

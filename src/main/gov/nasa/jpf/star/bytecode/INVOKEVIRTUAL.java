@@ -6,9 +6,9 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Variable;
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
-import gov.nasa.jpf.star.formula.expression.IntegerLiteral;
-import gov.nasa.jpf.star.formula.expression.IntegerVariable;
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.LiteralExpression;
+import gov.nasa.jpf.star.formula.expression.VariableExpression;
 import gov.nasa.jpf.star.precondition.Precondition;
 import gov.nasa.jpf.star.precondition.PreconditionMap;
 import gov.nasa.jpf.star.solver.Solver;
@@ -77,22 +77,22 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 					if (argTypes[i].equals("int")) {
 						String name =  argInfo[i + 1].getName();
 						
-						IntegerExpression exp1 = new IntegerVariable(new Variable(name, ""));
-						IntegerExpression exp2 = new IntegerVariable(new Variable(name, ""));
+						Expression exp1 = new VariableExpression(new Variable(name, ""));
+						Expression exp2 = new VariableExpression(new Variable(name, ""));
 						
-						IntegerExpression lit1 = new IntegerLiteral(Solver.getMinInt(conf));
-						IntegerExpression lit2 = new IntegerLiteral(Solver.getMaxInt(conf));
+						Expression lit1 = new LiteralExpression(Solver.getMinInt(conf));
+						Expression lit2 = new LiteralExpression(Solver.getMaxInt(conf));
 						
 						pc.addComparisonTerm(Comparator.GE, exp1, lit1);
 						pc.addComparisonTerm(Comparator.LE, exp2, lit2);
 					} else if (argTypes[i].equals("long")) {
 						String name =  argInfo[i + 1].getName();
 						
-						IntegerExpression exp1 = new IntegerVariable(new Variable(name, ""));
-						IntegerExpression exp2 = new IntegerVariable(new Variable(name, ""));
+						Expression exp1 = new VariableExpression(new Variable(name, ""));
+						Expression exp2 = new VariableExpression(new Variable(name, ""));
 						
-						IntegerExpression lit1 = new IntegerLiteral(Solver.getMinLong(conf));
-						IntegerExpression lit2 = new IntegerLiteral(Solver.getMaxLong(conf));
+						Expression lit1 = new LiteralExpression(Solver.getMinLong(conf));
+						Expression lit2 = new LiteralExpression(Solver.getMaxLong(conf));
 						
 						pc.addComparisonTerm(Comparator.GE, exp1, lit1);
 						pc.addComparisonTerm(Comparator.LE, exp2, lit2);

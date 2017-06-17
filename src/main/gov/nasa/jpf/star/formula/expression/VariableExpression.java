@@ -5,16 +5,16 @@ import java.util.Map;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 
-public class IntegerVariable extends IntegerExpression {
+public class VariableExpression extends Expression {
 	
 	private Variable var;
 	
-	public IntegerVariable(Variable var) {
+	public VariableExpression(Variable var) {
 		this.var = var;
 	}
 	
 	@Override
-	public IntegerExpression substitute(Variable[] fromVars, Variable[] toVars,
+	public Expression substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		Variable oldVar = var;
 		
@@ -36,7 +36,7 @@ public class IntegerVariable extends IntegerExpression {
 			}
 		}
 		
-		IntegerVariable newExpr = new IntegerVariable(newVar);
+		VariableExpression newExpr = new VariableExpression(newVar);
 		return newExpr;
 	}
 

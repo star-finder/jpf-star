@@ -1334,7 +1334,7 @@ public class PreconditionParser extends Parser {
 	}
 
 	public static class ExpContext extends ParserRuleContext {
-		public IntegerExpression e;
+		public Expression e;
 		public ExpContext exp1;
 		public TerContext ter;
 		public TerContext ter() {
@@ -1406,10 +1406,10 @@ public class PreconditionParser extends Parser {
 						setState(196);
 						((ExpContext)_localctx).ter = ter();
 
-						          		IntegerExpression exp1 = ((ExpContext)_localctx).exp1.e;
-						          		IntegerExpression exp2 = ((ExpContext)_localctx).ter.e;
+						          		Expression exp1 = ((ExpContext)_localctx).exp1.e;
+						          		Expression exp2 = ((ExpContext)_localctx).ter.e;
 						          		
-						          		((ExpContext)_localctx).e =  new IntegerBinaryExpression(Operator.PLUS, exp1, exp2);
+						          		((ExpContext)_localctx).e =  new BinaryExpression(Operator.PLUS, exp1, exp2);
 						          	
 						}
 						break;
@@ -1426,10 +1426,10 @@ public class PreconditionParser extends Parser {
 						setState(201);
 						((ExpContext)_localctx).ter = ter();
 
-						          		IntegerExpression exp1 = ((ExpContext)_localctx).exp1.e;
-						          		IntegerExpression exp2 = ((ExpContext)_localctx).ter.e;
+						          		Expression exp1 = ((ExpContext)_localctx).exp1.e;
+						          		Expression exp2 = ((ExpContext)_localctx).ter.e;
 						          		
-						          		((ExpContext)_localctx).e =  new IntegerBinaryExpression(Operator.MINUS, exp1, exp2);
+						          		((ExpContext)_localctx).e =  new BinaryExpression(Operator.MINUS, exp1, exp2);
 						          	
 						}
 						break;
@@ -1454,7 +1454,7 @@ public class PreconditionParser extends Parser {
 	}
 
 	public static class TerContext extends ParserRuleContext {
-		public IntegerExpression e;
+		public Expression e;
 		public Token var1;
 		public Token var2;
 		public Token ID;
@@ -1503,10 +1503,10 @@ public class PreconditionParser extends Parser {
 				setState(211);
 				((TerContext)_localctx).var2 = match(ID);
 
-						IntegerExpression exp1 = new IntegerVariable(new Variable((((TerContext)_localctx).var1!=null?((TerContext)_localctx).var1.getText():null), ""));
-						IntegerExpression exp2 = new IntegerVariable(new Variable((((TerContext)_localctx).var2!=null?((TerContext)_localctx).var2.getText():null), ""));
+						Expression exp1 = new VariableExpression(new Variable((((TerContext)_localctx).var1!=null?((TerContext)_localctx).var1.getText():null), ""));
+						Expression exp2 = new VariableExpression(new Variable((((TerContext)_localctx).var2!=null?((TerContext)_localctx).var2.getText():null), ""));
 						
-						((TerContext)_localctx).e =  new IntegerBinaryExpression(Operator.MUL, exp1, exp2);
+						((TerContext)_localctx).e =  new BinaryExpression(Operator.MUL, exp1, exp2);
 					
 				}
 				break;
@@ -1520,10 +1520,10 @@ public class PreconditionParser extends Parser {
 				setState(215);
 				((TerContext)_localctx).var2 = match(ID);
 
-						IntegerExpression exp1 = new IntegerVariable(new Variable((((TerContext)_localctx).var1!=null?((TerContext)_localctx).var1.getText():null), ""));
-						IntegerExpression exp2 = new IntegerVariable(new Variable((((TerContext)_localctx).var2!=null?((TerContext)_localctx).var2.getText():null), ""));
+						Expression exp1 = new VariableExpression(new Variable((((TerContext)_localctx).var1!=null?((TerContext)_localctx).var1.getText():null), ""));
+						Expression exp2 = new VariableExpression(new Variable((((TerContext)_localctx).var2!=null?((TerContext)_localctx).var2.getText():null), ""));
 					
-						((TerContext)_localctx).e =  new IntegerBinaryExpression(Operator.DIV, exp1, exp2);
+						((TerContext)_localctx).e =  new BinaryExpression(Operator.DIV, exp1, exp2);
 					
 				}
 				break;
@@ -1533,7 +1533,7 @@ public class PreconditionParser extends Parser {
 				setState(217);
 				((TerContext)_localctx).ID = match(ID);
 
-						((TerContext)_localctx).e =  new IntegerVariable(new Variable((((TerContext)_localctx).ID!=null?((TerContext)_localctx).ID.getText():null), ""));
+						((TerContext)_localctx).e =  new VariableExpression(new Variable((((TerContext)_localctx).ID!=null?((TerContext)_localctx).ID.getText():null), ""));
 					
 				}
 				break;
@@ -1543,7 +1543,7 @@ public class PreconditionParser extends Parser {
 				setState(219);
 				((TerContext)_localctx).INT = match(INT);
 
-						((TerContext)_localctx).e =  new IntegerLiteral(Integer.parseInt((((TerContext)_localctx).INT!=null?((TerContext)_localctx).INT.getText():null)));
+						((TerContext)_localctx).e =  new LiteralExpression(Integer.parseInt((((TerContext)_localctx).INT!=null?((TerContext)_localctx).INT.getText():null)));
 					
 				}
 				break;

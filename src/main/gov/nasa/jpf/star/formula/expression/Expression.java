@@ -4,9 +4,9 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
 
-public class IntegerExpression {
+public class Expression {
 	
-	public IntegerExpression substitute(Variable[] fromVars, Variable[] toVars,
+	public Expression substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		return null;
 	}

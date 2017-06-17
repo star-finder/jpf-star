@@ -3,8 +3,8 @@ package gov.nasa.jpf.star.bytecode;
 import gov.nasa.jpf.jvm.bytecode.IfInstruction;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
-import gov.nasa.jpf.star.formula.expression.IntegerLiteral;
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.LiteralExpression;
 import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.symbc.numeric.IntegerConstant;
@@ -16,7 +16,7 @@ import gov.nasa.jpf.vm.ThreadInfo;
 public class IFInstrSymbHelper {
 
 	public static Instruction getNextInstructionAndSetPCChoice(ThreadInfo ti, IfInstruction instr,
-			IntegerExpression sym_v1, IntegerExpression sym_v2, Comparator trueComparator, Comparator falseComparator) {
+			Expression sym_v1, Expression sym_v2, Comparator trueComparator, Comparator falseComparator) {
 		StackFrame sf = ti.getModifiableTopFrame();
 		
 		ChoiceGenerator<?> cg;
@@ -49,10 +49,10 @@ public class IFInstrSymbHelper {
 					if (sym_v2 != null) {
 						pc.addComparisonTerm(trueComparator, sym_v1, sym_v2);
 					} else {
-						pc.addComparisonTerm(trueComparator, sym_v1, new IntegerLiteral(v2));
+						pc.addComparisonTerm(trueComparator, sym_v1, new LiteralExpression(v2));
 					}
 				} else {
-					pc.addComparisonTerm(trueComparator, new IntegerLiteral(v1), sym_v2);
+					pc.addComparisonTerm(trueComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
 				if (Solver.checkSat(pc, ti.getVM().getConfig()))
@@ -65,10 +65,10 @@ public class IFInstrSymbHelper {
 					if (sym_v2 != null) {
 						pc.addComparisonTerm(falseComparator, sym_v1, sym_v2);
 					} else {
-						pc.addComparisonTerm(falseComparator, sym_v1, new IntegerLiteral(v2));
+						pc.addComparisonTerm(falseComparator, sym_v1, new LiteralExpression(v2));
 					}
 				} else {
-					pc.addComparisonTerm(falseComparator, new IntegerLiteral(v1), sym_v2);
+					pc.addComparisonTerm(falseComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
 				if (Solver.checkSat(pc, ti.getVM().getConfig()))

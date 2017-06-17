@@ -1,8 +1,8 @@
 package gov.nasa.jpf.star.bytecode;
 
-import gov.nasa.jpf.star.formula.expression.IntegerBinaryExpression;
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
-import gov.nasa.jpf.star.formula.expression.IntegerLiteral;
+import gov.nasa.jpf.star.formula.expression.BinaryExpression;
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.LiteralExpression;
 import gov.nasa.jpf.symbc.numeric.Operator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
@@ -19,12 +19,12 @@ public class IINC extends gov.nasa.jpf.jvm.bytecode.IINC {
 
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		IntegerExpression sym_v = (IntegerExpression) sf.getLocalAttr(index);
+		Expression sym_v = (Expression) sf.getLocalAttr(index);
 		if (sym_v == null) {
 			return super.execute(ti);
 		} else {
-			IntegerExpression result = new IntegerBinaryExpression(Operator.PLUS, sym_v, 
-					new IntegerLiteral(increment));
+			Expression result = new BinaryExpression(Operator.PLUS, sym_v, 
+					new LiteralExpression(increment));
 			
 			sf.setLocalVariable(index, 0, false);
 			sf.setLocalAttr(index, result);

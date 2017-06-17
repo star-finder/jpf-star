@@ -12,7 +12,7 @@ import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
+import gov.nasa.jpf.star.formula.expression.Expression;
 
 // a formula includes heap part and pure part
 
@@ -125,7 +125,7 @@ public class Formula {
 		pureFormula.addTerm(term);
 	}
 	
-	public void addComparisonTerm(Comparator comp, IntegerExpression exp1, IntegerExpression exp2) {
+	public void addComparisonTerm(Comparator comp, Expression exp1, Expression exp2) {
 		PureTerm term = new ComparisonTerm(comp, exp1, exp2);
 		pureFormula.addTerm(term);
 	}

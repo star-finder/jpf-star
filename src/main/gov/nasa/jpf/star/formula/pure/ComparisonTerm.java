@@ -4,17 +4,17 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
+import gov.nasa.jpf.star.formula.expression.Expression;
 
 public class ComparisonTerm extends PureTerm {
 	
 	private Comparator comp;
 	
-	private IntegerExpression exp1;
+	private Expression exp1;
 	
-	private IntegerExpression exp2;
+	private Expression exp2;
 	
-	public ComparisonTerm(Comparator comp, IntegerExpression exp1, IntegerExpression exp2) {
+	public ComparisonTerm(Comparator comp, Expression exp1, Expression exp2) {
 		this.comp = comp;
 		this.exp1 = exp1;
 		this.exp2 = exp2;
@@ -23,8 +23,8 @@ public class ComparisonTerm extends PureTerm {
 	@Override
 	public PureTerm substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
-		IntegerExpression newExp1 = exp1.substitute(fromVars, toVars, existVarSubMap);
-		IntegerExpression newExp2 = exp2.substitute(fromVars, toVars, existVarSubMap);
+		Expression newExp1 = exp1.substitute(fromVars, toVars, existVarSubMap);
+		Expression newExp2 = exp2.substitute(fromVars, toVars, existVarSubMap);
 		
 		ComparisonTerm newTerm = new ComparisonTerm(comp, newExp1, newExp2);
 		

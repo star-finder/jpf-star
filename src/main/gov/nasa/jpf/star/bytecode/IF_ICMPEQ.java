@@ -2,7 +2,7 @@ package gov.nasa.jpf.star.bytecode;
 
 import gov.nasa.jpf.star.bytecode.IFInstrSymbHelper;
 import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.star.formula.expression.IntegerExpression;
+import gov.nasa.jpf.star.formula.expression.Expression;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
@@ -17,8 +17,8 @@ public class IF_ICMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ICMPEQ {
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		IntegerExpression sym_v1 = (IntegerExpression) sf.getOperandAttr(1);
-		IntegerExpression sym_v2 = (IntegerExpression) sf.getOperandAttr(0);
+		Expression sym_v1 = (Expression) sf.getOperandAttr(1);
+		Expression sym_v2 = (Expression) sf.getOperandAttr(0);
 
 		if (sym_v1 == null && sym_v2 == null) { // both conditions are concrete
 			return super.execute(ti);
