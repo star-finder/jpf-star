@@ -7,7 +7,6 @@ import gov.nasa.jpf.symbc.numeric.Operator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
-import gov.nasa.jpf.vm.Types;
 
 public class FREM extends gov.nasa.jpf.jvm.bytecode.FREM {
 
@@ -22,9 +21,9 @@ public class FREM extends gov.nasa.jpf.jvm.bytecode.FREM {
 			return super.execute(ti); // we'll still do the concrete execution
 		}
 		else {
-			float v2 = Types.intToFloat(sf.pop());
-			float v1 = Types.intToFloat(sf.pop());
-			sf.push(0); // for symbolic expressions, the concrete value does not matter
+			float v2 = sf.popFloat();
+			float v1 = sf.popFloat();
+			sf.pushFloat(0); // for symbolic expressions, the concrete value does not matter
 			
 			Expression result = null;
 			

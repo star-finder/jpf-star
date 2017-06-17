@@ -2,6 +2,15 @@ package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.bytecode.ALOAD;
+import gov.nasa.jpf.star.bytecode.DADD;
+import gov.nasa.jpf.star.bytecode.DCMPG;
+import gov.nasa.jpf.star.bytecode.DCMPL;
+import gov.nasa.jpf.star.bytecode.DDIV;
+import gov.nasa.jpf.star.bytecode.DLOAD;
+import gov.nasa.jpf.star.bytecode.DMUL;
+import gov.nasa.jpf.star.bytecode.DNEG;
+import gov.nasa.jpf.star.bytecode.DREM;
+import gov.nasa.jpf.star.bytecode.DSUB;
 import gov.nasa.jpf.star.bytecode.FADD;
 import gov.nasa.jpf.star.bytecode.FCMPG;
 import gov.nasa.jpf.star.bytecode.FCMPL;
@@ -336,6 +345,51 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction fcmpl() {
 		return new FCMPL();
+	}
+	
+	@Override
+	public Instruction dload(int localVarIndex) {
+		return new DLOAD(localVarIndex);
+	}
+
+	@Override
+	public Instruction dadd() {
+		return new DADD();
+	}
+
+	@Override
+	public Instruction ddiv() {
+		return new DDIV();
+	}
+
+	@Override
+	public Instruction dmul() {
+		return new DMUL();
+	}
+
+	@Override
+	public Instruction dneg() {
+		return new DNEG();
+	}
+
+	@Override
+	public Instruction drem() {
+		return new DREM();
+	}
+
+	@Override
+	public Instruction dsub() {
+		return new DSUB();
+	}
+	
+	@Override
+	public Instruction dcmpg() {
+		return new DCMPG();
+	}
+	
+	@Override
+	public Instruction dcmpl() {
+		return new DCMPL();
 	}
 	
 	@Override

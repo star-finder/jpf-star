@@ -7,26 +7,26 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class FNEG extends gov.nasa.jpf.jvm.bytecode.FNEG {
+public class DNEG extends gov.nasa.jpf.jvm.bytecode.DNEG {
 
 	@Override
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		Expression sym_v1 = (Expression) sf.getOperandAttr();
-		float v1 = sf.popFloat();
+		Expression sym_v1 = (Expression) sf.getLongOperandAttr();
+		double v1 = sf.popDouble();
 
 		if (sym_v1 == null)
-			sf.pushFloat(-v1);
+			sf.pushDouble(-v1);
 		else
-			sf.pushFloat(0);
+			sf.pushDouble(0);
 
 		Expression result = null;
 		if (sym_v1 != null) {
 			result = new UnaryExpression(Operator.MINUS, sym_v1);
 		}
 		
-		sf.setOperandAttr(result);
+		sf.setLongOperandAttr(result);
 
 		return getNext(ti);
 	}

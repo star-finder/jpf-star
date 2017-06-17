@@ -13,7 +13,7 @@ public class LNEG extends gov.nasa.jpf.jvm.bytecode.LNEG {
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		Expression sym_v1 = (Expression) sf.getOperandAttr();
+		Expression sym_v1 = (Expression) sf.getLongOperandAttr();
 		long v1 = sf.popLong();
 
 		if (sym_v1 == null)

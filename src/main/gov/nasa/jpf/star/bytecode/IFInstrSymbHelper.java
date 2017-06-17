@@ -7,7 +7,6 @@ import gov.nasa.jpf.star.formula.expression.Expression;
 import gov.nasa.jpf.star.formula.expression.LiteralExpression;
 import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.symbc.numeric.IntegerConstant;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
