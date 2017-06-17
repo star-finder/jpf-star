@@ -2,6 +2,15 @@ package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.bytecode.ALOAD;
+import gov.nasa.jpf.star.bytecode.FADD;
+import gov.nasa.jpf.star.bytecode.FCMPG;
+import gov.nasa.jpf.star.bytecode.FCMPL;
+import gov.nasa.jpf.star.bytecode.FDIV;
+import gov.nasa.jpf.star.bytecode.FLOAD;
+import gov.nasa.jpf.star.bytecode.FMUL;
+import gov.nasa.jpf.star.bytecode.FNEG;
+import gov.nasa.jpf.star.bytecode.FREM;
+import gov.nasa.jpf.star.bytecode.FSUB;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
 import gov.nasa.jpf.star.bytecode.IADD;
 import gov.nasa.jpf.star.bytecode.IAND;
@@ -282,6 +291,51 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction lcmp() {
 		return new LCMP();
+	}
+	
+	@Override
+	public Instruction fload(int localVarIndex) {
+		return new FLOAD(localVarIndex);
+	}
+
+	@Override
+	public Instruction fadd() {
+		return new FADD();
+	}
+
+	@Override
+	public Instruction fdiv() {
+		return new FDIV();
+	}
+
+	@Override
+	public Instruction fmul() {
+		return new FMUL();
+	}
+
+	@Override
+	public Instruction fneg() {
+		return new FNEG();
+	}
+
+	@Override
+	public Instruction frem() {
+		return new FREM();
+	}
+
+	@Override
+	public Instruction fsub() {
+		return new FSUB();
+	}
+	
+	@Override
+	public Instruction fcmpg() {
+		return new FCMPG();
+	}
+	
+	@Override
+	public Instruction fcmpl() {
+		return new FCMPL();
 	}
 	
 	@Override

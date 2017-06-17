@@ -7,9 +7,9 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class ILOAD extends gov.nasa.jpf.jvm.bytecode.ILOAD {
+public class FLOAD extends gov.nasa.jpf.jvm.bytecode.FLOAD {
 
-	public ILOAD(int localVarIndex) {
+	public FLOAD(int localVarIndex) {
 		super(localVarIndex);
 	}
 	

@@ -18,7 +18,7 @@ public class LLOAD extends gov.nasa.jpf.jvm.bytecode.LLOAD {
 		StackFrame sf = ti.getModifiableTopFrame();
 		Object sym_v = sf.getLongLocalAttr(index);
 		
-		if(sym_v != null) {
+		if (sym_v != null) {
 			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
 			sf.setLongLocalAttr(index, exp);
 		}

@@ -56,10 +56,14 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod2(long i, long j) {
+	public Node myMethod2(float i, float j) {
 		i = i + j;
 		if (i - 1 > 0) {
-			return null;
+			i = 2 * i - 1;
+			if (i > 0)
+				return null;
+			else
+				return null;
 		} else {
 			return null;
 		}
@@ -71,8 +75,8 @@ public class MyClass {
 //		Node x = new Node();
 //		Node y = new Node();
 //		mc.myMethod();
-		int i = 0;
-		int j = 0;
+		float i = 0;
+		float j = 0;
 		mc.myMethod2(i, j);
 //		mc.myMethod1(x, y);
 	}
