@@ -1,10 +1,7 @@
 package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
-import gov.nasa.jpf.star.bytecode.ILOAD;
-import gov.nasa.jpf.star.bytecode.IMUL;
 import gov.nasa.jpf.star.bytecode.ALOAD;
-import gov.nasa.jpf.star.bytecode.ASTORE;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
 import gov.nasa.jpf.star.bytecode.IADD;
 import gov.nasa.jpf.star.bytecode.IDIV;
@@ -24,6 +21,8 @@ import gov.nasa.jpf.star.bytecode.IF_ICMPGT;
 import gov.nasa.jpf.star.bytecode.IF_ICMPLE;
 import gov.nasa.jpf.star.bytecode.IF_ICMPLT;
 import gov.nasa.jpf.star.bytecode.IF_ICMPNE;
+import gov.nasa.jpf.star.bytecode.ILOAD;
+import gov.nasa.jpf.star.bytecode.IMUL;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
 import gov.nasa.jpf.star.bytecode.ISUB;
 import gov.nasa.jpf.vm.Instruction;
@@ -40,11 +39,6 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction aload(int localVarIndex) {
 		return new ALOAD(localVarIndex);
-	}
-
-	@Override
-	public Instruction astore(int localVarIndex) {
-		return new ASTORE(localVarIndex);
 	}
 
 	@Override

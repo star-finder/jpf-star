@@ -64,8 +64,12 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 			if (prevCG == null) {
 				String methodName = mi.getName();
 				Precondition pre = PreconditionMap.find(methodName);
-				if (pre != null)
+				if (pre != null) {
 					pc = pre.getFormula();
+					if (!Solver.checkSat(pc, conf)) {
+						System.out.println("Precondition is not satisfiable");
+					}
+				}
 				else
 					pc = new Formula();
 				

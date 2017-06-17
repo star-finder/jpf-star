@@ -1,31 +1,20 @@
 package gov.nasa.jpf.star.bytecode;
 
-import java.util.List;
-
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapFormula;
 import gov.nasa.jpf.star.formula.Utilities;
-import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.arrays.ArrayExpression;
-import gov.nasa.jpf.symbc.heap.HeapNode;
-import gov.nasa.jpf.symbc.heap.Helper;
-import gov.nasa.jpf.symbc.heap.SymbolicInputHeap;
-import gov.nasa.jpf.symbc.numeric.IntegerExpression;
-import gov.nasa.jpf.symbc.numeric.PathCondition;
-import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
 import gov.nasa.jpf.symbc.string.StringExpression;
 import gov.nasa.jpf.symbc.string.SymbolicStringBuilder;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.ClassLoaderInfo;
 import gov.nasa.jpf.vm.ElementInfo;
-import gov.nasa.jpf.vm.FieldInfo;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.StackFrame;
@@ -44,12 +33,12 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 		
 		int objRef = sf.peek();
 		ElementInfo ei = ti.getElementInfo(objRef);
-		Object attr = sf.getLocalAttr(index);
+		Object sym_v = sf.getLocalAttr(index);
 		
 		String typeOfLocalVar = super.getLocalVariableType();
 
-		if(attr == null || typeOfLocalVar.equals("?") || attr instanceof SymbolicStringBuilder
-				|| attr instanceof StringExpression || attr instanceof ArrayExpression) {
+		if(sym_v == null || typeOfLocalVar.equals("?") || sym_v instanceof SymbolicStringBuilder
+				|| sym_v instanceof StringExpression || sym_v instanceof ArrayExpression) {
 			return super.execute(ti);
 		}
 		
@@ -70,7 +59,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
 				
-				if (Utilities.isNull(pc, attr.toString())) {
+				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
 					
 					sf.setLocalVariable(index, daIndex, true);
@@ -78,10 +67,10 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					
 					return getNext(ti);
 				} else {
-					HeapTerm ht = Utilities.findHeapTerm(pc, attr.toString());
+					HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 					
 					if (ht instanceof PointToTerm) {
-						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
+						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 						
 						sf.setLocalVariable(index, daIndex, true);
 						sf.pushLocal(index);
@@ -105,7 +94,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 
 			Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
-			HeapTerm ht = Utilities.findHeapTerm(pc, attr.toString());
+			HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 			
 			// in this case ht is inductive term;
 			InductiveTerm it = (InductiveTerm) ht;
@@ -117,10 +106,10 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
 	
-				if (Utilities.isNull(pc, attr.toString())) {
+				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
 				} else {
-					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
+					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 				}
 				
 				sf.setLocalVariable(index, daIndex, true);

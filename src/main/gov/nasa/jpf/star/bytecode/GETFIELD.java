@@ -1,23 +1,14 @@
 package gov.nasa.jpf.star.bytecode;
 
-import java.util.List;
-
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapFormula;
 import gov.nasa.jpf.star.formula.Utilities;
-import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.arrays.ArrayExpression;
-import gov.nasa.jpf.symbc.heap.HeapNode;
-import gov.nasa.jpf.symbc.heap.Helper;
-import gov.nasa.jpf.symbc.heap.SymbolicInputHeap;
-import gov.nasa.jpf.symbc.numeric.IntegerExpression;
-import gov.nasa.jpf.symbc.numeric.PathCondition;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
 import gov.nasa.jpf.symbc.string.StringExpression;
 import gov.nasa.jpf.symbc.string.SymbolicStringBuilder;
@@ -46,6 +37,18 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 		// --- check for obvious exceptions
 		if (objRef == MJIEnv.NULL) {
+			ChoiceGenerator<?> errorCG = ti.getVM().getSystemState().getChoiceGenerator();
+			
+			if (errorCG instanceof StarChoiceGenerator) {
+				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
+				
+				if (Solver.checkSat(pc, conf)) {
+					System.out.println("java.lang.NullPointerException: referencing field '" + fname + "' on null object");
+					System.out.println(pc);
+					System.out.println(Solver.getModel());
+				}
+			}
+			
 			ti.getVM().getSystemState().setIgnored(true);
 			return getNext(ti);
 		}
@@ -57,14 +60,14 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 					"referencing field '" + fname + "' in " + ei);
 		}
 
-		Object attr = ei.getFieldAttr(fi);
+		Object sym_v = ei.getFieldAttr(fi);
 
-		if (!(fi.isReference() && attr != null)) {
+		if (!(fi.isReference() && sym_v != null)) {
 			return super.execute(ti);
 		}
 
-		if (attr instanceof StringExpression || attr instanceof SymbolicStringBuilder
-				|| attr instanceof ArrayExpression) {
+		if (sym_v instanceof StringExpression || sym_v instanceof SymbolicStringBuilder
+				|| sym_v instanceof ArrayExpression) {
 			return super.execute(ti);
 		}
 
@@ -73,10 +76,10 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 		ClassInfo typeClassInfo = fi.getTypeClassInfo();
 
-		if (attr.toString().contains(".")) {
-			int index = attr.toString().indexOf('.') + 1;
-			int length = attr.toString().length();
-			attr = new SymbolicInteger("this_" + attr.toString().substring(index, length));
+		if (sym_v.toString().contains(".")) {
+			int index = sym_v.toString().indexOf('.') + 1;
+			int length = sym_v.toString().length();
+			sym_v = new SymbolicInteger("this_" + sym_v.toString().substring(index, length));
 		}
 
 		// in the first round we check if we can unfold the formula
@@ -91,27 +94,27 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
 
-				if (Utilities.isNull(pc, attr.toString())) {
+				if (Utilities.isNull(pc, sym_v.toString())) {
 					sf.pop();
 					
 					daIndex = MJIEnv.NULL;
 					ei.setReferenceField(fi, daIndex);
 					
 					sf.pushRef(daIndex);
-					sf.setOperandAttr(attr);
+					sf.setOperandAttr(sym_v);
 
 					return getNext(ti);
 				} else {
-					HeapTerm ht = Utilities.findHeapTerm(pc, attr.toString());
+					HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 
 					if (ht instanceof PointToTerm) {
 						sf.pop();
 
-						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
+						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 						ei.setReferenceField(fi, daIndex);
 
 						sf.pushRef(daIndex);
-						sf.setOperandAttr(attr);
+						sf.setOperandAttr(sym_v);
 
 						return getNext(ti);
 					} else if (ht instanceof InductiveTerm) {
@@ -134,7 +137,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 
 			Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
-			HeapTerm ht = Utilities.findHeapTerm(pc, attr.toString());
+			HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 
 			// in this case ht is inductive term;
 			InductiveTerm it = (InductiveTerm) ht;
@@ -146,16 +149,16 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
 
-				if (Utilities.isNull(pc, attr.toString())) {
+				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
 				} else {
-					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, attr, pc);
+					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 				}
 
 				ei.setReferenceField(fi, daIndex);
 
 				sf.pushRef(daIndex);
-				sf.setOperandAttr(attr);
+				sf.setOperandAttr(sym_v);
 
 				return getNext(ti);
 			} else {

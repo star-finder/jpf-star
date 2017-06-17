@@ -1,5 +1,7 @@
 package gov.nasa.jpf.star.bytecode;
 
+import java.util.List;
+
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Variable;
@@ -28,58 +30,83 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 			ChoiceGenerator<?> prevCG;
 
 			if (!ti.isFirstStepInsn()) {
-				cg = new StarChoiceGenerator(2);
-				ti.getVM().getSystemState().setNextChoiceGenerator(cg);
-				
-				return this;
+				prevCG = ti.getVM().getSystemState().getChoiceGenerator();
+				if (prevCG instanceof StarChoiceGenerator) {
+					Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
+					
+					List<Variable> alias1 = null;
+					List<Variable> alias2 = null;
+					
+					if (sym_v1 != null) alias1 = pc.getAlias(sym_v1.toString());
+					if (sym_v2 != null) alias2 = pc.getAlias(sym_v2.toString());
+					
+					if (alias1 == null || alias2 == null) {
+						cg = new StarChoiceGenerator(2);
+						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
+						
+						return this;
+					} else if (alias1 != alias2) {
+						sf.pop();
+						sf.pop();
+						
+						return getTarget();
+					} else {
+						sf.pop();
+						sf.pop();
+						
+						return getNext(ti);
+					}
+				}
+
+				return super.execute(ti);
 			} else {
 				cg = ti.getVM().getSystemState().getChoiceGenerator();
 				conditionValue = (Integer) cg.getNextChoice() == 1 ? true: false;
-			}
-
-			int v2 = sf.pop();
-			int v1 = sf.pop();
-			
-			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
-			Formula pc = null;
-			
-			if (prevCG == null)
-				pc = new Formula();
-			else
-				pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
-			
-			if (conditionValue) {
-				if (sym_v1 != null) {
-					if (sym_v2 != null) {
-						pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
-					} else {
-						pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
-					}
-				} else {
-					pc.addNEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
-				}
-
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
-					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
-				else
-					ti.getVM().getSystemState().setIgnored(true);
-				return getTarget();
-			} else {
-				if (sym_v1 != null) {
-					if (sym_v2 != null) {
-						pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
-					} else {
-						pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
-					}
-				} else {
-					pc.addEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
-				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
-					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				int v2 = sf.pop();
+				int v1 = sf.pop();
+				
+				prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
+				Formula pc = null;
+				
+				if (prevCG == null)
+					pc = new Formula();
 				else
-					ti.getVM().getSystemState().setIgnored(true);
-				return getNext(ti);
+					pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
+				
+				if (conditionValue) {
+					if (sym_v1 != null) {
+						if (sym_v2 != null) {
+							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+						} else {
+							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
+						}
+					} else {
+						pc.addNEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
+					}
+
+					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+					else
+						ti.getVM().getSystemState().setIgnored(true);
+					return getTarget();
+				} else {
+					if (sym_v1 != null) {
+						if (sym_v2 != null) {
+							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+						} else {
+							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
+						}
+					} else {
+						pc.addEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
+					}
+					
+					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+					else
+						ti.getVM().getSystemState().setIgnored(true);
+					return getNext(ti);
+				}
 			}
 		}
 	}
