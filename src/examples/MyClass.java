@@ -60,7 +60,7 @@ public class MyClass {
 		i = i + j;
 		if (i - 1 > 0) {
 			i = 2 * i - 1;
-			if (i > 0)
+			if (((int) i) > 0)
 				return null;
 			else
 				return null;

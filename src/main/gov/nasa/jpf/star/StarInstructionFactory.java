@@ -2,6 +2,9 @@ package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.bytecode.ALOAD;
+import gov.nasa.jpf.star.bytecode.D2F;
+import gov.nasa.jpf.star.bytecode.D2I;
+import gov.nasa.jpf.star.bytecode.D2L;
 import gov.nasa.jpf.star.bytecode.DADD;
 import gov.nasa.jpf.star.bytecode.DCMPG;
 import gov.nasa.jpf.star.bytecode.DCMPL;
@@ -11,6 +14,9 @@ import gov.nasa.jpf.star.bytecode.DMUL;
 import gov.nasa.jpf.star.bytecode.DNEG;
 import gov.nasa.jpf.star.bytecode.DREM;
 import gov.nasa.jpf.star.bytecode.DSUB;
+import gov.nasa.jpf.star.bytecode.F2D;
+import gov.nasa.jpf.star.bytecode.F2I;
+import gov.nasa.jpf.star.bytecode.F2L;
 import gov.nasa.jpf.star.bytecode.FADD;
 import gov.nasa.jpf.star.bytecode.FCMPG;
 import gov.nasa.jpf.star.bytecode.FCMPL;
@@ -21,6 +27,12 @@ import gov.nasa.jpf.star.bytecode.FNEG;
 import gov.nasa.jpf.star.bytecode.FREM;
 import gov.nasa.jpf.star.bytecode.FSUB;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
+import gov.nasa.jpf.star.bytecode.I2B;
+import gov.nasa.jpf.star.bytecode.I2C;
+import gov.nasa.jpf.star.bytecode.I2D;
+import gov.nasa.jpf.star.bytecode.I2F;
+import gov.nasa.jpf.star.bytecode.I2L;
+import gov.nasa.jpf.star.bytecode.I2S;
 import gov.nasa.jpf.star.bytecode.IADD;
 import gov.nasa.jpf.star.bytecode.IAND;
 import gov.nasa.jpf.star.bytecode.IDIV;
@@ -52,6 +64,9 @@ import gov.nasa.jpf.star.bytecode.ISHR;
 import gov.nasa.jpf.star.bytecode.ISUB;
 import gov.nasa.jpf.star.bytecode.IUSHR;
 import gov.nasa.jpf.star.bytecode.IXOR;
+import gov.nasa.jpf.star.bytecode.L2D;
+import gov.nasa.jpf.star.bytecode.L2F;
+import gov.nasa.jpf.star.bytecode.L2I;
 import gov.nasa.jpf.star.bytecode.LADD;
 import gov.nasa.jpf.star.bytecode.LAND;
 import gov.nasa.jpf.star.bytecode.LCMP;
@@ -390,6 +405,81 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction dcmpl() {
 		return new DCMPL();
+	}
+	
+	@Override
+	public Instruction i2b() {
+		return new I2B();
+	}
+	
+	@Override
+	public Instruction i2c() {
+		return new I2C();
+	}
+	
+	@Override
+	public Instruction i2d() {
+		return new I2D();
+	}
+	
+	@Override
+	public Instruction i2f() {
+		return new I2F();
+	}
+	
+	@Override
+	public Instruction i2l() {
+		return new I2L();
+	}
+	
+	@Override
+	public Instruction i2s() {
+		return new I2S();
+	}
+	
+	@Override
+	public Instruction l2d() {
+		return new L2D();
+	}
+	
+	@Override
+	public Instruction l2f() {
+		return new L2F();
+	}
+	
+	@Override
+	public Instruction l2i() {
+		return new L2I();
+	}
+	
+	@Override
+	public Instruction f2d() {
+		return new F2D();
+	}
+	
+	@Override
+	public Instruction f2i() {
+		return new F2I();
+	}
+	
+	@Override
+	public Instruction f2l() {
+		return new F2L();
+	}
+	
+	@Override
+	public Instruction d2f() {
+		return new D2F();
+	}
+	
+	@Override
+	public Instruction d2i() {
+		return new D2I();
+	}
+	
+	@Override
+	public Instruction d2l() {
+		return new D2L();
 	}
 	
 	@Override
