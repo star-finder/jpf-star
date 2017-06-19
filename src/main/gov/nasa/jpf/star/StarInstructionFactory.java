@@ -27,6 +27,7 @@ import gov.nasa.jpf.star.bytecode.FNEG;
 import gov.nasa.jpf.star.bytecode.FREM;
 import gov.nasa.jpf.star.bytecode.FSUB;
 import gov.nasa.jpf.star.bytecode.GETFIELD;
+import gov.nasa.jpf.star.bytecode.GETSTATIC;
 import gov.nasa.jpf.star.bytecode.I2B;
 import gov.nasa.jpf.star.bytecode.I2C;
 import gov.nasa.jpf.star.bytecode.I2D;
@@ -490,6 +491,11 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction getfield(String fieldName, String clsName, String fieldDescriptor) {
 		return new GETFIELD(fieldName, clsName, fieldDescriptor);
+	}
+	
+	@Override
+	public Instruction getstatic(String fieldName, String clsName, String fieldDescriptor) {
+		return new GETSTATIC(fieldName, clsName, fieldDescriptor);
 	}
 
 }

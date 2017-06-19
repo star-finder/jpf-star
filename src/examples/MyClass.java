@@ -1,7 +1,7 @@
 
 public class MyClass {
 	
-	Node x;
+	static Node x;
 		
 	public Node foo(Node x) {
 		if (x == null) {
@@ -74,10 +74,10 @@ public class MyClass {
 		MyClass mc = new MyClass();
 //		Node x = new Node();
 //		Node y = new Node();
-//		mc.myMethod();
-		double i = 0;
-		double j = 0;
-		mc.myMethod2(i, j);
+		mc.myMethod();
+//		double i = 0;
+//		double j = 0;
+//		mc.myMethod2(i, j);
 //		mc.myMethod1(x, y);
 	}
 
