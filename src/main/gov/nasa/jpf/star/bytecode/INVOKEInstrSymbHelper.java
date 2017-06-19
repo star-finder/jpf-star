@@ -39,10 +39,9 @@ public class INVOKEInstrSymbHelper {
 		boolean isClassSymbolic = BytecodeUtils.isClassSymbolic(conf, cname, mi, mname);
 		boolean isMethodSymbolic = BytecodeUtils.isMethodSymbolic(conf, fname, argSize, new Vector<String>());
 		
-		// need a way to get method with preconditions
 		if (isClassSymbolic || isMethodSymbolic) {
-			ChoiceGenerator<?> cg = null;
-			ChoiceGenerator<?> prevCG = null;
+			ChoiceGenerator<?> cg;
+			ChoiceGenerator<?> prevCG;
 			
 			if (!ti.isFirstStepInsn()) {
 				cg = new StarChoiceGenerator(1);

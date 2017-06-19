@@ -77,6 +77,7 @@ import gov.nasa.jpf.star.bytecode.LDIV;
 import gov.nasa.jpf.star.bytecode.LLOAD;
 import gov.nasa.jpf.star.bytecode.LMUL;
 import gov.nasa.jpf.star.bytecode.LNEG;
+import gov.nasa.jpf.star.bytecode.LOOKUPSWITCH;
 import gov.nasa.jpf.star.bytecode.LOR;
 import gov.nasa.jpf.star.bytecode.LREM;
 import gov.nasa.jpf.star.bytecode.LSHL;
@@ -84,6 +85,7 @@ import gov.nasa.jpf.star.bytecode.LSHR;
 import gov.nasa.jpf.star.bytecode.LSUB;
 import gov.nasa.jpf.star.bytecode.LUSHR;
 import gov.nasa.jpf.star.bytecode.LXOR;
+import gov.nasa.jpf.star.bytecode.TABLESWITCH;
 import gov.nasa.jpf.vm.Instruction;
 
 // to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
@@ -179,7 +181,7 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction ifle(int targetPc) {
 		return new IFLE(targetPc);
 	}
-	
+
 	@Override
 	public Instruction iload(int localVarIndex) {
 		return new ILOAD(localVarIndex);
@@ -314,12 +316,12 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction lxor() {
 		return new LXOR();
 	}
-	
+
 	@Override
 	public Instruction lcmp() {
 		return new LCMP();
 	}
-	
+
 	@Override
 	public Instruction fload(int localVarIndex) {
 		return new FLOAD(localVarIndex);
@@ -354,17 +356,17 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction fsub() {
 		return new FSUB();
 	}
-	
+
 	@Override
 	public Instruction fcmpg() {
 		return new FCMPG();
 	}
-	
+
 	@Override
 	public Instruction fcmpl() {
 		return new FCMPL();
 	}
-	
+
 	@Override
 	public Instruction dload(int localVarIndex) {
 		return new DLOAD(localVarIndex);
@@ -399,102 +401,102 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction dsub() {
 		return new DSUB();
 	}
-	
+
 	@Override
 	public Instruction dcmpg() {
 		return new DCMPG();
 	}
-	
+
 	@Override
 	public Instruction dcmpl() {
 		return new DCMPL();
 	}
-	
+
 	@Override
 	public Instruction i2b() {
 		return new I2B();
 	}
-	
+
 	@Override
 	public Instruction i2c() {
 		return new I2C();
 	}
-	
+
 	@Override
 	public Instruction i2d() {
 		return new I2D();
 	}
-	
+
 	@Override
 	public Instruction i2f() {
 		return new I2F();
 	}
-	
+
 	@Override
 	public Instruction i2l() {
 		return new I2L();
 	}
-	
+
 	@Override
 	public Instruction i2s() {
 		return new I2S();
 	}
-	
+
 	@Override
 	public Instruction l2d() {
 		return new L2D();
 	}
-	
+
 	@Override
 	public Instruction l2f() {
 		return new L2F();
 	}
-	
+
 	@Override
 	public Instruction l2i() {
 		return new L2I();
 	}
-	
+
 	@Override
 	public Instruction f2d() {
 		return new F2D();
 	}
-	
+
 	@Override
 	public Instruction f2i() {
 		return new F2I();
 	}
-	
+
 	@Override
 	public Instruction f2l() {
 		return new F2L();
 	}
-	
+
 	@Override
 	public Instruction d2f() {
 		return new D2F();
 	}
-	
+
 	@Override
 	public Instruction d2i() {
 		return new D2I();
 	}
-	
+
 	@Override
 	public Instruction d2l() {
 		return new D2L();
 	}
-	
+
 	@Override
 	public Instruction invokevirtual(String clsName, String methodName, String methodSignature) {
 		return new INVOKEVIRTUAL(clsName, methodName, methodSignature);
 	}
-	
+
 	@Override
 	public Instruction invokestatic(String clsName, String methodName, String methodSignature) {
 		return new INVOKESTATIC(clsName, methodName, methodSignature);
 	}
-	
+
 	@Override
 	public Instruction invokespecial(String clsName, String methodName, String methodSignature) {
 		return new INVOKESPECIAL(clsName, methodName, methodSignature);
@@ -504,10 +506,20 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction getfield(String fieldName, String clsName, String fieldDescriptor) {
 		return new GETFIELD(fieldName, clsName, fieldDescriptor);
 	}
-	
+
 	@Override
 	public Instruction getstatic(String fieldName, String clsName, String fieldDescriptor) {
 		return new GETSTATIC(fieldName, clsName, fieldDescriptor);
+	}
+
+	@Override
+	public Instruction lookupswitch(int defaultTargetPc, int nEntries) {
+		return new LOOKUPSWITCH(defaultTargetPc, nEntries);
+	}
+	
+	@Override
+	public Instruction tableswitch(int defaultTargetPc, int low, int high) {
+		return new TABLESWITCH(defaultTargetPc, low, high);
 	}
 
 }

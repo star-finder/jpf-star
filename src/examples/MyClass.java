@@ -56,15 +56,25 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod2(double i, double j) {
-		i = i + j;
-		if (i - 1 > 0) {
-			i = 2 * i - 1;
-			if (((int) i) > 0)
-				return null;
-			else
-				return null;
-		} else {
+	public Node myMethod2(int i, int j) {
+//		i = i + j;
+//		if (i - 1 > 0) {
+//			i = 2 * i - 1;
+//			if (((int) i) > 0)
+//				return null;
+//			else
+//				return null;
+//		} else {
+//			return null;
+//		}
+		
+		i = i + 2 * j;
+		switch (i) {
+		case 2:
+			return null;
+		case 4:
+			return null;
+		default:
 			return null;
 		}
 	}
@@ -74,10 +84,10 @@ public class MyClass {
 		MyClass mc = new MyClass();
 //		Node x = new Node();
 //		Node y = new Node();
-		MyClass.myMethod();
-//		double i = 0;
-//		double j = 0;
-//		mc.myMethod2(i, j);
+//		MyClass.myMethod();
+		int i = 0;
+		int j = 0;
+		mc.myMethod2(i, j);
 //		mc.myMethod1(x, y);
 	}
 
