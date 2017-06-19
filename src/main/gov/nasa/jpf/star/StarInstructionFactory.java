@@ -57,6 +57,8 @@ import gov.nasa.jpf.star.bytecode.IINC;
 import gov.nasa.jpf.star.bytecode.ILOAD;
 import gov.nasa.jpf.star.bytecode.IMUL;
 import gov.nasa.jpf.star.bytecode.INEG;
+import gov.nasa.jpf.star.bytecode.INVOKESPECIAL;
+import gov.nasa.jpf.star.bytecode.INVOKESTATIC;
 import gov.nasa.jpf.star.bytecode.INVOKEVIRTUAL;
 import gov.nasa.jpf.star.bytecode.IOR;
 import gov.nasa.jpf.star.bytecode.IREM;
@@ -486,6 +488,16 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction invokevirtual(String clsName, String methodName, String methodSignature) {
 		return new INVOKEVIRTUAL(clsName, methodName, methodSignature);
+	}
+	
+	@Override
+	public Instruction invokestatic(String clsName, String methodName, String methodSignature) {
+		return new INVOKESTATIC(clsName, methodName, methodSignature);
+	}
+	
+	@Override
+	public Instruction invokespecial(String clsName, String methodName, String methodSignature) {
+		return new INVOKESPECIAL(clsName, methodName, methodSignature);
 	}
 
 	@Override

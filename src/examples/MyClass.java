@@ -23,7 +23,7 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod() {
+	public static Node myMethod() {
 //		return foo(x);
 //		return foo1(x, x.next);
 //		while (x != null) {
@@ -74,7 +74,7 @@ public class MyClass {
 		MyClass mc = new MyClass();
 //		Node x = new Node();
 //		Node y = new Node();
-		mc.myMethod();
+		MyClass.myMethod();
 //		double i = 0;
 //		double j = 0;
 //		mc.myMethod2(i, j);
