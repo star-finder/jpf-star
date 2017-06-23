@@ -36,7 +36,7 @@ public class MyClassTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre myMethod == MyClass_x->Node(next) * sll(next)";
+		String pre = "pre myMethod == sll(x)";
 //		String pre = "pre myMethod1 == sll(x) & x=y";
 //		String pre = "pre myMethod2 == i < 100";
 		
@@ -66,8 +66,8 @@ public class MyClassTest extends TestJPF {
 //				"+star.max_int=100",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod()",
-				"+symbolic.fields = instance,static",
+				"+symbolic.method = MyClass.myMethod(sym)",
+//				"+symbolic.fields = instance,static",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}

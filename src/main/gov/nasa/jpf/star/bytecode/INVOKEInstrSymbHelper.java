@@ -13,9 +13,11 @@ import gov.nasa.jpf.star.formula.expression.VariableExpression;
 import gov.nasa.jpf.star.precondition.Precondition;
 import gov.nasa.jpf.star.precondition.PreconditionMap;
 import gov.nasa.jpf.star.solver.Solver;
+import gov.nasa.jpf.star.testgeneration.TestGenerator;
 import gov.nasa.jpf.symbc.bytecode.BytecodeUtils;
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.ChoiceGenerator;
+import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
@@ -30,6 +32,8 @@ public class INVOKEInstrSymbHelper {
 		
 		MethodInfo mi = instr.getInvokedMethod(ti);
 		String fname = mi.getFullName();
+		
+		ClassInfo ci = mi.getClassInfo();
 		
 		String[] argTypes = mi.getArgumentTypeNames();
 		LocalVarInfo[] argInfo = mi.getArgumentLocalVars();
@@ -46,7 +50,9 @@ public class INVOKEInstrSymbHelper {
 			if (!ti.isFirstStepInsn()) {
 				cg = new StarChoiceGenerator(1);
 				ti.getVM().getSystemState().setNextChoiceGenerator(cg);
-
+				
+				TestGenerator.setClassAndMethodInfo(ci, mi);
+				
 				return true;
 			} else {
 				cg = ti.getVM().getSystemState().getChoiceGenerator();

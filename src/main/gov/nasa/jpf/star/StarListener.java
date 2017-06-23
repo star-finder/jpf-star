@@ -4,8 +4,10 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPF;
 import gov.nasa.jpf.jvm.bytecode.JVMInvokeInstruction;
 import gov.nasa.jpf.jvm.bytecode.JVMReturnInstruction;
+import gov.nasa.jpf.report.Publisher;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.solver.Solver;
+import gov.nasa.jpf.star.testgeneration.TestGenerator;
 import gov.nasa.jpf.symbc.SymbolicListener;
 import gov.nasa.jpf.symbc.bytecode.BytecodeUtils;
 import gov.nasa.jpf.vm.ChoiceGenerator;
@@ -29,7 +31,7 @@ public class StarListener extends SymbolicListener {
 			Config conf = vm.getConfig();
 
 			if (insn instanceof JVMInvokeInstruction) {
-				
+
 			} else if (insn instanceof JVMReturnInstruction) {
 				MethodInfo mi = insn.getMethodInfo();
 				ClassInfo ci = mi.getClassInfo();
@@ -49,18 +51,31 @@ public class StarListener extends SymbolicListener {
 							}
 							cg = prevCG;
 						}
-						
-						if (cg != null && cg instanceof StarChoiceGenerator && ((StarChoiceGenerator) cg).getCurrentPC() != null) {
+
+						if (cg != null && cg instanceof StarChoiceGenerator
+								&& ((StarChoiceGenerator) cg).getCurrentPC() != null) {
 							Formula f = ((StarChoiceGenerator) cg).getCurrentPCStar();
-							
+
 							if (Solver.checkSat(f, conf)) {
 								System.out.println(f);
-								System.out.println(Solver.getModel());
+
+								String model = Solver.getModel();
+								System.out.println(model);
+
+								TestGenerator.addModel(model);
 							}
 						}
-					}	
+					}
 				}
 			}
 		}
 	}
+
+	// -------- the publisher interface
+	@Override
+	public void publishFinished(Publisher publisher) {
+		TestGenerator.generateTests();
+		System.out.println("finished");
+	}
+
 }

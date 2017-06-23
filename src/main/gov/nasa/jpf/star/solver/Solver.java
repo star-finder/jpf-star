@@ -40,12 +40,12 @@ public class Solver {
 		if (heapSize + pureSize > maxLength)
 			return false;
 		else {
-			return true;
-//			File file = printToFile(f);
-//			if (file != null) {
-//				return checkSat(file);
-//			}
-//			return false;
+//			return true;
+			File file = printToFile(f);
+			if (file != null) {
+				return checkSat(file);
+			}
+			return false;
 		}
 	}
 	
@@ -86,6 +86,7 @@ public class Solver {
 		
 		try {
 			String cmd = s2sat + " " + file.getAbsolutePath();
+//			System.out.println(cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			
 			BufferedReader br = new BufferedReader(
@@ -98,7 +99,7 @@ public class Solver {
 			while (s != null) {
 //				System.out.println(s);
 				
-				if (s.contains("!!! cex:")) {
+				if (s.contains("cex:")) {
 					readModel = true;
 				}
 				

@@ -8,6 +8,7 @@ import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.solver.Solver;
+import gov.nasa.jpf.star.testgeneration.TestGenerator;
 import gov.nasa.jpf.symbc.arrays.ArrayExpression;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
 import gov.nasa.jpf.symbc.string.StringExpression;
@@ -45,7 +46,11 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				if (Solver.checkSat(pc, conf)) {
 					System.out.println("java.lang.NullPointerException: referencing field '" + fname + "' on null object");
 					System.out.println(pc);
-					System.out.println(Solver.getModel());
+					
+					String model = Solver.getModel();
+					System.out.println(model);
+					
+					TestGenerator.addModel(model);
 				}
 			}
 			

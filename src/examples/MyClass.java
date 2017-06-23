@@ -23,7 +23,7 @@ public class MyClass {
 		}
 	}
 	
-	public static Node myMethod() {
+	public static Node myMethod(Node x) {
 //		return foo(x);
 //		return foo1(x, x.next);
 //		while (x != null) {
@@ -32,6 +32,7 @@ public class MyClass {
 //		
 //		return x;
 		
+//		x = new Node(x);
 		if (x == null) {
 			return null;
 		} else {
@@ -82,12 +83,12 @@ public class MyClass {
 	// The test driver
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
-//		Node x = new Node();
+		Node x = new Node(null);
 //		Node y = new Node();
-//		MyClass.myMethod();
-		int i = 0;
-		int j = 0;
-		mc.myMethod2(i, j);
+		MyClass.myMethod(x);
+//		int i = 0;
+//		int j = 0;
+//		mc.myMethod2(i, j);
 //		mc.myMethod1(x, y);
 	}
 
@@ -95,4 +96,8 @@ public class MyClass {
 
 class Node {
 	Node next;
+	
+	public Node(Node next) {
+		this.next = next;
+	}
 }
