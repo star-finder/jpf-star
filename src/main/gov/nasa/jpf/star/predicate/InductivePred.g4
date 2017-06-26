@@ -154,7 +154,7 @@ heapTerm returns [HeapTerm term] :
 	}
 ;
 
-pointToTerm returns [HeapTerm term] : root=ID PT type=ID LB params RB
+pointToTerm returns [HeapTerm term] : root=ID PT type=ID LT params GT
 	{
 		int length = $params.vars.length + 1;
 		
@@ -286,20 +286,20 @@ comp returns [Comparator c] :
 	}
 ;
 
-exp returns [IntegerExpression e] :
+exp returns [Expression e] :
 	exp1=exp PLUS ter
 	{
-		IntegerExpression exp1 = $exp1.e;
-		IntegerExpression exp2 = $ter.e;
+		Expression exp1 = $exp1.e;
+		Expression exp2 = $ter.e;
 		
-		$e = new IntegerBinaryExpression(Operator.PLUS, exp1, exp2);
+		$e = new BinaryExpression(Operator.PLUS, exp1, exp2);
 	}
 	| exp1=exp MINUS ter
 	{
-		IntegerExpression exp1 = $exp1.e;
-		IntegerExpression exp2 = $ter.e;
+		Expression exp1 = $exp1.e;
+		Expression exp2 = $ter.e;
 		
-		$e = new IntegerBinaryExpression(Operator.MINUS, exp1, exp2);
+		$e = new BinaryExpression(Operator.MINUS, exp1, exp2);
 	}
 	| ter
 	{
@@ -307,28 +307,28 @@ exp returns [IntegerExpression e] :
 	}
 ;
 	
-ter returns [IntegerExpression e] :
+ter returns [Expression e] :
 	var1=ID MUL var2=ID
 	{
-		IntegerExpression exp1 = new IntegerVariable(new Variable($var1.text, ""));
-		IntegerExpression exp2 = new IntegerVariable(new Variable($var2.text, ""));
+		Expression exp1 = new VariableExpression(new Variable($var1.text, ""));
+		Expression exp2 = new VariableExpression(new Variable($var2.text, ""));
 		
-		$e = new IntegerBinaryExpression(Operator.MUL, exp1, exp2);
+		$e = new BinaryExpression(Operator.MUL, exp1, exp2);
 	}
 	| var1=ID DIV var2=ID
 	{
-		IntegerExpression exp1 = new IntegerVariable(new Variable($var1.text, ""));
-		IntegerExpression exp2 = new IntegerVariable(new Variable($var2.text, ""));
+		Expression exp1 = new VariableExpression(new Variable($var1.text, ""));
+		Expression exp2 = new VariableExpression(new Variable($var2.text, ""));
 	
-		$e = new IntegerBinaryExpression(Operator.DIV, exp1, exp2);
+		$e = new BinaryExpression(Operator.DIV, exp1, exp2);
 	}
 	| ID
 	{
-		$e = new IntegerVariable(new Variable($ID.text, ""));
+		$e = new VariableExpression(new Variable($ID.text, ""));
 	}
 	| INT
 	{
-		$e = new IntegerLiteral(Integer.parseInt($INT.text));
+		$e = new LiteralExpression($INT.text);
 	}
 	| LB exp RB
 	{
@@ -356,7 +356,7 @@ CM      : ',' ;
 SM      : ';' ;
 OR      : '||' ;
 AND     : '&' ;
-PT      : '->' ;
+PT      : '::' ;
 STAR    : '*' ;
 ID      : [a-zA-Z_][a-zA-Z0-9_]* ;
 INT		: '0'|[1-9][0-9]* ;

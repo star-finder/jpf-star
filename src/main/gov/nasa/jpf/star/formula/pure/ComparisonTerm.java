@@ -1,10 +1,12 @@
 package gov.nasa.jpf.star.formula.pure;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.VariableExpression;
 
 public class ComparisonTerm extends PureTerm {
 	
@@ -29,6 +31,29 @@ public class ComparisonTerm extends PureTerm {
 		ComparisonTerm newTerm = new ComparisonTerm(comp, newExp1, newExp2);
 		
 		return newTerm;
+	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		exp1.updateType(knownTypeVars);
+		exp2.updateType(knownTypeVars);
+	}
+	
+	@Override
+	public void genTest(List<Variable> initVars, StringBuffer test) {
+		if (comp == Comparator.EQ && exp1 instanceof VariableExpression && 
+				!initVars.contains(exp1.getVars()) && initVars.contains(exp2.getVars())) {
+			Variable var = ((VariableExpression) exp1).getVar();
+			initVars.add(var);
+			test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp2.toString() + "\n");
+		}
+		
+		if (comp == Comparator.EQ && exp2 instanceof VariableExpression && 
+				!initVars.contains(exp2.getVars()) && initVars.contains(exp1.getVars())) {
+			Variable var = ((VariableExpression) exp2).getVar();
+			initVars.add(var);
+			test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp1.toString() + "\n");
+		}
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package gov.nasa.jpf.star.formula.expression;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
@@ -11,6 +13,17 @@ public class VariableExpression extends Expression {
 	
 	public VariableExpression(Variable var) {
 		this.var = var;
+	}
+	
+	public Variable getVar() {
+		return var;
+	}
+	
+	public List<Variable> getVars() {
+		List<Variable> vars = new ArrayList<Variable>();
+		vars.add(var);
+		
+		return vars;
 	}
 	
 	@Override
@@ -38,6 +51,15 @@ public class VariableExpression extends Expression {
 		
 		VariableExpression newExpr = new VariableExpression(newVar);
 		return newExpr;
+	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		for (Variable v : knownTypeVars) {
+			if (v.equals(var)) {
+				var.setType(v.getType());
+			}
+		}
 	}
 
 	@Override

@@ -1,18 +1,24 @@
 package gov.nasa.jpf.star.data;
 
+import gov.nasa.jpf.star.formula.Variable;
+
 public class DataNode {
 	
 	private String type;
 	
-	private String[] paramTypes;
+	private Variable[] fields;
 	
-	public DataNode(String type, String[] paramTypes) {
+	public DataNode(String type, Variable[] fields) {
 		this.type = type;
-		this.paramTypes = paramTypes;
+		this.fields = fields;
 	}
 	
 	public String getType() {
 		return type;
+	}
+	
+	public Variable[] getFields() {
+		return fields;
 	}
 	
 	@Override
@@ -20,8 +26,8 @@ public class DataNode {
 		String ret = "";
 		ret += "data " + type + "{\n";
 		
-		for (int i = 0; i < paramTypes.length; i++) {
-			ret += paramTypes[i] + " " + paramTypes[i].toLowerCase() + "_" + i + ";\n";
+		for (int i = 0; i < fields.length; i++) {
+			ret += fields[i].getType() + " " + fields[i].getName() + ";\n";
 		}
 		
 		ret += "}.";

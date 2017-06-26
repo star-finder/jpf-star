@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.formula.expression;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
@@ -17,6 +18,10 @@ public class UnaryExpression extends Expression {
 		this.exp = exp;
 	}
 	
+	public List<Variable> getVars() {
+		return exp.getVars();
+	}
+	
 	@Override
 	public Expression substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
@@ -24,6 +29,11 @@ public class UnaryExpression extends Expression {
 		UnaryExpression newUnaryExp = new UnaryExpression(op, newExp);
 		
 		return newUnaryExp;
+	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		exp.updateType(knownTypeVars);
 	}
 	
 	@Override

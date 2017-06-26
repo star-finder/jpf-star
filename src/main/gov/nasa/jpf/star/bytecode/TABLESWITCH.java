@@ -30,9 +30,6 @@ public class TABLESWITCH extends gov.nasa.jpf.jvm.bytecode.TABLESWITCH
 		if (sym_v == null) { // the condition is concrete
 			return super.execute(ti);
 		} else { // the condition is symbolic
-			System.out.println(Arrays.toString(matches));
-			System.out.println(Arrays.toString(targets));
-			
 			ChoiceGenerator<?> cg;
 			ChoiceGenerator<?> prevCG;
 

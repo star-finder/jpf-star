@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.formula;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
@@ -44,6 +45,48 @@ public class HeapFormula {
 		
 		HeapFormula newHeapFormula = new HeapFormula(newHeapTerms);
 		return newHeapFormula;
+	}
+	
+	public void updateType(List<Variable> knownTypeVars) {
+		int oldLength = knownTypeVars.size();
+		
+		while (true) {
+			int length = heapTerms.length;
+			
+			for (int i = 0; i < length; i++) {
+				heapTerms[i].updateType(knownTypeVars);
+			}
+			
+			int newLength = knownTypeVars.size();
+			
+			if (newLength == oldLength) break;
+			else oldLength = newLength;
+		}
+	}
+	
+	public void genTest(List<Variable> initVars, StringBuffer test) {
+		int oldLength = initVars.size();
+		
+		while (true) {
+			int length = heapTerms.length;
+			
+			for (int i = 0; i < length; i++) {
+				heapTerms[i].genTest(initVars, test);
+			}
+			
+			int newLength = initVars.size();
+			
+			if (newLength == oldLength) break;
+			else oldLength = newLength;
+		}
+	}
+	
+	public void setFields(StringBuffer test) {
+		int length = heapTerms.length;
+		
+		for (int i = 0; i < length; i++) {
+			heapTerms[i].setFields(test);
+		}
 	}
 	
 	@Override

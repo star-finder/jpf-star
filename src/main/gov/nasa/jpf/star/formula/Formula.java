@@ -130,6 +130,17 @@ public class Formula {
 		pureFormula.addTerm(term);
 	}
 	
+	public void updateType(List<Variable> knownTypeVars) {
+		heapFormula.updateType(knownTypeVars);
+		pureFormula.updateType(knownTypeVars);
+	}
+	
+	public void genTest(List<Variable> initVars, StringBuffer test) {
+		heapFormula.genTest(initVars, test);
+		pureFormula.genTest(initVars, test);
+		heapFormula.setFields(test);
+	}
+	
 	@Override
 	public String toString() {
 		String heapString = heapFormula.toString();

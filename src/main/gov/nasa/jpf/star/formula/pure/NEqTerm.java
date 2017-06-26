@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.formula.pure;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
@@ -74,6 +75,19 @@ public class NEqTerm extends PureTerm {
 //	public PureTerm copy() {
 //		return new NEqTerm(var1, var2);
 //	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		for (Variable v : knownTypeVars) {
+			if (v.equals(var1)) {
+				var1.setType(v.getType());
+			}
+			
+			if (v.equals(var2)) {
+				var2.setType(v.getType());
+			}
+		}
+	}
 	
 	@Override
 	public String toString() {

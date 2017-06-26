@@ -1,7 +1,10 @@
 package gov.nasa.jpf.star.formula.heap;
 
+import java.util.List;
 import java.util.Map;
 
+import gov.nasa.jpf.star.data.DataNode;
+import gov.nasa.jpf.star.data.DataNodeMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 
@@ -30,6 +33,7 @@ public class PointToTerm extends HeapTerm {
 		return vars[0];
 	}
 	
+	@Override
 	public Variable[] getVars() {
 		return vars;
 	}
@@ -70,6 +74,41 @@ public class PointToTerm extends HeapTerm {
 //	public HeapTerm copy() {
 //		return new PointToTerm(type, vars);
 //	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		DataNode dn = DataNodeMap.find(type);
+		Variable[] field = dn.getFields();
+		
+		for (int i = 0; i < vars.length; i++) {
+			if (i == 0) {
+				vars[i].setType(type);
+			} else {
+				vars[i].setType(field[i - 1].getType());
+			}
+			
+			if (!knownTypeVars.contains(vars[i]))
+				knownTypeVars.add(vars[i]);
+		}
+	}
+	
+	public void genTest(List<Variable> initVars, StringBuffer test) {
+		if (!initVars.contains(vars[0])) {
+			initVars.add(vars[0]);
+			test.append("\t\t" + vars[0].getType() + " " + vars[0].getName() + " = new " + type + "();\n");
+		}
+	}
+	
+	public void setFields(StringBuffer test) {
+		int length = vars.length;
+		DataNode dn = DataNodeMap.find(type);
+		
+		Variable[] fields = dn.getFields();
+		
+		for (int i = 1; i < length; i++) {
+			test.append("\t\t" + vars[0].getName() + "." + fields[i - 1].getName() + " = " + vars[i] + ";\n");
+		}
+	}
 	
 	@Override
 	public String toString() {

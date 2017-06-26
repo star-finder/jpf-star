@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.formula.pure;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
@@ -74,6 +75,32 @@ public class EqTerm extends PureTerm {
 //	public PureTerm copy() {
 //		return new EqTerm(var1, var2);
 //	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		for (Variable v : knownTypeVars) {
+			if (v.equals(var1)) {
+				var1.setType(v.getType());
+			}
+			
+			if (v.equals(var2)) {
+				var2.setType(v.getType());
+			}
+		}
+	}
+	
+	@Override
+	public void genTest(List<Variable> initVars, StringBuffer test) {
+		if (initVars.contains(var2) && !initVars.contains(var1)) {
+			initVars.add(var1);
+			test.append("\t\t" + var1.getType() + " " + var1.getName() + " = " + var2.getName() + "\n");
+		}
+		
+		if (initVars.contains(var1) && !initVars.contains(var2)) {
+			initVars.add(var2);
+			test.append("\t\t" + var2.getType() + " " + var2.getName() + " = " + var1.getName() + "\n");
+		}
+	}
 	
 	@Override
 	public String toString() {

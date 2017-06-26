@@ -135,7 +135,7 @@ public class Solver {
 	}
 	
 	public static int getMinInt(Config c) {
-		int min = Integer.MIN_VALUE;;
+		int min = -1000;
 		
 		String s = c.getProperty("star.min_int");
 		if (s != null) {
@@ -146,7 +146,7 @@ public class Solver {
 	}
 	
 	public static int getMaxInt(Config c) {
-		int max = Integer.MAX_VALUE;;
+		int max = 1000;
 		
 		String s = c.getProperty("star.max_int");
 		if (s != null) {
@@ -157,7 +157,7 @@ public class Solver {
 	}
 	
 	public static long getMinLong(Config c) {
-		long min = Long.MIN_VALUE;;
+		long min = -10000;
 		
 		String s = c.getProperty("star.min_long");
 		if (s != null) {
@@ -168,7 +168,7 @@ public class Solver {
 	}
 	
 	public static long getMaxLong(Config c) {
-		long max = Long.MAX_VALUE;
+		long max = 10000;
 		
 		String s = c.getProperty("star.max_long");
 		if (s != null) {

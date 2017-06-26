@@ -44,7 +44,7 @@ public class PreconditionParser extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "'pre'", "'null'", "'=='", "'='", "'!='", "'>='", "'>'", "'<='", 
 		"'<'", "'+'", "'-'", "'**'", "'/'", "'('", "')'", "','", "';'", "'||'", 
-		"'&'", "'->'", "'*'"
+		"'&'", "'::'", "'*'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, "PRE", "NULL", "EQEQ", "EQ", "NE", "GE", "GT", "LE", "LT", "PLUS", 
@@ -660,11 +660,11 @@ public class PreconditionParser extends Parser {
 		public Token type;
 		public ParamsContext params;
 		public TerminalNode PT() { return getToken(PreconditionParser.PT, 0); }
-		public TerminalNode LB() { return getToken(PreconditionParser.LB, 0); }
+		public TerminalNode LT() { return getToken(PreconditionParser.LT, 0); }
 		public ParamsContext params() {
 			return getRuleContext(ParamsContext.class,0);
 		}
-		public TerminalNode RB() { return getToken(PreconditionParser.RB, 0); }
+		public TerminalNode GT() { return getToken(PreconditionParser.GT, 0); }
 		public List<TerminalNode> ID() { return getTokens(PreconditionParser.ID); }
 		public TerminalNode ID(int i) {
 			return getToken(PreconditionParser.ID, i);
@@ -696,11 +696,11 @@ public class PreconditionParser extends Parser {
 			setState(112);
 			((PointToTermContext)_localctx).type = match(ID);
 			setState(113);
-			match(LB);
+			match(LT);
 			setState(114);
 			((PointToTermContext)_localctx).params = params();
 			setState(115);
-			match(RB);
+			match(GT);
 
 					int length = ((PointToTermContext)_localctx).params.vars.length + 1;
 					
@@ -1543,7 +1543,7 @@ public class PreconditionParser extends Parser {
 				setState(219);
 				((TerContext)_localctx).INT = match(INT);
 
-						((TerContext)_localctx).e =  new LiteralExpression(Integer.parseInt((((TerContext)_localctx).INT!=null?((TerContext)_localctx).INT.getText():null)));
+						((TerContext)_localctx).e =  new LiteralExpression((((TerContext)_localctx).INT!=null?((TerContext)_localctx).INT.getText():null));
 					
 				}
 				break;
@@ -1625,43 +1625,43 @@ public class PreconditionParser extends Parser {
 		"\2\2\2^_\5\20\t\2_`\b\b\1\2`g\3\2\2\2ab\5\20\t\2bc\7\27\2\2cd\5\16\b\2"+
 		"de\b\b\1\2eg\3\2\2\2f^\3\2\2\2fa\3\2\2\2g\17\3\2\2\2hi\5\22\n\2ij\b\t"+
 		"\1\2jo\3\2\2\2kl\5\24\13\2lm\b\t\1\2mo\3\2\2\2nh\3\2\2\2nk\3\2\2\2o\21"+
-		"\3\2\2\2pq\7\30\2\2qr\7\26\2\2rs\7\30\2\2st\7\20\2\2tu\5\b\5\2uv\7\21"+
-		"\2\2vw\b\n\1\2w\23\3\2\2\2xy\7\30\2\2yz\7\20\2\2z{\5\b\5\2{|\7\21\2\2"+
-		"|}\b\13\1\2}\25\3\2\2\2~\177\5\30\r\2\177\u0080\b\f\1\2\u0080\u0087\3"+
-		"\2\2\2\u0081\u0082\5\30\r\2\u0082\u0083\7\25\2\2\u0083\u0084\5\26\f\2"+
-		"\u0084\u0085\b\f\1\2\u0085\u0087\3\2\2\2\u0086~\3\2\2\2\u0086\u0081\3"+
-		"\2\2\2\u0087\27\3\2\2\2\u0088\u0089\5\32\16\2\u0089\u008a\b\r\1\2\u008a"+
-		"\u0098\3\2\2\2\u008b\u008c\5\34\17\2\u008c\u008d\b\r\1\2\u008d\u0098\3"+
-		"\2\2\2\u008e\u008f\5\36\20\2\u008f\u0090\b\r\1\2\u0090\u0098\3\2\2\2\u0091"+
-		"\u0092\5 \21\2\u0092\u0093\b\r\1\2\u0093\u0098\3\2\2\2\u0094\u0095\5\""+
-		"\22\2\u0095\u0096\b\r\1\2\u0096\u0098\3\2\2\2\u0097\u0088\3\2\2\2\u0097"+
-		"\u008b\3\2\2\2\u0097\u008e\3\2\2\2\u0097\u0091\3\2\2\2\u0097\u0094\3\2"+
-		"\2\2\u0098\31\3\2\2\2\u0099\u009a\7\30\2\2\u009a\u009b\7\6\2\2\u009b\u009c"+
-		"\7\4\2\2\u009c\u009d\b\16\1\2\u009d\33\3\2\2\2\u009e\u009f\7\30\2\2\u009f"+
-		"\u00a0\7\7\2\2\u00a0\u00a1\7\4\2\2\u00a1\u00a2\b\17\1\2\u00a2\35\3\2\2"+
-		"\2\u00a3\u00a4\7\30\2\2\u00a4\u00a5\7\6\2\2\u00a5\u00a6\7\30\2\2\u00a6"+
-		"\u00a7\b\20\1\2\u00a7\37\3\2\2\2\u00a8\u00a9\7\30\2\2\u00a9\u00aa\7\7"+
-		"\2\2\u00aa\u00ab\7\30\2\2\u00ab\u00ac\b\21\1\2\u00ac!\3\2\2\2\u00ad\u00ae"+
-		"\5&\24\2\u00ae\u00af\5$\23\2\u00af\u00b0\5&\24\2\u00b0\u00b1\b\22\1\2"+
-		"\u00b1#\3\2\2\2\u00b2\u00b3\7\6\2\2\u00b3\u00bf\b\23\1\2\u00b4\u00b5\7"+
-		"\7\2\2\u00b5\u00bf\b\23\1\2\u00b6\u00b7\7\b\2\2\u00b7\u00bf\b\23\1\2\u00b8"+
-		"\u00b9\7\t\2\2\u00b9\u00bf\b\23\1\2\u00ba\u00bb\7\n\2\2\u00bb\u00bf\b"+
-		"\23\1\2\u00bc\u00bd\7\13\2\2\u00bd\u00bf\b\23\1\2\u00be\u00b2\3\2\2\2"+
-		"\u00be\u00b4\3\2\2\2\u00be\u00b6\3\2\2\2\u00be\u00b8\3\2\2\2\u00be\u00ba"+
-		"\3\2\2\2\u00be\u00bc\3\2\2\2\u00bf%\3\2\2\2\u00c0\u00c1\b\24\1\2\u00c1"+
-		"\u00c2\5(\25\2\u00c2\u00c3\b\24\1\2\u00c3\u00d0\3\2\2\2\u00c4\u00c5\f"+
-		"\5\2\2\u00c5\u00c6\7\f\2\2\u00c6\u00c7\5(\25\2\u00c7\u00c8\b\24\1\2\u00c8"+
-		"\u00cf\3\2\2\2\u00c9\u00ca\f\4\2\2\u00ca\u00cb\7\r\2\2\u00cb\u00cc\5("+
-		"\25\2\u00cc\u00cd\b\24\1\2\u00cd\u00cf\3\2\2\2\u00ce\u00c4\3\2\2\2\u00ce"+
-		"\u00c9\3\2\2\2\u00cf\u00d2\3\2\2\2\u00d0\u00ce\3\2\2\2\u00d0\u00d1\3\2"+
-		"\2\2\u00d1\'\3\2\2\2\u00d2\u00d0\3\2\2\2\u00d3\u00d4\7\30\2\2\u00d4\u00d5"+
-		"\7\16\2\2\u00d5\u00d6\7\30\2\2\u00d6\u00e5\b\25\1\2\u00d7\u00d8\7\30\2"+
-		"\2\u00d8\u00d9\7\17\2\2\u00d9\u00da\7\30\2\2\u00da\u00e5\b\25\1\2\u00db"+
-		"\u00dc\7\30\2\2\u00dc\u00e5\b\25\1\2\u00dd\u00de\7\31\2\2\u00de\u00e5"+
-		"\b\25\1\2\u00df\u00e0\7\20\2\2\u00e0\u00e1\5&\24\2\u00e1\u00e2\7\21\2"+
-		"\2\u00e2\u00e3\b\25\1\2\u00e3\u00e5\3\2\2\2\u00e4\u00d3\3\2\2\2\u00e4"+
-		"\u00d7\3\2\2\2\u00e4\u00db\3\2\2\2\u00e4\u00dd\3\2\2\2\u00e4\u00df\3\2"+
-		"\2\2\u00e5)\3\2\2\2\16\61<L\\fn\u0086\u0097\u00be\u00ce\u00d0\u00e4";
+		"\3\2\2\2pq\7\30\2\2qr\7\26\2\2rs\7\30\2\2st\7\13\2\2tu\5\b\5\2uv\7\t\2"+
+		"\2vw\b\n\1\2w\23\3\2\2\2xy\7\30\2\2yz\7\20\2\2z{\5\b\5\2{|\7\21\2\2|}"+
+		"\b\13\1\2}\25\3\2\2\2~\177\5\30\r\2\177\u0080\b\f\1\2\u0080\u0087\3\2"+
+		"\2\2\u0081\u0082\5\30\r\2\u0082\u0083\7\25\2\2\u0083\u0084\5\26\f\2\u0084"+
+		"\u0085\b\f\1\2\u0085\u0087\3\2\2\2\u0086~\3\2\2\2\u0086\u0081\3\2\2\2"+
+		"\u0087\27\3\2\2\2\u0088\u0089\5\32\16\2\u0089\u008a\b\r\1\2\u008a\u0098"+
+		"\3\2\2\2\u008b\u008c\5\34\17\2\u008c\u008d\b\r\1\2\u008d\u0098\3\2\2\2"+
+		"\u008e\u008f\5\36\20\2\u008f\u0090\b\r\1\2\u0090\u0098\3\2\2\2\u0091\u0092"+
+		"\5 \21\2\u0092\u0093\b\r\1\2\u0093\u0098\3\2\2\2\u0094\u0095\5\"\22\2"+
+		"\u0095\u0096\b\r\1\2\u0096\u0098\3\2\2\2\u0097\u0088\3\2\2\2\u0097\u008b"+
+		"\3\2\2\2\u0097\u008e\3\2\2\2\u0097\u0091\3\2\2\2\u0097\u0094\3\2\2\2\u0098"+
+		"\31\3\2\2\2\u0099\u009a\7\30\2\2\u009a\u009b\7\6\2\2\u009b\u009c\7\4\2"+
+		"\2\u009c\u009d\b\16\1\2\u009d\33\3\2\2\2\u009e\u009f\7\30\2\2\u009f\u00a0"+
+		"\7\7\2\2\u00a0\u00a1\7\4\2\2\u00a1\u00a2\b\17\1\2\u00a2\35\3\2\2\2\u00a3"+
+		"\u00a4\7\30\2\2\u00a4\u00a5\7\6\2\2\u00a5\u00a6\7\30\2\2\u00a6\u00a7\b"+
+		"\20\1\2\u00a7\37\3\2\2\2\u00a8\u00a9\7\30\2\2\u00a9\u00aa\7\7\2\2\u00aa"+
+		"\u00ab\7\30\2\2\u00ab\u00ac\b\21\1\2\u00ac!\3\2\2\2\u00ad\u00ae\5&\24"+
+		"\2\u00ae\u00af\5$\23\2\u00af\u00b0\5&\24\2\u00b0\u00b1\b\22\1\2\u00b1"+
+		"#\3\2\2\2\u00b2\u00b3\7\6\2\2\u00b3\u00bf\b\23\1\2\u00b4\u00b5\7\7\2\2"+
+		"\u00b5\u00bf\b\23\1\2\u00b6\u00b7\7\b\2\2\u00b7\u00bf\b\23\1\2\u00b8\u00b9"+
+		"\7\t\2\2\u00b9\u00bf\b\23\1\2\u00ba\u00bb\7\n\2\2\u00bb\u00bf\b\23\1\2"+
+		"\u00bc\u00bd\7\13\2\2\u00bd\u00bf\b\23\1\2\u00be\u00b2\3\2\2\2\u00be\u00b4"+
+		"\3\2\2\2\u00be\u00b6\3\2\2\2\u00be\u00b8\3\2\2\2\u00be\u00ba\3\2\2\2\u00be"+
+		"\u00bc\3\2\2\2\u00bf%\3\2\2\2\u00c0\u00c1\b\24\1\2\u00c1\u00c2\5(\25\2"+
+		"\u00c2\u00c3\b\24\1\2\u00c3\u00d0\3\2\2\2\u00c4\u00c5\f\5\2\2\u00c5\u00c6"+
+		"\7\f\2\2\u00c6\u00c7\5(\25\2\u00c7\u00c8\b\24\1\2\u00c8\u00cf\3\2\2\2"+
+		"\u00c9\u00ca\f\4\2\2\u00ca\u00cb\7\r\2\2\u00cb\u00cc\5(\25\2\u00cc\u00cd"+
+		"\b\24\1\2\u00cd\u00cf\3\2\2\2\u00ce\u00c4\3\2\2\2\u00ce\u00c9\3\2\2\2"+
+		"\u00cf\u00d2\3\2\2\2\u00d0\u00ce\3\2\2\2\u00d0\u00d1\3\2\2\2\u00d1\'\3"+
+		"\2\2\2\u00d2\u00d0\3\2\2\2\u00d3\u00d4\7\30\2\2\u00d4\u00d5\7\16\2\2\u00d5"+
+		"\u00d6\7\30\2\2\u00d6\u00e5\b\25\1\2\u00d7\u00d8\7\30\2\2\u00d8\u00d9"+
+		"\7\17\2\2\u00d9\u00da\7\30\2\2\u00da\u00e5\b\25\1\2\u00db\u00dc\7\30\2"+
+		"\2\u00dc\u00e5\b\25\1\2\u00dd\u00de\7\31\2\2\u00de\u00e5\b\25\1\2\u00df"+
+		"\u00e0\7\20\2\2\u00e0\u00e1\5&\24\2\u00e1\u00e2\7\21\2\2\u00e2\u00e3\b"+
+		"\25\1\2\u00e3\u00e5\3\2\2\2\u00e4\u00d3\3\2\2\2\u00e4\u00d7\3\2\2\2\u00e4"+
+		"\u00db\3\2\2\2\u00e4\u00dd\3\2\2\2\u00e4\u00df\3\2\2\2\u00e5)\3\2\2\2"+
+		"\16\61<L\\fn\u0086\u0097\u00be\u00ce\u00d0\u00e4";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

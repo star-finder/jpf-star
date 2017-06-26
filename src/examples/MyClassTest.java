@@ -4,7 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import gov.nasa.jpf.star.data.DataNode;
+import gov.nasa.jpf.star.data.DataNodeLexer;
 import gov.nasa.jpf.star.data.DataNodeMap;
+import gov.nasa.jpf.star.data.DataNodeParser;
 import gov.nasa.jpf.star.precondition.Precondition;
 import gov.nasa.jpf.star.precondition.PreconditionLexer;
 import gov.nasa.jpf.star.precondition.PreconditionMap;
@@ -19,12 +21,19 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyClassTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "Node{Node}.";
-		DataNodeMap.parse(data);
+		String data = "data Node {Node next}";
+		
+		ANTLRInputStream in = new ANTLRInputStream(data);
+		DataNodeLexer lexer = new DataNodeLexer(in);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        DataNodeParser parser = new DataNodeParser(tokens);
+		
+        DataNode[] dns = parser.datas().dns;
+        DataNodeMap.put(dns);
 	}
 	
 	private void initPredicate() {
-		String pred = "pred sll(root) == root = null || root->Node(next) * sll(next)";
+		String pred = "pred sll(root) == root = null || root::Node<next> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -64,6 +73,9 @@ public class MyClassTest extends TestJPF {
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
+//				"+star.test_package",
+//				"+star.test_imports",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod(sym)",

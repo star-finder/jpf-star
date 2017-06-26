@@ -44,7 +44,7 @@ public class InductivePredParser extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "'pred'", "'null'", "'=='", "'='", "'!='", "'>='", "'>'", "'<='", 
 		"'<'", "'+'", "'-'", "'**'", "'/'", "'('", "')'", "','", "';'", "'||'", 
-		"'&'", "'->'", "'*'"
+		"'&'", "'::'", "'*'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, "PRED", "NULL", "EQEQ", "EQ", "NE", "GE", "GT", "LE", "LT", "PLUS", 
@@ -749,11 +749,11 @@ public class InductivePredParser extends Parser {
 		public Token type;
 		public ParamsContext params;
 		public TerminalNode PT() { return getToken(InductivePredParser.PT, 0); }
-		public TerminalNode LB() { return getToken(InductivePredParser.LB, 0); }
+		public TerminalNode LT() { return getToken(InductivePredParser.LT, 0); }
 		public ParamsContext params() {
 			return getRuleContext(ParamsContext.class,0);
 		}
-		public TerminalNode RB() { return getToken(InductivePredParser.RB, 0); }
+		public TerminalNode GT() { return getToken(InductivePredParser.GT, 0); }
 		public List<TerminalNode> ID() { return getTokens(InductivePredParser.ID); }
 		public TerminalNode ID(int i) {
 			return getToken(InductivePredParser.ID, i);
@@ -785,11 +785,11 @@ public class InductivePredParser extends Parser {
 			setState(127);
 			((PointToTermContext)_localctx).type = match(ID);
 			setState(128);
-			match(LB);
+			match(LT);
 			setState(129);
 			((PointToTermContext)_localctx).params = params();
 			setState(130);
-			match(RB);
+			match(GT);
 
 					int length = ((PointToTermContext)_localctx).params.vars.length + 1;
 					
@@ -1632,7 +1632,7 @@ public class InductivePredParser extends Parser {
 				setState(234);
 				((TerContext)_localctx).INT = match(INT);
 
-						((TerContext)_localctx).e =  new LiteralExpression(Integer.parseInt((((TerContext)_localctx).INT!=null?((TerContext)_localctx).INT.getText():null)));
+						((TerContext)_localctx).e =  new LiteralExpression((((TerContext)_localctx).INT!=null?((TerContext)_localctx).INT.getText():null));
 					
 				}
 				break;
@@ -1718,8 +1718,8 @@ public class InductivePredParser extends Parser {
 		"\22\n\2qr\7\27\2\2rs\5\20\t\2st\b\t\1\2tv\3\2\2\2um\3\2\2\2up\3\2\2\2"+
 		"v\21\3\2\2\2wx\5\24\13\2xy\b\n\1\2y~\3\2\2\2z{\5\26\f\2{|\b\n\1\2|~\3"+
 		"\2\2\2}w\3\2\2\2}z\3\2\2\2~\23\3\2\2\2\177\u0080\7\30\2\2\u0080\u0081"+
-		"\7\26\2\2\u0081\u0082\7\30\2\2\u0082\u0083\7\20\2\2\u0083\u0084\5\b\5"+
-		"\2\u0084\u0085\7\21\2\2\u0085\u0086\b\13\1\2\u0086\25\3\2\2\2\u0087\u0088"+
+		"\7\26\2\2\u0081\u0082\7\30\2\2\u0082\u0083\7\13\2\2\u0083\u0084\5\b\5"+
+		"\2\u0084\u0085\7\t\2\2\u0085\u0086\b\13\1\2\u0086\25\3\2\2\2\u0087\u0088"+
 		"\7\30\2\2\u0088\u0089\7\20\2\2\u0089\u008a\5\b\5\2\u008a\u008b\7\21\2"+
 		"\2\u008b\u008c\b\f\1\2\u008c\27\3\2\2\2\u008d\u008e\5\32\16\2\u008e\u008f"+
 		"\b\r\1\2\u008f\u0096\3\2\2\2\u0090\u0091\5\32\16\2\u0091\u0092\7\25\2"+

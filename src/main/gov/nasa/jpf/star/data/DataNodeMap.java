@@ -25,18 +25,6 @@ public class DataNodeMap {
 		assert dn != null;
 		return dn;
 	}
-
-	public static void parse(String str) {
-		String[] dns = str.split("\\.");
-		
-		for (int i = 0; i < dns.length; i++) {
-			String dn = dns[i];
-			String type = dn.substring(0, dn.indexOf('{'));
-			String[] paramTypes = dn.substring(dn.indexOf('{') + 1, dn.indexOf('}')).split(";");
-			
-			put(new DataNode(type, paramTypes));
-		}
-	}
 	
 	public static DataNode[] getAll() {
 		DataNode[] ret = {};

@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.formula.expression;
 
+import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
@@ -20,6 +21,18 @@ public class BinaryExpression extends Expression {
 	}
 	
 	@Override
+	public List<Variable> getVars() {
+		List<Variable> vars1 = exp1.getVars();
+		List<Variable> vars2 = exp2.getVars();
+		
+		for (Variable var : vars2) {
+			if (!vars1.contains(var)) vars1.add(var);
+		}
+		
+		return vars1;
+	}
+	
+	@Override
 	public Expression substitute(Variable[] fromVars, Variable[] toVars,
 			Map<String,String> existVarSubMap) {
 		Expression newExp1 = exp1.substitute(fromVars, toVars, existVarSubMap);
@@ -27,6 +40,12 @@ public class BinaryExpression extends Expression {
 		BinaryExpression newBinaryExp = new BinaryExpression(op, newExp1, newExp2);
 		
 		return newBinaryExp;
+	}
+	
+	@Override
+	public void updateType(List<Variable> knownTypeVars) {
+		exp1.updateType(knownTypeVars);
+		exp2.updateType(knownTypeVars);
 	}
 	
 	@Override

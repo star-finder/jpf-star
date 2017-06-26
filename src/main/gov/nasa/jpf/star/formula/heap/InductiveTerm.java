@@ -35,6 +35,11 @@ public class InductiveTerm extends HeapTerm {
 		return vars[0];
 	}
 	
+	@Override
+	public Variable[] getVars() {
+		return vars;
+	}
+	
 	public Formula[] getUnfoldedFormulas() {
 		return unfoldedFormulas;
 	}
