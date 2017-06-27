@@ -1,7 +1,5 @@
 package gov.nasa.jpf.star.testgeneration;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +10,13 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.LiteralExpression;
+import gov.nasa.jpf.star.formula.expression.VariableExpression;
 import gov.nasa.jpf.star.precondition.Precondition;
 import gov.nasa.jpf.star.precondition.PreconditionLexer;
 import gov.nasa.jpf.star.precondition.PreconditionParser;
+import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
@@ -51,6 +53,12 @@ public class TestGenerator {
 		init(test);
 		
 		for (String model : models) {
+			String[] tmp = model.split(";");
+			
+			model = tmp[0];
+			String pure = tmp[1].substring(tmp[1].indexOf('[') + 1, tmp[1].length() - 1);
+			pure = pure.replaceAll("\\),", ");");
+						
 			model = standarize(model);
 			model = "pre temp == " + model;
 			
@@ -62,16 +70,16 @@ public class TestGenerator {
 	        Precondition[] ps = parser.pres().ps;
 	        Formula f = ps[0].getFormula();
 			
-			generateTest(f, test);
+			generateTest(f, test, pure);
 		}
 		
 		test.append("}\n");
-		System.out.println(test);
+//		System.out.println(test);
 		
 		writeToFile(test);
 	}
 	
-	private static void generateTest(Formula f, StringBuffer test) {
+	private static void generateTest(Formula f, StringBuffer test, String pure) {
 		test.append("\t@Test\n");
 		test.append("\tpublic void test" + index++ + "() {\n");
 		test.append("\t\t" + ci.getName() + " obj = new " + ci.getName() + "();\n");
@@ -86,6 +94,25 @@ public class TestGenerator {
 		}
 		
 		f.updateType(knownTypeVars);
+		f.removePrimTerm();
+		
+		String[] pureAssigns = pure.split(";");
+		for (String pureAssign : pureAssigns) {
+			pureAssign = pureAssign.replaceAll("\\(", "");
+			pureAssign = pureAssign.replaceAll("\\)", "");
+			
+			String[] nameAndValue = pureAssign.split(",");
+			String name = nameAndValue[0];
+			String value = nameAndValue[1];
+			
+			for (Variable var : knownTypeVars) {
+				if (var.getName().equals(name)) {
+					Expression exp1 = new VariableExpression(new Variable(name, var.getType()));
+					Expression exp2 = new LiteralExpression(value);
+					f.addComparisonTerm(Comparator.EQ, exp1, exp2);
+				}
+			}
+		}
 		
 		List<Variable> initVars = new ArrayList<Variable>();
 		
@@ -95,7 +122,8 @@ public class TestGenerator {
 		
 		String s = "";
 		for (LocalVarInfo arg : args) {
-			s += arg.getName() + ",";
+			if (!arg.getName().equals("this"))
+				s += arg.getName() + ",";
 		}
 		test.append(s.substring(0, s.length() - 1) + ");\n");
 		

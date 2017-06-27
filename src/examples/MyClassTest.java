@@ -105,6 +105,7 @@ public class MyClassTest extends TestJPF {
 				"+listener=.star.StarListener",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod2(sym#sym)",

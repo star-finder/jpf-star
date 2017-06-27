@@ -52,6 +52,7 @@ public class Solver {
 	private static File printToFile(Formula f) {
 		try {
 			File file = File.createTempFile("sat", null);
+//			System.out.println(file.toString());
 			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
 
@@ -114,7 +115,10 @@ public class Solver {
 				}
 				
 				if (readModel) {
-					model += s;
+					if (s.contains("Pure Assigment"))
+						model += ";" + s;
+					else
+						model += s;
 				}
 				
 				s = br.readLine();

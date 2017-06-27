@@ -41,18 +41,21 @@ public class ComparisonTerm extends PureTerm {
 	
 	@Override
 	public void genTest(List<Variable> initVars, StringBuffer test) {
+		List<Variable> vars1 = exp1.getVars();
+		List<Variable> vars2 = exp2.getVars();
+		
 		if (comp == Comparator.EQ && exp1 instanceof VariableExpression && 
-				!initVars.contains(exp1.getVars()) && initVars.contains(exp2.getVars())) {
+				!initVars.containsAll(vars1) && (vars2.isEmpty() || initVars.containsAll(vars2))) {
 			Variable var = ((VariableExpression) exp1).getVar();
 			initVars.add(var);
-			test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp2.toString() + "\n");
+			test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp2.toString() + ";\n");
 		}
 		
 		if (comp == Comparator.EQ && exp2 instanceof VariableExpression && 
-				!initVars.contains(exp2.getVars()) && initVars.contains(exp1.getVars())) {
+				!initVars.containsAll(vars2) && (vars1.isEmpty() || initVars.containsAll(vars1))) {
 			Variable var = ((VariableExpression) exp2).getVar();
 			initVars.add(var);
-			test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp1.toString() + "\n");
+			test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp1.toString() + ";\n");
 		}
 	}
 	

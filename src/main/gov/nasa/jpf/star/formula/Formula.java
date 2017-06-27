@@ -135,6 +135,10 @@ public class Formula {
 		pureFormula.updateType(knownTypeVars);
 	}
 	
+	public void removePrimTerm() {
+		pureFormula.removePrimTerm();
+	}
+	
 	public void genTest(List<Variable> initVars, StringBuffer test) {
 		heapFormula.genTest(initVars, test);
 		pureFormula.genTest(initVars, test);

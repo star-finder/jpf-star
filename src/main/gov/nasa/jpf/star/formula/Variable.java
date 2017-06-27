@@ -32,6 +32,15 @@ public class Variable {
 		this.type = type;
 	}
 	
+	public boolean isPrim() {
+		if (type.equals("bool") || type.equals("byte") || type.equals("char") ||
+				type.equals("double") || type.equals("float") || type.equals("int") ||
+				type.equals("long") || type.equals("short"))
+			return true;
+		else
+			return false;
+	}
+	
 	@Override
 	public String toString() {
 		return name;

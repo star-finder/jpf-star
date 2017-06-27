@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.EqTerm;
+import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
+import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a pure formula includes multiple pure terms
@@ -121,6 +124,28 @@ public class PureFormula {
 			if (newLength == oldLength) break;
 			else oldLength = newLength;
 		}
+	}
+	
+	public void removePrimTerm() {
+		List<PureTerm> tmp = new ArrayList<PureTerm>();
+		
+		for (PureTerm pt : pureTerms) {
+			if (pt instanceof EqNullTerm || pt instanceof NEqNullTerm)
+				tmp.add(pt);
+			else if (pt instanceof EqTerm) {
+				Variable var1 = ((EqTerm) pt).getVar1();
+				if (!var1.isPrim()) tmp.add(pt);
+			} else if (pt instanceof NEqTerm) {
+				Variable var1 = ((EqTerm) pt).getVar1();
+				if (!var1.isPrim()) tmp.add(pt);
+			}
+		}
+		
+		int length = tmp.size();
+		PureTerm[] newPureTerms = new PureTerm[length];
+		tmp.toArray(newPureTerms);
+		
+		pureTerms = newPureTerms;
 	}
 	
 	public void genTest(List<Variable> initVars, StringBuffer test) {

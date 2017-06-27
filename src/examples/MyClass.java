@@ -85,10 +85,10 @@ public class MyClass {
 		MyClass mc = new MyClass();
 		Node x = new Node(null);
 //		Node y = new Node();
-		MyClass.myMethod(x);
-//		int i = 0;
-//		int j = 0;
-//		mc.myMethod2(i, j);
+//		MyClass.myMethod(x);
+		int i = 0;
+		int j = 0;
+		mc.myMethod2(i, j);
 //		mc.myMethod1(x, y);
 	}
 
