@@ -50,13 +50,14 @@ public class ComparisonTerm extends PureTerm {
 			initVars.add(var);
 			
 			String name = var.getName();
+			String type = var.getType();
 			
 			if (name.startsWith("this_"))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + exp2.toString() + ";\n");
 			else if (name.startsWith(clsName + "_"))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + exp2.toString() + ";\n");
 			else
-				test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp2.toString() + ";\n");
+				test.append("\t\t" + type + " " + name + " = " + exp2.toString() + ";\n");
 		}
 		
 		if (comp == Comparator.EQ && exp2 instanceof VariableExpression && 
@@ -65,13 +66,14 @@ public class ComparisonTerm extends PureTerm {
 			initVars.add(var);
 			
 			String name = var.getName();
+			String type = var.getType();
 			
 			if (name.startsWith("this_"))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + exp1.toString() + ";\n");
 			else if (name.startsWith(clsName + "_"))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + exp1.toString() + ";\n");
 			else
-				test.append("\t\t" + var.getType() + " " + var.getName() + " = " + exp1.toString() + ";\n");
+				test.append("\t\t" + type + " " + name + " = " + exp1.toString() + ";\n");
 		}
 	}
 	

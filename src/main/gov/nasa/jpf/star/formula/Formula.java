@@ -139,10 +139,43 @@ public class Formula {
 		pureFormula.removePrimTerm();
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> knownTypeVars, List<Variable> initVars,
+			StringBuffer test, String objName, String clsName) {
 		heapFormula.genTest(initVars, test, objName, clsName);
 		pureFormula.genTest(initVars, test, objName, clsName);
+		
+		genExistVars(knownTypeVars, initVars, test, objName, clsName);
 		heapFormula.setFields(test, objName, clsName);
+	}
+	
+	private void genExistVars(List<Variable> knownTypeVars, List<Variable> initVars,
+			StringBuffer test, String objName, String clsName) {
+		if (knownTypeVars.size() == initVars.size())
+			return;
+		else {
+			for (Variable var : knownTypeVars) {
+				String name = var.getName();
+				String type = var.getType();
+				
+				if (!initVars.contains(var) && !name.equals("this")) {
+					if (var.isPrim()) {
+						if (name.startsWith("this_"))
+							test.append("\t\t" + name.replace("this_", objName + ".") + " = 0;\n");
+						else if (name.startsWith(clsName + "_"))
+							test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = 0;\n");
+						else
+							test.append("\t\t" + type + " " + name + " = 0;\n");
+					} else {
+						if (name.startsWith("this_"))
+							test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
+						else if (name.startsWith(clsName + "_"))
+							test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
+						else
+							test.append("\t\t" + type + " " + name + " = null;\n");
+					}
+				}
+			}
+		}
 	}
 	
 	@Override

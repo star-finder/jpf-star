@@ -149,7 +149,7 @@ public class TestGenerator {
 		
 		List<Variable> initVars = new ArrayList<Variable>();
 		
-		f.genTest(initVars, test, objName, clsName);
+		f.genTest(knownTypeVars, initVars, test, objName, clsName);
 		
 		if (mi.isStatic())
 			test.append("\t\t" + clsName + "." + mi.getName() + "(");

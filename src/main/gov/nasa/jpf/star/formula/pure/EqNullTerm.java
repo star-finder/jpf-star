@@ -67,13 +67,14 @@ public class EqNullTerm extends PureTerm {
 			initVars.add(var);
 			
 			String name = var.getName();
+			String type = var.getType();
 			
 			if (name.startsWith("this_"))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
 			else if (name.startsWith(clsName + "_"))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
 			else
-				test.append("\t\t" + var.getType() + " " + var.getName() + " = null;\n");
+				test.append("\t\t" + type + " " + name + " = null;\n");
 		}
 	}
 	

@@ -95,26 +95,28 @@ public class EqTerm extends PureTerm {
 			initVars.add(var1);
 			
 			String name = var1.getName();
+			String type = var1.getType();
 			
 			if (name.startsWith("this_"))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + var2.getName() + ";\n");
 			else if (name.startsWith(clsName + "_"))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + var2.getName() + ";\n");
 			else
-				test.append("\t\t" + var1.getType() + " " + var1.getName() + " = " + var2.getName() + ";\n");
+				test.append("\t\t" + type + " " + name + " = " + var2.getName() + ";\n");
 		}
 		
 		if (initVars.contains(var1) && !initVars.contains(var2)) {
 			initVars.add(var2);
 			
 			String name = var2.getName();
+			String type = var2.getType();
 			
 			if (name.startsWith("this_"))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + var1.getName() + ";\n");
 			else if (name.startsWith(clsName + "_"))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + var1.getName() + ";\n");
 			else
-				test.append("\t\t" + var2.getType() + " " + var2.getName() + " = " + var1.getName() + ";\n");
+				test.append("\t\t" + type + " " + name + " = " + var1.getName() + ";\n");
 		}
 	}
 	

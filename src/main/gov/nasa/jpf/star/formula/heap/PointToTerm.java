@@ -98,13 +98,14 @@ public class PointToTerm extends HeapTerm {
 			initVars.add(vars[0]);
 			
 			String name = vars[0].getName();
+			String type = vars[0].getType();
 			
 			if (name.startsWith("this_"))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = new " + type + "();\n");
 			else if (name.startsWith(clsName + "_"))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = new " + type + "();\n");
 			else
-				test.append("\t\t" + vars[0].getType() + " " + vars[0].getName() + " = new " + type + "();\n");
+				test.append("\t\t" + type + " " + name + " = new " + type + "();\n");
 		}
 	}
 	
