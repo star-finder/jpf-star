@@ -148,14 +148,14 @@ public class PureFormula {
 		pureTerms = newPureTerms;
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		int oldLength = initVars.size();
 		
 		while (true) {
 			int length = pureTerms.length;
 			
 			for (int i = 0; i < length; i++) {
-				pureTerms[i].genTest(initVars, test);
+				pureTerms[i].genTest(initVars, test, objName, clsName);
 			}
 			
 			int newLength = initVars.size();

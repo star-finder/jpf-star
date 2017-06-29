@@ -92,21 +92,44 @@ public class PointToTerm extends HeapTerm {
 		}
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	@Override
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		if (!initVars.contains(vars[0])) {
 			initVars.add(vars[0]);
-			test.append("\t\t" + vars[0].getType() + " " + vars[0].getName() + " = new " + type + "();\n");
+			
+			String name = vars[0].getName();
+			
+			if (name.startsWith("this_"))
+				test.append("\t\t" + name.replace("this_", objName + ".") + " = new " + type + "();\n");
+			else if (name.startsWith(clsName + "_"))
+				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = new " + type + "();\n");
+			else
+				test.append("\t\t" + vars[0].getType() + " " + vars[0].getName() + " = new " + type + "();\n");
 		}
 	}
 	
-	public void setFields(StringBuffer test) {
+	@Override
+	public void setFields(StringBuffer test, String objName, String clsName) {
 		int length = vars.length;
 		DataNode dn = DataNodeMap.find(type);
 		
 		Variable[] fields = dn.getFields();
 		
 		for (int i = 1; i < length; i++) {
-			test.append("\t\t" + vars[0].getName() + "." + fields[i - 1].getName() + " = " + vars[i] + ";\n");
+			String name0 = vars[0].getName();
+			String nameI = vars[i].getName();
+			
+			if (name0.startsWith("this_"))
+				name0 = name0.replace("this_", objName + ".");
+			else if (name0.startsWith(clsName + "_"))
+				name0 = name0.replace(clsName + "_", clsName + ".");
+			
+			if (nameI.startsWith("this_"))
+				nameI = nameI.replace("this_", objName + ".");
+			else if (nameI.startsWith(clsName + "_"))
+				nameI = nameI.replace(clsName + "_", clsName + ".");
+			
+			test.append("\t\t" + name0 + "." + fields[i - 1].getName() + " = " + nameI + ";\n");
 		}
 	}
 	

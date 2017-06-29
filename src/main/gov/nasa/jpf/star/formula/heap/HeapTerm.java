@@ -24,11 +24,11 @@ public abstract class HeapTerm {
 		return;
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		return;
 	}
 	
-	public void setFields(StringBuffer test) {
+	public void setFields(StringBuffer test, String objName, String clsName) {
 		return;
 	}
 	

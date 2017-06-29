@@ -24,7 +24,7 @@ public abstract class PureTerm {
 		return;
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		return;
 	}
 

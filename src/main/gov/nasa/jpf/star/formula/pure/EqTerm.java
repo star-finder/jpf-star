@@ -90,15 +90,31 @@ public class EqTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		if (initVars.contains(var2) && !initVars.contains(var1)) {
 			initVars.add(var1);
-			test.append("\t\t" + var1.getType() + " " + var1.getName() + " = " + var2.getName() + "\n");
+			
+			String name = var1.getName();
+			
+			if (name.startsWith("this_"))
+				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + var2.getName() + ";\n");
+			else if (name.startsWith(clsName + "_"))
+				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + var2.getName() + ";\n");
+			else
+				test.append("\t\t" + var1.getType() + " " + var1.getName() + " = " + var2.getName() + ";\n");
 		}
 		
 		if (initVars.contains(var1) && !initVars.contains(var2)) {
 			initVars.add(var2);
-			test.append("\t\t" + var2.getType() + " " + var2.getName() + " = " + var1.getName() + "\n");
+			
+			String name = var2.getName();
+			
+			if (name.startsWith("this_"))
+				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + var1.getName() + ";\n");
+			else if (name.startsWith(clsName + "_"))
+				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + var1.getName() + ";\n");
+			else
+				test.append("\t\t" + var2.getType() + " " + var2.getName() + " = " + var1.getName() + ";\n");
 		}
 	}
 	

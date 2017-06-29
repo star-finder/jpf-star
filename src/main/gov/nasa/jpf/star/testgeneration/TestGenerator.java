@@ -18,6 +18,7 @@ import gov.nasa.jpf.star.precondition.PreconditionLexer;
 import gov.nasa.jpf.star.precondition.PreconditionParser;
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.ClassInfo;
+import gov.nasa.jpf.vm.FieldInfo;
 import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
 
@@ -80,17 +81,31 @@ public class TestGenerator {
 	}
 	
 	private static void generateTest(Formula f, StringBuffer test, String pure) {
+		String objName = "obj";
+		String clsName = ci.getName();
+		
 		test.append("\t@Test\n");
 		test.append("\tpublic void test" + index++ + "() {\n");
-		test.append("\t\t" + ci.getName() + " obj = new " + ci.getName() + "();\n");
 		
-		mi.getArgumentsSize();
+		if (!mi.isStatic())
+			test.append("\t\t" + clsName + " " + objName + " = new " + clsName + "();\n");
+		
 		LocalVarInfo[] args = mi.getArgumentLocalVars();
+		FieldInfo[] insFields = ci.getInstanceFields();
+		FieldInfo[] staFields = ci.getDeclaredStaticFields();
 		
 		List<Variable> knownTypeVars = new ArrayList<Variable>();
 		
 		for (LocalVarInfo arg : args) {
 			knownTypeVars.add(new Variable(arg.getName(), arg.getType()));
+		}
+		
+		for (FieldInfo field : insFields) {
+			knownTypeVars.add(new Variable("this_" + field.getName(), field.getType()));
+		}
+		
+		for (FieldInfo field : staFields) {
+			knownTypeVars.add(new Variable(clsName + "_" + field.getName(), field.getType()));
 		}
 		
 		f.updateType(knownTypeVars);
@@ -116,16 +131,23 @@ public class TestGenerator {
 		
 		List<Variable> initVars = new ArrayList<Variable>();
 		
-		f.genTest(initVars, test);
+		f.genTest(initVars, test, objName, clsName);
 		
-		test.append("\t\tobj." + mi.getName() + "(");
+		if (mi.isStatic())
+			test.append("\t\t" + clsName + "." + mi.getName() + "(");
+		else
+			test.append("\t\t" + objName + "." + mi.getName() + "(");
 		
 		String s = "";
 		for (LocalVarInfo arg : args) {
 			if (!arg.getName().equals("this"))
 				s += arg.getName() + ",";
 		}
-		test.append(s.substring(0, s.length() - 1) + ");\n");
+		
+		if (!s.isEmpty())
+			s = s.substring(0, s.length() - 1);
+			
+		test.append(s + ");\n");
 		
 		test.append("\t}\n\n");
 	}

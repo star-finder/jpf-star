@@ -64,14 +64,14 @@ public class HeapFormula {
 		}
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		int oldLength = initVars.size();
 		
 		while (true) {
 			int length = heapTerms.length;
 			
 			for (int i = 0; i < length; i++) {
-				heapTerms[i].genTest(initVars, test);
+				heapTerms[i].genTest(initVars, test, objName, clsName);
 			}
 			
 			int newLength = initVars.size();
@@ -81,11 +81,11 @@ public class HeapFormula {
 		}
 	}
 	
-	public void setFields(StringBuffer test) {
+	public void setFields(StringBuffer test, String objName, String clsName) {
 		int length = heapTerms.length;
 		
 		for (int i = 0; i < length; i++) {
-			heapTerms[i].setFields(test);
+			heapTerms[i].setFields(test, objName, clsName);
 		}
 	}
 	

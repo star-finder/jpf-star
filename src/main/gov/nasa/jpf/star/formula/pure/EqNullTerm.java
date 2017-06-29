@@ -62,10 +62,18 @@ public class EqNullTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
 		if (!initVars.contains(var)) {
 			initVars.add(var);
-			test.append("\t\t" + var.getType() + " " + var.getName() + " = null;\n");
+			
+			String name = var.getName();
+			
+			if (name.startsWith("this_"))
+				test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
+			else if (name.startsWith(clsName + "_"))
+				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
+			else
+				test.append("\t\t" + var.getType() + " " + var.getName() + " = null;\n");
 		}
 	}
 	

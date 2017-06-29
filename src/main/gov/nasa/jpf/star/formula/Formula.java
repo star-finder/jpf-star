@@ -139,10 +139,10 @@ public class Formula {
 		pureFormula.removePrimTerm();
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test) {
-		heapFormula.genTest(initVars, test);
-		pureFormula.genTest(initVars, test);
-		heapFormula.setFields(test);
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+		heapFormula.genTest(initVars, test, objName, clsName);
+		pureFormula.genTest(initVars, test, objName, clsName);
+		heapFormula.setFields(test, objName, clsName);
 	}
 	
 	@Override
