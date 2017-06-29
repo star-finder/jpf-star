@@ -1,3 +1,5 @@
+package gov.nasa.jpf.star.examples;
+
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 

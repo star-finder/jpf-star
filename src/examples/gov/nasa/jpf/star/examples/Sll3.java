@@ -1,7 +1,10 @@
+package gov.nasa.jpf.star.examples;
 
-public class Sll2 {
+public class Sll3 {
 	
-	public static Node myMethod(Node x) {
+	public Node x = new Node();
+	
+	public Node myMethod() {
 		if (x == null) {
 			return null;
 		} else {
@@ -15,8 +18,8 @@ public class Sll2 {
 	
 	// The test driver
 	public static void main(String[] args) {
-		Node x = new Node(null);
-		Sll2.myMethod(x);
+		Sll3 sll = new Sll3();
+		sll.myMethod();
 	}
 
 }

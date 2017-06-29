@@ -75,7 +75,10 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 		ClassInfo typeClassInfo = fi.getTypeClassInfo();
 		
 		if (sym_v.toString().contains(".")) {
-			sym_v = new SymbolicInteger(sym_v.toString().replace('.', '_'));
+			String[] tmp = sym_v.toString().split("\\.");
+			int last = tmp.length - 1;
+			
+			sym_v = new SymbolicInteger(tmp[last - 1] + "_" + tmp[last]);
 		}
 
 		// in the first round we check if we can unfold the formula

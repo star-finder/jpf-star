@@ -1,3 +1,4 @@
+package gov.nasa.jpf.star.examples;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -18,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class MyClassTest extends TestJPF {
+public class Sll4Test extends TestJPF {
 	
 	private void initDataNode() {
 		String data = "data Node {Node next}";
@@ -45,9 +46,7 @@ public class MyClassTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre myMethod == sll(x)";
-//		String pre = "pre myMethod1 == sll(x) & x=y";
-//		String pre = "pre myMethod2 == i < 100";
+		String pre = "pre myMethod == sll(Sll4_x)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -68,49 +67,19 @@ public class MyClassTest extends TestJPF {
 	@Test
 	public void testMain() {
 		if (verifyNoPropertyViolation(
-//				"+listener=.symbc.SymbolicListener",
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
-//				"+star.test_package",
-//				"+star.test_imports",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples",
+				"+star.test_package=gov.nasa.jpf.star.examples",
+//				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod(sym)",
-//				"+symbolic.fields = instance,static",
+				"+symbolic.method=gov.nasa.jpf.star.examples.Sll4.myMethod()",
+				"+symbolic.fields=static",
 				"+symbolic.lazy=true")) {
-			MyClass.main(null);
-		}
-	}
-	
-	@Test
-	public void testMain1() {
-		if (verifyNoPropertyViolation(
-//				"+listener=.symbc.SymbolicListener",
-				"+listener=.star.StarListener",
-				"+classpath=build/examples", 
-				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod1(sym#sym)",
-				"+symbolic.lazy=true")) {
-			MyClass.main(null);
-		}
-	}
-	
-	@Test
-	public void testMain2() {
-		if (verifyNoPropertyViolation(
-//				"+listener=.symbc.SymbolicListener",
-				"+listener=.star.StarListener",
-//				"+star.min_int=-100",
-//				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
-				"+classpath=build/examples", 
-				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod2(sym#sym)",
-				"+symbolic.lazy=true")) {
-			MyClass.main(null);
+			Sll4.main(null);
 		}
 	}
 

@@ -82,7 +82,7 @@ public class TestGenerator {
 	
 	private static void generateTest(Formula f, StringBuffer test, String pure) {
 		String objName = "obj";
-		String clsName = ci.getName();
+		String clsName = ci.getSimpleName();
 		
 		test.append("\t@Test\n");
 		test.append("\tpublic void test" + index++ + "() {\n");
@@ -97,15 +97,33 @@ public class TestGenerator {
 		List<Variable> knownTypeVars = new ArrayList<Variable>();
 		
 		for (LocalVarInfo arg : args) {
-			knownTypeVars.add(new Variable(arg.getName(), arg.getType()));
+			String name = arg.getName();
+			String type = arg.getType();
+			
+			if (type.contains("."))
+				type = type.substring(type.lastIndexOf('.') + 1);
+			
+			knownTypeVars.add(new Variable(name, type));
 		}
 		
 		for (FieldInfo field : insFields) {
-			knownTypeVars.add(new Variable("this_" + field.getName(), field.getType()));
+			String name = "this_" + field.getName();
+			String type = field.getType();
+			
+			if (type.contains("."))
+				type = type.substring(type.lastIndexOf('.') + 1);
+			
+			knownTypeVars.add(new Variable(name, type));
 		}
 		
 		for (FieldInfo field : staFields) {
-			knownTypeVars.add(new Variable(clsName + "_" + field.getName(), field.getType()));
+			String name = clsName + "_" + field.getName();
+			String type = field.getType();
+			
+			if (type.contains("."))
+				type = type.substring(type.lastIndexOf('.') + 1);
+			
+			knownTypeVars.add(new Variable(name, type));
 		}
 		
 		f.updateType(knownTypeVars);
@@ -168,11 +186,11 @@ public class TestGenerator {
 		test.append("import gov.nasa.jpf.util.test.TestJPF;\n");
 		test.append("\n");
 		
-		test.append("public class " + ci.getName() + "1 extends TestJPF {\n\n");
+		test.append("public class " + ci.getSimpleName() + "1 extends TestJPF {\n\n");
 	}
 	
 	private static void writeToFile(StringBuffer test) {
-		String fileName = ci.getName() + "1.java";
+		String fileName = ci.getSimpleName() + "1.java";
 		String path = conf.getProperty("star.test_path");
 		
 		try {

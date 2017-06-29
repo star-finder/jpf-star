@@ -1,3 +1,4 @@
+package gov.nasa.jpf.star.examples;
 
 public class MyClass {
 	

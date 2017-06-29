@@ -1,3 +1,4 @@
+package gov.nasa.jpf.star.examples;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -70,13 +71,13 @@ public class Sll3Test extends TestJPF {
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
-//				"+star.test_package=...",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples",
+				"+star.test_package=gov.nasa.jpf.star.examples",
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=Sll3.myMethod()",
-				"+symbolic.fields=instance,static",
+				"+symbolic.method=gov.nasa.jpf.star.examples.Sll3.myMethod()",
+				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Sll3.main(null);
 		}
