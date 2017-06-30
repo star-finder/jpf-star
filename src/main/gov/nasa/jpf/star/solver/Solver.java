@@ -17,7 +17,7 @@ import gov.nasa.jpf.star.predicate.InductivePredMap;
 
 public class Solver {
 	
-	private static int MAX_LENGTH = 100;
+	private static int MAX_LENGTH = 10;
 	
 	private static String s2sat = "s2sat";
 	

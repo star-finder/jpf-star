@@ -3,7 +3,7 @@ package gov.nasa.jpf.star.examples.linkedlist;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class MyLinkedList1 extends TestJPF {
+public class MyLinkedList_isEmpty1 extends TestJPF {
 
 	@Test
 	public void test1() {

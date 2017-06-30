@@ -19,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class MyLinkedList1Test extends TestJPF {
+public class MyLinkedList_sizeTest extends TestJPF {
 	
 	private void initDataNode() {
 		String data = "data MyListNode {Object _element; MyListNode _next}";
@@ -46,7 +46,7 @@ public class MyLinkedList1Test extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre isEmpty == this__header::MyListNode<element,next> * sll(next)";
+		String pre = "pre size == this__header::MyListNode<element,next> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -76,10 +76,11 @@ public class MyLinkedList1Test extends TestJPF {
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.linkedlist.MyLinkedList.isEmpty()",
+				"+symbolic.method=gov.nasa.jpf.star.examples.linkedlist.MyLinkedList.size()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
-			MyLinkedList.main(null);
+			MyLinkedList list = new MyLinkedList();
+			list.size();
 		}
 	}
 

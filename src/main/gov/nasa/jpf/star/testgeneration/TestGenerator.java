@@ -186,11 +186,11 @@ public class TestGenerator {
 		test.append("import gov.nasa.jpf.util.test.TestJPF;\n");
 		test.append("\n");
 		
-		test.append("public class " + ci.getSimpleName() + "1 extends TestJPF {\n\n");
+		test.append("public class " + ci.getSimpleName() + "_" + mi.getName() + "1 extends TestJPF {\n\n");
 	}
 	
 	private static void writeToFile(StringBuffer test) {
-		String fileName = ci.getSimpleName() + "1.java";
+		String fileName = ci.getSimpleName() + "_" + mi.getName() + "1.java";
 		String path = conf.getProperty("star.test_path");
 		
 		try {

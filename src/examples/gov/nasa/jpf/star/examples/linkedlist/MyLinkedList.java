@@ -114,10 +114,5 @@ class MyLinkedList {
 		if (this.size() != this._maxsize)
 			throw new RuntimeException("bug found");
 	}
-	
-	public static void main(String[] args) {
-		MyLinkedList list = new MyLinkedList(0);
-		list.isEmpty();
-	}
 
 }
