@@ -46,6 +46,8 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 						
 						return this;
 					} else if (alias1 != alias2) {
+						// is it correct if two alias are different that means two vars
+						// are not equal
 						sf.pop();
 						sf.pop();
 						

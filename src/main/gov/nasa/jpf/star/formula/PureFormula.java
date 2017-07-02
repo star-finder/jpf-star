@@ -136,7 +136,7 @@ public class PureFormula {
 				Variable var1 = ((EqTerm) pt).getVar1();
 				if (!var1.isPrim()) tmp.add(pt);
 			} else if (pt instanceof NEqTerm) {
-				Variable var1 = ((EqTerm) pt).getVar1();
+				Variable var1 = ((NEqTerm) pt).getVar1();
 				if (!var1.isPrim()) tmp.add(pt);
 			}
 		}

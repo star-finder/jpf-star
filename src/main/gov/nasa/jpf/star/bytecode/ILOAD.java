@@ -22,7 +22,7 @@ public class ILOAD extends gov.nasa.jpf.jvm.bytecode.ILOAD {
 		
 		if (sym_v != null &&
 				(sym_v instanceof SymbolicInteger || sym_v instanceof SymbolicReal)) {
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			Expression exp = new VariableExpression(new Variable(sym_v.toString(), "int"));
 			sf.setLocalAttr(index, exp);
 		}
 		

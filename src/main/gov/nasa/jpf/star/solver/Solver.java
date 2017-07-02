@@ -115,9 +115,11 @@ public class Solver {
 				}
 				
 				if (readModel) {
-					if (s.contains("Pure Assigment"))
+					if (s.contains("cex:"))
+						model += s.substring(s.indexOf("cex:"));
+					else if (s.contains("Pure Assigment"))
 						model += ";" + s;
-					else
+					else if (!s.contains("true"))
 						model += s;
 				}
 				

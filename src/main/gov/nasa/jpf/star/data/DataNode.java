@@ -36,7 +36,11 @@ public class DataNode {
 	}
 	
 	public String toS2SATString() {
-		return this.toString();
+		// it seems s2sat has object already
+		if (type.equals("Object"))
+			return "";
+		else
+			return this.toString();
 	}
 
 }

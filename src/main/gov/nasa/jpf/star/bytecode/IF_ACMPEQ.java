@@ -51,6 +51,8 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 						
 						return getTarget();
 					} else {
+						// is it correct if two alias are different that means two vars
+						// are not equal
 						sf.pop();
 						sf.pop();
 						

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
-import gov.nasa.jpf.star.formula.pure.PureTerm;
 
 // a heap formula includes multiple heap terms
 
@@ -45,6 +44,18 @@ public class HeapFormula {
 		
 		HeapFormula newHeapFormula = new HeapFormula(newHeapTerms);
 		return newHeapFormula;
+	}
+	
+	public void addTerm(HeapTerm term) {
+		int length = heapTerms.length + 1;
+		HeapTerm[] newHeapTerms = new HeapTerm[length];
+		
+		for (int i = 0; i < length - 1; i++) {
+			newHeapTerms[i] = heapTerms[i];
+		}
+		
+		newHeapTerms[length - 1] = term;
+		heapTerms = newHeapTerms;
 	}
 	
 	public void updateType(List<Variable> knownTypeVars) {

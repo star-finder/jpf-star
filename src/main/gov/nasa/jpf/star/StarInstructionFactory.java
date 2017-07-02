@@ -93,13 +93,20 @@ import gov.nasa.jpf.vm.Instruction;
 // symbolic execution
 public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructionFactory {
 
+	private boolean lazy = false;
+	
 	public StarInstructionFactory(Config conf) {
 		super(conf);
+		if (conf.getProperty("star.lazy").equals("true"))
+			lazy = true;
 	}
 
 	@Override
 	public Instruction aload(int localVarIndex) {
-		return new ALOAD(localVarIndex);
+		if (lazy)
+			return new gov.nasa.jpf.star.bytecode.lazy.ALOAD(localVarIndex);
+		else
+			return new gov.nasa.jpf.star.bytecode.ALOAD(localVarIndex);
 	}
 
 	@Override
@@ -504,12 +511,18 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 
 	@Override
 	public Instruction getfield(String fieldName, String clsName, String fieldDescriptor) {
-		return new GETFIELD(fieldName, clsName, fieldDescriptor);
+		if (lazy)
+			return new gov.nasa.jpf.star.bytecode.lazy.GETFIELD(fieldName, clsName, fieldDescriptor);
+		else
+			return new gov.nasa.jpf.star.bytecode.GETFIELD(fieldName, clsName, fieldDescriptor);
 	}
 
 	@Override
 	public Instruction getstatic(String fieldName, String clsName, String fieldDescriptor) {
-		return new GETSTATIC(fieldName, clsName, fieldDescriptor);
+		if (lazy)
+			return new gov.nasa.jpf.star.bytecode.lazy.GETSTATIC(fieldName, clsName, fieldDescriptor);
+		else
+			return new gov.nasa.jpf.star.bytecode.GETSTATIC(fieldName, clsName, fieldDescriptor);
 	}
 
 	@Override

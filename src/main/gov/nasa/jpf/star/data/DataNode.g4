@@ -44,7 +44,12 @@ tail returns [DataNode[] dns] :
 ;
 
 data returns [DataNode dn] :
-	DATA ID LC fields RC
+	DATA ID LC RC
+	{
+		Variable[] fs = new Variable[0];
+		$dn = new DataNode($ID.text, fs);
+	}
+	| DATA ID LC fields RC
 	{
 		Variable[] fs = $fields.fs;
 		$dn = new DataNode($ID.text, fs);

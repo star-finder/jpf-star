@@ -78,13 +78,13 @@ public class PointToTerm extends HeapTerm {
 	@Override
 	public void updateType(List<Variable> knownTypeVars) {
 		DataNode dn = DataNodeMap.find(type);
-		Variable[] field = dn.getFields();
+		Variable[] fields = dn.getFields();
 		
 		for (int i = 0; i < vars.length; i++) {
 			if (i == 0) {
 				vars[i].setType(type);
 			} else {
-				vars[i].setType(field[i - 1].getType());
+				vars[i].setType(fields[i - 1].getType());
 			}
 			
 			if (!knownTypeVars.contains(vars[i]))

@@ -62,11 +62,18 @@ public class INVOKEInstrSymbHelper {
 			
 				if (prevCG == null) {
 					String methodName = mi.getName();
-					Precondition pre = PreconditionMap.find(methodName);
+					Precondition pre = null;
+							
+					if (conf.getProperty("star.lazy").equals("false"))	
+						pre = PreconditionMap.find(methodName);
+					
 					if (pre != null) {
 						pc = pre.getFormula();
 						if (!Solver.checkSat(pc, conf)) {
 							System.out.println("Precondition is not satisfiable");
+							ti.getVM().getSystemState().setIgnored(true);
+							
+							return false;
 						}
 					}
 					else

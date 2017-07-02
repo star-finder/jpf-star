@@ -22,7 +22,7 @@ public class DLOAD extends gov.nasa.jpf.jvm.bytecode.DLOAD {
 		
 		if (sym_v != null &&
 				(sym_v instanceof SymbolicInteger || sym_v instanceof SymbolicReal)) {
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			Expression exp = new VariableExpression(new Variable(sym_v.toString(), "double"));
 			sf.setLongLocalAttr(index, exp);
 		}
 		

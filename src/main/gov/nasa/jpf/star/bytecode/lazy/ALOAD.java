@@ -1,4 +1,6 @@
-package gov.nasa.jpf.star.bytecode;
+package gov.nasa.jpf.star.bytecode.lazy;
+
+import java.util.List;
 
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
@@ -85,11 +87,15 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						sf.pushLocal(index);
 						
 						return getNext(ti);
-					} else if (ht instanceof InductiveTerm) {
-						InductiveTerm it = (InductiveTerm) ht;
-						Formula[] fs = it.unfold();
-
-						cg = new StarChoiceGenerator(fs.length);
+					} else {
+						String type = ei.getType();
+						type = type.substring(type.lastIndexOf('/') + 1, type.length() - 1);
+						
+						List<Variable> vars = HeapMemoryMap.find(type);
+						
+						int size = vars.size() + 2; // null and old nodes and new node
+						
+						cg = new StarChoiceGenerator(size);
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 						
 						return this;
@@ -99,15 +105,27 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 
 			return super.execute(ti);
 		} else {
+			String type = ei.getType();
+			type = type.substring(type.lastIndexOf('/') + 1, type.length() - 1);
+			
+			List<Variable> vars = HeapMemoryMap.find(type);
+			
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 
 			Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
-			HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
+			int currentChoice = (Integer) cg.getNextChoice();
 			
-			// in this case ht is inductive term;
-			InductiveTerm it = (InductiveTerm) ht;
-			pc.unfold(it, (Integer) cg.getNextChoice());
+			if (currentChoice < vars.size()) {
+				Variable var = vars.get(currentChoice);
+				pc.addEqTerm(new Variable(sym_v.toString(), ""), var);
+			} else if (currentChoice == vars.size()) {
+				pc.addEqNullTerm(new Variable(sym_v.toString(), ""));
+			} else {
+				Variable newVar = new Variable(sym_v.toString(), "");
+				pc.addPointToTerm(newVar, type);
+				HeapMemoryMap.put(type, newVar);
+			}
 			
 			if (Solver.checkSat(pc, conf)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);

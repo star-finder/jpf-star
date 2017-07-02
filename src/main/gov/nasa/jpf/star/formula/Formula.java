@@ -3,8 +3,12 @@ package gov.nasa.jpf.star.formula;
 import java.util.List;
 import java.util.Map;
 
+import gov.nasa.jpf.star.data.DataNode;
+import gov.nasa.jpf.star.data.DataNodeMap;
+import gov.nasa.jpf.star.formula.expression.Expression;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
+import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.formula.pure.ComparisonTerm;
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.EqTerm;
@@ -12,7 +16,6 @@ import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.star.formula.expression.Expression;
 
 // a formula includes heap part and pure part
 
@@ -103,6 +106,21 @@ public class Formula {
 		
 		heapFormula = new HeapFormula(newHeapTerms);
 		pureFormula = new PureFormula(newPureTerms);
+	}
+	
+	public void addPointToTerm(Variable var, String type) {
+		DataNode dn = DataNodeMap.find(type);
+		Variable[] fields = dn.getFields();
+		
+		Variable[] vars = new Variable[fields.length + 1];
+		
+		for (int i = 0; i < vars.length; i++) {
+			if (i == 0) vars[i] = new Variable(var.getName(), "");
+			else vars[i] = Utilities.freshVar(fields[i - 1]);
+		}
+		
+		HeapTerm ht = new PointToTerm(type, vars);
+		heapFormula.addTerm(ht);
 	}
 	
 	public void addEqNullTerm(Variable var) {

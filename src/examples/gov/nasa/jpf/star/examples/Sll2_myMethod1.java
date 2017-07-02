@@ -3,7 +3,7 @@ package gov.nasa.jpf.star.examples;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class Sll21 extends TestJPF {
+public class Sll2_myMethod1 extends TestJPF {
 
 	@Test
 	public void test1() {

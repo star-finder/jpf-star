@@ -57,8 +57,14 @@ public class TestGenerator {
 			String[] tmp = model.split(";");
 			
 			model = tmp[0];
-			String pure = tmp[1].substring(tmp[1].indexOf('[') + 1, tmp[1].length() - 1);
-			pure = pure.replaceAll("\\),", ");");
+			String pure = tmp[1];
+			
+			if (pure.contains("Sat")) {
+				pure = pure.substring(tmp[1].indexOf('[') + 1, tmp[1].length() - 1);
+				pure = pure.replaceAll("\\),", ");");
+			} else {
+				pure = "";
+			}
 						
 			model = standarize(model);
 			model = "pre temp == " + model;
@@ -129,20 +135,22 @@ public class TestGenerator {
 		f.updateType(knownTypeVars);
 		f.removePrimTerm();
 		
-		String[] pureAssigns = pure.split(";");
-		for (String pureAssign : pureAssigns) {
-			pureAssign = pureAssign.replaceAll("\\(", "");
-			pureAssign = pureAssign.replaceAll("\\)", "");
-			
-			String[] nameAndValue = pureAssign.split(",");
-			String name = nameAndValue[0];
-			String value = nameAndValue[1];
-			
-			for (Variable var : knownTypeVars) {
-				if (var.getName().equals(name)) {
-					Expression exp1 = new VariableExpression(new Variable(name, var.getType()));
-					Expression exp2 = new LiteralExpression(value);
-					f.addComparisonTerm(Comparator.EQ, exp1, exp2);
+		if (pure.length() > 0) {
+			String[] pureAssigns = pure.split(";");
+			for (String pureAssign : pureAssigns) {
+				pureAssign = pureAssign.replaceAll("\\(", "");
+				pureAssign = pureAssign.replaceAll("\\)", "");
+				
+				String[] nameAndValue = pureAssign.split(",");
+				String name = nameAndValue[0];
+				String value = nameAndValue[1];
+				
+				for (Variable var : knownTypeVars) {
+					if (var.getName().equals(name)) {
+						Expression exp1 = new VariableExpression(new Variable(name, var.getType()));
+						Expression exp2 = new LiteralExpression(value);
+						f.addComparisonTerm(Comparator.EQ, exp1, exp2);
+					}
 				}
 			}
 		}

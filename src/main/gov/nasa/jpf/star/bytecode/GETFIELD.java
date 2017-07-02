@@ -4,6 +4,9 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
 import gov.nasa.jpf.star.formula.Utilities;
+import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.VariableExpression;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
@@ -75,17 +78,22 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				|| sym_v instanceof ArrayExpression) {
 			return super.execute(ti);
 		}
+		
+		if (sym_v instanceof SymbolicInteger) {
+			if (sym_v.toString().contains(".")) {
+				int index = sym_v.toString().indexOf('.') + 1;
+				int length = sym_v.toString().length();
+				sym_v = new SymbolicInteger("this_" + sym_v.toString().substring(index, length));
+			}
+			
+			Expression exp = new VariableExpression(new Variable(sym_v.toString(), fi.getType()));
+			ei.setFieldAttr(fi, exp);
+		}
 
 		ChoiceGenerator<?> cg;
 		ChoiceGenerator<?> prevCG;
 
 		ClassInfo typeClassInfo = fi.getTypeClassInfo();
-
-		if (sym_v.toString().contains(".")) {
-			int index = sym_v.toString().indexOf('.') + 1;
-			int length = sym_v.toString().length();
-			sym_v = new SymbolicInteger("this_" + sym_v.toString().substring(index, length));
-		}
 
 		// in the first round we check if we can unfold the formula
 		// if it is we create a choice generator with the number of choices

@@ -2,6 +2,8 @@ package gov.nasa.jpf.star.formula;
 
 import java.util.List;
 
+import gov.nasa.jpf.star.formula.expression.Expression;
+import gov.nasa.jpf.star.formula.expression.VariableExpression;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
@@ -10,7 +12,6 @@ import gov.nasa.jpf.star.formula.pure.PureTerm;
 import gov.nasa.jpf.symbc.heap.HeapNode;
 import gov.nasa.jpf.symbc.heap.Helper;
 import gov.nasa.jpf.symbc.heap.SymbolicInputHeap;
-import gov.nasa.jpf.symbc.numeric.IntegerExpression;
 import gov.nasa.jpf.symbc.numeric.PathCondition;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
 import gov.nasa.jpf.vm.ClassInfo;
@@ -143,7 +144,9 @@ public class Utilities {
 
 		boolean shared = (ei == null ? false : ei.isShared());
 		
-		daIndex = Helper.addNewHeapNode(typeClassInfo, ti, attr, symPC, 
+		SymbolicInteger sym = new SymbolicInteger(attr.toString());
+		
+		daIndex = Helper.addNewHeapNode(typeClassInfo, ti, sym, symPC, 
 				symInputHeap, numSymRefs, prevSymRefs, shared);
 		
 		PointToTerm pt = (PointToTerm) Utilities.findHeapTerm(pc, attr.toString());
@@ -156,8 +159,8 @@ public class Utilities {
 		for (int i = 0; i < numberOfFields; i++) {
 			FieldInfo newFi = newEi.getFieldInfo(i);
 			// do we need to check type of the fields and add more precise symbolic value
-			IntegerExpression newAttr = new SymbolicInteger(vars[i + 1].getName());
-			newEi.setFieldAttr(newFi, newAttr);
+			Expression exp = new VariableExpression(new Variable(vars[i + 1].getName(), newFi.getType()));
+			newEi.setFieldAttr(newFi, exp);
 		}
 		
 		return daIndex;

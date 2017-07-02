@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples;
+package gov.nasa.jpf.star.examples.linkedlist;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class Sll3Test extends TestJPF {
+public class MyLinkedList_findTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data Node {Node next}";
+		String data = "data MyListNode {Object _element; MyListNode _next}; data Object {}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -34,7 +34,7 @@ public class Sll3Test extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred = "pred sll(root) == root = null || root::Node<next> * sll(next)";
+		String pred = "pred sll(root) == root = null || root::MyListNode<element,next> * element::Object<> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -46,7 +46,7 @@ public class Sll3Test extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre myMethod == sll(this_x)";
+		String pre = "pre find == this__header::MyListNode<element,next> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -71,16 +71,17 @@ public class Sll3Test extends TestJPF {
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.lazy=false",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples",
-				"+star.test_package=gov.nasa.jpf.star.examples",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/linkedlist",
+				"+star.test_package=gov.nasa.jpf.star.examples.linkedlist",
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.Sll3.myMethod()",
+				"+symbolic.method=gov.nasa.jpf.star.examples.linkedlist.MyLinkedList.find(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
-			Sll3.main(null);
+			MyLinkedList list = new MyLinkedList();
+			Object x = new Object();
+			list.find(x);
 		}
 	}
 

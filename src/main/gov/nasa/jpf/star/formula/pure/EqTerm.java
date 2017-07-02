@@ -94,30 +94,40 @@ public class EqTerm extends PureTerm {
 		if (initVars.contains(var2) && !initVars.contains(var1)) {
 			initVars.add(var1);
 			
-			String name = var1.getName();
+			String name1 = standarize(var1.getName(), objName, clsName);
+			String name2 = standarize(var2.getName(), objName, clsName);
+			
 			String type = var1.getType();
 			
-			if (name.startsWith("this_"))
-				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + var2.getName() + ";\n");
-			else if (name.startsWith(clsName + "_"))
-				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + var2.getName() + ";\n");
+			if (var1.getName().startsWith("this_") || var1.getName().startsWith(clsName + "_"))
+				test.append("\t\t" + name1 + " = " + name2 + ";\n");
 			else
-				test.append("\t\t" + type + " " + name + " = " + var2.getName() + ";\n");
+				test.append("\t\t" + type + " " + name1 + " = " + name2 + ";\n");
 		}
 		
 		if (initVars.contains(var1) && !initVars.contains(var2)) {
 			initVars.add(var2);
 			
-			String name = var2.getName();
+			String name1 = standarize(var1.getName(), objName, clsName);
+			String name2 = standarize(var2.getName(), objName, clsName);
+			
 			String type = var2.getType();
 			
-			if (name.startsWith("this_"))
-				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + var1.getName() + ";\n");
-			else if (name.startsWith(clsName + "_"))
-				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + var1.getName() + ";\n");
+			if (var2.getName().startsWith("this_") || var2.getName().startsWith(clsName + "_"))
+				test.append("\t\t" + name2 + " = " + name1 + ";\n");
 			else
-				test.append("\t\t" + type + " " + name + " = " + var1.getName() + ";\n");
+				test.append("\t\t" + type + " " + name2 + " = " + name1 + ";\n");
 		}
+	}
+	
+	private String standarize(String name, String objName, String clsName) {
+		if (name.startsWith("this_"))
+			name = name.replace("this_", objName + ".");
+		
+		if (name.startsWith(clsName + "_"))
+			name = name.replace(clsName + "_", clsName + ".");
+		
+		return name;
 	}
 	
 	@Override

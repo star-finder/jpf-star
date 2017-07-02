@@ -154,7 +154,14 @@ heapTerm returns [HeapTerm term] :
 	}
 ;
 
-pointToTerm returns [HeapTerm term] : root=ID PT type=ID LT params GT
+pointToTerm returns [HeapTerm term] :
+	root=ID PT type=ID LT GT
+	{
+		Variable[] vars = new Variable[1];
+		vars[0] = new Variable($root.text, "");
+		$term = new PointToTerm($type.text, vars);
+	}
+	| root=ID PT type=ID LT params GT
 	{
 		int length = $params.vars.length + 1;
 		

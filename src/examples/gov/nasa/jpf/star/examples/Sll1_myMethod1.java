@@ -3,46 +3,46 @@ package gov.nasa.jpf.star.examples;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class Sll31 extends TestJPF {
+public class Sll1_myMethod1 extends TestJPF {
 
 	@Test
 	public void test1() {
-		Sll3 obj = new Sll3();
-		obj.x = null;
-		obj.myMethod();
+		Sll1 obj = new Sll1();
+		Node x = null;
+		obj.myMethod(x);
 	}
 
 	@Test
 	public void test2() {
-		Sll3 obj = new Sll3();
-		obj.x = new Node();
+		Sll1 obj = new Sll1();
+		Node x = new Node();
 		Node next_1 = null;
-		obj.x.next = next_1;
-		obj.myMethod();
+		x.next = next_1;
+		obj.myMethod(x);
 	}
 
 	@Test
 	public void test3() {
-		Sll3 obj = new Sll3();
-		obj.x = new Node();
+		Sll1 obj = new Sll1();
+		Node x = new Node();
 		Node next_1 = new Node();
 		Node next_2 = null;
-		obj.x.next = next_1;
+		x.next = next_1;
 		next_1.next = next_2;
-		obj.myMethod();
+		obj.myMethod(x);
 	}
 
 	@Test
 	public void test4() {
-		Sll3 obj = new Sll3();
-		obj.x = new Node();
+		Sll1 obj = new Sll1();
+		Node x = new Node();
 		Node next_1 = new Node();
 		Node next_2 = new Node();
 		Node next_3 = null;
-		obj.x.next = next_1;
+		x.next = next_1;
 		next_1.next = next_2;
 		next_2.next = next_3;
-		obj.myMethod();
+		obj.myMethod(x);
 	}
 
 }
