@@ -34,7 +34,7 @@ public class MyLinkedList_findTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred = "pred sll(root) == root = null || root::MyListNode<element,next> * element::Object<> * sll(next)";
+		String pred = "pred sll(root) == root = null || root::MyListNode<element,next> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);

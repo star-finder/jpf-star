@@ -88,7 +88,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				sym_v = new SymbolicInteger("this_" + sym_v.toString().substring(index, length));
 			}
 			
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), fi.getType()));
+			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
 			ei.setFieldAttr(fi, exp);
 		}
 

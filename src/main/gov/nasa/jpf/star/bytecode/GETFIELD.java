@@ -47,7 +47,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
 				if (Solver.checkSat(pc, conf)) {
-					System.out.println("java.lang.NullPointerException: referencing field '" + fname + "' on null object");
+					System.out.println("java.lang.NullPointerException: Referencing field '" + fname + "' on null object");
 					System.out.println(pc);
 					
 					String model = Solver.getModel();
@@ -86,7 +86,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				sym_v = new SymbolicInteger("this_" + sym_v.toString().substring(index, length));
 			}
 			
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), fi.getType()));
+			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
 			ei.setFieldAttr(fi, exp);
 		}
 

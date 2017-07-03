@@ -159,7 +159,7 @@ public class Utilities {
 		for (int i = 0; i < numberOfFields; i++) {
 			FieldInfo newFi = newEi.getFieldInfo(i);
 			// do we need to check type of the fields and add more precise symbolic value
-			Expression exp = new VariableExpression(new Variable(vars[i + 1].getName(), newFi.getType()));
+			Expression exp = new VariableExpression(new Variable(vars[i + 1].getName(), ""));
 			newEi.setFieldAttr(newFi, exp);
 		}
 		

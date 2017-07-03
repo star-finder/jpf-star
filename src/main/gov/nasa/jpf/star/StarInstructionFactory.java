@@ -97,7 +97,9 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	
 	public StarInstructionFactory(Config conf) {
 		super(conf);
-		if (conf.getProperty("star.lazy").equals("true"))
+		
+		String isLazy = conf.getProperty("star.lazy");
+		if (isLazy != null && isLazy.equals("true"))
 			lazy = true;
 	}
 

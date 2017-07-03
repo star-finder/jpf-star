@@ -80,7 +80,7 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 				sym_v = new SymbolicInteger(tmp[last - 1] + "_" + tmp[last]);
 			}
 			
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), fi.getType()));
+			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
 			ei.setFieldAttr(fi, exp);
 		}
 		
