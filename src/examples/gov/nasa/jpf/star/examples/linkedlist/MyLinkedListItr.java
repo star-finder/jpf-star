@@ -7,6 +7,10 @@ class MyLinkedListItr {
 	/* Class Memeber */
 	public MyListNode _current; // Current position
 
+	MyLinkedListItr() {
+		this(null);
+	}
+	
 	// C'tor
 	MyLinkedListItr(MyListNode theNode) {
 		this._current = theNode;

@@ -1,6 +1,4 @@
 package gov.nasa.jpf.star.examples.linkedlist;
-import java.io.IOException;
-
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -21,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class MyLinkedList_printListTest extends TestJPF {
+public class MyLinkedList_insertTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data MyLinkedList{MyListNode _header; int _maxsize}; data MyListNode {Object _element; MyListNode _next}; data Object {}";
+		String data = "data MyLinkedListItr{MyListNode _current}; data MyListNode {Object _element; MyListNode _next}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -48,8 +46,7 @@ public class MyLinkedList_printListTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre printList == theList::MyLinkedList<header,size> * header::MyListNode<element,next> * sll(next)";
-//		String pre = "pre printList == this__header::MyListNode<element,next> * sll(next):";
+		String pre = "pre insert == p::MyLinkedListItr<current> * current::MyListNode<element,next> & next = null";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -79,17 +76,14 @@ public class MyLinkedList_printListTest extends TestJPF {
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.linkedlist.MyLinkedList.printList(sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.linkedlist.MyLinkedList.insert(sym#sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			MyLinkedList list = new MyLinkedList();
-			MyLinkedList theList = new MyLinkedList();
-			try {
-				list.printList(theList);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			Object x = new Object();
+			MyListNode node = new MyListNode();
+			MyLinkedListItr itr = new MyLinkedListItr(node);
+			list.insert(x, itr);
 		}
 	}
 

@@ -101,20 +101,19 @@ class MyLinkedList {
 
 	// Prints list
 	public void printList(MyLinkedList theList) throws IOException {
-//		int x;
-//		if (theList.isEmpty())
-//			x = 1;
-//		else {
-//
-//			MyLinkedListItr itr = theList.first();
-//			for (; !itr.isPastEnd(); itr.advance())
-//				x = 1;
-//
-//		}
+		int x;
+		if (theList.isEmpty())
+			x = 1;
+		else {
+
+			MyLinkedListItr itr = theList.first();
+			for (; !itr.isPastEnd(); itr.advance())
+				x = 1;
+
+		}
 		
-		if (this.size() != this._maxsize)
-//			return;
-			throw new RuntimeException("bug found");
+//		if (this.size() != this._maxsize)
+//			throw new RuntimeException("bug found");
 	}
 
 }
