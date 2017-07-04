@@ -82,7 +82,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			if (sym_v.toString().contains(".")) {
 				int index = name.indexOf('.') + 1;
 				int length = name.length();
-				name = name.substring(index, length);
+				name = "this_" + name.substring(index, length);
 			}
 			
 			Expression exp = new VariableExpression(new Variable(name, ""));
