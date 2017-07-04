@@ -14,6 +14,7 @@ import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.symbc.arrays.ArrayExpression;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
+import gov.nasa.jpf.symbc.numeric.SymbolicReal;
 import gov.nasa.jpf.symbc.string.StringExpression;
 import gov.nasa.jpf.symbc.string.SymbolicStringBuilder;
 import gov.nasa.jpf.vm.ChoiceGenerator;
@@ -65,23 +66,28 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 
 		Object sym_v = ei.getFieldAttr(fi);
 
-		if (!(fi.isReference() && sym_v != null))
-			return super.execute(ti);
-
-		if (sym_v instanceof StringExpression || sym_v instanceof SymbolicStringBuilder
+		if (sym_v == null || sym_v instanceof StringExpression || sym_v instanceof SymbolicStringBuilder
 				|| sym_v instanceof ArrayExpression)
 			return super.execute(ti); // Strings are handled specially
 
-		if (sym_v instanceof SymbolicInteger) {
+		if (sym_v instanceof SymbolicInteger || sym_v instanceof SymbolicReal) {
+			String name = sym_v.toString();
+			
 			if (sym_v.toString().contains(".")) {
-				String[] tmp = sym_v.toString().split("\\.");
+				String[] tmp = name.split("\\.");
 				int last = tmp.length - 1;
 				
-				sym_v = new SymbolicInteger(tmp[last - 1] + "_" + tmp[last]);
+				name = tmp[last - 1] + "_" + tmp[last];
 			}
 			
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			Expression exp = new VariableExpression(new Variable(name, ""));
+			
+			sym_v = exp;
 			ei.setFieldAttr(fi, exp);
+		}
+		
+		if (!fi.isReference()) {
+			return super.execute(ti);
 		}
 		
 		ChoiceGenerator<?> cg;

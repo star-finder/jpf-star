@@ -91,7 +91,7 @@ public class TestGenerator {
 		String clsName = ci.getSimpleName();
 		
 		test.append("\t@Test\n");
-		test.append("\tpublic void test" + index++ + "() {\n");
+		test.append("\tpublic void test" + index++ + "() throws Exception {\n");
 		
 		if (!mi.isStatic())
 			test.append("\t\t" + clsName + " " + objName + " = new " + clsName + "();\n");

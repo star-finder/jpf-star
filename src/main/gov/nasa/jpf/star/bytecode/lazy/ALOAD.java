@@ -50,6 +50,8 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 		
 		if (sym_v instanceof SymbolicInteger) {
 			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			
+			sym_v = exp;
 			sf.setLocalAttr(index, exp);
 		}
 		

@@ -111,14 +111,9 @@ class MyLinkedList {
 				x = 1;
 
 		}
-		if (this.size() != this._maxsize)
-			throw new RuntimeException("bug found");
-	}
-	
-	public static void main(String[] args) {
-		MyLinkedList list = new MyLinkedList(10);
-		list.addLast(null);
-		list.find(null);
+		
+//		if (this.size() != this._maxsize)
+//			throw new RuntimeException("bug found");
 	}
 
 }
