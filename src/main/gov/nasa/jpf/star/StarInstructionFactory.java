@@ -1,6 +1,7 @@
 package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
+import gov.nasa.jpf.star.bytecode.ATHROW;
 import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.D2F;
 import gov.nasa.jpf.star.bytecode.D2I;
@@ -94,10 +95,10 @@ import gov.nasa.jpf.vm.Instruction;
 public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructionFactory {
 
 	private boolean lazy = false;
-	
+
 	public StarInstructionFactory(Config conf) {
 		super(conf);
-		
+
 		String isLazy = conf.getProperty("star.lazy");
 		if (isLazy != null && isLazy.equals("true"))
 			lazy = true;
@@ -531,10 +532,15 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	public Instruction lookupswitch(int defaultTargetPc, int nEntries) {
 		return new LOOKUPSWITCH(defaultTargetPc, nEntries);
 	}
-	
+
 	@Override
 	public Instruction tableswitch(int defaultTargetPc, int low, int high) {
 		return new TABLESWITCH(defaultTargetPc, low, high);
+	}
+
+	@Override
+	public Instruction athrow() {
+		return new ATHROW();
 	}
 
 }
