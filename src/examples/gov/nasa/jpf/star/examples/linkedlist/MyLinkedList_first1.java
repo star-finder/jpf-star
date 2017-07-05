@@ -6,7 +6,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyLinkedList_first1 extends TestJPF {
 
 	@Test
-	public void test1() {
+	public void test1() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = null;
@@ -18,7 +18,7 @@ public class MyLinkedList_first1 extends TestJPF {
 	}
 
 	@Test
-	public void test2() {
+	public void test2() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();

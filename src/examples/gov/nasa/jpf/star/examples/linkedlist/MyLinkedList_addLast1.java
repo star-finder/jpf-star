@@ -6,7 +6,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyLinkedList_addLast1 extends TestJPF {
 
 	@Test
-	public void test1() {
+	public void test1() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = null;
@@ -19,7 +19,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test2() {
+	public void test2() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -36,7 +36,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test3() {
+	public void test3() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -57,7 +57,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test4() {
+	public void test4() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -82,7 +82,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test5() {
+	public void test5() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -111,7 +111,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test6() {
+	public void test6() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -144,7 +144,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test7() {
+	public void test7() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -181,7 +181,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test8() {
+	public void test8() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
@@ -222,7 +222,7 @@ public class MyLinkedList_addLast1 extends TestJPF {
 	}
 
 	@Test
-	public void test9() {
+	public void test9() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();

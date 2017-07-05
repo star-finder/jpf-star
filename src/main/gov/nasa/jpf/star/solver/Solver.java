@@ -52,7 +52,7 @@ public class Solver {
 	private static File printToFile(Formula f) {
 		try {
 			File file = File.createTempFile("sat", null);
-			System.out.println(file.toString());
+//			System.out.println(file.toString());
 			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
 
