@@ -66,7 +66,7 @@ public class TestGenerator {
 				pure = "";
 			}
 						
-			model = standarize(model);
+			model = standarizeModel(model);
 			model = "pre temp == " + model;
 			
 			ANTLRInputStream in = new ANTLRInputStream(model);
@@ -103,33 +103,30 @@ public class TestGenerator {
 		List<Variable> knownTypeVars = new ArrayList<Variable>();
 		
 		for (LocalVarInfo arg : args) {
-			String name = arg.getName();
-			String type = arg.getType();
-			
-			if (type.contains("."))
-				type = type.substring(type.lastIndexOf('.') + 1);
-			
-			knownTypeVars.add(new Variable(name, type));
+			if (!arg.getName().equals("this")) {
+				String name = arg.getName();
+				String type = standarizeType(arg.getType());
+				
+				knownTypeVars.add(new Variable(name, type));
+			}
 		}
 		
 		for (FieldInfo field : insFields) {
-			String name = "this_" + field.getName();
-			String type = field.getType();
-			
-			if (type.contains("."))
-				type = type.substring(type.lastIndexOf('.') + 1);
-			
-			knownTypeVars.add(new Variable(name, type));
+			if (!field.isFinal()) {
+				String name = "this_" + field.getName();
+				String type = standarizeType(field.getType());
+				
+				knownTypeVars.add(new Variable(name, type));
+			}
 		}
 		
 		for (FieldInfo field : staFields) {
-			String name = clsName + "_" + field.getName();
-			String type = field.getType();
-			
-			if (type.contains("."))
-				type = type.substring(type.lastIndexOf('.') + 1);
-			
-			knownTypeVars.add(new Variable(name, type));
+			if (!field.isFinal()) {
+				String name = clsName + "_" + field.getName();
+				String type = standarizeType(field.getType());
+				
+				knownTypeVars.add(new Variable(name, type));
+			}
 		}
 		
 		f.updateType(knownTypeVars);
@@ -146,7 +143,7 @@ public class TestGenerator {
 				String value = nameAndValue[1];
 				
 				for (Variable var : knownTypeVars) {
-					if (var.getName().equals(name)) {
+					if (var.isPrim() && var.getName().equals(name)) {
 						Expression exp1 = new VariableExpression(new Variable(name, var.getType()));
 						Expression exp2 = new LiteralExpression(value);
 						f.addComparisonTerm(Comparator.EQ, exp1, exp2);
@@ -157,7 +154,7 @@ public class TestGenerator {
 		
 		List<Variable> initVars = new ArrayList<Variable>();
 		
-		f.genTest(knownTypeVars, initVars, test, objName, clsName);
+		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
 		
 		if (mi.isStatic())
 			test.append("\t\t" + clsName + "." + mi.getName() + "(");
@@ -211,7 +208,7 @@ public class TestGenerator {
 		}
 	}
 	
-	private static String standarize(String model) {
+	private static String standarizeModel(String model) {
 		String ret = model;
 		
 		ret = ret.substring(8, model.length());
@@ -226,6 +223,16 @@ public class TestGenerator {
 		}
 		
 		return ret.substring(1);
+	}
+	
+	private static String standarizeType(String type) {
+		if (type.contains("."))
+			type = type.substring(type.lastIndexOf('.') + 1);
+		
+		if (type.contains("$"))
+			type = type.substring(type.lastIndexOf('$') + 1);
+		
+		return type;
 	}
 
 }

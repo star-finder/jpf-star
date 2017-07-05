@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.vm.FieldInfo;
 
 public abstract class PureTerm {
 	
@@ -24,7 +25,8 @@ public abstract class PureTerm {
 		return;
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		return;
 	}
 

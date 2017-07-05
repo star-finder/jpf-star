@@ -5,6 +5,7 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // x = y term
 
@@ -79,27 +80,25 @@ public class EqTerm extends PureTerm {
 	@Override
 	public void updateType(List<Variable> knownTypeVars) {
 		for (Variable v : knownTypeVars) {
-			if (v.equals(var1)) {
+			if (v.equals(var1) || v.equals(var2)) {
 				var1.setType(v.getType());
-			}
-			
-			if (v.equals(var2)) {
 				var2.setType(v.getType());
 			}
 		}
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (initVars.contains(var2) && !initVars.contains(var1)) {
 			initVars.add(var1);
 			
-			String name1 = standarize(var1.getName(), objName, clsName);
-			String name2 = standarize(var2.getName(), objName, clsName);
+			String name1 = standarizeName(var1, objName, clsName, insFields, staFields);
+			String name2 = standarizeName(var2, objName, clsName, insFields, staFields);
 			
 			String type = var1.getType();
 			
-			if (var1.getName().startsWith("this_") || var1.getName().startsWith(clsName + "_"))
+			if (var1.isInstance(insFields) || var1.isStatic(clsName, staFields))
 				test.append("\t\t" + name1 + " = " + name2 + ";\n");
 			else
 				test.append("\t\t" + type + " " + name1 + " = " + name2 + ";\n");
@@ -108,23 +107,25 @@ public class EqTerm extends PureTerm {
 		if (initVars.contains(var1) && !initVars.contains(var2)) {
 			initVars.add(var2);
 			
-			String name1 = standarize(var1.getName(), objName, clsName);
-			String name2 = standarize(var2.getName(), objName, clsName);
+			String name1 = standarizeName(var1, objName, clsName, insFields, staFields);
+			String name2 = standarizeName(var2, objName, clsName, insFields, staFields);
 			
 			String type = var2.getType();
 			
-			if (var2.getName().startsWith("this_") || var2.getName().startsWith(clsName + "_"))
+			if (var2.isInstance(insFields) || var2.isStatic(clsName, staFields))
 				test.append("\t\t" + name2 + " = " + name1 + ";\n");
 			else
 				test.append("\t\t" + type + " " + name2 + " = " + name1 + ";\n");
 		}
 	}
 	
-	private String standarize(String name, String objName, String clsName) {
-		if (name.startsWith("this_"))
-			name = name.replace("this_", objName + ".");
+	private String standarizeName(Variable var, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
+		String name = var.getName();
 		
-		if (name.startsWith(clsName + "_"))
+		if (var.isInstance(insFields))
+			name = name.replace("this_", objName + ".");
+		else if (var.isStatic(clsName, staFields))
 			name = name.replace(clsName + "_", clsName + ".");
 		
 		return name;

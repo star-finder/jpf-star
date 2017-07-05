@@ -31,7 +31,8 @@ public class ATHROW extends gov.nasa.jpf.jvm.bytecode.ATHROW {
 			}
 		}
 		
-		return super.execute(ti);
+		ti.getVM().getSystemState().setIgnored(true);
+		return getNext(ti);
 	}
 
 }

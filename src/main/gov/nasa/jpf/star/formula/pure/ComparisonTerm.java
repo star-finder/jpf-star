@@ -5,6 +5,7 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.vm.FieldInfo;
 import gov.nasa.jpf.star.formula.expression.Expression;
 import gov.nasa.jpf.star.formula.expression.VariableExpression;
 
@@ -40,7 +41,8 @@ public class ComparisonTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		List<Variable> vars1 = exp1.getVars();
 		List<Variable> vars2 = exp2.getVars();
 		
@@ -52,9 +54,9 @@ public class ComparisonTerm extends PureTerm {
 			String name = var.getName();
 			String type = var.getType();
 			
-			if (name.startsWith("this_"))
+			if (var.isInstance(insFields))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + exp2.toString() + ";\n");
-			else if (name.startsWith(clsName + "_"))
+			else if (var.isStatic(clsName, staFields))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + exp2.toString() + ";\n");
 			else
 				test.append("\t\t" + type + " " + name + " = " + exp2.toString() + ";\n");
@@ -68,9 +70,9 @@ public class ComparisonTerm extends PureTerm {
 			String name = var.getName();
 			String type = var.getType();
 			
-			if (name.startsWith("this_"))
+			if (var.isInstance(insFields))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = " + exp1.toString() + ";\n");
-			else if (name.startsWith(clsName + "_"))
+			else if (var.isStatic(clsName, staFields))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + exp1.toString() + ";\n");
 			else
 				test.append("\t\t" + type + " " + name + " = " + exp1.toString() + ";\n");

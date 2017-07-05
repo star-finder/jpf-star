@@ -16,6 +16,7 @@ import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 import gov.nasa.jpf.symbc.numeric.Comparator;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // a formula includes heap part and pure part
 
@@ -158,16 +159,18 @@ public class Formula {
 	}
 	
 	public void genTest(List<Variable> knownTypeVars, List<Variable> initVars,
-			StringBuffer test, String objName, String clsName) {
-		heapFormula.genTest(initVars, test, objName, clsName);
-		pureFormula.genTest(initVars, test, objName, clsName);
+			StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
+		heapFormula.genTest(initVars, test, objName, clsName, insFields, staFields);
+		pureFormula.genTest(initVars, test, objName, clsName, insFields, staFields);
 		
-		genExistVars(knownTypeVars, initVars, test, objName, clsName);
-		heapFormula.setFields(test, objName, clsName);
+		genExistVars(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+		heapFormula.setFields(test, objName, clsName, insFields, staFields);
 	}
 	
 	private void genExistVars(List<Variable> knownTypeVars, List<Variable> initVars,
-			StringBuffer test, String objName, String clsName) {
+			StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (knownTypeVars.size() == initVars.size())
 			return;
 		else {
@@ -175,18 +178,18 @@ public class Formula {
 				String name = var.getName();
 				String type = var.getType();
 				
-				if (!initVars.contains(var) && !name.equals("this")) {
+				if (!initVars.contains(var)) {
 					if (var.isPrim()) {
-						if (name.startsWith("this_"))
+						if (var.isInstance(insFields))
 							test.append("\t\t" + name.replace("this_", objName + ".") + " = 0;\n");
-						else if (name.startsWith(clsName + "_"))
+						else if (var.isStatic(clsName, staFields))
 							test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = 0;\n");
 						else
 							test.append("\t\t" + type + " " + name + " = 0;\n");
 					} else {
-						if (name.startsWith("this_"))
+						if (var.isInstance(insFields))
 							test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
-						else if (name.startsWith(clsName + "_"))
+						else if (var.isStatic(clsName, staFields))
 							test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
 						else
 							test.append("\t\t" + type + " " + name + " = null;\n");

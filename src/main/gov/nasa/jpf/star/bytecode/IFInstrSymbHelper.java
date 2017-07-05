@@ -32,8 +32,15 @@ public class IFInstrSymbHelper {
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			conditionValue = (Integer) cg.getNextChoice() == 1 ? true: false;
 		
-			int v2 = sf.pop();
-			int v1 = sf.pop();
+			int v1 = 0, v2 = 0;
+			
+			if (instr instanceof IFEQ || instr instanceof IFGE || instr instanceof IFGT ||
+					instr instanceof IFLE || instr instanceof IFLT || instr instanceof IFNE) {
+				v1 = sf.pop();
+			} else {
+				v2 = sf.pop();
+				v1 = sf.pop();
+			}
 			
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 			Formula pc = null;

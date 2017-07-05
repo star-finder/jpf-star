@@ -5,6 +5,7 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // x = null term
 
@@ -62,16 +63,17 @@ public class EqNullTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (!initVars.contains(var)) {
 			initVars.add(var);
 			
 			String name = var.getName();
 			String type = var.getType();
 			
-			if (name.startsWith("this_"))
+			if (var.isInstance(insFields))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
-			else if (name.startsWith(clsName + "_"))
+			else if (var.isStatic(clsName, staFields))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
 			else
 				test.append("\t\t" + type + " " + name + " = null;\n");

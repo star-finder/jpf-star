@@ -9,6 +9,7 @@ import gov.nasa.jpf.star.formula.pure.EqTerm;
 import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.NEqTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // a pure formula includes multiple pure terms
 
@@ -148,14 +149,15 @@ public class PureFormula {
 		pureTerms = newPureTerms;
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		int oldLength = initVars.size();
 		
 		while (true) {
 			int length = pureTerms.length;
 			
 			for (int i = 0; i < length; i++) {
-				pureTerms[i].genTest(initVars, test, objName, clsName);
+				pureTerms[i].genTest(initVars, test, objName, clsName, insFields, staFields);
 			}
 			
 			int newLength = initVars.size();

@@ -1,5 +1,7 @@
 package gov.nasa.jpf.star.formula;
 
+import gov.nasa.jpf.vm.FieldInfo;
+
 public class Variable {
 	
 	private String name;
@@ -39,6 +41,24 @@ public class Variable {
 			return true;
 		else
 			return false;
+	}
+	
+	public boolean isInstance(FieldInfo[] fields) {
+		for (FieldInfo field : fields) {
+			String fname = "this_" + field.getName();
+			if (fname.equals(name)) return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean isStatic(String clsName, FieldInfo[] fields) {
+		for (FieldInfo field : fields) {
+			String fname = clsName + "_" + field.getName();
+			if (fname.equals(name)) return true;
+		}
+		
+		return false;
 	}
 	
 	@Override

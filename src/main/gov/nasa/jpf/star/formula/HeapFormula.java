@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // a heap formula includes multiple heap terms
 
@@ -75,14 +76,15 @@ public class HeapFormula {
 		}
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		int oldLength = initVars.size();
 		
 		while (true) {
 			int length = heapTerms.length;
 			
 			for (int i = 0; i < length; i++) {
-				heapTerms[i].genTest(initVars, test, objName, clsName);
+				heapTerms[i].genTest(initVars, test, objName, clsName, insFields, staFields);
 			}
 			
 			int newLength = initVars.size();
@@ -92,11 +94,12 @@ public class HeapFormula {
 		}
 	}
 	
-	public void setFields(StringBuffer test, String objName, String clsName) {
+	public void setFields(StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		int length = heapTerms.length;
 		
 		for (int i = 0; i < length; i++) {
-			heapTerms[i].setFields(test, objName, clsName);
+			heapTerms[i].setFields(test, objName, clsName, insFields, staFields);
 		}
 	}
 	

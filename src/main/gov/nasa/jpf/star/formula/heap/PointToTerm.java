@@ -7,6 +7,7 @@ import gov.nasa.jpf.star.data.DataNode;
 import gov.nasa.jpf.star.data.DataNodeMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // x -> Node(...) term
 
@@ -93,16 +94,17 @@ public class PointToTerm extends HeapTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName) {
+	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (!initVars.contains(vars[0])) {
 			initVars.add(vars[0]);
 			
 			String name = vars[0].getName();
 			String type = vars[0].getType();
 			
-			if (name.startsWith("this_"))
+			if (vars[0].isInstance(insFields))
 				test.append("\t\t" + name.replace("this_", objName + ".") + " = new " + type + "();\n");
-			else if (name.startsWith(clsName + "_"))
+			else if (vars[0].isStatic(clsName, staFields))
 				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = new " + type + "();\n");
 			else
 				test.append("\t\t" + type + " " + name + " = new " + type + "();\n");
@@ -110,7 +112,8 @@ public class PointToTerm extends HeapTerm {
 	}
 	
 	@Override
-	public void setFields(StringBuffer test, String objName, String clsName) {
+	public void setFields(StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
 		int length = vars.length;
 		DataNode dn = DataNodeMap.find(type);
 		
@@ -120,14 +123,14 @@ public class PointToTerm extends HeapTerm {
 			String name0 = vars[0].getName();
 			String nameI = vars[i].getName();
 			
-			if (name0.startsWith("this_"))
+			if (vars[0].isInstance(insFields))
 				name0 = name0.replace("this_", objName + ".");
-			else if (name0.startsWith(clsName + "_"))
+			else if (vars[0].isStatic(clsName, staFields))
 				name0 = name0.replace(clsName + "_", clsName + ".");
 			
-			if (nameI.startsWith("this_"))
+			if (vars[i].isInstance(insFields))
 				nameI = nameI.replace("this_", objName + ".");
-			else if (nameI.startsWith(clsName + "_"))
+			else if (vars[i].isStatic(clsName, staFields))
 				nameI = nameI.replace(clsName + "_", clsName + ".");
 			
 			test.append("\t\t" + name0 + "." + fields[i - 1].getName() + " = " + nameI + ";\n");
