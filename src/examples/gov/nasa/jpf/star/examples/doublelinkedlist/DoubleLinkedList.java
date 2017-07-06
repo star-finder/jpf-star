@@ -180,7 +180,7 @@ public class DoubleLinkedList {
 	 */
 	public Object removeFirst() {
 		Object first = header.next.element;
-		removeEE(header.next);
+		removeE(header.next);
 		return first;
 	}
 
@@ -193,7 +193,7 @@ public class DoubleLinkedList {
 	 */
 	public Object removeLast() {
 		Object last = header.previous.element;
-		removeEE(header.previous);
+		removeE(header.previous);
 		return last;
 	}
 
@@ -269,7 +269,7 @@ public class DoubleLinkedList {
 		if (o == null) {
 			for (Entry e = header.next; e != header; e = e.next) {
 				if (e.element == null) {
-					removeEE(e);
+					removeE(e);
 					return true;
 				}
 			}
@@ -277,7 +277,7 @@ public class DoubleLinkedList {
 			for (Entry e = header.next; e != header; e = e.next) {
 				if (o == e.element) {
 					// if (o.equals(e.element)) {
-					removeEE(e);
+					removeE(e);
 					return true;
 				}
 			}
@@ -422,7 +422,7 @@ public class DoubleLinkedList {
 	 */
 	public Object removeI(int index) {
 		Entry e = entry(index);
-		removeEE(e);
+		removeE(e);
 		return e.element;
 	}
 
@@ -594,7 +594,7 @@ public class DoubleLinkedList {
 		public void remove() {
 			checkForComodification();
 			try {
-				DoubleLinkedList.this.removeEE(lastReturned);
+				DoubleLinkedList.this.removeE(lastReturned);
 			} catch (NoSuchElementException e) {
 				throw new IllegalStateException();
 			}
@@ -661,7 +661,7 @@ public class DoubleLinkedList {
 		return newEntry;
 	}
 
-	private void removeEE(Entry e) {
+	private void removeE(Entry e) {
 		if (e == header)
 			throw new NoSuchElementException();
 
