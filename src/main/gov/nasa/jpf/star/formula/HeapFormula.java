@@ -76,7 +76,7 @@ public class HeapFormula {
 		}
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+	public void genConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
 		int oldLength = initVars.size();
 		
@@ -84,7 +84,7 @@ public class HeapFormula {
 			int length = heapTerms.length;
 			
 			for (int i = 0; i < length; i++) {
-				heapTerms[i].genTest(initVars, test, objName, clsName, insFields, staFields);
+				heapTerms[i].genConcreteVars(initVars, test, objName, clsName, insFields, staFields);
 			}
 			
 			int newLength = initVars.size();

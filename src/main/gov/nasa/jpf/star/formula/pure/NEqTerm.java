@@ -5,6 +5,7 @@ import java.util.Map;
 
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
+import gov.nasa.jpf.vm.FieldInfo;
 
 // x != y term
 
@@ -86,6 +87,38 @@ public class NEqTerm extends PureTerm {
 			if (v.equals(var2)) {
 				var2.setType(v.getType());
 			}
+		}
+	}
+	
+	@Override
+	public void genNoConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
+		if (!initVars.contains(var1)) {
+			initVars.add(var1);
+			
+			String name = var1.getName();
+			String type = var1.getType();
+			
+			if (var1.isInstance(insFields))
+				test.append("\t\t" + name.replace("this_", objName + ".") + " = new " + type + "();\n");
+			else if (var1.isStatic(clsName, staFields))
+				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = new " + type + "();\n");
+			else
+				test.append("\t\t" + type + " " + name + " = new " + type + "();\n");
+		}
+		
+		if (!initVars.contains(var2)) {
+			initVars.add(var2);
+			
+			String name = var2.getName();
+			String type = var2.getType();
+			
+			if (var2.isInstance(insFields))
+				test.append("\t\t" + name.replace("this_", objName + ".") + " = new " + type + "();\n");
+			else if (var2.isStatic(clsName, staFields))
+				test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = new " + type + "();\n");
+			else
+				test.append("\t\t" + type + " " + name + " = new " + type + "();\n");
 		}
 	}
 	

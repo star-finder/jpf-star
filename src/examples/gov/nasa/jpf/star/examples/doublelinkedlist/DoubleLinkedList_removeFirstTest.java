@@ -51,7 +51,7 @@ public class DoubleLinkedList_removeFirstTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre getFirst == dll(this_header,this_size)";
+		String pre = "pre removeFirst == dll(this_header,this_size)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -81,11 +81,11 @@ public class DoubleLinkedList_removeFirstTest extends TestJPF {
 				"+star.test_imports=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.getFirst()",
+				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.removeFirst()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();
-			list.getFirst();
+			list.removeFirst();
 		}
 	}
 

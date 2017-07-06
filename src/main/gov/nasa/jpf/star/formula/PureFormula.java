@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import gov.nasa.jpf.star.formula.pure.ComparisonTerm;
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
 import gov.nasa.jpf.star.formula.pure.EqTerm;
 import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
@@ -149,7 +150,7 @@ public class PureFormula {
 		pureTerms = newPureTerms;
 	}
 	
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+	public void genConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
 		int oldLength = initVars.size();
 		
@@ -157,7 +158,29 @@ public class PureFormula {
 			int length = pureTerms.length;
 			
 			for (int i = 0; i < length; i++) {
-				pureTerms[i].genTest(initVars, test, objName, clsName, insFields, staFields);
+				if (pureTerms[i] instanceof EqNullTerm || pureTerms[i] instanceof EqTerm ||
+						pureTerms[i] instanceof ComparisonTerm)
+					pureTerms[i].genConcreteVars(initVars, test, objName, clsName, insFields, staFields);
+			}
+			
+			int newLength = initVars.size();
+			
+			if (newLength == oldLength) break;
+			else oldLength = newLength;
+		}
+	}
+	
+	public void genNoConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
+		int oldLength = initVars.size();
+		
+		while (true) {
+			int length = pureTerms.length;
+			
+			for (int i = 0; i < length; i++) {
+				if (pureTerms[i] instanceof NEqNullTerm || pureTerms[i] instanceof EqTerm ||
+						pureTerms[i] instanceof NEqTerm)
+					pureTerms[i].genNoConcreteVars(initVars, test, objName, clsName, insFields, staFields);
 			}
 			
 			int newLength = initVars.size();

@@ -88,7 +88,7 @@ public class EqTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+	public void genConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (initVars.contains(var2) && !initVars.contains(var1)) {
 			initVars.add(var1);
@@ -116,6 +116,63 @@ public class EqTerm extends PureTerm {
 				test.append("\t\t" + name2 + " = " + name1 + ";\n");
 			else
 				test.append("\t\t" + type + " " + name2 + " = " + name1 + ";\n");
+		}
+	}
+	
+	@Override
+	public void genNoConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+			FieldInfo[] insFields, FieldInfo[] staFields) {
+		if (initVars.contains(var2) && !initVars.contains(var1)) {
+			initVars.add(var1);
+			
+			String name1 = standarizeName(var1, objName, clsName, insFields, staFields);
+			String name2 = standarizeName(var2, objName, clsName, insFields, staFields);
+			
+			String type = var1.getType();
+			
+			if (var1.isInstance(insFields) || var1.isStatic(clsName, staFields))
+				test.append("\t\t" + name1 + " = " + name2 + ";\n");
+			else
+				test.append("\t\t" + type + " " + name1 + " = " + name2 + ";\n");
+		}
+		
+		if (initVars.contains(var1) && !initVars.contains(var2)) {
+			initVars.add(var2);
+			
+			String name1 = standarizeName(var1, objName, clsName, insFields, staFields);
+			String name2 = standarizeName(var2, objName, clsName, insFields, staFields);
+			
+			String type = var2.getType();
+			
+			if (var2.isInstance(insFields) || var2.isStatic(clsName, staFields))
+				test.append("\t\t" + name2 + " = " + name1 + ";\n");
+			else
+				test.append("\t\t" + type + " " + name2 + " = " + name1 + ";\n");
+		}
+		
+		if (!initVars.contains(var1) && !initVars.contains(var2)) {
+			initVars.add(var1);
+			initVars.add(var2);
+			
+			String name1 = var1.getName();
+			String type1 = var1.getType();
+			
+			if (var1.isInstance(insFields))
+				test.append("\t\t" + name1.replace("this_", objName + ".") + " = new " + type1 + "();\n");
+			else if (var1.isStatic(clsName, staFields))
+				test.append("\t\t" + name1.replace(clsName + "_", clsName + ".") + " = new " + type1 + "();\n");
+			else
+				test.append("\t\t" + type1 + " " + name1 + " = new " + type1 + "();\n");
+			
+			name1 = standarizeName(var1, objName, clsName, insFields, staFields);
+			
+			String name2 = standarizeName(var2, objName, clsName, insFields, staFields);
+			String type2 = var2.getType();
+			
+			if (var2.isInstance(insFields) || var2.isStatic(clsName, staFields))
+				test.append("\t\t" + name2 + " = " + name1 + ";\n");
+			else
+				test.append("\t\t" + type2 + " " + name2 + " = " + name1 + ";\n");
 		}
 	}
 	

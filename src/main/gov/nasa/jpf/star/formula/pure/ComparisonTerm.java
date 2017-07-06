@@ -41,7 +41,7 @@ public class ComparisonTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+	public void genConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
 		List<Variable> vars1 = exp1.getVars();
 		List<Variable> vars2 = exp2.getVars();

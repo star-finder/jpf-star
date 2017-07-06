@@ -63,7 +63,7 @@ public class EqNullTerm extends PureTerm {
 	}
 	
 	@Override
-	public void genTest(List<Variable> initVars, StringBuffer test, String objName, String clsName,
+	public void genConcreteVars(List<Variable> initVars, StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (!initVars.contains(var)) {
 			initVars.add(var);

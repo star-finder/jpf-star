@@ -161,14 +161,17 @@ public class Formula {
 	public void genTest(List<Variable> knownTypeVars, List<Variable> initVars,
 			StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
-		heapFormula.genTest(initVars, test, objName, clsName, insFields, staFields);
-		pureFormula.genTest(initVars, test, objName, clsName, insFields, staFields);
+		heapFormula.genConcreteVars(initVars, test, objName, clsName, insFields, staFields);
+		pureFormula.genConcreteVars(initVars, test, objName, clsName, insFields, staFields);
 		
-		genExistVars(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+		pureFormula.genNoConcreteVars(initVars, test, objName, clsName, insFields, staFields);
+		
+		genDefaultVars(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+		
 		heapFormula.setFields(test, objName, clsName, insFields, staFields);
 	}
 	
-	private void genExistVars(List<Variable> knownTypeVars, List<Variable> initVars,
+	private void genDefaultVars(List<Variable> knownTypeVars, List<Variable> initVars,
 			StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
 		if (knownTypeVars.size() == initVars.size())

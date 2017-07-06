@@ -27,7 +27,7 @@ public class DoubleLinkedList_inList1 extends TestJPF {
 		obj.header = new Entry();
 		Entry this_header_112 = obj.header;
 		obj.size = 0;
-		Entry e = null;
+		Entry e = new Entry();
 		obj.modCount = 0;
 		Object ele_1 = null;
 		obj.header.element = ele_1;
@@ -87,7 +87,7 @@ public class DoubleLinkedList_inList1 extends TestJPF {
 		Entry prev_3 = next_2;
 		Entry this_header_112 = obj.header;
 		obj.size = 1;
-		Entry e = null;
+		Entry e = new Entry();
 		obj.modCount = 0;
 		Object ele_1 = null;
 		Object ele_4 = null;

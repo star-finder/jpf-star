@@ -49,9 +49,9 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		Entry next_2 = new Entry();
 		Object o = null;
 		Entry prev_3 = next_2;
-		Object ele_4 = new Object();
 		Entry this_header_112 = obj.header;
 		obj.size = 1;
+		Object ele_4 = new Object();
 		obj.modCount = 0;
 		Object ele_1 = null;
 		obj.header.element = ele_1;
@@ -67,9 +67,9 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 	public void test4() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
-		Object o = new Object();
 		Entry this_header_112 = obj.header;
 		obj.size = 0;
+		Object o = new Object();
 		obj.modCount = 0;
 		Object ele_1 = null;
 		obj.header.element = ele_1;
@@ -83,11 +83,11 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		Entry next_2 = new Entry();
-		Object o = new Object();
 		Entry prev_3 = next_2;
-		Object ele_4 = o;
 		Entry this_header_112 = obj.header;
 		obj.size = 1;
+		Object o = new Object();
+		Object ele_4 = o;
 		obj.modCount = 0;
 		Object ele_1 = null;
 		obj.header.element = ele_1;
@@ -104,13 +104,13 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		Entry next_2 = new Entry();
-		Object o = new Object();
 		Entry prev_3 = next_2;
 		Entry this_header_112 = obj.header;
 		obj.size = 1;
+		Object o = new Object();
+		Object ele_4 = new Object();
 		obj.modCount = 0;
 		Object ele_1 = null;
-		Object ele_4 = null;
 		obj.header.element = ele_1;
 		obj.header.next = next_2;
 		obj.header.previous = prev_3;
