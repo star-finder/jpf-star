@@ -403,7 +403,7 @@ public class DoubleLinkedList {
 	 *             if the specified index is out of range (
 	 *             <tt>index &lt; 0 || index &gt; size()</tt>).
 	 */
-	public void add(int index, Object element) {
+	public void addI(int index, Object element) {
 		addBefore(element, (index == size ? header : entry(index)));
 	}
 
@@ -420,7 +420,7 @@ public class DoubleLinkedList {
 	 *             if the specified index is out of range (
 	 *             <tt>index &lt; 0 || index &gt;= size()</tt>).
 	 */
-	public Object remove(int index) {
+	public Object removeI(int index) {
 		Entry e = entry(index);
 		remove(e);
 		return e.element;
