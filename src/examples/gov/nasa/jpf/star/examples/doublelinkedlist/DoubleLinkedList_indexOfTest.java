@@ -19,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class DoubleLinkedList_removeTest extends TestJPF {
+public class DoubleLinkedList_indexOfTest extends TestJPF {
 	
 	private void initDataNode() {
 		String data1 = "data Entry {Object element; Entry next; Entry previous}; data Object {}";
@@ -51,7 +51,7 @@ public class DoubleLinkedList_removeTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre remove == dll(this_header,this_size)";
+		String pre = "pre indexOf == dll(this_header,this_size)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -81,12 +81,12 @@ public class DoubleLinkedList_removeTest extends TestJPF {
 				"+star.test_imports=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.remove(sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.indexOf(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();
 			Object o = new Object();
-			list.remove(o);
+			list.indexOf(o);
 		}
 	}
 

@@ -8,6 +8,7 @@ import gov.nasa.jpf.star.formula.heap.HeapTerm;
 import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.formula.pure.EqNullTerm;
+import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
 import gov.nasa.jpf.star.formula.pure.PureTerm;
 import gov.nasa.jpf.symbc.heap.HeapNode;
 import gov.nasa.jpf.symbc.heap.Helper;
@@ -75,6 +76,35 @@ public class Utilities {
 		for (PureTerm term : pf.getPureTerms()) {
 			if (term instanceof EqNullTerm) {
 				EqNullTerm eqNullTerm = (EqNullTerm) term;
+				Variable root = eqNullTerm.getVar();
+				String rootName = root.getName();
+
+				if (rootName.equals(varName)) {
+					return true;
+				} else {
+					for (List<Variable> vars : alias) {
+						if (vars.contains(root)) {
+							for (Variable var : vars) {
+								if (var.getName().equals(varName)) {
+									return true;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+	
+	public static boolean isNotNull(Formula pc, String varName) {
+		PureFormula pf = pc.getPureFormula();
+		List<List<Variable>> alias = pc.getAlias();
+
+		for (PureTerm term : pf.getPureTerms()) {
+			if (term instanceof NEqNullTerm) {
+				NEqNullTerm eqNullTerm = (NEqNullTerm) term;
 				Variable root = eqNullTerm.getVar();
 				String rootName = root.getName();
 
