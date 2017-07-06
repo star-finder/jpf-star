@@ -22,7 +22,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyLinkedList_findPreviousTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data MyListNode {Object _element; MyListNode _next}; data Object {}";
+		String data = "data MyListNode {Object _element; MyListNode _next}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);

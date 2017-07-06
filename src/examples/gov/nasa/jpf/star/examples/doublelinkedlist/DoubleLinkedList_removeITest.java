@@ -22,7 +22,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class DoubleLinkedList_removeITest extends TestJPF {
 	
 	private void initDataNode() {
-		String data1 = "data Entry {Object element; Entry next; Entry previous}; data Object {}";
+		String data1 = "data Entry {Object element; Entry next; Entry previous}";
 		
 		String data = data1;
 		
