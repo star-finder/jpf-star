@@ -24,7 +24,7 @@ import gov.nasa.jpf.vm.ThreadInfo;
 
 public class INVOKEInstrSymbHelper {
 	
-	public static boolean configPreCondition(ThreadInfo ti, JVMInvokeInstruction instr) {
+	public static int configPreCondition(ThreadInfo ti, JVMInvokeInstruction instr) {
 		Config conf = ti.getVM().getConfig();
 		
 		String mname = instr.getInvokedMethodName();
@@ -53,8 +53,10 @@ public class INVOKEInstrSymbHelper {
 				
 				TestGenerator.setClassAndMethodInfo(ci, mi, conf);
 				
-				return true;
+				return 0;
 			} else {
+				conf.setProperty("star.init", "true");
+				
 				cg = ti.getVM().getSystemState().getChoiceGenerator();
 				prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 			
@@ -75,7 +77,7 @@ public class INVOKEInstrSymbHelper {
 							System.out.println("Precondition is not satisfiable");
 							ti.getVM().getSystemState().setIgnored(true);
 							
-							return false;
+							return -1;
 						}
 					}
 					else
@@ -112,10 +114,12 @@ public class INVOKEInstrSymbHelper {
 				}
 				
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
+				
+				return 1;
 			}
 		}
 		
-		return false;
+		return -1;
 	}
 
 }

@@ -6,13 +6,13 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class Sll4_myMethod1 extends TestJPF {
 
 	@Test
-	public void test1() {
+	public void test1() throws Exception {
 		Sll4.x = null;
 		Sll4.myMethod();
 	}
 
 	@Test
-	public void test2() {
+	public void test2() throws Exception {
 		Sll4.x = new Node();
 		Node next_1 = null;
 		Sll4.x.next = next_1;
@@ -20,7 +20,7 @@ public class Sll4_myMethod1 extends TestJPF {
 	}
 
 	@Test
-	public void test3() {
+	public void test3() throws Exception {
 		Sll4.x = new Node();
 		Node next_1 = new Node();
 		Node next_2 = null;
@@ -30,7 +30,7 @@ public class Sll4_myMethod1 extends TestJPF {
 	}
 
 	@Test
-	public void test4() {
+	public void test4() throws Exception {
 		Sll4.x = new Node();
 		Node next_1 = new Node();
 		Node next_2 = new Node();

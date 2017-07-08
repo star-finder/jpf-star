@@ -45,8 +45,13 @@ public class TestGenerator {
 	}
 	
 	public static void addModel(String model) {
-		if (model.length() > 0)
+		if (model.length() > 0) {
+			for (String m : models) {
+				if (m.equals(model)) return;
+			}
+			
 			models.add(model);
+		}
 	}
 	
 	public static void generateTests() {

@@ -12,7 +12,7 @@ import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 
-public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
+public class INVOKEVIRTUAL extends gov.nasa.jpf.jvm.bytecode.INVOKEVIRTUAL {
 
 	public INVOKEVIRTUAL(String clsName, String methodName, String methodSignature) {
 		super(clsName, methodName, methodSignature);
@@ -54,12 +54,30 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.symbc.bytecode.INVOKEVIRTUAL {
 			return ti.createAndThrowException("java.lang.NoSuchMethodError", clsName + '.' + mname);
 		}
 
-		boolean isFirst = INVOKEInstrSymbHelper.configPreCondition(ti, this);
+		// only set up precondition once
+		if (conf.getProperty("star.init") == null) {
+			int isSymbolic = INVOKEInstrSymbHelper.configPreCondition(ti, this);
 
-		if (isFirst)
-			return this;
-		else
+			// -1 means not symbolic
+			if (isSymbolic == -1)
+				return super.execute(ti);
+			// 0 means symbolic and this is the first time we execute this instruction
+			// we need to execute it again to get precondition
+			else if (isSymbolic == 0)
+				return this;
+			else {
+				// set up symbolic values
+				BytecodeUtils.InstructionOrSuper nextInstr = BytecodeUtils.execute(this, ti);
+				
+				if (nextInstr.callSuper) {
+		            return super.execute(ti);
+		        } else {
+		            return nextInstr.inst;
+		        }
+			}
+		} else {
 			return super.execute(ti);
+		}
 	}
 
 }
