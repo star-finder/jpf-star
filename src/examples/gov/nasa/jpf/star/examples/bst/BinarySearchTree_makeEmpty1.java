@@ -9,8 +9,6 @@ public class BinarySearchTree_makeEmpty1 extends TestJPF {
 	public void test1() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = null;
-		obj.min = 0;
-		obj.max = 0;
 		obj.makeEmpty();
 	}
 

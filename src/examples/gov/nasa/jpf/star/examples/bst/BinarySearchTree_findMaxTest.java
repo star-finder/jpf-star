@@ -34,7 +34,11 @@ public class BinarySearchTree_findMaxTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred = "pred bst(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bst(left,minE,element) * bst(right,element,maxE) & minE<element & element<maxE";
+//		String pred = "pred bst(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bst(left,minE,element) * bst(right,element,maxE) & minE<element & element<maxE";
+		
+		String pred1 = "pred bst(root) == root = null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE)";
+		String pred2 = "pred bstE(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE) & minE<element & element<maxE";
+		String pred = pred1 + ";" + pred2;
 				
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -46,7 +50,8 @@ public class BinarySearchTree_findMaxTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre findMax == bst(this_root,this_min,this_max)";
+//		String pre = "pre findMax == bst(this_root,this_min,this_max)";
+		String pre = "pre findMax == bst(this_root)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);

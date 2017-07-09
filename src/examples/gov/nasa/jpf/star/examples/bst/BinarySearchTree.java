@@ -28,8 +28,6 @@ public class BinarySearchTree {
 	 */
 	public BinarySearchTree() {
 		root = null;
-		min = Integer.MIN_VALUE;
-		max = Integer.MAX_VALUE;
 	}
 
 	/**
@@ -251,10 +249,6 @@ public class BinarySearchTree {
 	/** The tree root. */
 	public BinaryNode root;
 	
-	public int min;
-	
-	public int max;
-
 	// Test program
 	public static void main(String[] args) {
 		BinarySearchTree t = new BinarySearchTree();

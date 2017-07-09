@@ -9,8 +9,6 @@ public class BinarySearchTree_findMax1 extends TestJPF {
 	public void test1() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = null;
-		obj.min = 0;
-		obj.max = 0;
 		obj.findMax();
 	}
 
@@ -20,9 +18,7 @@ public class BinarySearchTree_findMax1 extends TestJPF {
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = null;
 		BinaryNode left_2 = null;
-		int element_1 = 0;
-		obj.min = -1;
-		obj.max = 1;
+		int element_1 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
@@ -34,19 +30,17 @@ public class BinarySearchTree_findMax1 extends TestJPF {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode right_6 = null;
+		BinaryNode right_8 = null;
 		BinaryNode left_2 = null;
-		BinaryNode left_5 = null;
-		obj.min = -1;
-		obj.max = 2;
-		int element_1 = 0;
-		int element_4 = 1;
+		BinaryNode left_7 = null;
+		int element_1 = -1;
+		int element_6 = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_4;
-		right_3.left = left_5;
-		right_3.right = right_6;
+		right_3.element = element_6;
+		right_3.left = left_7;
+		right_3.right = right_8;
 		obj.findMax();
 	}
 
