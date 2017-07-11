@@ -174,29 +174,25 @@ public class Formula {
 	private void genDefaultVars(List<Variable> knownTypeVars, List<Variable> initVars,
 			StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
-		if (knownTypeVars.size() == initVars.size())
-			return;
-		else {
-			for (Variable var : knownTypeVars) {
-				String name = var.getName();
-				String type = var.getType();
+		for (Variable var : knownTypeVars) {
+			String name = var.getName();
+			String type = var.getType();
 				
-				if (!initVars.contains(var)) {
-					if (var.isPrim()) {
-						if (var.isInstance(insFields))
-							test.append("\t\t" + name.replace("this_", objName + ".") + " = 0;\n");
-						else if (var.isStatic(clsName, staFields))
-							test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = 0;\n");
-						else
-							test.append("\t\t" + type + " " + name + " = 0;\n");
-					} else {
-						if (var.isInstance(insFields))
-							test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
-						else if (var.isStatic(clsName, staFields))
-							test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
-						else
-							test.append("\t\t" + type + " " + name + " = null;\n");
-					}
+			if (!initVars.contains(var)) {
+				if (var.isPrim()) {
+					if (var.isInstance(insFields))
+						test.append("\t\t" + name.replace("this_", objName + ".") + " = 0;\n");
+					else if (var.isStatic(clsName, staFields))
+						test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = 0;\n");
+					else
+						test.append("\t\t" + type + " " + name + " = 0;\n");
+				} else {
+					if (var.isInstance(insFields))
+						test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");
+					else if (var.isStatic(clsName, staFields))
+						test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = null;\n");
+					else
+						test.append("\t\t" + type + " " + name + " = null;\n");
 				}
 			}
 		}
