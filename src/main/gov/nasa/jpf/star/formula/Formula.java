@@ -174,6 +174,10 @@ public class Formula {
 	private void genDefaultVars(List<Variable> knownTypeVars, List<Variable> initVars,
 			StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
+		if (knownTypeVars.size() == initVars.size())
+			return;
+		
+		
 		for (Variable var : knownTypeVars) {
 			String name = var.getName();
 			String type = var.getType();

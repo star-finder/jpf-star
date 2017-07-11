@@ -79,12 +79,24 @@ public class EqTerm extends PureTerm {
 	
 	@Override
 	public void updateType(List<Variable> knownTypeVars) {
+		boolean hasUpdate = false;
+		
 		for (Variable v : knownTypeVars) {
 			if (v.equals(var1) || v.equals(var2)) {
 				var1.setType(v.getType());
 				var2.setType(v.getType());
+				
+				hasUpdate = true; 
+				
+				break;
 			}
 		}
+		
+		if (hasUpdate && !knownTypeVars.contains(var1))
+			knownTypeVars.add(var1);
+		
+		if (hasUpdate && !knownTypeVars.contains(var2))
+			knownTypeVars.add(var2);
 	}
 	
 	@Override

@@ -58,6 +58,7 @@ public class VariableExpression extends Expression {
 		for (Variable v : knownTypeVars) {
 			if (v.equals(var)) {
 				var.setType(v.getType());
+				break;
 			}
 		}
 	}
