@@ -128,18 +128,24 @@ public class PureFormula {
 		}
 	}
 	
-	public void removePrimTerm() {
+	// remove all primitive terms because we have sat assignment later
+	// we also remove terms without type
+	public void removeTerm() {
 		List<PureTerm> tmp = new ArrayList<PureTerm>();
 		
 		for (PureTerm pt : pureTerms) {
-			if (pt instanceof EqNullTerm || pt instanceof NEqNullTerm)
-				tmp.add(pt);
-			else if (pt instanceof EqTerm) {
+			if (pt instanceof EqNullTerm) { 
+				Variable var = ((EqNullTerm) pt).getVar();
+				if (var.hasType()) tmp.add(pt);
+			} else if (pt instanceof NEqNullTerm) {
+				Variable var = ((NEqNullTerm) pt).getVar();
+				if (var.hasType()) tmp.add(pt);
+			} else if (pt instanceof EqTerm) {
 				Variable var1 = ((EqTerm) pt).getVar1();
-				if (!var1.isPrim()) tmp.add(pt);
+				if (var1.hasType() && !var1.isPrim()) tmp.add(pt);
 			} else if (pt instanceof NEqTerm) {
 				Variable var1 = ((NEqTerm) pt).getVar1();
-				if (!var1.isPrim()) tmp.add(pt);
+				if (var1.hasType() && !var1.isPrim()) tmp.add(pt);
 			}
 		}
 		

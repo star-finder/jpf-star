@@ -135,7 +135,7 @@ public class TestGenerator {
 		}
 		
 		f.updateType(knownTypeVars);
-		f.removePrimTerm();
+		f.removeTerm();
 		
 		if (pure.length() > 0) {
 			String[] pureAssigns = pure.split(";");

@@ -27,7 +27,10 @@ public class DataNode {
 		ret += "data " + type + "{\n";
 		
 		for (int i = 0; i < fields.length; i++) {
-			ret += fields[i].getType() + " " + fields[i].getName() + ";\n";
+			String fType = fields[i].getType();
+			String fName = fields[i].getName();
+			
+			ret += fType + " " + fName + ";\n";
 		}
 		
 		ret += "}.";
@@ -39,8 +42,24 @@ public class DataNode {
 		// it seems s2sat has object already
 		if (type.equals("Object"))
 			return "";
-		else
-			return this.toString();
+		else {
+			String ret = "";
+			ret += "data " + type + "{\n";
+			
+			for (int i = 0; i < fields.length; i++) {
+				String fType = fields[i].getType();
+				String fName = fields[i].getName();
+				
+				if (fType.equals("boolean"))
+					fType = "int";
+				
+				ret += fType + " " + fName + ";\n";
+			}
+			
+			ret += "}.";
+			
+			return ret;
+		}
 	}
 
 }

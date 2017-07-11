@@ -34,8 +34,12 @@ public class Variable {
 		this.type = type;
 	}
 	
+	public boolean hasType() {
+		return type != null && type.length() > 0;
+	}
+	
 	public boolean isPrim() {
-		if (type.equals("bool") || type.equals("byte") || type.equals("char") ||
+		if (type.equals("boolean") || type.equals("byte") || type.equals("char") ||
 				type.equals("double") || type.equals("float") || type.equals("int") ||
 				type.equals("long") || type.equals("short"))
 			return true;

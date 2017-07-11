@@ -154,8 +154,8 @@ public class Formula {
 		pureFormula.updateType(knownTypeVars);
 	}
 	
-	public void removePrimTerm() {
-		pureFormula.removePrimTerm();
+	public void removeTerm() {
+		pureFormula.removeTerm();
 	}
 	
 	public void genTest(List<Variable> knownTypeVars, List<Variable> initVars,
