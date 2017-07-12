@@ -25,7 +25,7 @@ class Node<K, V> implements Map.Entry<K, V>
     }
     
     public final String toString() {
-        return new StringBuilder().append((Object)this.key).append("=").append((Object)this.value).toString();
+        return new StringBuilder().append(this.key).append("=").append(this.value).toString();
     }
     
     public final V setValue(final V newValue) {
