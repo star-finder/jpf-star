@@ -70,7 +70,7 @@ public class BTree
     void splitPotentialRemoteNode(final Node parentNode, final int newsize, final int itertions) {
         if (parentNode.mNumKeys == itertions * newsize) {
             final Node newTempPNode = new Node(itertions);
-            newTempPNode.fastSearch = (Vector<Integer>)new Vector();
+            newTempPNode.fastSearch = new Vector<Integer>();
             newTempPNode.mNumKeys = itertions;
             for (int x = 0; x < itertions * newsize; x += newsize) {
                 final Node newNode = new Node(newsize - (BTree.T * 2 - 1));
@@ -91,7 +91,7 @@ public class BTree
                 }
             }
             parentNode.mNumKeys = newTempPNode.mNumKeys;
-            parentNode.fastSearch = (Vector<Integer>)new Vector();
+            parentNode.fastSearch = new Vector<Integer>();
             for (int i = 0; i < parentNode.mChildNodes.length; ++i) {
                 parentNode.mChildNodes[i] = null;
             }
