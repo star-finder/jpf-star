@@ -52,22 +52,22 @@ public class HashMap<K, V> extends AbstractMap<K, V>
         if (node == null) {
             node = new Node<K, V>(this.hash(key), key, value, null);
             this.table[h] = node;
-            this.entrySet.add((Object)node);
+            this.entrySet.add(node);
             ++this.size;
         }
         else if (node instanceof TreeNode) {
             final TreeNode<K, V> treeNode = (TreeNode<K, V>)(TreeNode)node;
             final TreeNode<K, V> result = treeNode.putTreeVal(this.table, this.hash(key), key, value);
             if (result == null) {
-                this.entrySet.add((Object)new AbstractMap.SimpleEntry((Object)key, (Object)value));
+                this.entrySet.add(new AbstractMap.SimpleEntry(key, value));
                 ++this.size;
                 return null;
             }
             if (result.value != value) {
-                this.entrySet.remove((Object)result);
+                this.entrySet.remove(result);
                 e = result.value;
                 result.setValue(value);
-                this.entrySet.add((Object)result);
+                this.entrySet.add(result);
             }
         }
         else {
@@ -79,7 +79,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
             }
             else {
                 node.next = (Node<K, V>)new Node<Object, Object>(this.hash(key), (K)key, (V)value, null);
-                this.entrySet.add((Object)node.next);
+                this.entrySet.add(node.next);
                 if (bincount > 8) {
                     this.treeify(this.table, h);
                 }
@@ -93,13 +93,13 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     }
     
     public V get(final Object key) {
-        final int h = this.hash(key);
+        final int h = this.hash((K)key);
         Node<K, V> node = this.table[h];
         if (node == null) {
             return null;
         }
         if (node instanceof TreeNode) {
-            TreeNode<K, V> n = (TreeNode<K, V>)(TreeNode)node;
+            TreeNode<K, V> n = (TreeNode<K, V>)node;
             n = n.getTreeNode(h, key);
             if (n == null) {
                 return null;
@@ -123,21 +123,21 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     }
     
     public V remove(final Object key) {
-        final int h = this.hash(key);
+        final int h = this.hash((K)key);
         Node<K, V> node = this.table[h];
         Node<K, V> prev = null;
         if (node == null) {
             return null;
         }
         if (node instanceof TreeNode) {
-            final TreeNode<K, V> treenode = (TreeNode<K, V>)(TreeNode)node;
+            final TreeNode<K, V> treenode = (TreeNode<K, V>)node;
             final TreeNode<K, V> nodeToRemove = treenode.getTreeNode(h, key);
             if (nodeToRemove == null) {
                 return null;
             }
             nodeToRemove.removeTreeNode(this.table, true);
             --this.size;
-            this.entrySet.remove((Object)new AbstractMap.SimpleEntry(key, (Object)nodeToRemove.value));
+            this.entrySet.remove(new AbstractMap.SimpleEntry(key, nodeToRemove.value));
             return treenode.value;
         }
         else {
@@ -152,7 +152,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
                 else {
                     this.removeHelper(node, prev);
                 }
-                this.entrySet.remove((Object)node);
+                this.entrySet.remove(node);
                 --this.size;
                 return node.value;
             }

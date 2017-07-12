@@ -42,7 +42,7 @@ final class TreeNode<K, V> extends Node<K, V>
             }
             else {
                 final K pk;
-                if ((pk = p.key) == k || (k != null && k.equals((Object)pk))) {
+                if ((pk = p.key) == k || (k != null && k.equals(pk))) {
                     return p;
                 }
                 if (pl == null) {
