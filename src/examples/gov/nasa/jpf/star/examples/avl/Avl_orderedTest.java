@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.bst;
+package gov.nasa.jpf.star.examples.avl;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class BinarySearchTree_findTest extends TestJPF {
+public class Avl_orderedTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data BinaryNode {int element; BinaryNode left; BinaryNode right}";
+		String data = "data AvlNode {int element; AvlNode left; AvlNode right; int height}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -34,8 +34,16 @@ public class BinarySearchTree_findTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred1 = "pred bst(root) == root = null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE)";
-		String pred2 = "pred bstE(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE) & minE<element & element<maxE";
+		String pred1 = "pred avl(root) == root = null || " + 
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL=heightR & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL=heightR+1 & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL+1=heightR & height=heightR+1";
+		
+		String pred2 = "pred avlE(root,minE,maxE,height) == root=null & height=0 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL=heightR & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL=heightR+1 & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL+1=heightR & height=heightR+1";
+		
 		String pred = pred1 + ";" + pred2;
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
@@ -48,7 +56,7 @@ public class BinarySearchTree_findTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre find == bst(this_root)";
+		String pre = "pre ordered == avl(this_root)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -70,19 +78,19 @@ public class BinarySearchTree_findTest extends TestJPF {
 	public void testMain() {
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=6",
+//				"+star.max_len_pc=20",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/bst",
-				"+star.test_package=gov.nasa.jpf.star.examples.bst",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/avl",
+				"+star.test_package=gov.nasa.jpf.star.examples.avl",
 //				"+star.test_imports=",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.bst.BinarySearchTree.find(sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.avl.AvlTree.ordered()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
-			BinarySearchTree tree = new BinarySearchTree();
-			tree.find(0);
+			AvlTree tree = new AvlTree();
+			tree.ordered();
 		}
 	}
 
