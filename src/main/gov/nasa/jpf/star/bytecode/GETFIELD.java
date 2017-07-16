@@ -3,6 +3,7 @@ package gov.nasa.jpf.star.bytecode;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.formula.HeapMemoryMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.expression.Expression;
@@ -116,24 +117,40 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 					sf.pop();
 					
 					daIndex = MJIEnv.NULL;
-					ei.setReferenceField(fi, daIndex);
 					
-					sf.pushRef(daIndex);
-					sf.setOperandAttr(sym_v);
+					ei.setReferenceField(fi, daIndex);
+					ei.setFieldAttr(fi, null);
 
+					sf.pushRef(daIndex);
+					
 					return getNext(ti);
 				} else {
 					HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 
 					if (ht instanceof PointToTerm) {
 						sf.pop();
-
-						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						
+						String name = sym_v.toString();
+						
+						int address = HeapMemoryMap.findAddress(name);
+						if (address == -1) {
+							address = HeapMemoryMap.findAddress(pc.getAlias(name));
+							if (address == -1) {
+								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+							} else {
+								daIndex = address;
+							}
+							
+							HeapMemoryMap.putAddress(name, daIndex);
+						} else {
+							daIndex = address;
+						}
+						
 						ei.setReferenceField(fi, daIndex);
-
+						ei.setFieldAttr(fi, null);
+						
 						sf.pushRef(daIndex);
-						sf.setOperandAttr(sym_v);
-
+						
 						return getNext(ti);
 					} else if (ht instanceof InductiveTerm) {
 						InductiveTerm it = (InductiveTerm) ht;
@@ -143,6 +160,8 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 
 						return this;
+					} else {
+						return new gov.nasa.jpf.star.bytecode.lazy.GETFIELD(fname, className, ftype);
 					}
 				}
 			}
@@ -170,13 +189,27 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
 				} else {
-					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+					String name = sym_v.toString();
+					
+					int address = HeapMemoryMap.findAddress(name);
+					if (address == -1) {
+						address = HeapMemoryMap.findAddress(pc.getAlias(name));
+						if (address == -1) {
+							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						} else {
+							daIndex = address;
+						}
+						
+						HeapMemoryMap.putAddress(name, daIndex);
+					} else {
+						daIndex = address;
+					}
 				}
-
+				
 				ei.setReferenceField(fi, daIndex);
-
+				ei.setFieldAttr(fi, null);
+				
 				sf.pushRef(daIndex);
-				sf.setOperandAttr(sym_v);
 
 				return getNext(ti);
 			} else {

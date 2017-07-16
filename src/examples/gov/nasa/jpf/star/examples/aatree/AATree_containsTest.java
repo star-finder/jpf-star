@@ -91,7 +91,7 @@ public class AATree_containsTest extends TestJPF {
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AATree tree = new AATree();
-			int i = 0;
+			int i = 1;
 			tree.contains(i);
 		}
 	}

@@ -3,6 +3,7 @@ package gov.nasa.jpf.star.bytecode;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
+import gov.nasa.jpf.star.formula.HeapMemoryMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.expression.Expression;
@@ -72,6 +73,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					daIndex = MJIEnv.NULL;
 					
 					sf.setLocalVariable(index, daIndex, true);
+					sf.setLocalAttr(index, null);
 					sf.pushLocal(index);
 					
 					return getNext(ti);
@@ -79,9 +81,24 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 					
 					if (ht instanceof PointToTerm) {
-						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						String name = sym_v.toString();
+						
+						int address = HeapMemoryMap.findAddress(name);
+						if (address == -1) {
+							address = HeapMemoryMap.findAddress(pc.getAlias(name));
+							if (address == -1) {
+								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+							} else {
+								daIndex = address;
+							}
+							
+							HeapMemoryMap.putAddress(name, daIndex);
+						} else {
+							daIndex = address;
+						}
 						
 						sf.setLocalVariable(index, daIndex, true);
+						sf.setLocalAttr(index, null);
 						sf.pushLocal(index);
 						
 						return getNext(ti);
@@ -93,6 +110,8 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 						
 						return this;
+					} else {
+						return new gov.nasa.jpf.star.bytecode.lazy.ALOAD(index);
 					}
 				}
 			}
@@ -118,10 +137,25 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
 				} else {
-					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+					String name = sym_v.toString();
+					
+					int address = HeapMemoryMap.findAddress(name);
+					if (address == -1) {
+						address = HeapMemoryMap.findAddress(pc.getAlias(name));
+						if (address == -1) {
+							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						} else {
+							daIndex = address;
+						}
+						
+						HeapMemoryMap.putAddress(name, daIndex);
+					} else {
+						daIndex = address;
+					}
 				}
 				
 				sf.setLocalVariable(index, daIndex, true);
+				sf.setLocalAttr(index, null);
 				sf.pushLocal(index);
 				
 				return getNext(ti);
