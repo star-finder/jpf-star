@@ -110,9 +110,10 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 						
 						return this;
-					} else {
-						return new gov.nasa.jpf.star.bytecode.lazy.ALOAD(index);
 					}
+//					else {
+//						return new gov.nasa.jpf.star.bytecode.lazy.ALOAD(index);
+//					}
 				}
 			}
 

@@ -160,9 +160,10 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 
 						return this;
-					} else {
-						return new gov.nasa.jpf.star.bytecode.lazy.GETFIELD(fname, className, ftype);
 					}
+//					else {
+//						return new gov.nasa.jpf.star.bytecode.lazy.GETFIELD(fname, className, ftype);
+//					}
 				}
 			}
 

@@ -151,9 +151,10 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 
 						return this;
-					} else {
-						return new gov.nasa.jpf.star.bytecode.lazy.GETSTATIC(fname, className, ftype);
 					}
+//					else {
+//						return new gov.nasa.jpf.star.bytecode.lazy.GETSTATIC(fname, className, ftype);
+//					}
 				}
 			}
 
