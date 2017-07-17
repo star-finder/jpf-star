@@ -23,7 +23,7 @@ public class Solver {
 
 	private static int MAX_LENGTH = 10;
 	
-	private static int TIMEOUT = 60;
+	private static int TIMEOUT = 15;
 
 	private static String s2sat = "s2sat";
 

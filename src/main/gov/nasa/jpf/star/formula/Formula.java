@@ -1,5 +1,7 @@
 package gov.nasa.jpf.star.formula;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,14 +28,30 @@ public class Formula {
 	
 	private PureFormula pureFormula;
 	
+	private Map<String, List<Variable>> typeMap;
+	
+	private Map<String, Integer> addressMap;
+	
+	public Formula(HeapFormula heapFormula, PureFormula pureFormula,
+			Map<String, List<Variable>> typeMap, Map<String, Integer> addressMap) {
+		this.heapFormula = heapFormula;
+		this.pureFormula = pureFormula;
+		this.typeMap = typeMap;
+		this.addressMap = addressMap;
+	}
+	
 	public Formula(HeapFormula heapFormula, PureFormula pureFormula) {
 		this.heapFormula = heapFormula;
 		this.pureFormula = pureFormula;
+		this.typeMap = new HashMap<String, List<Variable>>();
+		this.addressMap = new HashMap<String, Integer>();
 	}
 	
 	public Formula() {
 		this.heapFormula = new HeapFormula();
 		this.pureFormula = new PureFormula();
+		this.typeMap = new HashMap<String, List<Variable>>();
+		this.addressMap = new HashMap<String, Integer>();
 	}
 	
 	public HeapFormula getHeapFormula() {
@@ -75,7 +93,10 @@ public class Formula {
 		HeapFormula newHeapFormula = heapFormula.copy();
 		PureFormula newPureFormula = pureFormula.copy();
 		
-		Formula newFormula = new Formula(newHeapFormula, newPureFormula);
+		Map<String, List<Variable>> newTypeMap = new HashMap<String, List<Variable>>(typeMap);
+		Map<String, Integer> newAddressMap = new HashMap<String, Integer>(addressMap);
+		
+		Formula newFormula = new Formula(newHeapFormula, newPureFormula, newTypeMap, newAddressMap);
 		return newFormula;
 	}
 	
@@ -147,6 +168,49 @@ public class Formula {
 	public void addComparisonTerm(Comparator comp, Expression exp1, Expression exp2) {
 		PureTerm term = new ComparisonTerm(comp, exp1, exp2);
 		pureFormula.addTerm(term);
+	}
+	
+	public void putType(String type, Variable var) {
+		List<Variable> vars = findType(type);
+		if (vars.size() == 0) {
+			vars.add(var);
+			typeMap.put(type, vars);
+		} else {
+			vars.add(var);
+		}
+	}
+	
+	public void putAddress(String name, int address) {
+		addressMap.put(name, address);
+	}
+	
+	public List<Variable> findType(String type) {
+		List<Variable> vars = typeMap.get(type);
+		
+		if (vars == null) vars = new ArrayList<Variable>();
+		
+		return vars;
+	}
+	
+	public int findAddress(String name) {
+		Integer address = addressMap.get(name);
+		
+		if (address == null) return -1;
+		
+		return address;
+	}
+	
+	public int findAddress(List<Variable> vars) {
+		if (vars == null)
+			return -1;
+		
+		for (Variable var : vars) {
+			String name = var.getName();
+			int address = findAddress(name);
+			if (address != -1) return address;
+		}
+		
+		return -1;
 	}
 	
 	public void updateType(List<Variable> knownTypeVars) {

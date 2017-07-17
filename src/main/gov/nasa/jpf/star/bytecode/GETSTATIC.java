@@ -4,7 +4,6 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPFException;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapMemoryMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.expression.Expression;
@@ -112,9 +111,9 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 					daIndex = MJIEnv.NULL;
 					
 					ei.setReferenceField(fi, daIndex);
-					ei.setFieldAttr(fi, null);
-
+					
 					sf.pushRef(daIndex);
+					sf.setOperandAttr(sym_v);
 
 					return getNext(ti);
 				} else {
@@ -123,24 +122,24 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 					if (ht instanceof PointToTerm) {
 						String name = sym_v.toString();
 						
-						int address = HeapMemoryMap.findAddress(name);
+						int address = pc.findAddress(name);
 						if (address == -1) {
-							address = HeapMemoryMap.findAddress(pc.getAlias(name));
+							address = pc.findAddress(pc.getAlias(name));
 							if (address == -1) {
 								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 							} else {
 								daIndex = address;
 							}
 							
-							HeapMemoryMap.putAddress(name, daIndex);
+							pc.putAddress(name, daIndex);
 						} else {
 							daIndex = address;
 						}
 						
 						ei.setReferenceField(fi, daIndex);
-						ei.setFieldAttr(fi, null);
 						
 						sf.pushRef(daIndex);
+						sf.setOperandAttr(sym_v);
 
 						return getNext(ti);
 					} else if (ht instanceof InductiveTerm) {
@@ -152,9 +151,6 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 
 						return this;
 					}
-//					else {
-//						return new gov.nasa.jpf.star.bytecode.lazy.GETSTATIC(fname, className, ftype);
-//					}
 				}
 			}
 
@@ -181,25 +177,25 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 				} else {
 					String name = sym_v.toString();
 					
-					int address = HeapMemoryMap.findAddress(name);
+					int address = pc.findAddress(name);
 					if (address == -1) {
-						address = HeapMemoryMap.findAddress(pc.getAlias(name));
+						address = pc.findAddress(pc.getAlias(name));
 						if (address == -1) {
 							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 						} else {
 							daIndex = address;
 						}
 						
-						HeapMemoryMap.putAddress(name, daIndex);
+						pc.putAddress(name, daIndex);
 					} else {
 						daIndex = address;
 					}
 				}
 				
 				ei.setReferenceField(fi, daIndex);
-				ei.setFieldAttr(fi, null);
 				
 				sf.pushRef(daIndex);
+				sf.setOperandAttr(sym_v);
 
 				return getNext(ti);
 			} else {

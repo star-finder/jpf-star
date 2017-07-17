@@ -112,25 +112,25 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 			return new gov.nasa.jpf.star.bytecode.ALOAD(localVarIndex);
 	}
 
-//	@Override
-//	public Instruction ifnonnull(int targetPc) {
-//		return new IFNONNULL(targetPc);
-//	}
-//
-//	@Override
-//	public Instruction ifnull(int targetPc) {
-//		return new IFNULL(targetPc);
-//	}
-//
-//	@Override
-//	public Instruction if_acmpeq(int targetPc) {
-//		return new IF_ACMPEQ(targetPc);
-//	}
-//
-//	@Override
-//	public Instruction if_acmpne(int targetPc) {
-//		return new IF_ACMPNE(targetPc);
-//	}
+	@Override
+	public Instruction ifnonnull(int targetPc) {
+		return new IFNONNULL(targetPc);
+	}
+
+	@Override
+	public Instruction ifnull(int targetPc) {
+		return new IFNULL(targetPc);
+	}
+
+	@Override
+	public Instruction if_acmpeq(int targetPc) {
+		return new IF_ACMPEQ(targetPc);
+	}
+
+	@Override
+	public Instruction if_acmpne(int targetPc) {
+		return new IF_ACMPNE(targetPc);
+	}
 
 	@Override
 	public Instruction if_icmpeq(int targetPc) {

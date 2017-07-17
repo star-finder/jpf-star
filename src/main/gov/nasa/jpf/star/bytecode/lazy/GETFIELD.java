@@ -5,13 +5,11 @@ import java.util.List;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapMemoryMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.expression.Expression;
 import gov.nasa.jpf.star.formula.expression.VariableExpression;
 import gov.nasa.jpf.star.formula.heap.HeapTerm;
-import gov.nasa.jpf.star.formula.heap.InductiveTerm;
 import gov.nasa.jpf.star.formula.heap.PointToTerm;
 import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.star.testgeneration.TestGenerator;
@@ -137,7 +135,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 						String type = fi.getType();
 						type = type.substring(type.lastIndexOf('.') + 1, type.length());
 						
-						List<Variable> vars = HeapMemoryMap.findType(type);
+						List<Variable> vars = pc.findType(type);
 						
 						int size = vars.size() + 2; // null and old nodes and new node
 						
@@ -156,13 +154,13 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			String type = fi.getType();
 			type = type.substring(type.lastIndexOf('.') + 1, type.length());
 			
-			List<Variable> vars = HeapMemoryMap.findType(type);
-
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
 
 			Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
 			int currentChoice = (Integer) cg.getNextChoice();
+			
+			List<Variable> vars = pc.findType(type);
 			
 			if (currentChoice < vars.size()) {
 				Variable var = vars.get(currentChoice);
@@ -172,7 +170,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			} else {
 				Variable newVar = new Variable(sym_v.toString(), "");
 				pc.addPointToTerm(newVar, type);
-				HeapMemoryMap.putType(type, newVar);
+				pc.putType(type, newVar);
 			}
 
 			if (Solver.checkSat(pc, conf)) {

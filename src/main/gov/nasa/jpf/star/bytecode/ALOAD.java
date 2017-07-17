@@ -3,7 +3,6 @@ package gov.nasa.jpf.star.bytecode;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.StarChoiceGenerator;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapMemoryMap;
 import gov.nasa.jpf.star.formula.Utilities;
 import gov.nasa.jpf.star.formula.Variable;
 import gov.nasa.jpf.star.formula.expression.Expression;
@@ -73,7 +72,6 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					daIndex = MJIEnv.NULL;
 					
 					sf.setLocalVariable(index, daIndex, true);
-					sf.setLocalAttr(index, null);
 					sf.pushLocal(index);
 					
 					return getNext(ti);
@@ -83,22 +81,21 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					if (ht instanceof PointToTerm) {
 						String name = sym_v.toString();
 						
-						int address = HeapMemoryMap.findAddress(name);
+						int address = pc.findAddress(name);
 						if (address == -1) {
-							address = HeapMemoryMap.findAddress(pc.getAlias(name));
+							address = pc.findAddress(pc.getAlias(name));
 							if (address == -1) {
 								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 							} else {
 								daIndex = address;
 							}
 							
-							HeapMemoryMap.putAddress(name, daIndex);
+							pc.putAddress(name, daIndex);
 						} else {
 							daIndex = address;
 						}
 						
 						sf.setLocalVariable(index, daIndex, true);
-						sf.setLocalAttr(index, null);
 						sf.pushLocal(index);
 						
 						return getNext(ti);
@@ -111,9 +108,6 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						
 						return this;
 					}
-//					else {
-//						return new gov.nasa.jpf.star.bytecode.lazy.ALOAD(index);
-//					}
 				}
 			}
 
@@ -140,23 +134,22 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				} else {
 					String name = sym_v.toString();
 					
-					int address = HeapMemoryMap.findAddress(name);
+					int address = pc.findAddress(name);
 					if (address == -1) {
-						address = HeapMemoryMap.findAddress(pc.getAlias(name));
+						address = pc.findAddress(pc.getAlias(name));
 						if (address == -1) {
 							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 						} else {
 							daIndex = address;
 						}
 						
-						HeapMemoryMap.putAddress(name, daIndex);
+						pc.putAddress(name, daIndex);
 					} else {
 						daIndex = address;
 					}
 				}
 				
 				sf.setLocalVariable(index, daIndex, true);
-				sf.setLocalAttr(index, null);
 				sf.pushLocal(index);
 				
 				return getNext(ti);
@@ -166,12 +159,5 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			}
 		}
 	}
-	
-	// note: to handle this instruction and GETFIELD conrrectly, we have to update
-	// the stack frame according to alias in the path condition.
-	// However, it seems that updating all values and attributes according to alias
-	// is too complex, so we let it be.
-	// Because of this, condition involve comparison of two reference variables
-	// is handled symbolic instead of concrete
 
 }
