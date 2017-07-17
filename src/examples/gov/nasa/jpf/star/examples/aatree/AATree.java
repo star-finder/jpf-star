@@ -83,7 +83,7 @@ public class AATree {
 
 	AANode root;
 
-	AANode nullNode;
+	final AANode nullNode;
 
 	AANode deletedNode;
 

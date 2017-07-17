@@ -114,6 +114,24 @@ public class PointToTerm extends HeapTerm {
 	@Override
 	public void setFields(StringBuffer test, String objName, String clsName,
 			FieldInfo[] insFields, FieldInfo[] staFields) {
+		for (FieldInfo field : insFields) {
+			if (field.isFinal()) {
+				String name = "this_" + field.getName();
+				String name0 = vars[0].getName();
+				
+				if (name.equals(name0)) return;
+			}
+		}
+		
+		for (FieldInfo field : staFields) {
+			if (field.isFinal()) {
+				String name = clsName + "_" + field.getName();
+				String name0 = vars[0].getName();
+				
+				if (name.equals(name0)) return;
+			}
+		}
+		
 		int length = vars.length;
 		DataNode dn = DataNodeMap.find(type);
 		

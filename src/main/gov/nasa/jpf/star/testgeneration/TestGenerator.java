@@ -117,21 +117,17 @@ public class TestGenerator {
 		}
 		
 		for (FieldInfo field : insFields) {
-			if (!field.isFinal()) {
-				String name = "this_" + field.getName();
-				String type = standarizeType(field.getType());
+			String name = "this_" + field.getName();
+			String type = standarizeType(field.getType());
 				
-				knownTypeVars.add(new Variable(name, type));
-			}
+			knownTypeVars.add(new Variable(name, type));
 		}
 		
 		for (FieldInfo field : staFields) {
-			if (!field.isFinal()) {
-				String name = clsName + "_" + field.getName();
-				String type = standarizeType(field.getType());
+			String name = clsName + "_" + field.getName();
+			String type = standarizeType(field.getType());
 				
-				knownTypeVars.add(new Variable(name, type));
-			}
+			knownTypeVars.add(new Variable(name, type));
 		}
 		
 		f.updateType(knownTypeVars);
@@ -158,6 +154,24 @@ public class TestGenerator {
 		}
 		
 		List<Variable> initVars = new ArrayList<Variable>();
+		
+		for (FieldInfo field : insFields) {
+			if (field.isFinal()) {
+				String name = "this_" + field.getName();
+				String type = standarizeType(field.getType());
+				
+				initVars.add(new Variable(name, type));
+			}
+		}
+		
+		for (FieldInfo field : staFields) {
+			if (field.isFinal()) {
+				String name = clsName + "_" + field.getName();
+				String type = standarizeType(field.getType());
+				
+				initVars.add(new Variable(name, type));
+			}
+		}
 		
 		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
 		

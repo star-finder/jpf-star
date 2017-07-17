@@ -9,7 +9,6 @@ public class AATree_findMax1 extends TestJPF {
 	@Test
 	public void test1() throws Exception {
 		AATree obj = new AATree();
-		obj.nullNode = new AANode();
 		obj.root = obj.nullNode;
 		AANode b_2 = null;
 		AANode c_3 = null;
@@ -17,10 +16,6 @@ public class AATree_findMax1 extends TestJPF {
 		int a_1 = 0;
 		obj.deletedNode = null;
 		obj.lastNode = null;
-		obj.nullNode.element = a_1;
-		obj.nullNode.left = b_2;
-		obj.nullNode.right = c_3;
-		obj.nullNode.level = d_4;
 		obj.findMax();
 	}
 
