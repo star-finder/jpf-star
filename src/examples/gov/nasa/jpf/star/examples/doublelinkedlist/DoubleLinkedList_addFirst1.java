@@ -18,6 +18,7 @@ public class DoubleLinkedList_addFirst1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_112;
+		System.out.println(obj.repOK());
 		obj.addFirst(o);
 	}
 

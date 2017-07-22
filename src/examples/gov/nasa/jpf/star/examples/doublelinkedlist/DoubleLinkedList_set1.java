@@ -7,7 +7,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class DoubleLinkedList_set1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_set1() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		obj.size = 0;
@@ -18,130 +18,65 @@ public class DoubleLinkedList_set1 extends TestJPF {
 		obj.header.element = ele_119;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
-		System.out.println("1 " + obj.repOK());
+		System.out.println(obj.repOK());
 		obj.set(index,element);
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_set2() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
-		Entry next_2 = new Entry();
-		Entry prev_3 = next_2;
+		Entry next_4 = new Entry();
+		Entry prev_5 = next_4;
 		Entry this_header_112 = obj.header;
 		obj.size = 1;
 		int index = 0;
 		Object element = null;
 		obj.modCount = 0;
-		Object ele_1 = null;
-		Object ele_4 = null;
-		obj.header.element = ele_1;
-		obj.header.next = next_2;
-		obj.header.previous = prev_3;
-		next_2.element = ele_4;
-		next_2.next = obj.header;
-		next_2.previous = this_header_112;
-		System.out.println("2 " + obj.repOK());
+		Object ele_3 = null;
+		Object ele_6 = null;
+		obj.header.element = ele_3;
+		obj.header.next = next_4;
+		obj.header.previous = prev_5;
+		next_4.element = ele_6;
+		next_4.next = obj.header;
+		next_4.previous = this_header_112;
+		System.out.println(obj.repOK());
 		obj.set(index,element);
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_set3() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
-		Entry next_2 = new Entry();
-		Entry next_5 = new Entry();
-		Entry next_112 = next_2;
+		Entry next_4 = new Entry();
+		Entry next_7 = new Entry();
+		Entry next_112 = next_4;
 		Entry this_header_113 = obj.header;
-		Entry prev_114 = next_5;
+		Entry prev_114 = next_7;
 		obj.size = 2;
 		int index = 0;
-		Entry prev_3 = prev_114;
+		Entry prev_5 = prev_114;
 		Object element = null;
 		obj.modCount = 0;
-		Object ele_1 = null;
-		Object ele_4 = null;
+		Object ele_3 = null;
+		Object ele_6 = null;
 		Object ele_142 = null;
-		obj.header.element = ele_1;
-		obj.header.next = next_2;
-		obj.header.previous = prev_3;
-		next_2.element = ele_4;
-		next_2.next = next_5;
-		next_2.previous = obj.header;
-		next_5.element = ele_142;
-		next_5.next = this_header_113;
-		next_5.previous = next_112;
-		System.out.println("3 " + obj.repOK());
+		obj.header.element = ele_3;
+		obj.header.next = next_4;
+		obj.header.previous = prev_5;
+		next_4.element = ele_6;
+		next_4.next = next_7;
+		next_4.previous = obj.header;
+		next_7.element = ele_142;
+		next_7.next = this_header_113;
+		next_7.previous = next_112;
+		System.out.println(obj.repOK());
 		obj.set(index,element);
 	}
 
 	@Test
-	public void test4() throws Exception {
-		DoubleLinkedList obj = new DoubleLinkedList();
-		obj.header = new Entry();
-		Entry next_2 = new Entry();
-		Entry next_5 = new Entry();
-		Entry prev_3 = next_5;
-		Entry this_header_112 = obj.header;
-		Entry next_113 = next_2;
-		obj.size = 2;
-		int index = 1;
-		Object element = null;
-		obj.modCount = 0;
-		Object ele_1 = null;
-		Object ele_4 = null;
-		Object ele_7 = null;
-		obj.header.element = ele_1;
-		obj.header.next = next_2;
-		obj.header.previous = prev_3;
-		next_2.element = ele_4;
-		next_2.next = next_5;
-		next_2.previous = obj.header;
-		next_5.element = ele_7;
-		next_5.next = this_header_112;
-		next_5.previous = next_113;
-		System.out.println("4 " + obj.repOK());
-		obj.set(index,element);
-	}
-
-	@Test
-	public void test5() throws Exception {
-		DoubleLinkedList obj = new DoubleLinkedList();
-		obj.header = new Entry();
-		Entry next_2 = new Entry();
-		Entry next_5 = new Entry();
-		Entry next_8 = new Entry();
-		Entry next_112 = next_2;
-		Entry next_113 = next_5;
-		Entry this_header_114 = obj.header;
-		Entry prev_115 = next_8;
-		obj.size = 3;
-		int index = 1;
-		Entry prev_3 = prev_115;
-		Object element = null;
-		obj.modCount = 0;
-		Object ele_1 = null;
-		Object ele_4 = null;
-		Object ele_7 = null;
-		Object ele_153 = null;
-		obj.header.element = ele_1;
-		obj.header.next = next_2;
-		obj.header.previous = prev_3;
-		next_2.element = ele_4;
-		next_2.next = next_5;
-		next_2.previous = obj.header;
-		next_5.element = ele_7;
-		next_5.next = next_8;
-		next_5.previous = next_112;
-		next_8.element = ele_153;
-		next_8.next = this_header_114;
-		next_8.previous = next_113;
-		System.out.println("5 " + obj.repOK());
-		obj.set(index,element);
-	}
-
-	@Test
-	public void test6() throws Exception {
+	public void test_set4() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		obj.size = 0;
@@ -152,7 +87,7 @@ public class DoubleLinkedList_set1 extends TestJPF {
 		obj.header.element = ele_118;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
-		System.out.println("6 " + obj.repOK());
+		System.out.println(obj.repOK());
 		obj.set(index,element);
 	}
 

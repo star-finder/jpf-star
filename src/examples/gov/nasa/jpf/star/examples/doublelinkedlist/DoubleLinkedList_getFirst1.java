@@ -7,7 +7,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class DoubleLinkedList_getFirst1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_getFirst1() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		obj.size = 0;
@@ -16,56 +16,56 @@ public class DoubleLinkedList_getFirst1 extends TestJPF {
 		obj.header.element = ele_116;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
-		System.out.println("1 " + obj.repOK());
+		System.out.println(obj.repOK());
 		obj.getFirst();
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_getFirst2() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
-		Entry next_2 = new Entry();
-		Entry prev_3 = next_2;
+		Entry next_3 = new Entry();
+		Entry prev_4 = next_3;
 		Entry this_header_112 = obj.header;
 		obj.size = 1;
 		obj.modCount = 0;
-		Object ele_1 = null;
-		Object ele_4 = null;
-		obj.header.element = ele_1;
-		obj.header.next = next_2;
-		obj.header.previous = prev_3;
-		next_2.element = ele_4;
-		next_2.next = obj.header;
-		next_2.previous = this_header_112;
-		System.out.println("2 " + obj.repOK());
+		Object ele_2 = null;
+		Object ele_5 = null;
+		obj.header.element = ele_2;
+		obj.header.next = next_3;
+		obj.header.previous = prev_4;
+		next_3.element = ele_5;
+		next_3.next = obj.header;
+		next_3.previous = this_header_112;
+		System.out.println(obj.repOK());
 		obj.getFirst();
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_getFirst3() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
-		Entry next_2 = new Entry();
-		Entry next_5 = new Entry();
-		Entry next_112 = next_2;
+		Entry next_3 = new Entry();
+		Entry next_6 = new Entry();
+		Entry next_112 = next_3;
 		Entry this_header_113 = obj.header;
-		Entry prev_114 = next_5;
+		Entry prev_114 = next_6;
 		obj.size = 2;
-		Entry prev_3 = prev_114;
+		Entry prev_4 = prev_114;
 		obj.modCount = 0;
-		Object ele_1 = null;
-		Object ele_4 = null;
+		Object ele_2 = null;
+		Object ele_5 = null;
 		Object ele_137 = null;
-		obj.header.element = ele_1;
-		obj.header.next = next_2;
-		obj.header.previous = prev_3;
-		next_2.element = ele_4;
-		next_2.next = next_5;
-		next_2.previous = obj.header;
-		next_5.element = ele_137;
-		next_5.next = this_header_113;
-		next_5.previous = next_112;
-		System.out.println("3 " + obj.repOK());
+		obj.header.element = ele_2;
+		obj.header.next = next_3;
+		obj.header.previous = prev_4;
+		next_3.element = ele_5;
+		next_3.next = next_6;
+		next_3.previous = obj.header;
+		next_6.element = ele_137;
+		next_6.next = this_header_113;
+		next_6.previous = next_112;
+		System.out.println(obj.repOK());
 		obj.getFirst();
 	}
 

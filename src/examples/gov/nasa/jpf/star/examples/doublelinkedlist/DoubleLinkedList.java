@@ -678,12 +678,12 @@ public class DoubleLinkedList {
 	 * @return a shallow copy of this <tt>DoubleLinkedList</tt> instance.
 	 */
 	public Object clone() {
-		DoubleLinkedList clone = null;
-		try {
-			clone = (DoubleLinkedList) super.clone();
-		} catch (CloneNotSupportedException e) {
-			throw new InternalError();
-		}
+		DoubleLinkedList clone = new DoubleLinkedList();
+//		try {
+//			clone = (DoubleLinkedList) super.clone();
+//		} catch (CloneNotSupportedException e) {
+//			throw new InternalError();
+//		}
 
 		// Put clone into "virgin" state
 		clone.header = new Entry(null, null, null);

@@ -7,7 +7,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class DoubleLinkedList_size1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_size1() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		obj.size = 0;
@@ -16,7 +16,7 @@ public class DoubleLinkedList_size1 extends TestJPF {
 		obj.header.element = ele_114;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
-		System.out.println("1 " + obj.repOK());
+		System.out.println(obj.repOK());
 		obj.size();
 	}
 

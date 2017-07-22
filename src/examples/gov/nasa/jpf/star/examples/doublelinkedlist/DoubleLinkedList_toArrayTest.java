@@ -8,7 +8,6 @@ import gov.nasa.jpf.star.data.DataNode;
 import gov.nasa.jpf.star.data.DataNodeLexer;
 import gov.nasa.jpf.star.data.DataNodeMap;
 import gov.nasa.jpf.star.data.DataNodeParser;
-import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
 import gov.nasa.jpf.star.precondition.Precondition;
 import gov.nasa.jpf.star.precondition.PreconditionLexer;
 import gov.nasa.jpf.star.precondition.PreconditionMap;
@@ -20,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class DoubleLinkedList_inListTest extends TestJPF {
+public class DoubleLinkedList_toArrayTest extends TestJPF {
 	
 	private void initDataNode() {
 		String data1 = "data Entry {Object element; Entry next; Entry previous}";
@@ -52,7 +51,7 @@ public class DoubleLinkedList_inListTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre inList == dll(this_header,this_size)";
+		String pre = "pre toArray == dll(this_header,this_size)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -84,12 +83,11 @@ public class DoubleLinkedList_inListTest extends TestJPF {
 				"+star.test_imports=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.inList(sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.toArray()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();
-			Entry e = new Entry();
-			list.inList(e);
+			list.toArray();
 		}
 		
 		long end = System.currentTimeMillis();

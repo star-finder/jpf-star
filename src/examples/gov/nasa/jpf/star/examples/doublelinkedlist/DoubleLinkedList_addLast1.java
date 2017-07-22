@@ -18,6 +18,7 @@ public class DoubleLinkedList_addLast1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_114;
+		System.out.println(obj.repOK());
 		obj.addLast(o);
 	}
 
