@@ -17,6 +17,7 @@ public class DoubleLinkedList_removeFirst1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_112;
+		System.out.println("1 " + obj.repOK());
 		obj.removeFirst();
 	}
 
@@ -37,6 +38,7 @@ public class DoubleLinkedList_removeFirst1 extends TestJPF {
 		next_2.element = ele_4;
 		next_2.next = obj.header;
 		next_2.previous = this_header_112;
+		System.out.println("2 " + obj.repOK());
 		obj.removeFirst();
 	}
 
@@ -63,6 +65,7 @@ public class DoubleLinkedList_removeFirst1 extends TestJPF {
 		next_5.element = ele_7;
 		next_5.next = this_header_112;
 		next_5.previous = next_113;
+		System.out.println("3 " + obj.repOK());
 		obj.removeFirst();
 	}
 
@@ -96,6 +99,7 @@ public class DoubleLinkedList_removeFirst1 extends TestJPF {
 		next_8.element = ele_147;
 		next_8.next = this_header_114;
 		next_8.previous = next_113;
+		System.out.println("4 " + obj.repOK());
 		obj.removeFirst();
 	}
 

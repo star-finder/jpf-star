@@ -16,6 +16,7 @@ public class DoubleLinkedList_getFirst1 extends TestJPF {
 		obj.header.element = ele_116;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
+		System.out.println("1 " + obj.repOK());
 		obj.getFirst();
 	}
 
@@ -36,6 +37,7 @@ public class DoubleLinkedList_getFirst1 extends TestJPF {
 		next_2.element = ele_4;
 		next_2.next = obj.header;
 		next_2.previous = this_header_112;
+		System.out.println("2 " + obj.repOK());
 		obj.getFirst();
 	}
 
@@ -63,6 +65,7 @@ public class DoubleLinkedList_getFirst1 extends TestJPF {
 		next_5.element = ele_137;
 		next_5.next = this_header_113;
 		next_5.previous = next_112;
+		System.out.println("3 " + obj.repOK());
 		obj.getFirst();
 	}
 

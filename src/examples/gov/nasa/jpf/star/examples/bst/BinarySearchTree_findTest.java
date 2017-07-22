@@ -68,6 +68,8 @@ public class BinarySearchTree_findTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -84,6 +86,9 @@ public class BinarySearchTree_findTest extends TestJPF {
 			BinarySearchTree tree = new BinarySearchTree();
 			tree.find(0);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

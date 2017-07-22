@@ -640,9 +640,9 @@ public class TreeMap  {
     /** From CLR * */
     private void fixAfterInsertion(Entry x) {
         x.color = RED;
-
+        
         while (x != null && x != root && x.parent.color == RED) {
-            if (parentOf(x) == leftOf(parentOf(parentOf(x)))) {
+        	if (parentOf(x) == leftOf(parentOf(parentOf(x)))) {
                 Entry y = rightOf(parentOf(parentOf(x)));
                 if (colorOf(y) == RED) {
                     setColor(parentOf(x), BLACK);

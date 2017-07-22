@@ -363,7 +363,7 @@ public class AATree {
 		return true;
 	}
 
-	private boolean wellFormed() {
+	boolean wellFormed() {
 		if (!validGlobals()) {
 			return false;
 		}

@@ -6,7 +6,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyLinkedList_clear1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_clear1() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = null;

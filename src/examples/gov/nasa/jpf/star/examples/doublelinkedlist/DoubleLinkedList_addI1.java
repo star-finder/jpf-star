@@ -7,7 +7,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class DoubleLinkedList_addI1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_addI1() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		Entry this_header_112 = obj.header;
@@ -23,7 +23,7 @@ public class DoubleLinkedList_addI1 extends TestJPF {
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_addI2() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		Entry next_2 = new Entry();
@@ -46,7 +46,7 @@ public class DoubleLinkedList_addI1 extends TestJPF {
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_addI3() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		obj.size = 0;
@@ -61,7 +61,7 @@ public class DoubleLinkedList_addI1 extends TestJPF {
 	}
 
 	@Test
-	public void test4() throws Exception {
+	public void test_addI4() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		obj.size = 0;

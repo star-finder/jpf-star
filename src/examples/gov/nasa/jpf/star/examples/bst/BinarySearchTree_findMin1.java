@@ -9,6 +9,7 @@ public class BinarySearchTree_findMin1 extends TestJPF {
 	public void test1() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = null;
+		System.out.println("1 " + obj.repOK(obj.root));
 		obj.findMin();
 	}
 
@@ -19,9 +20,11 @@ public class BinarySearchTree_findMin1 extends TestJPF {
 		BinaryNode left_2 = null;
 		BinaryNode right_3 = null;
 		int element_1 = 1;
+		int element_76 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
+		System.out.println("2 " + obj.repOK(obj.root));
 		obj.findMin();
 	}
 
@@ -33,7 +36,10 @@ public class BinarySearchTree_findMin1 extends TestJPF {
 		BinaryNode left_7 = null;
 		BinaryNode right_3 = null;
 		BinaryNode right_8 = null;
+		int element_77 = 0;
 		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
 		int element_6 = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
@@ -41,6 +47,7 @@ public class BinarySearchTree_findMin1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
+		System.out.println("3 " + obj.repOK(obj.root));
 		obj.findMin();
 	}
 

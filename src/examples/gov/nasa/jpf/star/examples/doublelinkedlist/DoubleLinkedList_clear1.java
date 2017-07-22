@@ -7,7 +7,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class DoubleLinkedList_clear1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_clear1() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		Entry this_header_112 = obj.header;
@@ -21,7 +21,7 @@ public class DoubleLinkedList_clear1 extends TestJPF {
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_clear2() throws Exception {
 		DoubleLinkedList obj = new DoubleLinkedList();
 		obj.header = new Entry();
 		Entry next_2 = new Entry();

@@ -71,9 +71,11 @@ public class BinarySearchTree_removeTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=6",
+				"+star.max_depth=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/bst",
@@ -87,6 +89,9 @@ public class BinarySearchTree_removeTest extends TestJPF {
 			BinarySearchTree tree = new BinarySearchTree();
 			tree.remove(0);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

@@ -19,10 +19,10 @@ class MyListNode {
 
 	// C'tor - 2
 	MyListNode(Object theElement, MyListNode n) {
-		synchronized (this) {
+//		synchronized (this) {
 			this._element = theElement;
 			this._next = n;
-		}
+//		}
 
 	}
 

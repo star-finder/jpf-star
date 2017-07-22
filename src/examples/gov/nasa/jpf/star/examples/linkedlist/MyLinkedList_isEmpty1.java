@@ -6,7 +6,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class MyLinkedList_isEmpty1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_isEmpty1() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = null;
@@ -18,14 +18,14 @@ public class MyLinkedList_isEmpty1 extends TestJPF {
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_isEmpty2() throws Exception {
 		MyLinkedList obj = new MyLinkedList();
 		obj._header = new MyListNode();
 		MyListNode next = new MyListNode();
+		Object element_1 = new Object();
 		MyListNode next_2 = null;
 		obj._maxsize = 0;
 		Object element = null;
-		Object element_1 = null;
 		obj._header._element = element;
 		obj._header._next = next;
 		next._element = element_1;

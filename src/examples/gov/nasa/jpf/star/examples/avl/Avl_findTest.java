@@ -76,6 +76,8 @@ public class Avl_findTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=20",
@@ -92,6 +94,9 @@ public class Avl_findTest extends TestJPF {
 			AvlTree tree = new AvlTree();
 			tree.find(0);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

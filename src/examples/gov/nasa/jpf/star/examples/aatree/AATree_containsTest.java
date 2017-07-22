@@ -79,7 +79,7 @@ public class AATree_containsTest extends TestJPF {
 	public void testMain() {
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_len_pc=20",
+//				"+star.max_len_pc=20",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/aatree",

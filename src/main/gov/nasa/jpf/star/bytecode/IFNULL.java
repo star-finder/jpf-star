@@ -25,6 +25,8 @@ public class IFNULL extends gov.nasa.jpf.jvm.bytecode.IFNULL {
 		
 		if(sym_v == null) {
 			return super.execute(ti);
+		} else if (sym_v.toString().contains("newNode_")) {
+			return super.execute(ti);
 		} else {
 			ChoiceGenerator<?> cg;
 			ChoiceGenerator<?> prevCG;

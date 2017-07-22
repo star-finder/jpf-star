@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -14,45 +16,51 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.data.DataNode;
 import gov.nasa.jpf.star.data.DataNodeMap;
 import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.HeapFormula;
-import gov.nasa.jpf.star.formula.PureFormula;
 import gov.nasa.jpf.star.predicate.InductivePred;
 import gov.nasa.jpf.star.predicate.InductivePredMap;
 
 public class Solver {
 
-	private static int MAX_LENGTH = 10;
+	private static int MAX_DEPTH = 3;
 	
-	private static int TIMEOUT = 15;
+	private static int TIMEOUT = 1;
 
 	private static String s2sat = "s2sat";
 
 	private static boolean ret = false;
 	
 	private static String model = "";
-
+	
+	private static Process p = null;
+	
 	public static boolean checkSat(Formula f, Config c) {
-		HeapFormula hf = f.getHeapFormula();
-		PureFormula pf = f.getPureFormula();
+//		HeapFormula hf = f.getHeapFormula();
+//		PureFormula pf = f.getPureFormula();
+//
+//		int heapSize = hf.getHeapTerms().length;
+//		int pureSize = pf.getPureTerms().length;
 
-		int heapSize = hf.getHeapTerms().length;
-		int pureSize = pf.getPureTerms().length;
+//		System.out.println(f);
+//		System.out.println(f.getDepth());
+		
+		int maxDepth = MAX_DEPTH;
 
-		int maxLength = MAX_LENGTH;
-
-		String s = c.getProperty("star.max_len_pc");
+		String s = c.getProperty("star.max_depth");
 		if (s != null) {
-			maxLength = Integer.parseInt(s);
+			maxDepth = Integer.parseInt(s);
 		}
 
-		if (heapSize + pureSize > maxLength)
+		if (f.getDepth() > maxDepth) {
 			return false;
-		else {
+		} else {
 			// return true;
 			File file = printToFile(f);
+			
 			if (file != null) {
-				return checkSat(file);
+				boolean ret = checkSat(file);
+				return ret;
 			}
+			
 			return false;
 		}
 	}
@@ -60,8 +68,7 @@ public class Solver {
 	private static File printToFile(Formula f) {
 		try {
 			File file = File.createTempFile("sat", null);
-			System.out.println(file.toString());
-
+			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
 
 			DataNode[] dns = DataNodeMap.getAll();
@@ -90,22 +97,24 @@ public class Solver {
 		return null;
 	}
 
+	
+	
 	private static boolean checkSat(File file) {
 		try {
+			Future future = null;
 			String cmd = s2sat + " " + file.getAbsolutePath();
-
+			
 			Runnable check = new Thread() {
 				@Override
 				public void run() {
 					try {
 						ret = false; model = "";
 						
-						Process p = Runtime.getRuntime().exec(cmd);
-
+						p = Runtime.getRuntime().exec(cmd);
+						
 						BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
 						String s = br.readLine();
-
 						
 						boolean readModel = false;
 						while (s != null) {
@@ -146,13 +155,14 @@ public class Solver {
 			};
 
 			ExecutorService executor = Executors.newSingleThreadExecutor();
-			Future future = executor.submit(check);
+			future = executor.submit(check);
 			
 			future.get(TIMEOUT, TimeUnit.SECONDS);
 
 			return ret;
 		} catch (Exception e) {
-//			e.printStackTrace();
+			if (p.isAlive()) p.destroyForcibly();
+				
 			return false;
 		}
 	}

@@ -34,10 +34,7 @@ public class MyLinkedList_findTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred1 = "pred sll(root) == root = null || root::MyListNode<element,next> * ele(element) * sll(next)";
-		String pred2 = "pred ele(element) == element = null || element::Object<>";
-				
-		String pred = pred1 + ";" + pred2;
+		String pred = "pred sll(root) == root = null || root::MyListNode<element,next> * element::Object<> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -69,9 +66,11 @@ public class MyLinkedList_findTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=6",
+				"+star.max_depth=2",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/linkedlist",
@@ -86,6 +85,9 @@ public class MyLinkedList_findTest extends TestJPF {
 			Object x = new Object();
 			list.find(x);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

@@ -86,6 +86,7 @@ import gov.nasa.jpf.star.bytecode.LSHR;
 import gov.nasa.jpf.star.bytecode.LSUB;
 import gov.nasa.jpf.star.bytecode.LUSHR;
 import gov.nasa.jpf.star.bytecode.LXOR;
+import gov.nasa.jpf.star.bytecode.NEW;
 import gov.nasa.jpf.star.bytecode.TABLESWITCH;
 import gov.nasa.jpf.vm.Instruction;
 
@@ -541,6 +542,11 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 	@Override
 	public Instruction athrow() {
 		return new ATHROW();
+	}
+
+	@Override
+	public Instruction new_(String clsName) {
+		return new NEW(clsName);
 	}
 
 }

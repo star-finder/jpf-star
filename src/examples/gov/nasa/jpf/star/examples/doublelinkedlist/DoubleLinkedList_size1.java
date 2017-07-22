@@ -16,6 +16,7 @@ public class DoubleLinkedList_size1 extends TestJPF {
 		obj.header.element = ele_114;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
+		System.out.println("1 " + obj.repOK());
 		obj.size();
 	}
 

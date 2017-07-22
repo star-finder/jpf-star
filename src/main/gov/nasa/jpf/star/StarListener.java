@@ -54,16 +54,10 @@ public class StarListener extends SymbolicListener {
 
 						if (cg != null && cg instanceof StarChoiceGenerator
 								&& ((StarChoiceGenerator) cg).getCurrentPC() != null) {
-							Formula f = ((StarChoiceGenerator) cg).getCurrentPCStar();
-							
-							if (Solver.checkSat(f, conf)) {
-								System.out.println(f);
+							String model = Solver.getModel();
+							System.out.println(model);
 
-								String model = Solver.getModel();
-								System.out.println(model);
-
-								TestGenerator.addModel(model);
-							}
+							TestGenerator.addModel(model);
 						}
 					}
 				}

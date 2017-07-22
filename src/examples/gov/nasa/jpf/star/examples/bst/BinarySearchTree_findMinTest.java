@@ -71,6 +71,8 @@ public class BinarySearchTree_findMinTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -87,6 +89,9 @@ public class BinarySearchTree_findMinTest extends TestJPF {
 			BinarySearchTree tree = new BinarySearchTree();
 			tree.findMin();
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

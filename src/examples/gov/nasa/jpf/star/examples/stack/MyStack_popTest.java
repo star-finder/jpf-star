@@ -46,7 +46,7 @@ public class MyStack_popTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre top == stack(this_topOfStack)";
+		String pre = "pre pop == stack(this_topOfStack)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -66,6 +66,8 @@ public class MyStack_popTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -76,12 +78,20 @@ public class MyStack_popTest extends TestJPF {
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.stack.StackLi.top()",
+				"+symbolic.method=gov.nasa.jpf.star.examples.stack.StackLi.pop()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();
-			stack.top();
+			try {
+				stack.pop();
+			} catch (Underflow e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

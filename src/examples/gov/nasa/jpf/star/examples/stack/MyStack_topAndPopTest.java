@@ -66,6 +66,8 @@ public class MyStack_topAndPopTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -82,6 +84,9 @@ public class MyStack_topAndPopTest extends TestJPF {
 			StackLi stack = new StackLi();
 			stack.topAndPop();
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

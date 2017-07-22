@@ -96,7 +96,7 @@ public class TestGenerator {
 		String clsName = ci.getSimpleName();
 		
 		test.append("\t@Test\n");
-		test.append("\tpublic void test" + index++ + "() throws Exception {\n");
+		test.append("\tpublic void test_" + mi.getName() + index++ + "() throws Exception {\n");
 		
 		if (!mi.isStatic())
 			test.append("\t\t" + clsName + " " + objName + " = new " + clsName + "();\n");
@@ -156,7 +156,7 @@ public class TestGenerator {
 		List<Variable> initVars = new ArrayList<Variable>();
 		
 		for (FieldInfo field : insFields) {
-			if (field.isFinal()) {
+			if (field.isFinal() || field.isPrivate() || field.isProtected()) {
 				String name = "this_" + field.getName();
 				String type = standarizeType(field.getType());
 				
@@ -165,7 +165,7 @@ public class TestGenerator {
 		}
 		
 		for (FieldInfo field : staFields) {
-			if (field.isFinal()) {
+			if (field.isFinal() || field.isPrivate() || field.isProtected()) {
 				String name = clsName + "_" + field.getName();
 				String type = standarizeType(field.getType());
 				

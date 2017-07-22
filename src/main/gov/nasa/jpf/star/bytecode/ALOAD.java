@@ -62,6 +62,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 		// then in subsequent rounds we add each unfolded formula to the pc
 		if (!ti.isFirstStepInsn()) {
 			prevCG = ti.getVM().getSystemState().getChoiceGenerator();
+			
 			if (prevCG instanceof StarChoiceGenerator) {
 				Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
 				

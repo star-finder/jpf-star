@@ -42,9 +42,9 @@ class MyLinkedList {
 		if (p != null && p._current != null) {
 			MyListNode tmp;
 			// Delete the synch block for the unsynch case
-			synchronized (this) {
+//			synchronized (this) {
 				tmp = new MyListNode(x, p._current._next);
-			} // Extend the synch block one stmt to eliminate the bug
+//			} // Extend the synch block one stmt to eliminate the bug
 			p._current._next = tmp;
 		}
 	}

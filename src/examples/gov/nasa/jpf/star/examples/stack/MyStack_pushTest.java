@@ -66,6 +66,8 @@ public class MyStack_pushTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -83,6 +85,9 @@ public class MyStack_pushTest extends TestJPF {
 			Object o = new Object();
 			stack.push(o);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

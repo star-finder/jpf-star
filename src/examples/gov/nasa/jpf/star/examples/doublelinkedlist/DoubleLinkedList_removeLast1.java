@@ -17,6 +17,7 @@ public class DoubleLinkedList_removeLast1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_114;
+		System.out.println("1 " + obj.repOK());
 		obj.removeLast();
 	}
 
@@ -37,6 +38,7 @@ public class DoubleLinkedList_removeLast1 extends TestJPF {
 		prev_3.element = ele_4;
 		prev_3.next = obj.header;
 		prev_3.previous = this_header_114;
+		System.out.println("2 " + obj.repOK());
 		obj.removeLast();
 	}
 
@@ -63,6 +65,7 @@ public class DoubleLinkedList_removeLast1 extends TestJPF {
 		prev_5.element = ele_7;
 		prev_5.next = prev_114;
 		prev_5.previous = this_header_115;
+		System.out.println("3 " + obj.repOK());
 		obj.removeLast();
 	}
 
@@ -96,6 +99,7 @@ public class DoubleLinkedList_removeLast1 extends TestJPF {
 		prev_8.element = ele_149;
 		prev_8.next = prev_115;
 		prev_8.previous = this_header_116;
+		System.out.println("4 " + obj.repOK());
 		obj.removeLast();
 	}
 

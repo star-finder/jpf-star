@@ -9,6 +9,7 @@ public class AvlTree_findMin1 extends TestJPF {
 	public void test1() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = null;
+		System.out.println("1 " + obj.wellFormed());
 		obj.findMin();
 	}
 
@@ -18,13 +19,14 @@ public class AvlTree_findMin1 extends TestJPF {
 		obj.root = new AvlNode();
 		AvlNode left_2 = null;
 		AvlNode right_3 = null;
-		int height_4 = 1;
+		int height_4 = 0;
 		int element_1 = 3;
-		int element_222 = 3;
+		int element_223 = 3;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
+		System.out.println("2 " + obj.wellFormed());
 		obj.findMin();
 	}
 
@@ -36,16 +38,16 @@ public class AvlTree_findMin1 extends TestJPF {
 		AvlNode right_3 = new AvlNode();
 		AvlNode left_10 = null;
 		AvlNode right_11 = null;
-		AvlNode left_268 = null;
-		AvlNode right_267 = null;
-		int heightL_6 = 1;
+		AvlNode left_270 = null;
+		AvlNode right_269 = null;
+		int heightL_6 = 0;
 		int element_1 = -1;
-		int heightR_8 = 1;
-		int element_266 = 0;
-		int element_223 = -2;
-		int element_224 = -1;
-		int height_4 = 2;
-		int element_222 = -1;
+		int heightR_8 = 0;
+		int element_223 = -1;
+		int element_224 = -2;
+		int height_4 = 1;
+		int element_225 = -1;
+		int element_268 = 0;
 		int element_9 = -2;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
@@ -55,10 +57,11 @@ public class AvlTree_findMin1 extends TestJPF {
 		left_2.left = left_10;
 		left_2.right = right_11;
 		left_2.height = heightL_6;
-		right_3.element = element_266;
-		right_3.left = left_268;
-		right_3.right = right_267;
+		right_3.element = element_268;
+		right_3.left = left_270;
+		right_3.right = right_269;
 		right_3.height = heightR_8;
+		System.out.println("3 " + obj.wellFormed());
 		obj.findMin();
 	}
 
@@ -70,13 +73,13 @@ public class AvlTree_findMin1 extends TestJPF {
 		AvlNode left_20 = null;
 		AvlNode right_3 = null;
 		AvlNode right_21 = null;
-		int heightL_6 = 1;
+		int heightL_6 = 0;
 		int element_19 = 0;
 		int element_1 = 1;
-		int element_223 = 0;
-		int element_224 = 1;
-		int height_4 = 2;
-		int element_222 = 1;
+		int element_223 = 1;
+		int element_224 = 0;
+		int height_4 = 1;
+		int element_225 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
@@ -85,6 +88,7 @@ public class AvlTree_findMin1 extends TestJPF {
 		left_2.left = left_20;
 		left_2.right = right_21;
 		left_2.height = heightL_6;
+		System.out.println("4 " + obj.wellFormed());
 		obj.findMin();
 	}
 
@@ -96,21 +100,21 @@ public class AvlTree_findMin1 extends TestJPF {
 		AvlNode right_3 = new AvlNode();
 		AvlNode right_21 = new AvlNode();
 		AvlNode left_20 = null;
-		AvlNode left_272 = null;
-		AvlNode right_271 = null;
-		AvlNode left_286 = null;
-		AvlNode right_285 = null;
-		int heightL_6 = 2;
-		int element_19 = -2;
-		int element_1 = 0;
-		int element_284 = -1;
-		int heightR_8 = 1;
-		int heightR_23 = 1;
-		int element_223 = -2;
+		AvlNode left_274 = null;
+		AvlNode right_273 = null;
+		AvlNode left_288 = null;
+		AvlNode right_287 = null;
+		int heightL_6 = 1;
+		int element_19 = 0;
+		int element_1 = 2;
+		int heightR_8 = 0;
+		int heightR_23 = 0;
+		int element_223 = 2;
 		int element_224 = 0;
-		int height_4 = 3;
-		int element_222 = 0;
-		int element_270 = 1;
+		int height_4 = 2;
+		int element_225 = 2;
+		int element_272 = 3;
+		int element_286 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
@@ -119,14 +123,15 @@ public class AvlTree_findMin1 extends TestJPF {
 		left_2.left = left_20;
 		left_2.right = right_21;
 		left_2.height = heightL_6;
-		right_3.element = element_270;
-		right_3.left = left_272;
-		right_3.right = right_271;
+		right_3.element = element_272;
+		right_3.left = left_274;
+		right_3.right = right_273;
 		right_3.height = heightR_8;
-		right_21.element = element_284;
-		right_21.left = left_286;
-		right_21.right = right_285;
+		right_21.element = element_286;
+		right_21.left = left_288;
+		right_21.right = right_287;
 		right_21.height = heightR_23;
+		System.out.println("5 " + obj.wellFormed());
 		obj.findMin();
 	}
 
@@ -136,21 +141,22 @@ public class AvlTree_findMin1 extends TestJPF {
 		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
 		AvlNode left_2 = null;
-		AvlNode left_249 = null;
-		AvlNode right_248 = null;
-		int height_4 = 2;
-		int element_222 = -1;
-		int element_247 = 0;
+		AvlNode left_251 = null;
+		AvlNode right_250 = null;
+		int height_4 = 1;
+		int element_249 = 0;
 		int element_1 = -1;
-		int heightR_8 = 1;
+		int heightR_8 = 0;
+		int element_223 = -1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
-		right_3.element = element_247;
-		right_3.left = left_249;
-		right_3.right = right_248;
+		right_3.element = element_249;
+		right_3.left = left_251;
+		right_3.right = right_250;
 		right_3.height = heightR_8;
+		System.out.println("6 " + obj.wellFormed());
 		obj.findMin();
 	}
 

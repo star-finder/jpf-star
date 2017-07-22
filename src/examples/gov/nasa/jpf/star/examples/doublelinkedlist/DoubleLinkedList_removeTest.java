@@ -71,9 +71,11 @@ public class DoubleLinkedList_removeTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_len_pc=8",
+//				"+star.max_len_pc=8",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/doublelinkedlist",
@@ -88,6 +90,9 @@ public class DoubleLinkedList_removeTest extends TestJPF {
 			Object o = new Object();
 			list.remove(o);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

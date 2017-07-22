@@ -23,7 +23,9 @@ public class IFNONNULL extends gov.nasa.jpf.jvm.bytecode.IFNONNULL {
 		StackFrame sf = ti.getModifiableTopFrame();
 		Object sym_v = sf.getOperandAttr();
 
-		if (sym_v == null) {
+		if(sym_v == null) {
+			return super.execute(ti);
+		} else if (sym_v.toString().contains("newNode_")) {
 			return super.execute(ti);
 		} else {
 			ChoiceGenerator<?> cg;

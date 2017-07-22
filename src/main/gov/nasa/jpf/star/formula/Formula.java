@@ -32,12 +32,24 @@ public class Formula {
 	
 	private Map<String, Integer> addressMap;
 	
+	private int depth;
+	
+	public Formula(HeapFormula heapFormula, PureFormula pureFormula,
+			Map<String, List<Variable>> typeMap, Map<String, Integer> addressMap, int depth) {
+		this.heapFormula = heapFormula;
+		this.pureFormula = pureFormula;
+		this.typeMap = typeMap;
+		this.addressMap = addressMap;
+		this.depth = depth;
+	}
+	
 	public Formula(HeapFormula heapFormula, PureFormula pureFormula,
 			Map<String, List<Variable>> typeMap, Map<String, Integer> addressMap) {
 		this.heapFormula = heapFormula;
 		this.pureFormula = pureFormula;
 		this.typeMap = typeMap;
 		this.addressMap = addressMap;
+		this.depth = 0;
 	}
 	
 	public Formula(HeapFormula heapFormula, PureFormula pureFormula) {
@@ -45,6 +57,7 @@ public class Formula {
 		this.pureFormula = pureFormula;
 		this.typeMap = new HashMap<String, List<Variable>>();
 		this.addressMap = new HashMap<String, Integer>();
+		this.depth = 0;
 	}
 	
 	public Formula() {
@@ -52,6 +65,7 @@ public class Formula {
 		this.pureFormula = new PureFormula();
 		this.typeMap = new HashMap<String, List<Variable>>();
 		this.addressMap = new HashMap<String, Integer>();
+		this.depth = 0;
 	}
 	
 	public HeapFormula getHeapFormula() {
@@ -64,6 +78,10 @@ public class Formula {
 	
 	public List<List<Variable>> getAlias() {
 		return pureFormula.getAlias();
+	}
+	
+	public int getDepth() {
+		return depth;
 	}
 	
 	public List<Variable> getAlias(String name) {
@@ -96,7 +114,7 @@ public class Formula {
 		Map<String, List<Variable>> newTypeMap = new HashMap<String, List<Variable>>(typeMap);
 		Map<String, Integer> newAddressMap = new HashMap<String, Integer>(addressMap);
 		
-		Formula newFormula = new Formula(newHeapFormula, newPureFormula, newTypeMap, newAddressMap);
+		Formula newFormula = new Formula(newHeapFormula, newPureFormula, newTypeMap, newAddressMap, depth);
 		return newFormula;
 	}
 	
@@ -128,6 +146,7 @@ public class Formula {
 		
 		heapFormula = new HeapFormula(newHeapTerms);
 		pureFormula = new PureFormula(newPureTerms);
+		depth++;
 	}
 	
 	public void addPointToTerm(Variable var, String type) {

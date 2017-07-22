@@ -71,6 +71,8 @@ public class DoubleLinkedList_lastIndexOfTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -88,6 +90,9 @@ public class DoubleLinkedList_lastIndexOfTest extends TestJPF {
 			Object o = new Object();
 			list.lastIndexOf(o);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

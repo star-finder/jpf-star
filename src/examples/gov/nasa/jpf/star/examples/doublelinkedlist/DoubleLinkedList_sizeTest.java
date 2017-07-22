@@ -71,6 +71,8 @@ public class DoubleLinkedList_sizeTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -87,6 +89,9 @@ public class DoubleLinkedList_sizeTest extends TestJPF {
 			DoubleLinkedList list = new DoubleLinkedList();
 			list.size();
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

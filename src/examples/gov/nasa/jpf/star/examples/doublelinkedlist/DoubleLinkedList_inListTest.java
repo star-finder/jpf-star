@@ -72,6 +72,8 @@ public class DoubleLinkedList_inListTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 //				"+star.max_len_pc=6",
@@ -89,6 +91,9 @@ public class DoubleLinkedList_inListTest extends TestJPF {
 			Entry e = new Entry();
 			list.inList(e);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }
