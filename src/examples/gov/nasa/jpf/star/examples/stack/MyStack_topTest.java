@@ -70,7 +70,7 @@ public class MyStack_topTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=6",
+				"+star.max_depth=1",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/stack",
@@ -83,12 +83,6 @@ public class MyStack_topTest extends TestJPF {
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();
 			stack.top();
-//			try {
-//				stack.pop();
-//			} catch (Underflow e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 		}
 		
 		long end = System.currentTimeMillis();

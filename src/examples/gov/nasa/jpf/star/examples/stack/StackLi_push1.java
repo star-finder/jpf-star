@@ -6,7 +6,7 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class StackLi_push1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_push1() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = null;
 		Object x = null;
@@ -14,14 +14,14 @@ public class StackLi_push1 extends TestJPF {
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_push2() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = new ListNode();
-		ListNode next_2 = null;
+		ListNode next_3 = null;
 		Object x = null;
-		Object element_1 = null;
-		obj.topOfStack.element = element_1;
-		obj.topOfStack.next = next_2;
+		Object element_2 = null;
+		obj.topOfStack.element = element_2;
+		obj.topOfStack.next = next_3;
 		obj.push(x);
 	}
 

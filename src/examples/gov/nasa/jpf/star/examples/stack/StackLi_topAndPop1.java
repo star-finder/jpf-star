@@ -6,14 +6,14 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class StackLi_topAndPop1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_topAndPop1() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = null;
 		obj.topAndPop();
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_topAndPop2() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = new ListNode();
 		ListNode next_2 = null;
@@ -24,7 +24,7 @@ public class StackLi_topAndPop1 extends TestJPF {
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_topAndPop3() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = new ListNode();
 		ListNode next_2 = new ListNode();
