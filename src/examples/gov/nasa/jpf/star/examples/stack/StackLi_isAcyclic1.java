@@ -16,7 +16,8 @@ public class StackLi_isAcyclic1 extends TestJPF {
 	public void test_isAcyclic2() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = new ListNode();
-		ListNode next_3 = null;
+		ListNode dest_4 = null;
+		ListNode next_3 = dest_4;
 		Object element_2 = null;
 		obj.topOfStack.element = element_2;
 		obj.topOfStack.next = next_3;
@@ -27,14 +28,11 @@ public class StackLi_isAcyclic1 extends TestJPF {
 	public void test_isAcyclic3() throws Exception {
 		StackLi obj = new StackLi();
 		obj.topOfStack = new ListNode();
-		ListNode next_3 = new ListNode();
-		ListNode next_6 = null;
+		ListNode dest_4 = obj.topOfStack;
+		ListNode next_3 = dest_4;
 		Object element_2 = null;
-		Object element_5 = null;
 		obj.topOfStack.element = element_2;
 		obj.topOfStack.next = next_3;
-		next_3.element = element_5;
-		next_3.next = next_6;
 		obj.isAcyclic();
 	}
 

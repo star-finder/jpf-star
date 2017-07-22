@@ -34,7 +34,12 @@ public class MyStack_isAcyclicTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred = "pred stack(root) == root = null || root::ListNode<element,next> * stack(next)";
+//		String pred = "pred stack(root) == root = null || root::ListNode<element,next> * stack(next)";
+		String pred1 = "pred stack(root) == root=null || root::ListNode<element,next> * lseg(next,dest) & dest=null || " +
+				"root::ListNode<element,next> * lseg(next,dest) & dest=root || root::ListNode<element,next> * lseg(next,tmp) * tmp::ListNode<element,tmpNext> * lseg(tmpNext,dest) & dest=tmp";
+		String pred2 = "pred lseg(root,dest) == root=dest || root::ListNode<element,next> * lseg(next,dest)";
+		
+		String pred = pred1 + ";" + pred2;
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
