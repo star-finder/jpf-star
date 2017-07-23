@@ -77,14 +77,16 @@ public class AATree_containsTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=20",
+				"+star.max_depth=2",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/aatree",
 				"+star.test_package=gov.nasa.jpf.star.examples.aatree",
-				"+star.test_imports=gov.nasa.jpf.star.examples.aatree.AATree.AANode",
+				"+star.test_imports=gov.nasa.jpf.star.examples.aatree.AATree.AANode;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=gov.nasa.jpf.star.examples.aatree.AATree.contains(sym)",
@@ -94,6 +96,9 @@ public class AATree_containsTest extends TestJPF {
 			int i = 1;
 			tree.contains(i);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

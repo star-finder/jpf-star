@@ -1,13 +1,14 @@
 package gov.nasa.jpf.star.examples.aatree;
 
 import gov.nasa.jpf.star.examples.aatree.AATree.AANode;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class AATree_isEmpty1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_isEmpty1() throws Exception {
 		AATree obj = new AATree();
 		obj.root = obj.nullNode;
 		AANode b_2 = null;
@@ -16,11 +17,12 @@ public class AATree_isEmpty1 extends TestJPF {
 		int a_1 = 0;
 		obj.deletedNode = null;
 		obj.lastNode = null;
+		System.out.println(Utilities.repOK(obj));
 		obj.isEmpty();
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_isEmpty2() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -48,11 +50,12 @@ public class AATree_isEmpty1 extends TestJPF {
 		right_7.left = left_380;
 		right_7.right = right_379;
 		right_7.level = level_326;
+		System.out.println(Utilities.repOK(obj));
 		obj.isEmpty();
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_isEmpty3() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode b_2 = null;
@@ -72,6 +75,7 @@ public class AATree_isEmpty1 extends TestJPF {
 		obj.root.left = left_6;
 		obj.root.right = right_7;
 		obj.root.level = level_8;
+		System.out.println(Utilities.repOK(obj));
 		obj.isEmpty();
 	}
 

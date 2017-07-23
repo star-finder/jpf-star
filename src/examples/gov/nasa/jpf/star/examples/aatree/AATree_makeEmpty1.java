@@ -1,13 +1,14 @@
 package gov.nasa.jpf.star.examples.aatree;
 
 import gov.nasa.jpf.star.examples.aatree.AATree.AANode;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class AATree_makeEmpty1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_makeEmpty1() throws Exception {
 		AATree obj = new AATree();
 		obj.root = obj.nullNode;
 		AANode b_328 = null;
@@ -16,6 +17,7 @@ public class AATree_makeEmpty1 extends TestJPF {
 		int d_326 = 0;
 		obj.deletedNode = null;
 		obj.lastNode = null;
+		System.out.println(Utilities.repOK(obj));
 		obj.makeEmpty();
 	}
 
