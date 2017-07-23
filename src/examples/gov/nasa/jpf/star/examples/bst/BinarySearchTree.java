@@ -86,7 +86,7 @@ public class BinarySearchTree {
 		root = null;
 	}
 
-	boolean repOK(BinaryNode t) {
+	public boolean repOK(BinaryNode t) {
 		return repOK(t, new Range());
 	}
 
