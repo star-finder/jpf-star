@@ -76,14 +76,16 @@ public class RedBlackTree_containsValueTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=4",
+				"+star.max_depth=5",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/rbt",
 				"+star.test_package=gov.nasa.jpf.star.examples.rbt",
-				"+star.test_imports=gov.nasa.jpf.star.examples.rbt.TreeMap.Entry",
+				"+star.test_imports=gov.nasa.jpf.star.examples.rbt.TreeMap.Entry;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=gov.nasa.jpf.star.examples.rbt.TreeMap.containsValue(sym)",
@@ -93,6 +95,9 @@ public class RedBlackTree_containsValueTest extends TestJPF {
 			Object o = new Object();
 			tree.containsValue(o);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

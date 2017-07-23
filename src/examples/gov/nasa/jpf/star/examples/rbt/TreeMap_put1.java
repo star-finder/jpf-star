@@ -1,24 +1,26 @@
 package gov.nasa.jpf.star.examples.rbt;
 
 import gov.nasa.jpf.star.examples.rbt.TreeMap.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class TreeMap_put1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_put1() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = null;
 		obj.size = 0;
 		int key = 0;
 		Object value = null;
 		obj.modCount = 0;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_put2() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -39,11 +41,12 @@ public class TreeMap_put1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_put3() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -64,35 +67,12 @@ public class TreeMap_put1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test4() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry parent_5 = null;
-		Entry left_3 = null;
-		Entry right_4 = null;
-		boolean color_6 = true;
-		int key_299 = 1;
-		obj.size = 1;
-		int key = 0;
-		int key_1 = 1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test5() throws Exception {
+	public void test_put4() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -102,17 +82,17 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_16 = null;
 		Entry left_300 = left_3;
 		Entry right_17 = null;
-		Entry left_388 = null;
-		Entry right_386 = null;
+		Entry left_385 = null;
+		Entry right_383 = null;
 		boolean color_19 = true;
+		boolean color_386 = true;
 		obj.size = 3;
 		boolean color_6 = true;
-		int key_385 = 3;
 		int key = 0;
 		int key_1 = 2;
 		int key_301 = 1;
+		int key_382 = 3;
 		int key_302 = 2;
-		boolean color_389 = true;
 		int key_14 = 1;
 		int key_299 = 2;
 		Entry newNode_35 = new Entry();
@@ -120,7 +100,7 @@ public class TreeMap_put1 extends TestJPF {
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
-		Object value_390 = null;
+		Object value_387 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -133,17 +113,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		right_4.key = key_385;
-		right_4.value = value_390;
-		right_4.left = left_388;
-		right_4.right = right_386;
+		right_4.key = key_382;
+		right_4.value = value_387;
+		right_4.left = left_385;
+		right_4.right = right_383;
 		right_4.parent = obj.root;
-		right_4.color = color_389;
+		right_4.color = color_386;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test6() throws Exception {
+	public void test_put5() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -154,24 +135,24 @@ public class TreeMap_put1 extends TestJPF {
 		Entry newNode_35 = obj.root;
 		Entry left_300 = left_3;
 		Entry right_17 = null;
-		Entry left_386 = null;
-		Entry right_384 = null;
+		Entry left_383 = null;
+		Entry right_381 = null;
 		boolean color_19 = true;
-		int key_383 = 3;
 		obj.size = 3;
 		boolean color_6 = true;
+		int key_380 = 3;
 		int key = 0;
 		int key_1 = 2;
 		int key_301 = 1;
 		int key_302 = 2;
-		boolean color_387 = true;
 		int key_14 = 1;
+		boolean color_384 = true;
 		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
-		Object value_388 = null;
+		Object value_385 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -184,44 +165,49 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		right_4.key = key_383;
-		right_4.value = value_388;
-		right_4.left = left_386;
-		right_4.right = right_384;
+		right_4.key = key_380;
+		right_4.value = value_385;
+		right_4.left = left_383;
+		right_4.right = right_381;
 		right_4.parent = obj.root;
-		right_4.color = color_387;
+		right_4.color = color_384;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test7() throws Exception {
+	public void test_put6() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
+		Entry left_16 = new Entry();
 		Entry right_4 = new Entry();
 		Entry parent_5 = null;
 		Entry parent_18 = obj.root;
-		Entry left_16 = null;
-		Entry left_300 = left_3;
+		Entry parent_29 = left_3;
+		Entry left_27 = null;
 		Entry right_17 = null;
-		Entry left_384 = null;
-		Entry right_382 = null;
+		Entry right_28 = null;
+		Entry newNode_46 = right_28;
+		Entry left_412 = null;
+		Entry right_410 = null;
 		boolean color_19 = true;
-		obj.size = 3;
-		boolean color_385 = true;
+		boolean color_413 = true;
+		obj.size = 4;
 		boolean color_6 = true;
 		int key = 0;
-		int key_381 = 3;
-		int key_1 = 2;
-		int key_301 = 1;
-		int key_302 = 2;
-		int key_14 = 1;
-		int key_299 = 2;
+		boolean color_30 = false;
+		int key_25 = 1;
+		int key_1 = 3;
+		int key_409 = 4;
+		int key_14 = 2;
+		int key_299 = 3;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
-		Object value_386 = null;
+		Object value_26 = null;
+		Object value_414 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -234,17 +220,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		right_4.key = key_381;
-		right_4.value = value_386;
-		right_4.left = left_384;
-		right_4.right = right_382;
+		left_16.key = key_25;
+		left_16.value = value_26;
+		left_16.left = left_27;
+		left_16.right = right_28;
+		left_16.parent = parent_29;
+		left_16.color = color_30;
+		right_4.key = key_409;
+		right_4.value = value_414;
+		right_4.left = left_412;
+		right_4.right = right_410;
 		right_4.parent = obj.root;
-		right_4.color = color_385;
+		right_4.color = color_413;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test8() throws Exception {
+	public void test_put7() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -305,11 +298,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test9() throws Exception {
+	public void test_put8() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -326,27 +320,27 @@ public class TreeMap_put1 extends TestJPF {
 		Entry parent_71 = obj.root;
 		Entry right_299 = right_4;
 		Entry right_302 = right_4;
-		Entry left_486 = null;
-		Entry right_484 = null;
-		Entry left_494 = null;
-		Entry right_492 = null;
+		Entry left_456 = null;
+		Entry right_454 = null;
+		Entry left_464 = null;
+		Entry right_462 = null;
 		int key_67 = 5;
 		obj.size = 6;
+		int key_461 = 6;
 		boolean color_6 = true;
-		int key_491 = 6;
+		boolean color_465 = true;
 		int key = 0;
 		boolean color_30 = false;
+		int key_453 = 4;
 		int key_25 = 1;
 		int key_303 = 5;
 		int key_14 = 2;
 		boolean color_72 = false;
 		boolean color_19 = true;
-		int key_483 = 4;
+		boolean color_457 = true;
 		int key_300 = 3;
-		boolean color_495 = true;
 		int key_1 = 3;
 		int key_301 = 5;
-		boolean color_487 = true;
 		Entry newNode_46 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -354,8 +348,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_26 = null;
 		Object value_68 = null;
-		Object value_488 = null;
-		Object value_496 = null;
+		Object value_458 = null;
+		Object value_466 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -380,23 +374,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_69.key = key_483;
-		left_69.value = value_488;
-		left_69.left = left_486;
-		left_69.right = right_484;
+		left_69.key = key_453;
+		left_69.value = value_458;
+		left_69.left = left_456;
+		left_69.right = right_454;
 		left_69.parent = right_299;
-		left_69.color = color_487;
-		right_70.key = key_491;
-		right_70.value = value_496;
-		right_70.left = left_494;
-		right_70.right = right_492;
+		left_69.color = color_457;
+		right_70.key = key_461;
+		right_70.value = value_466;
+		right_70.left = left_464;
+		right_70.right = right_462;
 		right_70.parent = right_302;
-		right_70.color = color_495;
+		right_70.color = color_465;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test10() throws Exception {
+	public void test_put9() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -414,22 +409,22 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_28 = null;
 		Entry left_49 = null;
 		Entry right_50 = null;
-		Entry left_485 = null;
-		Entry right_483 = null;
+		Entry left_464 = null;
+		Entry right_462 = null;
 		obj.size = 5;
+		int key_461 = 3;
 		boolean color_6 = true;
+		boolean color_465 = true;
 		int key = -2;
 		boolean color_30 = false;
 		int key_307 = 1;
 		int key_25 = -1;
 		int key_302 = 0;
 		int key_305 = 1;
-		boolean color_486 = true;
 		int key_14 = 0;
 		boolean color_19 = true;
 		int key_304 = 0;
 		int key_47 = 1;
-		int key_482 = 3;
 		boolean color_52 = false;
 		int key_1 = 2;
 		int key_301 = -1;
@@ -442,7 +437,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_26 = null;
 		Object value_48 = null;
-		Object value_487 = null;
+		Object value_466 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -467,17 +462,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_50;
 		right_17.parent = parent_51;
 		right_17.color = color_52;
-		right_4.key = key_482;
-		right_4.value = value_487;
-		right_4.left = left_485;
-		right_4.right = right_483;
+		right_4.key = key_461;
+		right_4.value = value_466;
+		right_4.left = left_464;
+		right_4.right = right_462;
 		right_4.parent = obj.root;
-		right_4.color = color_486;
+		right_4.color = color_465;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test11() throws Exception {
+	public void test_put10() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -492,14 +488,13 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_303 = left_16;
 		Entry right_17 = null;
 		Entry right_28 = null;
-		Entry left_423 = null;
-		Entry right_421 = null;
+		Entry left_420 = null;
+		Entry right_418 = null;
 		boolean color_19 = true;
-		int key_420 = 4;
 		obj.size = 4;
-		boolean color_424 = true;
 		boolean color_6 = true;
 		int key_304 = 1;
+		boolean color_421 = true;
 		int key = 0;
 		boolean color_30 = false;
 		int key_25 = 1;
@@ -508,13 +503,14 @@ public class TreeMap_put1 extends TestJPF {
 		int key_302 = 3;
 		int key_305 = 2;
 		int key_14 = 2;
+		int key_417 = 4;
 		int key_299 = 3;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_26 = null;
-		Object value_425 = null;
+		Object value_422 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -533,82 +529,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_28;
 		left_16.parent = parent_29;
 		left_16.color = color_30;
-		right_4.key = key_420;
-		right_4.value = value_425;
-		right_4.left = left_423;
-		right_4.right = right_421;
+		right_4.key = key_417;
+		right_4.value = value_422;
+		right_4.left = left_420;
+		right_4.right = right_418;
 		right_4.parent = obj.root;
-		right_4.color = color_424;
+		right_4.color = color_421;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test12() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry right_4 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_29 = left_3;
-		Entry left_27 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry right_17 = null;
-		Entry right_28 = null;
-		Entry left_421 = null;
-		Entry right_419 = null;
-		boolean color_19 = true;
-		obj.size = 4;
-		boolean color_422 = true;
-		boolean color_6 = true;
-		int key_304 = 1;
-		int key = 0;
-		boolean color_30 = false;
-		int key_25 = 1;
-		int key_1 = 3;
-		int key_301 = 2;
-		int key_302 = 3;
-		int key_305 = 2;
-		int key_418 = 4;
-		int key_14 = 2;
-		int key_299 = 3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_26 = null;
-		Object value_423 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_25;
-		left_16.value = value_26;
-		left_16.left = left_27;
-		left_16.right = right_28;
-		left_16.parent = parent_29;
-		left_16.color = color_30;
-		right_4.key = key_418;
-		right_4.value = value_423;
-		right_4.left = left_421;
-		right_4.right = right_419;
-		right_4.parent = obj.root;
-		right_4.color = color_422;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test13() throws Exception {
+	public void test_put11() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -671,11 +603,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_422;
 		right_4.parent = obj.root;
 		right_4.color = color_425;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test14() throws Exception {
+	public void test_put12() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -738,11 +671,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test15() throws Exception {
+	public void test_put13() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -760,28 +694,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_301 = right_4;
 		Entry right_304 = right_4;
 		Entry left_27 = null;
-		Entry left_498 = null;
-		Entry right_496 = null;
-		Entry left_506 = null;
-		Entry right_504 = null;
+		Entry left_468 = null;
+		Entry right_466 = null;
+		Entry left_476 = null;
+		Entry right_474 = null;
 		int key_67 = 4;
 		obj.size = 6;
 		boolean color_6 = true;
-		int key_495 = 3;
 		int key = 0;
 		boolean color_30 = false;
+		boolean color_469 = true;
+		int key_465 = 3;
 		int key_25 = -1;
-		int key_503 = 5;
 		int key_303 = 4;
 		int key_302 = 2;
-		boolean color_507 = true;
-		boolean color_499 = true;
-		int key_14 = 1;
 		int key_305 = 4;
+		boolean color_477 = true;
+		int key_14 = 1;
 		boolean color_72 = false;
 		boolean color_19 = true;
 		int key_300 = -1;
 		int key_1 = 2;
+		int key_473 = 5;
 		Entry newNode_77 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -789,8 +723,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_26 = null;
 		Object value_68 = null;
-		Object value_500 = null;
-		Object value_508 = null;
+		Object value_470 = null;
+		Object value_478 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -815,23 +749,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_69.key = key_495;
-		left_69.value = value_500;
-		left_69.left = left_498;
-		left_69.right = right_496;
+		left_69.key = key_465;
+		left_69.value = value_470;
+		left_69.left = left_468;
+		left_69.right = right_466;
 		left_69.parent = right_301;
-		left_69.color = color_499;
-		right_70.key = key_503;
-		right_70.value = value_508;
-		right_70.left = left_506;
-		right_70.right = right_504;
+		left_69.color = color_469;
+		right_70.key = key_473;
+		right_70.value = value_478;
+		right_70.left = left_476;
+		right_70.right = right_474;
 		right_70.parent = right_304;
-		right_70.color = color_507;
+		right_70.color = color_477;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test16() throws Exception {
+	public void test_put14() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -849,18 +784,19 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_27 = null;
 		Entry left_49 = null;
 		Entry right_50 = null;
-		Entry left_484 = null;
-		Entry right_482 = null;
+		Entry left_463 = null;
+		Entry right_461 = null;
 		int key_299 = 3;
 		obj.size = 5;
 		int key_306 = 2;
 		boolean color_6 = true;
+		int key_460 = 4;
 		int key = 0;
-		int key_481 = 4;
 		boolean color_30 = false;
 		int key_307 = 3;
 		int key_25 = -1;
 		int key_303 = 1;
+		boolean color_464 = true;
 		int key_14 = 1;
 		boolean color_19 = true;
 		int key_304 = 2;
@@ -868,7 +804,6 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_52 = false;
 		int key_1 = 3;
 		int key_301 = -1;
-		boolean color_485 = true;
 		Entry newNode_77 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -876,7 +811,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_26 = null;
 		Object value_48 = null;
-		Object value_486 = null;
+		Object value_465 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -901,17 +836,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_50;
 		right_17.parent = parent_51;
 		right_17.color = color_52;
-		right_4.key = key_481;
-		right_4.value = value_486;
-		right_4.left = left_484;
-		right_4.right = right_482;
+		right_4.key = key_460;
+		right_4.value = value_465;
+		right_4.left = left_463;
+		right_4.right = right_461;
 		right_4.parent = obj.root;
-		right_4.color = color_485;
+		right_4.color = color_464;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test17() throws Exception {
+	public void test_put15() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -926,92 +862,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_303 = left_16;
 		Entry right_17 = null;
 		Entry left_27 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		int key_299 = 2;
-		boolean color_19 = true;
-		obj.size = 4;
-		boolean color_6 = true;
-		int key_304 = -1;
-		int key = 0;
-		boolean color_30 = false;
-		int key_25 = -1;
-		int key_1 = 2;
-		int key_301 = 1;
-		int key_302 = 2;
-		boolean color_423 = true;
-		int key_14 = 1;
-		int key_419 = 3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_26 = null;
-		Object value_424 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_25;
-		left_16.value = value_26;
-		left_16.left = left_27;
-		left_16.right = right_28;
-		left_16.parent = parent_29;
-		left_16.color = color_30;
-		right_4.key = key_419;
-		right_4.value = value_424;
-		right_4.left = left_422;
-		right_4.right = right_420;
-		right_4.parent = obj.root;
-		right_4.color = color_423;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test18() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry right_4 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_29 = left_3;
-		Entry right_28 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry right_17 = null;
-		Entry left_27 = null;
-		Entry left_420 = null;
-		Entry right_418 = null;
+		Entry left_419 = null;
+		Entry right_417 = null;
 		int key_299 = 1;
 		boolean color_19 = true;
 		obj.size = 4;
 		boolean color_6 = true;
+		boolean color_420 = true;
 		int key_304 = -2;
-		boolean color_421 = true;
 		int key = -1;
 		boolean color_30 = false;
+		int key_416 = 2;
 		int key_25 = -2;
 		int key_1 = 1;
 		int key_301 = 0;
 		int key_302 = 1;
 		int key_14 = 0;
-		int key_417 = 2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_26 = null;
-		Object value_422 = null;
+		Object value_421 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1030,17 +902,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_28;
 		left_16.parent = parent_29;
 		left_16.color = color_30;
-		right_4.key = key_417;
-		right_4.value = value_422;
-		right_4.left = left_420;
-		right_4.right = right_418;
+		right_4.key = key_416;
+		right_4.value = value_421;
+		right_4.left = left_419;
+		right_4.right = right_417;
 		right_4.parent = obj.root;
-		right_4.color = color_421;
+		right_4.color = color_420;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test19() throws Exception {
+	public void test_put16() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1088,11 +961,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_385;
 		right_4.parent = obj.root;
 		right_4.color = color_388;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test20() throws Exception {
+	public void test_put17() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1102,16 +976,16 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_17 = null;
 		Entry left_300 = left_3;
 		Entry left_16 = null;
-		Entry left_387 = null;
-		Entry right_385 = null;
+		Entry left_384 = null;
+		Entry right_382 = null;
 		boolean color_19 = true;
 		obj.size = 3;
+		boolean color_385 = true;
 		boolean color_6 = true;
 		int key = 0;
-		boolean color_388 = true;
+		int key_381 = 2;
 		int key_1 = 1;
 		int key_301 = -1;
-		int key_384 = 2;
 		int key_14 = -1;
 		int key_299 = 1;
 		Entry newNode_78 = new Entry();
@@ -1119,7 +993,7 @@ public class TreeMap_put1 extends TestJPF {
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
-		Object value_389 = null;
+		Object value_386 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1132,17 +1006,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		right_4.key = key_384;
-		right_4.value = value_389;
-		right_4.left = left_387;
-		right_4.right = right_385;
+		right_4.key = key_381;
+		right_4.value = value_386;
+		right_4.left = left_384;
+		right_4.right = right_382;
 		right_4.parent = obj.root;
-		right_4.color = color_388;
+		right_4.color = color_385;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test21() throws Exception {
+	public void test_put18() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1153,23 +1028,23 @@ public class TreeMap_put1 extends TestJPF {
 		Entry newNode_78 = obj.root;
 		Entry left_300 = left_3;
 		Entry left_16 = null;
-		Entry left_385 = null;
-		Entry right_383 = null;
+		Entry left_382 = null;
+		Entry right_380 = null;
 		boolean color_19 = true;
-		boolean color_386 = true;
 		obj.size = 3;
+		boolean color_383 = true;
 		boolean color_6 = true;
 		int key = 0;
+		int key_379 = 2;
 		int key_1 = 1;
 		int key_301 = -1;
-		int key_382 = 2;
 		int key_14 = -1;
 		int key_299 = 1;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
-		Object value_387 = null;
+		Object value_384 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1182,66 +1057,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		right_4.key = key_382;
-		right_4.value = value_387;
-		right_4.left = left_385;
-		right_4.right = right_383;
+		right_4.key = key_379;
+		right_4.value = value_384;
+		right_4.left = left_382;
+		right_4.right = right_380;
 		right_4.parent = obj.root;
-		right_4.color = color_386;
+		right_4.color = color_383;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test22() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_4 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry right_17 = null;
-		Entry left_300 = left_3;
-		Entry left_16 = null;
-		Entry left_383 = null;
-		Entry right_381 = null;
-		boolean color_19 = true;
-		obj.size = 3;
-		boolean color_6 = true;
-		int key_380 = 2;
-		int key = 0;
-		int key_1 = 1;
-		int key_301 = -1;
-		int key_14 = -1;
-		boolean color_384 = true;
-		int key_299 = 1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_385 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_4.key = key_380;
-		right_4.value = value_385;
-		right_4.left = left_383;
-		right_4.right = right_381;
-		right_4.parent = obj.root;
-		right_4.color = color_384;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test23() throws Exception {
+	public void test_put19() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1254,19 +1081,19 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_16 = null;
 		Entry right_300 = right_17;
 		Entry right_50 = null;
-		Entry left_453 = null;
-		Entry right_451 = null;
+		Entry left_423 = null;
+		Entry right_421 = null;
 		boolean color_19 = true;
+		int key_420 = 4;
 		obj.size = 4;
+		boolean color_424 = true;
 		boolean color_6 = true;
 		int key_47 = 2;
-		boolean color_454 = true;
 		int key = 1;
 		boolean color_52 = false;
 		int key_1 = 3;
 		int key_301 = 2;
 		int key_302 = 3;
-		int key_450 = 4;
 		int key_14 = 0;
 		int key_299 = 3;
 		Entry newNode_89 = new Entry();
@@ -1275,7 +1102,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_48 = null;
-		Object value_455 = null;
+		Object value_425 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1294,17 +1121,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_50;
 		right_17.parent = parent_51;
 		right_17.color = color_52;
-		right_4.key = key_450;
-		right_4.value = value_455;
-		right_4.left = left_453;
-		right_4.right = right_451;
+		right_4.key = key_420;
+		right_4.value = value_425;
+		right_4.left = left_423;
+		right_4.right = right_421;
 		right_4.parent = obj.root;
-		right_4.color = color_454;
+		right_4.color = color_424;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test24() throws Exception {
+	public void test_put20() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1322,17 +1150,18 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_50 = null;
 		Entry left_27 = null;
 		Entry right_28 = null;
-		Entry left_484 = null;
-		Entry right_482 = null;
+		Entry left_463 = null;
+		Entry right_461 = null;
 		obj.size = 5;
 		int key_306 = -1;
 		boolean color_6 = true;
+		int key_460 = 4;
 		int key = 1;
-		int key_481 = 4;
 		boolean color_30 = false;
 		int key_307 = 0;
 		int key_25 = -1;
 		int key_302 = 3;
+		boolean color_464 = true;
 		int key_14 = 0;
 		boolean color_19 = true;
 		int key_304 = -1;
@@ -1340,7 +1169,6 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_52 = false;
 		int key_1 = 3;
 		int key_301 = 2;
-		boolean color_485 = true;
 		int key_299 = 3;
 		Entry newNode_89 = new Entry();
 		Object value = null;
@@ -1349,7 +1177,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_48 = null;
 		Object value_26 = null;
-		Object value_486 = null;
+		Object value_465 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1374,17 +1202,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_28;
 		left_16.parent = parent_29;
 		left_16.color = color_30;
-		right_4.key = key_481;
-		right_4.value = value_486;
-		right_4.left = left_484;
-		right_4.right = right_482;
+		right_4.key = key_460;
+		right_4.value = value_465;
+		right_4.left = left_463;
+		right_4.right = right_461;
 		right_4.parent = obj.root;
-		right_4.color = color_485;
+		right_4.color = color_464;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test25() throws Exception {
+	public void test_put21() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1399,28 +1228,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_302 = right_17;
 		Entry left_16 = null;
 		Entry right_50 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
+		Entry left_419 = null;
+		Entry right_417 = null;
 		boolean color_19 = true;
 		obj.size = 4;
 		int key_304 = 2;
 		boolean color_6 = true;
+		boolean color_420 = true;
 		int key_47 = 1;
 		int key = 0;
+		int key_416 = 3;
 		boolean color_52 = false;
 		int key_1 = 2;
 		int key_301 = -1;
 		int key_303 = 1;
-		boolean color_423 = true;
 		int key_14 = -1;
-		int key_419 = 3;
 		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_48 = null;
-		Object value_424 = null;
+		Object value_421 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1439,81 +1268,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_50;
 		right_17.parent = parent_51;
 		right_17.color = color_52;
-		right_4.key = key_419;
-		right_4.value = value_424;
-		right_4.left = left_422;
-		right_4.right = right_420;
+		right_4.key = key_416;
+		right_4.value = value_421;
+		right_4.left = left_419;
+		right_4.right = right_417;
 		right_4.parent = obj.root;
-		right_4.color = color_423;
+		right_4.color = color_420;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test26() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_4 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_51 = left_3;
-		Entry left_49 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry left_16 = null;
-		Entry right_50 = null;
-		Entry left_420 = null;
-		Entry right_418 = null;
-		boolean color_19 = true;
-		obj.size = 4;
-		int key_304 = 2;
-		boolean color_6 = true;
-		boolean color_421 = true;
-		int key_47 = 1;
-		int key = 0;
-		boolean color_52 = false;
-		int key_1 = 2;
-		int key_301 = -1;
-		int key_303 = 1;
-		int key_14 = -1;
-		int key_417 = 3;
-		int key_299 = 2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_48 = null;
-		Object value_422 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_47;
-		right_17.value = value_48;
-		right_17.left = left_49;
-		right_17.right = right_50;
-		right_17.parent = parent_51;
-		right_17.color = color_52;
-		right_4.key = key_417;
-		right_4.value = value_422;
-		right_4.left = left_420;
-		right_4.right = right_418;
-		right_4.parent = obj.root;
-		right_4.color = color_421;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test27() throws Exception {
+	public void test_put22() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1576,11 +1342,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_424;
 		right_4.parent = obj.root;
 		right_4.color = color_427;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test28() throws Exception {
+	public void test_put23() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1592,26 +1359,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_50 = null;
 		Entry left_16 = null;
 		Entry left_49 = null;
-		Entry left_448 = null;
-		Entry right_446 = null;
+		Entry newNode_100 = left_49;
+		Entry left_416 = null;
+		Entry right_414 = null;
+		int key_413 = 2;
 		boolean color_19 = true;
 		obj.size = 4;
+		boolean color_417 = true;
 		boolean color_6 = true;
 		int key_47 = -1;
 		int key = 0;
 		boolean color_52 = false;
-		int key_445 = 2;
 		int key_1 = 1;
 		int key_14 = -2;
-		boolean color_449 = true;
 		int key_299 = 1;
-		Entry newNode_100 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_48 = null;
-		Object value_450 = null;
+		Object value_418 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1630,17 +1397,79 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_50;
 		right_17.parent = parent_51;
 		right_17.color = color_52;
-		right_4.key = key_445;
-		right_4.value = value_450;
-		right_4.left = left_448;
-		right_4.right = right_446;
+		right_4.key = key_413;
+		right_4.value = value_418;
+		right_4.left = left_416;
+		right_4.right = right_414;
 		right_4.parent = obj.root;
-		right_4.color = color_449;
+		right_4.color = color_417;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test29() throws Exception {
+	public void test_put24() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_17 = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_18 = obj.root;
+		Entry parent_51 = left_3;
+		Entry right_50 = null;
+		Entry left_16 = null;
+		Entry left_49 = null;
+		Entry left_418 = null;
+		Entry right_416 = null;
+		boolean color_19 = true;
+		boolean color_419 = true;
+		obj.size = 4;
+		boolean color_6 = true;
+		int key_47 = -1;
+		int key = 0;
+		boolean color_52 = false;
+		int key_1 = 1;
+		int key_14 = -2;
+		int key_415 = 2;
+		int key_299 = 1;
+		Entry newNode_100 = new Entry();
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_15 = null;
+		Object value_48 = null;
+		Object value_420 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_14;
+		left_3.value = value_15;
+		left_3.left = left_16;
+		left_3.right = right_17;
+		left_3.parent = parent_18;
+		left_3.color = color_19;
+		right_17.key = key_47;
+		right_17.value = value_48;
+		right_17.left = left_49;
+		right_17.right = right_50;
+		right_17.parent = parent_51;
+		right_17.color = color_52;
+		right_4.key = key_415;
+		right_4.value = value_420;
+		right_4.left = left_418;
+		right_4.right = right_416;
+		right_4.parent = obj.root;
+		right_4.color = color_419;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put25() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1658,25 +1487,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_49 = null;
 		Entry left_27 = null;
 		Entry right_28 = null;
-		Entry left_486 = null;
-		Entry right_484 = null;
+		Entry left_465 = null;
+		Entry right_463 = null;
 		obj.size = 5;
 		int key_306 = -1;
 		boolean color_6 = true;
 		int key = 2;
 		boolean color_30 = false;
+		boolean color_466 = true;
 		int key_307 = 0;
 		int key_25 = -1;
 		int key_302 = 1;
 		int key_14 = 0;
+		int key_462 = 4;
 		boolean color_19 = true;
-		int key_483 = 4;
 		int key_304 = -1;
 		int key_47 = 1;
 		boolean color_52 = false;
 		int key_1 = 3;
 		int key_301 = 0;
-		boolean color_487 = true;
 		int key_299 = 3;
 		Entry newNode_100 = new Entry();
 		Object value = null;
@@ -1685,7 +1514,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_48 = null;
 		Object value_26 = null;
-		Object value_488 = null;
+		Object value_467 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1710,17 +1539,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_28;
 		left_16.parent = parent_29;
 		left_16.color = color_30;
-		right_4.key = key_483;
-		right_4.value = value_488;
-		right_4.left = left_486;
-		right_4.right = right_484;
+		right_4.key = key_462;
+		right_4.value = value_467;
+		right_4.left = left_465;
+		right_4.right = right_463;
 		right_4.parent = obj.root;
-		right_4.color = color_487;
+		right_4.color = color_466;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test30() throws Exception {
+	public void test_put26() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1735,20 +1565,20 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_302 = right_17;
 		Entry left_16 = null;
 		Entry left_49 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
 		boolean color_19 = true;
 		obj.size = 4;
-		boolean color_425 = true;
+		boolean color_422 = true;
 		int key_304 = -1;
 		boolean color_6 = true;
 		int key_47 = -1;
 		int key = 0;
 		boolean color_52 = false;
-		int key_421 = 2;
 		int key_1 = 1;
 		int key_301 = -2;
 		int key_303 = -2;
+		int key_418 = 2;
 		int key_14 = -2;
 		int key_299 = 1;
 		Object value = null;
@@ -1756,7 +1586,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_48 = null;
-		Object value_426 = null;
+		Object value_423 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1775,52 +1605,37 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_50;
 		right_17.parent = parent_51;
 		right_17.color = color_52;
-		right_4.key = key_421;
-		right_4.value = value_426;
-		right_4.left = left_424;
-		right_4.right = right_422;
+		right_4.key = key_418;
+		right_4.value = value_423;
+		right_4.left = left_421;
+		right_4.right = right_419;
 		right_4.parent = obj.root;
-		right_4.color = color_425;
+		right_4.color = color_422;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test31() throws Exception {
+	public void test_put27() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_4 = new Entry();
 		Entry parent_5 = null;
 		Entry parent_18 = obj.root;
-		Entry parent_51 = left_3;
-		Entry right_50 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
 		Entry left_16 = null;
-		Entry left_49 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		boolean color_19 = true;
-		obj.size = 4;
-		int key_304 = -1;
+		Entry right_4 = null;
+		Entry right_17 = null;
+		Entry newNode_111 = right_17;
+		boolean color_19 = false;
+		obj.size = 2;
+		int key_1 = 2;
 		boolean color_6 = true;
-		int key_47 = -1;
 		int key = 0;
-		boolean color_52 = false;
-		int key_1 = 1;
-		int key_301 = -2;
-		int key_303 = -2;
-		boolean color_423 = true;
-		int key_14 = -2;
-		int key_419 = 2;
-		int key_299 = 1;
+		int key_14 = 1;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
-		Object value_48 = null;
-		Object value_424 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -1833,23 +1648,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		right_17.key = key_47;
-		right_17.value = value_48;
-		right_17.left = left_49;
-		right_17.right = right_50;
-		right_17.parent = parent_51;
-		right_17.color = color_52;
-		right_4.key = key_419;
-		right_4.value = value_424;
-		right_4.left = left_422;
-		right_4.right = right_420;
-		right_4.parent = obj.root;
-		right_4.color = color_423;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test32() throws Exception {
+	public void test_put28() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1881,11 +1685,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test33() throws Exception {
+	public void test_put29() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1917,11 +1722,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test34() throws Exception {
+	public void test_put30() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -1973,11 +1779,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test35() throws Exception {
+	public void test_put31() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2013,50 +1820,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test36() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry left_16 = null;
-		Entry left_300 = left_3;
-		Entry right_4 = null;
-		Entry right_17 = null;
-		boolean color_19 = false;
-		obj.size = 2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_1 = 2;
-		int key_301 = 1;
-		int key_302 = 2;
-		int key_14 = 1;
-		int key_299 = 2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test37() throws Exception {
+	public void test_put32() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2070,25 +1839,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry left_303 = left_16;
 		Entry right_104 = null;
-		Entry left_425 = null;
-		Entry right_423 = null;
-		Entry left_440 = null;
-		Entry right_438 = null;
+		Entry left_422 = null;
+		Entry right_420 = null;
+		Entry left_437 = null;
+		Entry right_435 = null;
 		obj.size = 5;
+		boolean color_438 = true;
 		boolean color_6 = true;
 		int key = 0;
 		boolean color_106 = true;
 		int key_302 = 4;
 		int key_305 = 2;
+		boolean color_423 = true;
+		int key_419 = 5;
 		int key_14 = 2;
-		int key_437 = 3;
 		boolean color_19 = false;
 		int key_304 = 1;
-		boolean color_426 = true;
-		int key_422 = 5;
 		int key_1 = 4;
 		int key_301 = 2;
-		boolean color_441 = true;
+		int key_434 = 3;
 		int key_101 = 1;
 		int key_299 = 4;
 		Entry newNode_132 = new Entry();
@@ -2097,8 +1866,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
-		Object value_427 = null;
-		Object value_442 = null;
+		Object value_424 = null;
+		Object value_439 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2117,23 +1886,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_422;
-		right_4.value = value_427;
-		right_4.left = left_425;
-		right_4.right = right_423;
+		right_4.key = key_419;
+		right_4.value = value_424;
+		right_4.left = left_422;
+		right_4.right = right_420;
 		right_4.parent = obj.root;
-		right_4.color = color_426;
-		right_17.key = key_437;
-		right_17.value = value_442;
-		right_17.left = left_440;
-		right_17.right = right_438;
+		right_4.color = color_423;
+		right_17.key = key_434;
+		right_17.value = value_439;
+		right_17.left = left_437;
+		right_17.right = right_435;
 		right_17.parent = left_300;
-		right_17.color = color_441;
+		right_17.color = color_438;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test38() throws Exception {
+	public void test_put33() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2148,34 +1918,34 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry left_303 = left_16;
 		Entry right_104 = null;
-		Entry left_423 = null;
-		Entry right_421 = null;
-		Entry left_438 = null;
-		Entry right_436 = null;
+		Entry left_420 = null;
+		Entry right_418 = null;
+		Entry left_435 = null;
+		Entry right_433 = null;
 		obj.size = 5;
-		boolean color_424 = true;
+		int key_432 = 1;
 		boolean color_6 = true;
-		boolean color_439 = true;
-		int key = 0;
+		boolean color_421 = true;
+		int key = -2;
 		boolean color_106 = true;
-		int key_302 = 4;
-		int key_305 = 2;
-		int key_14 = 2;
+		int key_302 = 2;
+		int key_305 = 0;
+		int key_417 = 3;
+		boolean color_436 = true;
+		int key_14 = 0;
 		boolean color_19 = false;
-		int key_435 = 3;
-		int key_420 = 5;
-		int key_304 = 1;
-		int key_1 = 4;
-		int key_301 = 2;
-		int key_101 = 1;
-		int key_299 = 4;
+		int key_304 = -1;
+		int key_1 = 2;
+		int key_301 = 0;
+		int key_101 = -1;
+		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
-		Object value_425 = null;
-		Object value_440 = null;
+		Object value_422 = null;
+		Object value_437 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2194,64 +1964,69 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_420;
-		right_4.value = value_425;
-		right_4.left = left_423;
-		right_4.right = right_421;
+		right_4.key = key_417;
+		right_4.value = value_422;
+		right_4.left = left_420;
+		right_4.right = right_418;
 		right_4.parent = obj.root;
-		right_4.color = color_424;
-		right_17.key = key_435;
-		right_17.value = value_440;
-		right_17.left = left_438;
-		right_17.right = right_436;
+		right_4.color = color_421;
+		right_17.key = key_432;
+		right_17.value = value_437;
+		right_17.left = left_435;
+		right_17.right = right_433;
 		right_17.parent = left_300;
-		right_17.color = color_439;
+		right_17.color = color_436;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test39() throws Exception {
+	public void test_put34() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
 		Entry left_16 = new Entry();
+		Entry left_103 = new Entry();
 		Entry right_4 = new Entry();
 		Entry right_17 = new Entry();
 		Entry parent_5 = null;
 		Entry parent_18 = obj.root;
 		Entry parent_105 = left_3;
-		Entry left_103 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
+		Entry parent_126 = left_16;
+		Entry left_124 = null;
 		Entry right_104 = null;
-		Entry left_421 = null;
-		Entry right_419 = null;
-		Entry left_436 = null;
-		Entry right_434 = null;
-		obj.size = 5;
+		Entry right_125 = null;
+		Entry newNode_143 = right_125;
+		Entry left_300 = left_3;
+		Entry left_449 = null;
+		Entry right_447 = null;
+		Entry left_464 = null;
+		Entry right_462 = null;
+		boolean color_450 = true;
+		obj.size = 6;
+		int key_461 = 4;
 		boolean color_6 = true;
-		boolean color_437 = true;
+		boolean color_127 = false;
+		boolean color_465 = true;
 		int key = 0;
 		boolean color_106 = true;
-		int key_433 = 3;
-		int key_302 = 4;
-		int key_305 = 2;
-		int key_14 = 2;
+		int key_302 = 5;
+		int key_14 = 3;
 		boolean color_19 = false;
-		boolean color_422 = true;
-		int key_304 = 1;
-		int key_1 = 4;
-		int key_301 = 2;
-		int key_418 = 5;
-		int key_101 = 1;
-		int key_299 = 4;
+		int key_446 = 6;
+		int key_1 = 5;
+		int key_301 = 3;
+		int key_122 = 1;
+		int key_101 = 2;
+		int key_299 = 5;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
-		Object value_423 = null;
-		Object value_438 = null;
+		Object value_123 = null;
+		Object value_451 = null;
+		Object value_466 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2270,23 +2045,30 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_418;
-		right_4.value = value_423;
-		right_4.left = left_421;
-		right_4.right = right_419;
+		left_103.key = key_122;
+		left_103.value = value_123;
+		left_103.left = left_124;
+		left_103.right = right_125;
+		left_103.parent = parent_126;
+		left_103.color = color_127;
+		right_4.key = key_446;
+		right_4.value = value_451;
+		right_4.left = left_449;
+		right_4.right = right_447;
 		right_4.parent = obj.root;
-		right_4.color = color_422;
-		right_17.key = key_433;
-		right_17.value = value_438;
-		right_17.left = left_436;
-		right_17.right = right_434;
+		right_4.color = color_450;
+		right_17.key = key_461;
+		right_17.value = value_466;
+		right_17.left = left_464;
+		right_17.right = right_462;
 		right_17.parent = left_300;
-		right_17.color = color_437;
+		right_17.color = color_465;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test40() throws Exception {
+	public void test_put35() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2306,14 +2088,13 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_303 = right_17;
 		Entry left_114 = null;
 		Entry right_115 = null;
-		Entry left_521 = null;
-		Entry right_519 = null;
+		Entry left_491 = null;
+		Entry right_489 = null;
 		obj.size = 6;
 		boolean color_6 = true;
 		boolean color_127 = false;
-		int key_518 = 3;
+		boolean color_492 = true;
 		int key = -3;
-		boolean color_522 = true;
 		boolean color_106 = true;
 		int key_112 = 1;
 		int key_302 = 1;
@@ -2325,6 +2106,7 @@ public class TreeMap_put1 extends TestJPF {
 		int key_1 = 2;
 		int key_301 = 0;
 		int key_122 = -2;
+		int key_488 = 3;
 		int key_101 = -1;
 		int key_299 = 2;
 		Entry newNode_143 = new Entry();
@@ -2335,7 +2117,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_102 = null;
 		Object value_123 = null;
 		Object value_113 = null;
-		Object value_523 = null;
+		Object value_493 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2366,17 +2148,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_115;
 		right_17.parent = parent_116;
 		right_17.color = color_117;
-		right_4.key = key_518;
-		right_4.value = value_523;
-		right_4.left = left_521;
-		right_4.right = right_519;
+		right_4.key = key_488;
+		right_4.value = value_493;
+		right_4.left = left_491;
+		right_4.right = right_489;
 		right_4.parent = obj.root;
-		right_4.color = color_522;
+		right_4.color = color_492;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test41() throws Exception {
+	public void test_put36() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2395,39 +2178,39 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_306 = left_103;
 		Entry right_104 = null;
 		Entry right_125 = null;
-		Entry left_460 = null;
-		Entry right_458 = null;
-		Entry left_475 = null;
-		Entry right_473 = null;
+		Entry left_457 = null;
+		Entry right_455 = null;
+		Entry left_472 = null;
+		Entry right_470 = null;
 		obj.size = 6;
 		boolean color_6 = true;
 		boolean color_127 = false;
-		int key = 0;
-		int key_457 = 6;
-		int key_307 = 1;
+		int key = -3;
+		int key_307 = -2;
 		boolean color_106 = true;
-		boolean color_461 = true;
-		int key_302 = 5;
-		int key_305 = 3;
-		int key_14 = 3;
+		int key_302 = 2;
+		int key_454 = 3;
+		boolean color_458 = true;
+		int key_305 = 0;
+		int key_14 = 0;
 		boolean color_19 = false;
-		int key_304 = 2;
-		int key_472 = 4;
-		boolean color_476 = true;
-		int key_1 = 5;
-		int key_301 = 3;
-		int key_122 = 1;
-		int key_308 = 2;
-		int key_101 = 2;
-		int key_299 = 5;
+		int key_304 = -1;
+		int key_469 = 1;
+		int key_1 = 2;
+		int key_122 = -2;
+		int key_301 = 0;
+		int key_308 = -1;
+		int key_101 = -1;
+		boolean color_473 = true;
+		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
 		Object value_123 = null;
-		Object value_462 = null;
-		Object value_477 = null;
+		Object value_459 = null;
+		Object value_474 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2452,114 +2235,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_103.right = right_125;
 		left_103.parent = parent_126;
 		left_103.color = color_127;
-		right_4.key = key_457;
-		right_4.value = value_462;
-		right_4.left = left_460;
-		right_4.right = right_458;
+		right_4.key = key_454;
+		right_4.value = value_459;
+		right_4.left = left_457;
+		right_4.right = right_455;
 		right_4.parent = obj.root;
-		right_4.color = color_461;
-		right_17.key = key_472;
-		right_17.value = value_477;
-		right_17.left = left_475;
-		right_17.right = right_473;
+		right_4.color = color_458;
+		right_17.key = key_469;
+		right_17.value = value_474;
+		right_17.left = left_472;
+		right_17.right = right_470;
 		right_17.parent = left_300;
-		right_17.color = color_476;
+		right_17.color = color_473;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test42() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry left_103 = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_17 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_105 = left_3;
-		Entry parent_126 = left_16;
-		Entry left_124 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry left_306 = left_103;
-		Entry right_104 = null;
-		Entry right_125 = null;
-		Entry left_458 = null;
-		Entry right_456 = null;
-		Entry left_473 = null;
-		Entry right_471 = null;
-		int key_470 = 4;
-		obj.size = 6;
-		boolean color_6 = true;
-		boolean color_127 = false;
-		int key = 0;
-		int key_307 = 1;
-		boolean color_106 = true;
-		int key_302 = 5;
-		int key_305 = 3;
-		boolean color_474 = true;
-		int key_14 = 3;
-		int key_455 = 6;
-		boolean color_459 = true;
-		boolean color_19 = false;
-		int key_304 = 2;
-		int key_1 = 5;
-		int key_301 = 3;
-		int key_122 = 1;
-		int key_308 = 2;
-		int key_101 = 2;
-		int key_299 = 5;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_102 = null;
-		Object value_123 = null;
-		Object value_460 = null;
-		Object value_475 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_101;
-		left_16.value = value_102;
-		left_16.left = left_103;
-		left_16.right = right_104;
-		left_16.parent = parent_105;
-		left_16.color = color_106;
-		left_103.key = key_122;
-		left_103.value = value_123;
-		left_103.left = left_124;
-		left_103.right = right_125;
-		left_103.parent = parent_126;
-		left_103.color = color_127;
-		right_4.key = key_455;
-		right_4.value = value_460;
-		right_4.left = left_458;
-		right_4.right = right_456;
-		right_4.parent = obj.root;
-		right_4.color = color_459;
-		right_17.key = key_470;
-		right_17.value = value_475;
-		right_17.left = left_473;
-		right_17.right = right_471;
-		right_17.parent = left_300;
-		right_17.color = color_474;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test43() throws Exception {
+	public void test_put37() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2648,11 +2341,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_474;
 		right_17.parent = left_300;
 		right_17.color = color_477;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test44() throws Exception {
+	public void test_put38() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2673,28 +2367,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_124 = null;
 		Entry left_114 = null;
 		Entry right_115 = null;
-		Entry left_525 = null;
-		Entry right_523 = null;
+		Entry left_495 = null;
+		Entry right_493 = null;
 		obj.size = 6;
-		int key_306 = 1;
+		int key_306 = 3;
 		boolean color_6 = true;
 		boolean color_127 = false;
-		int key = -2;
-		int key_307 = 2;
+		int key = 0;
+		boolean color_496 = true;
+		int key_307 = 4;
 		boolean color_106 = true;
-		int key_112 = 1;
-		int key_303 = 0;
-		int key_14 = 0;
-		int key_522 = 3;
+		int key_112 = 3;
+		int key_303 = 2;
+		int key_14 = 2;
 		boolean color_19 = false;
 		boolean color_117 = true;
-		int key_304 = 1;
-		int key_1 = 2;
-		int key_301 = -3;
-		boolean color_526 = true;
-		int key_122 = -3;
-		int key_101 = -1;
-		int key_299 = 2;
+		int key_304 = 3;
+		int key_1 = 4;
+		int key_301 = -1;
+		int key_122 = -1;
+		int key_101 = 1;
+		int key_492 = 5;
+		int key_299 = 4;
 		Entry newNode_164 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -2703,7 +2397,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_102 = null;
 		Object value_123 = null;
 		Object value_113 = null;
-		Object value_527 = null;
+		Object value_497 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2734,17 +2428,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_115;
 		right_17.parent = parent_116;
 		right_17.color = color_117;
-		right_4.key = key_522;
-		right_4.value = value_527;
-		right_4.left = left_525;
-		right_4.right = right_523;
+		right_4.key = key_492;
+		right_4.value = value_497;
+		right_4.left = left_495;
+		right_4.right = right_493;
 		right_4.parent = obj.root;
-		right_4.color = color_526;
+		right_4.color = color_496;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test45() throws Exception {
+	public void test_put39() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2763,29 +2458,29 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_306 = left_103;
 		Entry right_104 = null;
 		Entry left_124 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
+		Entry left_456 = null;
+		Entry right_454 = null;
+		Entry left_471 = null;
+		Entry right_469 = null;
 		obj.size = 6;
 		boolean color_6 = true;
 		boolean color_127 = false;
 		int key = -2;
+		int key_453 = 3;
+		int key_468 = 1;
 		int key_307 = -3;
 		boolean color_106 = true;
-		boolean color_460 = true;
 		int key_302 = 2;
 		int key_305 = 0;
 		int key_14 = 0;
+		boolean color_457 = true;
 		boolean color_19 = false;
 		int key_304 = -1;
-		int key_456 = 3;
-		boolean color_475 = true;
-		int key_471 = 1;
 		int key_1 = 2;
 		int key_122 = -3;
 		int key_301 = 0;
 		int key_101 = -1;
+		boolean color_472 = true;
 		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
@@ -2793,8 +2488,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_102 = null;
 		Object value_123 = null;
-		Object value_461 = null;
-		Object value_476 = null;
+		Object value_458 = null;
+		Object value_473 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -2819,113 +2514,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_103.right = right_125;
 		left_103.parent = parent_126;
 		left_103.color = color_127;
-		right_4.key = key_456;
-		right_4.value = value_461;
-		right_4.left = left_459;
-		right_4.right = right_457;
+		right_4.key = key_453;
+		right_4.value = value_458;
+		right_4.left = left_456;
+		right_4.right = right_454;
 		right_4.parent = obj.root;
-		right_4.color = color_460;
-		right_17.key = key_471;
-		right_17.value = value_476;
-		right_17.left = left_474;
-		right_17.right = right_472;
+		right_4.color = color_457;
+		right_17.key = key_468;
+		right_17.value = value_473;
+		right_17.left = left_471;
+		right_17.right = right_469;
 		right_17.parent = left_300;
-		right_17.color = color_475;
+		right_17.color = color_472;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test46() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry left_103 = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_17 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_105 = left_3;
-		Entry parent_126 = left_16;
-		Entry right_125 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry left_306 = left_103;
-		Entry right_104 = null;
-		Entry left_124 = null;
-		Entry left_457 = null;
-		Entry right_455 = null;
-		Entry left_472 = null;
-		Entry right_470 = null;
-		obj.size = 6;
-		boolean color_6 = true;
-		boolean color_127 = false;
-		int key = -2;
-		int key_307 = -3;
-		boolean color_106 = true;
-		int key_302 = 2;
-		int key_454 = 3;
-		boolean color_458 = true;
-		int key_305 = 0;
-		int key_14 = 0;
-		boolean color_19 = false;
-		int key_304 = -1;
-		int key_469 = 1;
-		int key_1 = 2;
-		int key_122 = -3;
-		int key_301 = 0;
-		int key_101 = -1;
-		boolean color_473 = true;
-		int key_299 = 2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_102 = null;
-		Object value_123 = null;
-		Object value_459 = null;
-		Object value_474 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_101;
-		left_16.value = value_102;
-		left_16.left = left_103;
-		left_16.right = right_104;
-		left_16.parent = parent_105;
-		left_16.color = color_106;
-		left_103.key = key_122;
-		left_103.value = value_123;
-		left_103.left = left_124;
-		left_103.right = right_125;
-		left_103.parent = parent_126;
-		left_103.color = color_127;
-		right_4.key = key_454;
-		right_4.value = value_459;
-		right_4.left = left_457;
-		right_4.right = right_455;
-		right_4.parent = obj.root;
-		right_4.color = color_458;
-		right_17.key = key_469;
-		right_17.value = value_474;
-		right_17.left = left_472;
-		right_17.right = right_470;
-		right_17.parent = left_300;
-		right_17.color = color_473;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test47() throws Exception {
+	public void test_put40() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -2999,11 +2605,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_437;
 		right_17.parent = left_300;
 		right_17.color = color_440;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test48() throws Exception {
+	public void test_put41() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3017,34 +2624,34 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry left_303 = left_16;
 		Entry left_103 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		Entry left_439 = null;
-		Entry right_437 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_436 = null;
+		Entry right_434 = null;
 		obj.size = 5;
-		boolean color_425 = true;
 		boolean color_6 = true;
-		int key_436 = 1;
-		int key = -1;
+		boolean color_437 = true;
+		int key = 0;
 		boolean color_106 = true;
-		int key_302 = 2;
-		int key_14 = 0;
+		int key_433 = 2;
+		int key_302 = 3;
+		int key_14 = 1;
 		boolean color_19 = false;
-		int key_304 = -2;
-		int key_421 = 3;
-		int key_1 = 2;
-		int key_301 = 0;
-		int key_101 = -2;
-		boolean color_440 = true;
-		int key_299 = 2;
+		boolean color_422 = true;
+		int key_304 = -1;
+		int key_1 = 3;
+		int key_301 = 1;
+		int key_418 = 4;
+		int key_101 = -1;
+		int key_299 = 3;
 		Entry newNode_165 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
-		Object value_426 = null;
-		Object value_441 = null;
+		Object value_423 = null;
+		Object value_438 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -3063,23 +2670,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_421;
-		right_4.value = value_426;
-		right_4.left = left_424;
-		right_4.right = right_422;
+		right_4.key = key_418;
+		right_4.value = value_423;
+		right_4.left = left_421;
+		right_4.right = right_419;
 		right_4.parent = obj.root;
-		right_4.color = color_425;
-		right_17.key = key_436;
-		right_17.value = value_441;
-		right_17.left = left_439;
-		right_17.right = right_437;
+		right_4.color = color_422;
+		right_17.key = key_433;
+		right_17.value = value_438;
+		right_17.left = left_436;
+		right_17.right = right_434;
 		right_17.parent = left_300;
-		right_17.color = color_440;
+		right_17.color = color_437;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test49() throws Exception {
+	public void test_put42() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3094,24 +2702,24 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry left_303 = left_16;
 		Entry left_103 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		Entry left_437 = null;
-		Entry right_435 = null;
+		Entry left_419 = null;
+		Entry right_417 = null;
+		Entry left_434 = null;
+		Entry right_432 = null;
 		obj.size = 5;
-		boolean color_438 = true;
 		boolean color_6 = true;
+		boolean color_420 = true;
+		boolean color_435 = true;
 		int key = -1;
 		boolean color_106 = true;
 		int key_302 = 2;
-		boolean color_423 = true;
-		int key_419 = 3;
 		int key_14 = 0;
 		boolean color_19 = false;
 		int key_304 = -2;
+		int key_416 = 3;
 		int key_1 = 2;
 		int key_301 = 0;
-		int key_434 = 1;
+		int key_431 = 1;
 		int key_101 = -2;
 		int key_299 = 2;
 		Object value = null;
@@ -3119,8 +2727,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
-		Object value_424 = null;
-		Object value_439 = null;
+		Object value_421 = null;
+		Object value_436 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -3139,98 +2747,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_419;
-		right_4.value = value_424;
-		right_4.left = left_422;
-		right_4.right = right_420;
+		right_4.key = key_416;
+		right_4.value = value_421;
+		right_4.left = left_419;
+		right_4.right = right_417;
 		right_4.parent = obj.root;
-		right_4.color = color_423;
-		right_17.key = key_434;
-		right_17.value = value_439;
-		right_17.left = left_437;
-		right_17.right = right_435;
+		right_4.color = color_420;
+		right_17.key = key_431;
+		right_17.value = value_436;
+		right_17.left = left_434;
+		right_17.right = right_432;
 		right_17.parent = left_300;
-		right_17.color = color_438;
+		right_17.color = color_435;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test50() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_17 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_105 = left_3;
-		Entry right_104 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry left_103 = null;
-		Entry left_420 = null;
-		Entry right_418 = null;
-		Entry left_435 = null;
-		Entry right_433 = null;
-		obj.size = 5;
-		int key_432 = 1;
-		boolean color_6 = true;
-		boolean color_421 = true;
-		int key = -1;
-		boolean color_106 = true;
-		int key_302 = 2;
-		int key_417 = 3;
-		boolean color_436 = true;
-		int key_14 = 0;
-		boolean color_19 = false;
-		int key_304 = -2;
-		int key_1 = 2;
-		int key_301 = 0;
-		int key_101 = -2;
-		int key_299 = 2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_102 = null;
-		Object value_422 = null;
-		Object value_437 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_101;
-		left_16.value = value_102;
-		left_16.left = left_103;
-		left_16.right = right_104;
-		left_16.parent = parent_105;
-		left_16.color = color_106;
-		right_4.key = key_417;
-		right_4.value = value_422;
-		right_4.left = left_420;
-		right_4.right = right_418;
-		right_4.parent = obj.root;
-		right_4.color = color_421;
-		right_17.key = key_432;
-		right_17.value = value_437;
-		right_17.left = left_435;
-		right_17.right = right_433;
-		right_17.parent = left_300;
-		right_17.color = color_436;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test51() throws Exception {
+	public void test_put43() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3247,29 +2781,29 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry right_303 = right_104;
 		Entry right_147 = null;
-		Entry left_490 = null;
-		Entry right_488 = null;
-		Entry left_505 = null;
-		Entry right_503 = null;
+		Entry left_460 = null;
+		Entry right_458 = null;
+		Entry left_475 = null;
+		Entry right_473 = null;
 		obj.size = 6;
-		int key_144 = 1;
-		int key_502 = 3;
+		int key_144 = -1;
 		boolean color_6 = true;
-		int key = 0;
-		int key_487 = 5;
+		int key = -2;
+		int key_457 = 3;
 		boolean color_106 = true;
-		int key_302 = 4;
-		int key_305 = 2;
-		int key_14 = 2;
+		boolean color_461 = true;
+		int key_302 = 2;
+		int key_305 = 0;
+		int key_14 = 0;
 		boolean color_19 = false;
-		boolean color_491 = true;
-		int key_304 = 1;
-		boolean color_506 = true;
+		int key_304 = -1;
+		int key_472 = 1;
 		boolean color_149 = false;
-		int key_1 = 4;
-		int key_301 = 2;
-		int key_101 = -1;
-		int key_299 = 4;
+		boolean color_476 = true;
+		int key_1 = 2;
+		int key_301 = 0;
+		int key_101 = -3;
+		int key_299 = 2;
 		Entry newNode_176 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -3277,8 +2811,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_102 = null;
 		Object value_145 = null;
-		Object value_492 = null;
-		Object value_507 = null;
+		Object value_462 = null;
+		Object value_477 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -3303,23 +2837,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_104.right = right_147;
 		right_104.parent = parent_148;
 		right_104.color = color_149;
-		right_4.key = key_487;
-		right_4.value = value_492;
-		right_4.left = left_490;
-		right_4.right = right_488;
+		right_4.key = key_457;
+		right_4.value = value_462;
+		right_4.left = left_460;
+		right_4.right = right_458;
 		right_4.parent = obj.root;
-		right_4.color = color_491;
-		right_17.key = key_502;
-		right_17.value = value_507;
-		right_17.left = left_505;
-		right_17.right = right_503;
+		right_4.color = color_461;
+		right_17.key = key_472;
+		right_17.value = value_477;
+		right_17.left = left_475;
+		right_17.right = right_473;
 		right_17.parent = left_300;
-		right_17.color = color_506;
+		right_17.color = color_476;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test52() throws Exception {
+	public void test_put44() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3338,38 +2873,38 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_305 = right_104;
 		Entry left_103 = null;
 		Entry right_147 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
+		Entry left_456 = null;
+		Entry right_454 = null;
+		Entry left_471 = null;
+		Entry right_469 = null;
 		obj.size = 6;
-		int key_144 = -1;
-		int key_306 = -1;
+		int key_144 = 1;
+		int key_306 = 1;
 		boolean color_6 = true;
-		int key = -2;
-		int key_307 = 0;
+		int key = 0;
+		int key_453 = 5;
+		int key_468 = 3;
+		int key_307 = 2;
 		boolean color_106 = true;
-		boolean color_460 = true;
-		int key_302 = 2;
-		int key_14 = 0;
+		int key_302 = 4;
+		int key_14 = 2;
+		boolean color_457 = true;
 		boolean color_19 = false;
-		int key_304 = -3;
+		int key_304 = -1;
 		boolean color_149 = false;
-		int key_456 = 3;
-		boolean color_475 = true;
-		int key_471 = 1;
-		int key_1 = 2;
-		int key_301 = 0;
-		int key_101 = -3;
-		int key_299 = 2;
+		int key_1 = 4;
+		int key_301 = 2;
+		int key_101 = -1;
+		boolean color_472 = true;
+		int key_299 = 4;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
 		Object value_145 = null;
-		Object value_461 = null;
-		Object value_476 = null;
+		Object value_458 = null;
+		Object value_473 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -3394,113 +2929,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_104.right = right_147;
 		right_104.parent = parent_148;
 		right_104.color = color_149;
-		right_4.key = key_456;
-		right_4.value = value_461;
-		right_4.left = left_459;
-		right_4.right = right_457;
+		right_4.key = key_453;
+		right_4.value = value_458;
+		right_4.left = left_456;
+		right_4.right = right_454;
 		right_4.parent = obj.root;
-		right_4.color = color_460;
-		right_17.key = key_471;
-		right_17.value = value_476;
-		right_17.left = left_474;
-		right_17.right = right_472;
+		right_4.color = color_457;
+		right_17.key = key_468;
+		right_17.value = value_473;
+		right_17.left = left_471;
+		right_17.right = right_469;
 		right_17.parent = left_300;
-		right_17.color = color_475;
+		right_17.color = color_472;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test53() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry right_104 = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_17 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_105 = left_3;
-		Entry parent_148 = left_16;
-		Entry left_146 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry right_305 = right_104;
-		Entry left_103 = null;
-		Entry right_147 = null;
-		Entry left_457 = null;
-		Entry right_455 = null;
-		Entry left_472 = null;
-		Entry right_470 = null;
-		obj.size = 6;
-		int key_144 = -1;
-		int key_306 = -1;
-		boolean color_6 = true;
-		int key = -2;
-		int key_307 = 0;
-		boolean color_106 = true;
-		int key_302 = 2;
-		int key_454 = 3;
-		boolean color_458 = true;
-		int key_14 = 0;
-		boolean color_19 = false;
-		int key_304 = -3;
-		int key_469 = 1;
-		boolean color_149 = false;
-		int key_1 = 2;
-		int key_301 = 0;
-		int key_101 = -3;
-		boolean color_473 = true;
-		int key_299 = 2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_102 = null;
-		Object value_145 = null;
-		Object value_459 = null;
-		Object value_474 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_101;
-		left_16.value = value_102;
-		left_16.left = left_103;
-		left_16.right = right_104;
-		left_16.parent = parent_105;
-		left_16.color = color_106;
-		right_104.key = key_144;
-		right_104.value = value_145;
-		right_104.left = left_146;
-		right_104.right = right_147;
-		right_104.parent = parent_148;
-		right_104.color = color_149;
-		right_4.key = key_454;
-		right_4.value = value_459;
-		right_4.left = left_457;
-		right_4.right = right_455;
-		right_4.parent = obj.root;
-		right_4.color = color_458;
-		right_17.key = key_469;
-		right_17.value = value_474;
-		right_17.left = left_472;
-		right_17.right = right_470;
-		right_17.parent = left_300;
-		right_17.color = color_473;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test54() throws Exception {
+	public void test_put45() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3589,11 +3035,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_476;
 		right_17.parent = left_300;
 		right_17.color = color_479;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test55() throws Exception {
+	public void test_put46() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3608,37 +3055,37 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_147 = null;
 		Entry left_103 = null;
 		Entry left_146 = null;
+		Entry newNode_187 = left_146;
 		Entry left_300 = left_3;
-		Entry left_485 = null;
-		Entry right_483 = null;
-		Entry left_500 = null;
-		Entry right_498 = null;
+		Entry left_453 = null;
+		Entry right_451 = null;
+		Entry left_468 = null;
+		Entry right_466 = null;
 		obj.size = 6;
 		int key_144 = -2;
 		boolean color_6 = true;
+		boolean color_454 = true;
 		int key = -1;
+		boolean color_469 = true;
+		int key_465 = 1;
 		boolean color_106 = true;
-		boolean color_501 = true;
 		int key_302 = 2;
-		boolean color_486 = true;
+		int key_450 = 3;
 		int key_14 = 0;
-		int key_497 = 1;
 		boolean color_19 = false;
 		boolean color_149 = false;
-		int key_482 = 3;
 		int key_1 = 2;
 		int key_301 = 0;
 		int key_101 = -3;
 		int key_299 = 2;
-		Entry newNode_187 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_102 = null;
 		Object value_145 = null;
-		Object value_487 = null;
-		Object value_502 = null;
+		Object value_455 = null;
+		Object value_470 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -3663,23 +3110,111 @@ public class TreeMap_put1 extends TestJPF {
 		right_104.right = right_147;
 		right_104.parent = parent_148;
 		right_104.color = color_149;
-		right_4.key = key_482;
-		right_4.value = value_487;
-		right_4.left = left_485;
-		right_4.right = right_483;
+		right_4.key = key_450;
+		right_4.value = value_455;
+		right_4.left = left_453;
+		right_4.right = right_451;
 		right_4.parent = obj.root;
-		right_4.color = color_486;
-		right_17.key = key_497;
-		right_17.value = value_502;
-		right_17.left = left_500;
-		right_17.right = right_498;
+		right_4.color = color_454;
+		right_17.key = key_465;
+		right_17.value = value_470;
+		right_17.left = left_468;
+		right_17.right = right_466;
 		right_17.parent = left_300;
-		right_17.color = color_501;
+		right_17.color = color_469;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test56() throws Exception {
+	public void test_put47() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry left_16 = new Entry();
+		Entry right_104 = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_17 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_18 = obj.root;
+		Entry parent_105 = left_3;
+		Entry parent_148 = left_16;
+		Entry right_147 = null;
+		Entry left_103 = null;
+		Entry left_146 = null;
+		Entry left_300 = left_3;
+		Entry left_455 = null;
+		Entry right_453 = null;
+		Entry left_470 = null;
+		Entry right_468 = null;
+		obj.size = 6;
+		int key_144 = -2;
+		boolean color_471 = true;
+		boolean color_6 = true;
+		int key = -1;
+		int key_452 = 3;
+		boolean color_106 = true;
+		boolean color_456 = true;
+		int key_302 = 2;
+		int key_14 = 0;
+		boolean color_19 = false;
+		boolean color_149 = false;
+		int key_467 = 1;
+		int key_1 = 2;
+		int key_301 = 0;
+		int key_101 = -3;
+		int key_299 = 2;
+		Entry newNode_187 = new Entry();
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_15 = null;
+		Object value_102 = null;
+		Object value_145 = null;
+		Object value_457 = null;
+		Object value_472 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_14;
+		left_3.value = value_15;
+		left_3.left = left_16;
+		left_3.right = right_17;
+		left_3.parent = parent_18;
+		left_3.color = color_19;
+		left_16.key = key_101;
+		left_16.value = value_102;
+		left_16.left = left_103;
+		left_16.right = right_104;
+		left_16.parent = parent_105;
+		left_16.color = color_106;
+		right_104.key = key_144;
+		right_104.value = value_145;
+		right_104.left = left_146;
+		right_104.right = right_147;
+		right_104.parent = parent_148;
+		right_104.color = color_149;
+		right_4.key = key_452;
+		right_4.value = value_457;
+		right_4.left = left_455;
+		right_4.right = right_453;
+		right_4.parent = obj.root;
+		right_4.color = color_456;
+		right_17.key = key_467;
+		right_17.value = value_472;
+		right_17.left = left_470;
+		right_17.right = right_468;
+		right_17.parent = left_300;
+		right_17.color = color_471;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put48() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3698,100 +3233,11 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_305 = right_104;
 		Entry left_103 = null;
 		Entry left_146 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
-		obj.size = 6;
-		int key_144 = -1;
-		int key_306 = -2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_307 = -1;
-		boolean color_106 = true;
-		int key_458 = 4;
-		int key_302 = 3;
-		boolean color_477 = true;
-		int key_14 = 1;
-		boolean color_19 = false;
-		int key_304 = -2;
-		boolean color_149 = false;
-		int key_1 = 3;
-		int key_301 = 1;
-		int key_101 = -2;
-		int key_473 = 2;
-		int key_299 = 3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_102 = null;
-		Object value_145 = null;
-		Object value_463 = null;
-		Object value_478 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		left_16.key = key_101;
-		left_16.value = value_102;
-		left_16.left = left_103;
-		left_16.right = right_104;
-		left_16.parent = parent_105;
-		left_16.color = color_106;
-		right_104.key = key_144;
-		right_104.value = value_145;
-		right_104.left = left_146;
-		right_104.right = right_147;
-		right_104.parent = parent_148;
-		right_104.color = color_149;
-		right_4.key = key_458;
-		right_4.value = value_463;
-		right_4.left = left_461;
-		right_4.right = right_459;
-		right_4.parent = obj.root;
-		right_4.color = color_462;
-		right_17.key = key_473;
-		right_17.value = value_478;
-		right_17.left = left_476;
-		right_17.right = right_474;
-		right_17.parent = left_300;
-		right_17.color = color_477;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test57() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_16 = new Entry();
-		Entry right_104 = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_17 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_105 = left_3;
-		Entry parent_148 = left_16;
-		Entry right_147 = null;
-		Entry left_300 = left_3;
-		Entry left_303 = left_16;
-		Entry right_305 = right_104;
-		Entry left_103 = null;
-		Entry left_146 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
+		Entry left_458 = null;
+		Entry right_456 = null;
+		Entry left_473 = null;
+		Entry right_471 = null;
+		int key_470 = 1;
 		obj.size = 6;
 		int key_144 = -2;
 		int key_306 = -3;
@@ -3799,15 +3245,14 @@ public class TreeMap_put1 extends TestJPF {
 		int key = -1;
 		int key_307 = -2;
 		boolean color_106 = true;
-		boolean color_460 = true;
 		int key_302 = 2;
+		boolean color_474 = true;
 		int key_14 = 0;
+		int key_455 = 3;
+		boolean color_459 = true;
 		boolean color_19 = false;
 		int key_304 = -3;
 		boolean color_149 = false;
-		int key_456 = 3;
-		boolean color_475 = true;
-		int key_471 = 1;
 		int key_1 = 2;
 		int key_301 = 0;
 		int key_101 = -3;
@@ -3818,8 +3263,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_102 = null;
 		Object value_145 = null;
-		Object value_461 = null;
-		Object value_476 = null;
+		Object value_460 = null;
+		Object value_475 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -3844,23 +3289,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_104.right = right_147;
 		right_104.parent = parent_148;
 		right_104.color = color_149;
-		right_4.key = key_456;
-		right_4.value = value_461;
-		right_4.left = left_459;
-		right_4.right = right_457;
+		right_4.key = key_455;
+		right_4.value = value_460;
+		right_4.left = left_458;
+		right_4.right = right_456;
 		right_4.parent = obj.root;
-		right_4.color = color_460;
-		right_17.key = key_471;
-		right_17.value = value_476;
-		right_17.left = left_474;
-		right_17.right = right_472;
+		right_4.color = color_459;
+		right_17.key = key_470;
+		right_17.value = value_475;
+		right_17.left = left_473;
+		right_17.right = right_471;
 		right_17.parent = left_300;
-		right_17.color = color_475;
+		right_17.color = color_474;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test58() throws Exception {
+	public void test_put49() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3897,11 +3343,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test59() throws Exception {
+	public void test_put50() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3935,11 +3382,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test60() throws Exception {
+	public void test_put51() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3990,11 +3438,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test61() throws Exception {
+	public void test_put52() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4029,49 +3478,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test62() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry right_17 = null;
-		Entry left_300 = left_3;
-		Entry right_4 = null;
-		Entry left_16 = null;
-		boolean color_19 = false;
-		obj.size = 2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_1 = 1;
-		int key_301 = -1;
-		int key_14 = -1;
-		int key_299 = 1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test63() throws Exception {
+	public void test_put53() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4085,34 +3497,34 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry right_302 = right_17;
 		Entry right_115 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		Entry left_439 = null;
-		Entry right_437 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_436 = null;
+		Entry right_434 = null;
 		obj.size = 5;
-		boolean color_425 = true;
 		boolean color_6 = true;
-		int key_436 = -1;
-		int key = 1;
-		int key_112 = 2;
-		int key_303 = 2;
-		int key_14 = 0;
+		boolean color_437 = true;
+		int key = 0;
+		int key_112 = 1;
+		int key_303 = 1;
+		int key_433 = -2;
+		int key_14 = -1;
 		boolean color_19 = false;
 		boolean color_117 = true;
-		int key_304 = 3;
-		int key_421 = 4;
-		int key_1 = 3;
-		int key_301 = 0;
-		boolean color_440 = true;
-		int key_299 = 3;
+		boolean color_422 = true;
+		int key_304 = 2;
+		int key_1 = 2;
+		int key_301 = -1;
+		int key_418 = 3;
+		int key_299 = 2;
 		Entry newNode_199 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_113 = null;
-		Object value_426 = null;
-		Object value_441 = null;
+		Object value_423 = null;
+		Object value_438 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4131,23 +3543,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_115;
 		right_17.parent = parent_116;
 		right_17.color = color_117;
-		right_4.key = key_421;
-		right_4.value = value_426;
-		right_4.left = left_424;
-		right_4.right = right_422;
+		right_4.key = key_418;
+		right_4.value = value_423;
+		right_4.left = left_421;
+		right_4.right = right_419;
 		right_4.parent = obj.root;
-		right_4.color = color_425;
-		left_16.key = key_436;
-		left_16.value = value_441;
-		left_16.left = left_439;
-		left_16.right = right_437;
+		right_4.color = color_422;
+		left_16.key = key_433;
+		left_16.value = value_438;
+		left_16.left = left_436;
+		left_16.right = right_434;
 		left_16.parent = left_300;
-		left_16.color = color_440;
+		left_16.color = color_437;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test64() throws Exception {
+	public void test_put54() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4162,33 +3575,33 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry right_302 = right_17;
 		Entry right_115 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		Entry left_437 = null;
-		Entry right_435 = null;
+		Entry left_419 = null;
+		Entry right_417 = null;
+		Entry left_434 = null;
+		Entry right_432 = null;
 		obj.size = 5;
-		boolean color_438 = true;
 		boolean color_6 = true;
+		boolean color_420 = true;
+		boolean color_435 = true;
 		int key = 0;
 		int key_112 = 1;
 		int key_303 = 1;
-		boolean color_423 = true;
 		int key_14 = -1;
-		int key_419 = 3;
 		boolean color_19 = false;
 		boolean color_117 = true;
 		int key_304 = 2;
+		int key_416 = 3;
 		int key_1 = 2;
 		int key_301 = -1;
-		int key_434 = -2;
+		int key_431 = -2;
 		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_113 = null;
-		Object value_424 = null;
-		Object value_439 = null;
+		Object value_421 = null;
+		Object value_436 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4207,98 +3620,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_115;
 		right_17.parent = parent_116;
 		right_17.color = color_117;
-		right_4.key = key_419;
-		right_4.value = value_424;
-		right_4.left = left_422;
-		right_4.right = right_420;
+		right_4.key = key_416;
+		right_4.value = value_421;
+		right_4.left = left_419;
+		right_4.right = right_417;
 		right_4.parent = obj.root;
-		right_4.color = color_423;
-		left_16.key = key_434;
-		left_16.value = value_439;
-		left_16.left = left_437;
-		left_16.right = right_435;
+		right_4.color = color_420;
+		left_16.key = key_431;
+		left_16.value = value_436;
+		left_16.left = left_434;
+		left_16.right = right_432;
 		left_16.parent = left_300;
-		left_16.color = color_438;
+		left_16.color = color_435;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test65() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry left_114 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry right_115 = null;
-		Entry left_420 = null;
-		Entry right_418 = null;
-		Entry left_435 = null;
-		Entry right_433 = null;
-		obj.size = 5;
-		int key_432 = -1;
-		boolean color_6 = true;
-		boolean color_421 = true;
-		int key = 1;
-		int key_112 = 2;
-		int key_303 = 2;
-		int key_14 = 0;
-		boolean color_436 = true;
-		int key_417 = 4;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_304 = 3;
-		int key_1 = 3;
-		int key_301 = 0;
-		int key_299 = 3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_422 = null;
-		Object value_437 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		right_4.key = key_417;
-		right_4.value = value_422;
-		right_4.left = left_420;
-		right_4.right = right_418;
-		right_4.parent = obj.root;
-		right_4.color = color_421;
-		left_16.key = key_432;
-		left_16.value = value_437;
-		left_16.left = left_435;
-		left_16.right = right_433;
-		left_16.parent = left_300;
-		left_16.color = color_436;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test66() throws Exception {
+	public void test_put55() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4313,36 +3652,36 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_191 = null;
 		Entry right_115 = null;
 		Entry right_192 = null;
+		Entry newNode_210 = right_192;
 		Entry left_300 = left_3;
-		Entry left_480 = null;
-		Entry right_478 = null;
-		Entry left_495 = null;
-		Entry right_493 = null;
+		Entry left_448 = null;
+		Entry right_446 = null;
+		Entry left_463 = null;
+		Entry right_461 = null;
 		obj.size = 6;
 		boolean color_6 = true;
+		int key_460 = -2;
 		int key = 0;
-		boolean color_496 = true;
 		int key_112 = 2;
+		boolean color_464 = true;
 		int key_14 = -1;
+		boolean color_449 = true;
 		boolean color_19 = false;
 		boolean color_117 = true;
 		int key_189 = 1;
-		int key_477 = 4;
 		boolean color_194 = false;
+		int key_445 = 4;
 		int key_1 = 3;
 		int key_301 = -1;
-		boolean color_481 = true;
-		int key_492 = -2;
 		int key_299 = 3;
-		Entry newNode_210 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_190 = null;
-		Object value_482 = null;
-		Object value_497 = null;
+		Object value_450 = null;
+		Object value_465 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4367,29 +3706,29 @@ public class TreeMap_put1 extends TestJPF {
 		left_114.right = right_192;
 		left_114.parent = parent_193;
 		left_114.color = color_194;
-		right_4.key = key_477;
-		right_4.value = value_482;
-		right_4.left = left_480;
-		right_4.right = right_478;
+		right_4.key = key_445;
+		right_4.value = value_450;
+		right_4.left = left_448;
+		right_4.right = right_446;
 		right_4.parent = obj.root;
-		right_4.color = color_481;
-		left_16.key = key_492;
-		left_16.value = value_497;
-		left_16.left = left_495;
-		left_16.right = right_493;
+		right_4.color = color_449;
+		left_16.key = key_460;
+		left_16.value = value_465;
+		left_16.left = left_463;
+		left_16.right = right_461;
 		left_16.parent = left_300;
-		left_16.color = color_496;
+		left_16.color = color_464;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test67() throws Exception {
+	public void test_put56() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
 		Entry right_17 = new Entry();
 		Entry left_114 = new Entry();
-		Entry right_115 = new Entry();
 		Entry right_4 = new Entry();
 		Entry left_16 = new Entry();
 		Entry parent_5 = null;
@@ -4397,47 +3736,29 @@ public class TreeMap_put1 extends TestJPF {
 		Entry parent_116 = left_3;
 		Entry parent_193 = right_17;
 		Entry left_191 = null;
-		Entry parent_215 = right_17;
-		Entry parent_71 = obj.root;
-		Entry left_299 = left_3;
-		Entry left_301 = left_114;
-		Entry right_304 = right_115;
-		Entry right_307 = right_115;
-		Entry right_310 = right_4;
-		Entry right_313 = right_4;
+		Entry right_115 = null;
 		Entry right_192 = null;
-		Entry left_213 = null;
-		Entry right_214 = null;
-		Entry left_69 = null;
-		Entry right_70 = null;
-		Entry left_565 = null;
-		Entry right_563 = null;
-		int key_67 = 1;
-		int key_311 = 0;
-		obj.size = 7;
-		int key_309 = 0;
-		int key_306 = -1;
+		Entry left_300 = left_3;
+		Entry left_450 = null;
+		Entry right_448 = null;
+		Entry left_465 = null;
+		Entry right_463 = null;
+		obj.size = 6;
 		boolean color_6 = true;
-		int key = -4;
-		boolean color_566 = true;
-		int key_312 = 1;
-		int key_112 = -2;
-		int key_303 = -2;
-		int key_302 = -3;
-		int key_305 = -2;
-		int key_14 = -5;
-		boolean color_216 = false;
-		boolean color_72 = true;
+		int key = 1;
+		boolean color_466 = true;
+		int key_112 = 3;
+		boolean color_451 = true;
+		int key_14 = 0;
+		int key_462 = -1;
 		boolean color_19 = false;
-		int key_562 = -6;
 		boolean color_117 = true;
-		int key_189 = -3;
-		int key_300 = -5;
+		int key_189 = 2;
 		boolean color_194 = false;
-		int key_211 = -1;
-		int key_1 = 0;
-		int key_308 = -1;
-		int key_314 = 1;
+		int key_1 = 4;
+		int key_301 = 0;
+		int key_447 = 5;
+		int key_299 = 4;
 		Entry newNode_210 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -4445,9 +3766,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_190 = null;
-		Object value_212 = null;
-		Object value_68 = null;
-		Object value_567 = null;
+		Object value_452 = null;
+		Object value_467 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4472,29 +3792,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_114.right = right_192;
 		left_114.parent = parent_193;
 		left_114.color = color_194;
-		right_115.key = key_211;
-		right_115.value = value_212;
-		right_115.left = left_213;
-		right_115.right = right_214;
-		right_115.parent = parent_215;
-		right_115.color = color_216;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_16.key = key_562;
-		left_16.value = value_567;
-		left_16.left = left_565;
-		left_16.right = right_563;
-		left_16.parent = left_299;
-		left_16.color = color_566;
+		right_4.key = key_447;
+		right_4.value = value_452;
+		right_4.left = left_450;
+		right_4.right = right_448;
+		right_4.parent = obj.root;
+		right_4.color = color_451;
+		left_16.key = key_462;
+		left_16.value = value_467;
+		left_16.left = left_465;
+		left_16.right = right_463;
+		left_16.parent = left_300;
+		left_16.color = color_466;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test68() throws Exception {
+	public void test_put57() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4513,29 +3828,29 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_305 = left_114;
 		Entry right_115 = null;
 		Entry right_192 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
+		Entry left_456 = null;
+		Entry right_454 = null;
+		Entry left_471 = null;
+		Entry right_469 = null;
 		obj.size = 6;
 		int key_306 = 1;
 		boolean color_6 = true;
 		int key = 0;
+		int key_453 = 4;
+		int key_468 = -2;
 		int key_307 = 2;
-		boolean color_460 = true;
 		int key_112 = 2;
 		int key_303 = 2;
 		int key_14 = -1;
+		boolean color_457 = true;
 		boolean color_19 = false;
 		boolean color_117 = true;
 		int key_304 = 3;
 		int key_189 = 1;
 		boolean color_194 = false;
-		int key_456 = 4;
-		boolean color_475 = true;
-		int key_471 = -2;
 		int key_1 = 3;
 		int key_301 = -1;
+		boolean color_472 = true;
 		int key_299 = 3;
 		Object value = null;
 		obj.modCount = 0;
@@ -4543,8 +3858,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_190 = null;
-		Object value_461 = null;
-		Object value_476 = null;
+		Object value_458 = null;
+		Object value_473 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4569,113 +3884,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_114.right = right_192;
 		left_114.parent = parent_193;
 		left_114.color = color_194;
-		right_4.key = key_456;
-		right_4.value = value_461;
-		right_4.left = left_459;
-		right_4.right = right_457;
+		right_4.key = key_453;
+		right_4.value = value_458;
+		right_4.left = left_456;
+		right_4.right = right_454;
 		right_4.parent = obj.root;
-		right_4.color = color_460;
-		left_16.key = key_471;
-		left_16.value = value_476;
-		left_16.left = left_474;
-		left_16.right = right_472;
+		right_4.color = color_457;
+		left_16.key = key_468;
+		left_16.value = value_473;
+		left_16.left = left_471;
+		left_16.right = right_469;
 		left_16.parent = left_300;
-		left_16.color = color_475;
+		left_16.color = color_472;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test69() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry left_114 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry parent_193 = right_17;
-		Entry left_191 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry left_305 = left_114;
-		Entry right_115 = null;
-		Entry right_192 = null;
-		Entry left_457 = null;
-		Entry right_455 = null;
-		Entry left_472 = null;
-		Entry right_470 = null;
-		obj.size = 6;
-		int key_306 = 2;
-		boolean color_6 = true;
-		int key = 1;
-		int key_307 = 3;
-		int key_112 = 3;
-		int key_303 = 3;
-		int key_454 = 5;
-		boolean color_458 = true;
-		int key_14 = 0;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_304 = 4;
-		int key_189 = 2;
-		int key_469 = -1;
-		boolean color_194 = false;
-		int key_1 = 4;
-		int key_301 = 0;
-		boolean color_473 = true;
-		int key_299 = 4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_190 = null;
-		Object value_459 = null;
-		Object value_474 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		left_114.key = key_189;
-		left_114.value = value_190;
-		left_114.left = left_191;
-		left_114.right = right_192;
-		left_114.parent = parent_193;
-		left_114.color = color_194;
-		right_4.key = key_454;
-		right_4.value = value_459;
-		right_4.left = left_457;
-		right_4.right = right_455;
-		right_4.parent = obj.root;
-		right_4.color = color_458;
-		left_16.key = key_469;
-		left_16.value = value_474;
-		left_16.left = left_472;
-		left_16.right = right_470;
-		left_16.parent = left_300;
-		left_16.color = color_473;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test70() throws Exception {
+	public void test_put58() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4764,11 +3990,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_476;
 		left_16.parent = left_300;
 		left_16.color = color_479;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test71() throws Exception {
+	public void test_put59() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4785,28 +4012,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry left_302 = left_114;
 		Entry left_191 = null;
-		Entry left_487 = null;
-		Entry right_485 = null;
-		Entry left_502 = null;
-		Entry right_500 = null;
-		int key_499 = -3;
+		Entry left_457 = null;
+		Entry right_455 = null;
+		Entry left_472 = null;
+		Entry right_470 = null;
 		obj.size = 6;
 		boolean color_6 = true;
-		int key_484 = 3;
-		int key = 0;
-		boolean color_488 = true;
-		int key_112 = 1;
-		int key_303 = -2;
-		int key_14 = -2;
+		int key = 2;
+		int key_112 = 3;
+		int key_303 = 0;
+		int key_454 = 5;
+		boolean color_458 = true;
+		int key_14 = 0;
 		boolean color_19 = false;
 		boolean color_117 = true;
-		boolean color_503 = true;
-		int key_304 = -1;
-		int key_189 = -1;
+		int key_304 = 1;
+		int key_189 = 1;
+		int key_469 = -1;
 		boolean color_194 = false;
-		int key_1 = 2;
-		int key_301 = -2;
-		int key_299 = 2;
+		int key_1 = 4;
+		int key_301 = 0;
+		boolean color_473 = true;
+		int key_299 = 4;
 		Entry newNode_231 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -4814,8 +4041,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_190 = null;
-		Object value_489 = null;
-		Object value_504 = null;
+		Object value_459 = null;
+		Object value_474 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4840,23 +4067,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_114.right = right_192;
 		left_114.parent = parent_193;
 		left_114.color = color_194;
-		right_4.key = key_484;
-		right_4.value = value_489;
-		right_4.left = left_487;
-		right_4.right = right_485;
+		right_4.key = key_454;
+		right_4.value = value_459;
+		right_4.left = left_457;
+		right_4.right = right_455;
 		right_4.parent = obj.root;
-		right_4.color = color_488;
-		left_16.key = key_499;
-		left_16.value = value_504;
-		left_16.left = left_502;
-		left_16.right = right_500;
+		right_4.color = color_458;
+		left_16.key = key_469;
+		left_16.value = value_474;
+		left_16.left = left_472;
+		left_16.right = right_470;
 		left_16.parent = left_300;
-		left_16.color = color_503;
+		left_16.color = color_473;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test72() throws Exception {
+	public void test_put60() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4883,11 +4111,12 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_214 = null;
 		Entry left_69 = null;
 		Entry right_70 = null;
-		Entry left_567 = null;
-		Entry right_565 = null;
+		Entry left_546 = null;
+		Entry right_544 = null;
+		int key_543 = -6;
 		int key_67 = 1;
-		obj.size = 7;
 		int key_311 = 0;
+		obj.size = 7;
 		int key_309 = 0;
 		int key_306 = -1;
 		boolean color_6 = true;
@@ -4895,6 +4124,7 @@ public class TreeMap_put1 extends TestJPF {
 		int key_312 = 1;
 		int key_112 = -2;
 		int key_303 = -4;
+		boolean color_547 = true;
 		int key_302 = -5;
 		int key_305 = -2;
 		int key_14 = -5;
@@ -4905,11 +4135,9 @@ public class TreeMap_put1 extends TestJPF {
 		int key_189 = -4;
 		int key_300 = -5;
 		boolean color_194 = false;
-		boolean color_568 = true;
 		int key_211 = -1;
 		int key_1 = 0;
 		int key_308 = -1;
-		int key_564 = -6;
 		int key_314 = 1;
 		Entry newNode_231 = new Entry();
 		Object value = null;
@@ -4920,7 +4148,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_190 = null;
 		Object value_212 = null;
 		Object value_68 = null;
-		Object value_569 = null;
+		Object value_548 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -4957,17 +4185,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_16.key = key_564;
-		left_16.value = value_569;
-		left_16.left = left_567;
-		left_16.right = right_565;
+		left_16.key = key_543;
+		left_16.value = value_548;
+		left_16.left = left_546;
+		left_16.right = right_544;
 		left_16.parent = left_299;
-		left_16.color = color_568;
+		left_16.color = color_547;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test73() throws Exception {
+	public void test_put61() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4986,21 +4215,22 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_305 = left_114;
 		Entry right_115 = null;
 		Entry left_191 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
+		Entry left_458 = null;
+		Entry right_456 = null;
+		Entry left_473 = null;
+		Entry right_471 = null;
+		int key_470 = -3;
 		obj.size = 6;
 		int key_306 = -2;
 		boolean color_6 = true;
 		int key = 0;
 		int key_307 = -1;
-		int key_458 = 3;
 		int key_112 = 1;
 		int key_303 = 1;
-		boolean color_477 = true;
+		boolean color_474 = true;
 		int key_14 = -2;
+		int key_455 = 3;
+		boolean color_459 = true;
 		boolean color_19 = false;
 		boolean color_117 = true;
 		int key_304 = 2;
@@ -5008,7 +4238,6 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_194 = false;
 		int key_1 = 2;
 		int key_301 = -2;
-		int key_473 = -3;
 		int key_299 = 2;
 		Object value = null;
 		obj.modCount = 0;
@@ -5016,8 +4245,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_190 = null;
-		Object value_463 = null;
-		Object value_478 = null;
+		Object value_460 = null;
+		Object value_475 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -5042,113 +4271,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_114.right = right_192;
 		left_114.parent = parent_193;
 		left_114.color = color_194;
-		right_4.key = key_458;
-		right_4.value = value_463;
-		right_4.left = left_461;
-		right_4.right = right_459;
+		right_4.key = key_455;
+		right_4.value = value_460;
+		right_4.left = left_458;
+		right_4.right = right_456;
 		right_4.parent = obj.root;
-		right_4.color = color_462;
-		left_16.key = key_473;
-		left_16.value = value_478;
-		left_16.left = left_476;
-		left_16.right = right_474;
+		right_4.color = color_459;
+		left_16.key = key_470;
+		left_16.value = value_475;
+		left_16.left = left_473;
+		left_16.right = right_471;
 		left_16.parent = left_300;
-		left_16.color = color_477;
+		left_16.color = color_474;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test74() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry left_114 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry parent_193 = right_17;
-		Entry right_192 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry left_305 = left_114;
-		Entry right_115 = null;
-		Entry left_191 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
-		obj.size = 6;
-		int key_306 = 0;
-		boolean color_6 = true;
-		int key = 2;
-		int key_307 = 1;
-		boolean color_460 = true;
-		int key_112 = 3;
-		int key_303 = 3;
-		int key_14 = 0;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_304 = 4;
-		int key_189 = 1;
-		boolean color_194 = false;
-		int key_456 = 5;
-		boolean color_475 = true;
-		int key_471 = -1;
-		int key_1 = 4;
-		int key_301 = 0;
-		int key_299 = 4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_190 = null;
-		Object value_461 = null;
-		Object value_476 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		left_114.key = key_189;
-		left_114.value = value_190;
-		left_114.left = left_191;
-		left_114.right = right_192;
-		left_114.parent = parent_193;
-		left_114.color = color_194;
-		right_4.key = key_456;
-		right_4.value = value_461;
-		right_4.left = left_459;
-		right_4.right = right_457;
-		right_4.parent = obj.root;
-		right_4.color = color_460;
-		left_16.key = key_471;
-		left_16.value = value_476;
-		left_16.left = left_474;
-		left_16.right = right_472;
-		left_16.parent = left_300;
-		left_16.color = color_475;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test75() throws Exception {
+	public void test_put62() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5222,11 +4362,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_439;
 		left_16.parent = left_300;
 		left_16.color = color_442;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test76() throws Exception {
+	public void test_put63() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5240,34 +4381,34 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry right_302 = right_17;
 		Entry left_114 = null;
-		Entry left_426 = null;
-		Entry right_424 = null;
-		Entry left_441 = null;
-		Entry right_439 = null;
+		Entry left_423 = null;
+		Entry right_421 = null;
+		Entry left_438 = null;
+		Entry right_436 = null;
 		obj.size = 5;
-		boolean color_427 = true;
+		boolean color_424 = true;
 		boolean color_6 = true;
-		int key = 2;
-		int key_112 = 1;
-		int key_303 = 0;
-		int key_14 = 0;
-		int key_423 = 4;
+		boolean color_439 = true;
+		int key = 0;
+		int key_112 = -1;
+		int key_303 = -2;
+		int key_14 = -2;
 		boolean color_19 = false;
+		int key_420 = 2;
+		int key_435 = -3;
 		boolean color_117 = true;
-		int key_304 = 1;
-		int key_438 = -1;
-		int key_1 = 3;
-		int key_301 = 0;
-		boolean color_442 = true;
-		int key_299 = 3;
+		int key_304 = -1;
+		int key_1 = 1;
+		int key_301 = -2;
+		int key_299 = 1;
 		Entry newNode_232 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_113 = null;
-		Object value_428 = null;
-		Object value_443 = null;
+		Object value_425 = null;
+		Object value_440 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -5286,23 +4427,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_115;
 		right_17.parent = parent_116;
 		right_17.color = color_117;
-		right_4.key = key_423;
-		right_4.value = value_428;
-		right_4.left = left_426;
-		right_4.right = right_424;
+		right_4.key = key_420;
+		right_4.value = value_425;
+		right_4.left = left_423;
+		right_4.right = right_421;
 		right_4.parent = obj.root;
-		right_4.color = color_427;
-		left_16.key = key_438;
-		left_16.value = value_443;
-		left_16.left = left_441;
-		left_16.right = right_439;
+		right_4.color = color_424;
+		left_16.key = key_435;
+		left_16.value = value_440;
+		left_16.left = left_438;
+		left_16.right = right_436;
 		left_16.parent = left_300;
-		left_16.color = color_442;
+		left_16.color = color_439;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test77() throws Exception {
+	public void test_put64() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5317,108 +4459,33 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_300 = left_3;
 		Entry right_302 = right_17;
 		Entry left_114 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		Entry left_439 = null;
-		Entry right_437 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_436 = null;
+		Entry right_434 = null;
 		obj.size = 5;
-		boolean color_425 = true;
 		boolean color_6 = true;
-		int key_436 = -1;
-		int key = 2;
-		int key_112 = 1;
-		int key_303 = 0;
-		int key_14 = 0;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_304 = 1;
-		int key_421 = 4;
-		int key_1 = 3;
-		int key_301 = 0;
-		boolean color_440 = true;
-		int key_299 = 3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_426 = null;
-		Object value_441 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		right_4.key = key_421;
-		right_4.value = value_426;
-		right_4.left = left_424;
-		right_4.right = right_422;
-		right_4.parent = obj.root;
-		right_4.color = color_425;
-		left_16.key = key_436;
-		left_16.value = value_441;
-		left_16.left = left_439;
-		left_16.right = right_437;
-		left_16.parent = left_300;
-		left_16.color = color_440;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test78() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry right_115 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry left_114 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		Entry left_437 = null;
-		Entry right_435 = null;
-		obj.size = 5;
-		boolean color_438 = true;
-		boolean color_6 = true;
+		boolean color_437 = true;
 		int key = 0;
 		int key_112 = -1;
 		int key_303 = -2;
-		boolean color_423 = true;
+		int key_433 = -3;
 		int key_14 = -2;
-		int key_419 = 2;
 		boolean color_19 = false;
 		boolean color_117 = true;
+		boolean color_422 = true;
 		int key_304 = -1;
 		int key_1 = 1;
 		int key_301 = -2;
-		int key_434 = -3;
+		int key_418 = 2;
 		int key_299 = 1;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_15 = null;
 		Object value_113 = null;
-		Object value_424 = null;
-		Object value_439 = null;
+		Object value_423 = null;
+		Object value_438 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -5437,23 +4504,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_17.right = right_115;
 		right_17.parent = parent_116;
 		right_17.color = color_117;
-		right_4.key = key_419;
-		right_4.value = value_424;
-		right_4.left = left_422;
-		right_4.right = right_420;
+		right_4.key = key_418;
+		right_4.value = value_423;
+		right_4.left = left_421;
+		right_4.right = right_419;
 		right_4.parent = obj.root;
-		right_4.color = color_423;
-		left_16.key = key_434;
-		left_16.value = value_439;
-		left_16.left = left_437;
-		left_16.right = right_435;
+		right_4.color = color_422;
+		left_16.key = key_433;
+		left_16.value = value_438;
+		left_16.left = left_436;
+		left_16.right = right_434;
 		left_16.parent = left_300;
-		left_16.color = color_438;
+		left_16.color = color_437;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test79() throws Exception {
+	public void test_put65() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5474,28 +4542,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_214 = null;
 		Entry left_103 = null;
 		Entry right_104 = null;
-		Entry left_529 = null;
-		Entry right_527 = null;
+		Entry left_499 = null;
+		Entry right_497 = null;
+		int key_496 = 5;
 		obj.size = 6;
-		int key_306 = -3;
+		int key_306 = -1;
 		boolean color_6 = true;
-		int key = 0;
-		int key_526 = 3;
-		int key_307 = -2;
+		int key = 2;
+		int key_307 = 0;
 		boolean color_106 = true;
-		int key_112 = -1;
-		int key_302 = 2;
-		boolean color_530 = true;
-		int key_14 = -2;
+		int key_112 = 1;
+		int key_302 = 4;
+		int key_14 = 0;
 		boolean color_216 = false;
 		boolean color_19 = false;
 		boolean color_117 = true;
-		int key_304 = -3;
-		int key_211 = 1;
-		int key_1 = 2;
-		int key_301 = 1;
-		int key_101 = -3;
-		int key_299 = 2;
+		int key_304 = -1;
+		boolean color_500 = true;
+		int key_211 = 3;
+		int key_1 = 4;
+		int key_301 = 3;
+		int key_101 = -1;
+		int key_299 = 4;
 		Entry newNode_243 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -5504,7 +4572,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_113 = null;
 		Object value_212 = null;
 		Object value_102 = null;
-		Object value_531 = null;
+		Object value_501 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -5535,128 +4603,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_526;
-		right_4.value = value_531;
-		right_4.left = left_529;
-		right_4.right = right_527;
+		right_4.key = key_496;
+		right_4.value = value_501;
+		right_4.left = left_499;
+		right_4.right = right_497;
 		right_4.parent = obj.root;
-		right_4.color = color_530;
+		right_4.color = color_500;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test80() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_115 = new Entry();
-		Entry left_114 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry parent_215 = right_17;
-		Entry left_213 = null;
-		Entry parent_193 = right_17;
-		Entry parent_71 = obj.root;
-		Entry left_299 = left_3;
-		Entry right_301 = right_115;
-		Entry left_304 = left_114;
-		Entry left_307 = left_114;
-		Entry right_310 = right_4;
-		Entry right_313 = right_4;
-		Entry right_214 = null;
-		Entry left_191 = null;
-		Entry right_192 = null;
-		Entry left_69 = null;
-		Entry right_70 = null;
-		Entry left_567 = null;
-		Entry right_565 = null;
-		int key_67 = 1;
-		obj.size = 7;
-		int key_311 = 0;
-		int key_309 = -3;
-		int key_306 = -4;
-		boolean color_6 = true;
-		int key = -2;
-		int key_312 = 1;
-		int key_112 = -3;
-		int key_303 = 0;
-		int key_302 = -1;
-		int key_305 = -5;
-		int key_14 = -5;
-		boolean color_216 = false;
-		boolean color_72 = true;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_189 = -4;
-		int key_300 = -5;
-		boolean color_194 = false;
-		boolean color_568 = true;
-		int key_211 = -1;
-		int key_1 = 0;
-		int key_308 = -4;
-		int key_564 = -6;
-		int key_314 = 1;
-		Entry newNode_243 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_212 = null;
-		Object value_190 = null;
-		Object value_68 = null;
-		Object value_569 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		right_115.key = key_211;
-		right_115.value = value_212;
-		right_115.left = left_213;
-		right_115.right = right_214;
-		right_115.parent = parent_215;
-		right_115.color = color_216;
-		left_114.key = key_189;
-		left_114.value = value_190;
-		left_114.left = left_191;
-		left_114.right = right_192;
-		left_114.parent = parent_193;
-		left_114.color = color_194;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_16.key = key_564;
-		left_16.value = value_569;
-		left_16.left = left_567;
-		left_16.right = right_565;
-		left_16.parent = left_299;
-		left_16.color = color_568;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test81() throws Exception {
+	public void test_put66() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5675,29 +4633,29 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_305 = right_115;
 		Entry left_114 = null;
 		Entry right_214 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
+		Entry left_458 = null;
+		Entry right_456 = null;
+		Entry left_473 = null;
+		Entry right_471 = null;
+		int key_470 = -1;
 		obj.size = 6;
 		int key_306 = 3;
 		boolean color_6 = true;
 		int key = 2;
 		int key_307 = 4;
-		int key_458 = 5;
 		int key_112 = 1;
 		int key_303 = 0;
-		boolean color_477 = true;
+		boolean color_474 = true;
 		int key_14 = 0;
+		int key_455 = 5;
 		boolean color_216 = false;
+		boolean color_459 = true;
 		boolean color_19 = false;
 		boolean color_117 = true;
 		int key_304 = 1;
 		int key_211 = 3;
 		int key_1 = 4;
 		int key_301 = 0;
-		int key_473 = -1;
 		int key_299 = 4;
 		Object value = null;
 		obj.modCount = 0;
@@ -5705,8 +4663,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_212 = null;
-		Object value_463 = null;
-		Object value_478 = null;
+		Object value_460 = null;
+		Object value_475 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -5731,113 +4689,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_115.right = right_214;
 		right_115.parent = parent_215;
 		right_115.color = color_216;
-		right_4.key = key_458;
-		right_4.value = value_463;
-		right_4.left = left_461;
-		right_4.right = right_459;
+		right_4.key = key_455;
+		right_4.value = value_460;
+		right_4.left = left_458;
+		right_4.right = right_456;
 		right_4.parent = obj.root;
-		right_4.color = color_462;
-		left_16.key = key_473;
-		left_16.value = value_478;
-		left_16.left = left_476;
-		left_16.right = right_474;
+		right_4.color = color_459;
+		left_16.key = key_470;
+		left_16.value = value_475;
+		left_16.left = left_473;
+		left_16.right = right_471;
 		left_16.parent = left_300;
-		left_16.color = color_477;
+		left_16.color = color_474;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test82() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_115 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry parent_215 = right_17;
-		Entry left_213 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry right_305 = right_115;
-		Entry left_114 = null;
-		Entry right_214 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
-		obj.size = 6;
-		int key_306 = 3;
-		boolean color_6 = true;
-		int key = 2;
-		int key_307 = 4;
-		boolean color_460 = true;
-		int key_112 = 1;
-		int key_303 = 0;
-		int key_14 = 0;
-		boolean color_216 = false;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_304 = 1;
-		int key_456 = 5;
-		boolean color_475 = true;
-		int key_471 = -1;
-		int key_211 = 3;
-		int key_1 = 4;
-		int key_301 = 0;
-		int key_299 = 4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_212 = null;
-		Object value_461 = null;
-		Object value_476 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		right_115.key = key_211;
-		right_115.value = value_212;
-		right_115.left = left_213;
-		right_115.right = right_214;
-		right_115.parent = parent_215;
-		right_115.color = color_216;
-		right_4.key = key_456;
-		right_4.value = value_461;
-		right_4.left = left_459;
-		right_4.right = right_457;
-		right_4.parent = obj.root;
-		right_4.color = color_460;
-		left_16.key = key_471;
-		left_16.value = value_476;
-		left_16.left = left_474;
-		left_16.right = right_472;
-		left_16.parent = left_300;
-		left_16.color = color_475;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test83() throws Exception {
+	public void test_put67() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5926,11 +4795,98 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_478;
 		left_16.parent = left_300;
 		left_16.color = color_481;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test84() throws Exception {
+	public void test_put68() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_17 = new Entry();
+		Entry right_115 = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_16 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_18 = obj.root;
+		Entry parent_116 = left_3;
+		Entry parent_215 = right_17;
+		Entry right_214 = null;
+		Entry left_114 = null;
+		Entry left_213 = null;
+		Entry newNode_254 = left_213;
+		Entry left_300 = left_3;
+		Entry left_452 = null;
+		Entry right_450 = null;
+		Entry left_467 = null;
+		Entry right_465 = null;
+		obj.size = 6;
+		boolean color_6 = true;
+		int key = 0;
+		boolean color_468 = true;
+		int key_449 = 2;
+		int key_112 = -2;
+		boolean color_453 = true;
+		int key_14 = -3;
+		boolean color_216 = false;
+		boolean color_19 = false;
+		boolean color_117 = true;
+		int key_211 = -1;
+		int key_464 = -4;
+		int key_1 = 1;
+		int key_301 = -3;
+		int key_299 = 1;
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_15 = null;
+		Object value_113 = null;
+		Object value_212 = null;
+		Object value_454 = null;
+		Object value_469 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_14;
+		left_3.value = value_15;
+		left_3.left = left_16;
+		left_3.right = right_17;
+		left_3.parent = parent_18;
+		left_3.color = color_19;
+		right_17.key = key_112;
+		right_17.value = value_113;
+		right_17.left = left_114;
+		right_17.right = right_115;
+		right_17.parent = parent_116;
+		right_17.color = color_117;
+		right_115.key = key_211;
+		right_115.value = value_212;
+		right_115.left = left_213;
+		right_115.right = right_214;
+		right_115.parent = parent_215;
+		right_115.color = color_216;
+		right_4.key = key_449;
+		right_4.value = value_454;
+		right_4.left = left_452;
+		right_4.right = right_450;
+		right_4.parent = obj.root;
+		right_4.color = color_453;
+		left_16.key = key_464;
+		left_16.value = value_469;
+		left_16.left = left_467;
+		left_16.right = right_465;
+		left_16.parent = left_300;
+		left_16.color = color_468;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put69() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -5950,26 +4906,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_302 = left_16;
 		Entry left_103 = null;
 		Entry right_104 = null;
-		Entry left_524 = null;
-		Entry right_522 = null;
+		Entry left_494 = null;
+		Entry right_492 = null;
 		obj.size = 6;
 		boolean color_6 = true;
-		boolean color_525 = true;
-		int key = 0;
+		int key_491 = 5;
+		int key = 3;
 		boolean color_106 = true;
-		int key_112 = -2;
-		int key_303 = -4;
-		int key_14 = -3;
+		int key_112 = 1;
+		int key_303 = -1;
+		int key_14 = 0;
 		boolean color_216 = false;
 		boolean color_19 = false;
 		boolean color_117 = true;
-		int key_304 = -3;
-		int key_211 = -1;
-		int key_1 = 1;
-		int key_301 = -4;
-		int key_521 = 2;
-		int key_101 = -4;
-		int key_299 = 1;
+		int key_304 = 0;
+		boolean color_495 = true;
+		int key_211 = 2;
+		int key_1 = 4;
+		int key_301 = -1;
+		int key_101 = -1;
+		int key_299 = 4;
 		Entry newNode_254 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -5978,7 +4934,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_113 = null;
 		Object value_212 = null;
 		Object value_102 = null;
-		Object value_526 = null;
+		Object value_496 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6009,128 +4965,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_16.right = right_104;
 		left_16.parent = parent_105;
 		left_16.color = color_106;
-		right_4.key = key_521;
-		right_4.value = value_526;
-		right_4.left = left_524;
-		right_4.right = right_522;
+		right_4.key = key_491;
+		right_4.value = value_496;
+		right_4.left = left_494;
+		right_4.right = right_492;
 		right_4.parent = obj.root;
-		right_4.color = color_525;
+		right_4.color = color_495;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test85() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_115 = new Entry();
-		Entry left_114 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry parent_215 = right_17;
-		Entry right_214 = null;
-		Entry parent_193 = right_17;
-		Entry parent_71 = obj.root;
-		Entry left_299 = left_3;
-		Entry right_301 = right_115;
-		Entry left_304 = left_114;
-		Entry left_307 = left_114;
-		Entry right_310 = right_4;
-		Entry right_313 = right_4;
-		Entry left_213 = null;
-		Entry left_191 = null;
-		Entry right_192 = null;
-		Entry left_69 = null;
-		Entry right_70 = null;
-		Entry left_569 = null;
-		Entry right_567 = null;
-		int key_67 = 1;
-		int key_311 = 0;
-		obj.size = 7;
-		boolean color_570 = true;
-		int key_309 = -3;
-		int key_306 = -4;
-		boolean color_6 = true;
-		int key = -1;
-		int key_312 = 1;
-		int key_112 = -3;
-		int key_303 = -2;
-		int key_302 = -3;
-		int key_305 = -5;
-		int key_14 = -5;
-		boolean color_216 = false;
-		boolean color_72 = true;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_189 = -4;
-		int key_300 = -5;
-		boolean color_194 = false;
-		int key_566 = -6;
-		int key_211 = -2;
-		int key_1 = 0;
-		int key_308 = -4;
-		int key_314 = 1;
-		Entry newNode_254 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_212 = null;
-		Object value_190 = null;
-		Object value_68 = null;
-		Object value_571 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		right_115.key = key_211;
-		right_115.value = value_212;
-		right_115.left = left_213;
-		right_115.right = right_214;
-		right_115.parent = parent_215;
-		right_115.color = color_216;
-		left_114.key = key_189;
-		left_114.value = value_190;
-		left_114.left = left_191;
-		left_114.right = right_192;
-		left_114.parent = parent_193;
-		left_114.color = color_194;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_16.key = key_566;
-		left_16.value = value_571;
-		left_16.left = left_569;
-		left_16.right = right_567;
-		left_16.parent = left_299;
-		left_16.color = color_570;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test86() throws Exception {
+	public void test_put70() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -6149,26 +4995,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_305 = right_115;
 		Entry left_114 = null;
 		Entry left_213 = null;
-		Entry left_463 = null;
-		Entry right_461 = null;
-		Entry left_478 = null;
-		Entry right_476 = null;
+		Entry left_460 = null;
+		Entry right_458 = null;
+		Entry left_475 = null;
+		Entry right_473 = null;
 		obj.size = 6;
 		int key_306 = -2;
 		boolean color_6 = true;
-		int key_460 = 2;
 		int key = 0;
+		int key_457 = 2;
 		int key_307 = -1;
-		int key_475 = -4;
 		int key_112 = -2;
 		int key_303 = -3;
-		boolean color_464 = true;
+		boolean color_461 = true;
 		int key_14 = -3;
 		boolean color_216 = false;
 		boolean color_19 = false;
 		boolean color_117 = true;
 		int key_304 = -2;
-		boolean color_479 = true;
+		int key_472 = -4;
+		boolean color_476 = true;
 		int key_211 = -1;
 		int key_1 = 1;
 		int key_301 = -3;
@@ -6179,8 +5025,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_15 = null;
 		Object value_113 = null;
 		Object value_212 = null;
-		Object value_465 = null;
-		Object value_480 = null;
+		Object value_462 = null;
+		Object value_477 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6205,113 +5051,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_115.right = right_214;
 		right_115.parent = parent_215;
 		right_115.color = color_216;
-		right_4.key = key_460;
-		right_4.value = value_465;
-		right_4.left = left_463;
-		right_4.right = right_461;
+		right_4.key = key_457;
+		right_4.value = value_462;
+		right_4.left = left_460;
+		right_4.right = right_458;
 		right_4.parent = obj.root;
-		right_4.color = color_464;
-		left_16.key = key_475;
-		left_16.value = value_480;
-		left_16.left = left_478;
-		left_16.right = right_476;
+		right_4.color = color_461;
+		left_16.key = key_472;
+		left_16.value = value_477;
+		left_16.left = left_475;
+		left_16.right = right_473;
 		left_16.parent = left_300;
-		left_16.color = color_479;
+		left_16.color = color_476;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test87() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_17 = new Entry();
-		Entry right_115 = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_16 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_18 = obj.root;
-		Entry parent_116 = left_3;
-		Entry parent_215 = right_17;
-		Entry right_214 = null;
-		Entry left_300 = left_3;
-		Entry right_302 = right_17;
-		Entry right_305 = right_115;
-		Entry left_114 = null;
-		Entry left_213 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
-		obj.size = 6;
-		int key_306 = -2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_307 = -1;
-		int key_458 = 2;
-		int key_112 = -2;
-		int key_303 = -3;
-		boolean color_477 = true;
-		int key_14 = -3;
-		boolean color_216 = false;
-		boolean color_19 = false;
-		boolean color_117 = true;
-		int key_304 = -2;
-		int key_211 = -1;
-		int key_1 = 1;
-		int key_301 = -3;
-		int key_473 = -4;
-		int key_299 = 1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_15 = null;
-		Object value_113 = null;
-		Object value_212 = null;
-		Object value_463 = null;
-		Object value_478 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_17.key = key_112;
-		right_17.value = value_113;
-		right_17.left = left_114;
-		right_17.right = right_115;
-		right_17.parent = parent_116;
-		right_17.color = color_117;
-		right_115.key = key_211;
-		right_115.value = value_212;
-		right_115.left = left_213;
-		right_115.right = right_214;
-		right_115.parent = parent_215;
-		right_115.color = color_216;
-		right_4.key = key_458;
-		right_4.value = value_463;
-		right_4.left = left_461;
-		right_4.right = right_459;
-		right_4.parent = obj.root;
-		right_4.color = color_462;
-		left_16.key = key_473;
-		left_16.value = value_478;
-		left_16.left = left_476;
-		left_16.right = right_474;
-		left_16.parent = left_300;
-		left_16.color = color_477;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test88() throws Exception {
+	public void test_put71() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -6333,11 +5090,12 @@ public class TreeMap_put1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test89() throws Exception {
+	public void test_put72() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -6358,11 +5116,12 @@ public class TreeMap_put1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test90() throws Exception {
+	public void test_put73() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -6383,35 +5142,12 @@ public class TreeMap_put1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test91() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry parent_5 = null;
-		Entry right_4 = null;
-		Entry left_3 = null;
-		boolean color_6 = true;
-		obj.size = 1;
-		int key = 0;
-		int key_1 = -1;
-		int key_299 = -1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test92() throws Exception {
+	public void test_put74() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6421,24 +5157,24 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_69 = null;
 		Entry right_300 = right_4;
 		Entry right_70 = null;
-		Entry left_387 = null;
-		Entry right_385 = null;
+		Entry left_384 = null;
+		Entry right_382 = null;
 		boolean color_72 = true;
 		int key_67 = 1;
 		obj.size = 3;
+		boolean color_385 = true;
 		boolean color_6 = true;
 		int key = 0;
-		boolean color_388 = true;
+		int key_381 = -2;
 		int key_1 = -1;
 		int key_301 = 1;
-		int key_384 = -2;
 		int key_299 = -1;
 		Entry newNode_266 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
-		Object value_389 = null;
+		Object value_386 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6451,17 +5187,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_3.key = key_384;
-		left_3.value = value_389;
-		left_3.left = left_387;
-		left_3.right = right_385;
+		left_3.key = key_381;
+		left_3.value = value_386;
+		left_3.left = left_384;
+		left_3.right = right_382;
 		left_3.parent = obj.root;
-		left_3.color = color_388;
+		left_3.color = color_385;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test93() throws Exception {
+	public void test_put75() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6472,23 +5209,23 @@ public class TreeMap_put1 extends TestJPF {
 		Entry newNode_266 = obj.root;
 		Entry right_300 = right_4;
 		Entry right_70 = null;
-		Entry left_385 = null;
-		Entry right_383 = null;
+		Entry left_382 = null;
+		Entry right_380 = null;
 		boolean color_72 = true;
-		boolean color_386 = true;
 		int key_67 = 1;
 		obj.size = 3;
+		boolean color_383 = true;
 		boolean color_6 = true;
 		int key = 0;
+		int key_379 = -2;
 		int key_1 = -1;
 		int key_301 = 1;
-		int key_382 = -2;
 		int key_299 = -1;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
-		Object value_387 = null;
+		Object value_384 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6501,66 +5238,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_3.key = key_382;
-		left_3.value = value_387;
-		left_3.left = left_385;
-		left_3.right = right_383;
+		left_3.key = key_379;
+		left_3.value = value_384;
+		left_3.left = left_382;
+		left_3.right = right_380;
 		left_3.parent = obj.root;
-		left_3.color = color_386;
+		left_3.color = color_383;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test94() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry left_69 = null;
-		Entry right_300 = right_4;
-		Entry right_70 = null;
-		Entry left_383 = null;
-		Entry right_381 = null;
-		boolean color_72 = true;
-		int key_67 = 1;
-		obj.size = 3;
-		boolean color_6 = true;
-		int key_380 = -2;
-		int key = 0;
-		int key_1 = -1;
-		int key_301 = 1;
-		boolean color_384 = true;
-		int key_299 = -1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_385 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_3.key = key_380;
-		left_3.value = value_385;
-		left_3.left = left_383;
-		left_3.right = right_381;
-		left_3.parent = obj.root;
-		left_3.color = color_384;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test95() throws Exception {
+	public void test_put76() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6572,26 +5261,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_258 = null;
 		Entry right_70 = null;
 		Entry right_259 = null;
-		Entry left_446 = null;
-		Entry right_444 = null;
+		Entry newNode_277 = right_259;
+		Entry left_414 = null;
+		Entry right_412 = null;
 		boolean color_72 = true;
 		int key_67 = 0;
 		obj.size = 4;
-		int key_443 = -4;
 		boolean color_6 = true;
-		boolean color_447 = true;
+		int key_411 = -4;
 		int key = -2;
 		int key_256 = -1;
 		int key_1 = -3;
+		boolean color_415 = true;
 		boolean color_261 = false;
 		int key_299 = -3;
-		Entry newNode_277 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_257 = null;
-		Object value_448 = null;
+		Object value_416 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6610,17 +5299,79 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_259;
 		left_69.parent = parent_260;
 		left_69.color = color_261;
-		left_3.key = key_443;
-		left_3.value = value_448;
-		left_3.left = left_446;
-		left_3.right = right_444;
+		left_3.key = key_411;
+		left_3.value = value_416;
+		left_3.left = left_414;
+		left_3.right = right_412;
 		left_3.parent = obj.root;
-		left_3.color = color_447;
+		left_3.color = color_415;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test96() throws Exception {
+	public void test_put77() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_69 = new Entry();
+		Entry left_3 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry parent_260 = right_4;
+		Entry left_258 = null;
+		Entry right_70 = null;
+		Entry right_259 = null;
+		Entry left_416 = null;
+		Entry right_414 = null;
+		int key_413 = -2;
+		boolean color_72 = true;
+		int key_67 = 2;
+		obj.size = 4;
+		boolean color_417 = true;
+		boolean color_6 = true;
+		int key = 0;
+		int key_256 = 1;
+		int key_1 = -1;
+		boolean color_261 = false;
+		int key_299 = -1;
+		Entry newNode_277 = new Entry();
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		Object value_257 = null;
+		Object value_418 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		left_69.key = key_256;
+		left_69.value = value_257;
+		left_69.left = left_258;
+		left_69.right = right_259;
+		left_69.parent = parent_260;
+		left_69.color = color_261;
+		left_3.key = key_413;
+		left_3.value = value_418;
+		left_3.left = left_416;
+		left_3.right = right_414;
+		left_3.parent = obj.root;
+		left_3.color = color_417;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put78() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6638,18 +5389,18 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_259 = null;
 		Entry left_280 = null;
 		Entry right_281 = null;
-		Entry left_484 = null;
-		Entry right_482 = null;
-		int key_299 = -3;
+		Entry left_463 = null;
+		Entry right_461 = null;
 		int key_67 = 0;
 		obj.size = 5;
 		boolean color_6 = true;
+		int key_460 = -4;
 		int key = -2;
 		int key_256 = -1;
-		int key_481 = -4;
 		int key_307 = 1;
 		int key_302 = 0;
 		int key_305 = 1;
+		boolean color_464 = true;
 		boolean color_261 = false;
 		boolean color_72 = true;
 		int key_304 = 0;
@@ -6657,7 +5408,7 @@ public class TreeMap_put1 extends TestJPF {
 		int key_278 = 1;
 		int key_1 = -3;
 		int key_301 = -1;
-		boolean color_485 = true;
+		int key_299 = -3;
 		Entry newNode_277 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -6665,7 +5416,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_257 = null;
 		Object value_279 = null;
-		Object value_486 = null;
+		Object value_465 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6690,17 +5441,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_281;
 		right_70.parent = parent_282;
 		right_70.color = color_283;
-		left_3.key = key_481;
-		left_3.value = value_486;
-		left_3.left = left_484;
-		left_3.right = right_482;
+		left_3.key = key_460;
+		left_3.value = value_465;
+		left_3.left = left_463;
+		left_3.right = right_461;
 		left_3.parent = obj.root;
-		left_3.color = color_485;
+		left_3.color = color_464;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test97() throws Exception {
+	public void test_put79() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6715,28 +5467,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_302 = left_69;
 		Entry right_70 = null;
 		Entry right_259 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		int key_419 = -4;
+		Entry left_419 = null;
+		Entry right_417 = null;
 		boolean color_72 = true;
-		int key_67 = 0;
+		int key_67 = 2;
 		obj.size = 4;
-		int key_304 = 0;
+		int key_304 = 2;
 		boolean color_6 = true;
-		int key = -2;
-		int key_256 = -1;
-		int key_1 = -3;
-		int key_301 = 0;
-		int key_303 = -1;
-		boolean color_423 = true;
+		boolean color_420 = true;
+		int key = 0;
+		int key_256 = 1;
+		int key_416 = -2;
+		int key_1 = -1;
+		int key_301 = 2;
+		int key_303 = 1;
 		boolean color_261 = false;
-		int key_299 = -3;
+		int key_299 = -1;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_257 = null;
-		Object value_424 = null;
+		Object value_421 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6755,81 +5507,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_259;
 		left_69.parent = parent_260;
 		left_69.color = color_261;
-		left_3.key = key_419;
-		left_3.value = value_424;
-		left_3.left = left_422;
-		left_3.right = right_420;
+		left_3.key = key_416;
+		left_3.value = value_421;
+		left_3.left = left_419;
+		left_3.right = right_417;
 		left_3.parent = obj.root;
-		left_3.color = color_423;
+		left_3.color = color_420;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test98() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_260 = right_4;
-		Entry left_258 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry right_70 = null;
-		Entry right_259 = null;
-		Entry left_420 = null;
-		Entry right_418 = null;
-		boolean color_72 = true;
-		int key_67 = 0;
-		obj.size = 4;
-		int key_304 = 0;
-		boolean color_6 = true;
-		boolean color_421 = true;
-		int key = -2;
-		int key_256 = -1;
-		int key_1 = -3;
-		int key_301 = 0;
-		int key_303 = -1;
-		boolean color_261 = false;
-		int key_417 = -4;
-		int key_299 = -3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_257 = null;
-		Object value_422 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_256;
-		left_69.value = value_257;
-		left_69.left = left_258;
-		left_69.right = right_259;
-		left_69.parent = parent_260;
-		left_69.color = color_261;
-		left_3.key = key_417;
-		left_3.value = value_422;
-		left_3.left = left_420;
-		left_3.right = right_418;
-		left_3.parent = obj.root;
-		left_3.color = color_421;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test99() throws Exception {
+	public void test_put80() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6892,11 +5581,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_424;
 		left_3.parent = obj.root;
 		left_3.color = color_427;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test100() throws Exception {
+	public void test_put81() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6909,28 +5599,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_70 = null;
 		Entry left_300 = left_69;
 		Entry left_258 = null;
-		Entry left_453 = null;
-		Entry right_451 = null;
+		Entry left_423 = null;
+		Entry right_421 = null;
 		boolean color_72 = true;
-		int key_67 = 1;
+		int key_67 = 0;
 		obj.size = 4;
+		boolean color_424 = true;
+		int key_420 = -4;
 		boolean color_6 = true;
-		boolean color_454 = true;
-		int key = 0;
-		int key_256 = -1;
-		int key_1 = -2;
-		int key_301 = -2;
-		int key_302 = -1;
-		int key_450 = -3;
+		int key = -1;
+		int key_256 = -2;
+		int key_1 = -3;
+		int key_301 = -3;
+		int key_302 = -2;
 		boolean color_261 = false;
-		int key_299 = -2;
+		int key_299 = -3;
 		Entry newNode_298 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_257 = null;
-		Object value_455 = null;
+		Object value_425 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -6949,17 +5639,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_259;
 		left_69.parent = parent_260;
 		left_69.color = color_261;
-		left_3.key = key_450;
-		left_3.value = value_455;
-		left_3.left = left_453;
-		left_3.right = right_451;
+		left_3.key = key_420;
+		left_3.value = value_425;
+		left_3.left = left_423;
+		left_3.right = right_421;
 		left_3.parent = obj.root;
-		left_3.color = color_454;
+		left_3.color = color_424;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test101() throws Exception {
+	public void test_put82() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6977,26 +5668,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_258 = null;
 		Entry left_280 = null;
 		Entry right_281 = null;
-		Entry left_486 = null;
-		Entry right_484 = null;
-		int key_67 = 0;
+		Entry left_465 = null;
+		Entry right_463 = null;
+		int key_67 = 1;
 		obj.size = 5;
 		boolean color_6 = true;
-		int key = -1;
-		int key_256 = -2;
-		int key_307 = 1;
-		int key_302 = -2;
-		int key_305 = 1;
+		int key = 0;
+		int key_256 = -1;
+		boolean color_466 = true;
+		int key_307 = 2;
+		int key_302 = -1;
+		int key_305 = 2;
+		int key_462 = -3;
 		boolean color_261 = false;
 		boolean color_72 = true;
-		int key_483 = -4;
-		int key_304 = 0;
+		int key_304 = 1;
 		boolean color_283 = false;
-		int key_278 = 1;
-		int key_1 = -3;
-		int key_301 = -3;
-		boolean color_487 = true;
-		int key_299 = -3;
+		int key_278 = 2;
+		int key_1 = -2;
+		int key_301 = -2;
+		int key_299 = -2;
 		Entry newNode_298 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -7004,7 +5695,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_257 = null;
 		Object value_279 = null;
-		Object value_488 = null;
+		Object value_467 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7029,17 +5720,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_281;
 		right_70.parent = parent_282;
 		right_70.color = color_283;
-		left_3.key = key_483;
-		left_3.value = value_488;
-		left_3.left = left_486;
-		left_3.right = right_484;
+		left_3.key = key_462;
+		left_3.value = value_467;
+		left_3.left = left_465;
+		left_3.right = right_463;
 		left_3.parent = obj.root;
-		left_3.color = color_487;
+		left_3.color = color_466;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test102() throws Exception {
+	public void test_put83() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7054,28 +5746,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_302 = left_69;
 		Entry right_70 = null;
 		Entry left_258 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		int key_299 = -2;
 		boolean color_72 = true;
 		int key_67 = 1;
 		obj.size = 4;
-		boolean color_425 = true;
-		int key_304 = -1;
+		boolean color_422 = true;
 		boolean color_6 = true;
+		int key_304 = -1;
 		int key = 0;
 		int key_256 = -1;
-		int key_421 = -3;
 		int key_1 = -2;
 		int key_301 = 1;
 		int key_303 = -2;
+		int key_418 = -3;
 		boolean color_261 = false;
-		int key_299 = -2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_257 = null;
-		Object value_426 = null;
+		Object value_423 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7094,81 +5786,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_259;
 		left_69.parent = parent_260;
 		left_69.color = color_261;
-		left_3.key = key_421;
-		left_3.value = value_426;
-		left_3.left = left_424;
-		left_3.right = right_422;
+		left_3.key = key_418;
+		left_3.value = value_423;
+		left_3.left = left_421;
+		left_3.right = right_419;
 		left_3.parent = obj.root;
-		left_3.color = color_425;
+		left_3.color = color_422;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test103() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_260 = right_4;
-		Entry right_259 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry right_70 = null;
-		Entry left_258 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		boolean color_72 = true;
-		int key_419 = -4;
-		int key_67 = 0;
-		obj.size = 4;
-		int key_304 = -2;
-		boolean color_6 = true;
-		int key = -1;
-		int key_256 = -2;
-		int key_1 = -3;
-		int key_301 = 0;
-		int key_303 = -3;
-		boolean color_423 = true;
-		boolean color_261 = false;
-		int key_299 = -3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_257 = null;
-		Object value_424 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_256;
-		left_69.value = value_257;
-		left_69.left = left_258;
-		left_69.right = right_259;
-		left_69.parent = parent_260;
-		left_69.color = color_261;
-		left_3.key = key_419;
-		left_3.value = value_424;
-		left_3.left = left_422;
-		left_3.right = right_420;
-		left_3.parent = obj.root;
-		left_3.color = color_423;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test104() throws Exception {
+	public void test_put84() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7216,11 +5845,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_387;
 		left_3.parent = obj.root;
 		left_3.color = color_390;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test105() throws Exception {
+	public void test_put85() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7230,25 +5860,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_70 = null;
 		Entry right_300 = right_4;
 		Entry left_69 = null;
-		Entry left_392 = null;
-		Entry right_390 = null;
+		Entry left_389 = null;
+		Entry right_387 = null;
 		boolean color_72 = true;
-		int key_67 = -1;
+		int key_67 = 0;
 		obj.size = 3;
 		boolean color_6 = true;
-		int key = 0;
-		boolean color_393 = true;
-		int key_1 = -2;
-		int key_301 = -2;
-		int key_389 = -3;
-		int key_302 = -1;
-		int key_299 = -2;
+		boolean color_390 = true;
+		int key = 1;
+		int key_1 = -1;
+		int key_301 = -1;
+		int key_302 = 0;
+		int key_386 = -2;
+		int key_299 = -1;
 		Entry newNode_299 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
-		Object value_394 = null;
+		Object value_391 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7261,17 +5891,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_3.key = key_389;
-		left_3.value = value_394;
-		left_3.left = left_392;
-		left_3.right = right_390;
+		left_3.key = key_386;
+		left_3.value = value_391;
+		left_3.left = left_389;
+		left_3.right = right_387;
 		left_3.parent = obj.root;
-		left_3.color = color_393;
+		left_3.color = color_390;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test106() throws Exception {
+	public void test_put86() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7282,24 +5913,24 @@ public class TreeMap_put1 extends TestJPF {
 		Entry newNode_299 = obj.root;
 		Entry right_300 = right_4;
 		Entry left_69 = null;
-		Entry left_390 = null;
-		Entry right_388 = null;
+		Entry left_387 = null;
+		Entry right_385 = null;
 		boolean color_72 = true;
 		int key_67 = -1;
 		obj.size = 3;
 		boolean color_6 = true;
-		int key_387 = -3;
 		int key = 0;
+		boolean color_388 = true;
 		int key_1 = -2;
 		int key_301 = -2;
 		int key_302 = -1;
-		boolean color_391 = true;
+		int key_384 = -3;
 		int key_299 = -2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
-		Object value_392 = null;
+		Object value_389 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7312,67 +5943,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
-		left_3.key = key_387;
-		left_3.value = value_392;
-		left_3.left = left_390;
-		left_3.right = right_388;
+		left_3.key = key_384;
+		left_3.value = value_389;
+		left_3.left = left_387;
+		left_3.right = right_385;
 		left_3.parent = obj.root;
-		left_3.color = color_391;
+		left_3.color = color_388;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test107() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry right_70 = null;
-		Entry right_300 = right_4;
-		Entry left_69 = null;
-		Entry left_388 = null;
-		Entry right_386 = null;
-		boolean color_72 = true;
-		int key_67 = -1;
-		obj.size = 3;
-		boolean color_6 = true;
-		int key_385 = -3;
-		int key = 0;
-		int key_1 = -2;
-		int key_301 = -2;
-		int key_302 = -1;
-		boolean color_389 = true;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_390 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_3.key = key_385;
-		left_3.value = value_390;
-		left_3.left = left_388;
-		left_3.right = right_386;
-		left_3.parent = obj.root;
-		left_3.color = color_389;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test108() throws Exception {
+	public void test_put87() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7435,11 +6017,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test109() throws Exception {
+	public void test_put88() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7457,28 +6040,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_301 = left_3;
 		Entry left_303 = left_3;
 		Entry right_281 = null;
-		Entry left_502 = null;
-		Entry right_500 = null;
-		Entry left_510 = null;
-		Entry right_508 = null;
-		int key_499 = -4;
-		int key_67 = 0;
+		Entry left_472 = null;
+		Entry right_470 = null;
+		Entry left_480 = null;
+		Entry right_478 = null;
+		int key_67 = -1;
 		obj.size = 6;
 		boolean color_6 = true;
-		int key = 1;
-		int key_302 = -3;
-		int key_305 = -1;
-		int key_14 = -3;
+		int key = 0;
+		int key_302 = -4;
+		int key_305 = -2;
+		int key_14 = -4;
 		boolean color_72 = true;
 		boolean color_19 = false;
-		boolean color_503 = true;
-		int key_304 = -3;
-		int key_300 = 2;
-		boolean color_511 = true;
+		int key_304 = -4;
+		int key_300 = 1;
+		int key_469 = -5;
+		int key_477 = -3;
 		boolean color_283 = false;
-		int key_278 = 2;
-		int key_507 = -2;
-		int key_1 = -1;
+		int key_278 = 1;
+		int key_1 = -2;
+		boolean color_481 = true;
+		boolean color_473 = true;
 		Entry newNode_310 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -7486,8 +6069,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_279 = null;
 		Object value_15 = null;
-		Object value_504 = null;
-		Object value_512 = null;
+		Object value_474 = null;
+		Object value_482 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7512,23 +6095,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		left_16.key = key_499;
-		left_16.value = value_504;
-		left_16.left = left_502;
-		left_16.right = right_500;
+		left_16.key = key_469;
+		left_16.value = value_474;
+		left_16.left = left_472;
+		left_16.right = right_470;
 		left_16.parent = left_301;
-		left_16.color = color_503;
-		right_17.key = key_507;
-		right_17.value = value_512;
-		right_17.left = left_510;
-		right_17.right = right_508;
+		left_16.color = color_473;
+		right_17.key = key_477;
+		right_17.value = value_482;
+		right_17.left = left_480;
+		right_17.right = right_478;
 		right_17.parent = left_303;
-		right_17.color = color_511;
+		right_17.color = color_481;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test110() throws Exception {
+	public void test_put89() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7546,25 +6130,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_281 = null;
 		Entry left_258 = null;
 		Entry right_259 = null;
-		Entry left_486 = null;
-		Entry right_484 = null;
+		Entry left_465 = null;
+		Entry right_463 = null;
 		int key_67 = 0;
 		obj.size = 5;
 		int key_306 = -1;
 		boolean color_6 = true;
 		int key = 1;
 		int key_256 = -1;
+		boolean color_466 = true;
 		int key_307 = 0;
 		int key_303 = -2;
+		int key_462 = -3;
 		boolean color_261 = false;
 		boolean color_72 = true;
-		int key_483 = -3;
 		int key_304 = -1;
 		boolean color_283 = false;
 		int key_278 = 2;
 		int key_1 = -2;
 		int key_301 = 2;
-		boolean color_487 = true;
 		int key_299 = -2;
 		Entry newNode_310 = new Entry();
 		Object value = null;
@@ -7573,7 +6157,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_279 = null;
 		Object value_257 = null;
-		Object value_488 = null;
+		Object value_467 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7598,17 +6182,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_259;
 		left_69.parent = parent_260;
 		left_69.color = color_261;
-		left_3.key = key_483;
-		left_3.value = value_488;
-		left_3.left = left_486;
-		left_3.right = right_484;
+		left_3.key = key_462;
+		left_3.value = value_467;
+		left_3.left = left_465;
+		left_3.right = right_463;
 		left_3.parent = obj.root;
-		left_3.color = color_487;
+		left_3.color = color_466;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test111() throws Exception {
+	public void test_put90() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7623,28 +6208,28 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_303 = right_70;
 		Entry left_69 = null;
 		Entry right_281 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		int key_299 = -1;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		int key_299 = -2;
 		boolean color_72 = true;
-		int key_67 = 0;
+		int key_67 = -1;
 		obj.size = 4;
-		boolean color_425 = true;
-		int key_304 = 2;
+		boolean color_422 = true;
+		int key_304 = 1;
 		boolean color_6 = true;
-		int key = 1;
+		int key = 0;
 		boolean color_283 = false;
-		int key_278 = 2;
-		int key_1 = -1;
-		int key_301 = -1;
-		int key_421 = -2;
-		int key_302 = 0;
+		int key_278 = 1;
+		int key_1 = -2;
+		int key_301 = -2;
+		int key_302 = -1;
+		int key_418 = -3;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_279 = null;
-		Object value_426 = null;
+		Object value_423 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7663,81 +6248,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_281;
 		right_70.parent = parent_282;
 		right_70.color = color_283;
-		left_3.key = key_421;
-		left_3.value = value_426;
-		left_3.left = left_424;
-		left_3.right = right_422;
+		left_3.key = key_418;
+		left_3.value = value_423;
+		left_3.left = left_421;
+		left_3.right = right_419;
 		left_3.parent = obj.root;
-		left_3.color = color_425;
+		left_3.color = color_422;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test112() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_282 = right_4;
-		Entry left_280 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry left_69 = null;
-		Entry right_281 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		int key_299 = -1;
-		boolean color_72 = true;
-		int key_67 = 0;
-		obj.size = 4;
-		int key_304 = 2;
-		boolean color_6 = true;
-		int key = 1;
-		boolean color_283 = false;
-		int key_278 = 2;
-		int key_1 = -1;
-		int key_301 = -1;
-		int key_302 = 0;
-		boolean color_423 = true;
-		int key_419 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_279 = null;
-		Object value_424 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_278;
-		right_70.value = value_279;
-		right_70.left = left_280;
-		right_70.right = right_281;
-		right_70.parent = parent_282;
-		right_70.color = color_283;
-		left_3.key = key_419;
-		left_3.value = value_424;
-		left_3.left = left_422;
-		left_3.right = right_420;
-		left_3.parent = obj.root;
-		left_3.color = color_423;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test113() throws Exception {
+	public void test_put91() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7800,11 +6322,73 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_426;
 		left_3.parent = obj.root;
 		left_3.color = color_429;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test114() throws Exception {
+	public void test_put92() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_70 = new Entry();
+		Entry left_3 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry parent_282 = right_4;
+		Entry right_281 = null;
+		Entry left_69 = null;
+		Entry left_280 = null;
+		Entry newNode_321 = left_280;
+		Entry left_418 = null;
+		Entry right_416 = null;
+		int key_299 = -1;
+		boolean color_72 = true;
+		int key_67 = 0;
+		boolean color_419 = true;
+		obj.size = 4;
+		boolean color_6 = true;
+		int key = 2;
+		boolean color_283 = false;
+		int key_278 = 1;
+		int key_1 = -1;
+		int key_415 = -2;
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		Object value_279 = null;
+		Object value_420 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		right_70.key = key_278;
+		right_70.value = value_279;
+		right_70.left = left_280;
+		right_70.right = right_281;
+		right_70.parent = parent_282;
+		right_70.color = color_283;
+		left_3.key = key_415;
+		left_3.value = value_420;
+		left_3.left = left_418;
+		left_3.right = right_416;
+		left_3.parent = obj.root;
+		left_3.color = color_419;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put93() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7865,11 +6449,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test115() throws Exception {
+	public void test_put94() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7886,27 +6471,27 @@ public class TreeMap_put1 extends TestJPF {
 		Entry parent_18 = obj.root;
 		Entry left_299 = left_3;
 		Entry left_301 = left_3;
-		Entry left_492 = null;
-		Entry right_490 = null;
-		Entry left_500 = null;
-		Entry right_498 = null;
-		int key_67 = 0;
+		Entry left_462 = null;
+		Entry right_460 = null;
+		Entry left_470 = null;
+		Entry right_468 = null;
+		int key_67 = -2;
 		obj.size = 6;
+		boolean color_471 = true;
 		boolean color_6 = true;
-		int key = 2;
-		int key_303 = -1;
-		boolean color_501 = true;
-		int key_302 = -3;
-		int key_497 = -2;
-		boolean color_493 = true;
-		int key_14 = -3;
+		int key = 0;
+		boolean color_463 = true;
+		int key_303 = -3;
+		int key_302 = -5;
+		int key_14 = -5;
 		boolean color_72 = true;
 		boolean color_19 = false;
-		int key_300 = -3;
+		int key_300 = -5;
+		int key_459 = -6;
 		boolean color_283 = false;
-		int key_278 = 1;
-		int key_489 = -4;
-		int key_1 = -1;
+		int key_278 = -1;
+		int key_467 = -4;
+		int key_1 = -3;
 		Entry newNode_321 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -7914,8 +6499,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_279 = null;
 		Object value_15 = null;
-		Object value_494 = null;
-		Object value_502 = null;
+		Object value_464 = null;
+		Object value_472 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -7940,23 +6525,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
-		left_16.key = key_489;
-		left_16.value = value_494;
-		left_16.left = left_492;
-		left_16.right = right_490;
+		left_16.key = key_459;
+		left_16.value = value_464;
+		left_16.left = left_462;
+		left_16.right = right_460;
 		left_16.parent = left_299;
-		left_16.color = color_493;
-		right_17.key = key_497;
-		right_17.value = value_502;
-		right_17.left = left_500;
-		right_17.right = right_498;
+		left_16.color = color_463;
+		right_17.key = key_467;
+		right_17.value = value_472;
+		right_17.left = left_470;
+		right_17.right = right_468;
 		right_17.parent = left_301;
-		right_17.color = color_501;
+		right_17.color = color_471;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test116() throws Exception {
+	public void test_put95() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7974,12 +6560,12 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_280 = null;
 		Entry left_258 = null;
 		Entry right_259 = null;
-		Entry left_491 = null;
-		Entry right_489 = null;
+		Entry left_470 = null;
+		Entry right_468 = null;
 		int key_67 = 0;
 		obj.size = 5;
+		boolean color_471 = true;
 		boolean color_6 = true;
-		boolean color_492 = true;
 		int key = 2;
 		int key_256 = -1;
 		int key_307 = -1;
@@ -7990,10 +6576,10 @@ public class TreeMap_put1 extends TestJPF {
 		int key_304 = -2;
 		boolean color_283 = false;
 		int key_278 = 1;
+		int key_467 = -3;
 		int key_1 = -2;
 		int key_301 = 0;
 		int key_308 = 0;
-		int key_488 = -3;
 		int key_299 = -2;
 		Entry newNode_321 = new Entry();
 		Object value = null;
@@ -8002,7 +6588,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_279 = null;
 		Object value_257 = null;
-		Object value_493 = null;
+		Object value_472 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8027,17 +6613,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_259;
 		left_69.parent = parent_260;
 		left_69.color = color_261;
-		left_3.key = key_488;
-		left_3.value = value_493;
-		left_3.left = left_491;
-		left_3.right = right_489;
+		left_3.key = key_467;
+		left_3.value = value_472;
+		left_3.left = left_470;
+		left_3.right = right_468;
 		left_3.parent = obj.root;
-		left_3.color = color_492;
+		left_3.color = color_471;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test117() throws Exception {
+	public void test_put96() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8052,80 +6639,16 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_303 = right_70;
 		Entry left_69 = null;
 		Entry left_280 = null;
-		Entry left_429 = null;
-		Entry right_427 = null;
-		int key_299 = -1;
-		boolean color_72 = true;
-		int key_67 = 0;
-		boolean color_430 = true;
-		obj.size = 4;
-		int key_304 = 0;
-		boolean color_6 = true;
-		int key_426 = -2;
-		int key = 2;
-		boolean color_283 = false;
-		int key_278 = 1;
-		int key_1 = -1;
-		int key_301 = -1;
-		int key_302 = 0;
-		int key_305 = 1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_279 = null;
-		Object value_431 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_278;
-		right_70.value = value_279;
-		right_70.left = left_280;
-		right_70.right = right_281;
-		right_70.parent = parent_282;
-		right_70.color = color_283;
-		left_3.key = key_426;
-		left_3.value = value_431;
-		left_3.left = left_429;
-		left_3.right = right_427;
-		left_3.parent = obj.root;
-		left_3.color = color_430;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test118() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry left_3 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_282 = right_4;
-		Entry right_281 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry left_69 = null;
-		Entry left_280 = null;
-		Entry left_427 = null;
-		Entry right_425 = null;
-		int key_299 = -3;
+		Entry left_426 = null;
+		Entry right_424 = null;
 		boolean color_72 = true;
 		int key_67 = -2;
 		obj.size = 4;
+		int key_299 = -3;
+		int key_423 = -4;
+		boolean color_427 = true;
 		int key_304 = -2;
 		boolean color_6 = true;
-		int key_424 = -4;
 		int key = 0;
 		boolean color_283 = false;
 		int key_278 = -1;
@@ -8133,13 +6656,12 @@ public class TreeMap_put1 extends TestJPF {
 		int key_301 = -3;
 		int key_302 = -2;
 		int key_305 = -1;
-		boolean color_428 = true;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_279 = null;
-		Object value_429 = null;
+		Object value_428 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8158,17 +6680,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_281;
 		right_70.parent = parent_282;
 		right_70.color = color_283;
-		left_3.key = key_424;
-		left_3.value = value_429;
-		left_3.left = left_427;
-		left_3.right = right_425;
+		left_3.key = key_423;
+		left_3.value = value_428;
+		left_3.left = left_426;
+		left_3.right = right_424;
 		left_3.parent = obj.root;
-		left_3.color = color_428;
+		left_3.color = color_427;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test119() throws Exception {
+	public void test_put97() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8202,11 +6725,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test120() throws Exception {
+	public void test_put98() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8223,16 +6747,16 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_17 = null;
 		boolean color_72 = false;
 		boolean color_19 = false;
-		int key_67 = 2;
+		int key_67 = 1;
 		obj.size = 3;
-		int key_304 = -1;
+		int key_304 = -2;
 		boolean color_6 = true;
-		int key_300 = 2;
-		int key = 1;
-		int key_1 = 0;
-		int key_302 = -1;
-		int key_305 = 0;
-		int key_14 = -1;
+		int key_300 = 1;
+		int key = 0;
+		int key_1 = -1;
+		int key_302 = -2;
+		int key_305 = -1;
+		int key_14 = -2;
 		Entry newNode_332 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -8257,11 +6781,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test121() throws Exception {
+	public void test_put99() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8296,49 +6821,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test122() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry left_69 = null;
-		Entry right_300 = right_4;
-		Entry left_3 = null;
-		Entry right_70 = null;
-		boolean color_72 = false;
-		int key_67 = 1;
-		obj.size = 2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_1 = -1;
-		int key_301 = 1;
-		int key_299 = -1;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test123() throws Exception {
+	public void test_put100() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8352,25 +6840,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry left_302 = left_69;
 		Entry right_325 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		Entry left_439 = null;
-		Entry right_437 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_436 = null;
+		Entry right_434 = null;
 		int key_67 = 2;
 		obj.size = 5;
-		boolean color_425 = true;
 		boolean color_327 = true;
 		boolean color_6 = true;
-		int key_436 = 3;
+		boolean color_437 = true;
 		int key = 0;
 		int key_322 = 1;
 		int key_303 = 1;
+		int key_433 = 3;
 		boolean color_72 = false;
+		boolean color_422 = true;
 		int key_304 = 2;
-		int key_421 = -2;
 		int key_1 = -1;
 		int key_301 = 2;
-		boolean color_440 = true;
+		int key_418 = -2;
 		int key_299 = -1;
 		Entry newNode_343 = new Entry();
 		Object value = null;
@@ -8378,8 +6866,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_323 = null;
-		Object value_426 = null;
-		Object value_441 = null;
+		Object value_423 = null;
+		Object value_438 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8398,23 +6886,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_421;
-		left_3.value = value_426;
-		left_3.left = left_424;
-		left_3.right = right_422;
+		left_3.key = key_418;
+		left_3.value = value_423;
+		left_3.left = left_421;
+		left_3.right = right_419;
 		left_3.parent = obj.root;
-		left_3.color = color_425;
-		right_70.key = key_436;
-		right_70.value = value_441;
-		right_70.left = left_439;
-		right_70.right = right_437;
+		left_3.color = color_422;
+		right_70.key = key_433;
+		right_70.value = value_438;
+		right_70.left = left_436;
+		right_70.right = right_434;
 		right_70.parent = right_300;
-		right_70.color = color_440;
+		right_70.color = color_437;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test124() throws Exception {
+	public void test_put101() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8429,33 +6918,33 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry left_302 = left_69;
 		Entry right_325 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		Entry left_437 = null;
-		Entry right_435 = null;
+		Entry left_419 = null;
+		Entry right_417 = null;
+		Entry left_434 = null;
+		Entry right_432 = null;
 		int key_67 = 0;
 		obj.size = 5;
-		boolean color_438 = true;
 		boolean color_327 = true;
 		boolean color_6 = true;
+		boolean color_420 = true;
+		boolean color_435 = true;
 		int key = -2;
 		int key_322 = -1;
 		int key_303 = -1;
-		int key_419 = -4;
-		boolean color_423 = true;
 		boolean color_72 = false;
 		int key_304 = 0;
+		int key_416 = -4;
 		int key_1 = -3;
 		int key_301 = 0;
-		int key_434 = 1;
+		int key_431 = 1;
 		int key_299 = -3;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_323 = null;
-		Object value_424 = null;
-		Object value_439 = null;
+		Object value_421 = null;
+		Object value_436 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8474,63 +6963,68 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_419;
-		left_3.value = value_424;
-		left_3.left = left_422;
-		left_3.right = right_420;
+		left_3.key = key_416;
+		left_3.value = value_421;
+		left_3.left = left_419;
+		left_3.right = right_417;
 		left_3.parent = obj.root;
-		left_3.color = color_423;
-		right_70.key = key_434;
-		right_70.value = value_439;
-		right_70.left = left_437;
-		right_70.right = right_435;
+		left_3.color = color_420;
+		right_70.key = key_431;
+		right_70.value = value_436;
+		right_70.left = left_434;
+		right_70.right = right_432;
 		right_70.parent = right_300;
-		right_70.color = color_438;
+		right_70.color = color_435;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test125() throws Exception {
+	public void test_put102() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
 		Entry left_69 = new Entry();
+		Entry left_324 = new Entry();
 		Entry left_3 = new Entry();
 		Entry right_70 = new Entry();
 		Entry parent_5 = null;
 		Entry parent_71 = obj.root;
 		Entry parent_326 = right_4;
-		Entry left_324 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
+		Entry parent_337 = left_69;
+		Entry left_335 = null;
 		Entry right_325 = null;
-		Entry left_420 = null;
-		Entry right_418 = null;
-		Entry left_435 = null;
-		Entry right_433 = null;
-		int key_67 = 2;
-		obj.size = 5;
-		int key_432 = 3;
+		Entry right_336 = null;
+		Entry newNode_354 = right_336;
+		Entry right_300 = right_4;
+		Entry left_448 = null;
+		Entry right_446 = null;
+		Entry left_463 = null;
+		Entry right_461 = null;
+		int key_67 = 0;
+		obj.size = 6;
 		boolean color_327 = true;
 		boolean color_6 = true;
-		boolean color_421 = true;
-		int key = 0;
-		int key_322 = 1;
-		int key_303 = 1;
-		int key_417 = -2;
-		boolean color_436 = true;
+		boolean color_338 = false;
+		int key_460 = 1;
+		int key = -3;
+		int key_322 = -1;
+		boolean color_464 = true;
+		boolean color_449 = true;
 		boolean color_72 = false;
-		int key_304 = 2;
-		int key_1 = -1;
-		int key_301 = 2;
-		int key_299 = -1;
+		int key_445 = -5;
+		int key_1 = -4;
+		int key_301 = 0;
+		int key_333 = -2;
+		int key_299 = -4;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_323 = null;
-		Object value_422 = null;
-		Object value_437 = null;
+		Object value_334 = null;
+		Object value_450 = null;
+		Object value_465 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8549,23 +7043,30 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_417;
-		left_3.value = value_422;
-		left_3.left = left_420;
-		left_3.right = right_418;
+		left_324.key = key_333;
+		left_324.value = value_334;
+		left_324.left = left_335;
+		left_324.right = right_336;
+		left_324.parent = parent_337;
+		left_324.color = color_338;
+		left_3.key = key_445;
+		left_3.value = value_450;
+		left_3.left = left_448;
+		left_3.right = right_446;
 		left_3.parent = obj.root;
-		left_3.color = color_421;
-		right_70.key = key_432;
-		right_70.value = value_437;
-		right_70.left = left_435;
-		right_70.right = right_433;
+		left_3.color = color_449;
+		right_70.key = key_460;
+		right_70.value = value_465;
+		right_70.left = left_463;
+		right_70.right = right_461;
 		right_70.parent = right_300;
-		right_70.color = color_436;
+		right_70.color = color_464;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test126() throws Exception {
+	public void test_put103() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8585,26 +7086,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_303 = right_70;
 		Entry left_377 = null;
 		Entry right_378 = null;
-		Entry left_520 = null;
-		Entry right_518 = null;
-		int key_67 = 0;
+		Entry left_490 = null;
+		Entry right_488 = null;
+		int key_67 = 3;
 		obj.size = 6;
 		boolean color_327 = true;
 		boolean color_6 = true;
 		boolean color_338 = false;
-		int key = -3;
-		int key_322 = -1;
-		int key_302 = 1;
+		int key = 0;
+		int key_322 = 2;
+		int key_487 = -2;
+		int key_302 = 4;
 		boolean color_380 = true;
 		boolean color_72 = false;
-		int key_304 = 1;
-		int key_517 = -5;
-		int key_375 = 1;
-		boolean color_521 = true;
-		int key_1 = -4;
-		int key_301 = 0;
-		int key_333 = -2;
-		int key_299 = -4;
+		boolean color_491 = true;
+		int key_304 = 4;
+		int key_375 = 4;
+		int key_1 = -1;
+		int key_301 = 3;
+		int key_333 = 1;
+		int key_299 = -1;
 		Entry newNode_354 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -8613,7 +7114,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_323 = null;
 		Object value_334 = null;
 		Object value_376 = null;
-		Object value_522 = null;
+		Object value_492 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8644,128 +7145,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_378;
 		right_70.parent = parent_379;
 		right_70.color = color_380;
-		left_3.key = key_517;
-		left_3.value = value_522;
-		left_3.left = left_520;
-		left_3.right = right_518;
+		left_3.key = key_487;
+		left_3.value = value_492;
+		left_3.left = left_490;
+		left_3.right = right_488;
 		left_3.parent = obj.root;
-		left_3.color = color_521;
+		left_3.color = color_491;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test127() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_324 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_337 = left_69;
-		Entry left_335 = null;
-		Entry parent_359 = left_69;
-		Entry parent_18 = obj.root;
-		Entry right_299 = right_4;
-		Entry left_301 = left_324;
-		Entry right_304 = right_325;
-		Entry right_307 = right_325;
-		Entry left_310 = left_3;
-		Entry left_312 = left_3;
-		Entry right_336 = null;
-		Entry left_357 = null;
-		Entry right_358 = null;
-		Entry left_16 = null;
-		Entry right_17 = null;
-		Entry left_567 = null;
-		Entry right_565 = null;
-		int key_313 = -6;
-		int key_67 = 0;
-		obj.size = 7;
-		int key_311 = -6;
-		int key_309 = 0;
-		boolean color_327 = true;
-		int key_306 = -1;
-		boolean color_6 = true;
-		boolean color_338 = false;
-		int key = -4;
-		int key_322 = -2;
-		boolean color_360 = false;
-		int key_355 = -1;
-		int key_303 = -2;
-		int key_302 = -3;
-		int key_305 = -2;
-		int key_14 = -6;
-		boolean color_72 = false;
-		boolean color_19 = true;
-		int key_300 = 0;
-		boolean color_568 = true;
-		int key_1 = -5;
-		int key_308 = -1;
-		int key_564 = 1;
-		int key_314 = -5;
-		int key_333 = -3;
-		Entry newNode_354 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_334 = null;
-		Object value_356 = null;
-		Object value_15 = null;
-		Object value_569 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		left_324.key = key_333;
-		left_324.value = value_334;
-		left_324.left = left_335;
-		left_324.right = right_336;
-		left_324.parent = parent_337;
-		left_324.color = color_338;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_70.key = key_564;
-		right_70.value = value_569;
-		right_70.left = left_567;
-		right_70.right = right_565;
-		right_70.parent = right_299;
-		right_70.color = color_568;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test128() throws Exception {
+	public void test_put104() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -8784,10 +7175,11 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_305 = left_324;
 		Entry right_325 = null;
 		Entry right_336 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
+		Entry left_456 = null;
+		Entry right_454 = null;
+		Entry left_471 = null;
+		Entry right_469 = null;
+		boolean color_472 = true;
 		int key_67 = 3;
 		obj.size = 6;
 		boolean color_327 = true;
@@ -8796,14 +7188,13 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_338 = false;
 		int key = 0;
 		int key_322 = 2;
+		int key_453 = -2;
+		int key_468 = 4;
 		int key_307 = 2;
-		boolean color_460 = true;
 		int key_303 = 2;
 		boolean color_72 = false;
+		boolean color_457 = true;
 		int key_304 = 3;
-		int key_456 = -2;
-		boolean color_475 = true;
-		int key_471 = 4;
 		int key_1 = -1;
 		int key_301 = 3;
 		int key_333 = 1;
@@ -8814,8 +7205,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_323 = null;
 		Object value_334 = null;
-		Object value_461 = null;
-		Object value_476 = null;
+		Object value_458 = null;
+		Object value_473 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -8840,113 +7231,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_324.right = right_336;
 		left_324.parent = parent_337;
 		left_324.color = color_338;
-		left_3.key = key_456;
-		left_3.value = value_461;
-		left_3.left = left_459;
-		left_3.right = right_457;
+		left_3.key = key_453;
+		left_3.value = value_458;
+		left_3.left = left_456;
+		left_3.right = right_454;
 		left_3.parent = obj.root;
-		left_3.color = color_460;
-		right_70.key = key_471;
-		right_70.value = value_476;
-		right_70.left = left_474;
-		right_70.right = right_472;
+		left_3.color = color_457;
+		right_70.key = key_468;
+		right_70.value = value_473;
+		right_70.left = left_471;
+		right_70.right = right_469;
 		right_70.parent = right_300;
-		right_70.color = color_475;
+		right_70.color = color_472;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test129() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_324 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_337 = left_69;
-		Entry left_335 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry left_305 = left_324;
-		Entry right_325 = null;
-		Entry right_336 = null;
-		Entry left_457 = null;
-		Entry right_455 = null;
-		Entry left_472 = null;
-		Entry right_470 = null;
-		int key_67 = 4;
-		obj.size = 6;
-		boolean color_327 = true;
-		int key_306 = 2;
-		boolean color_6 = true;
-		boolean color_338 = false;
-		int key = 1;
-		int key_322 = 3;
-		int key_307 = 3;
-		int key_303 = 3;
-		int key_454 = -1;
-		boolean color_458 = true;
-		boolean color_72 = false;
-		int key_304 = 4;
-		int key_469 = 5;
-		int key_1 = 0;
-		int key_301 = 4;
-		boolean color_473 = true;
-		int key_333 = 2;
-		int key_299 = 0;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_334 = null;
-		Object value_459 = null;
-		Object value_474 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		left_324.key = key_333;
-		left_324.value = value_334;
-		left_324.left = left_335;
-		left_324.right = right_336;
-		left_324.parent = parent_337;
-		left_324.color = color_338;
-		left_3.key = key_454;
-		left_3.value = value_459;
-		left_3.left = left_457;
-		left_3.right = right_455;
-		left_3.parent = obj.root;
-		left_3.color = color_458;
-		right_70.key = key_469;
-		right_70.value = value_474;
-		right_70.left = left_472;
-		right_70.right = right_470;
-		right_70.parent = right_300;
-		right_70.color = color_473;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test130() throws Exception {
+	public void test_put105() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9035,11 +7337,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_476;
 		right_70.parent = right_300;
 		right_70.color = color_479;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test131() throws Exception {
+	public void test_put106() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9060,8 +7363,8 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_335 = null;
 		Entry left_377 = null;
 		Entry right_378 = null;
-		Entry left_527 = null;
-		Entry right_525 = null;
+		Entry left_497 = null;
+		Entry right_495 = null;
 		int key_67 = 2;
 		obj.size = 6;
 		boolean color_327 = true;
@@ -9069,15 +7372,15 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_338 = false;
 		int key = 0;
 		int key_322 = 1;
+		int key_494 = -3;
 		int key_307 = 3;
 		int key_302 = -1;
 		boolean color_380 = true;
 		int key_305 = 3;
-		boolean color_528 = true;
+		boolean color_498 = true;
 		boolean color_72 = false;
 		int key_304 = 2;
 		int key_375 = 3;
-		int key_524 = -3;
 		int key_1 = -2;
 		int key_301 = -2;
 		int key_333 = -1;
@@ -9090,7 +7393,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_323 = null;
 		Object value_334 = null;
 		Object value_376 = null;
-		Object value_529 = null;
+		Object value_499 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -9121,128 +7424,18 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_378;
 		right_70.parent = parent_379;
 		right_70.color = color_380;
-		left_3.key = key_524;
-		left_3.value = value_529;
-		left_3.left = left_527;
-		left_3.right = right_525;
+		left_3.key = key_494;
+		left_3.value = value_499;
+		left_3.left = left_497;
+		left_3.right = right_495;
 		left_3.parent = obj.root;
-		left_3.color = color_528;
+		left_3.color = color_498;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test132() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_324 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_337 = left_69;
-		Entry right_336 = null;
-		Entry parent_359 = left_69;
-		Entry parent_18 = obj.root;
-		Entry right_299 = right_4;
-		Entry left_301 = left_324;
-		Entry right_304 = right_325;
-		Entry right_307 = right_325;
-		Entry left_310 = left_3;
-		Entry left_312 = left_3;
-		Entry left_335 = null;
-		Entry left_357 = null;
-		Entry right_358 = null;
-		Entry left_16 = null;
-		Entry right_17 = null;
-		Entry left_569 = null;
-		Entry right_567 = null;
-		int key_313 = -6;
-		int key_67 = 0;
-		int key_311 = -6;
-		obj.size = 7;
-		boolean color_570 = true;
-		int key_309 = 0;
-		boolean color_327 = true;
-		boolean color_6 = true;
-		boolean color_338 = false;
-		int key_306 = -1;
-		int key = -3;
-		int key_322 = -2;
-		boolean color_360 = false;
-		int key_355 = -1;
-		int key_303 = -4;
-		int key_302 = -5;
-		int key_305 = -2;
-		int key_14 = -6;
-		boolean color_72 = false;
-		boolean color_19 = true;
-		int key_300 = 0;
-		int key_566 = 1;
-		int key_1 = -5;
-		int key_308 = -1;
-		int key_314 = -5;
-		int key_333 = -4;
-		Entry newNode_385 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_334 = null;
-		Object value_356 = null;
-		Object value_15 = null;
-		Object value_571 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		left_324.key = key_333;
-		left_324.value = value_334;
-		left_324.left = left_335;
-		left_324.right = right_336;
-		left_324.parent = parent_337;
-		left_324.color = color_338;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_70.key = key_566;
-		right_70.value = value_571;
-		right_70.left = left_569;
-		right_70.right = right_567;
-		right_70.parent = right_299;
-		right_70.color = color_570;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test133() throws Exception {
+	public void test_put107() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9261,38 +7454,38 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_305 = left_324;
 		Entry right_325 = null;
 		Entry left_335 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		int key_299 = -2;
-		int key_473 = 3;
-		int key_67 = 2;
+		Entry left_458 = null;
+		Entry right_456 = null;
+		Entry left_473 = null;
+		Entry right_471 = null;
+		int key_470 = 5;
+		int key_67 = 4;
 		obj.size = 6;
 		boolean color_327 = true;
-		int key_306 = -2;
+		int key_306 = 0;
 		boolean color_6 = true;
 		boolean color_338 = false;
-		int key = 0;
-		int key_322 = 1;
-		int key_307 = -1;
-		int key_458 = -3;
-		int key_303 = 1;
-		boolean color_477 = true;
+		int key = 2;
+		int key_322 = 3;
+		int key_307 = 1;
+		int key_303 = 3;
+		boolean color_474 = true;
+		int key_455 = -1;
+		boolean color_459 = true;
 		boolean color_72 = false;
-		int key_304 = 2;
-		int key_1 = -2;
-		int key_301 = 2;
-		int key_333 = -1;
-		boolean color_462 = true;
+		int key_304 = 4;
+		int key_1 = 0;
+		int key_301 = 4;
+		int key_333 = 1;
+		int key_299 = 0;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_323 = null;
 		Object value_334 = null;
-		Object value_463 = null;
-		Object value_478 = null;
+		Object value_460 = null;
+		Object value_475 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -9317,113 +7510,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_324.right = right_336;
 		left_324.parent = parent_337;
 		left_324.color = color_338;
-		left_3.key = key_458;
-		left_3.value = value_463;
-		left_3.left = left_461;
-		left_3.right = right_459;
+		left_3.key = key_455;
+		left_3.value = value_460;
+		left_3.left = left_458;
+		left_3.right = right_456;
 		left_3.parent = obj.root;
-		left_3.color = color_462;
-		right_70.key = key_473;
-		right_70.value = value_478;
-		right_70.left = left_476;
-		right_70.right = right_474;
+		left_3.color = color_459;
+		right_70.key = key_470;
+		right_70.value = value_475;
+		right_70.left = left_473;
+		right_70.right = right_471;
 		right_70.parent = right_300;
-		right_70.color = color_477;
+		right_70.color = color_474;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test134() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_324 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_337 = left_69;
-		Entry right_336 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry left_305 = left_324;
-		Entry right_325 = null;
-		Entry left_335 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
-		int key_67 = 2;
-		obj.size = 6;
-		boolean color_327 = true;
-		int key_306 = -2;
-		boolean color_6 = true;
-		boolean color_338 = false;
-		int key = 0;
-		int key_322 = 1;
-		int key_307 = -1;
-		boolean color_460 = true;
-		int key_303 = 1;
-		boolean color_72 = false;
-		int key_304 = 2;
-		int key_456 = -3;
-		boolean color_475 = true;
-		int key_471 = 3;
-		int key_1 = -2;
-		int key_301 = 2;
-		int key_333 = -1;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_334 = null;
-		Object value_461 = null;
-		Object value_476 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		left_324.key = key_333;
-		left_324.value = value_334;
-		left_324.left = left_335;
-		left_324.right = right_336;
-		left_324.parent = parent_337;
-		left_324.color = color_338;
-		left_3.key = key_456;
-		left_3.value = value_461;
-		left_3.left = left_459;
-		left_3.right = right_457;
-		left_3.parent = obj.root;
-		left_3.color = color_460;
-		right_70.key = key_471;
-		right_70.value = value_476;
-		right_70.left = left_474;
-		right_70.right = right_472;
-		right_70.parent = right_300;
-		right_70.color = color_475;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test135() throws Exception {
+	public void test_put108() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9497,11 +7601,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_439;
 		right_70.parent = right_300;
 		right_70.color = color_442;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test136() throws Exception {
+	public void test_put109() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9515,25 +7620,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry left_302 = left_69;
 		Entry left_324 = null;
-		Entry left_426 = null;
-		Entry right_424 = null;
-		Entry left_441 = null;
-		Entry right_439 = null;
+		Entry left_423 = null;
+		Entry right_421 = null;
+		Entry left_438 = null;
+		Entry right_436 = null;
 		int key_67 = 1;
 		obj.size = 5;
+		boolean color_424 = true;
 		boolean color_327 = true;
-		boolean color_427 = true;
 		boolean color_6 = true;
+		boolean color_439 = true;
 		int key = 0;
 		int key_322 = -1;
 		int key_303 = -2;
-		int key_423 = -3;
 		boolean color_72 = false;
+		int key_435 = 2;
+		int key_420 = -3;
 		int key_304 = -1;
-		int key_438 = 2;
 		int key_1 = -2;
 		int key_301 = 1;
-		boolean color_442 = true;
 		int key_299 = -2;
 		Entry newNode_386 = new Entry();
 		Object value = null;
@@ -9541,8 +7646,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_323 = null;
-		Object value_428 = null;
-		Object value_443 = null;
+		Object value_425 = null;
+		Object value_440 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -9561,23 +7666,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_423;
-		left_3.value = value_428;
-		left_3.left = left_426;
-		left_3.right = right_424;
+		left_3.key = key_420;
+		left_3.value = value_425;
+		left_3.left = left_423;
+		left_3.right = right_421;
 		left_3.parent = obj.root;
-		left_3.color = color_427;
-		right_70.key = key_438;
-		right_70.value = value_443;
-		right_70.left = left_441;
-		right_70.right = right_439;
+		left_3.color = color_424;
+		right_70.key = key_435;
+		right_70.value = value_440;
+		right_70.left = left_438;
+		right_70.right = right_436;
 		right_70.parent = right_300;
-		right_70.color = color_442;
+		right_70.color = color_439;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test137() throws Exception {
+	public void test_put110() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9592,108 +7698,33 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry left_302 = left_69;
 		Entry left_324 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		Entry left_439 = null;
-		Entry right_437 = null;
-		int key_67 = 1;
-		obj.size = 5;
-		boolean color_425 = true;
-		boolean color_327 = true;
-		boolean color_6 = true;
-		int key_436 = 2;
-		int key = 0;
-		int key_322 = -1;
-		int key_303 = -2;
-		boolean color_72 = false;
-		int key_304 = -1;
-		int key_421 = -3;
-		int key_1 = -2;
-		int key_301 = 1;
-		boolean color_440 = true;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_426 = null;
-		Object value_441 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		left_3.key = key_421;
-		left_3.value = value_426;
-		left_3.left = left_424;
-		left_3.right = right_422;
-		left_3.parent = obj.root;
-		left_3.color = color_425;
-		right_70.key = key_436;
-		right_70.value = value_441;
-		right_70.left = left_439;
-		right_70.right = right_437;
-		right_70.parent = right_300;
-		right_70.color = color_440;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test138() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry right_325 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry left_324 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		Entry left_437 = null;
-		Entry right_435 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_436 = null;
+		Entry right_434 = null;
 		int key_67 = 0;
 		obj.size = 5;
-		boolean color_438 = true;
 		boolean color_327 = true;
 		boolean color_6 = true;
+		boolean color_437 = true;
 		int key = -1;
 		int key_322 = -2;
 		int key_303 = -3;
-		int key_419 = -4;
-		boolean color_423 = true;
+		int key_433 = 1;
 		boolean color_72 = false;
+		boolean color_422 = true;
 		int key_304 = -2;
 		int key_1 = -3;
 		int key_301 = 0;
-		int key_434 = 1;
+		int key_418 = -4;
 		int key_299 = -3;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_323 = null;
-		Object value_424 = null;
-		Object value_439 = null;
+		Object value_423 = null;
+		Object value_438 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -9712,23 +7743,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_419;
-		left_3.value = value_424;
-		left_3.left = left_422;
-		left_3.right = right_420;
+		left_3.key = key_418;
+		left_3.value = value_423;
+		left_3.left = left_421;
+		left_3.right = right_419;
 		left_3.parent = obj.root;
-		left_3.color = color_423;
-		right_70.key = key_434;
-		right_70.value = value_439;
-		right_70.left = left_437;
-		right_70.right = right_435;
+		left_3.color = color_422;
+		right_70.key = key_433;
+		right_70.value = value_438;
+		right_70.left = left_436;
+		right_70.right = right_434;
 		right_70.parent = right_300;
-		right_70.color = color_438;
+		right_70.color = color_437;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test139() throws Exception {
+	public void test_put111() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -9745,297 +7777,6 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry right_302 = right_325;
 		Entry right_358 = null;
-		Entry left_489 = null;
-		Entry right_487 = null;
-		Entry left_504 = null;
-		Entry right_502 = null;
-		int key_67 = 0;
-		obj.size = 6;
-		boolean color_327 = true;
-		boolean color_6 = true;
-		int key = -2;
-		int key_322 = -3;
-		boolean color_360 = false;
-		int key_355 = -1;
-		int key_303 = -1;
-		boolean color_72 = false;
-		int key_304 = 0;
-		int key_501 = 1;
-		boolean color_505 = true;
-		int key_1 = -4;
-		int key_301 = 0;
-		int key_486 = -5;
-		boolean color_490 = true;
-		int key_299 = -4;
-		Entry newNode_397 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_356 = null;
-		Object value_491 = null;
-		Object value_506 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_3.key = key_486;
-		left_3.value = value_491;
-		left_3.left = left_489;
-		left_3.right = right_487;
-		left_3.parent = obj.root;
-		left_3.color = color_490;
-		right_70.key = key_501;
-		right_70.value = value_506;
-		right_70.left = left_504;
-		right_70.right = right_502;
-		right_70.parent = right_300;
-		right_70.color = color_505;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test140() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_324 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_359 = left_69;
-		Entry left_357 = null;
-		Entry parent_337 = left_69;
-		Entry parent_18 = obj.root;
-		Entry right_299 = right_4;
-		Entry right_301 = right_325;
-		Entry left_304 = left_324;
-		Entry left_307 = left_324;
-		Entry left_310 = left_3;
-		Entry left_312 = left_3;
-		Entry right_358 = null;
-		Entry left_335 = null;
-		Entry right_336 = null;
-		Entry left_16 = null;
-		Entry right_17 = null;
-		Entry left_569 = null;
-		Entry right_567 = null;
-		int key_313 = -1;
-		int key_67 = 5;
-		int key_311 = -1;
-		obj.size = 7;
-		boolean color_570 = true;
-		int key_309 = 2;
-		boolean color_327 = true;
-		boolean color_6 = true;
-		boolean color_338 = false;
-		int key_306 = 1;
-		int key = 3;
-		int key_322 = 2;
-		boolean color_360 = false;
-		int key_355 = 4;
-		int key_303 = 5;
-		int key_302 = 4;
-		int key_305 = 0;
-		int key_14 = -1;
-		boolean color_72 = false;
-		boolean color_19 = true;
-		int key_300 = 5;
-		int key_566 = 6;
-		int key_1 = 0;
-		int key_308 = 1;
-		int key_314 = 0;
-		int key_333 = 1;
-		Entry newNode_397 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_356 = null;
-		Object value_334 = null;
-		Object value_15 = null;
-		Object value_571 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_324.key = key_333;
-		left_324.value = value_334;
-		left_324.left = left_335;
-		left_324.right = right_336;
-		left_324.parent = parent_337;
-		left_324.color = color_338;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_70.key = key_566;
-		right_70.value = value_571;
-		right_70.left = left_569;
-		right_70.right = right_567;
-		right_70.parent = right_299;
-		right_70.color = color_570;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test141() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_359 = left_69;
-		Entry left_357 = null;
-		Entry newNode_397 = obj.root;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry right_305 = right_325;
-		Entry left_324 = null;
-		Entry right_358 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
-		int key_67 = 0;
-		obj.size = 6;
-		boolean color_327 = true;
-		int key_306 = -1;
-		boolean color_6 = true;
-		int key = -2;
-		int key_322 = -3;
-		boolean color_360 = false;
-		int key_355 = -1;
-		int key_307 = 0;
-		int key_458 = -5;
-		int key_303 = -4;
-		boolean color_477 = true;
-		boolean color_72 = false;
-		int key_304 = -3;
-		int key_1 = -4;
-		int key_301 = 0;
-		int key_473 = 1;
-		int key_299 = -4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_356 = null;
-		Object value_463 = null;
-		Object value_478 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_3.key = key_458;
-		left_3.value = value_463;
-		left_3.left = left_461;
-		left_3.right = right_459;
-		left_3.parent = obj.root;
-		left_3.color = color_462;
-		right_70.key = key_473;
-		right_70.value = value_478;
-		right_70.left = left_476;
-		right_70.right = right_474;
-		right_70.parent = right_300;
-		right_70.color = color_477;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test142() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_359 = left_69;
-		Entry left_357 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry right_305 = right_325;
-		Entry left_324 = null;
-		Entry right_358 = null;
 		Entry left_459 = null;
 		Entry right_457 = null;
 		Entry left_474 = null;
@@ -10043,23 +7784,22 @@ public class TreeMap_put1 extends TestJPF {
 		int key_67 = 0;
 		obj.size = 6;
 		boolean color_327 = true;
-		int key_306 = -1;
 		boolean color_6 = true;
 		int key = -2;
 		int key_322 = -3;
 		boolean color_360 = false;
 		int key_355 = -1;
-		int key_307 = 0;
 		boolean color_460 = true;
-		int key_303 = -4;
+		int key_303 = -1;
 		boolean color_72 = false;
-		int key_304 = -3;
+		int key_304 = 0;
 		int key_456 = -5;
 		boolean color_475 = true;
 		int key_471 = 1;
 		int key_1 = -4;
 		int key_301 = 0;
 		int key_299 = -4;
+		Entry newNode_397 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
@@ -10104,11 +7844,104 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_472;
 		right_70.parent = right_300;
 		right_70.color = color_475;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test143() throws Exception {
+	public void test_put112() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_69 = new Entry();
+		Entry right_325 = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_70 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry parent_326 = right_4;
+		Entry parent_359 = left_69;
+		Entry left_357 = null;
+		Entry newNode_397 = obj.root;
+		Entry right_300 = right_4;
+		Entry left_302 = left_69;
+		Entry right_305 = right_325;
+		Entry left_324 = null;
+		Entry right_358 = null;
+		Entry left_458 = null;
+		Entry right_456 = null;
+		Entry left_473 = null;
+		Entry right_471 = null;
+		int key_470 = 1;
+		int key_67 = 0;
+		obj.size = 6;
+		boolean color_327 = true;
+		int key_306 = -1;
+		boolean color_6 = true;
+		int key = -2;
+		int key_322 = -3;
+		boolean color_360 = false;
+		int key_355 = -1;
+		int key_307 = 0;
+		int key_303 = -4;
+		boolean color_474 = true;
+		int key_455 = -5;
+		boolean color_459 = true;
+		boolean color_72 = false;
+		int key_304 = -3;
+		int key_1 = -4;
+		int key_301 = 0;
+		int key_299 = -4;
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		Object value_323 = null;
+		Object value_356 = null;
+		Object value_460 = null;
+		Object value_475 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		left_69.key = key_322;
+		left_69.value = value_323;
+		left_69.left = left_324;
+		left_69.right = right_325;
+		left_69.parent = parent_326;
+		left_69.color = color_327;
+		right_325.key = key_355;
+		right_325.value = value_356;
+		right_325.left = left_357;
+		right_325.right = right_358;
+		right_325.parent = parent_359;
+		right_325.color = color_360;
+		left_3.key = key_455;
+		left_3.value = value_460;
+		left_3.left = left_458;
+		left_3.right = right_456;
+		left_3.parent = obj.root;
+		left_3.color = color_459;
+		right_70.key = key_470;
+		right_70.value = value_475;
+		right_70.left = left_473;
+		right_70.right = right_471;
+		right_70.parent = right_300;
+		right_70.color = color_474;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put113() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10197,11 +8030,98 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_478;
 		right_70.parent = right_300;
 		right_70.color = color_481;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test144() throws Exception {
+	public void test_put114() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_69 = new Entry();
+		Entry right_325 = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_70 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry parent_326 = right_4;
+		Entry parent_359 = left_69;
+		Entry right_358 = null;
+		Entry left_324 = null;
+		Entry left_357 = null;
+		Entry newNode_408 = left_357;
+		Entry right_300 = right_4;
+		Entry left_452 = null;
+		Entry right_450 = null;
+		Entry left_467 = null;
+		Entry right_465 = null;
+		int key_67 = 0;
+		obj.size = 6;
+		boolean color_327 = true;
+		boolean color_6 = true;
+		int key = -1;
+		int key_322 = -3;
+		boolean color_468 = true;
+		boolean color_360 = false;
+		int key_355 = -2;
+		int key_449 = -5;
+		boolean color_453 = true;
+		boolean color_72 = false;
+		int key_464 = 1;
+		int key_1 = -4;
+		int key_301 = 0;
+		int key_299 = -4;
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		Object value_323 = null;
+		Object value_356 = null;
+		Object value_454 = null;
+		Object value_469 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		left_69.key = key_322;
+		left_69.value = value_323;
+		left_69.left = left_324;
+		left_69.right = right_325;
+		left_69.parent = parent_326;
+		left_69.color = color_327;
+		right_325.key = key_355;
+		right_325.value = value_356;
+		right_325.left = left_357;
+		right_325.right = right_358;
+		right_325.parent = parent_359;
+		right_325.color = color_360;
+		left_3.key = key_449;
+		left_3.value = value_454;
+		left_3.left = left_452;
+		left_3.right = right_450;
+		left_3.parent = obj.root;
+		left_3.color = color_453;
+		right_70.key = key_464;
+		right_70.value = value_469;
+		right_70.left = left_467;
+		right_70.right = right_465;
+		right_70.parent = right_300;
+		right_70.color = color_468;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put115() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10217,26 +8137,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_324 = null;
 		Entry left_357 = null;
 		Entry right_300 = right_4;
-		Entry left_484 = null;
-		Entry right_482 = null;
-		Entry left_499 = null;
-		Entry right_497 = null;
-		int key_496 = 1;
+		Entry left_454 = null;
+		Entry right_452 = null;
+		Entry left_469 = null;
+		Entry right_467 = null;
+		int key_299 = -4;
+		boolean color_455 = true;
 		int key_67 = 0;
+		int key_466 = 1;
 		obj.size = 6;
 		boolean color_327 = true;
 		boolean color_6 = true;
 		int key = -1;
 		int key_322 = -3;
-		int key_481 = -5;
 		boolean color_360 = false;
 		int key_355 = -2;
 		boolean color_72 = false;
-		boolean color_500 = true;
+		int key_451 = -5;
 		int key_1 = -4;
 		int key_301 = 0;
-		boolean color_485 = true;
-		int key_299 = -4;
+		boolean color_470 = true;
 		Entry newNode_408 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -10244,8 +8164,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_323 = null;
 		Object value_356 = null;
-		Object value_486 = null;
-		Object value_501 = null;
+		Object value_456 = null;
+		Object value_471 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -10270,134 +8190,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_325.right = right_358;
 		right_325.parent = parent_359;
 		right_325.color = color_360;
-		left_3.key = key_481;
-		left_3.value = value_486;
-		left_3.left = left_484;
-		left_3.right = right_482;
+		left_3.key = key_451;
+		left_3.value = value_456;
+		left_3.left = left_454;
+		left_3.right = right_452;
 		left_3.parent = obj.root;
-		left_3.color = color_485;
-		right_70.key = key_496;
-		right_70.value = value_501;
-		right_70.left = left_499;
-		right_70.right = right_497;
+		left_3.color = color_455;
+		right_70.key = key_466;
+		right_70.value = value_471;
+		right_70.left = left_469;
+		right_70.right = right_467;
 		right_70.parent = right_300;
-		right_70.color = color_500;
+		right_70.color = color_470;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test145() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_324 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_359 = left_69;
-		Entry right_358 = null;
-		Entry parent_337 = left_69;
-		Entry parent_18 = obj.root;
-		Entry right_299 = right_4;
-		Entry right_301 = right_325;
-		Entry left_304 = left_324;
-		Entry left_307 = left_324;
-		Entry left_310 = left_3;
-		Entry left_312 = left_3;
-		Entry left_357 = null;
-		Entry left_335 = null;
-		Entry right_336 = null;
-		Entry left_16 = null;
-		Entry right_17 = null;
-		Entry left_571 = null;
-		Entry right_569 = null;
-		int key_313 = -6;
-		int key_67 = 0;
-		int key_311 = -6;
-		obj.size = 7;
-		int key_309 = -3;
-		boolean color_327 = true;
-		int key_306 = -4;
-		boolean color_6 = true;
-		boolean color_338 = false;
-		int key = -1;
-		int key_322 = -3;
-		boolean color_360 = false;
-		int key_355 = -2;
-		int key_303 = -2;
-		int key_302 = -3;
-		int key_305 = -5;
-		int key_14 = -6;
-		boolean color_72 = false;
-		boolean color_19 = true;
-		int key_568 = 1;
-		int key_300 = 0;
-		boolean color_572 = true;
-		int key_1 = -5;
-		int key_308 = -4;
-		int key_314 = -5;
-		int key_333 = -4;
-		Entry newNode_408 = new Entry();
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_356 = null;
-		Object value_334 = null;
-		Object value_15 = null;
-		Object value_573 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_324.key = key_333;
-		left_324.value = value_334;
-		left_324.left = left_335;
-		left_324.right = right_336;
-		left_324.parent = parent_337;
-		left_324.color = color_338;
-		left_3.key = key_14;
-		left_3.value = value_15;
-		left_3.left = left_16;
-		left_3.right = right_17;
-		left_3.parent = parent_18;
-		left_3.color = color_19;
-		right_70.key = key_568;
-		right_70.value = value_573;
-		right_70.left = left_571;
-		right_70.right = right_569;
-		right_70.parent = right_299;
-		right_70.color = color_572;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test146() throws Exception {
+	public void test_put116() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10416,101 +8226,10 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_305 = right_325;
 		Entry left_324 = null;
 		Entry left_357 = null;
-		Entry left_463 = null;
-		Entry right_461 = null;
-		Entry left_478 = null;
-		Entry right_476 = null;
-		int key_67 = 1;
-		obj.size = 6;
-		boolean color_327 = true;
-		int key_306 = -2;
-		boolean color_6 = true;
-		int key_460 = -4;
-		int key = 0;
-		int key_322 = -2;
-		boolean color_360 = false;
-		int key_355 = -1;
-		int key_307 = -1;
-		int key_475 = 2;
-		int key_303 = -3;
-		boolean color_464 = true;
-		boolean color_72 = false;
-		int key_304 = -2;
-		boolean color_479 = true;
-		int key_1 = -3;
-		int key_301 = 1;
-		int key_299 = -3;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_323 = null;
-		Object value_356 = null;
-		Object value_465 = null;
-		Object value_480 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		left_69.key = key_322;
-		left_69.value = value_323;
-		left_69.left = left_324;
-		left_69.right = right_325;
-		left_69.parent = parent_326;
-		left_69.color = color_327;
-		right_325.key = key_355;
-		right_325.value = value_356;
-		right_325.left = left_357;
-		right_325.right = right_358;
-		right_325.parent = parent_359;
-		right_325.color = color_360;
-		left_3.key = key_460;
-		left_3.value = value_465;
-		left_3.left = left_463;
-		left_3.right = right_461;
-		left_3.parent = obj.root;
-		left_3.color = color_464;
-		right_70.key = key_475;
-		right_70.value = value_480;
-		right_70.left = left_478;
-		right_70.right = right_476;
-		right_70.parent = right_300;
-		right_70.color = color_479;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test147() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry left_69 = new Entry();
-		Entry right_325 = new Entry();
-		Entry left_3 = new Entry();
-		Entry right_70 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_326 = right_4;
-		Entry parent_359 = left_69;
-		Entry right_358 = null;
-		Entry right_300 = right_4;
-		Entry left_302 = left_69;
-		Entry right_305 = right_325;
-		Entry left_324 = null;
-		Entry left_357 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
+		Entry left_460 = null;
+		Entry right_458 = null;
+		Entry left_475 = null;
+		Entry right_473 = null;
 		int key_67 = 0;
 		obj.size = 6;
 		boolean color_327 = true;
@@ -10519,16 +8238,17 @@ public class TreeMap_put1 extends TestJPF {
 		int key = -1;
 		int key_322 = -3;
 		boolean color_360 = false;
+		int key_457 = -5;
 		int key_355 = -2;
 		int key_307 = -2;
-		int key_458 = -5;
 		int key_303 = -4;
-		boolean color_477 = true;
+		boolean color_461 = true;
 		boolean color_72 = false;
 		int key_304 = -3;
+		int key_472 = 1;
+		boolean color_476 = true;
 		int key_1 = -4;
 		int key_301 = 0;
-		int key_473 = 1;
 		int key_299 = -4;
 		Object value = null;
 		obj.modCount = 0;
@@ -10536,8 +8256,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_323 = null;
 		Object value_356 = null;
-		Object value_463 = null;
-		Object value_478 = null;
+		Object value_462 = null;
+		Object value_477 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -10562,23 +8282,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_325.right = right_358;
 		right_325.parent = parent_359;
 		right_325.color = color_360;
-		left_3.key = key_458;
-		left_3.value = value_463;
-		left_3.left = left_461;
-		left_3.right = right_459;
+		left_3.key = key_457;
+		left_3.value = value_462;
+		left_3.left = left_460;
+		left_3.right = right_458;
 		left_3.parent = obj.root;
-		left_3.color = color_462;
-		right_70.key = key_473;
-		right_70.value = value_478;
-		right_70.left = left_476;
-		right_70.right = right_474;
+		left_3.color = color_461;
+		right_70.key = key_472;
+		right_70.value = value_477;
+		right_70.left = left_475;
+		right_70.right = right_473;
 		right_70.parent = right_300;
-		right_70.color = color_477;
+		right_70.color = color_476;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test148() throws Exception {
+	public void test_put117() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10615,11 +8336,49 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test149() throws Exception {
+	public void test_put118() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry right_70 = null;
+		Entry left_3 = null;
+		Entry left_69 = null;
+		Entry newNode_409 = left_69;
+		boolean color_72 = false;
+		int key_67 = -1;
+		obj.size = 2;
+		int key_1 = -2;
+		boolean color_6 = true;
+		int key = 0;
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put119() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10651,11 +8410,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test150() throws Exception {
+	public void test_put120() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10687,11 +8447,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test151() throws Exception {
+	public void test_put121() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10708,17 +8469,17 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_17 = null;
 		boolean color_72 = false;
 		boolean color_19 = false;
-		int key_67 = 1;
+		int key_67 = 0;
 		obj.size = 3;
-		int key_306 = 0;
+		int key_306 = -1;
 		boolean color_6 = true;
-		int key_300 = 0;
-		int key = 2;
-		int key_1 = 0;
-		int key_301 = 1;
-		int key_303 = -1;
-		int key_305 = -1;
-		int key_14 = -1;
+		int key_300 = -1;
+		int key = 1;
+		int key_1 = -1;
+		int key_301 = 0;
+		int key_303 = -2;
+		int key_305 = -2;
+		int key_14 = -2;
 		Entry newNode_409 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
@@ -10743,11 +8504,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_3.right = right_17;
 		left_3.parent = parent_18;
 		left_3.color = color_19;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test152() throws Exception {
+	public void test_put122() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10783,50 +8545,12 @@ public class TreeMap_put1 extends TestJPF {
 		right_4.right = right_70;
 		right_4.parent = parent_71;
 		right_4.color = color_72;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test153() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry right_70 = null;
-		Entry right_300 = right_4;
-		Entry left_3 = null;
-		Entry left_69 = null;
-		boolean color_72 = false;
-		int key_67 = -1;
-		obj.size = 2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_1 = -2;
-		int key_301 = -2;
-		int key_302 = -1;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test154() throws Exception {
+	public void test_put123() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10840,34 +8564,34 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry right_303 = right_70;
 		Entry right_378 = null;
-		Entry left_426 = null;
-		Entry right_424 = null;
-		Entry left_441 = null;
-		Entry right_439 = null;
-		int key_67 = -1;
+		Entry left_423 = null;
+		Entry right_421 = null;
+		Entry left_438 = null;
+		Entry right_436 = null;
+		int key_67 = 0;
 		obj.size = 5;
-		boolean color_427 = true;
+		boolean color_424 = true;
 		boolean color_6 = true;
-		int key = 0;
-		int key_302 = -1;
+		boolean color_439 = true;
+		int key = 1;
+		int key_302 = 0;
 		boolean color_380 = true;
-		int key_423 = -4;
 		boolean color_72 = false;
-		int key_304 = 1;
-		int key_375 = 1;
-		int key_438 = -2;
-		int key_1 = -3;
-		int key_301 = -3;
-		boolean color_442 = true;
-		int key_299 = -3;
+		int key_435 = -1;
+		int key_420 = -3;
+		int key_304 = 2;
+		int key_375 = 2;
+		int key_1 = -2;
+		int key_301 = -2;
+		int key_299 = -2;
 		Entry newNode_420 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_376 = null;
-		Object value_428 = null;
-		Object value_443 = null;
+		Object value_425 = null;
+		Object value_440 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -10886,23 +8610,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_378;
 		right_70.parent = parent_379;
 		right_70.color = color_380;
-		left_3.key = key_423;
-		left_3.value = value_428;
-		left_3.left = left_426;
-		left_3.right = right_424;
+		left_3.key = key_420;
+		left_3.value = value_425;
+		left_3.left = left_423;
+		left_3.right = right_421;
 		left_3.parent = obj.root;
-		left_3.color = color_427;
-		left_69.key = key_438;
-		left_69.value = value_443;
-		left_69.left = left_441;
-		left_69.right = right_439;
+		left_3.color = color_424;
+		left_69.key = key_435;
+		left_69.value = value_440;
+		left_69.left = left_438;
+		left_69.right = right_436;
 		left_69.parent = right_300;
-		left_69.color = color_442;
+		left_69.color = color_439;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test155() throws Exception {
+	public void test_put124() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -10917,33 +8642,33 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry right_303 = right_70;
 		Entry right_378 = null;
-		Entry left_424 = null;
-		Entry right_422 = null;
-		Entry left_439 = null;
-		Entry right_437 = null;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_436 = null;
+		Entry right_434 = null;
 		int key_67 = 0;
 		obj.size = 5;
-		boolean color_425 = true;
 		boolean color_6 = true;
-		int key_436 = -1;
+		boolean color_437 = true;
 		int key = 1;
+		int key_433 = -1;
 		int key_302 = 0;
 		boolean color_380 = true;
 		boolean color_72 = false;
+		boolean color_422 = true;
 		int key_304 = 2;
 		int key_375 = 2;
-		int key_421 = -3;
 		int key_1 = -2;
 		int key_301 = -2;
-		boolean color_440 = true;
+		int key_418 = -3;
 		int key_299 = -2;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_376 = null;
-		Object value_426 = null;
-		Object value_441 = null;
+		Object value_423 = null;
+		Object value_438 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -10962,98 +8687,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_378;
 		right_70.parent = parent_379;
 		right_70.color = color_380;
-		left_3.key = key_421;
-		left_3.value = value_426;
-		left_3.left = left_424;
-		left_3.right = right_422;
+		left_3.key = key_418;
+		left_3.value = value_423;
+		left_3.left = left_421;
+		left_3.right = right_419;
 		left_3.parent = obj.root;
-		left_3.color = color_425;
-		left_69.key = key_436;
-		left_69.value = value_441;
-		left_69.left = left_439;
-		left_69.right = right_437;
+		left_3.color = color_422;
+		left_69.key = key_433;
+		left_69.value = value_438;
+		left_69.left = left_436;
+		left_69.right = right_434;
 		left_69.parent = right_300;
-		left_69.color = color_440;
+		left_69.color = color_437;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test156() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_69 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_379 = right_4;
-		Entry left_377 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry right_378 = null;
-		Entry left_422 = null;
-		Entry right_420 = null;
-		Entry left_437 = null;
-		Entry right_435 = null;
-		int key_67 = 0;
-		obj.size = 5;
-		boolean color_438 = true;
-		boolean color_6 = true;
-		int key = 1;
-		int key_302 = 0;
-		boolean color_380 = true;
-		boolean color_423 = true;
-		int key_419 = -3;
-		boolean color_72 = false;
-		int key_304 = 2;
-		int key_375 = 2;
-		int key_1 = -2;
-		int key_301 = -2;
-		int key_434 = -1;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_376 = null;
-		Object value_424 = null;
-		Object value_439 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_375;
-		right_70.value = value_376;
-		right_70.left = left_377;
-		right_70.right = right_378;
-		right_70.parent = parent_379;
-		right_70.color = color_380;
-		left_3.key = key_419;
-		left_3.value = value_424;
-		left_3.left = left_422;
-		left_3.right = right_420;
-		left_3.parent = obj.root;
-		left_3.color = color_423;
-		left_69.key = key_434;
-		left_69.value = value_439;
-		left_69.left = left_437;
-		left_69.right = right_435;
-		left_69.parent = right_300;
-		left_69.color = color_438;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test157() throws Exception {
+	public void test_put125() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11068,37 +8719,37 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_412 = null;
 		Entry right_378 = null;
 		Entry right_413 = null;
+		Entry newNode_431 = right_413;
 		Entry right_300 = right_4;
-		Entry left_485 = null;
-		Entry right_483 = null;
-		Entry left_500 = null;
-		Entry right_498 = null;
+		Entry left_453 = null;
+		Entry right_451 = null;
+		Entry left_468 = null;
+		Entry right_466 = null;
 		int key_67 = -1;
 		obj.size = 6;
 		boolean color_6 = true;
+		boolean color_454 = true;
 		int key = 0;
-		boolean color_501 = true;
+		boolean color_469 = true;
+		int key_465 = -2;
 		int key_302 = -1;
 		boolean color_380 = true;
-		boolean color_486 = true;
-		int key_497 = -2;
+		int key_450 = -4;
 		boolean color_72 = false;
 		int key_375 = 2;
-		int key_482 = -4;
 		int key_1 = -3;
 		int key_301 = -3;
 		boolean color_415 = false;
 		int key_410 = 1;
 		int key_299 = -3;
-		Entry newNode_431 = new Entry();
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_376 = null;
 		Object value_411 = null;
-		Object value_487 = null;
-		Object value_502 = null;
+		Object value_455 = null;
+		Object value_470 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -11123,23 +8774,111 @@ public class TreeMap_put1 extends TestJPF {
 		left_377.right = right_413;
 		left_377.parent = parent_414;
 		left_377.color = color_415;
-		left_3.key = key_482;
-		left_3.value = value_487;
-		left_3.left = left_485;
-		left_3.right = right_483;
+		left_3.key = key_450;
+		left_3.value = value_455;
+		left_3.left = left_453;
+		left_3.right = right_451;
 		left_3.parent = obj.root;
-		left_3.color = color_486;
-		left_69.key = key_497;
-		left_69.value = value_502;
-		left_69.left = left_500;
-		left_69.right = right_498;
+		left_3.color = color_454;
+		left_69.key = key_465;
+		left_69.value = value_470;
+		left_69.left = left_468;
+		left_69.right = right_466;
 		left_69.parent = right_300;
-		left_69.color = color_501;
+		left_69.color = color_469;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test158() throws Exception {
+	public void test_put126() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_70 = new Entry();
+		Entry left_377 = new Entry();
+		Entry left_3 = new Entry();
+		Entry left_69 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry parent_379 = right_4;
+		Entry parent_414 = right_70;
+		Entry left_412 = null;
+		Entry right_378 = null;
+		Entry right_413 = null;
+		Entry right_300 = right_4;
+		Entry left_455 = null;
+		Entry right_453 = null;
+		Entry left_470 = null;
+		Entry right_468 = null;
+		int key_67 = 0;
+		obj.size = 6;
+		boolean color_471 = true;
+		boolean color_6 = true;
+		int key = 1;
+		int key_452 = -3;
+		boolean color_456 = true;
+		int key_302 = 0;
+		boolean color_380 = true;
+		boolean color_72 = false;
+		int key_375 = 3;
+		int key_467 = -1;
+		int key_1 = -2;
+		int key_301 = -2;
+		boolean color_415 = false;
+		int key_410 = 2;
+		int key_299 = -2;
+		Entry newNode_431 = new Entry();
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		Object value_376 = null;
+		Object value_411 = null;
+		Object value_457 = null;
+		Object value_472 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		right_70.key = key_375;
+		right_70.value = value_376;
+		right_70.left = left_377;
+		right_70.right = right_378;
+		right_70.parent = parent_379;
+		right_70.color = color_380;
+		left_377.key = key_410;
+		left_377.value = value_411;
+		left_377.left = left_412;
+		left_377.right = right_413;
+		left_377.parent = parent_414;
+		left_377.color = color_415;
+		left_3.key = key_452;
+		left_3.value = value_457;
+		left_3.left = left_455;
+		left_3.right = right_453;
+		left_3.parent = obj.root;
+		left_3.color = color_456;
+		left_69.key = key_467;
+		left_69.value = value_472;
+		left_69.left = left_470;
+		left_69.right = right_468;
+		left_69.parent = right_300;
+		left_69.color = color_471;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put127() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11158,38 +8897,38 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_305 = left_377;
 		Entry right_378 = null;
 		Entry right_413 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
-		int key_67 = 0;
+		Entry left_458 = null;
+		Entry right_456 = null;
+		Entry left_473 = null;
+		Entry right_471 = null;
+		int key_470 = -2;
+		int key_67 = -1;
 		obj.size = 6;
-		int key_306 = 2;
+		int key_306 = 1;
 		boolean color_6 = true;
-		int key = 1;
-		int key_307 = 3;
-		int key_458 = -3;
-		int key_302 = 0;
+		int key = 0;
+		int key_307 = 2;
+		int key_302 = -1;
 		boolean color_380 = true;
-		boolean color_477 = true;
+		boolean color_474 = true;
+		int key_455 = -4;
+		boolean color_459 = true;
 		boolean color_72 = false;
-		int key_304 = 3;
-		int key_375 = 3;
-		int key_1 = -2;
-		int key_301 = -2;
+		int key_304 = 2;
+		int key_375 = 2;
+		int key_1 = -3;
+		int key_301 = -3;
 		boolean color_415 = false;
-		int key_410 = 2;
-		int key_473 = -1;
-		int key_299 = -2;
+		int key_410 = 1;
+		int key_299 = -3;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_376 = null;
 		Object value_411 = null;
-		Object value_463 = null;
-		Object value_478 = null;
+		Object value_460 = null;
+		Object value_475 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -11214,113 +8953,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_377.right = right_413;
 		left_377.parent = parent_414;
 		left_377.color = color_415;
-		left_3.key = key_458;
-		left_3.value = value_463;
-		left_3.left = left_461;
-		left_3.right = right_459;
+		left_3.key = key_455;
+		left_3.value = value_460;
+		left_3.left = left_458;
+		left_3.right = right_456;
 		left_3.parent = obj.root;
-		left_3.color = color_462;
-		left_69.key = key_473;
-		left_69.value = value_478;
-		left_69.left = left_476;
-		left_69.right = right_474;
+		left_3.color = color_459;
+		left_69.key = key_470;
+		left_69.value = value_475;
+		left_69.left = left_473;
+		left_69.right = right_471;
 		left_69.parent = right_300;
-		left_69.color = color_477;
+		left_69.color = color_474;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test159() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry left_377 = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_69 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_379 = right_4;
-		Entry parent_414 = right_70;
-		Entry left_412 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry left_305 = left_377;
-		Entry right_378 = null;
-		Entry right_413 = null;
-		Entry left_459 = null;
-		Entry right_457 = null;
-		Entry left_474 = null;
-		Entry right_472 = null;
-		int key_67 = 0;
-		obj.size = 6;
-		int key_306 = 2;
-		boolean color_6 = true;
-		int key = 1;
-		int key_307 = 3;
-		boolean color_460 = true;
-		int key_302 = 0;
-		boolean color_380 = true;
-		boolean color_72 = false;
-		int key_304 = 3;
-		int key_375 = 3;
-		int key_456 = -3;
-		boolean color_475 = true;
-		int key_471 = -1;
-		int key_1 = -2;
-		int key_301 = -2;
-		boolean color_415 = false;
-		int key_410 = 2;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_376 = null;
-		Object value_411 = null;
-		Object value_461 = null;
-		Object value_476 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_375;
-		right_70.value = value_376;
-		right_70.left = left_377;
-		right_70.right = right_378;
-		right_70.parent = parent_379;
-		right_70.color = color_380;
-		left_377.key = key_410;
-		left_377.value = value_411;
-		left_377.left = left_412;
-		left_377.right = right_413;
-		left_377.parent = parent_414;
-		left_377.color = color_415;
-		left_3.key = key_456;
-		left_3.value = value_461;
-		left_3.left = left_459;
-		left_3.right = right_457;
-		left_3.parent = obj.root;
-		left_3.color = color_460;
-		left_69.key = key_471;
-		left_69.value = value_476;
-		left_69.left = left_474;
-		left_69.right = right_472;
-		left_69.parent = right_300;
-		left_69.color = color_475;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test160() throws Exception {
+	public void test_put128() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11409,11 +9059,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_478;
 		left_69.parent = right_300;
 		left_69.color = color_481;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test161() throws Exception {
+	public void test_put129() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11430,27 +9081,27 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry left_303 = left_377;
 		Entry left_412 = null;
-		Entry left_492 = null;
-		Entry right_490 = null;
-		Entry left_507 = null;
-		Entry right_505 = null;
+		Entry left_462 = null;
+		Entry right_460 = null;
+		Entry left_477 = null;
+		Entry right_475 = null;
 		int key_67 = 0;
 		obj.size = 6;
 		boolean color_6 = true;
 		int key = 2;
-		boolean color_508 = true;
+		boolean color_463 = true;
+		int key_474 = -1;
 		int key_302 = 0;
 		boolean color_380 = true;
 		int key_305 = 1;
-		boolean color_493 = true;
 		boolean color_72 = false;
 		int key_304 = 0;
 		int key_375 = 3;
-		int key_504 = -1;
-		int key_489 = -3;
+		int key_459 = -3;
 		int key_1 = -2;
 		int key_301 = -2;
 		boolean color_415 = false;
+		boolean color_478 = true;
 		int key_410 = 1;
 		int key_299 = -2;
 		Entry newNode_452 = new Entry();
@@ -11460,8 +9111,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_376 = null;
 		Object value_411 = null;
-		Object value_494 = null;
-		Object value_509 = null;
+		Object value_464 = null;
+		Object value_479 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -11486,23 +9137,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_377.right = right_413;
 		left_377.parent = parent_414;
 		left_377.color = color_415;
-		left_3.key = key_489;
-		left_3.value = value_494;
-		left_3.left = left_492;
-		left_3.right = right_490;
+		left_3.key = key_459;
+		left_3.value = value_464;
+		left_3.left = left_462;
+		left_3.right = right_460;
 		left_3.parent = obj.root;
-		left_3.color = color_493;
-		left_69.key = key_504;
-		left_69.value = value_509;
-		left_69.left = left_507;
-		left_69.right = right_505;
+		left_3.color = color_463;
+		left_69.key = key_474;
+		left_69.value = value_479;
+		left_69.left = left_477;
+		left_69.right = right_475;
 		left_69.parent = right_300;
-		left_69.color = color_508;
+		left_69.color = color_478;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test162() throws Exception {
+	public void test_put130() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11521,25 +9173,25 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_305 = left_377;
 		Entry right_378 = null;
 		Entry left_412 = null;
-		Entry left_463 = null;
-		Entry right_461 = null;
-		Entry left_478 = null;
-		Entry right_476 = null;
+		Entry left_460 = null;
+		Entry right_458 = null;
+		Entry left_475 = null;
+		Entry right_473 = null;
 		int key_67 = 0;
 		obj.size = 6;
 		int key_306 = 0;
 		boolean color_6 = true;
-		int key_460 = -3;
 		int key = 2;
+		int key_457 = -3;
 		int key_307 = 1;
-		int key_475 = -1;
+		boolean color_461 = true;
 		int key_302 = 0;
 		boolean color_380 = true;
-		boolean color_464 = true;
 		boolean color_72 = false;
 		int key_304 = 3;
-		boolean color_479 = true;
 		int key_375 = 3;
+		int key_472 = -1;
+		boolean color_476 = true;
 		int key_1 = -2;
 		int key_301 = -2;
 		boolean color_415 = false;
@@ -11551,8 +9203,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_376 = null;
 		Object value_411 = null;
-		Object value_465 = null;
-		Object value_480 = null;
+		Object value_462 = null;
+		Object value_477 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -11577,113 +9229,24 @@ public class TreeMap_put1 extends TestJPF {
 		left_377.right = right_413;
 		left_377.parent = parent_414;
 		left_377.color = color_415;
-		left_3.key = key_460;
-		left_3.value = value_465;
-		left_3.left = left_463;
-		left_3.right = right_461;
+		left_3.key = key_457;
+		left_3.value = value_462;
+		left_3.left = left_460;
+		left_3.right = right_458;
 		left_3.parent = obj.root;
-		left_3.color = color_464;
-		left_69.key = key_475;
-		left_69.value = value_480;
-		left_69.left = left_478;
-		left_69.right = right_476;
+		left_3.color = color_461;
+		left_69.key = key_472;
+		left_69.value = value_477;
+		left_69.left = left_475;
+		left_69.right = right_473;
 		left_69.parent = right_300;
-		left_69.color = color_479;
+		left_69.color = color_476;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test163() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry left_377 = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_69 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_379 = right_4;
-		Entry parent_414 = right_70;
-		Entry right_413 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry left_305 = left_377;
-		Entry right_378 = null;
-		Entry left_412 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
-		int key_67 = -2;
-		obj.size = 6;
-		int key_306 = -2;
-		boolean color_6 = true;
-		int key = 0;
-		int key_307 = -1;
-		int key_458 = -5;
-		int key_302 = -2;
-		boolean color_380 = true;
-		boolean color_477 = true;
-		boolean color_72 = false;
-		int key_304 = 1;
-		int key_375 = 1;
-		int key_1 = -4;
-		int key_301 = -4;
-		boolean color_415 = false;
-		int key_410 = -1;
-		int key_473 = -3;
-		int key_299 = -4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_376 = null;
-		Object value_411 = null;
-		Object value_463 = null;
-		Object value_478 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_375;
-		right_70.value = value_376;
-		right_70.left = left_377;
-		right_70.right = right_378;
-		right_70.parent = parent_379;
-		right_70.color = color_380;
-		left_377.key = key_410;
-		left_377.value = value_411;
-		left_377.left = left_412;
-		left_377.right = right_413;
-		left_377.parent = parent_414;
-		left_377.color = color_415;
-		left_3.key = key_458;
-		left_3.value = value_463;
-		left_3.left = left_461;
-		left_3.right = right_459;
-		left_3.parent = obj.root;
-		left_3.color = color_462;
-		left_69.key = key_473;
-		left_69.value = value_478;
-		left_69.left = left_476;
-		left_69.right = right_474;
-		left_69.parent = right_300;
-		left_69.color = color_477;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test164() throws Exception {
+	public void test_put131() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11757,11 +9320,12 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_441;
 		left_69.parent = right_300;
 		left_69.color = color_444;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test165() throws Exception {
+	public void test_put132() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11775,26 +9339,26 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry right_303 = right_70;
 		Entry left_377 = null;
-		Entry left_431 = null;
-		Entry right_429 = null;
-		Entry left_446 = null;
-		Entry right_444 = null;
+		Entry left_428 = null;
+		Entry right_426 = null;
+		Entry left_443 = null;
+		Entry right_441 = null;
 		int key_67 = -2;
 		obj.size = 5;
-		int key_443 = -3;
 		boolean color_6 = true;
 		int key = 0;
-		int key_428 = -5;
+		boolean color_429 = true;
+		int key_425 = -5;
 		int key_302 = -2;
 		boolean color_380 = true;
 		int key_305 = -1;
 		boolean color_72 = false;
 		int key_304 = -2;
-		boolean color_432 = true;
 		int key_375 = -1;
-		boolean color_447 = true;
+		boolean color_444 = true;
 		int key_1 = -4;
 		int key_301 = -4;
+		int key_440 = -3;
 		int key_299 = -4;
 		Entry newNode_453 = new Entry();
 		Object value = null;
@@ -11802,8 +9366,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_376 = null;
-		Object value_433 = null;
-		Object value_448 = null;
+		Object value_430 = null;
+		Object value_445 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -11822,23 +9386,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_378;
 		right_70.parent = parent_379;
 		right_70.color = color_380;
-		left_3.key = key_428;
-		left_3.value = value_433;
-		left_3.left = left_431;
-		left_3.right = right_429;
+		left_3.key = key_425;
+		left_3.value = value_430;
+		left_3.left = left_428;
+		left_3.right = right_426;
 		left_3.parent = obj.root;
-		left_3.color = color_432;
-		left_69.key = key_443;
-		left_69.value = value_448;
-		left_69.left = left_446;
-		left_69.right = right_444;
+		left_3.color = color_429;
+		left_69.key = key_440;
+		left_69.value = value_445;
+		left_69.left = left_443;
+		left_69.right = right_441;
 		left_69.parent = right_300;
-		left_69.color = color_447;
+		left_69.color = color_444;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test166() throws Exception {
+	public void test_put133() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -11853,34 +9418,34 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_300 = right_4;
 		Entry right_303 = right_70;
 		Entry left_377 = null;
-		Entry left_429 = null;
-		Entry right_427 = null;
-		Entry left_444 = null;
-		Entry right_442 = null;
+		Entry left_426 = null;
+		Entry right_424 = null;
+		Entry left_441 = null;
+		Entry right_439 = null;
 		int key_67 = -2;
 		obj.size = 5;
+		boolean color_427 = true;
 		boolean color_6 = true;
-		int key_426 = -5;
 		int key = 0;
 		int key_302 = -2;
 		boolean color_380 = true;
 		int key_305 = -1;
+		int key_423 = -5;
 		boolean color_72 = false;
-		boolean color_430 = true;
 		int key_304 = -2;
-		int key_441 = -3;
 		int key_375 = -1;
+		int key_438 = -3;
 		int key_1 = -4;
 		int key_301 = -4;
-		boolean color_445 = true;
+		boolean color_442 = true;
 		int key_299 = -4;
 		Object value = null;
 		obj.modCount = 0;
 		Object value_2 = null;
 		Object value_68 = null;
 		Object value_376 = null;
-		Object value_431 = null;
-		Object value_446 = null;
+		Object value_428 = null;
+		Object value_443 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -11899,99 +9464,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_70.right = right_378;
 		right_70.parent = parent_379;
 		right_70.color = color_380;
-		left_3.key = key_426;
-		left_3.value = value_431;
-		left_3.left = left_429;
-		left_3.right = right_427;
+		left_3.key = key_423;
+		left_3.value = value_428;
+		left_3.left = left_426;
+		left_3.right = right_424;
 		left_3.parent = obj.root;
-		left_3.color = color_430;
-		left_69.key = key_441;
-		left_69.value = value_446;
-		left_69.left = left_444;
-		left_69.right = right_442;
+		left_3.color = color_427;
+		left_69.key = key_438;
+		left_69.value = value_443;
+		left_69.left = left_441;
+		left_69.right = right_439;
 		left_69.parent = right_300;
-		left_69.color = color_445;
+		left_69.color = color_442;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test167() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_69 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_379 = right_4;
-		Entry right_378 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry left_377 = null;
-		Entry left_427 = null;
-		Entry right_425 = null;
-		Entry left_442 = null;
-		Entry right_440 = null;
-		int key_67 = -2;
-		obj.size = 5;
-		boolean color_6 = true;
-		int key_424 = -5;
-		int key = 0;
-		int key_439 = -3;
-		int key_302 = -2;
-		boolean color_380 = true;
-		int key_305 = -1;
-		boolean color_428 = true;
-		boolean color_72 = false;
-		int key_304 = -2;
-		int key_375 = -1;
-		int key_1 = -4;
-		int key_301 = -4;
-		boolean color_443 = true;
-		int key_299 = -4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_376 = null;
-		Object value_429 = null;
-		Object value_444 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_375;
-		right_70.value = value_376;
-		right_70.left = left_377;
-		right_70.right = right_378;
-		right_70.parent = parent_379;
-		right_70.color = color_380;
-		left_3.key = key_424;
-		left_3.value = value_429;
-		left_3.left = left_427;
-		left_3.right = right_425;
-		left_3.parent = obj.root;
-		left_3.color = color_428;
-		left_69.key = key_439;
-		left_69.value = value_444;
-		left_69.left = left_442;
-		left_69.right = right_440;
-		left_69.parent = right_300;
-		left_69.color = color_443;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test168() throws Exception {
+	public void test_put134() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -12012,8 +9502,8 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_435 = null;
 		Entry left_324 = null;
 		Entry right_325 = null;
-		Entry left_531 = null;
-		Entry right_529 = null;
+		Entry left_501 = null;
+		Entry right_499 = null;
 		int key_67 = 0;
 		obj.size = 6;
 		int key_432 = 3;
@@ -12023,16 +9513,16 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_437 = false;
 		int key = 2;
 		int key_322 = -1;
+		int key_498 = -3;
 		int key_307 = 0;
 		int key_303 = -2;
 		boolean color_380 = true;
-		boolean color_532 = true;
 		boolean color_72 = false;
 		int key_304 = -1;
 		int key_375 = 1;
+		boolean color_502 = true;
 		int key_1 = -2;
 		int key_301 = 3;
-		int key_528 = -3;
 		int key_299 = -2;
 		Entry newNode_464 = new Entry();
 		Object value = null;
@@ -12042,7 +9532,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_376 = null;
 		Object value_433 = null;
 		Object value_323 = null;
-		Object value_533 = null;
+		Object value_503 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -12073,17 +9563,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_528;
-		left_3.value = value_533;
-		left_3.left = left_531;
-		left_3.right = right_529;
+		left_3.key = key_498;
+		left_3.value = value_503;
+		left_3.left = left_501;
+		left_3.right = right_499;
 		left_3.parent = obj.root;
-		left_3.color = color_532;
+		left_3.color = color_502;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test169() throws Exception {
+	public void test_put135() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -12102,119 +9593,29 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_306 = right_378;
 		Entry left_377 = null;
 		Entry right_435 = null;
-		Entry left_463 = null;
-		Entry right_461 = null;
-		Entry left_478 = null;
-		Entry right_476 = null;
-		int key_67 = -2;
-		obj.size = 6;
-		int key_432 = 1;
-		boolean color_6 = true;
-		boolean color_437 = false;
-		int key_460 = -5;
-		int key = 0;
-		int key_307 = 1;
-		int key_475 = -3;
-		int key_302 = -2;
-		boolean color_380 = true;
-		int key_305 = -1;
-		boolean color_464 = true;
-		boolean color_72 = false;
-		int key_304 = -2;
-		boolean color_479 = true;
-		int key_375 = -1;
-		int key_1 = -4;
-		int key_301 = -4;
-		int key_299 = -4;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_376 = null;
-		Object value_433 = null;
-		Object value_465 = null;
-		Object value_480 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_375;
-		right_70.value = value_376;
-		right_70.left = left_377;
-		right_70.right = right_378;
-		right_70.parent = parent_379;
-		right_70.color = color_380;
-		right_378.key = key_432;
-		right_378.value = value_433;
-		right_378.left = left_434;
-		right_378.right = right_435;
-		right_378.parent = parent_436;
-		right_378.color = color_437;
-		left_3.key = key_460;
-		left_3.value = value_465;
-		left_3.left = left_463;
-		left_3.right = right_461;
-		left_3.parent = obj.root;
-		left_3.color = color_464;
-		left_69.key = key_475;
-		left_69.value = value_480;
-		left_69.left = left_478;
-		left_69.right = right_476;
-		left_69.parent = right_300;
-		left_69.color = color_479;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test170() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry right_378 = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_69 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_379 = right_4;
-		Entry parent_436 = right_70;
-		Entry left_434 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry right_306 = right_378;
-		Entry left_377 = null;
-		Entry right_435 = null;
-		Entry left_461 = null;
-		Entry right_459 = null;
-		Entry left_476 = null;
-		Entry right_474 = null;
-		boolean color_462 = true;
+		Entry left_460 = null;
+		Entry right_458 = null;
+		Entry left_475 = null;
+		Entry right_473 = null;
 		int key_67 = 0;
 		obj.size = 6;
 		int key_432 = 3;
 		boolean color_6 = true;
 		boolean color_437 = false;
 		int key = 2;
+		int key_457 = -3;
 		int key_307 = 3;
-		int key_458 = -3;
+		boolean color_461 = true;
 		int key_302 = 0;
 		boolean color_380 = true;
 		int key_305 = 1;
-		boolean color_477 = true;
 		boolean color_72 = false;
 		int key_304 = 0;
 		int key_375 = 1;
+		int key_472 = -1;
+		boolean color_476 = true;
 		int key_1 = -2;
 		int key_301 = -2;
-		int key_473 = -1;
 		int key_299 = -2;
 		Object value = null;
 		obj.modCount = 0;
@@ -12222,8 +9623,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_376 = null;
 		Object value_433 = null;
-		Object value_463 = null;
-		Object value_478 = null;
+		Object value_462 = null;
+		Object value_477 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -12248,23 +9649,24 @@ public class TreeMap_put1 extends TestJPF {
 		right_378.right = right_435;
 		right_378.parent = parent_436;
 		right_378.color = color_437;
-		left_3.key = key_458;
-		left_3.value = value_463;
-		left_3.left = left_461;
-		left_3.right = right_459;
+		left_3.key = key_457;
+		left_3.value = value_462;
+		left_3.left = left_460;
+		left_3.right = right_458;
 		left_3.parent = obj.root;
-		left_3.color = color_462;
-		left_69.key = key_473;
-		left_69.value = value_478;
-		left_69.left = left_476;
-		left_69.right = right_474;
+		left_3.color = color_461;
+		left_69.key = key_472;
+		left_69.value = value_477;
+		left_69.left = left_475;
+		left_69.right = right_473;
 		left_69.parent = right_300;
-		left_69.color = color_477;
+		left_69.color = color_476;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test171() throws Exception {
+	public void test_put136() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -12353,11 +9755,99 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_480;
 		left_69.parent = right_300;
 		left_69.color = color_483;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test172() throws Exception {
+	public void test_put137() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_70 = new Entry();
+		Entry right_378 = new Entry();
+		Entry left_3 = new Entry();
+		Entry left_69 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_71 = obj.root;
+		Entry parent_379 = right_4;
+		Entry parent_436 = right_70;
+		Entry right_435 = null;
+		Entry left_377 = null;
+		Entry left_434 = null;
+		Entry newNode_475 = left_434;
+		Entry right_300 = right_4;
+		Entry left_457 = null;
+		Entry right_455 = null;
+		Entry left_472 = null;
+		Entry right_470 = null;
+		int key_67 = 0;
+		obj.size = 6;
+		int key_432 = 2;
+		boolean color_6 = true;
+		boolean color_437 = false;
+		int key = 3;
+		int key_302 = 0;
+		int key_454 = -3;
+		boolean color_380 = true;
+		boolean color_458 = true;
+		boolean color_72 = false;
+		int key_375 = 1;
+		int key_469 = -1;
+		int key_1 = -2;
+		int key_301 = -2;
+		boolean color_473 = true;
+		int key_299 = -2;
+		Object value = null;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_68 = null;
+		Object value_376 = null;
+		Object value_433 = null;
+		Object value_459 = null;
+		Object value_474 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_67;
+		right_4.value = value_68;
+		right_4.left = left_69;
+		right_4.right = right_70;
+		right_4.parent = parent_71;
+		right_4.color = color_72;
+		right_70.key = key_375;
+		right_70.value = value_376;
+		right_70.left = left_377;
+		right_70.right = right_378;
+		right_70.parent = parent_379;
+		right_70.color = color_380;
+		right_378.key = key_432;
+		right_378.value = value_433;
+		right_378.left = left_434;
+		right_378.right = right_435;
+		right_378.parent = parent_436;
+		right_378.color = color_437;
+		left_3.key = key_454;
+		left_3.value = value_459;
+		left_3.left = left_457;
+		left_3.right = right_455;
+		left_3.parent = obj.root;
+		left_3.color = color_458;
+		left_69.key = key_469;
+		left_69.value = value_474;
+		left_69.left = left_472;
+		left_69.right = right_470;
+		left_69.parent = right_300;
+		left_69.color = color_473;
+		System.out.println(Utilities.repOK(obj));
+		obj.put(key,value);
+	}
+
+	@Test
+	public void test_put138() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -12377,8 +9867,9 @@ public class TreeMap_put1 extends TestJPF {
 		Entry left_303 = left_69;
 		Entry left_324 = null;
 		Entry right_325 = null;
-		Entry left_529 = null;
-		Entry right_527 = null;
+		Entry left_499 = null;
+		Entry right_497 = null;
+		int key_496 = -6;
 		int key_67 = -3;
 		obj.size = 6;
 		int key_432 = -1;
@@ -12387,13 +9878,12 @@ public class TreeMap_put1 extends TestJPF {
 		boolean color_437 = false;
 		int key = 0;
 		int key_322 = -4;
-		int key_526 = -6;
 		int key_302 = -4;
 		boolean color_380 = true;
-		boolean color_530 = true;
 		int key_305 = -3;
 		boolean color_72 = false;
 		int key_304 = -4;
+		boolean color_500 = true;
 		int key_375 = -2;
 		int key_1 = -5;
 		int key_301 = -5;
@@ -12406,7 +9896,7 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_376 = null;
 		Object value_433 = null;
 		Object value_323 = null;
-		Object value_531 = null;
+		Object value_501 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -12437,17 +9927,18 @@ public class TreeMap_put1 extends TestJPF {
 		left_69.right = right_325;
 		left_69.parent = parent_326;
 		left_69.color = color_327;
-		left_3.key = key_526;
-		left_3.value = value_531;
-		left_3.left = left_529;
-		left_3.right = right_527;
+		left_3.key = key_496;
+		left_3.value = value_501;
+		left_3.left = left_499;
+		left_3.right = right_497;
 		left_3.parent = obj.root;
-		left_3.color = color_530;
+		left_3.color = color_500;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 
 	@Test
-	public void test173() throws Exception {
+	public void test_put139() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -12466,30 +9957,30 @@ public class TreeMap_put1 extends TestJPF {
 		Entry right_306 = right_378;
 		Entry left_377 = null;
 		Entry left_434 = null;
-		Entry left_468 = null;
-		Entry right_466 = null;
-		Entry left_483 = null;
-		Entry right_481 = null;
+		Entry left_465 = null;
+		Entry right_463 = null;
+		Entry left_480 = null;
+		Entry right_478 = null;
 		int key_67 = -3;
 		obj.size = 6;
 		int key_432 = -1;
 		boolean color_6 = true;
 		boolean color_437 = false;
-		boolean color_484 = true;
 		int key = 0;
-		int key_480 = -4;
-		boolean color_469 = true;
+		boolean color_466 = true;
 		int key_307 = -2;
-		int key_465 = -6;
 		int key_302 = -3;
 		boolean color_380 = true;
 		int key_305 = -2;
+		int key_462 = -6;
 		boolean color_72 = false;
 		int key_304 = -3;
 		int key_375 = -2;
+		int key_477 = -4;
 		int key_1 = -5;
 		int key_301 = -5;
 		int key_308 = -1;
+		boolean color_481 = true;
 		int key_299 = -5;
 		Object value = null;
 		obj.modCount = 0;
@@ -12497,8 +9988,8 @@ public class TreeMap_put1 extends TestJPF {
 		Object value_68 = null;
 		Object value_376 = null;
 		Object value_433 = null;
-		Object value_470 = null;
-		Object value_485 = null;
+		Object value_467 = null;
+		Object value_482 = null;
 		obj.root.key = key_1;
 		obj.root.value = value_2;
 		obj.root.left = left_3;
@@ -12523,109 +10014,19 @@ public class TreeMap_put1 extends TestJPF {
 		right_378.right = right_435;
 		right_378.parent = parent_436;
 		right_378.color = color_437;
-		left_3.key = key_465;
-		left_3.value = value_470;
-		left_3.left = left_468;
-		left_3.right = right_466;
+		left_3.key = key_462;
+		left_3.value = value_467;
+		left_3.left = left_465;
+		left_3.right = right_463;
 		left_3.parent = obj.root;
-		left_3.color = color_469;
-		left_69.key = key_480;
-		left_69.value = value_485;
-		left_69.left = left_483;
-		left_69.right = right_481;
+		left_3.color = color_466;
+		left_69.key = key_477;
+		left_69.value = value_482;
+		left_69.left = left_480;
+		left_69.right = right_478;
 		left_69.parent = right_300;
-		left_69.color = color_484;
-		obj.put(key,value);
-	}
-
-	@Test
-	public void test174() throws Exception {
-		TreeMap obj = new TreeMap();
-		obj.root = new Entry();
-		Entry right_4 = new Entry();
-		Entry right_70 = new Entry();
-		Entry right_378 = new Entry();
-		Entry left_3 = new Entry();
-		Entry left_69 = new Entry();
-		Entry parent_5 = null;
-		Entry parent_71 = obj.root;
-		Entry parent_379 = right_4;
-		Entry parent_436 = right_70;
-		Entry right_435 = null;
-		Entry right_300 = right_4;
-		Entry right_303 = right_70;
-		Entry right_306 = right_378;
-		Entry left_377 = null;
-		Entry left_434 = null;
-		Entry left_466 = null;
-		Entry right_464 = null;
-		Entry left_481 = null;
-		Entry right_479 = null;
-		boolean color_467 = true;
-		int key_67 = 0;
-		obj.size = 6;
-		int key_432 = 2;
-		boolean color_6 = true;
-		boolean color_437 = false;
-		int key = 3;
-		int key_478 = -1;
-		int key_307 = 1;
-		int key_302 = 0;
-		boolean color_380 = true;
-		int key_305 = 1;
-		int key_463 = -3;
-		boolean color_72 = false;
-		int key_304 = 0;
-		int key_375 = 1;
-		int key_1 = -2;
-		boolean color_482 = true;
-		int key_301 = -2;
-		int key_308 = 2;
-		int key_299 = -2;
-		Object value = null;
-		obj.modCount = 0;
-		Object value_2 = null;
-		Object value_68 = null;
-		Object value_376 = null;
-		Object value_433 = null;
-		Object value_468 = null;
-		Object value_483 = null;
-		obj.root.key = key_1;
-		obj.root.value = value_2;
-		obj.root.left = left_3;
-		obj.root.right = right_4;
-		obj.root.parent = parent_5;
-		obj.root.color = color_6;
-		right_4.key = key_67;
-		right_4.value = value_68;
-		right_4.left = left_69;
-		right_4.right = right_70;
-		right_4.parent = parent_71;
-		right_4.color = color_72;
-		right_70.key = key_375;
-		right_70.value = value_376;
-		right_70.left = left_377;
-		right_70.right = right_378;
-		right_70.parent = parent_379;
-		right_70.color = color_380;
-		right_378.key = key_432;
-		right_378.value = value_433;
-		right_378.left = left_434;
-		right_378.right = right_435;
-		right_378.parent = parent_436;
-		right_378.color = color_437;
-		left_3.key = key_463;
-		left_3.value = value_468;
-		left_3.left = left_466;
-		left_3.right = right_464;
-		left_3.parent = obj.root;
-		left_3.color = color_467;
-		left_69.key = key_478;
-		left_69.value = value_483;
-		left_69.left = left_481;
-		left_69.right = right_479;
-		left_69.parent = right_300;
-		left_69.color = color_482;
+		left_69.color = color_481;
+		System.out.println(Utilities.repOK(obj));
 		obj.put(key,value);
 	}
 

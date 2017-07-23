@@ -76,14 +76,17 @@ public class RedBlackTree_removeTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=7",
+				"+star.max_depth=9",
+				"+star.max_time=1",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/rbt",
 				"+star.test_package=gov.nasa.jpf.star.examples.rbt",
-				"+star.test_imports=gov.nasa.jpf.star.examples.rbt.TreeMap.Entry",
+				"+star.test_imports=gov.nasa.jpf.star.examples.rbt.TreeMap.Entry;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=gov.nasa.jpf.star.examples.rbt.TreeMap.remove(sym)",
@@ -92,6 +95,9 @@ public class RedBlackTree_removeTest extends TestJPF {
 			TreeMap tree = new TreeMap();
 			tree.remove(0);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

@@ -2,6 +2,7 @@ package gov.nasa.jpf.star.examples;
 
 import gov.nasa.jpf.star.examples.avl.AvlTree;
 import gov.nasa.jpf.star.examples.bst.BinarySearchTree;
+import gov.nasa.jpf.star.examples.rbt.TreeMap;
 
 public class Utilities {
 	
@@ -12,6 +13,10 @@ public class Utilities {
 		} else if (obj instanceof AvlTree) {
 			AvlTree avl = (AvlTree) obj;
 			return avl.balanced() && avl.ordered() && avl.wellFormed();
+		} else if (obj instanceof TreeMap) {
+			TreeMap rbt = (TreeMap) obj;
+			if (rbt.root == null) return true;
+			return rbt.root.consistency();
 		} else {
 			return true;
 		}

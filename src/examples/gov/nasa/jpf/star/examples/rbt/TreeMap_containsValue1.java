@@ -1,23 +1,25 @@
 package gov.nasa.jpf.star.examples.rbt;
 
 import gov.nasa.jpf.star.examples.rbt.TreeMap.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class TreeMap_containsValue1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_containsValue1() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = null;
 		obj.size = 0;
 		Object value = null;
 		obj.modCount = 0;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_containsValue2() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -38,11 +40,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_containsValue3() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -60,11 +63,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test4() throws Exception {
+	public void test_containsValue4() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -99,11 +103,47 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_26;
 		right_4.parent = parent_27;
 		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test5() throws Exception {
+	public void test_containsValue5() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Object value = null;
+		Entry left_3 = null;
+		Entry parent_27 = obj.root;
+		Entry left_25 = null;
+		Entry right_26 = null;
+		obj.size = 2;
+		int key_23 = 0;
+		int key_1 = -1;
+		boolean color_6 = true;
+		boolean color_28 = false;
+		Object value_2 = new Object();
+		Object value_24 = new Object();
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue6() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -150,11 +190,138 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_387;
 		right_4.parent = obj.root;
 		right_4.color = color_390;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test6() throws Exception {
+	public void test_containsValue7() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Object value = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry parent_27 = obj.root;
+		Object value_24 = null;
+		Entry right_299 = right_4;
+		Entry right_302 = right_4;
+		Entry left_25 = null;
+		Entry right_26 = null;
+		obj.size = 3;
+		boolean color_6 = true;
+		int key_300 = -1;
+		boolean color_18 = true;
+		int key_23 = 0;
+		int key_13 = -2;
+		int key_1 = -1;
+		int key_301 = 0;
+		int key_303 = 0;
+		boolean color_28 = true;
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue8() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_25 = new Entry();
+		Entry right_26 = new Entry();
+		Entry parent_5 = null;
+		Object value = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry parent_27 = obj.root;
+		Object value_24 = null;
+		Entry right_299 = right_4;
+		Entry right_302 = right_4;
+		Entry left_421 = null;
+		Entry right_419 = null;
+		Entry left_429 = null;
+		Entry right_427 = null;
+		obj.size = 5;
+		boolean color_6 = true;
+		int key_426 = -1;
+		int key_303 = -2;
+		boolean color_28 = false;
+		boolean color_430 = true;
+		boolean color_422 = true;
+		int key_300 = -4;
+		boolean color_18 = true;
+		int key_23 = -2;
+		int key_13 = -5;
+		int key_1 = -4;
+		int key_301 = -2;
+		int key_418 = -3;
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		obj.modCount = 0;
+		Object value_423 = null;
+		Object value_431 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		left_25.key = key_418;
+		left_25.value = value_423;
+		left_25.left = left_421;
+		left_25.right = right_419;
+		left_25.parent = right_299;
+		left_25.color = color_422;
+		right_26.key = key_426;
+		right_26.value = value_431;
+		right_26.left = left_429;
+		right_26.right = right_427;
+		right_26.parent = right_302;
+		right_26.color = color_430;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue9() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -214,11 +381,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_422;
 		right_4.parent = obj.root;
 		right_4.color = color_425;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test7() throws Exception {
+	public void test_containsValue10() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -280,11 +448,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_426;
 		right_4.parent = obj.root;
 		right_4.color = color_429;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test8() throws Exception {
+	public void test_containsValue11() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -320,11 +489,99 @@ public class TreeMap_containsValue1 extends TestJPF {
 		left_3.right = right_16;
 		left_3.parent = parent_17;
 		left_3.color = color_18;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test9() throws Exception {
+	public void test_containsValue12() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry parent_5 = null;
+		Object value = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry right_4 = null;
+		obj.size = 2;
+		boolean color_18 = false;
+		int key_13 = 0;
+		int key_1 = 1;
+		boolean color_6 = true;
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue13() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Object value = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry parent_27 = obj.root;
+		Object value_24 = null;
+		Entry right_299 = right_4;
+		Entry right_302 = right_4;
+		Entry left_25 = null;
+		Entry right_26 = null;
+		obj.size = 3;
+		boolean color_6 = true;
+		int key_300 = -1;
+		boolean color_18 = false;
+		int key_23 = 0;
+		int key_13 = -2;
+		int key_1 = -1;
+		int key_301 = 0;
+		int key_303 = 0;
+		boolean color_28 = false;
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue14() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -345,11 +602,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test10() throws Exception {
+	public void test_containsValue15() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -367,11 +625,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test11() throws Exception {
+	public void test_containsValue16() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -406,11 +665,47 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_26;
 		right_4.parent = parent_27;
 		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test12() throws Exception {
+	public void test_containsValue17() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Entry left_3 = null;
+		Entry parent_27 = obj.root;
+		Entry left_25 = null;
+		Entry right_26 = null;
+		obj.size = 2;
+		int key_1 = -1;
+		int key_23 = 0;
+		boolean color_6 = true;
+		boolean color_28 = false;
+		Object value = new Object();
+		Object value_2 = new Object();
+		Object value_24 = new Object();
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue18() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -457,11 +752,138 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_385;
 		right_4.parent = obj.root;
 		right_4.color = color_388;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test13() throws Exception {
+	public void test_containsValue19() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry parent_27 = obj.root;
+		Entry right_299 = right_4;
+		Entry right_302 = right_4;
+		Entry left_25 = null;
+		Entry right_26 = null;
+		obj.size = 3;
+		boolean color_6 = true;
+		int key_300 = -1;
+		boolean color_18 = true;
+		int key_23 = 0;
+		int key_13 = -2;
+		int key_1 = -1;
+		int key_301 = 0;
+		int key_303 = 0;
+		boolean color_28 = true;
+		Object value = new Object();
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		Object value_24 = value;
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue20() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_25 = new Entry();
+		Entry right_26 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry parent_27 = obj.root;
+		Entry right_299 = right_4;
+		Entry right_302 = right_4;
+		Entry left_418 = null;
+		Entry right_416 = null;
+		Entry left_426 = null;
+		Entry right_424 = null;
+		boolean color_419 = true;
+		obj.size = 5;
+		boolean color_427 = true;
+		boolean color_6 = true;
+		int key_303 = -2;
+		boolean color_28 = false;
+		int key_423 = -1;
+		int key_300 = -4;
+		boolean color_18 = true;
+		int key_23 = -2;
+		int key_13 = -5;
+		int key_1 = -4;
+		int key_301 = -2;
+		int key_415 = -3;
+		Object value = new Object();
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		Object value_24 = value;
+		obj.modCount = 0;
+		Object value_420 = null;
+		Object value_428 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		left_25.key = key_415;
+		left_25.value = value_420;
+		left_25.left = left_418;
+		left_25.right = right_416;
+		left_25.parent = right_299;
+		left_25.color = color_419;
+		right_26.key = key_423;
+		right_26.value = value_428;
+		right_26.left = left_426;
+		right_26.right = right_424;
+		right_26.parent = right_302;
+		right_26.color = color_427;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue21() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -521,11 +943,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_419;
 		right_4.parent = obj.root;
 		right_4.color = color_422;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test14() throws Exception {
+	public void test_containsValue22() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -587,11 +1010,12 @@ public class TreeMap_containsValue1 extends TestJPF {
 		right_4.right = right_423;
 		right_4.parent = obj.root;
 		right_4.color = color_426;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
 	@Test
-	public void test15() throws Exception {
+	public void test_containsValue23() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -627,6 +1051,94 @@ public class TreeMap_containsValue1 extends TestJPF {
 		left_3.right = right_16;
 		left_3.parent = parent_17;
 		left_3.color = color_18;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue24() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry right_4 = null;
+		obj.size = 2;
+		boolean color_18 = false;
+		int key_13 = 0;
+		int key_1 = 1;
+		boolean color_6 = true;
+		Object value = new Object();
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		System.out.println(Utilities.repOK(obj));
+		obj.containsValue(value);
+	}
+
+	@Test
+	public void test_containsValue25() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry left_15 = null;
+		Entry right_16 = null;
+		Entry parent_27 = obj.root;
+		Entry right_299 = right_4;
+		Entry right_302 = right_4;
+		Entry left_25 = null;
+		Entry right_26 = null;
+		obj.size = 3;
+		boolean color_6 = true;
+		int key_300 = -1;
+		boolean color_18 = false;
+		int key_23 = 0;
+		int key_13 = -2;
+		int key_1 = -1;
+		int key_301 = 0;
+		int key_303 = 0;
+		boolean color_28 = false;
+		Object value = new Object();
+		Object value_2 = new Object();
+		Object value_14 = new Object();
+		Object value_24 = value;
+		obj.modCount = 0;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		System.out.println(Utilities.repOK(obj));
 		obj.containsValue(value);
 	}
 
