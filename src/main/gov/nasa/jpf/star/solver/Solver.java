@@ -23,7 +23,7 @@ public class Solver {
 
 	private static int MAX_DEPTH = 3;
 	
-	private static int TIMEOUT = 1;
+	private static int MAX_TIME = 1;
 
 	private static String s2sat = "s2sat";
 
@@ -57,7 +57,7 @@ public class Solver {
 			File file = printToFile(f);
 			
 			if (file != null) {
-				boolean ret = checkSat(file);
+				boolean ret = checkSat(file, c);
 				return ret;
 			}
 			
@@ -99,7 +99,7 @@ public class Solver {
 
 	
 	
-	private static boolean checkSat(File file) {
+	private static boolean checkSat(File file, Config c) {
 		try {
 			Future future = null;
 			String cmd = s2sat + " " + file.getAbsolutePath();
@@ -157,7 +157,14 @@ public class Solver {
 			ExecutorService executor = Executors.newSingleThreadExecutor();
 			future = executor.submit(check);
 			
-			future.get(TIMEOUT, TimeUnit.SECONDS);
+			int maxTime = MAX_TIME;
+			
+			String s = c.getProperty("star.max_time");
+			if (s != null) {
+				maxTime = Integer.parseInt(s);
+			}
+			
+			future.get(maxTime, TimeUnit.SECONDS);
 
 			return ret;
 		} catch (Exception e) {
