@@ -39,7 +39,7 @@ public class Avl_findTest extends TestJPF {
 				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL=heightR+1 & height=heightL+1 || " +
 				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL+1=heightR & height=heightR+1";
 		
-		String pred2 = "pred avlE(root,minE,maxE,height) == root=null & height=0 || " +
+		String pred2 = "pred avlE(root,minE,maxE,height) == root=null & height=0-1 || " +
 				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL=heightR & height=heightL+1 || " +
 				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL=heightR+1 & height=heightL+1 || " +
 				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL+1=heightR & height=heightR+1";
@@ -80,12 +80,12 @@ public class Avl_findTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=20",
+				"+star.max_depth=2",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/avl",
 				"+star.test_package=gov.nasa.jpf.star.examples.avl",
-//				"+star.test_imports=",
+				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=gov.nasa.jpf.star.examples.avl.AvlTree.find(sym)",

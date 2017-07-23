@@ -77,7 +77,7 @@ public class AvlTree {
 		this.root = null;
 	}
 
-	boolean balanced() {
+	public boolean balanced() {
 		return balanced(this.root);
 	}
 
@@ -290,7 +290,7 @@ public class AvlTree {
 		return minElement(minE, t.left) && minElement(minE, t.right);
 	}
 
-	boolean ordered() {
+	public boolean ordered() {
 		return ordered(this.root, new Range());
 	}
 
@@ -342,7 +342,7 @@ public class AvlTree {
 		// System.out.println( "Sorry, remove unimplemented" );
 	}
 
-	boolean wellFormed() {
+	public boolean wellFormed() {
 		return wellFormed(this.root);
 	}
 

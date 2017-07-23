@@ -1,19 +1,21 @@
 package gov.nasa.jpf.star.examples.avl;
 
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class AvlTree_findMax1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_findMax1() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = null;
+		System.out.println(Utilities.repOK(obj));
 		obj.findMax();
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_findMax2() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode right_3 = null;
@@ -25,11 +27,12 @@ public class AvlTree_findMax1 extends TestJPF {
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
+		System.out.println(Utilities.repOK(obj));
 		obj.findMax();
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_findMax3() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
@@ -59,11 +62,12 @@ public class AvlTree_findMax1 extends TestJPF {
 		left_2.left = left_270;
 		left_2.right = right_269;
 		left_2.height = heightL_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.findMax();
 	}
 
 	@Test
-	public void test4() throws Exception {
+	public void test_findMax4() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -83,11 +87,12 @@ public class AvlTree_findMax1 extends TestJPF {
 		left_2.left = left_251;
 		left_2.right = right_250;
 		left_2.height = heightL_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.findMax();
 	}
 
 	@Test
-	public void test5() throws Exception {
+	public void test_findMax5() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
@@ -109,11 +114,12 @@ public class AvlTree_findMax1 extends TestJPF {
 		right_3.left = left_25;
 		right_3.right = right_26;
 		right_3.height = heightR_8;
+		System.out.println(Utilities.repOK(obj));
 		obj.findMax();
 	}
 
 	@Test
-	public void test6() throws Exception {
+	public void test_findMax6() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
@@ -151,6 +157,7 @@ public class AvlTree_findMax1 extends TestJPF {
 		left_25.left = left_288;
 		left_25.right = right_287;
 		left_25.height = heightL_27;
+		System.out.println(Utilities.repOK(obj));
 		obj.findMax();
 	}
 
