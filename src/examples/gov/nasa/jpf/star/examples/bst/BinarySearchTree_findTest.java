@@ -72,12 +72,12 @@ public class BinarySearchTree_findTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=6",
+				"+star.max_depth=2",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/bst",
 				"+star.test_package=gov.nasa.jpf.star.examples.bst",
-//				"+star.test_imports=",
+				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=gov.nasa.jpf.star.examples.bst.BinarySearchTree.find(sym)",

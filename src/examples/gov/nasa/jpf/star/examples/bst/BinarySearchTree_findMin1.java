@@ -1,20 +1,21 @@
 package gov.nasa.jpf.star.examples.bst;
 
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class BinarySearchTree_findMin1 extends TestJPF {
 
 	@Test
-	public void test1() throws Exception {
+	public void test_findMin1() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = null;
-		System.out.println("1 " + obj.repOK(obj.root));
+		System.out.println(Utilities.repOK(obj));
 		obj.findMin();
 	}
 
 	@Test
-	public void test2() throws Exception {
+	public void test_findMin2() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = null;
@@ -24,12 +25,12 @@ public class BinarySearchTree_findMin1 extends TestJPF {
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		System.out.println("2 " + obj.repOK(obj.root));
+		System.out.println(Utilities.repOK(obj));
 		obj.findMin();
 	}
 
 	@Test
-	public void test3() throws Exception {
+	public void test_findMin3() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -47,7 +48,7 @@ public class BinarySearchTree_findMin1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		System.out.println("3 " + obj.repOK(obj.root));
+		System.out.println(Utilities.repOK(obj));
 		obj.findMin();
 	}
 
