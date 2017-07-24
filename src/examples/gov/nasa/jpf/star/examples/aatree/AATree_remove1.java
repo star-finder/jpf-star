@@ -337,75 +337,6 @@ public class AATree_remove1 extends TestJPF {
 		AANode right_7 = new AANode();
 		AANode left_21 = new AANode();
 		AANode right_22 = new AANode();
-		AANode right_46 = new AANode();
-		AANode b_2 = null;
-		AANode c_3 = null;
-		AANode right_14 = obj.nullNode;
-		AANode right_30 = obj.nullNode;
-		AANode left_29 = obj.nullNode;
-		AANode left_45 = obj.nullNode;
-		AANode this_nullNode_330 = obj.nullNode;
-		AANode this_nullNode_333 = obj.nullNode;
-		AANode left_13 = obj.nullNode;
-		AANode left_57 = this_nullNode_330;
-		AANode right_58 = this_nullNode_333;
-		int level_8 = 2;
-		int element_12 = -3;
-		int a_1 = 0;
-		int element_5 = -2;
-		int element_28 = -1;
-		int element_56 = 2;
-		int level_325 = 2;
-		int level1_23 = 1;
-		int element_329 = 2;
-		int element_44 = 1;
-		int d_4 = 0;
-		int level1_327 = 1;
-		int element_20 = 0;
-		int element_328 = 1;
-		int level1_10 = 1;
-		int level1_326 = 1;
-		int element_331 = 2;
-		int element_324 = -3;
-		int x = -3;
-		obj.deletedNode = null;
-		obj.lastNode = null;
-		obj.root.element = element_5;
-		obj.root.left = left_6;
-		obj.root.right = right_7;
-		obj.root.level = level_8;
-		left_6.element = element_12;
-		left_6.left = left_13;
-		left_6.right = right_14;
-		left_6.level = level1_10;
-		right_7.element = element_20;
-		right_7.left = left_21;
-		right_7.right = right_22;
-		right_7.level = level_325;
-		left_21.element = element_28;
-		left_21.left = left_29;
-		left_21.right = right_30;
-		left_21.level = level1_23;
-		right_22.element = element_44;
-		right_22.left = left_45;
-		right_22.right = right_46;
-		right_22.level = level1_326;
-		right_46.element = element_56;
-		right_46.left = left_57;
-		right_46.right = right_58;
-		right_46.level = level1_327;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove8() throws Exception {
-		AATree obj = new AATree();
-		obj.root = new AANode();
-		AANode left_6 = new AANode();
-		AANode right_7 = new AANode();
-		AANode left_21 = new AANode();
-		AANode right_22 = new AANode();
 		AANode b_2 = null;
 		AANode c_3 = null;
 		AANode right_14 = obj.nullNode;
@@ -458,7 +389,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove9() throws Exception {
+	public void test_remove8() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -490,7 +421,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove10() throws Exception {
+	public void test_remove9() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -521,7 +452,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove11() throws Exception {
+	public void test_remove10() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -604,7 +535,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove12() throws Exception {
+	public void test_remove11() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -679,7 +610,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove13() throws Exception {
+	public void test_remove12() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -754,7 +685,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove14() throws Exception {
+	public void test_remove13() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -821,71 +752,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove15() throws Exception {
-		AATree obj = new AATree();
-		obj.root = new AANode();
-		AANode right_7 = new AANode();
-		AANode left_21 = new AANode();
-		AANode right_22 = new AANode();
-		AANode right_46 = new AANode();
-		AANode left_6 = new AANode();
-		AANode b_2 = null;
-		AANode c_3 = null;
-		AANode left_29 = obj.nullNode;
-		AANode right_30 = obj.nullNode;
-		AANode left_45 = obj.nullNode;
-		AANode left_57 = obj.nullNode;
-		AANode right_58 = obj.nullNode;
-		AANode left_464 = obj.nullNode;
-		AANode right_463 = obj.nullNode;
-		int level_8 = 2;
-		int element_28 = -1;
-		int a_1 = 0;
-		int element_5 = -2;
-		int element_56 = 2;
-		int level_325 = 2;
-		int level1_23 = 1;
-		int element_44 = 1;
-		int d_4 = 0;
-		int level1_327 = 1;
-		int element_20 = 0;
-		int level1_10 = 1;
-		int level1_326 = 1;
-		int element_462 = -3;
-		int element_324 = -2;
-		int x = -2;
-		obj.deletedNode = null;
-		obj.lastNode = null;
-		obj.root.element = element_5;
-		obj.root.left = left_6;
-		obj.root.right = right_7;
-		obj.root.level = level_8;
-		right_7.element = element_20;
-		right_7.left = left_21;
-		right_7.right = right_22;
-		right_7.level = level_325;
-		left_21.element = element_28;
-		left_21.left = left_29;
-		left_21.right = right_30;
-		left_21.level = level1_23;
-		right_22.element = element_44;
-		right_22.left = left_45;
-		right_22.right = right_46;
-		right_22.level = level1_326;
-		right_46.element = element_56;
-		right_46.left = left_57;
-		right_46.right = right_58;
-		right_46.level = level1_327;
-		left_6.element = element_462;
-		left_6.left = left_464;
-		left_6.right = right_463;
-		left_6.level = level1_10;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove16() throws Exception {
+	public void test_remove14() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -941,7 +808,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove17() throws Exception {
+	public void test_remove15() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1024,7 +891,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove18() throws Exception {
+	public void test_remove16() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1099,7 +966,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove19() throws Exception {
+	public void test_remove17() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1174,7 +1041,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove20() throws Exception {
+	public void test_remove18() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1241,7 +1108,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove21() throws Exception {
+	public void test_remove19() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1308,7 +1175,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove22() throws Exception {
+	public void test_remove20() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1367,7 +1234,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove23() throws Exception {
+	public void test_remove21() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1400,7 +1267,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove24() throws Exception {
+	public void test_remove22() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1433,7 +1300,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove25() throws Exception {
+	public void test_remove23() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1516,7 +1383,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove26() throws Exception {
+	public void test_remove24() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1591,7 +1458,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove27() throws Exception {
+	public void test_remove25() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1666,7 +1533,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove28() throws Exception {
+	public void test_remove26() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1733,7 +1600,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove29() throws Exception {
+	public void test_remove27() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1800,7 +1667,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove30() throws Exception {
+	public void test_remove28() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1859,7 +1726,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove31() throws Exception {
+	public void test_remove29() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -1943,7 +1810,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove32() throws Exception {
+	public void test_remove30() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -2019,7 +1886,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove33() throws Exception {
+	public void test_remove31() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -2095,7 +1962,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove34() throws Exception {
+	public void test_remove32() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -2163,7 +2030,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove35() throws Exception {
+	public void test_remove33() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -2233,7 +2100,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove36() throws Exception {
+	public void test_remove34() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -2295,7 +2162,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove37() throws Exception {
+	public void test_remove35() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode b_2 = null;
@@ -2319,7 +2186,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove38() throws Exception {
+	public void test_remove36() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2381,7 +2248,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove39() throws Exception {
+	public void test_remove37() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2435,7 +2302,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove40() throws Exception {
+	public void test_remove38() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2497,7 +2364,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove41() throws Exception {
+	public void test_remove39() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2551,7 +2418,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove42() throws Exception {
+	public void test_remove40() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2610,7 +2477,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove43() throws Exception {
+	public void test_remove41() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2661,7 +2528,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove44() throws Exception {
+	public void test_remove42() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2696,6 +2563,122 @@ public class AATree_remove1 extends TestJPF {
 		int element_331 = 1;
 		int x = -1;
 		int element_325 = -3;
+		obj.deletedNode = null;
+		obj.lastNode = null;
+		obj.root.element = element_5;
+		obj.root.left = left_6;
+		obj.root.right = right_7;
+		obj.root.level = level_8;
+		left_6.element = element_84;
+		left_6.left = left_85;
+		left_6.right = right_86;
+		left_6.level = level1_10;
+		right_86.element = element_96;
+		right_86.left = left_97;
+		right_86.right = right_98;
+		right_86.level = level1_324;
+		right_7.element = element_92;
+		right_7.left = left_93;
+		right_7.right = right_94;
+		right_7.level = level1_327;
+		right_94.element = element_472;
+		right_94.left = left_474;
+		right_94.right = right_473;
+		right_94.level = level1_332;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove43() throws Exception {
+		AATree obj = new AATree();
+		obj.root = new AANode();
+		AANode left_6 = new AANode();
+		AANode right_86 = new AANode();
+		AANode right_7 = new AANode();
+		AANode b_2 = null;
+		AANode c_3 = null;
+		AANode right_98 = obj.nullNode;
+		AANode left_85 = obj.nullNode;
+		AANode this_nullNode_330 = obj.nullNode;
+		AANode this_nullNode_333 = obj.nullNode;
+		AANode left_97 = obj.nullNode;
+		AANode left_93 = this_nullNode_330;
+		AANode right_94 = this_nullNode_333;
+		int level_8 = 2;
+		int element_92 = 1;
+		int a_1 = 0;
+		int element_5 = 0;
+		int element_326 = -2;
+		int element_96 = -2;
+		int element_329 = 1;
+		int d_4 = 0;
+		int level1_324 = 1;
+		int level1_327 = 1;
+		int element_328 = 0;
+		int level1_10 = 1;
+		int element_84 = -3;
+		int element_331 = 1;
+		int x = -1;
+		int element_325 = -3;
+		obj.deletedNode = null;
+		obj.lastNode = null;
+		obj.root.element = element_5;
+		obj.root.left = left_6;
+		obj.root.right = right_7;
+		obj.root.level = level_8;
+		left_6.element = element_84;
+		left_6.left = left_85;
+		left_6.right = right_86;
+		left_6.level = level1_10;
+		right_86.element = element_96;
+		right_86.left = left_97;
+		right_86.right = right_98;
+		right_86.level = level1_324;
+		right_7.element = element_92;
+		right_7.left = left_93;
+		right_7.right = right_94;
+		right_7.level = level1_327;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove44() throws Exception {
+		AATree obj = new AATree();
+		obj.root = new AANode();
+		AANode left_6 = new AANode();
+		AANode right_86 = new AANode();
+		AANode right_7 = new AANode();
+		AANode right_94 = new AANode();
+		AANode b_2 = null;
+		AANode c_3 = null;
+		AANode right_98 = obj.nullNode;
+		AANode left_85 = obj.nullNode;
+		AANode this_nullNode_330 = obj.nullNode;
+		AANode this_nullNode_333 = obj.nullNode;
+		AANode left_97 = obj.nullNode;
+		AANode left_93 = this_nullNode_330;
+		AANode left_474 = this_nullNode_333;
+		AANode right_473 = this_nullNode_333;
+		int level_8 = 2;
+		int element_92 = 1;
+		int a_1 = 0;
+		int element_5 = 0;
+		int element_326 = -1;
+		int element_96 = -1;
+		int element_329 = 1;
+		int d_4 = 0;
+		int level1_332 = 1;
+		int level1_324 = 1;
+		int level1_327 = 1;
+		int element_328 = 0;
+		int level1_10 = 1;
+		int element_84 = -2;
+		int element_472 = 2;
+		int element_331 = 1;
+		int x = -1;
+		int element_325 = -2;
 		obj.deletedNode = null;
 		obj.lastNode = null;
 		obj.root.element = element_5;
@@ -2742,18 +2725,18 @@ public class AATree_remove1 extends TestJPF {
 		int element_92 = 1;
 		int a_1 = 0;
 		int element_5 = 0;
-		int element_326 = -2;
-		int element_96 = -2;
+		int element_326 = -1;
+		int element_96 = -1;
 		int element_329 = 1;
 		int d_4 = 0;
 		int level1_324 = 1;
 		int level1_327 = 1;
 		int element_328 = 0;
 		int level1_10 = 1;
-		int element_84 = -3;
+		int element_84 = -2;
 		int element_331 = 1;
 		int x = -1;
-		int element_325 = -3;
+		int element_325 = -2;
 		obj.deletedNode = null;
 		obj.lastNode = null;
 		obj.root.element = element_5;
@@ -2778,122 +2761,6 @@ public class AATree_remove1 extends TestJPF {
 
 	@Test
 	public void test_remove46() throws Exception {
-		AATree obj = new AATree();
-		obj.root = new AANode();
-		AANode left_6 = new AANode();
-		AANode right_86 = new AANode();
-		AANode right_7 = new AANode();
-		AANode right_94 = new AANode();
-		AANode b_2 = null;
-		AANode c_3 = null;
-		AANode right_98 = obj.nullNode;
-		AANode left_85 = obj.nullNode;
-		AANode this_nullNode_330 = obj.nullNode;
-		AANode this_nullNode_333 = obj.nullNode;
-		AANode left_97 = obj.nullNode;
-		AANode left_93 = this_nullNode_330;
-		AANode left_474 = this_nullNode_333;
-		AANode right_473 = this_nullNode_333;
-		int level_8 = 2;
-		int element_92 = 1;
-		int a_1 = 0;
-		int element_5 = 0;
-		int element_326 = -1;
-		int element_96 = -1;
-		int element_329 = 1;
-		int d_4 = 0;
-		int level1_332 = 1;
-		int level1_324 = 1;
-		int level1_327 = 1;
-		int element_328 = 0;
-		int level1_10 = 1;
-		int element_84 = -2;
-		int element_472 = 2;
-		int element_331 = 1;
-		int x = -1;
-		int element_325 = -2;
-		obj.deletedNode = null;
-		obj.lastNode = null;
-		obj.root.element = element_5;
-		obj.root.left = left_6;
-		obj.root.right = right_7;
-		obj.root.level = level_8;
-		left_6.element = element_84;
-		left_6.left = left_85;
-		left_6.right = right_86;
-		left_6.level = level1_10;
-		right_86.element = element_96;
-		right_86.left = left_97;
-		right_86.right = right_98;
-		right_86.level = level1_324;
-		right_7.element = element_92;
-		right_7.left = left_93;
-		right_7.right = right_94;
-		right_7.level = level1_327;
-		right_94.element = element_472;
-		right_94.left = left_474;
-		right_94.right = right_473;
-		right_94.level = level1_332;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove47() throws Exception {
-		AATree obj = new AATree();
-		obj.root = new AANode();
-		AANode left_6 = new AANode();
-		AANode right_86 = new AANode();
-		AANode right_7 = new AANode();
-		AANode b_2 = null;
-		AANode c_3 = null;
-		AANode right_98 = obj.nullNode;
-		AANode left_85 = obj.nullNode;
-		AANode this_nullNode_330 = obj.nullNode;
-		AANode this_nullNode_333 = obj.nullNode;
-		AANode left_97 = obj.nullNode;
-		AANode left_93 = this_nullNode_330;
-		AANode right_94 = this_nullNode_333;
-		int level_8 = 2;
-		int element_92 = 1;
-		int a_1 = 0;
-		int element_5 = 0;
-		int element_326 = -1;
-		int element_96 = -1;
-		int element_329 = 1;
-		int d_4 = 0;
-		int level1_324 = 1;
-		int level1_327 = 1;
-		int element_328 = 0;
-		int level1_10 = 1;
-		int element_84 = -2;
-		int element_331 = 1;
-		int x = -1;
-		int element_325 = -2;
-		obj.deletedNode = null;
-		obj.lastNode = null;
-		obj.root.element = element_5;
-		obj.root.left = left_6;
-		obj.root.right = right_7;
-		obj.root.level = level_8;
-		left_6.element = element_84;
-		left_6.left = left_85;
-		left_6.right = right_86;
-		left_6.level = level1_10;
-		right_86.element = element_96;
-		right_86.left = left_97;
-		right_86.right = right_98;
-		right_86.level = level1_324;
-		right_7.element = element_92;
-		right_7.left = left_93;
-		right_7.right = right_94;
-		right_7.level = level1_327;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove48() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2947,7 +2814,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove49() throws Exception {
+	public void test_remove47() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -2993,7 +2860,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove50() throws Exception {
+	public void test_remove48() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -3046,7 +2913,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove51() throws Exception {
+	public void test_remove49() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -3091,7 +2958,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove52() throws Exception {
+	public void test_remove50() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -3139,7 +3006,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove53() throws Exception {
+	public void test_remove51() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode left_6 = new AANode();
@@ -3179,7 +3046,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove54() throws Exception {
+	public void test_remove52() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode b_2 = null;
@@ -3203,7 +3070,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove55() throws Exception {
+	public void test_remove53() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode b_2 = null;
@@ -3227,7 +3094,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove56() throws Exception {
+	public void test_remove54() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3288,7 +3155,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove57() throws Exception {
+	public void test_remove55() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3341,7 +3208,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove58() throws Exception {
+	public void test_remove56() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3405,7 +3272,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove59() throws Exception {
+	public void test_remove57() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3461,7 +3328,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove60() throws Exception {
+	public void test_remove58() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3522,7 +3389,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove61() throws Exception {
+	public void test_remove59() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3575,7 +3442,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove62() throws Exception {
+	public void test_remove60() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3634,7 +3501,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove63() throws Exception {
+	public void test_remove61() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3685,7 +3552,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove64() throws Exception {
+	public void test_remove62() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3719,6 +3586,122 @@ public class AATree_remove1 extends TestJPF {
 		int element_331 = -1;
 		int element_472 = -2;
 		int x = 2;
+		int element_325 = 0;
+		obj.deletedNode = null;
+		obj.lastNode = null;
+		obj.root.element = element_5;
+		obj.root.left = left_6;
+		obj.root.right = right_7;
+		obj.root.level = level_8;
+		right_7.element = element_92;
+		right_7.left = left_93;
+		right_7.right = right_94;
+		right_7.level = level1_10;
+		right_94.element = element_120;
+		right_94.left = left_121;
+		right_94.right = right_122;
+		right_94.level = level1_324;
+		left_6.element = element_84;
+		left_6.left = left_85;
+		left_6.right = right_86;
+		left_6.level = level1_327;
+		right_86.element = element_472;
+		right_86.left = left_474;
+		right_86.right = right_473;
+		right_86.level = level1_332;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove63() throws Exception {
+		AATree obj = new AATree();
+		obj.root = new AANode();
+		AANode right_7 = new AANode();
+		AANode right_94 = new AANode();
+		AANode left_6 = new AANode();
+		AANode b_2 = null;
+		AANode c_3 = null;
+		AANode right_122 = obj.nullNode;
+		AANode left_93 = obj.nullNode;
+		AANode this_nullNode_329 = obj.nullNode;
+		AANode this_nullNode_333 = obj.nullNode;
+		AANode left_121 = obj.nullNode;
+		AANode left_85 = this_nullNode_329;
+		AANode right_86 = this_nullNode_333;
+		int level_8 = 2;
+		int element_92 = 0;
+		int a_1 = 0;
+		int element_5 = -1;
+		int element_326 = 1;
+		int d_4 = 0;
+		int level1_327 = 1;
+		int level1_324 = 1;
+		int element_330 = -2;
+		int element_328 = -2;
+		int level1_10 = 1;
+		int element_120 = 1;
+		int element_84 = -2;
+		int element_331 = -1;
+		int x = 2;
+		int element_325 = 0;
+		obj.deletedNode = null;
+		obj.lastNode = null;
+		obj.root.element = element_5;
+		obj.root.left = left_6;
+		obj.root.right = right_7;
+		obj.root.level = level_8;
+		right_7.element = element_92;
+		right_7.left = left_93;
+		right_7.right = right_94;
+		right_7.level = level1_10;
+		right_94.element = element_120;
+		right_94.left = left_121;
+		right_94.right = right_122;
+		right_94.level = level1_324;
+		left_6.element = element_84;
+		left_6.left = left_85;
+		left_6.right = right_86;
+		left_6.level = level1_327;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove64() throws Exception {
+		AATree obj = new AATree();
+		obj.root = new AANode();
+		AANode right_7 = new AANode();
+		AANode right_94 = new AANode();
+		AANode left_6 = new AANode();
+		AANode right_86 = new AANode();
+		AANode b_2 = null;
+		AANode c_3 = null;
+		AANode right_122 = obj.nullNode;
+		AANode left_93 = obj.nullNode;
+		AANode this_nullNode_329 = obj.nullNode;
+		AANode this_nullNode_333 = obj.nullNode;
+		AANode left_121 = obj.nullNode;
+		AANode left_85 = this_nullNode_329;
+		AANode left_474 = this_nullNode_333;
+		AANode right_473 = this_nullNode_333;
+		int level_8 = 2;
+		int element_92 = 0;
+		int a_1 = 0;
+		int element_5 = -1;
+		int element_326 = 1;
+		int d_4 = 0;
+		int level1_327 = 1;
+		int level1_332 = 1;
+		int level1_324 = 1;
+		int element_330 = -3;
+		int element_328 = -3;
+		int level1_10 = 1;
+		int element_120 = 1;
+		int element_84 = -3;
+		int element_331 = -1;
+		int element_472 = -2;
+		int x = 1;
 		int element_325 = 0;
 		obj.deletedNode = null;
 		obj.lastNode = null;
@@ -3776,7 +3759,7 @@ public class AATree_remove1 extends TestJPF {
 		int element_120 = 1;
 		int element_84 = -2;
 		int element_331 = -1;
-		int x = 2;
+		int x = 1;
 		int element_325 = 0;
 		obj.deletedNode = null;
 		obj.lastNode = null;
@@ -3802,122 +3785,6 @@ public class AATree_remove1 extends TestJPF {
 
 	@Test
 	public void test_remove66() throws Exception {
-		AATree obj = new AATree();
-		obj.root = new AANode();
-		AANode right_7 = new AANode();
-		AANode right_94 = new AANode();
-		AANode left_6 = new AANode();
-		AANode right_86 = new AANode();
-		AANode b_2 = null;
-		AANode c_3 = null;
-		AANode right_122 = obj.nullNode;
-		AANode left_93 = obj.nullNode;
-		AANode this_nullNode_329 = obj.nullNode;
-		AANode this_nullNode_333 = obj.nullNode;
-		AANode left_121 = obj.nullNode;
-		AANode left_85 = this_nullNode_329;
-		AANode left_474 = this_nullNode_333;
-		AANode right_473 = this_nullNode_333;
-		int level_8 = 2;
-		int element_92 = 0;
-		int a_1 = 0;
-		int element_5 = -1;
-		int element_326 = 1;
-		int d_4 = 0;
-		int level1_327 = 1;
-		int level1_332 = 1;
-		int level1_324 = 1;
-		int element_330 = -3;
-		int element_328 = -3;
-		int level1_10 = 1;
-		int element_120 = 1;
-		int element_84 = -3;
-		int element_331 = -1;
-		int element_472 = -2;
-		int x = 1;
-		int element_325 = 0;
-		obj.deletedNode = null;
-		obj.lastNode = null;
-		obj.root.element = element_5;
-		obj.root.left = left_6;
-		obj.root.right = right_7;
-		obj.root.level = level_8;
-		right_7.element = element_92;
-		right_7.left = left_93;
-		right_7.right = right_94;
-		right_7.level = level1_10;
-		right_94.element = element_120;
-		right_94.left = left_121;
-		right_94.right = right_122;
-		right_94.level = level1_324;
-		left_6.element = element_84;
-		left_6.left = left_85;
-		left_6.right = right_86;
-		left_6.level = level1_327;
-		right_86.element = element_472;
-		right_86.left = left_474;
-		right_86.right = right_473;
-		right_86.level = level1_332;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove67() throws Exception {
-		AATree obj = new AATree();
-		obj.root = new AANode();
-		AANode right_7 = new AANode();
-		AANode right_94 = new AANode();
-		AANode left_6 = new AANode();
-		AANode b_2 = null;
-		AANode c_3 = null;
-		AANode right_122 = obj.nullNode;
-		AANode left_93 = obj.nullNode;
-		AANode this_nullNode_329 = obj.nullNode;
-		AANode this_nullNode_333 = obj.nullNode;
-		AANode left_121 = obj.nullNode;
-		AANode left_85 = this_nullNode_329;
-		AANode right_86 = this_nullNode_333;
-		int level_8 = 2;
-		int element_92 = 0;
-		int a_1 = 0;
-		int element_5 = -1;
-		int element_326 = 1;
-		int d_4 = 0;
-		int level1_327 = 1;
-		int level1_324 = 1;
-		int element_330 = -2;
-		int element_328 = -2;
-		int level1_10 = 1;
-		int element_120 = 1;
-		int element_84 = -2;
-		int element_331 = -1;
-		int x = 1;
-		int element_325 = 0;
-		obj.deletedNode = null;
-		obj.lastNode = null;
-		obj.root.element = element_5;
-		obj.root.left = left_6;
-		obj.root.right = right_7;
-		obj.root.level = level_8;
-		right_7.element = element_92;
-		right_7.left = left_93;
-		right_7.right = right_94;
-		right_7.level = level1_10;
-		right_94.element = element_120;
-		right_94.left = left_121;
-		right_94.right = right_122;
-		right_94.level = level1_324;
-		left_6.element = element_84;
-		left_6.left = left_85;
-		left_6.right = right_86;
-		left_6.level = level1_327;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove68() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -3970,7 +3837,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove69() throws Exception {
+	public void test_remove67() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -4015,7 +3882,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove70() throws Exception {
+	public void test_remove68() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -4063,7 +3930,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove71() throws Exception {
+	public void test_remove69() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -4103,7 +3970,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove72() throws Exception {
+	public void test_remove70() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -4157,7 +4024,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove73() throws Exception {
+	public void test_remove71() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -4203,7 +4070,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove74() throws Exception {
+	public void test_remove72() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();
@@ -4254,7 +4121,7 @@ public class AATree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove75() throws Exception {
+	public void test_remove73() throws Exception {
 		AATree obj = new AATree();
 		obj.root = new AANode();
 		AANode right_7 = new AANode();

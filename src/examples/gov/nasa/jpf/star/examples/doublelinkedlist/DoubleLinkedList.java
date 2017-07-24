@@ -104,7 +104,7 @@ public class DoubleLinkedList {
 		addAll(c);
 	}
 
-	boolean repOK() {
+	public boolean repOK() {
 		if (header == null) {
 			return false;
 		}

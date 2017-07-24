@@ -81,7 +81,7 @@ public class AATree_removeTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=10", // 10
+				"+star.max_depth=9",
 				"+star.max_time=10",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

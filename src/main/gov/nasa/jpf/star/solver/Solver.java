@@ -34,14 +34,10 @@ public class Solver {
 	private static Process p = null;
 	
 	public static boolean checkSat(Formula f, Config c) {
-//		HeapFormula hf = f.getHeapFormula();
-//		PureFormula pf = f.getPureFormula();
-//
-//		int heapSize = hf.getHeapTerms().length;
-//		int pureSize = pf.getPureTerms().length;
-
 //		System.out.println(f);
 //		System.out.println(f.getDepth());
+		
+		ret = false; model = "";
 		
 		int maxDepth = MAX_DEPTH;
 
@@ -108,8 +104,6 @@ public class Solver {
 				@Override
 				public void run() {
 					try {
-						ret = false; model = "";
-						
 						p = Runtime.getRuntime().exec(cmd);
 						
 						BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -168,6 +162,7 @@ public class Solver {
 
 			return ret;
 		} catch (Exception e) {
+			ret = false; model = "";
 			if (p.isAlive()) p.destroyForcibly();
 				
 			return false;
