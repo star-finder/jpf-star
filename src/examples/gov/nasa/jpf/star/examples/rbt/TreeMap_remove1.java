@@ -3782,6 +3782,100 @@ public class TreeMap_remove1 extends TestJPF {
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
 		Entry right_16 = new Entry();
+		Entry right_116 = new Entry();
+		Entry left_15 = new Entry();
+		Entry right_4 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry parent_117 = left_3;
+		Entry left_115 = null;
+		Entry parent_127 = right_16;
+		Entry parent_247 = left_3;
+		Entry right_300 = right_116;
+		Entry right_303 = right_116;
+		Entry left_306 = left_15;
+		Entry left_308 = left_15;
+		Entry left_125 = null;
+		Entry right_126 = null;
+		Entry left_245 = null;
+		Entry right_246 = null;
+		Entry left_502 = null;
+		Entry right_500 = null;
+		boolean color_248 = true;
+		int key_499 = 1;
+		obj.size = 6;
+		int key_309 = -4;
+		int key_310 = -3;
+		boolean color_6 = true;
+		int key = -2;
+		int key_307 = -4;
+		int key_302 = -1;
+		int key_305 = 0;
+		boolean color_118 = true;
+		boolean color_503 = true;
+		int key_243 = -4;
+		int key_304 = -1;
+		boolean color_18 = false;
+		int key_1 = 0;
+		int key_13 = -3;
+		int key_301 = -2;
+		int key_123 = -1;
+		boolean color_128 = false;
+		int key_113 = -2;
+		int key_299 = 0;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_14 = null;
+		Object value_114 = null;
+		Object value_124 = null;
+		Object value_244 = null;
+		Object value_504 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_16.key = key_113;
+		right_16.value = value_114;
+		right_16.left = left_115;
+		right_16.right = right_116;
+		right_16.parent = parent_117;
+		right_16.color = color_118;
+		right_116.key = key_123;
+		right_116.value = value_124;
+		right_116.left = left_125;
+		right_116.right = right_126;
+		right_116.parent = parent_127;
+		right_116.color = color_128;
+		left_15.key = key_243;
+		left_15.value = value_244;
+		left_15.left = left_245;
+		left_15.right = right_246;
+		left_15.parent = parent_247;
+		left_15.color = color_248;
+		right_4.key = key_499;
+		right_4.value = value_504;
+		right_4.left = left_502;
+		right_4.right = right_500;
+		right_4.parent = obj.root;
+		right_4.color = color_503;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove56() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_16 = new Entry();
 		Entry left_115 = new Entry();
 		Entry left_15 = new Entry();
 		Entry right_4 = new Entry();
@@ -3871,7 +3965,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove56() throws Exception {
+	public void test_remove57() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -3946,7 +4040,94 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove57() throws Exception {
+	public void test_remove58() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_16 = new Entry();
+		Entry left_115 = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_15 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry parent_117 = left_3;
+		Entry parent_137 = right_16;
+		Entry left_135 = null;
+		Entry right_136 = null;
+		Entry left_300 = left_3;
+		Entry right_302 = right_16;
+		Entry right_116 = null;
+		Entry left_456 = null;
+		Entry right_454 = null;
+		Entry left_471 = null;
+		Entry right_469 = null;
+		obj.size = 6;
+		int key_133 = 0;
+		boolean color_6 = true;
+		int key = 0;
+		int key_453 = 3;
+		boolean color_138 = false;
+		int key_468 = -2;
+		int key_303 = 1;
+		boolean color_457 = true;
+		boolean color_118 = true;
+		int key_304 = 2;
+		boolean color_18 = false;
+		int key_1 = 2;
+		int key_13 = -1;
+		int key_301 = -1;
+		int key_113 = 1;
+		boolean color_472 = true;
+		int key_299 = 2;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_14 = null;
+		Object value_114 = null;
+		Object value_134 = null;
+		Object value_458 = null;
+		Object value_473 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_16.key = key_113;
+		right_16.value = value_114;
+		right_16.left = left_115;
+		right_16.right = right_116;
+		right_16.parent = parent_117;
+		right_16.color = color_118;
+		left_115.key = key_133;
+		left_115.value = value_134;
+		left_115.left = left_135;
+		left_115.right = right_136;
+		left_115.parent = parent_137;
+		left_115.color = color_138;
+		right_4.key = key_453;
+		right_4.value = value_458;
+		right_4.left = left_456;
+		right_4.right = right_454;
+		right_4.parent = obj.root;
+		right_4.color = color_457;
+		left_15.key = key_468;
+		left_15.value = value_473;
+		left_15.left = left_471;
+		left_15.right = right_469;
+		left_15.parent = left_300;
+		left_15.color = color_472;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove59() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4036,7 +4217,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove58() throws Exception {
+	public void test_remove60() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4126,7 +4307,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove59() throws Exception {
+	public void test_remove61() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4201,7 +4382,193 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove60() throws Exception {
+	public void test_remove62() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_16 = new Entry();
+		Entry right_116 = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_15 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry parent_117 = left_3;
+		Entry parent_127 = right_16;
+		Entry left_125 = null;
+		Entry right_126 = null;
+		Entry left_115 = null;
+		Entry left_300 = left_3;
+		Entry left_451 = null;
+		Entry right_449 = null;
+		Entry left_466 = null;
+		Entry right_464 = null;
+		boolean color_467 = true;
+		obj.size = 6;
+		boolean color_6 = true;
+		int key = 2;
+		int key_448 = 4;
+		boolean color_452 = true;
+		int key_463 = -1;
+		boolean color_118 = true;
+		boolean color_18 = false;
+		int key_1 = 3;
+		int key_13 = 0;
+		int key_301 = 0;
+		int key_123 = 2;
+		boolean color_128 = false;
+		int key_113 = 1;
+		int key_299 = 3;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_14 = null;
+		Object value_114 = null;
+		Object value_124 = null;
+		Object value_453 = null;
+		Object value_468 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_16.key = key_113;
+		right_16.value = value_114;
+		right_16.left = left_115;
+		right_16.right = right_116;
+		right_16.parent = parent_117;
+		right_16.color = color_118;
+		right_116.key = key_123;
+		right_116.value = value_124;
+		right_116.left = left_125;
+		right_116.right = right_126;
+		right_116.parent = parent_127;
+		right_116.color = color_128;
+		right_4.key = key_448;
+		right_4.value = value_453;
+		right_4.left = left_451;
+		right_4.right = right_449;
+		right_4.parent = obj.root;
+		right_4.color = color_452;
+		left_15.key = key_463;
+		left_15.value = value_468;
+		left_15.left = left_466;
+		left_15.right = right_464;
+		left_15.parent = left_300;
+		left_15.color = color_467;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove63() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry left_3 = new Entry();
+		Entry right_16 = new Entry();
+		Entry right_116 = new Entry();
+		Entry left_115 = new Entry();
+		Entry right_4 = new Entry();
+		Entry left_15 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_17 = obj.root;
+		Entry parent_117 = left_3;
+		Entry parent_127 = right_16;
+		Entry left_125 = null;
+		Entry right_126 = null;
+		Entry parent_137 = right_16;
+		Entry left_300 = left_3;
+		Entry left_302 = left_115;
+		Entry left_305 = left_115;
+		Entry left_135 = null;
+		Entry right_136 = null;
+		Entry left_494 = null;
+		Entry right_492 = null;
+		Entry left_509 = null;
+		Entry right_507 = null;
+		boolean color_510 = true;
+		obj.size = 7;
+		int key_133 = 1;
+		int key_306 = 1;
+		boolean color_6 = true;
+		int key_491 = 5;
+		int key = 3;
+		boolean color_138 = false;
+		int key_307 = 2;
+		int key_303 = 0;
+		boolean color_118 = true;
+		int key_304 = 1;
+		boolean color_495 = true;
+		boolean color_18 = false;
+		int key_506 = -1;
+		int key_1 = 4;
+		int key_13 = 0;
+		int key_301 = 0;
+		int key_123 = 3;
+		boolean color_128 = false;
+		int key_113 = 2;
+		int key_299 = 4;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_14 = null;
+		Object value_114 = null;
+		Object value_124 = null;
+		Object value_134 = null;
+		Object value_496 = null;
+		Object value_511 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		left_3.key = key_13;
+		left_3.value = value_14;
+		left_3.left = left_15;
+		left_3.right = right_16;
+		left_3.parent = parent_17;
+		left_3.color = color_18;
+		right_16.key = key_113;
+		right_16.value = value_114;
+		right_16.left = left_115;
+		right_16.right = right_116;
+		right_16.parent = parent_117;
+		right_16.color = color_118;
+		right_116.key = key_123;
+		right_116.value = value_124;
+		right_116.left = left_125;
+		right_116.right = right_126;
+		right_116.parent = parent_127;
+		right_116.color = color_128;
+		left_115.key = key_133;
+		left_115.value = value_134;
+		left_115.left = left_135;
+		left_115.right = right_136;
+		left_115.parent = parent_137;
+		left_115.color = color_138;
+		right_4.key = key_491;
+		right_4.value = value_496;
+		right_4.left = left_494;
+		right_4.right = right_492;
+		right_4.parent = obj.root;
+		right_4.color = color_495;
+		left_15.key = key_506;
+		left_15.value = value_511;
+		left_15.left = left_509;
+		left_15.right = right_507;
+		left_15.parent = left_300;
+		left_15.color = color_510;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove64() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4291,7 +4658,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove61() throws Exception {
+	public void test_remove65() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry left_3 = new Entry();
@@ -4381,7 +4748,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove62() throws Exception {
+	public void test_remove66() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry parent_5 = null;
@@ -4405,7 +4772,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove63() throws Exception {
+	public void test_remove67() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4452,7 +4819,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove64() throws Exception {
+	public void test_remove68() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4516,7 +4883,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove65() throws Exception {
+	public void test_remove69() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4575,7 +4942,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove66() throws Exception {
+	public void test_remove70() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4657,7 +5024,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove67() throws Exception {
+	public void test_remove71() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4729,7 +5096,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove68() throws Exception {
+	public void test_remove72() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4819,7 +5186,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove69() throws Exception {
+	public void test_remove73() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4927,7 +5294,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove70() throws Exception {
+	public void test_remove74() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -4996,7 +5363,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove71() throws Exception {
+	public void test_remove75() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5087,7 +5454,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove72() throws Exception {
+	public void test_remove76() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5157,7 +5524,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove73() throws Exception {
+	public void test_remove77() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5249,7 +5616,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove74() throws Exception {
+	public void test_remove78() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5326,7 +5693,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove75() throws Exception {
+	public void test_remove79() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5375,7 +5742,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove76() throws Exception {
+	public void test_remove80() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5436,7 +5803,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove77() throws Exception {
+	public void test_remove81() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5500,7 +5867,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove78() throws Exception {
+	public void test_remove82() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5564,7 +5931,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove79() throws Exception {
+	public void test_remove83() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5614,7 +5981,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove80() throws Exception {
+	public void test_remove84() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5673,7 +6040,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove81() throws Exception {
+	public void test_remove85() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5750,7 +6117,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove82() throws Exception {
+	public void test_remove86() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5814,7 +6181,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove83() throws Exception {
+	public void test_remove87() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5879,7 +6246,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove84() throws Exception {
+	public void test_remove88() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5914,7 +6281,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove85() throws Exception {
+	public void test_remove89() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -5966,7 +6333,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove86() throws Exception {
+	public void test_remove90() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6004,7 +6371,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove87() throws Exception {
+	public void test_remove91() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6075,7 +6442,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove88() throws Exception {
+	public void test_remove92() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6168,7 +6535,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove89() throws Exception {
+	public void test_remove93() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6283,7 +6650,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove90() throws Exception {
+	public void test_remove94() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6394,7 +6761,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove91() throws Exception {
+	public void test_remove95() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6484,7 +6851,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove92() throws Exception {
+	public void test_remove96() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6574,7 +6941,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove93() throws Exception {
+	public void test_remove97() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6649,7 +7016,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove94() throws Exception {
+	public void test_remove98() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6739,7 +7106,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove95() throws Exception {
+	public void test_remove99() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6829,7 +7196,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove96() throws Exception {
+	public void test_remove100() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6904,7 +7271,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove97() throws Exception {
+	public void test_remove101() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -6994,7 +7361,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove98() throws Exception {
+	public void test_remove102() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7084,7 +7451,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove99() throws Exception {
+	public void test_remove103() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7123,7 +7490,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove100() throws Exception {
+	public void test_remove104() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7194,7 +7561,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove101() throws Exception {
+	public void test_remove105() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7283,7 +7650,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove102() throws Exception {
+	public void test_remove106() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7390,7 +7757,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove103() throws Exception {
+	public void test_remove107() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7484,7 +7851,102 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove104() throws Exception {
+	public void test_remove108() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_26 = new Entry();
+		Entry left_175 = new Entry();
+		Entry left_25 = new Entry();
+		Entry left_3 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_27 = obj.root;
+		Entry parent_177 = right_4;
+		Entry parent_357 = right_26;
+		Entry right_176 = null;
+		Entry parent_167 = right_4;
+		Entry left_300 = left_175;
+		Entry left_303 = left_175;
+		Entry left_306 = left_25;
+		Entry left_309 = left_25;
+		Entry left_355 = null;
+		Entry right_356 = null;
+		Entry left_165 = null;
+		Entry right_166 = null;
+		Entry left_505 = null;
+		Entry right_503 = null;
+		int key_311 = 0;
+		obj.size = 6;
+		int key_173 = 2;
+		int key_310 = -1;
+		int key_502 = -3;
+		boolean color_6 = true;
+		boolean color_358 = false;
+		int key = 2;
+		int key_307 = -2;
+		int key_353 = 1;
+		boolean color_178 = true;
+		int key_302 = 1;
+		boolean color_28 = false;
+		int key_305 = 2;
+		int key_304 = 1;
+		boolean color_506 = true;
+		int key_163 = -1;
+		int key_23 = 0;
+		int key_1 = -2;
+		int key_301 = 0;
+		int key_308 = -1;
+		boolean color_168 = true;
+		int key_299 = -2;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_24 = null;
+		Object value_174 = null;
+		Object value_354 = null;
+		Object value_164 = null;
+		Object value_507 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		right_26.key = key_173;
+		right_26.value = value_174;
+		right_26.left = left_175;
+		right_26.right = right_176;
+		right_26.parent = parent_177;
+		right_26.color = color_178;
+		left_175.key = key_353;
+		left_175.value = value_354;
+		left_175.left = left_355;
+		left_175.right = right_356;
+		left_175.parent = parent_357;
+		left_175.color = color_358;
+		left_25.key = key_163;
+		left_25.value = value_164;
+		left_25.left = left_165;
+		left_25.right = right_166;
+		left_25.parent = parent_167;
+		left_25.color = color_168;
+		left_3.key = key_502;
+		left_3.value = value_507;
+		left_3.left = left_505;
+		left_3.right = right_503;
+		left_3.parent = obj.root;
+		left_3.color = color_506;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove109() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7559,7 +8021,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove105() throws Exception {
+	public void test_remove110() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7649,7 +8111,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove106() throws Exception {
+	public void test_remove111() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7739,7 +8201,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove107() throws Exception {
+	public void test_remove112() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7815,7 +8277,195 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove108() throws Exception {
+	public void test_remove113() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_26 = new Entry();
+		Entry right_176 = new Entry();
+		Entry left_3 = new Entry();
+		Entry left_25 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_27 = obj.root;
+		Entry parent_177 = right_4;
+		Entry parent_367 = right_26;
+		Entry left_365 = null;
+		Entry right_366 = null;
+		Entry left_175 = null;
+		Entry right_300 = right_4;
+		Entry left_454 = null;
+		Entry right_452 = null;
+		Entry left_469 = null;
+		Entry right_467 = null;
+		int key_299 = -2;
+		boolean color_455 = true;
+		boolean color_368 = false;
+		int key_466 = -1;
+		obj.size = 6;
+		int key_173 = 1;
+		boolean color_6 = true;
+		int key = 2;
+		boolean color_178 = true;
+		int key_302 = 0;
+		boolean color_28 = false;
+		int key_451 = -3;
+		int key_363 = 2;
+		int key_23 = 0;
+		int key_1 = -2;
+		boolean color_470 = true;
+		int key_301 = -2;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_24 = null;
+		Object value_174 = null;
+		Object value_364 = null;
+		Object value_456 = null;
+		Object value_471 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		right_26.key = key_173;
+		right_26.value = value_174;
+		right_26.left = left_175;
+		right_26.right = right_176;
+		right_26.parent = parent_177;
+		right_26.color = color_178;
+		right_176.key = key_363;
+		right_176.value = value_364;
+		right_176.left = left_365;
+		right_176.right = right_366;
+		right_176.parent = parent_367;
+		right_176.color = color_368;
+		left_3.key = key_451;
+		left_3.value = value_456;
+		left_3.left = left_454;
+		left_3.right = right_452;
+		left_3.parent = obj.root;
+		left_3.color = color_455;
+		left_25.key = key_466;
+		left_25.value = value_471;
+		left_25.left = left_469;
+		left_25.right = right_467;
+		left_25.parent = right_300;
+		left_25.color = color_470;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove114() throws Exception {
+		TreeMap obj = new TreeMap();
+		obj.root = new Entry();
+		Entry right_4 = new Entry();
+		Entry right_26 = new Entry();
+		Entry right_176 = new Entry();
+		Entry left_175 = new Entry();
+		Entry left_3 = new Entry();
+		Entry left_25 = new Entry();
+		Entry parent_5 = null;
+		Entry parent_27 = obj.root;
+		Entry parent_177 = right_4;
+		Entry parent_367 = right_26;
+		Entry left_365 = null;
+		Entry right_366 = null;
+		Entry parent_357 = right_26;
+		Entry right_300 = right_4;
+		Entry left_303 = left_175;
+		Entry left_306 = left_175;
+		Entry left_355 = null;
+		Entry right_356 = null;
+		Entry left_497 = null;
+		Entry right_495 = null;
+		Entry left_512 = null;
+		Entry right_510 = null;
+		boolean color_368 = false;
+		obj.size = 7;
+		int key_173 = 2;
+		boolean color_6 = true;
+		boolean color_358 = false;
+		int key = 3;
+		int key_494 = -3;
+		int key_307 = 1;
+		int key_353 = 1;
+		boolean color_178 = true;
+		int key_302 = 0;
+		boolean color_28 = false;
+		int key_305 = 1;
+		boolean color_498 = true;
+		int key_304 = 0;
+		boolean color_513 = true;
+		int key_363 = 3;
+		int key_509 = -1;
+		int key_23 = 0;
+		int key_1 = -2;
+		int key_301 = -2;
+		int key_308 = 2;
+		int key_299 = -2;
+		obj.modCount = 0;
+		Object value_2 = null;
+		Object value_24 = null;
+		Object value_174 = null;
+		Object value_364 = null;
+		Object value_354 = null;
+		Object value_499 = null;
+		Object value_514 = null;
+		obj.root.key = key_1;
+		obj.root.value = value_2;
+		obj.root.left = left_3;
+		obj.root.right = right_4;
+		obj.root.parent = parent_5;
+		obj.root.color = color_6;
+		right_4.key = key_23;
+		right_4.value = value_24;
+		right_4.left = left_25;
+		right_4.right = right_26;
+		right_4.parent = parent_27;
+		right_4.color = color_28;
+		right_26.key = key_173;
+		right_26.value = value_174;
+		right_26.left = left_175;
+		right_26.right = right_176;
+		right_26.parent = parent_177;
+		right_26.color = color_178;
+		right_176.key = key_363;
+		right_176.value = value_364;
+		right_176.left = left_365;
+		right_176.right = right_366;
+		right_176.parent = parent_367;
+		right_176.color = color_368;
+		left_175.key = key_353;
+		left_175.value = value_354;
+		left_175.left = left_355;
+		left_175.right = right_356;
+		left_175.parent = parent_357;
+		left_175.color = color_358;
+		left_3.key = key_494;
+		left_3.value = value_499;
+		left_3.left = left_497;
+		left_3.right = right_495;
+		left_3.parent = obj.root;
+		left_3.color = color_498;
+		left_25.key = key_509;
+		left_25.value = value_514;
+		left_25.left = left_512;
+		left_25.right = right_510;
+		left_25.parent = right_300;
+		left_25.color = color_513;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(key);
+	}
+
+	@Test
+	public void test_remove115() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();
@@ -7905,7 +8555,7 @@ public class TreeMap_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove109() throws Exception {
+	public void test_remove116() throws Exception {
 		TreeMap obj = new TreeMap();
 		obj.root = new Entry();
 		Entry right_4 = new Entry();

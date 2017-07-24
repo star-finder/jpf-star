@@ -81,7 +81,7 @@ public class RedBlackTree_removeTest extends TestJPF {
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 				"+star.max_depth=9",
-				"+star.max_time=1",
+				"+star.max_time=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/rbt",
