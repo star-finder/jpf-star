@@ -76,6 +76,8 @@ public class Avl_printTreeTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 				"+star.max_depth=3",
@@ -92,6 +94,9 @@ public class Avl_printTreeTest extends TestJPF {
 			AvlTree tree = new AvlTree();
 			tree.printTree();
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

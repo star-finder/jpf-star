@@ -1,8 +1,7 @@
 package gov.nasa.jpf.star.examples.avl;
 
-import org.junit.Test;
-
 import gov.nasa.jpf.star.examples.Utilities;
+import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class AvlTree_isEmpty1 extends TestJPF {

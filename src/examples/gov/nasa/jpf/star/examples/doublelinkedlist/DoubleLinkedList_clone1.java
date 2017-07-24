@@ -1,6 +1,7 @@
 package gov.nasa.jpf.star.examples.doublelinkedlist;
 
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -17,7 +18,7 @@ public class DoubleLinkedList_clone1 extends TestJPF {
 		obj.header.element = ele_4;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.clone();
 	}
 
@@ -38,7 +39,7 @@ public class DoubleLinkedList_clone1 extends TestJPF {
 		next_5.element = ele_7;
 		next_5.next = obj.header;
 		next_5.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.clone();
 	}
 

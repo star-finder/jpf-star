@@ -1,6 +1,7 @@
 package gov.nasa.jpf.star.examples.doublelinkedlist;
 
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -18,7 +19,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -40,7 +41,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		prev_3.element = ele_4;
 		prev_3.next = obj.header;
 		prev_3.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -62,7 +63,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		prev_3.element = ele_4;
 		prev_3.next = obj.header;
 		prev_3.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -91,7 +92,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		prev_5.element = ele_145;
 		prev_5.next = prev_114;
 		prev_5.previous = this_header_115;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -107,7 +108,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -129,7 +130,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		prev_3.element = ele_4;
 		prev_3.next = obj.header;
 		prev_3.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -151,7 +152,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		prev_3.element = ele_4;
 		prev_3.next = obj.header;
 		prev_3.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 
@@ -180,7 +181,7 @@ public class DoubleLinkedList_lastIndexOf1 extends TestJPF {
 		prev_5.element = ele_144;
 		prev_5.next = prev_114;
 		prev_5.previous = this_header_115;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.lastIndexOf(o);
 	}
 

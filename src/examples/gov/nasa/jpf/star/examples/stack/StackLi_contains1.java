@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.examples.stack;
 
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -10,6 +11,7 @@ public class StackLi_contains1 extends TestJPF {
 		StackLi obj = new StackLi();
 		obj.topOfStack = null;
 		Object e = null;
+		System.out.println(Utilities.repOK(obj));
 		obj.contains(e);
 	}
 
@@ -22,6 +24,7 @@ public class StackLi_contains1 extends TestJPF {
 		Object element_1 = e;
 		obj.topOfStack.element = element_1;
 		obj.topOfStack.next = next_2;
+		System.out.println(Utilities.repOK(obj));
 		obj.contains(e);
 	}
 
@@ -34,6 +37,7 @@ public class StackLi_contains1 extends TestJPF {
 		Object element_1 = new Object();
 		obj.topOfStack.element = element_1;
 		obj.topOfStack.next = next_2;
+		System.out.println(Utilities.repOK(obj));
 		obj.contains(e);
 	}
 
@@ -50,6 +54,7 @@ public class StackLi_contains1 extends TestJPF {
 		obj.topOfStack.next = next_2;
 		next_2.element = element_3;
 		next_2.next = next_4;
+		System.out.println(Utilities.repOK(obj));
 		obj.contains(e);
 	}
 

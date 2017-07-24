@@ -228,8 +228,8 @@ public class AATree_contains1 extends TestJPF {
 		AANode c_3 = null;
 		AANode this_nullNode_328 = obj.nullNode;
 		AANode this_nullNode_331 = obj.nullNode;
-		AANode left_49 = this_nullNode_328;
-		AANode right_50 = this_nullNode_331;
+		AANode left_41 = this_nullNode_328;
+		AANode right_42 = this_nullNode_331;
 		AANode left_409 = obj.nullNode;
 		AANode right_408 = obj.nullNode;
 		int level_8 = 2;
@@ -240,9 +240,9 @@ public class AATree_contains1 extends TestJPF {
 		int element_326 = -1;
 		int element_329 = 0;
 		int d_4 = 0;
+		int element_40 = 0;
 		int element_407 = -2;
 		int level1_10 = 1;
-		int element_48 = 0;
 		int element_324 = -1;
 		int x = 0;
 		obj.deletedNode = null;
@@ -251,9 +251,9 @@ public class AATree_contains1 extends TestJPF {
 		obj.root.left = left_6;
 		obj.root.right = right_7;
 		obj.root.level = level_8;
-		right_7.element = element_48;
-		right_7.left = left_49;
-		right_7.right = right_50;
+		right_7.element = element_40;
+		right_7.left = left_41;
+		right_7.right = right_42;
 		right_7.level = level1_325;
 		left_6.element = element_407;
 		left_6.left = left_409;

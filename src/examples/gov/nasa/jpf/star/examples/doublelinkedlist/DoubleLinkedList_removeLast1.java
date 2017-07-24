@@ -1,6 +1,7 @@
 package gov.nasa.jpf.star.examples.doublelinkedlist;
 
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -17,7 +18,7 @@ public class DoubleLinkedList_removeLast1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.removeLast();
 	}
 
@@ -38,7 +39,7 @@ public class DoubleLinkedList_removeLast1 extends TestJPF {
 		prev_3.element = ele_5;
 		prev_3.next = obj.header;
 		prev_3.previous = this_header_114;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.removeLast();
 	}
 

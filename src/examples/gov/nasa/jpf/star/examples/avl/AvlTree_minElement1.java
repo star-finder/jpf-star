@@ -148,6 +148,51 @@ public class AvlTree_minElement1 extends TestJPF {
 	public void test_minElement7() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
+		AvlNode left_2 = new AvlNode();
+		AvlNode right_3 = new AvlNode();
+		AvlNode left_30 = new AvlNode();
+		AvlNode right_31 = null;
+		AvlNode left_279 = null;
+		AvlNode right_278 = null;
+		AvlNode left_293 = null;
+		AvlNode right_292 = null;
+		int heightL_6 = 1;
+		int element_1 = 1;
+		int heightR_8 = 0;
+		int element_277 = 2;
+		int element_223 = 1;
+		int element_224 = 0;
+		int height_4 = 2;
+		int element_225 = 0;
+		int element_291 = -1;
+		int heightL_32 = 0;
+		int minE = 1;
+		int element_29 = 0;
+		int element_226 = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		obj.root.height = height_4;
+		left_2.element = element_29;
+		left_2.left = left_30;
+		left_2.right = right_31;
+		left_2.height = heightL_6;
+		right_3.element = element_277;
+		right_3.left = left_279;
+		right_3.right = right_278;
+		right_3.height = heightR_8;
+		left_30.element = element_291;
+		left_30.left = left_293;
+		left_30.right = right_292;
+		left_30.height = heightL_32;
+		System.out.println(Utilities.repOK(obj));
+		obj.minElement(minE);
+	}
+
+	@Test
+	public void test_minElement8() throws Exception {
+		AvlTree obj = new AvlTree();
+		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
 		AvlNode left_2 = null;
 		AvlNode left_269 = null;

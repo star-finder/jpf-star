@@ -134,6 +134,259 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode left_7 = new BinaryNode();
 		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = new BinaryNode();
+		BinaryNode left_16 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_14 = null;
+		BinaryNode right_17 = null;
+		int element_79 = 3;
+		int element_15 = 1;
+		int element_1 = 5;
+		int element_76 = 5;
+		int element_78 = 5;
+		int element_82 = 3;
+		int element_83 = 1;
+		int element_12 = 2;
+		int element_81 = 2;
+		int element_6 = 4;
+		int element_84 = 2;
+		int element_77 = 4;
+		int element_80 = 4;
+		int x = 0;
+		int element_9 = 3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		left_13.element = element_15;
+		left_13.left = left_16;
+		left_13.right = right_17;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove7() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = new BinaryNode();
+		BinaryNode left_16 = new BinaryNode();
+		BinaryNode left_19 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_14 = null;
+		BinaryNode right_17 = null;
+		BinaryNode right_20 = null;
+		int element_18 = 1;
+		int element_79 = 4;
+		int element_83 = 2;
+		int element_76 = 6;
+		int element_78 = 6;
+		int element_12 = 3;
+		int element_81 = 3;
+		int element_6 = 5;
+		int element_15 = 2;
+		int element_1 = 6;
+		int element_82 = 4;
+		int element_85 = 1;
+		int element_84 = 3;
+		int element_77 = 5;
+		int element_80 = 5;
+		int element_86 = 2;
+		int x = 0;
+		int element_9 = 4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		left_13.element = element_15;
+		left_13.left = left_16;
+		left_13.right = right_17;
+		left_16.element = element_18;
+		left_16.left = left_19;
+		left_16.right = right_20;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove8() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = new BinaryNode();
+		BinaryNode right_17 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_14 = null;
+		BinaryNode left_16 = null;
+		int element_79 = -1;
+		int element_15 = -4;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -1;
+		int element_83 = -4;
+		int element_12 = -2;
+		int element_81 = -2;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_80 = 0;
+		int x = -3;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		left_13.element = element_15;
+		left_13.left = left_16;
+		left_13.right = right_17;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove9() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = new BinaryNode();
+		BinaryNode left_16 = null;
+		BinaryNode right_17 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_14 = null;
+		int element_79 = 2;
+		int element_15 = 0;
+		int element_1 = 4;
+		int element_76 = 4;
+		int element_78 = 4;
+		int element_82 = 2;
+		int element_12 = 1;
+		int element_81 = 1;
+		int element_6 = 3;
+		int element_77 = 3;
+		int element_80 = 3;
+		int x = 0;
+		int element_9 = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		left_13.element = element_15;
+		left_13.left = left_16;
+		left_13.right = right_17;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove10() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = new BinaryNode();
+		BinaryNode right_17 = new BinaryNode();
+		BinaryNode left_16 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_14 = null;
+		BinaryNode left_25 = null;
+		BinaryNode right_26 = null;
+		int element_79 = 4;
+		int element_83 = 1;
+		int element_76 = 6;
+		int element_78 = 6;
+		int element_12 = 3;
+		int element_81 = 3;
+		int element_6 = 5;
+		int element_24 = 2;
+		int element_15 = 1;
+		int element_1 = 6;
+		int element_82 = 4;
+		int element_85 = 2;
+		int element_84 = 2;
+		int element_77 = 5;
+		int element_80 = 5;
+		int element_86 = 3;
+		int x = 1;
+		int element_9 = 4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		left_13.element = element_15;
+		left_13.left = left_16;
+		left_13.right = right_17;
+		right_17.element = element_24;
+		right_17.left = left_25;
+		right_17.right = right_26;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove11() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
 		BinaryNode right_14 = null;
 		BinaryNode right_3 = null;
 		BinaryNode right_8 = null;
@@ -167,7 +420,334 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove7() throws Exception {
+	public void test_remove12() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_14 = new BinaryNode();
+		BinaryNode left_28 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_13 = null;
+		BinaryNode right_29 = null;
+		int element_79 = 2;
+		int element_27 = 1;
+		int element_1 = 4;
+		int element_76 = 4;
+		int element_78 = 4;
+		int element_82 = 1;
+		int element_12 = -1;
+		int element_81 = -1;
+		int element_6 = 3;
+		int element_83 = 2;
+		int element_77 = 3;
+		int element_80 = 3;
+		int x = 0;
+		int element_9 = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_14.element = element_27;
+		right_14.left = left_28;
+		right_14.right = right_29;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove13() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_14 = new BinaryNode();
+		BinaryNode right_29 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_13 = null;
+		BinaryNode left_28 = null;
+		int element_79 = 1;
+		int element_27 = -1;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_78 = 3;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_12 = -2;
+		int element_81 = -2;
+		int element_6 = 2;
+		int element_77 = 2;
+		int element_80 = 2;
+		int x = 0;
+		int element_9 = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_14.element = element_27;
+		right_14.left = left_28;
+		right_14.right = right_29;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove14() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_14 = new BinaryNode();
+		BinaryNode left_28 = null;
+		BinaryNode right_29 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_13 = null;
+		int element_79 = 1;
+		int element_27 = 0;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_78 = 3;
+		int element_12 = -1;
+		int element_81 = -1;
+		int element_6 = 2;
+		int element_77 = 2;
+		int element_80 = 2;
+		int x = 0;
+		int element_9 = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_14.element = element_27;
+		right_14.left = left_28;
+		right_14.right = right_29;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove15() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_14 = new BinaryNode();
+		BinaryNode right_29 = new BinaryNode();
+		BinaryNode left_28 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_13 = null;
+		BinaryNode left_34 = null;
+		BinaryNode right_35 = null;
+		int element_33 = -1;
+		int element_79 = 0;
+		int element_27 = -2;
+		int element_1 = 2;
+		int element_76 = 2;
+		int element_78 = 2;
+		int element_82 = -2;
+		int element_12 = -3;
+		int element_81 = -3;
+		int element_6 = 1;
+		int element_83 = -1;
+		int element_84 = -1;
+		int element_77 = 1;
+		int element_80 = 1;
+		int element_85 = 0;
+		int x = -2;
+		int element_9 = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_14.element = element_27;
+		right_14.left = left_28;
+		right_14.right = right_29;
+		right_29.element = element_33;
+		right_29.left = left_34;
+		right_29.right = right_35;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove16() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = null;
+		BinaryNode right_14 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		int element_79 = -1;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_12 = -2;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_80 = 0;
+		int x = -2;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove17() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_14 = new BinaryNode();
+		BinaryNode left_13 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_28 = null;
+		BinaryNode right_29 = null;
+		int element_79 = -1;
+		int element_27 = -2;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -2;
+		int element_83 = -2;
+		int element_12 = -3;
+		int element_81 = -3;
+		int element_6 = 0;
+		int element_84 = -1;
+		int element_77 = 0;
+		int element_80 = 0;
+		int x = -3;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_14.element = element_27;
+		right_14.left = left_28;
+		right_14.right = right_29;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove18() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode left_13 = new BinaryNode();
+		BinaryNode right_14 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_16 = null;
+		BinaryNode right_17 = null;
+		int element_79 = -1;
+		int element_15 = -3;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -3;
+		int element_83 = -2;
+		int element_12 = -2;
+		int element_81 = -3;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_80 = 0;
+		int x = -2;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		left_13.element = element_15;
+		left_13.left = left_16;
+		left_13.right = right_17;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove19() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -198,18 +778,18 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove8() throws Exception {
+	public void test_remove20() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode left_7 = new BinaryNode();
 		BinaryNode right_11 = new BinaryNode();
-		BinaryNode left_34 = null;
+		BinaryNode left_37 = null;
 		BinaryNode right_3 = null;
 		BinaryNode right_8 = null;
 		BinaryNode left_10 = null;
-		BinaryNode right_35 = null;
-		int element_33 = -1;
+		BinaryNode right_38 = null;
+		int element_36 = -1;
 		int element_79 = -3;
 		int element_1 = 1;
 		int element_76 = 1;
@@ -229,26 +809,220 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_7.element = element_9;
 		left_7.left = left_10;
 		left_7.right = right_11;
-		right_11.element = element_33;
-		right_11.left = left_34;
-		right_11.right = right_35;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove9() throws Exception {
+	public void test_remove21() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode left_7 = new BinaryNode();
 		BinaryNode right_11 = new BinaryNode();
-		BinaryNode right_35 = null;
+		BinaryNode left_37 = new BinaryNode();
+		BinaryNode left_40 = null;
 		BinaryNode right_3 = null;
 		BinaryNode right_8 = null;
 		BinaryNode left_10 = null;
-		BinaryNode left_34 = null;
-		int element_33 = -2;
+		BinaryNode right_38 = null;
+		BinaryNode right_41 = null;
+		int element_36 = 2;
+		int element_79 = -1;
+		int element_1 = 4;
+		int element_39 = 1;
+		int element_76 = 4;
+		int element_78 = 4;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 3;
+		int element_6 = 3;
+		int element_77 = 3;
+		int element_80 = 2;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		left_37.element = element_39;
+		left_37.left = left_40;
+		left_37.right = right_41;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove22() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode left_37 = new BinaryNode();
+		BinaryNode right_41 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_38 = null;
+		BinaryNode left_40 = null;
+		int element_36 = 1;
+		int element_79 = -2;
+		int element_1 = 3;
+		int element_39 = -1;
+		int element_76 = 3;
+		int element_78 = 3;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = 2;
+		int element_6 = 2;
+		int element_77 = 2;
+		int element_80 = 1;
+		int x = 0;
+		int element_9 = -2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		left_37.element = element_39;
+		left_37.left = left_40;
+		left_37.right = right_41;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove23() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode left_37 = new BinaryNode();
+		BinaryNode left_40 = null;
+		BinaryNode right_41 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_38 = null;
+		int element_36 = 1;
+		int element_79 = -1;
+		int element_1 = 3;
+		int element_39 = 0;
+		int element_76 = 3;
+		int element_78 = 3;
+		int element_81 = 2;
+		int element_6 = 2;
+		int element_77 = 2;
+		int element_80 = 1;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		left_37.element = element_39;
+		left_37.left = left_40;
+		left_37.right = right_41;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove24() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode left_37 = new BinaryNode();
+		BinaryNode right_41 = new BinaryNode();
+		BinaryNode left_40 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_38 = null;
+		BinaryNode left_46 = null;
+		BinaryNode right_47 = null;
+		int element_36 = 2;
+		int element_79 = -1;
+		int element_1 = 4;
+		int element_39 = 0;
+		int element_76 = 4;
+		int element_78 = 4;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_81 = 3;
+		int element_6 = 3;
+		int element_85 = 2;
+		int element_84 = 1;
+		int element_77 = 3;
+		int element_80 = 2;
+		int element_45 = 1;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		left_37.element = element_39;
+		left_37.left = left_40;
+		left_37.right = right_41;
+		right_41.element = element_45;
+		right_41.left = left_46;
+		right_41.right = right_47;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove25() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_37 = null;
+		int element_36 = -2;
 		int element_79 = -3;
 		int element_1 = 1;
 		int element_76 = 1;
@@ -268,15 +1042,340 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_7.element = element_9;
 		left_7.left = left_10;
 		left_7.right = right_11;
-		right_11.element = element_33;
-		right_11.left = left_34;
-		right_11.right = right_35;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove10() throws Exception {
+	public void test_remove26() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = new BinaryNode();
+		BinaryNode left_49 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_37 = null;
+		BinaryNode right_50 = null;
+		int element_36 = -3;
+		int element_79 = -4;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -1;
+		int element_83 = 0;
+		int element_81 = -3;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_48 = -1;
+		int element_80 = -4;
+		int x = -2;
+		int element_9 = -4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		right_38.element = element_48;
+		right_38.left = left_49;
+		right_38.right = right_50;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove27() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = new BinaryNode();
+		BinaryNode right_50 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_37 = null;
+		BinaryNode left_49 = null;
+		int element_36 = -3;
+		int element_79 = -4;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -3;
+		int element_83 = -2;
+		int element_81 = -3;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_48 = -2;
+		int element_80 = -4;
+		int x = -1;
+		int element_9 = -4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		right_38.element = element_48;
+		right_38.left = left_49;
+		right_38.right = right_50;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove28() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = new BinaryNode();
+		BinaryNode left_49 = null;
+		BinaryNode right_50 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_37 = null;
+		int element_36 = -2;
+		int element_79 = -3;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_81 = -2;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_48 = -1;
+		int element_80 = -3;
+		int x = -1;
+		int element_9 = -3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		right_38.element = element_48;
+		right_38.left = left_49;
+		right_38.right = right_50;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove29() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = new BinaryNode();
+		BinaryNode right_50 = new BinaryNode();
+		BinaryNode left_49 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_37 = null;
+		BinaryNode left_55 = null;
+		BinaryNode right_56 = null;
+		int element_36 = -3;
+		int element_79 = -4;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_54 = -1;
+		int element_81 = -3;
+		int element_6 = 0;
+		int element_85 = 0;
+		int element_84 = -1;
+		int element_77 = 0;
+		int element_48 = -2;
+		int element_80 = -4;
+		int x = -2;
+		int element_9 = -4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		right_38.element = element_48;
+		right_38.left = left_49;
+		right_38.right = right_50;
+		right_50.element = element_54;
+		right_50.left = left_55;
+		right_50.right = right_56;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove30() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode left_37 = null;
+		BinaryNode right_38 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		int element_36 = -1;
+		int element_79 = -2;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_6 = 0;
+		int element_77 = 0;
+		int x = -1;
+		int element_9 = -2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove31() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = new BinaryNode();
+		BinaryNode left_37 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_49 = null;
+		BinaryNode right_50 = null;
+		int element_36 = -2;
+		int element_79 = -3;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -1;
+		int element_83 = 0;
+		int element_81 = -1;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_48 = -1;
+		int element_80 = -2;
+		int x = -2;
+		int element_9 = -3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		right_38.element = element_48;
+		right_38.left = left_49;
+		right_38.right = right_50;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove32() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode left_37 = new BinaryNode();
+		BinaryNode right_38 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_10 = null;
+		BinaryNode left_40 = null;
+		BinaryNode right_41 = null;
+		int element_36 = -1;
+		int element_79 = -3;
+		int element_1 = 1;
+		int element_39 = -2;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -2;
+		int element_6 = 0;
+		int element_77 = 0;
+		int element_80 = -3;
+		int x = -1;
+		int element_9 = -3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		left_37.element = element_39;
+		left_37.left = left_40;
+		left_37.right = right_41;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove33() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -306,7 +1405,7 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove11() throws Exception {
+	public void test_remove34() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -315,9 +1414,9 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		BinaryNode left_10 = null;
 		BinaryNode right_3 = null;
 		BinaryNode right_8 = null;
-		BinaryNode left_34 = null;
-		BinaryNode right_35 = null;
-		int element_33 = -1;
+		BinaryNode left_37 = null;
+		BinaryNode right_38 = null;
+		int element_36 = -1;
 		int element_79 = -2;
 		int element_1 = 1;
 		int element_76 = 1;
@@ -338,15 +1437,15 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_7.element = element_9;
 		left_7.left = left_10;
 		left_7.right = right_11;
-		right_11.element = element_33;
-		right_11.left = left_34;
-		right_11.right = right_35;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove12() throws Exception {
+	public void test_remove35() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -385,7 +1484,107 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove13() throws Exception {
+	public void test_remove36() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode left_37 = null;
+		BinaryNode right_38 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_13 = null;
+		BinaryNode right_14 = null;
+		int element_36 = -1;
+		int element_79 = -3;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_12 = -3;
+		int element_6 = 0;
+		int element_81 = -2;
+		int element_77 = 0;
+		int element_80 = -3;
+		int x = -2;
+		int element_9 = -2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove37() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode left_10 = new BinaryNode();
+		BinaryNode right_11 = new BinaryNode();
+		BinaryNode right_38 = new BinaryNode();
+		BinaryNode left_37 = null;
+		BinaryNode right_3 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_13 = null;
+		BinaryNode right_14 = null;
+		BinaryNode left_49 = null;
+		BinaryNode right_50 = null;
+		int element_36 = -2;
+		int element_79 = -4;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_78 = 1;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_12 = -4;
+		int element_6 = 0;
+		int element_81 = -3;
+		int element_84 = -1;
+		int element_77 = 0;
+		int element_48 = -1;
+		int element_80 = -4;
+		int element_85 = 0;
+		int x = -3;
+		int element_9 = -3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		left_10.element = element_12;
+		left_10.left = left_13;
+		left_10.right = right_14;
+		right_11.element = element_36;
+		right_11.left = left_37;
+		right_11.right = right_38;
+		right_38.element = element_48;
+		right_38.left = left_49;
+		right_38.right = right_50;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove38() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -408,22 +1607,22 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove14() throws Exception {
+	public void test_remove39() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode right_8 = new BinaryNode();
-		BinaryNode left_55 = null;
+		BinaryNode left_58 = null;
 		BinaryNode right_3 = null;
 		BinaryNode left_7 = null;
-		BinaryNode right_56 = null;
+		BinaryNode right_59 = null;
 		int element_77 = -1;
 		int element_79 = 2;
 		int element_1 = 2;
 		int element_76 = 2;
+		int element_57 = 1;
 		int element_78 = 1;
 		int x = 0;
-		int element_54 = 1;
 		int element_6 = -1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
@@ -431,35 +1630,35 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove15() throws Exception {
+	public void test_remove40() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode right_8 = new BinaryNode();
-		BinaryNode left_55 = new BinaryNode();
-		BinaryNode left_58 = null;
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = null;
 		BinaryNode right_3 = null;
 		BinaryNode left_7 = null;
-		BinaryNode right_56 = null;
 		BinaryNode right_59 = null;
+		BinaryNode right_62 = null;
 		int element_79 = 3;
 		int element_1 = 3;
 		int element_76 = 3;
-		int element_57 = 1;
+		int element_57 = 2;
 		int element_78 = 2;
-		int element_54 = 2;
 		int element_81 = 2;
 		int element_6 = -1;
 		int element_77 = -1;
 		int element_80 = 1;
+		int element_60 = 1;
 		int x = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
@@ -467,37 +1666,570 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
-		left_55.element = element_57;
-		left_55.left = left_58;
-		left_55.right = right_59;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove16() throws Exception {
+	public void test_remove41() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode right_8 = new BinaryNode();
-		BinaryNode left_55 = new BinaryNode();
-		BinaryNode right_59 = null;
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = new BinaryNode();
+		BinaryNode left_64 = null;
 		BinaryNode right_3 = null;
 		BinaryNode left_7 = null;
-		BinaryNode right_56 = null;
-		BinaryNode left_58 = null;
+		BinaryNode right_59 = null;
+		BinaryNode right_62 = null;
+		BinaryNode right_65 = null;
+		int element_79 = 4;
+		int element_1 = 4;
+		int element_76 = 4;
+		int element_57 = 3;
+		int element_78 = 3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 3;
+		int element_6 = -1;
+		int element_63 = 1;
+		int element_77 = -1;
+		int element_80 = 2;
+		int element_60 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		left_61.element = element_63;
+		left_61.left = left_64;
+		left_61.right = right_65;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove42() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = new BinaryNode();
+		BinaryNode right_65 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode right_62 = null;
+		BinaryNode left_64 = null;
+		int element_79 = 3;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_57 = 2;
+		int element_78 = 2;
+		int element_82 = -2;
+		int element_81 = 2;
+		int element_6 = -2;
+		int element_83 = -1;
+		int element_63 = -1;
+		int element_77 = -2;
+		int element_80 = 1;
+		int element_60 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		left_61.element = element_63;
+		left_61.left = left_64;
+		left_61.right = right_65;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove43() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = new BinaryNode();
+		BinaryNode left_64 = null;
+		BinaryNode right_65 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode right_62 = null;
+		int element_79 = 3;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_57 = 2;
+		int element_78 = 2;
+		int element_81 = 2;
+		int element_6 = -1;
+		int element_63 = 0;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_60 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		left_61.element = element_63;
+		left_61.left = left_64;
+		left_61.right = right_65;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove44() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = new BinaryNode();
+		BinaryNode right_65 = new BinaryNode();
+		BinaryNode left_64 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode right_62 = null;
+		BinaryNode left_70 = null;
+		BinaryNode right_71 = null;
+		int element_79 = 4;
+		int element_1 = 4;
+		int element_76 = 4;
+		int element_57 = 3;
+		int element_78 = 3;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_81 = 3;
+		int element_6 = -1;
+		int element_85 = 2;
+		int element_84 = 1;
+		int element_63 = 0;
+		int element_77 = -1;
+		int element_80 = 2;
+		int element_60 = 2;
+		int element_69 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		left_61.element = element_63;
+		left_61.left = left_64;
+		left_61.right = right_65;
+		right_65.element = element_69;
+		right_65.left = left_70;
+		right_65.right = right_71;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove45() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_62 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_61 = null;
 		int element_79 = 2;
 		int element_1 = 2;
 		int element_76 = 2;
-		int element_57 = -1;
+		int element_57 = 1;
 		int element_78 = 1;
-		int element_54 = 1;
 		int element_81 = -1;
 		int element_6 = -2;
 		int element_77 = -2;
+		int element_80 = -2;
+		int element_60 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove46() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_62 = new BinaryNode();
+		BinaryNode left_73 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_61 = null;
+		BinaryNode right_74 = null;
+		int element_79 = 3;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_57 = 2;
+		int element_78 = 2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = -1;
+		int element_6 = -2;
+		int element_72 = 1;
+		int element_77 = -2;
+		int element_80 = -2;
+		int element_60 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		right_62.element = element_72;
+		right_62.left = left_73;
+		right_62.right = right_74;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove47() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_62 = new BinaryNode();
+		BinaryNode right_74 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_61 = null;
+		BinaryNode left_73 = null;
+		int element_79 = 2;
+		int element_1 = 2;
+		int element_76 = 2;
+		int element_57 = 1;
+		int element_78 = 1;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -2;
+		int element_6 = -3;
+		int element_72 = -1;
+		int element_77 = -3;
+		int element_80 = -3;
+		int element_60 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		right_62.element = element_72;
+		right_62.left = left_73;
+		right_62.right = right_74;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove48() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_62 = new BinaryNode();
+		BinaryNode left_73 = null;
+		BinaryNode right_74 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_61 = null;
+		int element_79 = 2;
+		int element_1 = 2;
+		int element_76 = 2;
+		int element_57 = 1;
+		int element_78 = 1;
+		int element_81 = -1;
+		int element_6 = -2;
+		int element_72 = 0;
+		int element_77 = -2;
+		int element_80 = -2;
+		int element_60 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		right_62.element = element_72;
+		right_62.left = left_73;
+		right_62.right = right_74;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove49() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = null;
+		BinaryNode right_62 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		int element_79 = 2;
+		int element_1 = 2;
+		int element_78 = 1;
+		int element_57 = 1;
+		int element_76 = 2;
+		int element_6 = -1;
+		int element_77 = -1;
+		int element_60 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove50() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_62 = new BinaryNode();
+		BinaryNode left_61 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_73 = null;
+		BinaryNode right_74 = null;
+		int element_79 = 3;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_57 = 2;
+		int element_78 = 2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_6 = -1;
+		int element_72 = 1;
+		int element_77 = -1;
+		int element_80 = 0;
+		int element_60 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		right_62.element = element_72;
+		right_62.left = left_73;
+		right_62.right = right_74;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove51() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = new BinaryNode();
+		BinaryNode right_62 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_64 = null;
+		BinaryNode right_65 = null;
+		int element_79 = 2;
+		int element_1 = 2;
+		int element_76 = 2;
+		int element_57 = 1;
+		int element_78 = 1;
+		int element_82 = -1;
+		int element_81 = -1;
+		int element_6 = -2;
+		int element_83 = 0;
+		int element_63 = -1;
+		int element_77 = -2;
+		int element_80 = -2;
+		int element_60 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		left_61.element = element_63;
+		left_61.left = left_64;
+		left_61.right = right_65;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove52() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode right_59 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode left_58 = null;
+		int element_77 = -2;
+		int element_79 = -1;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_57 = -1;
+		int element_78 = -2;
+		int x = 0;
+		int element_6 = -2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove53() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode right_59 = new BinaryNode();
+		BinaryNode right_83 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode left_58 = null;
+		BinaryNode left_82 = null;
+		int element_79 = -2;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_57 = -2;
+		int element_78 = -3;
+		int element_81 = -1;
+		int element_6 = -3;
+		int element_77 = -3;
 		int element_80 = -2;
 		int x = 0;
 		obj.root.element = element_1;
@@ -506,98 +2238,257 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
-		left_55.element = element_57;
-		left_55.left = left_58;
-		left_55.right = right_59;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		right_59.element = element_81;
+		right_59.left = left_82;
+		right_59.right = right_83;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove17() throws Exception {
+	public void test_remove54() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode right_8 = new BinaryNode();
-		BinaryNode right_56 = null;
-		BinaryNode right_3 = null;
-		BinaryNode left_7 = null;
-		BinaryNode left_55 = null;
-		int element_6 = -2;
-		int element_77 = -2;
-		int element_79 = -1;
-		int element_1 = 1;
-		int element_76 = 1;
-		int element_78 = -2;
-		int x = 0;
-		int element_54 = -1;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		left_2.element = element_6;
-		left_2.left = left_7;
-		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove18() throws Exception {
-		BinarySearchTree obj = new BinarySearchTree();
-		obj.root = new BinaryNode();
-		BinaryNode left_2 = new BinaryNode();
-		BinaryNode right_8 = new BinaryNode();
-		BinaryNode left_55 = null;
-		BinaryNode right_56 = null;
-		BinaryNode right_3 = null;
-		BinaryNode left_7 = null;
-		int element_6 = -1;
-		int element_77 = -1;
-		int element_1 = 1;
-		int element_76 = 1;
-		int x = 0;
-		int element_54 = 0;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		left_2.element = element_6;
-		left_2.left = left_7;
-		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove19() throws Exception {
-		BinarySearchTree obj = new BinarySearchTree();
-		obj.root = new BinaryNode();
-		BinaryNode left_2 = new BinaryNode();
-		BinaryNode right_8 = new BinaryNode();
-		BinaryNode left_55 = new BinaryNode();
-		BinaryNode right_56 = null;
+		BinaryNode right_59 = new BinaryNode();
+		BinaryNode right_83 = new BinaryNode();
+		BinaryNode left_88 = null;
 		BinaryNode right_3 = null;
 		BinaryNode left_7 = null;
 		BinaryNode left_58 = null;
+		BinaryNode left_82 = null;
+		BinaryNode right_89 = null;
+		int element_79 = -2;
+		int element_1 = 2;
+		int element_76 = 2;
+		int element_57 = -2;
+		int element_78 = -3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = -1;
+		int element_6 = -3;
+		int element_77 = -3;
+		int element_87 = 1;
+		int element_80 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		right_59.element = element_81;
+		right_59.left = left_82;
+		right_59.right = right_83;
+		right_83.element = element_87;
+		right_83.left = left_88;
+		right_83.right = right_89;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove55() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode right_59 = new BinaryNode();
+		BinaryNode right_83 = new BinaryNode();
+		BinaryNode right_89 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode left_58 = null;
+		BinaryNode left_82 = null;
+		BinaryNode left_88 = null;
+		int element_79 = -3;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_57 = -3;
+		int element_78 = -4;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -2;
+		int element_6 = -4;
+		int element_77 = -4;
+		int element_87 = -1;
+		int element_80 = -3;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		right_59.element = element_81;
+		right_59.left = left_82;
+		right_59.right = right_83;
+		right_83.element = element_87;
+		right_83.left = left_88;
+		right_83.right = right_89;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove56() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode right_59 = new BinaryNode();
+		BinaryNode right_83 = new BinaryNode();
+		BinaryNode left_88 = null;
+		BinaryNode right_89 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode left_58 = null;
+		BinaryNode left_82 = null;
+		int element_79 = -2;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_57 = -2;
+		int element_78 = -3;
+		int element_81 = -1;
+		int element_6 = -3;
+		int element_77 = -3;
+		int element_87 = 0;
+		int element_80 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		right_59.element = element_81;
+		right_59.left = left_82;
+		right_59.right = right_83;
+		right_83.element = element_87;
+		right_83.left = left_88;
+		right_83.right = right_89;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove57() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode right_59 = new BinaryNode();
+		BinaryNode right_83 = new BinaryNode();
+		BinaryNode right_89 = new BinaryNode();
+		BinaryNode left_88 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode left_58 = null;
+		BinaryNode left_82 = null;
+		BinaryNode left_94 = null;
+		BinaryNode right_95 = null;
+		int element_79 = -4;
+		int element_1 = 0;
+		int element_76 = 0;
+		int element_57 = -4;
+		int element_78 = -5;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -3;
+		int element_93 = -1;
+		int element_6 = -5;
+		int element_84 = -1;
+		int element_77 = -5;
+		int element_87 = -2;
+		int element_80 = -4;
+		int element_85 = 0;
+		int x = -2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		right_59.element = element_81;
+		right_59.left = left_82;
+		right_59.right = right_83;
+		right_83.element = element_87;
+		right_83.left = left_88;
+		right_83.right = right_89;
+		right_89.element = element_93;
+		right_89.left = left_94;
+		right_89.right = right_95;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove58() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = null;
 		BinaryNode right_59 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		int element_77 = -1;
+		int element_1 = 1;
+		int element_76 = 1;
+		int element_57 = 0;
+		int x = 0;
+		int element_6 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove59() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_59 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_7 = null;
+		BinaryNode left_61 = null;
+		BinaryNode right_62 = null;
 		int element_79 = -1;
 		int element_1 = 1;
 		int element_76 = 1;
-		int element_57 = -1;
+		int element_57 = 0;
 		int element_78 = -2;
-		int element_54 = 0;
 		int element_81 = 0;
 		int element_6 = -2;
 		int element_77 = -2;
 		int element_80 = -1;
+		int element_60 = -1;
 		int x = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
@@ -605,18 +2496,18 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
-		left_55.element = element_57;
-		left_55.left = left_58;
-		left_55.right = right_59;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove20() throws Exception {
+	public void test_remove60() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -638,20 +2529,20 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove21() throws Exception {
+	public void test_remove61() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode right_8 = new BinaryNode();
 		BinaryNode left_7 = null;
 		BinaryNode right_3 = null;
-		BinaryNode left_55 = null;
-		BinaryNode right_56 = null;
+		BinaryNode left_58 = null;
+		BinaryNode right_59 = null;
 		int element_79 = -1;
 		int element_1 = 0;
 		int element_76 = 0;
+		int element_57 = -1;
 		int element_78 = -1;
-		int element_54 = -1;
 		int element_6 = -2;
 		int element_77 = -2;
 		int element_80 = 0;
@@ -662,15 +2553,15 @@ public class BinarySearchTree_remove1 extends TestJPF {
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		right_8.element = element_54;
-		right_8.left = left_55;
-		right_8.right = right_56;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove22() throws Exception {
+	public void test_remove62() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -701,7 +2592,190 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove23() throws Exception {
+	public void test_remove63() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = null;
+		BinaryNode right_59 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_11 = null;
+		int element_79 = 0;
+		int element_1 = 2;
+		int element_76 = 2;
+		int element_57 = 1;
+		int element_78 = -1;
+		int element_6 = 0;
+		int element_77 = -1;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove64() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode right_59 = new BinaryNode();
+		BinaryNode left_58 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_11 = null;
+		BinaryNode left_82 = null;
+		BinaryNode right_83 = null;
+		int element_79 = 0;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_57 = 1;
+		int element_78 = -1;
+		int element_82 = 2;
+		int element_83 = 3;
+		int element_81 = 2;
+		int element_6 = 0;
+		int element_77 = -1;
+		int element_80 = 1;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		right_59.element = element_81;
+		right_59.left = left_82;
+		right_59.right = right_83;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove65() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode left_61 = null;
+		BinaryNode right_62 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_59 = null;
+		int element_79 = 0;
+		int element_1 = 3;
+		int element_76 = 3;
+		int element_78 = -1;
+		int element_57 = 2;
+		int element_81 = 3;
+		int element_6 = 0;
+		int element_77 = -1;
+		int element_80 = 2;
+		int element_60 = 1;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove66() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode left_7 = new BinaryNode();
+		BinaryNode right_8 = new BinaryNode();
+		BinaryNode left_58 = new BinaryNode();
+		BinaryNode right_62 = new BinaryNode();
+		BinaryNode left_61 = null;
+		BinaryNode right_3 = null;
+		BinaryNode left_10 = null;
+		BinaryNode right_11 = null;
+		BinaryNode right_59 = null;
+		BinaryNode left_73 = null;
+		BinaryNode right_74 = null;
+		int element_79 = 0;
+		int element_1 = 4;
+		int element_76 = 4;
+		int element_78 = -1;
+		int element_57 = 3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 4;
+		int element_6 = 0;
+		int element_85 = 3;
+		int element_72 = 2;
+		int element_77 = -1;
+		int element_80 = 3;
+		int element_84 = 2;
+		int element_60 = 1;
+		int x = 0;
+		int element_9 = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		left_7.element = element_9;
+		left_7.left = left_10;
+		left_7.right = right_11;
+		right_8.element = element_57;
+		right_8.left = left_58;
+		right_8.right = right_59;
+		left_58.element = element_60;
+		left_58.left = left_61;
+		left_58.right = right_62;
+		right_62.element = element_72;
+		right_62.left = left_73;
+		right_62.right = right_74;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove67() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = null;
@@ -717,268 +2791,3425 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove24() throws Exception {
+	public void test_remove68() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = null;
+		BinaryNode left_97 = null;
 		BinaryNode left_2 = null;
-		BinaryNode right_83 = null;
+		BinaryNode right_98 = null;
 		int element_77 = 1;
+		int element_96 = 1;
 		int element_1 = -1;
 		int element_76 = -1;
 		int x = 0;
-		int element_81 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove25() throws Exception {
+	public void test_remove69() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = new BinaryNode();
-		BinaryNode left_85 = null;
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = null;
 		BinaryNode left_2 = null;
-		BinaryNode right_83 = null;
-		BinaryNode right_86 = null;
-		int element_84 = 1;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
 		int element_77 = 2;
+		int element_99 = 1;
+		int element_96 = 2;
 		int element_79 = 2;
 		int element_1 = -1;
 		int element_76 = -1;
 		int element_78 = 1;
 		int x = 0;
-		int element_81 = 2;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		left_82.element = element_84;
-		left_82.left = left_85;
-		left_82.right = right_86;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove26() throws Exception {
+	public void test_remove70() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = new BinaryNode();
-		BinaryNode right_86 = null;
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = null;
 		BinaryNode left_2 = null;
-		BinaryNode right_83 = null;
-		BinaryNode left_85 = null;
-		int element_84 = -1;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_104 = null;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 2;
+		int element_81 = 2;
+		int element_77 = 3;
+		int element_80 = 1;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_102 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove71() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = new BinaryNode();
+		BinaryNode left_106 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_104 = null;
+		BinaryNode right_107 = null;
+		int element_79 = 4;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 3;
+		int element_77 = 4;
+		int element_80 = 2;
+		int element_99 = 3;
+		int element_96 = 4;
+		int element_105 = 1;
+		int element_102 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		left_103.element = element_105;
+		left_103.left = left_106;
+		left_103.right = right_107;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove72() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = new BinaryNode();
+		BinaryNode left_106 = new BinaryNode();
+		BinaryNode right_110 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_104 = null;
+		BinaryNode right_107 = null;
+		BinaryNode left_109 = null;
+		int element_79 = 4;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = 3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_85 = -1;
+		int element_81 = 3;
+		int element_84 = -2;
+		int element_77 = 4;
+		int element_80 = 2;
+		int element_99 = 3;
+		int element_96 = 4;
+		int element_105 = 1;
+		int element_108 = -1;
+		int element_102 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		left_103.element = element_105;
+		left_103.left = left_106;
+		left_103.right = right_107;
+		left_106.element = element_108;
+		left_106.left = left_109;
+		left_106.right = right_110;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove73() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = new BinaryNode();
+		BinaryNode right_107 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_104 = null;
+		BinaryNode left_106 = null;
+		int element_79 = 3;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = 2;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = 2;
+		int element_77 = 3;
+		int element_80 = 1;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_105 = -1;
+		int element_102 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		left_103.element = element_105;
+		left_103.left = left_106;
+		left_103.right = right_107;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove74() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = new BinaryNode();
+		BinaryNode left_106 = null;
+		BinaryNode right_107 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_104 = null;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 2;
+		int element_81 = 2;
+		int element_77 = 3;
+		int element_80 = 1;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_105 = 0;
+		int element_102 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		left_103.element = element_105;
+		left_103.left = left_106;
+		left_103.right = right_107;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove75() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = new BinaryNode();
+		BinaryNode right_107 = new BinaryNode();
+		BinaryNode left_106 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_104 = null;
+		BinaryNode left_115 = null;
+		BinaryNode right_116 = null;
+		int element_79 = 4;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 3;
+		int element_114 = 1;
+		int element_82 = 0;
+		int element_81 = 3;
+		int element_83 = 1;
+		int element_84 = 1;
+		int element_77 = 4;
+		int element_80 = 2;
+		int element_99 = 3;
+		int element_96 = 4;
+		int element_85 = 2;
+		int element_105 = 0;
+		int element_102 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		left_103.element = element_105;
+		left_103.left = left_106;
+		left_103.right = right_107;
+		right_107.element = element_114;
+		right_107.left = left_115;
+		right_107.right = right_116;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove76() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_103 = null;
+		int element_79 = 2;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = 1;
+		int element_81 = -1;
+		int element_77 = 2;
+		int element_80 = -2;
+		int element_99 = 1;
+		int element_96 = 2;
+		int element_102 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove77() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = new BinaryNode();
+		BinaryNode left_118 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_103 = null;
+		BinaryNode right_119 = null;
+		int element_117 = 1;
+		int element_79 = 3;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = 2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = -1;
+		int element_77 = 3;
+		int element_80 = -2;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_102 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_104.element = element_117;
+		right_104.left = left_118;
+		right_104.right = right_119;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove78() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = new BinaryNode();
+		BinaryNode right_119 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_103 = null;
+		BinaryNode left_118 = null;
+		int element_117 = -1;
+		int element_79 = 2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = 1;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -2;
+		int element_77 = 2;
+		int element_80 = -3;
+		int element_99 = 1;
+		int element_96 = 2;
+		int element_102 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_104.element = element_117;
+		right_104.left = left_118;
+		right_104.right = right_119;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove79() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = new BinaryNode();
+		BinaryNode left_118 = null;
+		BinaryNode right_119 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_103 = null;
+		int element_117 = 0;
+		int element_79 = 2;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = 1;
+		int element_81 = -1;
+		int element_77 = 2;
+		int element_80 = -2;
+		int element_99 = 1;
+		int element_96 = 2;
+		int element_102 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_104.element = element_117;
+		right_104.left = left_118;
+		right_104.right = right_119;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove80() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = new BinaryNode();
+		BinaryNode right_119 = new BinaryNode();
+		BinaryNode left_118 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_103 = null;
+		BinaryNode left_124 = null;
+		BinaryNode right_125 = null;
+		int element_117 = 0;
+		int element_79 = 3;
+		int element_123 = 1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = 2;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_85 = 2;
+		int element_81 = -1;
+		int element_84 = 1;
+		int element_77 = 3;
+		int element_80 = -2;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_102 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_104.element = element_117;
+		right_104.left = left_118;
+		right_104.right = right_119;
+		right_119.element = element_123;
+		right_119.left = left_124;
+		right_119.right = right_125;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove81() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = null;
+		BinaryNode right_104 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		int element_79 = 2;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 1;
+		int element_77 = 2;
+		int element_99 = 1;
+		int element_96 = 2;
+		int element_102 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove82() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = new BinaryNode();
+		BinaryNode left_103 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_118 = null;
+		BinaryNode right_119 = null;
+		int element_117 = 1;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_77 = 3;
+		int element_80 = 0;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_102 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_104.element = element_117;
+		right_104.left = left_118;
+		right_104.right = right_119;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove83() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = new BinaryNode();
+		BinaryNode right_104 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_106 = null;
+		BinaryNode right_107 = null;
+		int element_79 = 4;
+		int element_1 = 0;
+		int element_76 = 0;
+		int element_78 = 3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_77 = 4;
+		int element_80 = 0;
+		int element_99 = 3;
+		int element_96 = 4;
+		int element_105 = 1;
+		int element_102 = 2;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		left_103.element = element_105;
+		left_103.left = left_106;
+		left_103.right = right_107;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove84() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
 		int element_77 = 1;
+		int element_99 = -1;
+		int element_96 = 1;
 		int element_79 = -1;
 		int element_1 = -2;
 		int element_76 = -2;
 		int element_78 = -2;
 		int x = 0;
-		int element_81 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		left_82.element = element_84;
-		left_82.left = left_85;
-		left_82.right = right_86;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove27() throws Exception {
+	public void test_remove85() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = new BinaryNode();
-		BinaryNode left_85 = null;
-		BinaryNode right_86 = null;
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = null;
 		BinaryNode left_2 = null;
-		BinaryNode right_83 = null;
-		int element_84 = 0;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_128 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -2;
+		int element_81 = 2;
+		int element_126 = 1;
+		int element_77 = 2;
+		int element_80 = 1;
+		int element_99 = -1;
+		int element_96 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove86() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = new BinaryNode();
+		BinaryNode left_130 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_128 = null;
+		BinaryNode right_131 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 3;
+		int element_126 = 2;
+		int element_77 = 3;
+		int element_80 = 2;
+		int element_99 = -1;
+		int element_96 = 3;
+		int element_129 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		left_127.element = element_129;
+		left_127.left = left_130;
+		left_127.right = right_131;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove87() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = new BinaryNode();
+		BinaryNode right_131 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_128 = null;
+		BinaryNode left_130 = null;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -3;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = 2;
+		int element_126 = 1;
+		int element_77 = 2;
+		int element_80 = 1;
+		int element_99 = -2;
+		int element_96 = 2;
+		int element_129 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		left_127.element = element_129;
+		left_127.left = left_130;
+		left_127.right = right_131;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove88() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = new BinaryNode();
+		BinaryNode left_130 = null;
+		BinaryNode right_131 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_128 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -2;
+		int element_81 = 2;
+		int element_126 = 1;
+		int element_77 = 2;
+		int element_80 = 1;
+		int element_99 = -1;
+		int element_96 = 2;
+		int element_129 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		left_127.element = element_129;
+		left_127.left = left_130;
+		left_127.right = right_131;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove89() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = new BinaryNode();
+		BinaryNode right_131 = new BinaryNode();
+		BinaryNode left_130 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_128 = null;
+		BinaryNode left_136 = null;
+		BinaryNode right_137 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -2;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_85 = 2;
+		int element_135 = 1;
+		int element_126 = 2;
+		int element_77 = 3;
+		int element_80 = 2;
+		int element_99 = -1;
+		int element_96 = 3;
+		int element_81 = 3;
+		int element_84 = 1;
+		int element_129 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		left_127.element = element_129;
+		left_127.left = left_130;
+		left_127.right = right_131;
+		right_131.element = element_135;
+		right_131.left = left_136;
+		right_131.right = right_137;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove90() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_127 = null;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -3;
+		int element_81 = -1;
+		int element_126 = -1;
 		int element_77 = 1;
+		int element_99 = -2;
+		int element_96 = 1;
+		int element_80 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove91() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = new BinaryNode();
+		BinaryNode left_139 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_127 = null;
+		BinaryNode right_140 = null;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -3;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = -1;
+		int element_126 = -1;
+		int element_77 = 2;
+		int element_80 = -2;
+		int element_99 = -2;
+		int element_96 = 2;
+		int element_138 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		right_128.element = element_138;
+		right_128.left = left_139;
+		right_128.right = right_140;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove92() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = new BinaryNode();
+		BinaryNode right_140 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_127 = null;
+		BinaryNode left_139 = null;
+		int element_79 = -3;
+		int element_1 = -4;
+		int element_76 = -4;
+		int element_78 = -4;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -2;
+		int element_126 = -2;
+		int element_77 = 1;
+		int element_80 = -3;
+		int element_99 = -3;
+		int element_96 = 1;
+		int element_138 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		right_128.element = element_138;
+		right_128.left = left_139;
+		right_128.right = right_140;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove93() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = new BinaryNode();
+		BinaryNode left_139 = null;
+		BinaryNode right_140 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_127 = null;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -3;
+		int element_81 = -1;
+		int element_126 = -1;
+		int element_77 = 1;
+		int element_80 = -2;
+		int element_99 = -2;
+		int element_96 = 1;
+		int element_138 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		right_128.element = element_138;
+		right_128.left = left_139;
+		right_128.right = right_140;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove94() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = new BinaryNode();
+		BinaryNode right_140 = new BinaryNode();
+		BinaryNode left_139 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_127 = null;
+		BinaryNode left_145 = null;
+		BinaryNode right_146 = null;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -3;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_85 = 2;
+		int element_144 = 1;
+		int element_81 = -1;
+		int element_126 = -1;
+		int element_77 = 2;
+		int element_80 = -2;
+		int element_99 = -2;
+		int element_96 = 2;
+		int element_84 = 1;
+		int element_138 = 0;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		right_128.element = element_138;
+		right_128.left = left_139;
+		right_128.right = right_140;
+		right_140.element = element_144;
+		right_140.left = left_145;
+		right_140.right = right_146;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove95() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = null;
+		BinaryNode right_128 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -2;
+		int element_126 = 0;
+		int element_77 = 1;
+		int element_99 = -1;
+		int element_96 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove96() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = new BinaryNode();
+		BinaryNode left_127 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_139 = null;
+		BinaryNode right_140 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_126 = 0;
+		int element_77 = 2;
+		int element_80 = 0;
+		int element_99 = -1;
+		int element_96 = 2;
+		int element_138 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		right_128.element = element_138;
+		right_128.left = left_139;
+		right_128.right = right_140;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove97() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = new BinaryNode();
+		BinaryNode right_128 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_100 = null;
+		BinaryNode left_130 = null;
+		BinaryNode right_131 = null;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -3;
+		int element_82 = -1;
+		int element_83 = 0;
+		int element_81 = -1;
+		int element_126 = 0;
+		int element_77 = 1;
+		int element_99 = -2;
+		int element_96 = 1;
+		int element_80 = -2;
+		int element_129 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		left_127.element = element_129;
+		left_127.left = left_130;
+		left_127.right = right_131;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove98() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		int element_77 = 1;
+		int element_99 = 0;
+		int element_96 = 1;
 		int element_1 = -1;
 		int element_76 = -1;
 		int x = 0;
-		int element_81 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		left_82.element = element_84;
-		left_82.left = left_85;
-		left_82.right = right_86;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove28() throws Exception {
+	public void test_remove99() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = new BinaryNode();
-		BinaryNode right_86 = new BinaryNode();
-		BinaryNode left_85 = null;
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_100 = null;
 		BinaryNode left_2 = null;
-		BinaryNode right_83 = null;
-		BinaryNode left_91 = null;
-		BinaryNode right_92 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_127 = null;
+		BinaryNode right_128 = null;
 		int element_79 = 1;
 		int element_1 = -1;
 		int element_76 = -1;
 		int element_78 = 0;
-		int element_90 = 1;
 		int element_81 = 2;
-		int element_84 = 0;
+		int element_126 = 1;
 		int element_77 = 2;
 		int element_80 = 1;
+		int element_99 = 0;
+		int element_96 = 2;
 		int x = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		left_82.element = element_84;
-		left_82.left = left_85;
-		left_82.right = right_86;
-		right_86.element = element_90;
-		right_86.left = left_91;
-		right_86.right = right_92;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove29() throws Exception {
+	public void test_remove100() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode right_83 = null;
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_101 = null;
 		BinaryNode left_2 = null;
-		BinaryNode left_82 = null;
-		int element_77 = -2;
-		int element_1 = -2;
-		int element_76 = -2;
-		int element_78 = -1;
-		int x = 0;
-		int element_81 = -1;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove30() throws Exception {
-		BinarySearchTree obj = new BinarySearchTree();
-		obj.root = new BinaryNode();
-		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = null;
-		BinaryNode right_83 = null;
-		BinaryNode left_2 = null;
-		int element_1 = -1;
-		int element_76 = -1;
-		int x = 0;
-		int element_81 = 0;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove31() throws Exception {
-		BinarySearchTree obj = new BinarySearchTree();
-		obj.root = new BinaryNode();
-		BinaryNode right_3 = new BinaryNode();
-		BinaryNode right_83 = new BinaryNode();
-		BinaryNode left_82 = null;
-		BinaryNode left_2 = null;
-		BinaryNode left_94 = null;
-		BinaryNode right_95 = null;
-		int element_77 = 0;
-		int element_79 = 1;
-		int element_1 = -1;
-		int element_76 = -1;
-		int element_78 = 1;
-		int x = 0;
-		int element_81 = 0;
-		int element_93 = 1;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		right_83.element = element_93;
-		right_83.left = left_94;
-		right_83.right = right_95;
-		System.out.println(Utilities.repOK(obj));
-		obj.remove(x);
-	}
-
-	@Test
-	public void test_remove32() throws Exception {
-		BinarySearchTree obj = new BinarySearchTree();
-		obj.root = new BinaryNode();
-		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = new BinaryNode();
-		BinaryNode right_83 = null;
-		BinaryNode left_2 = null;
-		BinaryNode left_85 = null;
-		BinaryNode right_86 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_103 = null;
+		BinaryNode right_104 = null;
 		int element_79 = 1;
 		int element_1 = 0;
 		int element_76 = 0;
-		int element_78 = 1;
+		int element_78 = 0;
 		int element_81 = 2;
-		int element_84 = 1;
-		int element_77 = 0;
-		int element_80 = 2;
+		int element_77 = 3;
+		int element_80 = 1;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_102 = 1;
 		int x = 2;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
-		left_82.element = element_84;
-		left_82.left = left_85;
-		left_82.right = right_86;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove33() throws Exception {
+	public void test_remove101() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_127 = null;
+		BinaryNode right_128 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_103 = null;
+		BinaryNode right_104 = null;
+		int element_79 = 1;
+		int element_1 = 0;
+		int element_76 = 0;
+		int element_78 = 0;
+		int element_81 = 2;
+		int element_126 = 3;
+		int element_77 = 4;
+		int element_99 = 2;
+		int element_96 = 4;
+		int element_80 = 1;
+		int element_102 = 1;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove102() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode right_128 = new BinaryNode();
+		BinaryNode left_127 = null;
+		BinaryNode left_2 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_103 = null;
+		BinaryNode right_104 = null;
+		BinaryNode left_139 = null;
+		BinaryNode right_140 = null;
+		int element_79 = -4;
+		int element_1 = -5;
+		int element_76 = -5;
+		int element_78 = -5;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -3;
+		int element_85 = 0;
+		int element_126 = -2;
+		int element_77 = 0;
+		int element_80 = -4;
+		int element_99 = -3;
+		int element_96 = 0;
+		int element_84 = -1;
+		int element_138 = -1;
+		int element_102 = -4;
+		int x = -3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		right_128.element = element_138;
+		right_128.left = left_139;
+		right_128.right = right_140;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove103() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		int element_77 = -2;
+		int element_96 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove104() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		int element_77 = -1;
+		int element_79 = 2;
+		int element_96 = 0;
+		int element_147 = 2;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove105() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode right_152 = null;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 2;
+		int element_78 = 0;
+		int element_81 = 3;
+		int element_77 = -1;
+		int element_80 = 2;
+		int element_96 = 0;
+		int element_147 = 3;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove106() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = new BinaryNode();
+		BinaryNode left_154 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode right_152 = null;
+		BinaryNode right_155 = null;
+		int element_79 = 4;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 3;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_83 = 3;
+		int element_81 = 4;
+		int element_77 = -1;
+		int element_80 = 3;
+		int element_153 = 2;
+		int element_96 = 0;
+		int element_147 = 4;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		left_151.element = element_153;
+		left_151.left = left_154;
+		left_151.right = right_155;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove107() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = new BinaryNode();
+		BinaryNode right_155 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode right_152 = null;
+		BinaryNode left_154 = null;
+		int element_79 = 4;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 3;
+		int element_78 = 0;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_81 = 4;
+		int element_77 = -1;
+		int element_80 = 3;
+		int element_153 = 1;
+		int element_96 = 0;
+		int element_147 = 4;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		left_151.element = element_153;
+		left_151.left = left_154;
+		left_151.right = right_155;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove108() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = new BinaryNode();
+		BinaryNode left_154 = null;
+		BinaryNode right_155 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode right_152 = null;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 2;
+		int element_78 = 0;
+		int element_81 = 3;
+		int element_77 = -1;
+		int element_80 = 2;
+		int element_153 = 1;
+		int element_96 = 0;
+		int element_147 = 3;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		left_151.element = element_153;
+		left_151.left = left_154;
+		left_151.right = right_155;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove109() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = new BinaryNode();
+		BinaryNode right_155 = new BinaryNode();
+		BinaryNode left_154 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode right_152 = null;
+		BinaryNode left_160 = null;
+		BinaryNode right_161 = null;
+		int element_79 = 4;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 3;
+		int element_78 = 0;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 4;
+		int element_85 = 3;
+		int element_84 = 2;
+		int element_77 = -1;
+		int element_80 = 3;
+		int element_153 = 1;
+		int element_96 = 0;
+		int element_147 = 4;
+		int element_159 = 2;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		left_151.element = element_153;
+		left_151.left = left_154;
+		left_151.right = right_155;
+		right_155.element = element_159;
+		right_155.left = left_160;
+		right_155.right = right_161;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove110() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_151 = null;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 1;
+		int element_78 = 0;
+		int element_81 = 1;
+		int element_77 = -1;
+		int element_80 = 0;
+		int element_96 = 0;
+		int element_147 = 3;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove111() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = new BinaryNode();
+		BinaryNode left_163 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_151 = null;
+		BinaryNode right_164 = null;
+		int element_162 = 1;
+		int element_79 = 2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_150 = -1;
+		int element_78 = -2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = -1;
+		int element_77 = -3;
+		int element_80 = -2;
+		int element_96 = -2;
+		int element_147 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_152.element = element_162;
+		right_152.left = left_163;
+		right_152.right = right_164;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove112() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = new BinaryNode();
+		BinaryNode right_164 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_151 = null;
+		BinaryNode left_163 = null;
+		int element_162 = -1;
+		int element_79 = 1;
+		int element_1 = -4;
+		int element_76 = -4;
+		int element_150 = -2;
+		int element_78 = -3;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = -2;
+		int element_77 = -4;
+		int element_80 = -3;
+		int element_96 = -3;
+		int element_147 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_152.element = element_162;
+		right_152.left = left_163;
+		right_152.right = right_164;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove113() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = new BinaryNode();
+		BinaryNode left_163 = null;
+		BinaryNode right_164 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_151 = null;
+		int element_162 = 0;
+		int element_79 = 1;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_150 = -1;
+		int element_78 = -2;
+		int element_81 = -1;
+		int element_77 = -3;
+		int element_80 = -2;
+		int element_96 = -2;
+		int element_147 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_152.element = element_162;
+		right_152.left = left_163;
+		right_152.right = right_164;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove114() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = new BinaryNode();
+		BinaryNode right_164 = new BinaryNode();
+		BinaryNode left_163 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_151 = null;
+		BinaryNode left_169 = null;
+		BinaryNode right_170 = null;
+		int element_162 = 0;
+		int element_79 = 2;
+		int element_168 = 1;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_150 = -1;
+		int element_78 = -2;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_81 = -1;
+		int element_85 = 2;
+		int element_84 = 1;
+		int element_77 = -3;
+		int element_80 = -2;
+		int element_96 = -2;
+		int element_147 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_152.element = element_162;
+		right_152.left = left_163;
+		right_152.right = right_164;
+		right_164.element = element_168;
+		right_164.left = left_169;
+		right_164.right = right_170;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove115() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = null;
+		BinaryNode right_152 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		int element_79 = 2;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 1;
+		int element_78 = 0;
+		int element_77 = -1;
+		int element_96 = 0;
+		int element_147 = 2;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove116() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = new BinaryNode();
+		BinaryNode left_151 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_163 = null;
+		BinaryNode right_164 = null;
+		int element_162 = 2;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_83 = 3;
+		int element_81 = 2;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 3;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_152.element = element_162;
+		right_152.left = left_163;
+		right_152.right = right_164;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove117() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = new BinaryNode();
+		BinaryNode right_152 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_154 = null;
+		BinaryNode right_155 = null;
+		int element_79 = 3;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 2;
+		int element_78 = 0;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_77 = -1;
+		int element_80 = 0;
+		int element_153 = 1;
+		int element_96 = 0;
+		int element_147 = 3;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		left_151.element = element_153;
+		left_151.left = left_154;
+		left_151.right = right_155;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove118() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove119() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_173 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_81 = 3;
+		int element_171 = 3;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove120() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = new BinaryNode();
+		BinaryNode left_175 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_173 = null;
+		BinaryNode right_176 = null;
+		int element_174 = 1;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -2;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 2;
+		int element_171 = 2;
+		int element_77 = -3;
+		int element_80 = -1;
+		int element_96 = -2;
+		int element_147 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		left_172.element = element_174;
+		left_172.left = left_175;
+		left_172.right = right_176;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove121() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = new BinaryNode();
+		BinaryNode right_176 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_173 = null;
+		BinaryNode left_175 = null;
+		int element_174 = -1;
+		int element_79 = -3;
+		int element_1 = -4;
+		int element_76 = -4;
+		int element_78 = -3;
+		int element_82 = -2;
+		int element_83 = -1;
+		int element_81 = 1;
+		int element_171 = 1;
+		int element_77 = -4;
+		int element_80 = -2;
+		int element_96 = -3;
+		int element_147 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		left_172.element = element_174;
+		left_172.left = left_175;
+		left_172.right = right_176;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove122() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = new BinaryNode();
+		BinaryNode left_175 = null;
+		BinaryNode right_176 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_173 = null;
+		int element_174 = 0;
+		int element_79 = -2;
+		int element_1 = -3;
+		int element_76 = -3;
+		int element_78 = -2;
+		int element_81 = 1;
+		int element_171 = 1;
+		int element_77 = -3;
+		int element_80 = -1;
+		int element_96 = -2;
+		int element_147 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		left_172.element = element_174;
+		left_172.left = left_175;
+		left_172.right = right_176;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove123() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = new BinaryNode();
+		BinaryNode right_176 = new BinaryNode();
+		BinaryNode left_175 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_173 = null;
+		BinaryNode left_181 = null;
+		BinaryNode right_182 = null;
+		int element_174 = 1;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -1;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_85 = 3;
+		int element_180 = 2;
+		int element_171 = 3;
+		int element_81 = 3;
+		int element_77 = -2;
+		int element_80 = 0;
+		int element_84 = 2;
+		int element_96 = -1;
+		int element_147 = 0;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		left_172.element = element_174;
+		left_172.left = left_175;
+		left_172.right = right_176;
+		right_176.element = element_180;
+		right_176.left = left_181;
+		right_176.right = right_182;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove124() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = new BinaryNode();
+		BinaryNode left_175 = new BinaryNode();
+		BinaryNode right_176 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_173 = null;
+		BinaryNode left_178 = null;
+		BinaryNode right_179 = null;
+		int element_174 = 2;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -1;
+		int element_82 = 0;
+		int element_83 = 1;
+		int element_81 = 3;
+		int element_171 = 3;
+		int element_84 = 1;
+		int element_77 = -2;
+		int element_80 = 0;
+		int element_85 = 2;
+		int element_96 = -1;
+		int element_147 = 0;
+		int element_177 = 1;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		left_172.element = element_174;
+		left_172.left = left_175;
+		left_172.right = right_176;
+		left_175.element = element_177;
+		left_175.left = left_178;
+		left_175.right = right_179;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove125() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_172 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_81 = 1;
+		int element_171 = 2;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove126() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode left_184 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_172 = null;
+		BinaryNode right_185 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_183 = 4;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_83 = 4;
+		int element_81 = 1;
+		int element_171 = 2;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove127() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode right_185 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_172 = null;
+		BinaryNode left_184 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_183 = 3;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_171 = 2;
+		int element_84 = 3;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove128() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode left_184 = null;
+		BinaryNode right_185 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_172 = null;
+		int element_79 = -3;
+		int element_1 = -4;
+		int element_183 = 0;
+		int element_76 = -4;
+		int element_78 = -3;
+		int element_82 = -1;
+		int element_81 = -2;
+		int element_171 = -1;
+		int element_77 = -4;
+		int element_80 = -2;
+		int element_96 = -3;
+		int element_147 = -2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove129() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode right_185 = new BinaryNode();
+		BinaryNode left_184 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_172 = null;
+		BinaryNode left_190 = null;
+		BinaryNode right_191 = null;
+		int element_79 = -5;
+		int element_189 = -1;
+		int element_1 = -6;
+		int element_183 = -2;
+		int element_76 = -6;
+		int element_78 = -5;
+		int element_82 = -3;
+		int element_83 = -2;
+		int element_81 = -4;
+		int element_171 = -3;
+		int element_84 = -1;
+		int element_77 = -6;
+		int element_80 = -4;
+		int element_85 = -1;
+		int element_96 = -5;
+		int element_147 = -4;
+		int x = -2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		right_185.element = element_189;
+		right_185.left = left_190;
+		right_185.right = right_191;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove130() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode left_184 = new BinaryNode();
+		BinaryNode right_185 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_172 = null;
+		BinaryNode left_187 = null;
+		BinaryNode right_188 = null;
+		int element_79 = 0;
+		int element_183 = 4;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_186 = 3;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int element_1 = -1;
+		int element_82 = 2;
+		int element_85 = 3;
+		int element_171 = 2;
+		int element_84 = 3;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_86 = 4;
+		int x = 4;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		left_184.element = element_186;
+		left_184.left = left_187;
+		left_184.right = right_188;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove131() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = null;
+		BinaryNode right_173 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_171 = 2;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove132() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode left_172 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_184 = null;
+		BinaryNode right_185 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_183 = 3;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_82 = 3;
+		int element_83 = 3;
+		int element_171 = 2;
+		int element_81 = 2;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove133() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = new BinaryNode();
+		BinaryNode right_173 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_148 = null;
+		BinaryNode left_175 = null;
+		BinaryNode right_176 = null;
+		int element_174 = 2;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_171 = 3;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_84 = 3;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		left_172.element = element_174;
+		left_172.left = left_175;
+		left_172.right = right_176;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove134() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		int element_77 = -1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove135() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_148 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_172 = null;
+		BinaryNode right_173 = null;
+		int element_79 = 1;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_81 = 2;
+		int element_171 = 2;
+		int element_77 = -1;
+		int element_80 = 2;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove136() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_149 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_151 = null;
+		BinaryNode right_152 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_81 = 1;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 2;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove137() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_172 = null;
+		BinaryNode right_173 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_151 = null;
+		BinaryNode right_152 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_150 = 1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_171 = 3;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_81 = 1;
+		int element_96 = 0;
+		int element_147 = 2;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove138() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode right_173 = new BinaryNode();
+		BinaryNode left_172 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_97 = null;
+		BinaryNode left_151 = null;
+		BinaryNode right_152 = null;
+		BinaryNode left_184 = null;
+		BinaryNode right_185 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_183 = 4;
+		int element_150 = 1;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_82 = 2;
+		int element_171 = 3;
+		int element_81 = 1;
+		int element_77 = -1;
+		int element_80 = 1;
+		int element_83 = 3;
+		int element_96 = 0;
+		int element_84 = 4;
+		int element_147 = 2;
+		int element_85 = 4;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		right_173.element = element_183;
+		right_173.left = left_184;
+		right_173.right = right_185;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove139() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_2 = null;
+		int element_96 = 0;
+		int element_1 = -1;
+		int element_76 = -1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove140() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_97 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_149 = null;
+		int element_77 = 0;
+		int element_79 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int element_1 = -1;
+		int element_76 = -1;
+		int element_78 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove141() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_98 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		int element_79 = 1;
+		int element_1 = 0;
+		int element_76 = 0;
+		int element_78 = 1;
+		int element_77 = 0;
+		int element_80 = 2;
+		int element_99 = 1;
+		int element_96 = 2;
+		int x = 2;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove142() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -1;
+		int element_77 = -2;
+		int element_80 = 0;
+		int element_99 = -1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove143() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode right_149 = new BinaryNode();
+		BinaryNode left_148 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_172 = null;
+		BinaryNode right_173 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_78 = -1;
+		int element_82 = 2;
+		int element_83 = 2;
+		int element_81 = 1;
+		int element_171 = 2;
+		int element_77 = -2;
+		int element_80 = 0;
+		int element_99 = -1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		right_149.element = element_171;
+		right_149.left = left_172;
+		right_149.right = right_173;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove144() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode left_151 = null;
+		BinaryNode right_152 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_149 = null;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_150 = 1;
+		int element_78 = -1;
+		int element_81 = 2;
+		int element_77 = -2;
+		int element_80 = 0;
+		int element_99 = -1;
+		int element_96 = 0;
+		int element_147 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove145() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_148 = new BinaryNode();
+		BinaryNode right_152 = new BinaryNode();
+		BinaryNode left_151 = null;
+		BinaryNode left_2 = null;
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		BinaryNode right_149 = null;
+		BinaryNode left_163 = null;
+		BinaryNode right_164 = null;
+		int element_162 = 2;
+		int element_79 = -1;
+		int element_1 = -2;
+		int element_76 = -2;
+		int element_150 = 1;
+		int element_78 = -1;
+		int element_82 = 1;
+		int element_83 = 2;
+		int element_81 = 3;
+		int element_85 = 3;
+		int element_84 = 2;
+		int element_77 = -2;
+		int element_80 = 0;
+		int element_99 = -1;
+		int element_96 = 0;
+		int element_147 = 3;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		left_148.element = element_150;
+		left_148.left = left_151;
+		left_148.right = right_152;
+		right_152.element = element_162;
+		right_152.left = left_163;
+		right_152.right = right_164;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove146() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = null;
@@ -993,31 +6224,31 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove34() throws Exception {
+	public void test_remove147() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
 		BinaryNode left_2 = null;
-		BinaryNode left_82 = null;
-		BinaryNode right_83 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_98 = null;
 		int element_77 = 0;
+		int element_96 = 0;
 		int element_1 = -1;
 		int element_76 = -1;
 		int element_78 = 0;
 		int x = -1;
-		int element_81 = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
 	@Test
-	public void test_remove35() throws Exception {
+	public void test_remove148() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -1041,31 +6272,254 @@ public class BinarySearchTree_remove1 extends TestJPF {
 	}
 
 	@Test
-	public void test_remove36() throws Exception {
+	public void test_remove149() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		obj.root = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
-		BinaryNode left_82 = null;
-		BinaryNode right_83 = null;
+		BinaryNode left_97 = null;
+		BinaryNode right_98 = null;
 		BinaryNode left_7 = null;
 		BinaryNode right_8 = null;
 		int element_6 = -1;
 		int element_77 = -1;
+		int element_96 = 1;
 		int element_1 = 0;
 		int element_76 = -1;
 		int element_78 = 0;
 		int x = 0;
-		int element_81 = 1;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		left_2.element = element_6;
 		left_2.left = left_7;
 		left_2.right = right_8;
-		right_3.element = element_81;
-		right_3.left = left_82;
-		right_3.right = right_83;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove150() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode right_98 = new BinaryNode();
+		BinaryNode left_97 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_8 = null;
+		BinaryNode left_148 = null;
+		BinaryNode right_149 = null;
+		int element_79 = 0;
+		int element_1 = -1;
+		int element_76 = -2;
+		int element_78 = -1;
+		int element_6 = -2;
+		int element_81 = 1;
+		int element_77 = -2;
+		int element_80 = 1;
+		int element_96 = 0;
+		int element_147 = 1;
+		int x = -1;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		right_98.element = element_147;
+		right_98.left = left_148;
+		right_98.right = right_149;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove151() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_98 = null;
+		int element_79 = 2;
+		int element_1 = 0;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_6 = -1;
+		int element_77 = -1;
+		int element_99 = 1;
+		int element_96 = 2;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove152() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode right_101 = new BinaryNode();
+		BinaryNode left_100 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_98 = null;
+		BinaryNode left_127 = null;
+		BinaryNode right_128 = null;
+		int element_79 = 0;
+		int element_1 = -3;
+		int element_76 = -4;
+		int element_78 = -3;
+		int element_82 = -1;
+		int element_83 = 0;
+		int element_6 = -4;
+		int element_81 = -1;
+		int element_126 = -1;
+		int element_77 = -4;
+		int element_99 = -2;
+		int element_96 = 0;
+		int element_80 = -2;
+		int x = -3;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		right_101.element = element_126;
+		right_101.left = left_127;
+		right_101.right = right_128;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove153() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode left_103 = null;
+		BinaryNode right_104 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		int element_79 = 3;
+		int element_1 = 0;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_6 = -1;
+		int element_81 = 3;
+		int element_77 = -1;
+		int element_99 = 2;
+		int element_96 = 3;
+		int element_80 = 2;
+		int element_102 = 1;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		System.out.println(Utilities.repOK(obj));
+		obj.remove(x);
+	}
+
+	@Test
+	public void test_remove154() throws Exception {
+		BinarySearchTree obj = new BinarySearchTree();
+		obj.root = new BinaryNode();
+		BinaryNode left_2 = new BinaryNode();
+		BinaryNode right_3 = new BinaryNode();
+		BinaryNode left_97 = new BinaryNode();
+		BinaryNode left_100 = new BinaryNode();
+		BinaryNode right_104 = new BinaryNode();
+		BinaryNode left_103 = null;
+		BinaryNode left_7 = null;
+		BinaryNode right_8 = null;
+		BinaryNode right_98 = null;
+		BinaryNode right_101 = null;
+		BinaryNode left_118 = null;
+		BinaryNode right_119 = null;
+		int element_117 = 2;
+		int element_79 = 4;
+		int element_83 = 2;
+		int element_76 = -1;
+		int element_78 = 0;
+		int element_81 = 4;
+		int element_6 = -1;
+		int element_99 = 3;
+		int element_96 = 4;
+		int element_102 = 1;
+		int element_1 = 0;
+		int element_82 = 1;
+		int element_85 = 3;
+		int element_84 = 2;
+		int element_77 = -1;
+		int element_80 = 3;
+		int x = 0;
+		obj.root.element = element_1;
+		obj.root.left = left_2;
+		obj.root.right = right_3;
+		left_2.element = element_6;
+		left_2.left = left_7;
+		left_2.right = right_8;
+		right_3.element = element_96;
+		right_3.left = left_97;
+		right_3.right = right_98;
+		left_97.element = element_99;
+		left_97.left = left_100;
+		left_97.right = right_101;
+		left_100.element = element_102;
+		left_100.left = left_103;
+		left_100.right = right_104;
+		right_104.element = element_117;
+		right_104.left = left_118;
+		right_104.right = right_119;
 		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}

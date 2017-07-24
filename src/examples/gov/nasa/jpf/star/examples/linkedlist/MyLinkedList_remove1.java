@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.examples.linkedlist;
 
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -15,6 +16,7 @@ public class MyLinkedList_remove1 extends TestJPF {
 		Object element = null;
 		obj._header._element = element;
 		obj._header._next = next;
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
@@ -32,6 +34,7 @@ public class MyLinkedList_remove1 extends TestJPF {
 		obj._header._next = next;
 		next._element = element_1;
 		next._next = next_2;
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
@@ -53,6 +56,7 @@ public class MyLinkedList_remove1 extends TestJPF {
 		next._next = next_2;
 		next_2._element = element_5;
 		next_2._next = next_6;
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 
@@ -70,6 +74,7 @@ public class MyLinkedList_remove1 extends TestJPF {
 		obj._header._next = next;
 		next._element = element_1;
 		next._next = next_2;
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(x);
 	}
 

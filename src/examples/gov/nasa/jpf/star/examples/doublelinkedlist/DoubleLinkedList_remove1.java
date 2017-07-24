@@ -1,6 +1,7 @@
 package gov.nasa.jpf.star.examples.doublelinkedlist;
 
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -18,7 +19,7 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(o);
 	}
 
@@ -40,7 +41,7 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		next_2.element = ele_4;
 		next_2.next = obj.header;
 		next_2.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(o);
 	}
 
@@ -62,7 +63,7 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		next_2.element = ele_4;
 		next_2.next = obj.header;
 		next_2.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(o);
 	}
 
@@ -78,7 +79,7 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		obj.header.element = ele_1;
 		obj.header.next = obj.header;
 		obj.header.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(o);
 	}
 
@@ -100,7 +101,7 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		next_2.element = ele_4;
 		next_2.next = obj.header;
 		next_2.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(o);
 	}
 
@@ -122,7 +123,7 @@ public class DoubleLinkedList_remove1 extends TestJPF {
 		next_2.element = ele_4;
 		next_2.next = obj.header;
 		next_2.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.remove(o);
 	}
 

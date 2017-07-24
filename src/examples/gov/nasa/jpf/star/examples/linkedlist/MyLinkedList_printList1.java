@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.examples.linkedlist;
 
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -19,6 +20,7 @@ public class MyLinkedList_printList1 extends TestJPF {
 		theList._maxsize = size;
 		header._element = element;
 		header._next = next;
+		System.out.println(Utilities.repOK(obj));
 		obj.printList(theList);
 	}
 
@@ -40,6 +42,7 @@ public class MyLinkedList_printList1 extends TestJPF {
 		header._next = next;
 		next._element = element_1;
 		next._next = next_2;
+		System.out.println(Utilities.repOK(obj));
 		obj.printList(theList);
 	}
 

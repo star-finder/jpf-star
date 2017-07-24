@@ -1,6 +1,7 @@
 package gov.nasa.jpf.star.examples.doublelinkedlist;
 
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
+import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
@@ -18,7 +19,7 @@ public class DoubleLinkedList_set1 extends TestJPF {
 		obj.header.element = ele_119;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.set(index,element);
 	}
 
@@ -41,7 +42,7 @@ public class DoubleLinkedList_set1 extends TestJPF {
 		next_4.element = ele_6;
 		next_4.next = obj.header;
 		next_4.previous = this_header_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.set(index,element);
 	}
 
@@ -71,7 +72,7 @@ public class DoubleLinkedList_set1 extends TestJPF {
 		next_7.element = ele_142;
 		next_7.next = this_header_113;
 		next_7.previous = next_112;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.set(index,element);
 	}
 
@@ -87,7 +88,7 @@ public class DoubleLinkedList_set1 extends TestJPF {
 		obj.header.element = ele_118;
 		obj.header.next = obj.header;
 		obj.header.previous = obj.header;
-		System.out.println(obj.repOK());
+		System.out.println(Utilities.repOK(obj));
 		obj.set(index,element);
 	}
 
