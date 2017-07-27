@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import gov.nasa.jpf.star.data.DataNode;
 import gov.nasa.jpf.star.data.DataNodeMap;
@@ -80,6 +81,10 @@ public class Formula {
 		return pureFormula.getAlias();
 	}
 	
+	public void setDepth(int d) {
+		this.depth = d;
+	}
+	
 	public int getDepth() {
 		return depth;
 	}
@@ -111,7 +116,15 @@ public class Formula {
 		HeapFormula newHeapFormula = heapFormula.copy();
 		PureFormula newPureFormula = pureFormula.copy();
 		
-		Map<String, List<Variable>> newTypeMap = new HashMap<String, List<Variable>>(typeMap);
+		Map<String, List<Variable>> newTypeMap = new HashMap<String, List<Variable>>();
+		for (Entry<String, List<Variable>> entry : typeMap.entrySet()) {
+			String type = entry.getKey();
+			List<Variable> vars = entry.getValue();
+			
+			newTypeMap.put(type, new ArrayList<Variable>(vars));
+		}
+		
+		
 		Map<String, Integer> newAddressMap = new HashMap<String, Integer>(addressMap);
 		
 		Formula newFormula = new Formula(newHeapFormula, newPureFormula, newTypeMap, newAddressMap, depth);

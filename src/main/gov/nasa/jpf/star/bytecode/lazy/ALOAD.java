@@ -82,15 +82,29 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 					
 					if (ht instanceof PointToTerm) {
-						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						String name = sym_v.toString();
+						
+						int address = pc.findAddress(name);
+						if (address == -1) {
+							address = pc.findAddress(pc.getAlias(name));
+							if (address == -1) {
+								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+							} else {
+								daIndex = address;
+							}
+							
+							pc.putAddress(name, daIndex);
+						} else {
+							daIndex = address;
+						}
 						
 						sf.setLocalVariable(index, daIndex, true);
 						sf.pushLocal(index);
 						
 						return getNext(ti);
 					} else {
-						String type = ei.getType();
-						type = type.substring(type.lastIndexOf('/') + 1, type.length() - 1);
+						String type = typeOfLocalVar;
+						type = type.substring(type.lastIndexOf('.') + 1, type.length());
 						
 						List<Variable> vars = pc.findType(type);
 						
@@ -106,8 +120,10 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 
 			return super.execute(ti);
 		} else {
-			String type = ei.getType();
-			type = type.substring(type.lastIndexOf('/') + 1, type.length() - 1);
+			String name = sym_v.toString();
+			
+			String type = typeOfLocalVar;
+			type = type.substring(type.lastIndexOf('.') + 1, type.length());
 			
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);
@@ -117,16 +133,19 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			
 			List<Variable> vars = pc.findType(type);
 			
+			Variable newVar = new Variable(name, "");
+			
 			if (currentChoice < vars.size()) {
 				Variable var = vars.get(currentChoice);
-				pc.addEqTerm(new Variable(sym_v.toString(), ""), var);
+				pc.addEqTerm(newVar, var);
 			} else if (currentChoice == vars.size()) {
-				pc.addEqNullTerm(new Variable(sym_v.toString(), ""));
+				pc.addEqNullTerm(newVar);
 			} else {
-				Variable newVar = new Variable(sym_v.toString(), "");
 				pc.addPointToTerm(newVar, type);
-				pc.putType(type, newVar);
 			}
+			
+			pc.putType(type, newVar);
+			pc.setDepth(pc.getDepth() + 1);
 			
 			if (Solver.checkSat(pc, conf)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
@@ -136,8 +155,20 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 	
 				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
-				} else {
-					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+				} else {					
+					int address = pc.findAddress(name);
+					if (address == -1) {
+						address = pc.findAddress(pc.getAlias(name));
+						if (address == -1) {
+							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						} else {
+							daIndex = address;
+						}
+						
+						pc.putAddress(name, daIndex);
+					} else {
+						daIndex = address;
+					}
 				}
 				
 				sf.setLocalVariable(index, daIndex, true);
@@ -150,12 +181,5 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			}
 		}
 	}
-	
-	// note: to handle this instruction and GETFIELD conrrectly, we have to update
-	// the stack frame according to alias in the path condition.
-	// However, it seems that updating all values and attributes according to alias
-	// is too complex, so we let it be.
-	// Because of this, condition involve comparison of two reference variables
-	// is handled symbolic instead of concrete
 
 }

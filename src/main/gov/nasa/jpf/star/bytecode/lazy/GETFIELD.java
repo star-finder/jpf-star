@@ -112,24 +112,40 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 					sf.pop();
 					
 					daIndex = MJIEnv.NULL;
+					
 					ei.setReferenceField(fi, daIndex);
 					
 					sf.pushRef(daIndex);
 					sf.setOperandAttr(sym_v);
-
+					
 					return getNext(ti);
 				} else {
 					HeapTerm ht = Utilities.findHeapTerm(pc, sym_v.toString());
 
 					if (ht instanceof PointToTerm) {
 						sf.pop();
-
-						daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						
+						String name = sym_v.toString();
+						
+						int address = pc.findAddress(name);
+						if (address == -1) {
+							address = pc.findAddress(pc.getAlias(name));
+							if (address == -1) {
+								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+							} else {
+								daIndex = address;
+							}
+							
+							pc.putAddress(name, daIndex);
+						} else {
+							daIndex = address;
+						}
+						
 						ei.setReferenceField(fi, daIndex);
-
+						
 						sf.pushRef(daIndex);
 						sf.setOperandAttr(sym_v);
-
+						
 						return getNext(ti);
 					} else {
 						String type = fi.getType();
@@ -151,6 +167,8 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 		} else {
 			sf.pop();
 			
+			String name = sym_v.toString();
+			
 			String type = fi.getType();
 			type = type.substring(type.lastIndexOf('.') + 1, type.length());
 			
@@ -162,16 +180,19 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			
 			List<Variable> vars = pc.findType(type);
 			
+			Variable newVar = new Variable(name, "");
+			
 			if (currentChoice < vars.size()) {
 				Variable var = vars.get(currentChoice);
-				pc.addEqTerm(new Variable(sym_v.toString(), ""), var);
+				pc.addEqTerm(newVar, var);
 			} else if (currentChoice == vars.size()) {
-				pc.addEqNullTerm(new Variable(sym_v.toString(), ""));
+				pc.addEqNullTerm(newVar);
 			} else {
-				Variable newVar = new Variable(sym_v.toString(), "");
 				pc.addPointToTerm(newVar, type);
-				pc.putType(type, newVar);
 			}
+			
+			pc.putType(type, newVar);
+			pc.setDepth(pc.getDepth() + 1);
 
 			if (Solver.checkSat(pc, conf)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
@@ -181,8 +202,20 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 				if (Utilities.isNull(pc, sym_v.toString())) {
 					daIndex = MJIEnv.NULL;
-				} else {
-					daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+				} else {					
+					int address = pc.findAddress(name);
+					if (address == -1) {
+						address = pc.findAddress(pc.getAlias(name));
+						if (address == -1) {
+							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+						} else {
+							daIndex = address;
+						}
+						
+						pc.putAddress(name, daIndex);
+					} else {
+						daIndex = address;
+					}
 				}
 
 				ei.setReferenceField(fi, daIndex);

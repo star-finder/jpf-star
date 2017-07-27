@@ -66,10 +66,7 @@ public class INVOKEInstrSymbHelper {
 					String methodName = mi.getName();
 					Precondition pre = null;
 					
-					String isLazy = conf.getProperty("star.lazy");
-							
-					if (isLazy == null || isLazy.equals("false"))	
-						pre = PreconditionMap.find(methodName);
+					pre = PreconditionMap.find(methodName);
 					
 					if (pre != null) {
 						pc = pre.getFormula();

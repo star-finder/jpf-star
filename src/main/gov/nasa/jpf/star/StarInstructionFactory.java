@@ -546,7 +546,10 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 
 	@Override
 	public Instruction new_(String clsName) {
-		return new NEW(clsName);
+		if (lazy)
+			return new gov.nasa.jpf.jvm.bytecode.NEW(clsName);
+		else
+			return new gov.nasa.jpf.star.bytecode.NEW(clsName);
 	}
 
 }
