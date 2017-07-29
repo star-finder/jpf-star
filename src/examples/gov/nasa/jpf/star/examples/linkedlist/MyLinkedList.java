@@ -21,6 +21,21 @@ class MyLinkedList {
 	}
 
 	/* Methods */
+	
+	private MyListNode reverse_(MyListNode x) {
+		MyListNode y = null;
+		while (x != null) {
+			MyListNode z = x._next;
+			x._next = y;
+			y = x;
+			x = z;
+		}
+		return y;
+	}
+
+	public void reverse() {
+		this._header._next = reverse_(this._header._next);
+	}
 
 	// Checks if list is empty
 	public boolean isEmpty() {
