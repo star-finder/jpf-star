@@ -5,6 +5,11 @@ import java.util.NoSuchElementException;
 
 public class TreeMap  {
 
+	public boolean repOK() {
+		if (root == null) return true;
+		return root.consistency();
+	}
+	
     //@ invariant (root == null || root.consistency()) && size == realSize();
 
     public Entry root = null;

@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.bst;
+package gov.nasa.jpf.star.examples.rbt;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class BinarySearchTree_repOKTest extends TestJPF {
+public class RedBlackTree_repOKTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data BinaryNode {int element; BinaryNode left; BinaryNode right}";
+		String data = "data Entry {int key; Object value; Entry left; Entry right; Entry parent; boolean color}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -34,11 +34,17 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-//		String pred = "pred bst(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bst(left,minE,element) * bst(right,element,maxE) & minE<element & element<maxE";
+		String pred1 = "pred rbt(root,size) == root=null & size=0 || " +
+			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & parent=null & color=1 & size=sizeL+sizeR+1 & bhL=bhR";
 		
-		String pred1 = "pred bst(root) == root = null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE)";
-		String pred2 = "pred bstE(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE) & minE<element & element<maxE";
-		String pred = pred1 + ";" + pred2;
+		String pred2 = "pred rbtE(root,pa,minE,maxE,size,bh) == root=null & size=0 & bh=0 || " +
+			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=1 & size=sizeL+sizeR+1 & bhL=bhR & bh=1+bhL || " +
+			"root::Entry<key,value,left,right,parent,color> * rbtB(left,root,minE,key,sizeL,bhL) * rbtB(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=0 & size=sizeL+sizeR+1 & bhL=bhR & bh=bhL";
+		
+		String pred3 = "pred rbtB(root,pa,minE,maxE,size,bh) == root=null & size=0 & bh=0 || " +
+			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=1 & size=sizeL+sizeR+1 & bhL=bhR & bh=1+bhL";
+		
+		String pred = pred1 + ";" + pred2 + ";" + pred3;
 				
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -50,15 +56,15 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre repOK == this_root=t";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+//		String pre = "pre containsKey == rbt(this_root,this_size)";
+//		
+//		ANTLRInputStream in = new ANTLRInputStream(pre);
+//		PreconditionLexer lexer = new PreconditionLexer(in);
+//        CommonTokenStream tokens = new CommonTokenStream(lexer);
+//        PreconditionParser parser = new PreconditionParser(tokens);
+//        
+//        Precondition[] ps = parser.pres().ps;
+//        PreconditionMap.put(ps);
 	}
 	
 	@Before
@@ -78,16 +84,16 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/bst",
-				"+star.test_package=gov.nasa.jpf.star.examples.bst",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/rbt",
+				"+star.test_package=gov.nasa.jpf.star.examples.rbt",
+				"+star.test_imports=gov.nasa.jpf.star.examples.rbt.TreeMap.Entry;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.bst.BinarySearchTree.repOK(sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.rbt.TreeMap.repOK()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
-			BinarySearchTree tree = new BinarySearchTree();
-			tree.repOK(tree.root);
+			TreeMap tree = new TreeMap();
+			tree.repOK();
 		}
 		
 		long end = System.currentTimeMillis();

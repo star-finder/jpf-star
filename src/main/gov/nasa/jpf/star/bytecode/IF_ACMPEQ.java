@@ -63,7 +63,7 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 				return super.execute(ti);
 			} else {
 				cg = ti.getVM().getSystemState().getChoiceGenerator();
-				conditionValue = (Integer) cg.getNextChoice() == 1 ? true: false;
+				conditionValue = (Integer) cg.getNextChoice() == 1 ? true : false;
 				
 				int	v2 = sf.pop();
 				int	v1 = sf.pop();
@@ -80,11 +80,15 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 					if (sym_v1 != null) {
 						if (sym_v2 != null) {
 							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+						} else if (v2 == 0) {
+							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable("null", ""));
 						} else {
 							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
 						}
+					} else if (v1 == 0) {
+						pc.addEqTerm(new Variable(sym_v2.toString(), ""), new Variable("null", ""));
 					} else {
-						pc.addEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
+						pc.addEqTerm(new Variable(sym_v2.toString(), ""), new Variable(v1 + "", ""));
 					}
 					
 					if (Solver.checkSat(pc, ti.getVM().getConfig()))
@@ -96,11 +100,15 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 					if (sym_v1 != null) {
 						if (sym_v2 != null) {
 							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
+						} else if (v2 == 0) {
+							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable("null", ""));
 						} else {
 							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
 						}
+					} else if (v1 == 0) {
+						pc.addNEqTerm(new Variable(sym_v2.toString(), ""), new Variable("null", ""));
 					} else {
-						pc.addNEqTerm(new Variable(v1 + "", ""), new Variable(sym_v2.toString(), ""));
+						pc.addNEqTerm(new Variable(sym_v2.toString(), ""), new Variable(v1 + "", ""));
 					}
 
 					if (Solver.checkSat(pc, ti.getVM().getConfig()))

@@ -93,7 +93,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 		if (!fi.isReference()) {
 			return super.execute(ti);
-		}	
+		}
 		
 		ChoiceGenerator<?> cg;
 		ChoiceGenerator<?> prevCG;

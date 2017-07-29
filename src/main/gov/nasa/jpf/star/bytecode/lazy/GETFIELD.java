@@ -15,6 +15,7 @@ import gov.nasa.jpf.star.solver.Solver;
 import gov.nasa.jpf.star.testgeneration.TestGenerator;
 import gov.nasa.jpf.symbc.arrays.ArrayExpression;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
+import gov.nasa.jpf.symbc.numeric.SymbolicReal;
 import gov.nasa.jpf.symbc.string.StringExpression;
 import gov.nasa.jpf.symbc.string.SymbolicStringBuilder;
 import gov.nasa.jpf.vm.ChoiceGenerator;
@@ -71,24 +72,28 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
 		Object sym_v = ei.getFieldAttr(fi);
 
-		if (!(fi.isReference() && sym_v != null)) {
-			return super.execute(ti);
-		}
-
-		if (sym_v instanceof StringExpression || sym_v instanceof SymbolicStringBuilder
+		if (sym_v == null || sym_v instanceof StringExpression || sym_v instanceof SymbolicStringBuilder
 				|| sym_v instanceof ArrayExpression) {
 			return super.execute(ti);
 		}
 		
-		if (sym_v instanceof SymbolicInteger) {
+		if (sym_v instanceof SymbolicInteger || sym_v instanceof SymbolicReal) {
+			String name = sym_v.toString();
+			
 			if (sym_v.toString().contains(".")) {
-				int index = sym_v.toString().indexOf('.') + 1;
-				int length = sym_v.toString().length();
-				sym_v = new SymbolicInteger("this_" + sym_v.toString().substring(index, length));
+				int index = name.indexOf('.') + 1;
+				int length = name.length();
+				name = "this_" + name.substring(index, length);
 			}
 			
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			Expression exp = new VariableExpression(new Variable(name, ""));
+			
+			sym_v = exp;
 			ei.setFieldAttr(fi, exp);
+		}
+
+		if (!fi.isReference()) {
+			return super.execute(ti);
 		}
 
 		ChoiceGenerator<?> cg;
@@ -148,8 +153,16 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 						
 						return getNext(ti);
 					} else {
+						if (sym_v.toString().equals("this_root")) {
+							int i = 1;
+							i = i + 1;
+						}
+						
 						String type = fi.getType();
-						type = type.substring(type.lastIndexOf('.') + 1, type.length());
+						if (type.contains("."))
+							type = type.substring(type.lastIndexOf('.') + 1, type.length());
+						if (type.contains("$"))
+							type = type.substring(type.lastIndexOf('$') + 1, type.length());
 						
 						List<Variable> vars = pc.findType(type);
 						
@@ -169,8 +182,16 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			
 			String name = sym_v.toString();
 			
+			if (name.equals("this_root")) {
+				int i = 1;
+				i = i + 1;
+			}
+			
 			String type = fi.getType();
-			type = type.substring(type.lastIndexOf('.') + 1, type.length());
+			if (type.contains("."))
+				type = type.substring(type.lastIndexOf('.') + 1, type.length());
+			if (type.contains("$"))
+				type = type.substring(type.lastIndexOf('$') + 1, type.length());
 			
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);

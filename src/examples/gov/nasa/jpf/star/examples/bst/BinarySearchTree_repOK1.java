@@ -11,7 +11,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		BinarySearchTree obj = new BinarySearchTree();
 		BinaryNode t = null;
 		obj.root = t;
-		System.out.println(1 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -26,7 +26,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		t.element = element_1;
 		t.left = left_2;
 		t.right = right_3;
-		System.out.println(2 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -41,7 +41,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		t.element = element_1;
 		t.left = left_2;
 		t.right = right_3;
-		System.out.println(3 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -56,7 +56,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		t.element = element_1;
 		t.left = left_2;
 		t.right = right_3;
-		System.out.println(4 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -71,7 +71,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		t.element = element_1;
 		t.left = left_2;
 		t.right = right_3;
-		System.out.println(5 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -92,7 +92,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(6 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -113,7 +113,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(7 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -134,7 +134,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(8 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -155,7 +155,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(9 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -176,7 +176,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(10 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -197,7 +197,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(11 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -224,7 +224,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(12 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -251,7 +251,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(13 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -278,7 +278,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(14 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -305,7 +305,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(15 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -332,7 +332,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(16 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -359,7 +359,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(17 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -386,7 +386,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(18 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -413,7 +413,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(19 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -446,7 +446,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_9.element = element_10;
 		right_9.left = left_11;
 		right_9.right = right_12;
-		System.out.println(20 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -473,7 +473,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(21 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -500,7 +500,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(22 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -527,7 +527,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(23 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -554,7 +554,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(24 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -581,7 +581,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(25 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -608,7 +608,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(26 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -635,7 +635,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(27 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -662,7 +662,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(28 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -695,7 +695,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_9.element = element_16;
 		right_9.left = left_17;
 		right_9.right = right_18;
-		System.out.println(29 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -722,7 +722,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(30 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -749,7 +749,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(31 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -776,7 +776,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(32 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -803,7 +803,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(33 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -830,7 +830,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(34 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -857,7 +857,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(35 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -884,7 +884,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(36 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -911,7 +911,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(37 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -944,7 +944,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_9.element = element_22;
 		right_9.left = left_23;
 		right_9.right = right_24;
-		System.out.println(38 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -977,7 +977,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_8.element = element_28;
 		left_8.left = left_29;
 		left_8.right = right_30;
-		System.out.println(39 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1010,7 +1010,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_8.element = element_28;
 		left_8.left = left_29;
 		left_8.right = right_30;
-		System.out.println(40 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1043,7 +1043,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_8.element = element_28;
 		left_8.left = left_29;
 		left_8.right = right_30;
-		System.out.println(41 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1076,7 +1076,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_8.element = element_28;
 		left_8.left = left_29;
 		left_8.right = right_30;
-		System.out.println(42 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1115,7 +1115,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_29.element = element_40;
 		left_29.left = left_41;
 		left_29.right = right_42;
-		System.out.println(43 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1154,7 +1154,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_29.element = element_40;
 		left_29.left = left_41;
 		left_29.right = right_42;
-		System.out.println(44 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1187,7 +1187,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_8.element = element_28;
 		left_8.left = left_29;
 		left_8.right = right_30;
-		System.out.println(45 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1220,7 +1220,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_8.element = element_28;
 		left_8.left = left_29;
 		left_8.right = right_30;
-		System.out.println(46 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1247,7 +1247,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_7;
 		right_6.left = left_8;
 		right_6.right = right_9;
-		System.out.println(47 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1268,7 +1268,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(48 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1289,7 +1289,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(49 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1310,7 +1310,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(50 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1331,7 +1331,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(51 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1352,7 +1352,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(52 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1373,7 +1373,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(53 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1400,7 +1400,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(54 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1427,7 +1427,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(55 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1454,7 +1454,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(56 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1481,7 +1481,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(57 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1508,7 +1508,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(58 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1535,7 +1535,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(59 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1562,7 +1562,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(60 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1589,7 +1589,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(61 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1622,7 +1622,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_48.element = element_49;
 		right_48.left = left_50;
 		right_48.right = right_51;
-		System.out.println(62 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1649,7 +1649,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(63 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1676,7 +1676,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(64 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1703,7 +1703,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(65 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1730,7 +1730,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(66 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1757,7 +1757,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(67 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1784,7 +1784,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(68 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1811,7 +1811,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(69 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1838,7 +1838,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(70 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1871,7 +1871,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_48.element = element_55;
 		right_48.left = left_56;
 		right_48.right = right_57;
-		System.out.println(71 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1898,7 +1898,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(72 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1925,7 +1925,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(73 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1952,7 +1952,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(74 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -1979,7 +1979,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(75 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2006,7 +2006,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(76 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2033,7 +2033,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(77 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2060,7 +2060,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(78 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2087,7 +2087,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(79 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2120,7 +2120,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_48.element = element_61;
 		right_48.left = left_62;
 		right_48.right = right_63;
-		System.out.println(80 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2153,7 +2153,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_47.element = element_67;
 		left_47.left = left_68;
 		left_47.right = right_69;
-		System.out.println(81 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2186,7 +2186,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_47.element = element_67;
 		left_47.left = left_68;
 		left_47.right = right_69;
-		System.out.println(82 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2219,7 +2219,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_47.element = element_67;
 		left_47.left = left_68;
 		left_47.right = right_69;
-		System.out.println(83 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2252,7 +2252,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_47.element = element_67;
 		left_47.left = left_68;
 		left_47.right = right_69;
-		System.out.println(84 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2291,7 +2291,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_68.element = element_79;
 		left_68.left = left_80;
 		left_68.right = right_81;
-		System.out.println(85 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2330,7 +2330,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_68.element = element_79;
 		left_68.left = left_80;
 		left_68.right = right_81;
-		System.out.println(86 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2363,7 +2363,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_47.element = element_67;
 		left_47.left = left_68;
 		left_47.right = right_69;
-		System.out.println(87 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2396,7 +2396,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_47.element = element_67;
 		left_47.left = left_68;
 		left_47.right = right_69;
-		System.out.println(88 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2423,7 +2423,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_46;
 		right_6.left = left_47;
 		right_6.right = right_48;
-		System.out.println(89 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2450,7 +2450,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(90 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2477,7 +2477,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(91 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2504,7 +2504,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(92 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2531,7 +2531,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(93 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2558,7 +2558,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(94 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2585,7 +2585,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(95 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2612,7 +2612,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(96 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2639,7 +2639,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(97 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2666,7 +2666,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(98 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2699,7 +2699,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_88;
 		right_6.left = left_89;
 		right_6.right = right_90;
-		System.out.println(99 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2726,7 +2726,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(100 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2753,7 +2753,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(101 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2780,7 +2780,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(102 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2807,7 +2807,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(103 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2834,7 +2834,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(104 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2861,7 +2861,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(105 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2888,7 +2888,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(106 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2915,7 +2915,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(107 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2942,7 +2942,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(108 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -2975,7 +2975,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_94;
 		right_6.left = left_95;
 		right_6.right = right_96;
-		System.out.println(109 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3002,7 +3002,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(110 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3029,7 +3029,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(111 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3056,7 +3056,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(112 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3083,7 +3083,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(113 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3110,7 +3110,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(114 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3137,7 +3137,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(115 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3164,7 +3164,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(116 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3197,7 +3197,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_100;
 		right_6.left = left_101;
 		right_6.right = right_102;
-		System.out.println(117 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3230,7 +3230,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_106;
 		right_87.left = left_107;
 		right_87.right = right_108;
-		System.out.println(118 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3263,7 +3263,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_106;
 		right_87.left = left_107;
 		right_87.right = right_108;
-		System.out.println(119 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3296,7 +3296,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_106;
 		right_87.left = left_107;
 		right_87.right = right_108;
-		System.out.println(120 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3329,7 +3329,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_106;
 		right_87.left = left_107;
 		right_87.right = right_108;
-		System.out.println(121 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3368,7 +3368,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_107.element = element_118;
 		left_107.left = left_119;
 		left_107.right = right_120;
-		System.out.println(122 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3407,7 +3407,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_107.element = element_118;
 		left_107.left = left_119;
 		left_107.right = right_120;
-		System.out.println(123 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3440,7 +3440,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_106;
 		right_87.left = left_107;
 		right_87.right = right_108;
-		System.out.println(124 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3473,7 +3473,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_106;
 		right_87.left = left_107;
 		right_87.right = right_108;
-		System.out.println(125 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3500,7 +3500,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(126 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3527,7 +3527,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(127 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3554,7 +3554,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(128 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3581,7 +3581,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(129 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3608,7 +3608,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(130 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3635,7 +3635,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(131 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3662,7 +3662,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(132 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3689,7 +3689,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(133 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3716,7 +3716,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(134 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3743,7 +3743,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(135 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3776,7 +3776,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_124;
 		right_6.left = left_125;
 		right_6.right = right_126;
-		System.out.println(136 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3803,7 +3803,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(137 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3830,7 +3830,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(138 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3857,7 +3857,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(139 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3884,7 +3884,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(140 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3911,7 +3911,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(141 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3938,7 +3938,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(142 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3965,7 +3965,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(143 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -3992,7 +3992,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(144 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4019,7 +4019,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(145 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4052,7 +4052,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_130;
 		right_6.left = left_131;
 		right_6.right = right_132;
-		System.out.println(146 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4079,7 +4079,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(147 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4106,7 +4106,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(148 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4133,7 +4133,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(149 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4160,7 +4160,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(150 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4187,7 +4187,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(151 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4214,7 +4214,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(152 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4241,7 +4241,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(153 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4274,7 +4274,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_6.element = element_136;
 		right_6.left = left_137;
 		right_6.right = right_138;
-		System.out.println(154 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4307,7 +4307,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_142;
 		right_87.left = left_143;
 		right_87.right = right_144;
-		System.out.println(155 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4340,7 +4340,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_142;
 		right_87.left = left_143;
 		right_87.right = right_144;
-		System.out.println(156 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4373,7 +4373,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_142;
 		right_87.left = left_143;
 		right_87.right = right_144;
-		System.out.println(157 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4406,7 +4406,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_142;
 		right_87.left = left_143;
 		right_87.right = right_144;
-		System.out.println(158 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4445,7 +4445,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_143.element = element_154;
 		left_143.left = left_155;
 		left_143.right = right_156;
-		System.out.println(159 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4484,7 +4484,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_143.element = element_154;
 		left_143.left = left_155;
 		left_143.right = right_156;
-		System.out.println(160 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4517,7 +4517,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_142;
 		right_87.left = left_143;
 		right_87.right = right_144;
-		System.out.println(161 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4550,7 +4550,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_87.element = element_142;
 		right_87.left = left_143;
 		right_87.right = right_144;
-		System.out.println(162 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4583,7 +4583,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(163 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4616,7 +4616,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(164 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4649,7 +4649,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(165 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4682,7 +4682,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(166 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4715,7 +4715,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(167 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4754,7 +4754,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_162.element = element_172;
 		right_162.left = left_173;
 		right_162.right = right_174;
-		System.out.println(168 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4793,7 +4793,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_162.element = element_172;
 		right_162.left = left_173;
 		right_162.right = right_174;
-		System.out.println(169 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4826,7 +4826,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(170 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4859,7 +4859,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(171 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4892,7 +4892,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(172 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4925,7 +4925,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(173 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4958,7 +4958,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(174 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -4991,7 +4991,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(175 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5024,7 +5024,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(176 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5063,7 +5063,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_162.element = element_187;
 		right_162.left = left_188;
 		right_162.right = right_189;
-		System.out.println(177 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5102,7 +5102,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_162.element = element_187;
 		right_162.left = left_188;
 		right_162.right = right_189;
-		System.out.println(178 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5141,7 +5141,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(179 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5180,7 +5180,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(180 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5219,7 +5219,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(181 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5258,7 +5258,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(182 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5297,7 +5297,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(183 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5342,7 +5342,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_194.element = element_202;
 		left_194.left = left_203;
 		left_194.right = right_204;
-		System.out.println(184 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5387,7 +5387,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_194.element = element_202;
 		left_194.left = left_203;
 		left_194.right = right_204;
-		System.out.println(185 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5426,7 +5426,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(186 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5465,7 +5465,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_161.element = element_193;
 		left_161.left = left_194;
 		left_161.right = right_195;
-		System.out.println(187 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5498,7 +5498,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(188 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5531,7 +5531,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_86.element = element_160;
 		left_86.left = left_161;
 		left_86.right = right_162;
-		System.out.println(189 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5558,7 +5558,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(190 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5585,7 +5585,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_5.element = element_85;
 		left_5.left = left_86;
 		left_5.right = right_87;
-		System.out.println(191 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5606,7 +5606,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_4;
 		right_3.left = left_5;
 		right_3.right = right_6;
-		System.out.println(192 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5627,7 +5627,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(193 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5648,7 +5648,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(194 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5669,7 +5669,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(195 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5690,7 +5690,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(196 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5711,7 +5711,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(197 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5732,7 +5732,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(198 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5753,7 +5753,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(199 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5774,7 +5774,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(200 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5795,7 +5795,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(201 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5822,7 +5822,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(202 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5849,7 +5849,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(203 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5876,7 +5876,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(204 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5903,7 +5903,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(205 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5930,7 +5930,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(206 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5957,7 +5957,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(207 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -5984,7 +5984,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(208 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6011,7 +6011,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(209 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6038,7 +6038,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(210 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6071,7 +6071,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_213.element = element_214;
 		right_213.left = left_215;
 		right_213.right = right_216;
-		System.out.println(211 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6098,7 +6098,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(212 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6125,7 +6125,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(213 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6152,7 +6152,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(214 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6179,7 +6179,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(215 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6206,7 +6206,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(216 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6233,7 +6233,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(217 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6260,7 +6260,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(218 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6293,7 +6293,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_213.element = element_220;
 		right_213.left = left_221;
 		right_213.right = right_222;
-		System.out.println(219 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6320,7 +6320,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(220 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6347,7 +6347,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(221 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6374,7 +6374,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(222 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6401,7 +6401,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(223 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6428,7 +6428,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(224 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6455,7 +6455,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(225 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6482,7 +6482,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(226 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6509,7 +6509,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(227 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6542,7 +6542,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_213.element = element_226;
 		right_213.left = left_227;
 		right_213.right = right_228;
-		System.out.println(228 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6575,7 +6575,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_212.element = element_232;
 		left_212.left = left_233;
 		left_212.right = right_234;
-		System.out.println(229 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6608,7 +6608,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_212.element = element_232;
 		left_212.left = left_233;
 		left_212.right = right_234;
-		System.out.println(230 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6641,7 +6641,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_212.element = element_232;
 		left_212.left = left_233;
 		left_212.right = right_234;
-		System.out.println(231 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6674,7 +6674,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_212.element = element_232;
 		left_212.left = left_233;
 		left_212.right = right_234;
-		System.out.println(232 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6713,7 +6713,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_233.element = element_244;
 		left_233.left = left_245;
 		left_233.right = right_246;
-		System.out.println(233 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6752,7 +6752,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_233.element = element_244;
 		left_233.left = left_245;
 		left_233.right = right_246;
-		System.out.println(234 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6785,7 +6785,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_212.element = element_232;
 		left_212.left = left_233;
 		left_212.right = right_234;
-		System.out.println(235 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6818,7 +6818,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_212.element = element_232;
 		left_212.left = left_233;
 		left_212.right = right_234;
-		System.out.println(236 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6845,7 +6845,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_211;
 		right_3.left = left_212;
 		right_3.right = right_213;
-		System.out.println(237 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6866,7 +6866,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(238 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6887,7 +6887,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(239 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6908,7 +6908,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(240 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6929,7 +6929,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(241 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6950,7 +6950,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(242 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -6977,7 +6977,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(243 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7004,7 +7004,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(244 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7031,7 +7031,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(245 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7058,7 +7058,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(246 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7085,7 +7085,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(247 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7112,7 +7112,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(248 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7139,7 +7139,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(249 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7166,7 +7166,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(250 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7193,7 +7193,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(251 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7226,7 +7226,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_252.element = element_253;
 		right_252.left = left_254;
 		right_252.right = right_255;
-		System.out.println(252 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7253,7 +7253,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(253 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7280,7 +7280,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(254 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7307,7 +7307,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(255 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7334,7 +7334,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(256 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7361,7 +7361,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(257 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7388,7 +7388,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(258 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7415,7 +7415,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(259 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7448,7 +7448,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_252.element = element_259;
 		right_252.left = left_260;
 		right_252.right = right_261;
-		System.out.println(260 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7475,7 +7475,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(261 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7502,7 +7502,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(262 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7529,7 +7529,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(263 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7556,7 +7556,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(264 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7583,7 +7583,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(265 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7610,7 +7610,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(266 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7637,7 +7637,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(267 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7664,7 +7664,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(268 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7697,7 +7697,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_252.element = element_265;
 		right_252.left = left_266;
 		right_252.right = right_267;
-		System.out.println(269 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7730,7 +7730,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_251.element = element_271;
 		left_251.left = left_272;
 		left_251.right = right_273;
-		System.out.println(270 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7763,7 +7763,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_251.element = element_271;
 		left_251.left = left_272;
 		left_251.right = right_273;
-		System.out.println(271 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7796,7 +7796,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_251.element = element_271;
 		left_251.left = left_272;
 		left_251.right = right_273;
-		System.out.println(272 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7829,7 +7829,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_251.element = element_271;
 		left_251.left = left_272;
 		left_251.right = right_273;
-		System.out.println(273 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7868,7 +7868,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_272.element = element_283;
 		left_272.left = left_284;
 		left_272.right = right_285;
-		System.out.println(274 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7907,7 +7907,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_272.element = element_283;
 		left_272.left = left_284;
 		left_272.right = right_285;
-		System.out.println(275 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7940,7 +7940,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_251.element = element_271;
 		left_251.left = left_272;
 		left_251.right = right_273;
-		System.out.println(276 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -7973,7 +7973,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_251.element = element_271;
 		left_251.left = left_272;
 		left_251.right = right_273;
-		System.out.println(277 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8000,7 +8000,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_250;
 		right_3.left = left_251;
 		right_3.right = right_252;
-		System.out.println(278 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8027,7 +8027,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(279 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8054,7 +8054,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(280 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8081,7 +8081,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(281 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8108,7 +8108,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(282 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8135,7 +8135,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(283 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8162,7 +8162,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(284 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8189,7 +8189,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(285 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8216,7 +8216,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(286 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8243,7 +8243,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(287 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8270,7 +8270,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(288 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8297,7 +8297,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(289 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8330,7 +8330,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_292;
 		right_3.left = left_293;
 		right_3.right = right_294;
-		System.out.println(290 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8357,7 +8357,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(291 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8384,7 +8384,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(292 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8411,7 +8411,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(293 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8438,7 +8438,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(294 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8465,7 +8465,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(295 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8492,7 +8492,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(296 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8519,7 +8519,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(297 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8546,7 +8546,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(298 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8579,7 +8579,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_298;
 		right_3.left = left_299;
 		right_3.right = right_300;
-		System.out.println(299 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8606,7 +8606,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(300 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8633,7 +8633,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(301 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8660,7 +8660,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(302 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8687,7 +8687,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(303 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8714,7 +8714,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(304 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8741,7 +8741,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(305 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8768,7 +8768,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(306 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8801,7 +8801,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_304;
 		right_3.left = left_305;
 		right_3.right = right_306;
-		System.out.println(307 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8834,7 +8834,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_310;
 		right_291.left = left_311;
 		right_291.right = right_312;
-		System.out.println(308 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8867,7 +8867,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_310;
 		right_291.left = left_311;
 		right_291.right = right_312;
-		System.out.println(309 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8900,7 +8900,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_310;
 		right_291.left = left_311;
 		right_291.right = right_312;
-		System.out.println(310 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8933,7 +8933,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_310;
 		right_291.left = left_311;
 		right_291.right = right_312;
-		System.out.println(311 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -8972,7 +8972,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_311.element = element_322;
 		left_311.left = left_323;
 		left_311.right = right_324;
-		System.out.println(312 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9011,7 +9011,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_311.element = element_322;
 		left_311.left = left_323;
 		left_311.right = right_324;
-		System.out.println(313 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9044,7 +9044,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_310;
 		right_291.left = left_311;
 		right_291.right = right_312;
-		System.out.println(314 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9077,7 +9077,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_310;
 		right_291.left = left_311;
 		right_291.right = right_312;
-		System.out.println(315 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9104,7 +9104,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(316 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9131,7 +9131,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(317 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9158,7 +9158,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(318 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9185,7 +9185,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(319 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9212,7 +9212,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(320 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9239,7 +9239,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(321 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9266,7 +9266,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(322 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9293,7 +9293,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(323 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9320,7 +9320,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(324 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9347,7 +9347,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(325 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9380,7 +9380,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_328;
 		right_3.left = left_329;
 		right_3.right = right_330;
-		System.out.println(326 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9407,7 +9407,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(327 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9434,7 +9434,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(328 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9461,7 +9461,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(329 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9488,7 +9488,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(330 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9515,7 +9515,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(331 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9542,7 +9542,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(332 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9569,7 +9569,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(333 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9596,7 +9596,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(334 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9629,7 +9629,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_334;
 		right_3.left = left_335;
 		right_3.right = right_336;
-		System.out.println(335 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9656,7 +9656,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(336 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9683,7 +9683,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(337 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9710,7 +9710,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(338 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9737,7 +9737,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(339 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9764,7 +9764,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(340 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9791,7 +9791,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(341 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9818,7 +9818,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(342 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9851,7 +9851,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_340;
 		right_3.left = left_341;
 		right_3.right = right_342;
-		System.out.println(343 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9884,7 +9884,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_346;
 		right_291.left = left_347;
 		right_291.right = right_348;
-		System.out.println(344 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9917,7 +9917,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_346;
 		right_291.left = left_347;
 		right_291.right = right_348;
-		System.out.println(345 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9950,7 +9950,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_346;
 		right_291.left = left_347;
 		right_291.right = right_348;
-		System.out.println(346 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -9983,7 +9983,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_346;
 		right_291.left = left_347;
 		right_291.right = right_348;
-		System.out.println(347 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10022,7 +10022,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_347.element = element_358;
 		left_347.left = left_359;
 		left_347.right = right_360;
-		System.out.println(348 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10061,7 +10061,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_347.element = element_358;
 		left_347.left = left_359;
 		left_347.right = right_360;
-		System.out.println(349 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10094,7 +10094,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_346;
 		right_291.left = left_347;
 		right_291.right = right_348;
-		System.out.println(350 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10127,7 +10127,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_291.element = element_346;
 		right_291.left = left_347;
 		right_291.right = right_348;
-		System.out.println(351 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10160,7 +10160,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(352 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10193,7 +10193,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(353 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10226,7 +10226,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(354 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10259,7 +10259,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(355 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10292,7 +10292,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(356 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10325,7 +10325,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(357 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10364,7 +10364,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_366.element = element_376;
 		right_366.left = left_377;
 		right_366.right = right_378;
-		System.out.println(358 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10403,7 +10403,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_366.element = element_376;
 		right_366.left = left_377;
 		right_366.right = right_378;
-		System.out.println(359 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10436,7 +10436,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(360 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10469,7 +10469,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(361 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10502,7 +10502,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(362 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10535,7 +10535,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(363 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10568,7 +10568,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(364 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10601,7 +10601,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(365 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10640,7 +10640,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_366.element = element_391;
 		right_366.left = left_392;
 		right_366.right = right_393;
-		System.out.println(366 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10679,7 +10679,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_366.element = element_391;
 		right_366.left = left_392;
 		right_366.right = right_393;
-		System.out.println(367 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10718,7 +10718,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(368 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10757,7 +10757,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(369 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10796,7 +10796,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(370 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10835,7 +10835,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(371 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10874,7 +10874,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(372 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10919,7 +10919,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_398.element = element_406;
 		left_398.left = left_407;
 		left_398.right = right_408;
-		System.out.println(373 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -10964,7 +10964,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_398.element = element_406;
 		left_398.left = left_407;
 		left_398.right = right_408;
-		System.out.println(374 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11003,7 +11003,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(375 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11042,7 +11042,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_365.element = element_397;
 		left_365.left = left_398;
 		left_365.right = right_399;
-		System.out.println(376 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11075,7 +11075,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(377 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11108,7 +11108,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_290.element = element_364;
 		left_290.left = left_365;
 		left_290.right = right_366;
-		System.out.println(378 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11135,7 +11135,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(379 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11162,7 +11162,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_289;
 		right_210.left = left_290;
 		right_210.right = right_291;
-		System.out.println(380 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11189,7 +11189,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(381 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11216,7 +11216,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(382 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11243,7 +11243,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(383 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11270,7 +11270,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(384 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11297,7 +11297,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(385 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11324,7 +11324,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(386 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11351,7 +11351,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(387 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11378,7 +11378,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(388 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11405,7 +11405,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(389 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11432,7 +11432,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(390 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11459,7 +11459,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(391 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11486,7 +11486,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(392 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11513,7 +11513,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(393 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11540,7 +11540,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(394 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11567,7 +11567,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(395 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11594,7 +11594,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(396 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11627,7 +11627,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_415;
 		right_3.left = left_416;
 		right_3.right = right_417;
-		System.out.println(397 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11654,7 +11654,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(398 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11681,7 +11681,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(399 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11708,7 +11708,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(400 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11735,7 +11735,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(401 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11762,7 +11762,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(402 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11789,7 +11789,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(403 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11816,7 +11816,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(404 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11849,7 +11849,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_421;
 		right_3.left = left_422;
 		right_3.right = right_423;
-		System.out.println(405 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11876,7 +11876,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(406 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11903,7 +11903,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(407 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11930,7 +11930,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(408 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11957,7 +11957,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(409 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -11984,7 +11984,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(410 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12011,7 +12011,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(411 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12038,7 +12038,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(412 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12071,7 +12071,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_427;
 		right_3.left = left_428;
 		right_3.right = right_429;
-		System.out.println(413 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12104,7 +12104,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_433;
 		right_210.left = left_434;
 		right_210.right = right_435;
-		System.out.println(414 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12137,7 +12137,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_433;
 		right_210.left = left_434;
 		right_210.right = right_435;
-		System.out.println(415 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12170,7 +12170,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_433;
 		right_210.left = left_434;
 		right_210.right = right_435;
-		System.out.println(416 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12203,7 +12203,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_433;
 		right_210.left = left_434;
 		right_210.right = right_435;
-		System.out.println(417 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12242,7 +12242,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_434.element = element_445;
 		left_434.left = left_446;
 		left_434.right = right_447;
-		System.out.println(418 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12281,7 +12281,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_434.element = element_445;
 		left_434.left = left_446;
 		left_434.right = right_447;
-		System.out.println(419 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12314,7 +12314,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_433;
 		right_210.left = left_434;
 		right_210.right = right_435;
-		System.out.println(420 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12347,7 +12347,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_433;
 		right_210.left = left_434;
 		right_210.right = right_435;
-		System.out.println(421 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12374,7 +12374,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(422 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12401,7 +12401,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(423 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12428,7 +12428,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(424 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12455,7 +12455,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(425 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12482,7 +12482,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(426 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12509,7 +12509,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(427 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12536,7 +12536,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(428 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12563,7 +12563,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(429 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12590,7 +12590,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(430 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12617,7 +12617,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(431 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12650,7 +12650,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_451;
 		right_3.left = left_452;
 		right_3.right = right_453;
-		System.out.println(432 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12677,7 +12677,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(433 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12704,7 +12704,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(434 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12731,7 +12731,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(435 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12758,7 +12758,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(436 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12785,7 +12785,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(437 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12812,7 +12812,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(438 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12839,7 +12839,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(439 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12872,7 +12872,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_457;
 		right_3.left = left_458;
 		right_3.right = right_459;
-		System.out.println(440 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12899,7 +12899,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(441 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12926,7 +12926,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(442 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12953,7 +12953,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(443 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -12980,7 +12980,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(444 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13007,7 +13007,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(445 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13034,7 +13034,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(446 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13061,7 +13061,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(447 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13094,7 +13094,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_3.element = element_463;
 		right_3.left = left_464;
 		right_3.right = right_465;
-		System.out.println(448 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13127,7 +13127,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_469;
 		right_210.left = left_470;
 		right_210.right = right_471;
-		System.out.println(449 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13160,7 +13160,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_469;
 		right_210.left = left_470;
 		right_210.right = right_471;
-		System.out.println(450 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13193,7 +13193,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_469;
 		right_210.left = left_470;
 		right_210.right = right_471;
-		System.out.println(451 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13226,7 +13226,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_469;
 		right_210.left = left_470;
 		right_210.right = right_471;
-		System.out.println(452 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13265,7 +13265,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_470.element = element_481;
 		left_470.left = left_482;
 		left_470.right = right_483;
-		System.out.println(453 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13304,7 +13304,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_470.element = element_481;
 		left_470.left = left_482;
 		left_470.right = right_483;
-		System.out.println(454 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13337,7 +13337,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_469;
 		right_210.left = left_470;
 		right_210.right = right_471;
-		System.out.println(455 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13370,7 +13370,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_210.element = element_469;
 		right_210.left = left_470;
 		right_210.right = right_471;
-		System.out.println(456 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13403,7 +13403,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(457 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13436,7 +13436,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(458 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13469,7 +13469,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(459 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13502,7 +13502,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(460 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13535,7 +13535,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(461 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13568,7 +13568,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(462 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13601,7 +13601,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(463 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13640,7 +13640,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_489.element = element_499;
 		right_489.left = left_500;
 		right_489.right = right_501;
-		System.out.println(464 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13679,7 +13679,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_489.element = element_499;
 		right_489.left = left_500;
 		right_489.right = right_501;
-		System.out.println(465 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13712,7 +13712,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(466 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13745,7 +13745,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(467 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13778,7 +13778,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(468 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13811,7 +13811,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(469 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13844,7 +13844,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(470 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13883,7 +13883,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_489.element = element_514;
 		right_489.left = left_515;
 		right_489.right = right_516;
-		System.out.println(471 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13922,7 +13922,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_489.element = element_514;
 		right_489.left = left_515;
 		right_489.right = right_516;
-		System.out.println(472 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -13961,7 +13961,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(473 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14000,7 +14000,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(474 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14039,7 +14039,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(475 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14078,7 +14078,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(476 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14117,7 +14117,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(477 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14162,7 +14162,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_521.element = element_529;
 		left_521.left = left_530;
 		left_521.right = right_531;
-		System.out.println(478 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14207,7 +14207,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_521.element = element_529;
 		left_521.left = left_530;
 		left_521.right = right_531;
-		System.out.println(479 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14246,7 +14246,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(480 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14285,7 +14285,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_488.element = element_520;
 		left_488.left = left_521;
 		left_488.right = right_522;
-		System.out.println(481 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14318,7 +14318,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(482 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14351,7 +14351,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_487;
 		right_414.left = left_488;
 		right_414.right = right_489;
-		System.out.println(483 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14384,7 +14384,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(484 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14417,7 +14417,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(485 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14450,7 +14450,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(486 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14483,7 +14483,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(487 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14516,7 +14516,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(488 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14549,7 +14549,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(489 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14582,7 +14582,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(490 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14615,7 +14615,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(491 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14648,7 +14648,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(492 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14681,7 +14681,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(493 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14714,7 +14714,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(494 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14747,7 +14747,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(495 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14786,7 +14786,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_547;
 		right_414.left = left_548;
 		right_414.right = right_549;
-		System.out.println(496 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14825,7 +14825,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_547;
 		right_414.left = left_548;
 		right_414.right = right_549;
-		System.out.println(497 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14858,7 +14858,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(498 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14891,7 +14891,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(499 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14924,7 +14924,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(500 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14957,7 +14957,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(501 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -14996,7 +14996,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_562;
 		right_414.left = left_563;
 		right_414.right = right_564;
-		System.out.println(502 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15035,7 +15035,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_414.element = element_562;
 		right_414.left = left_563;
 		right_414.right = right_564;
-		System.out.println(503 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15074,7 +15074,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(504 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15113,7 +15113,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(505 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15152,7 +15152,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(506 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15191,7 +15191,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(507 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15230,7 +15230,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(508 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15275,7 +15275,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_569.element = element_577;
 		left_569.left = left_578;
 		left_569.right = right_579;
-		System.out.println(509 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15320,7 +15320,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_569.element = element_577;
 		left_569.left = left_578;
 		left_569.right = right_579;
-		System.out.println(510 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15359,7 +15359,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(511 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15398,7 +15398,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_537.element = element_568;
 		right_537.left = left_569;
 		right_537.right = right_570;
-		System.out.println(512 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15437,7 +15437,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(513 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15476,7 +15476,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(514 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15515,7 +15515,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(515 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15554,7 +15554,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(516 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15593,7 +15593,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(517 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15632,7 +15632,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(518 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15671,7 +15671,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(519 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15710,7 +15710,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(520 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15749,7 +15749,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(521 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15788,7 +15788,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(522 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15833,7 +15833,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_585.element = element_592;
 		right_585.left = left_593;
 		right_585.right = right_594;
-		System.out.println(523 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15878,7 +15878,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		right_585.element = element_592;
 		right_585.left = left_593;
 		right_585.right = right_594;
-		System.out.println(524 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15923,7 +15923,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(525 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -15968,7 +15968,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(526 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16013,7 +16013,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(527 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16058,7 +16058,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(528 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16103,7 +16103,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(529 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16148,7 +16148,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(530 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16199,7 +16199,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_599.element = element_604;
 		left_599.left = left_605;
 		left_599.right = right_606;
-		System.out.println(531 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16244,7 +16244,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_584.element = element_598;
 		left_584.left = left_599;
 		left_584.right = right_600;
-		System.out.println(532 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16283,7 +16283,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_536.element = element_583;
 		left_536.left = left_584;
 		left_536.right = right_585;
-		System.out.println(533 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16316,7 +16316,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_413.element = element_535;
 		left_413.left = left_536;
 		left_413.right = right_537;
-		System.out.println(534 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16343,7 +16343,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_209.element = element_412;
 		left_209.left = left_413;
 		left_209.right = right_414;
-		System.out.println(535 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 
@@ -16364,7 +16364,7 @@ public class BinarySearchTree_repOK1 extends TestJPF {
 		left_2.element = element_208;
 		left_2.left = left_209;
 		left_2.right = right_210;
-		System.out.println(536 + " " + Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(obj));
 		obj.repOK(t);
 	}
 

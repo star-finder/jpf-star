@@ -273,19 +273,20 @@ public class Formula {
 		if (knownTypeVars.size() == initVars.size())
 			return;
 		
-		
 		for (Variable var : knownTypeVars) {
 			String name = var.getName();
 			String type = var.getType();
 				
 			if (!initVars.contains(var)) {
 				if (var.isPrim()) {
+					String val = type.equals("boolean") ? "false" : "0";
+					
 					if (var.isInstance(insFields))
-						test.append("\t\t" + name.replace("this_", objName + ".") + " = 0;\n");
+						test.append("\t\t" + name.replace("this_", objName + ".") + " = " + val + ";\n");
 					else if (var.isStatic(clsName, staFields))
-						test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = 0;\n");
+						test.append("\t\t" + name.replace(clsName + "_", clsName + ".") + " = " + val + ";\n");
 					else
-						test.append("\t\t" + type + " " + name + " = 0;\n");
+						test.append("\t\t" + type + " " + name + " = " + val + ";\n");
 				} else {
 					if (var.isInstance(insFields))
 						test.append("\t\t" + name.replace("this_", objName + ".") + " = null;\n");

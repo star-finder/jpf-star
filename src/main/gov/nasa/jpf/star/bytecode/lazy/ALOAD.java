@@ -49,8 +49,6 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 		
 		if (sym_v instanceof SymbolicInteger) {
 			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
-			
-			sym_v = exp;
 			sf.setLocalAttr(index, exp);
 		}
 		
@@ -104,7 +102,10 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						return getNext(ti);
 					} else {
 						String type = typeOfLocalVar;
-						type = type.substring(type.lastIndexOf('.') + 1, type.length());
+						if (type.contains("."))
+							type = type.substring(type.lastIndexOf('.') + 1, type.length());
+						if (type.contains("$"))
+							type = type.substring(type.lastIndexOf('$') + 1, type.length());
 						
 						List<Variable> vars = pc.findType(type);
 						
@@ -123,7 +124,10 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			String name = sym_v.toString();
 			
 			String type = typeOfLocalVar;
-			type = type.substring(type.lastIndexOf('.') + 1, type.length());
+			if (type.contains("."))
+				type = type.substring(type.lastIndexOf('.') + 1, type.length());
+			if (type.contains("$"))
+				type = type.substring(type.lastIndexOf('$') + 1, type.length());
 			
 			cg = ti.getVM().getSystemState().getChoiceGenerator();
 			prevCG = cg.getPreviousChoiceGeneratorOfType(StarChoiceGenerator.class);

@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.bst;
+package gov.nasa.jpf.star.examples.avl;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class BinarySearchTree_repOKTest extends TestJPF {
+public class Avl_repOKTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data BinaryNode {int element; BinaryNode left; BinaryNode right}";
+		String data = "data AvlNode {int element; AvlNode left; AvlNode right; int height}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -34,12 +34,18 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-//		String pred = "pred bst(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bst(left,minE,element) * bst(right,element,maxE) & minE<element & element<maxE";
+		String pred1 = "pred avl(root) == root = null || " + 
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL=heightR & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL=heightR+1 & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & heightL+1=heightR & height=heightR+1";
 		
-		String pred1 = "pred bst(root) == root = null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE)";
-		String pred2 = "pred bstE(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE) & minE<element & element<maxE";
+		String pred2 = "pred avlE(root,minE,maxE,height) == root=null & height=0-1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL=heightR & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL=heightR+1 & height=heightL+1 || " +
+				"root::AvlNode<element,left,right,height> * avlE(left,minE,element,heightL) * avlE(right,element,maxE,heightR) & minE<element & element<maxE & heightL+1=heightR & height=heightR+1";
+		
 		String pred = pred1 + ";" + pred2;
-				
+		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -50,15 +56,15 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre repOK == this_root=t";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+//		String pre = "pre repOK == this_root=null";
+//		
+//		ANTLRInputStream in = new ANTLRInputStream(pre);
+//		PreconditionLexer lexer = new PreconditionLexer(in);
+//        CommonTokenStream tokens = new CommonTokenStream(lexer);
+//        PreconditionParser parser = new PreconditionParser(tokens);
+//        
+//        Precondition[] ps = parser.pres().ps;
+//        PreconditionMap.put(ps);
 	}
 	
 	@Before
@@ -74,20 +80,20 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=5",
+				"+star.max_depth=3",
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/bst",
-				"+star.test_package=gov.nasa.jpf.star.examples.bst",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/avl",
+				"+star.test_package=gov.nasa.jpf.star.examples.avl",
 				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.bst.BinarySearchTree.repOK(sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.avl.AvlTree.repOK()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
-			BinarySearchTree tree = new BinarySearchTree();
-			tree.repOK(tree.root);
+			AvlTree tree = new AvlTree();
+			tree.repOK();
 		}
 		
 		long end = System.currentTimeMillis();
