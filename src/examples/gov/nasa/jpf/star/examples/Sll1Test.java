@@ -78,8 +78,10 @@ public class Sll1Test extends TestJPF {
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=gov.nasa.jpf.star.examples.Sll1.myMethod(sym)",
-				"+symbolic.lazy=true")) {
-			Sll1.main(null);
+				"+symbolic.lazy=true"
+				)) {
+			Sll1 sll = new Sll1();
+			sll.myMethod(null);
 		}
 	}
 

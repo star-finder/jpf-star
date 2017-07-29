@@ -13,12 +13,5 @@ public class Sll1 {
 				return x.next;
 		}
 	}
-	
-	// The test driver
-	public static void main(String[] args) {
-		Sll1 sll = new Sll1();
-		Node x = new Node(null);
-		sll.myMethod(x);
-	}
 
 }
