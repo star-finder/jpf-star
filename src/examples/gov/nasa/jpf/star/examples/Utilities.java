@@ -17,7 +17,7 @@ public class Utilities {
 			return bst.repOK(bst.root);
 		} else if (obj instanceof AvlTree) {
 			AvlTree avl = (AvlTree) obj;
-			return avl.balanced() && avl.ordered() && avl.wellFormed();
+			return avl.ordered() && avl.balanced() && avl.wellFormed();
 		} else if (obj instanceof TreeMap) {
 			TreeMap rbt = (TreeMap) obj;
 			if (rbt.root == null) return true;

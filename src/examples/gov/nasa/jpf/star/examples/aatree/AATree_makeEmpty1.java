@@ -11,10 +11,8 @@ public class AATree_makeEmpty1 extends TestJPF {
 	public void test_makeEmpty1() throws Exception {
 		AATree obj = new AATree();
 		obj.root = obj.nullNode;
-		AANode b_328 = null;
-		AANode c_327 = null;
-		int a_329 = 0;
-		int d_326 = 0;
+		int d_318 = 0;
+		int a_319 = 0;
 		obj.deletedNode = null;
 		obj.lastNode = null;
 		System.out.println(Utilities.repOK(obj));

@@ -7,6 +7,11 @@ package gov.nasa.jpf.star.examples.avl;
  * @author Mark Allen Weiss
  */
 public class AvlTree {
+	
+	public boolean repOK() {
+		return ordered() && balanced() && wellFormed();
+	}
+	
 	/**
 	 * Double rotate binary tree node: first left child with its right child;
 	 * then node k3 with new left child. For AVL trees, this is a double
