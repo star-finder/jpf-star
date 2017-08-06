@@ -28,7 +28,7 @@ public class InductivePredParser extends Parser {
 	public static final int
 		PRED=1, NULL=2, EQEQ=3, EQ=4, NE=5, GE=6, GT=7, LE=8, LT=9, PLUS=10, MINUS=11, 
 		MUL=12, DIV=13, LB=14, RB=15, CM=16, SM=17, OR=18, AND=19, PT=20, STAR=21, 
-		ID=22, INT=23, WS=24;
+		ID=22, INT=23, DOUBLE=24, WS=25;
 	public static final int
 		RULE_preds = 0, RULE_tail = 1, RULE_pred = 2, RULE_params = 3, RULE_param = 4, 
 		RULE_formulas = 5, RULE_formula = 6, RULE_heapTerms = 7, RULE_heapTerm = 8, 
@@ -49,7 +49,7 @@ public class InductivePredParser extends Parser {
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, "PRED", "NULL", "EQEQ", "EQ", "NE", "GE", "GT", "LE", "LT", "PLUS", 
 		"MINUS", "MUL", "DIV", "LB", "RB", "CM", "SM", "OR", "AND", "PT", "STAR", 
-		"ID", "INT", "WS"
+		"ID", "INT", "DOUBLE", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -1574,6 +1574,7 @@ public class InductivePredParser extends Parser {
 		public Token var2;
 		public Token ID;
 		public Token INT;
+		public Token DOUBLE;
 		public ExpContext exp;
 		public TerminalNode MUL() { return getToken(InductivePredParser.MUL, 0); }
 		public List<TerminalNode> ID() { return getTokens(InductivePredParser.ID); }
@@ -1582,6 +1583,7 @@ public class InductivePredParser extends Parser {
 		}
 		public TerminalNode DIV() { return getToken(InductivePredParser.DIV, 0); }
 		public TerminalNode INT() { return getToken(InductivePredParser.INT, 0); }
+		public TerminalNode DOUBLE() { return getToken(InductivePredParser.DOUBLE, 0); }
 		public TerminalNode LB() { return getToken(InductivePredParser.LB, 0); }
 		public ExpContext exp() {
 			return getRuleContext(ExpContext.class,0);
@@ -1605,7 +1607,7 @@ public class InductivePredParser extends Parser {
 		TerContext _localctx = new TerContext(_ctx, getState());
 		enterRule(_localctx, 40, RULE_ter);
 		try {
-			setState(249);
+			setState(251);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
@@ -1666,10 +1668,20 @@ public class InductivePredParser extends Parser {
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(244);
-				match(LB);
-				setState(245);
-				((TerContext)_localctx).exp = exp(0);
+				((TerContext)_localctx).DOUBLE = match(DOUBLE);
+
+						((TerContext)_localctx).e =  new LiteralExpression((((TerContext)_localctx).DOUBLE!=null?((TerContext)_localctx).DOUBLE.getText():null));
+					
+				}
+				break;
+			case 6:
+				enterOuterAlt(_localctx, 6);
+				{
 				setState(246);
+				match(LB);
+				setState(247);
+				((TerContext)_localctx).exp = exp(0);
+				setState(248);
 				match(RB);
 
 						((TerContext)_localctx).e =  ((TerContext)_localctx).exp.e;
@@ -1707,7 +1719,7 @@ public class InductivePredParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\32\u00fe\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\33\u0100\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\3\2\3\2\3\2\3\2\3\2\3\2\3\2\5"+
@@ -1724,31 +1736,31 @@ public class InductivePredParser extends Parser {
 		"\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\5\24\u00d6\n\24\3\25\3\25"+
 		"\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\7\25\u00e6"+
 		"\n\25\f\25\16\25\u00e9\13\25\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3"+
-		"\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\5\26\u00fc\n\26\3\26\2\3("+
-		"\27\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*\2\2\2\u0101\2\63\3\2"+
-		"\2\2\4>\3\2\2\2\6@\3\2\2\2\bQ\3\2\2\2\nS\3\2\2\2\f^\3\2\2\2\16k\3\2\2"+
-		"\2\20u\3\2\2\2\22}\3\2\2\2\24\u008d\3\2\2\2\26\u008f\3\2\2\2\30\u009d"+
-		"\3\2\2\2\32\u00ae\3\2\2\2\34\u00b0\3\2\2\2\36\u00b5\3\2\2\2 \u00ba\3\2"+
-		"\2\2\"\u00bf\3\2\2\2$\u00c4\3\2\2\2&\u00d5\3\2\2\2(\u00d7\3\2\2\2*\u00fb"+
-		"\3\2\2\2,-\5\6\4\2-.\b\2\1\2.\64\3\2\2\2/\60\5\6\4\2\60\61\5\4\3\2\61"+
-		"\62\b\2\1\2\62\64\3\2\2\2\63,\3\2\2\2\63/\3\2\2\2\64\3\3\2\2\2\65\66\7"+
-		"\23\2\2\66\67\5\6\4\2\678\b\3\1\28?\3\2\2\29:\7\23\2\2:;\5\6\4\2;<\5\4"+
-		"\3\2<=\b\3\1\2=?\3\2\2\2>\65\3\2\2\2>9\3\2\2\2?\5\3\2\2\2@A\7\3\2\2AB"+
-		"\7\30\2\2BC\7\20\2\2CD\5\b\5\2DE\7\21\2\2EF\7\5\2\2FG\5\f\7\2GH\b\4\1"+
-		"\2H\7\3\2\2\2IJ\5\n\6\2JK\b\5\1\2KR\3\2\2\2LM\5\n\6\2MN\7\22\2\2NO\5\b"+
-		"\5\2OP\b\5\1\2PR\3\2\2\2QI\3\2\2\2QL\3\2\2\2R\t\3\2\2\2ST\7\30\2\2TU\b"+
-		"\6\1\2U\13\3\2\2\2VW\5\16\b\2WX\b\7\1\2X_\3\2\2\2YZ\5\16\b\2Z[\7\24\2"+
-		"\2[\\\5\f\7\2\\]\b\7\1\2]_\3\2\2\2^V\3\2\2\2^Y\3\2\2\2_\r\3\2\2\2`a\5"+
-		"\20\t\2ab\b\b\1\2bl\3\2\2\2cd\5\30\r\2de\b\b\1\2el\3\2\2\2fg\5\20\t\2"+
-		"gh\7\25\2\2hi\5\30\r\2ij\b\b\1\2jl\3\2\2\2k`\3\2\2\2kc\3\2\2\2kf\3\2\2"+
-		"\2l\17\3\2\2\2mn\5\22\n\2no\b\t\1\2ov\3\2\2\2pq\5\22\n\2qr\7\27\2\2rs"+
-		"\5\20\t\2st\b\t\1\2tv\3\2\2\2um\3\2\2\2up\3\2\2\2v\21\3\2\2\2wx\5\24\13"+
-		"\2xy\b\n\1\2y~\3\2\2\2z{\5\26\f\2{|\b\n\1\2|~\3\2\2\2}w\3\2\2\2}z\3\2"+
-		"\2\2~\23\3\2\2\2\177\u0080\7\30\2\2\u0080\u0081\7\26\2\2\u0081\u0082\7"+
-		"\30\2\2\u0082\u0083\7\13\2\2\u0083\u0084\7\t\2\2\u0084\u008e\b\13\1\2"+
-		"\u0085\u0086\7\30\2\2\u0086\u0087\7\26\2\2\u0087\u0088\7\30\2\2\u0088"+
-		"\u0089\7\13\2\2\u0089\u008a\5\b\5\2\u008a\u008b\7\t\2\2\u008b\u008c\b"+
-		"\13\1\2\u008c\u008e\3\2\2\2\u008d\177\3\2\2\2\u008d\u0085\3\2\2\2\u008e"+
+		"\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\5\26\u00fe\n\26"+
+		"\3\26\2\3(\27\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*\2\2\2\u0104"+
+		"\2\63\3\2\2\2\4>\3\2\2\2\6@\3\2\2\2\bQ\3\2\2\2\nS\3\2\2\2\f^\3\2\2\2\16"+
+		"k\3\2\2\2\20u\3\2\2\2\22}\3\2\2\2\24\u008d\3\2\2\2\26\u008f\3\2\2\2\30"+
+		"\u009d\3\2\2\2\32\u00ae\3\2\2\2\34\u00b0\3\2\2\2\36\u00b5\3\2\2\2 \u00ba"+
+		"\3\2\2\2\"\u00bf\3\2\2\2$\u00c4\3\2\2\2&\u00d5\3\2\2\2(\u00d7\3\2\2\2"+
+		"*\u00fd\3\2\2\2,-\5\6\4\2-.\b\2\1\2.\64\3\2\2\2/\60\5\6\4\2\60\61\5\4"+
+		"\3\2\61\62\b\2\1\2\62\64\3\2\2\2\63,\3\2\2\2\63/\3\2\2\2\64\3\3\2\2\2"+
+		"\65\66\7\23\2\2\66\67\5\6\4\2\678\b\3\1\28?\3\2\2\29:\7\23\2\2:;\5\6\4"+
+		"\2;<\5\4\3\2<=\b\3\1\2=?\3\2\2\2>\65\3\2\2\2>9\3\2\2\2?\5\3\2\2\2@A\7"+
+		"\3\2\2AB\7\30\2\2BC\7\20\2\2CD\5\b\5\2DE\7\21\2\2EF\7\5\2\2FG\5\f\7\2"+
+		"GH\b\4\1\2H\7\3\2\2\2IJ\5\n\6\2JK\b\5\1\2KR\3\2\2\2LM\5\n\6\2MN\7\22\2"+
+		"\2NO\5\b\5\2OP\b\5\1\2PR\3\2\2\2QI\3\2\2\2QL\3\2\2\2R\t\3\2\2\2ST\7\30"+
+		"\2\2TU\b\6\1\2U\13\3\2\2\2VW\5\16\b\2WX\b\7\1\2X_\3\2\2\2YZ\5\16\b\2Z"+
+		"[\7\24\2\2[\\\5\f\7\2\\]\b\7\1\2]_\3\2\2\2^V\3\2\2\2^Y\3\2\2\2_\r\3\2"+
+		"\2\2`a\5\20\t\2ab\b\b\1\2bl\3\2\2\2cd\5\30\r\2de\b\b\1\2el\3\2\2\2fg\5"+
+		"\20\t\2gh\7\25\2\2hi\5\30\r\2ij\b\b\1\2jl\3\2\2\2k`\3\2\2\2kc\3\2\2\2"+
+		"kf\3\2\2\2l\17\3\2\2\2mn\5\22\n\2no\b\t\1\2ov\3\2\2\2pq\5\22\n\2qr\7\27"+
+		"\2\2rs\5\20\t\2st\b\t\1\2tv\3\2\2\2um\3\2\2\2up\3\2\2\2v\21\3\2\2\2wx"+
+		"\5\24\13\2xy\b\n\1\2y~\3\2\2\2z{\5\26\f\2{|\b\n\1\2|~\3\2\2\2}w\3\2\2"+
+		"\2}z\3\2\2\2~\23\3\2\2\2\177\u0080\7\30\2\2\u0080\u0081\7\26\2\2\u0081"+
+		"\u0082\7\30\2\2\u0082\u0083\7\13\2\2\u0083\u0084\7\t\2\2\u0084\u008e\b"+
+		"\13\1\2\u0085\u0086\7\30\2\2\u0086\u0087\7\26\2\2\u0087\u0088\7\30\2\2"+
+		"\u0088\u0089\7\13\2\2\u0089\u008a\5\b\5\2\u008a\u008b\7\t\2\2\u008b\u008c"+
+		"\b\13\1\2\u008c\u008e\3\2\2\2\u008d\177\3\2\2\2\u008d\u0085\3\2\2\2\u008e"+
 		"\25\3\2\2\2\u008f\u0090\7\30\2\2\u0090\u0091\7\20\2\2\u0091\u0092\5\b"+
 		"\5\2\u0092\u0093\7\21\2\2\u0093\u0094\b\f\1\2\u0094\27\3\2\2\2\u0095\u0096"+
 		"\5\32\16\2\u0096\u0097\b\r\1\2\u0097\u009e\3\2\2\2\u0098\u0099\5\32\16"+
@@ -1779,13 +1791,14 @@ public class InductivePredParser extends Parser {
 		"\u00e4\b\25\1\2\u00e4\u00e6\3\2\2\2\u00e5\u00db\3\2\2\2\u00e5\u00e0\3"+
 		"\2\2\2\u00e6\u00e9\3\2\2\2\u00e7\u00e5\3\2\2\2\u00e7\u00e8\3\2\2\2\u00e8"+
 		")\3\2\2\2\u00e9\u00e7\3\2\2\2\u00ea\u00eb\7\30\2\2\u00eb\u00ec\7\16\2"+
-		"\2\u00ec\u00ed\7\30\2\2\u00ed\u00fc\b\26\1\2\u00ee\u00ef\7\30\2\2\u00ef"+
-		"\u00f0\7\17\2\2\u00f0\u00f1\7\30\2\2\u00f1\u00fc\b\26\1\2\u00f2\u00f3"+
-		"\7\30\2\2\u00f3\u00fc\b\26\1\2\u00f4\u00f5\7\31\2\2\u00f5\u00fc\b\26\1"+
-		"\2\u00f6\u00f7\7\20\2\2\u00f7\u00f8\5(\25\2\u00f8\u00f9\7\21\2\2\u00f9"+
-		"\u00fa\b\26\1\2\u00fa\u00fc\3\2\2\2\u00fb\u00ea\3\2\2\2\u00fb\u00ee\3"+
-		"\2\2\2\u00fb\u00f2\3\2\2\2\u00fb\u00f4\3\2\2\2\u00fb\u00f6\3\2\2\2\u00fc"+
-		"+\3\2\2\2\20\63>Q^ku}\u008d\u009d\u00ae\u00d5\u00e5\u00e7\u00fb";
+		"\2\u00ec\u00ed\7\30\2\2\u00ed\u00fe\b\26\1\2\u00ee\u00ef\7\30\2\2\u00ef"+
+		"\u00f0\7\17\2\2\u00f0\u00f1\7\30\2\2\u00f1\u00fe\b\26\1\2\u00f2\u00f3"+
+		"\7\30\2\2\u00f3\u00fe\b\26\1\2\u00f4\u00f5\7\31\2\2\u00f5\u00fe\b\26\1"+
+		"\2\u00f6\u00f7\7\32\2\2\u00f7\u00fe\b\26\1\2\u00f8\u00f9\7\20\2\2\u00f9"+
+		"\u00fa\5(\25\2\u00fa\u00fb\7\21\2\2\u00fb\u00fc\b\26\1\2\u00fc\u00fe\3"+
+		"\2\2\2\u00fd\u00ea\3\2\2\2\u00fd\u00ee\3\2\2\2\u00fd\u00f2\3\2\2\2\u00fd"+
+		"\u00f4\3\2\2\2\u00fd\u00f6\3\2\2\2\u00fd\u00f8\3\2\2\2\u00fe+\3\2\2\2"+
+		"\20\63>Q^ku}\u008d\u009d\u00ae\u00d5\u00e5\u00e7\u00fd";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

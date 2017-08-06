@@ -337,6 +337,10 @@ ter returns [Expression e] :
 	{
 		$e = new LiteralExpression($INT.text);
 	}
+	| DOUBLE
+	{
+		$e = new LiteralExpression($DOUBLE.text);
+	}
 	| LB exp RB
 	{
 		$e = $exp.e;
@@ -367,6 +371,7 @@ PT      : '::' ;
 STAR    : '*' ;
 ID      : [a-zA-Z_][a-zA-Z0-9_]* ;
 INT		: '0'|[1-9][0-9]* ;
+DOUBLE	: INT'.'INT ;
 WS      : [ \t\r\n]+ -> skip ;
 
 // tests

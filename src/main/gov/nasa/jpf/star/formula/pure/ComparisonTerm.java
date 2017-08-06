@@ -56,10 +56,10 @@ public class ComparisonTerm extends PureTerm {
 			String value = exp2.toString();
 			
 			if (type.equals("boolean")) {
-				if (value.equals("1"))
-					value = "true";
-				else if (value.equals("0"))
+				if (value.equals("0"))
 					value = "false";
+				else
+					value = "true";
 			}
 			
 			if (var.isInstance(insFields))
@@ -80,10 +80,10 @@ public class ComparisonTerm extends PureTerm {
 			String value = exp1.toString();
 			
 			if (type.equals("boolean")) {
-				if (value.equals("1"))
-					value = "true";
-				else if (value.equals("0"))
+				if (value.equals("0"))
 					value = "false";
+				else
+					value = "true";
 			}
 			
 			if (var.isInstance(insFields))

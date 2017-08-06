@@ -99,7 +99,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 		ChoiceGenerator<?> prevCG;
 
 		ClassInfo typeClassInfo = fi.getTypeClassInfo();
-
+		
 		// in the first round we check if we can unfold the formula
 		// if it is we create a choice generator with the number of choices
 		// is the length of unfolded formulas

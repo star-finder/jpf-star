@@ -276,6 +276,8 @@ public class Formula {
 		for (Variable var : knownTypeVars) {
 			String name = var.getName();
 			String type = var.getType();
+			
+			if (name.startsWith("Anon_")) continue;
 				
 			if (!initVars.contains(var)) {
 				if (var.isPrim()) {

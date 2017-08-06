@@ -64,6 +64,7 @@ public class Solver {
 	private static File printToFile(Formula f) {
 		try {
 			File file = File.createTempFile("sat", null);
+//			System.out.println(file.getAbsolutePath());
 			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
 

@@ -141,6 +141,8 @@ public class PointToTerm extends HeapTerm {
 			String name0 = vars[0].getName();
 			String nameI = vars[i].getName();
 			
+			if (nameI.startsWith("Anon_")) continue;
+			
 			if (vars[0].isInstance(insFields))
 				name0 = name0.replace("this_", objName + ".");
 			else if (vars[0].isStatic(clsName, staFields))

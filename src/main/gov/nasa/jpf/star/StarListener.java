@@ -53,7 +53,8 @@ public class StarListener extends SymbolicListener {
 						}
 
 						if (cg != null && cg instanceof StarChoiceGenerator
-								&& ((StarChoiceGenerator) cg).getCurrentPC() != null) {
+								&& ((StarChoiceGenerator) cg).getCurrentPCStar() != null) {
+							System.out.println(((StarChoiceGenerator) cg).getCurrentPCStar());
 							String model = Solver.getModel();
 							System.out.println(model);
 

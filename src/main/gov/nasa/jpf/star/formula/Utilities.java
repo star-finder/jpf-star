@@ -51,6 +51,7 @@ public class Utilities {
 	// may have problem, but may be it is enough with Java name convention
 	public static Variable freshVar(Variable oldVar) {
 		String oldName = oldVar.getName();
+		if (oldName.equals("_")) return oldVar;
 		
 		if (oldName.matches(".*_\\d+")) {
 			oldName = oldName.substring(0, oldName.lastIndexOf('_'));
