@@ -4,7 +4,7 @@ import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class AvlTree_repOK1 extends TestJPF {
+public class AvlTree_repOK1Step extends TestJPF {
 
 	@Test
 	public void test_repOK1() throws Exception {

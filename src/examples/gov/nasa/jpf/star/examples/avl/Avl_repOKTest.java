@@ -80,7 +80,7 @@ public class Avl_repOKTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=3",
+				"+star.max_depth=1",
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

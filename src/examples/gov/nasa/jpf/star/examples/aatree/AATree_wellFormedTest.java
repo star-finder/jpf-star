@@ -81,7 +81,7 @@ public class AATree_wellFormedTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=7",
+				"+star.max_depth=3",
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

@@ -5,7 +5,7 @@ import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class TreeMap_repOK1 extends TestJPF {
+public class TreeMap_containsValue5Steps extends TestJPF {
 
 	@Test
 	public void test_repOK1() throws Exception {
@@ -13,8 +13,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root = null;
 		obj.size = 0;
 		obj.modCount = 0;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -35,8 +35,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -57,8 +57,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -79,8 +79,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -101,8 +101,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -123,8 +123,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -157,8 +157,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_10;
 		left_3.parent = parent_11;
 		left_3.color = color_12;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -179,8 +179,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -201,8 +201,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -223,8 +223,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -245,8 +245,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -267,8 +267,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -289,8 +289,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -311,8 +311,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -345,8 +345,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_16;
 		left_3.parent = parent_17;
 		left_3.color = color_18;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -379,8 +379,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_16;
 		left_3.parent = parent_17;
 		left_3.color = color_18;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -413,8 +413,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_16;
 		left_3.parent = parent_17;
 		left_3.color = color_18;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -447,8 +447,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_16;
 		left_3.parent = parent_17;
 		left_3.color = color_18;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -493,8 +493,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_17.right = right_28;
 		parent_17.parent = parent_29;
 		parent_17.color = color_30;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -515,8 +515,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -537,8 +537,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -559,8 +559,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -581,8 +581,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -603,8 +603,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -625,8 +625,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -647,8 +647,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		obj.root.right = right_4;
 		obj.root.parent = parent_5;
 		obj.root.color = color_6;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -681,8 +681,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_34;
 		left_3.parent = parent_35;
 		left_3.color = color_36;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -715,8 +715,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_34;
 		left_3.parent = parent_35;
 		left_3.color = color_36;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -749,8 +749,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_34;
 		left_3.parent = parent_35;
 		left_3.color = color_36;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -783,8 +783,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_34;
 		left_3.parent = parent_35;
 		left_3.color = color_36;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -829,8 +829,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_35.right = right_46;
 		parent_35.parent = parent_47;
 		parent_35.color = color_48;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -863,8 +863,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -897,8 +897,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -931,8 +931,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -965,8 +965,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -999,8 +999,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1045,8 +1045,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_100;
 		left_3.parent = parent_101;
 		left_3.color = color_102;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1079,8 +1079,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1113,8 +1113,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1147,8 +1147,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1181,8 +1181,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1215,8 +1215,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1261,8 +1261,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_106;
 		left_3.parent = parent_107;
 		left_3.color = color_108;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1295,8 +1295,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1329,8 +1329,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1363,8 +1363,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1397,8 +1397,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1431,8 +1431,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		right_4.right = right_52;
 		right_4.parent = parent_53;
 		right_4.color = color_54;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1477,8 +1477,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_112;
 		left_3.parent = parent_113;
 		left_3.color = color_114;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1523,8 +1523,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_53.right = right_118;
 		parent_53.parent = parent_119;
 		parent_53.color = color_120;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1569,8 +1569,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_53.right = right_118;
 		parent_53.parent = parent_119;
 		parent_53.color = color_120;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1615,8 +1615,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_53.right = right_118;
 		parent_53.parent = parent_119;
 		parent_53.color = color_120;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1661,8 +1661,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_53.right = right_118;
 		parent_53.parent = parent_119;
 		parent_53.color = color_120;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1707,8 +1707,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_53.right = right_118;
 		parent_53.parent = parent_119;
 		parent_53.color = color_120;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1765,8 +1765,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		left_3.right = right_124;
 		left_3.parent = parent_125;
 		left_3.color = color_126;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 	@Test
@@ -1799,8 +1799,8 @@ public class TreeMap_repOK1 extends TestJPF {
 		parent_5.right = right_130;
 		parent_5.parent = parent_131;
 		parent_5.color = color_132;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		if(Utilities.repOK(obj)) {obj.containsValue(null);}
+		//obj.repOK();
 	}
 
 }

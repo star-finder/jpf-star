@@ -74,7 +74,7 @@ public class BinarySearchTree_repOKTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=5",
+				"+star.max_depth=7",
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

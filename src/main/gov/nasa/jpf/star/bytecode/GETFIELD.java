@@ -48,6 +48,8 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
 				if (Solver.checkSat(pc, conf)) {
+					ElementInfo ei = ti.getModifiableElementInfo(objRef);
+					
 					System.out.println("java.lang.NullPointerException: Referencing field '" + fname + "' on null object");
 					System.out.println(pc);
 					

@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.bst;
+package gov.nasa.jpf.star.examples.tll2;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class BinarySearchTree_findMaxLazyTest extends TestJPF {
+public class Tll_countTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data BinaryNode {int element; BinaryNode left; BinaryNode right}";
+		String data = "data Node {int val; Node parent; Node left; Node right; Node next}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -34,12 +34,11 @@ public class BinarySearchTree_findMaxLazyTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-//		String pred = "pred bst(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bst(left,minE,element) * bst(right,element,maxE) & minE<element & element<maxE";
+//		String pred1 = "pred tll(x) == x::Node<dv,dp,dl,r,dn> & r=null || x::Node<dv,dp,l,r,dn> * tll1(l,x,z,ll) * tll1(r,x,lr,z) & r!=null";
+		String pred = "pred tll(curr,p,lr,ll) == curr::Node<dv,p,dl,r,n> & curr=ll & r=null & n=lr || curr::Node<dv,p,l,r,dn> * tll(l,curr,z,ll) * tll(r,curr,lr,z) & r!=null";
 		
-		String pred1 = "pred bst(root) == root = null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE)";
-		String pred2 = "pred bstE(root,minE,maxE) == root=null || root::BinaryNode<element,left,right> * bstE(left,minE,element) * bstE(right,element,maxE) & minE<element & element<maxE";
-		String pred = pred1 + ";" + pred2;
-				
+//		String pred = pred1 + ";" + pred2;
+		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -50,16 +49,15 @@ public class BinarySearchTree_findMaxLazyTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-////		String pre = "pre findMax == bst(this_root,this_min,this_max)";
-//		String pre = "pre findMax == bst(this_root)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
+		String pre = "pre positiveLeafCount == tll(x,p,lr,ll)";
+		
+		ANTLRInputStream in = new ANTLRInputStream(pre);
+		PreconditionLexer lexer = new PreconditionLexer(in);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        PreconditionParser parser = new PreconditionParser(tokens);
+        
+        Precondition[] ps = parser.pres().ps;
+        PreconditionMap.put(ps);
 	}
 	
 	@Before
@@ -71,28 +69,23 @@ public class BinarySearchTree_findMaxLazyTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
-		long begin = System.currentTimeMillis();
-		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=3",
-				"+star.lazy=true",
+				"+star.max_depth=4",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/bst",
-				"+star.test_package=gov.nasa.jpf.star.examples.bst",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/tll2",
+				"+star.test_package=gov.nasa.jpf.star.examples.tll2",
 				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.bst.BinarySearchTree.findMax()",
-				"+symbolic.fields=instance",
+				"+symbolic.method=gov.nasa.jpf.star.examples.tll2.Tll.positiveLeafCount(sym)",
+//				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
-			BinarySearchTree tree = new BinarySearchTree();
-			tree.findMax();
+			Tll tll = new Tll();
+			Node x = new Node();
+			tll.positiveLeafCount(x);
 		}
-		
-		long end = System.currentTimeMillis();
-		System.out.println(end - begin);
 	}
 
 }

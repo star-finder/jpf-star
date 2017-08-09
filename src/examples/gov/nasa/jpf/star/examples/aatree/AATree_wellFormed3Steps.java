@@ -5,7 +5,7 @@ import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class AATree_wellFormed1 extends TestJPF {
+public class AATree_wellFormed3Steps extends TestJPF {
 
 	@Test
 	public void test_wellFormed1() throws Exception {
