@@ -1,11 +1,11 @@
 package gov.nasa.jpf.star.examples.sample;
 
 public class Main {
-	private static final int N = 6;
+	private static final int N = 4;
 	
-	public void sample(LinkedList<Object> dll, Object o) {
+	public void sample(DoubleLinkedList dll, Object o) {
 		dll.addLast(o);
-		Object o2 = dll.remove(N);
+		Object o2 = dll.removeI(N);
 		if (o == o2) {
 			skip();
 			//Analysis.fail();

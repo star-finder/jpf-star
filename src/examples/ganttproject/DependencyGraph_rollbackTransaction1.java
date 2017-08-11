@@ -102,6 +102,78 @@ public class DependencyGraph_rollbackTransaction1 extends TestJPF {
 		obj.myData = new GraphData();
 		Entry header_3 = new Entry();
 		Entry next_8 = new Entry();
+		Node ele_10 = new Node();
+		NodeData myData_14 = new NodeData();
+		GraphData backup_5 = null;
+		Entry prev_9 = next_8;
+		NodeData myBackup_15 = null;
+		Entry header_240 = header_3;
+		Entry header_241 = header_3;
+		boolean isRunning_1 = true;
+		int size_4 = 1;
+		Node ele_7 = null;
+		obj.myTxn.isRunning = isRunning_1;
+		obj.myTxn.myTouchedNodes = myTouchedNodes_2;
+		myTouchedNodes_2.header = header_3;
+		myTouchedNodes_2.size = size_4;
+		obj.myData.myBackup = backup_5;
+		obj.myData.myTxn = obj.myTxn;
+		header_3.element = ele_7;
+		header_3.next = next_8;
+		header_3.previous = prev_9;
+		next_8.element = ele_10;
+		next_8.next = header_240;
+		next_8.previous = header_241;
+		ele_10.myData = myData_14;
+		myData_14.myBackup = myBackup_15;
+		System.out.println(Utilities.repOK(obj));
+		obj.rollbackTransaction();
+	}
+
+	@Test
+	public void test_rollbackTransaction5() throws Exception {
+		DependencyGraph obj = new DependencyGraph();
+		obj.myTxn = new Transaction();
+		LinkedList myTouchedNodes_2 = new LinkedList();
+		obj.myData = new GraphData();
+		Entry header_3 = new Entry();
+		Entry next_8 = new Entry();
+		Node ele_10 = new Node();
+		NodeData myData_14 = new NodeData();
+		GraphData backup_5 = null;
+		Entry prev_9 = next_8;
+		NodeData myBackup_15 = myData_14;
+		Entry header_240 = header_3;
+		Entry header_241 = header_3;
+		boolean isRunning_1 = true;
+		int size_4 = 1;
+		Node ele_7 = null;
+		obj.myTxn.isRunning = isRunning_1;
+		obj.myTxn.myTouchedNodes = myTouchedNodes_2;
+		myTouchedNodes_2.header = header_3;
+		myTouchedNodes_2.size = size_4;
+		obj.myData.myBackup = backup_5;
+		obj.myData.myTxn = obj.myTxn;
+		header_3.element = ele_7;
+		header_3.next = next_8;
+		header_3.previous = prev_9;
+		next_8.element = ele_10;
+		next_8.next = header_240;
+		next_8.previous = header_241;
+		ele_10.myData = myData_14;
+		myData_14.myBackup = myBackup_15;
+		System.out.println(Utilities.repOK(obj));
+		obj.rollbackTransaction();
+	}
+
+	@Test
+	public void test_rollbackTransaction6() throws Exception {
+		DependencyGraph obj = new DependencyGraph();
+		obj.myTxn = new Transaction();
+		LinkedList myTouchedNodes_2 = new LinkedList();
+		obj.myData = new GraphData();
+		Entry header_3 = new Entry();
+		Entry next_8 = new Entry();
 		Entry next_11 = new Entry();
 		Node ele_10 = new Node();
 		NodeData myData_291 = new NodeData();
@@ -142,14 +214,14 @@ public class DependencyGraph_rollbackTransaction1 extends TestJPF {
 	}
 
 	@Test
-	public void test_rollbackTransaction5() throws Exception {
+	public void test_rollbackTransaction7() throws Exception {
 		DependencyGraph obj = new DependencyGraph();
 		obj.myTxn = new Transaction();
 		LinkedList myTouchedNodes_2 = new LinkedList();
 		obj.myData = new GraphData();
 		GraphData backup_5 = new GraphData();
 		Entry header_3 = new Entry();
-		GraphData backup_20 = null;
+		GraphData backup_22 = null;
 		Transaction this_myTxn_233 = obj.myTxn;
 		Entry header_234 = header_3;
 		Entry header_235 = header_3;
@@ -162,11 +234,136 @@ public class DependencyGraph_rollbackTransaction1 extends TestJPF {
 		myTouchedNodes_2.size = size_4;
 		obj.myData.myBackup = backup_5;
 		obj.myData.myTxn = obj.myTxn;
-		backup_5.myBackup = backup_20;
+		backup_5.myBackup = backup_22;
 		backup_5.myTxn = this_myTxn_233;
 		header_3.element = ele_7;
 		header_3.next = header_234;
 		header_3.previous = header_235;
+		System.out.println(Utilities.repOK(obj));
+		obj.rollbackTransaction();
+	}
+
+	@Test
+	public void test_rollbackTransaction8() throws Exception {
+		DependencyGraph obj = new DependencyGraph();
+		obj.myTxn = new Transaction();
+		LinkedList myTouchedNodes_2 = new LinkedList();
+		obj.myData = new GraphData();
+		GraphData backup_5 = new GraphData();
+		Entry header_3 = new Entry();
+		Entry next_8 = new Entry();
+		Node ele_10 = new Node();
+		NodeData myData_286 = new NodeData();
+		GraphData backup_22 = null;
+		Entry prev_9 = next_8;
+		Transaction this_myTxn_235 = obj.myTxn;
+		Entry header_236 = header_3;
+		Entry header_237 = header_3;
+		NodeData myBackup_280 = null;
+		boolean isRunning_1 = true;
+		int size_4 = 1;
+		Node ele_7 = null;
+		obj.myTxn.isRunning = isRunning_1;
+		obj.myTxn.myTouchedNodes = myTouchedNodes_2;
+		myTouchedNodes_2.header = header_3;
+		myTouchedNodes_2.size = size_4;
+		obj.myData.myBackup = backup_5;
+		obj.myData.myTxn = obj.myTxn;
+		backup_5.myBackup = backup_22;
+		backup_5.myTxn = this_myTxn_235;
+		header_3.element = ele_7;
+		header_3.next = next_8;
+		header_3.previous = prev_9;
+		next_8.element = ele_10;
+		next_8.next = header_236;
+		next_8.previous = header_237;
+		ele_10.myData = myData_286;
+		myData_286.myBackup = myBackup_280;
+		System.out.println(Utilities.repOK(obj));
+		obj.rollbackTransaction();
+	}
+
+	@Test
+	public void test_rollbackTransaction9() throws Exception {
+		DependencyGraph obj = new DependencyGraph();
+		obj.myTxn = new Transaction();
+		LinkedList myTouchedNodes_2 = new LinkedList();
+		obj.myData = new GraphData();
+		GraphData backup_5 = new GraphData();
+		Entry header_3 = new Entry();
+		Entry next_8 = new Entry();
+		Entry next_11 = new Entry();
+		Node ele_10 = new Node();
+		NodeData myData_300 = new NodeData();
+		Node ele_290 = new Node();
+		NodeData myData_315 = new NodeData();
+		GraphData backup_22 = null;
+		Transaction this_myTxn_235 = obj.myTxn;
+		Entry header_236 = header_3;
+		Entry next_237 = next_8;
+		Entry header_238 = header_3;
+		Entry prev_239 = next_11;
+		NodeData myBackup_294 = null;
+		NodeData myBackup_309 = null;
+		boolean isRunning_1 = true;
+		int size_4 = 2;
+		Entry prev_9 = prev_239;
+		Node ele_7 = null;
+		obj.myTxn.isRunning = isRunning_1;
+		obj.myTxn.myTouchedNodes = myTouchedNodes_2;
+		myTouchedNodes_2.header = header_3;
+		myTouchedNodes_2.size = size_4;
+		obj.myData.myBackup = backup_5;
+		obj.myData.myTxn = obj.myTxn;
+		backup_5.myBackup = backup_22;
+		backup_5.myTxn = this_myTxn_235;
+		header_3.element = ele_7;
+		header_3.next = next_8;
+		header_3.previous = prev_9;
+		next_8.element = ele_10;
+		next_8.next = next_11;
+		next_8.previous = header_236;
+		next_11.element = ele_290;
+		next_11.next = header_238;
+		next_11.previous = next_237;
+		ele_10.myData = myData_300;
+		myData_300.myBackup = myBackup_294;
+		ele_290.myData = myData_315;
+		myData_315.myBackup = myBackup_309;
+		System.out.println(Utilities.repOK(obj));
+		obj.rollbackTransaction();
+	}
+
+	@Test
+	public void test_rollbackTransaction10() throws Exception {
+		DependencyGraph obj = new DependencyGraph();
+		obj.myTxn = new Transaction();
+		LinkedList myTouchedNodes_2 = new LinkedList();
+		obj.myData = new GraphData();
+		GraphData backup_5 = new GraphData();
+		GraphData backup_22 = new GraphData();
+		Entry header_3 = new Entry();
+		GraphData backup_26 = null;
+		Transaction this_myTxn_234 = obj.myTxn;
+		Transaction this_myTxn_235 = obj.myTxn;
+		Entry header_236 = header_3;
+		Entry header_237 = header_3;
+		boolean isRunning_1 = true;
+		int size_4 = 0;
+		Node ele_7 = null;
+		obj.myTxn.isRunning = isRunning_1;
+		obj.myTxn.myTouchedNodes = myTouchedNodes_2;
+		myTouchedNodes_2.header = header_3;
+		myTouchedNodes_2.size = size_4;
+		obj.myData.myBackup = backup_5;
+		obj.myData.myTxn = obj.myTxn;
+		backup_5.myBackup = backup_22;
+		backup_5.myTxn = this_myTxn_234;
+		backup_22.myBackup = backup_26;
+		backup_22.myTxn = this_myTxn_235;
+		header_3.element = ele_7;
+		header_3.next = header_236;
+		header_3.previous = header_237;
 		System.out.println(Utilities.repOK(obj));
 		obj.rollbackTransaction();
 	}

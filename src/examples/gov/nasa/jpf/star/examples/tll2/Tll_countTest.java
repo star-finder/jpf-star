@@ -69,9 +69,11 @@ public class Tll_countTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=4",
+				"+star.max_depth=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/tll2",
@@ -86,6 +88,9 @@ public class Tll_countTest extends TestJPF {
 			Node x = new Node();
 			tll.positiveLeafCount(x);
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

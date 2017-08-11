@@ -87,7 +87,7 @@ import java.util.NoSuchElementException;
  * @param <E> the type of elements held in this collection
  */
 
-public class LinkedList<E>
+public class LinkedList111<E>
 //    extends AbstractSequentialList<E>
 //    implements List<E>, Deque<E>, Cloneable, java.io.Serializable
 {
@@ -112,7 +112,7 @@ public class LinkedList<E>
     /**
      * Constructs an empty list.
      */
-    public LinkedList() {
+    public LinkedList111() {
     }
 
     /**
@@ -123,7 +123,7 @@ public class LinkedList<E>
      * @param  c the collection whose elements are to be placed into this list
      * @throws NullPointerException if the specified collection is null
      */
-    public LinkedList(Collection<? extends E> c) {
+    public LinkedList111(Collection<? extends E> c) {
         this();
         addAll(c);
     }
@@ -1005,9 +1005,9 @@ public class LinkedList<E>
     }
 
     @SuppressWarnings("unchecked")
-    private LinkedList<E> superClone() {
+    private LinkedList111<E> superClone() {
         try {
-            return (LinkedList<E>) super.clone();
+            return (LinkedList111<E>) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
         }
@@ -1020,7 +1020,7 @@ public class LinkedList<E>
      * @return a shallow copy of this {@code LinkedList} instance
      */
     public Object clone() {
-        LinkedList<E> clone = superClone();
+        LinkedList111<E> clone = superClone();
 
         // Put clone into "virgin" state
         clone.first = clone.last = null;
