@@ -92,13 +92,13 @@ import java.util.Vector;
  * @param <E> the type of elements held in this collection
  */
 
-public class LinkedList<E>
-    extends AbstractSequentialList<E>
-    implements List<E>, Deque<E>, Set<E>, Cloneable, java.io.Serializable
+public class LinkedListNode
+    extends AbstractSequentialList<Node>
+    implements List<Node>, Deque<Node>, Set<Node>, Cloneable, java.io.Serializable
 {
 //MODI BEGIN
-//	private transient Entry<E> header = new Entry<E>(null, null, null, this);
-	public Entry<E> header = new Entry<E>(null, null, null);
+//	private transient EntryNode header = new EntryNode(null, null, null, this);
+	public EntryNode header = new EntryNode(null, null, null);
 //MODI END
     public int size = 0;
 
@@ -133,7 +133,7 @@ public class LinkedList<E>
 		if (header == null) {
 			return false;
 		}
-		Entry tmp = header;
+		EntryNode tmp = header;
 		int i = 0;
 		do {
 			if (!tmp.nonNullPointers() || !tmp.repOK()) {
@@ -151,7 +151,7 @@ public class LinkedList<E>
     /**
      * Constructs an empty list.
      */
-    public LinkedList() {
+    public LinkedListNode() {
         header.next = header.previous = header;
 //MODI BEGIN
         //initializes instrumentation fields for concrete objects
@@ -169,7 +169,7 @@ public class LinkedList<E>
      * @param  c the collection whose elements are to be placed into this list
      * @throws NullPointerException if the specified collection is null
      */
-    public LinkedList(Collection<? extends E> c) {
+    public LinkedListNode(Collection<Node> c) {
 	this();
 	addAll(c);
     }
@@ -180,7 +180,7 @@ public class LinkedList<E>
      * @return the first element in this list
      * @throws NoSuchElementException if this list is empty
      */
-    public E getFirst() {
+    public Node getFirst() {
 	if (size==0)
 	    throw new NoSuchElementException();
 
@@ -193,7 +193,7 @@ public class LinkedList<E>
      * @return the last element in this list
      * @throws NoSuchElementException if this list is empty
      */
-    public E getLast()  {
+    public Node getLast()  {
 	if (size==0)
 	    throw new NoSuchElementException();
 
@@ -206,7 +206,7 @@ public class LinkedList<E>
      * @return the first element from this list
      * @throws NoSuchElementException if this list is empty
      */
-    public E removeFirst() {
+    public Node removeFirst() {
 	return remove(header.next);
     }
 
@@ -216,7 +216,7 @@ public class LinkedList<E>
      * @return the last element from this list
      * @throws NoSuchElementException if this list is empty
      */
-    public E removeLast() {
+    public Node removeLast() {
 	return remove(header.previous);
     }
 
@@ -225,7 +225,7 @@ public class LinkedList<E>
      *
      * @param e the element to add
      */
-    public void addFirst(E e) {
+    public void addFirst(Node e) {
 	addBefore(e, header.next);
     }
 
@@ -236,7 +236,7 @@ public class LinkedList<E>
      *
      * @param e the element to add
      */
-    public void addLast(E e) {
+    public void addLast(Node e) {
 	addBefore(e, header);
     }
 
@@ -270,7 +270,7 @@ public class LinkedList<E>
      * @param e element to be appended to this list
      * @return <tt>true</tt> (as specified by {@link Collection#add})
      */
-    public boolean add(E e) {
+    public boolean add(Node e) {
 	addBefore(e, header);
         return true;
     }
@@ -290,14 +290,14 @@ public class LinkedList<E>
      */
     public boolean remove(Object o) {
         if (o==null) {
-            for (Entry<E> e = header.next; e != header; e = e.next) {
+            for (EntryNode e = header.next; e != header; e = e.next) {
                 if (e.element==null) {
                     remove(e);
                     return true;
                 }
             }
         } else {
-            for (Entry<E> e = header.next; e != header; e = e.next) {
+            for (EntryNode e = header.next; e != header; e = e.next) {
                 if (o.equals(e.element)) {
                     remove(e);
                     return true;
@@ -319,7 +319,8 @@ public class LinkedList<E>
      * @return <tt>true</tt> if this list changed as a result of the call
      * @throws NullPointerException if the specified collection is null
      */
-    public boolean addAll(Collection<? extends E> c) {
+    @Override
+    public boolean addAll(Collection<? extends Node> c) {
         return addAll(size, c);
     }
 
@@ -338,7 +339,8 @@ public class LinkedList<E>
      * @throws IndexOutOfBoundsException {@inheritDoc}
      * @throws NullPointerException if the specified collection is null
      */
-    public boolean addAll(int index, Collection<? extends E> c) {
+    @Override
+    public boolean addAll(int index, Collection<? extends Node> c) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException(/*"Index: "+index+
                                                 ", Size: "+size*/);
@@ -348,13 +350,13 @@ public class LinkedList<E>
             return false;
 	modCount++;
 
-        Entry<E> successor = (index==size ? header : entry(index));
-        Entry<E> predecessor = successor.previous;
+        EntryNode successor = (index==size ? header : entry(index));
+        EntryNode predecessor = successor.previous;
 	for (int i=0; i<numNew; i++) {
 //MODI BEGIN
         @SuppressWarnings("unchecked")
-//		Entry<E> e = new Entry<E>((E)a[i], successor, predecessor, this);
-        Entry<E> e = new Entry<E>((E)a[i], successor, predecessor);
+//		EntryNode e = new EntryNode((E)a[i], successor, predecessor, this);
+        EntryNode e = new EntryNode((Node)a[i], successor, predecessor);
 //MODI END
             predecessor.next = e;
             predecessor = e;
@@ -369,9 +371,9 @@ public class LinkedList<E>
      * Removes all of the elements from this list.
      */
     public void clear() {
-        Entry<E> e = header.next;
+        EntryNode e = header.next;
         while (e != header) {
-            Entry<E> next = e.next;
+            EntryNode next = e.next;
             e.next = e.previous = null;
             e.element = null;
             e = next;
@@ -391,7 +393,7 @@ public class LinkedList<E>
      * @return the element at the specified position in this list
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
-    public E get(int index) {
+    public Node get(int index) {
         return entry(index).element;
     }
 
@@ -404,9 +406,9 @@ public class LinkedList<E>
      * @return the element previously at the specified position
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
-    public E set(int index, E element) {
-        Entry<E> e = entry(index);
-        E oldVal = e.element;
+    public Node set(int index, Node element) {
+        EntryNode e = entry(index);
+        Node oldVal = e.element;
         e.element = element;
         return oldVal;
     }
@@ -420,7 +422,7 @@ public class LinkedList<E>
      * @param element element to be inserted
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
-    public void add(int index, E element) {
+    public void add(int index, Node element) {
         addBefore(element, (index==size ? header : entry(index)));
     }
 
@@ -433,19 +435,19 @@ public class LinkedList<E>
      * @return the element previously at the specified position
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
-    public E remove(int index) {
+    public Node remove(int index) {
         return remove(entry(index));
     }
 
     /**
      * Returns the indexed entry.
      */
-    private Entry<E> entry(int index) {
+    private EntryNode entry(int index) {
         if (index < 0 || index >= size)
 //MODI BEGIN
             throw new IndexOutOfBoundsException(/*"Index: "+index+
                                                 ", Size: "+size*/);  //JBSE cannot handle concatenation of strings and symbols
-        Entry<E> e = header;
+        EntryNode e = header;
         //if (index < (size >> 1)) {  //JBSE hardly handles shift operators
             for (int i = 0; i <= index; i++)
                 e = e.next;
@@ -474,13 +476,13 @@ public class LinkedList<E>
     public int indexOf(Object o) {
         int index = 0;
         if (o==null) {
-            for (Entry e = header.next; e != header; e = e.next) {
+            for (EntryNode e = header.next; e != header; e = e.next) {
                 if (e.element==null)
                     return index;
                 index++;
             }
         } else {
-            for (Entry e = header.next; e != header; e = e.next) {
+            for (EntryNode e = header.next; e != header; e = e.next) {
                 if (o.equals(e.element))
                     return index;
                 index++;
@@ -503,13 +505,13 @@ public class LinkedList<E>
     public int lastIndexOf(Object o) {
         int index = size;
         if (o==null) {
-            for (Entry e = header.previous; e != header; e = e.previous) {
+            for (EntryNode e = header.previous; e != header; e = e.previous) {
                 index--;
                 if (e.element==null)
                     return index;
             }
         } else {
-            for (Entry e = header.previous; e != header; e = e.previous) {
+            for (EntryNode e = header.previous; e != header; e = e.previous) {
                 index--;
                 if (o.equals(e.element))
                     return index;
@@ -525,7 +527,7 @@ public class LinkedList<E>
      * @return the head of this list, or <tt>null</tt> if this list is empty
      * @since 1.5
      */
-    public E peek() {
+    public Node peek() {
         if (size==0)
             return null;
         return getFirst();
@@ -537,7 +539,7 @@ public class LinkedList<E>
      * @throws NoSuchElementException if this list is empty
      * @since 1.5
      */
-    public E element() {
+    public Node element() {
         return getFirst();
     }
 
@@ -546,7 +548,7 @@ public class LinkedList<E>
      * @return the head of this list, or <tt>null</tt> if this list is empty
      * @since 1.5
      */
-    public E poll() {
+    public Node poll() {
         if (size==0)
             return null;
         return removeFirst();
@@ -559,7 +561,7 @@ public class LinkedList<E>
      * @throws NoSuchElementException if this list is empty
      * @since 1.5
      */
-    public E remove() {
+    public Node remove() {
         return removeFirst();
     }
 
@@ -570,7 +572,7 @@ public class LinkedList<E>
      * @return <tt>true</tt> (as specified by {@link Queue#offer})
      * @since 1.5
      */
-    public boolean offer(E e) {
+    public boolean offer(Node e) {
         return add(e);
     }
 
@@ -582,7 +584,7 @@ public class LinkedList<E>
      * @return <tt>true</tt> (as specified by {@link Deque#offerFirst})
      * @since 1.6
      */
-    public boolean offerFirst(E e) {
+    public boolean offerFirst(Node e) {
         addFirst(e);
         return true;
     }
@@ -594,7 +596,7 @@ public class LinkedList<E>
      * @return <tt>true</tt> (as specified by {@link Deque#offerLast})
      * @since 1.6
      */
-    public boolean offerLast(E e) {
+    public boolean offerLast(Node e) {
         addLast(e);
         return true;
     }
@@ -607,7 +609,7 @@ public class LinkedList<E>
      *         if this list is empty
      * @since 1.6
      */
-    public E peekFirst() {
+    public Node peekFirst() {
         if (size==0)
             return null;
         return getFirst();
@@ -621,7 +623,7 @@ public class LinkedList<E>
      *         if this list is empty
      * @since 1.6
      */
-    public E peekLast() {
+    public Node peekLast() {
         if (size==0)
             return null;
         return getLast();
@@ -635,7 +637,7 @@ public class LinkedList<E>
      *     this list is empty
      * @since 1.6
      */
-    public E pollFirst() {
+    public Node pollFirst() {
         if (size==0)
             return null;
         return removeFirst();
@@ -649,7 +651,7 @@ public class LinkedList<E>
      *     this list is empty
      * @since 1.6
      */
-    public E pollLast() {
+    public Node pollLast() {
         if (size==0)
             return null;
         return removeLast();
@@ -664,7 +666,7 @@ public class LinkedList<E>
      * @param e the element to push
      * @since 1.6
      */
-    public void push(E e) {
+    public void push(Node e) {
         addFirst(e);
     }
 
@@ -679,7 +681,7 @@ public class LinkedList<E>
      * @throws NoSuchElementException if this list is empty
      * @since 1.6
      */
-    public E pop() {
+    public Node pop() {
         return removeFirst();
     }
 
@@ -707,14 +709,14 @@ public class LinkedList<E>
      */
     public boolean removeLastOccurrence(Object o) {
         if (o==null) {
-            for (Entry<E> e = header.previous; e != header; e = e.previous) {
+            for (EntryNode e = header.previous; e != header; e = e.previous) {
                 if (e.element==null) {
                     remove(e);
                     return true;
                 }
             }
         } else {
-            for (Entry<E> e = header.previous; e != header; e = e.previous) {
+            for (EntryNode e = header.previous; e != header; e = e.previous) {
                 if (o.equals(e.element)) {
                     remove(e);
                     return true;
@@ -745,13 +747,13 @@ public class LinkedList<E>
      * @throws IndexOutOfBoundsException {@inheritDoc}
      * @see List#listIterator(int)
      */
-    public ListIterator<E> listIterator(int index) {
+    public ListIterator<Node> listIterator(int index) {
 	return new ListItr(index);
     }
 
-    private class ListItr implements ListIterator<E> {
-	private Entry<E> lastReturned = header;
-	private Entry<E> next;
+    private class ListItr implements ListIterator<Node> {
+	private EntryNode lastReturned = header;
+	private EntryNode next;
 	private int nextIndex;
 	private int expectedModCount = modCount;
 
@@ -776,7 +778,7 @@ public class LinkedList<E>
 	    return nextIndex != size;
 	}
 
-	public E next() {
+	public Node next() {
 	    checkForComodification();
 	    if (nextIndex == size)
 			throw new NoSuchElementException();
@@ -784,7 +786,7 @@ public class LinkedList<E>
 	    lastReturned = next;
 	    next = next.next;
 	    nextIndex++;
-	    E p = lastReturned.element;
+	    Node p = lastReturned.element;
 	    return lastReturned.element;
 	}
 
@@ -792,7 +794,7 @@ public class LinkedList<E>
 	    return nextIndex != 0;
 	}
 
-	public E previous() {
+	public Node previous() {
 	    if (nextIndex == 0)
 		throw new NoSuchElementException();
 
@@ -812,9 +814,9 @@ public class LinkedList<E>
 
 	public void remove() {
             checkForComodification();
-            Entry<E> lastNext = lastReturned.next;
+            EntryNode lastNext = lastReturned.next;
             try {
-                LinkedList.this.remove(lastReturned);
+                LinkedListNode.this.remove(lastReturned);
             } catch (NoSuchElementException e) {
                 throw new IllegalStateException();
             }
@@ -826,14 +828,14 @@ public class LinkedList<E>
 	    expectedModCount++;
 	}
 
-	public void set(E e) {
+	public void set(Node e) {
 	    if (lastReturned == header)
 		throw new IllegalStateException();
 	    checkForComodification();
 	    lastReturned.element = e;
 	}
 
-	public void add(E e) {
+	public void add(Node e) {
 	    checkForComodification();
 	    lastReturned = header;
 	    addBefore(e, next);
@@ -847,10 +849,10 @@ public class LinkedList<E>
 	}
     }
 
-    static class Entry<E> {
-	E element;
-	Entry<E> next;
-	Entry<E> previous;
+    static class EntryNode {
+	Node element;
+	EntryNode next;
+	EntryNode previous;
 //MODI BEGIN
     // No shadow fields for triggers: Entry.[element|next|previous]
     // are not used by the triggers
@@ -898,8 +900,8 @@ public class LinkedList<E>
 //MODI END
 
 //MODI BEGIN
-	//Entry(E element, Entry<E> next, Entry<E> previous) {
-	Entry(E element, Entry<E> next, Entry<E> previous) {
+	//Entry(E element, EntryNode next, EntryNode previous) {
+	EntryNode(Node element, EntryNode next, EntryNode previous) {
 //MODI END
 	    this.element = element;
 	    this.next = next;
@@ -910,15 +912,15 @@ public class LinkedList<E>
 //MODI END
 	}
 
-	public Entry() {
+	public EntryNode() {
 		// TODO Auto-generated constructor stub
 	}
     }
 
-    private Entry<E> addBefore(E e, Entry<E> entry) {
+    private EntryNode addBefore(Node e, EntryNode entry) {
 //MODI BEGIN
-//	Entry<E> newEntry = new Entry<E>(e, entry, entry.previous, this);
-	Entry<E> newEntry = new Entry<E>(e, entry, entry.previous);
+//	EntryNode newEntry = new EntryNode(e, entry, entry.previous, this);
+	EntryNode newEntry = new EntryNode(e, entry, entry.previous);
 //MODI END
 	newEntry.previous.next = newEntry;
 	newEntry.next.previous = newEntry;
@@ -927,11 +929,11 @@ public class LinkedList<E>
 	return newEntry;
     }
 
-    private E remove(Entry<E> e) {
+    private Node remove(EntryNode e) {
 	if (e == header)
 	    throw new NoSuchElementException();
 
-        E result = e.element;
+	Node result = e.element;
 	e.previous.next = e.next;
 	e.next.previous = e.previous;
         e.next = e.previous = null;
@@ -944,7 +946,7 @@ public class LinkedList<E>
     /**
      * @since 1.6
      */
-    public Iterator<E> descendingIterator() {
+    public Iterator<Node> descendingIterator() {
         return new DescendingIterator();
     }
 
@@ -954,7 +956,7 @@ public class LinkedList<E>
 	public boolean hasNext() {
 	    return itr.hasPrevious();
 	}
-	public E next() {
+	public Node next() {
             return itr.previous();
         }
 	public void remove() {
@@ -969,24 +971,24 @@ public class LinkedList<E>
      * @return a shallow copy of this <tt>LinkedList</tt> instance
      */
     public Object clone() {
-        LinkedList<E> clone = null;
+        LinkedListNode clone = null;
 	try {
-	    clone = (LinkedList<E>) super.clone();
+	    clone = (LinkedListNode) super.clone();
 	} catch (CloneNotSupportedException e) {
 	    throw new InternalError();
 	}
 
         // Put clone into "virgin" state
 //MODI BEGIN
-//        clone.header = new Entry<E>(null, null, null, clone);
-        clone.header = new Entry<E>(null, null, null);
+//        clone.header = new EntryNode(null, null, null, clone);
+        clone.header = new EntryNode(null, null, null);
 //MODI END
         clone.header.next = clone.header.previous = clone.header;
         clone.size = 0;
         clone.modCount = 0;
 
         // Initialize clone with our elements
-        for (Entry<E> e = header.next; e != header; e = e.next)
+        for (EntryNode e = header.next; e != header; e = e.next)
             clone.add(e.element);
 
         return clone;
@@ -1009,7 +1011,7 @@ public class LinkedList<E>
     public Object[] toArray() {
 	Object[] result = new Object[size];
         int i = 0;
-        for (Entry<E> e = header.next; e != header; e = e.next)
+        for (EntryNode e = header.next; e != header; e = e.next)
             result[i++] = e.element;
 	return result;
     }
@@ -1062,7 +1064,7 @@ public class LinkedList<E>
 //MODI END
         int i = 0;
 	Object[] result = a;
-        for (Entry<E> e = header.next; e != header; e = e.next)
+        for (EntryNode e = header.next; e != header; e = e.next)
             result[i++] = e.element;
 
         if (a.length > size)
@@ -1090,7 +1092,7 @@ public class LinkedList<E>
         s.writeInt(size);
 
 	// Write out all elements in the proper order.
-        for (Entry e = header.next; e != header; e = e.next)
+        for (EntryNode e = header.next; e != header; e = e.next)
             s.writeObject(e.element);
     }
 
@@ -1108,18 +1110,18 @@ public class LinkedList<E>
 
         // Initialize header
 //MODI BEGIN
-//        header = new Entry<E>(null, null, null, this);
-        header = new Entry<E>(null, null, null);
+//        header = new EntryNode(null, null, null, this);
+        header = new EntryNode(null, null, null);
 //MODI END
         header.next = header.previous = header;
 
 	// Read in all elements in the proper order.
 	for (int i=0; i<size; i++)
-            addBefore((E)s.readObject(), header);
+            addBefore((Node)s.readObject(), header);
     }
     
 //	@Override
-	public Spliterator<E> spliterator() {
+	public Spliterator<Node> spliterator() {
 		//foo implementation, for avoiding complaints with java 8
 		return null;
 	}

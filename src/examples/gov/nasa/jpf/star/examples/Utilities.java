@@ -1,5 +1,6 @@
 package gov.nasa.jpf.star.examples;
 
+import ganttproject.DependencyGraph;
 import gov.nasa.jpf.star.examples.aatree.AATree;
 import gov.nasa.jpf.star.examples.avl.AvlTree;
 import gov.nasa.jpf.star.examples.bst.BinarySearchTree;
@@ -37,6 +38,9 @@ public class Utilities {
 		} else if (obj instanceof Tll) {
 			Tll tll = (Tll) obj;
 			return tll.repOK();
+		} else if (obj instanceof DependencyGraph) {
+			DependencyGraph graph = (DependencyGraph) obj;
+			return graph.repOK();
 		} else {
 			return true;
 		}

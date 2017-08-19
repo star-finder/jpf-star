@@ -11,10 +11,8 @@ public class DependencyGraph_startTransaction1 extends TestJPF {
 		DependencyGraph obj = new DependencyGraph();
 		obj.myTxn = new Transaction();
 		obj.myData = new GraphData();
-		Transaction trans1_2 = obj.myTxn;
 		boolean isRunning_1 = true;
 		obj.myTxn.isRunning = isRunning_1;
-		obj.myData.myTxn = trans1_2;
 		System.out.println(Utilities.repOK(obj));
 		obj.startTransaction();
 	}
@@ -24,10 +22,8 @@ public class DependencyGraph_startTransaction1 extends TestJPF {
 		DependencyGraph obj = new DependencyGraph();
 		obj.myTxn = new Transaction();
 		obj.myData = new GraphData();
-		Transaction trans1_2 = obj.myTxn;
 		boolean isRunning_1 = false;
 		obj.myTxn.isRunning = isRunning_1;
-		obj.myData.myTxn = trans1_2;
 		System.out.println(Utilities.repOK(obj));
 		obj.startTransaction();
 	}

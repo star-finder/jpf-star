@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Transaction {
     public boolean isRunning;
-    public LinkedList<Node> myTouchedNodes = /*INSTRUMENTATION: new HashSet<>()*/new LinkedList<>();
+    public LinkedListNode myTouchedNodes = /*INSTRUMENTATION: new HashSet<>()*/new LinkedListNode();
 
     public boolean isRunning() {
       return isRunning;

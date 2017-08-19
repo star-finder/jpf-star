@@ -22,12 +22,12 @@ import gov.nasa.jpf.util.test.TestJPF;
 public class Gantt_rollBackTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data1 = "data Transaction {boolean isRunning; LinkedList myTouchedNodes}";
+		String data1 = "data Transaction {boolean isRunning; LinkedListNode myTouchedNodes}";
 		String data2 = "data GraphData {void myLayers; GraphData myBackup; Transaction myTxn}";
-		String data3 = "data LinkedList {void modCount; Entry header; int size}";
+		String data3 = "data LinkedListNode {void modCount; EntryNode header; int size}";
 		String data4 = "data Node {void myTask; NodeData myData}";
 		String data5 = "data NodeData {void myLevel; void myIncoming; void myOutgoing; void myNode; void myTxn; NodeData myBackup}";
-		String data6 = "data Entry {Node element; Entry next; Entry previous}";
+		String data6 = "data EntryNode {Node element; EntryNode next; EntryNode previous}";
 		
 		String data = data1 + ";" + data2 + ";" + data3 + ";" + data4 + ";" + data5 + ";" + data6;
 		
@@ -41,15 +41,13 @@ public class Gantt_rollBackTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred1 = "pred cond(trans,myData) == trans::Transaction<isRunning,myTouchedNodes> * backupPred(myData,trans) * myTouchedNodes::LinkedList<_,header,size> * dll(header,size)";
-		String pred2 = "pred backupPred(myData,trans) == myData::GraphData<_,_,trans1> * trans1::Transaction<isRunning1,_> & isRunning1=0 || myData::GraphData<_,backup,trans> & backup=null || myData::GraphData<_,backup,trans> * backupPred(backup,trans)";
+		String pred1 = "pred cond(trans,myData) == trans::Transaction<isRunning,myTouchedNodes> * backupPred(myData) * myTouchedNodes::LinkedListNode<_,header,size> * dll(header,size)";
+		String pred2 = "pred backupPred(myData) == myData::GraphData<_,backup,trans> * trans::Transaction<isRunning,_> & backup=null || myData::GraphData<_,backup,trans> * trans::Transaction<isRunning,_> * backupPred(backup)";
 		
-		String pred3 = "pred dll(header,size) == header::Entry<ele,header,header> & size=0 || header::Entry<ele,next,prev> * nndll(next,header,header,prev,size)";
-		String pred4 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<ele,header,prev> * element(ele) & prevH=curr & size=1 || curr::Entry<ele,next,prev> * nndll(next,curr,header,prevH,size1) * element(ele) & size=size1+1";
+		String pred3 = "pred dll(header,size) == header::EntryNode<ele,header,header> & size=0 || header::EntryNode<ele,next,prev> * nndll(next,header,header,prev,size)";
+		String pred4 = "pred nndll(curr,prev,header,prevH,size) == curr::EntryNode<ele,header,prev> * ele::Node<_,myData1> * myData1::NodeData<_,_,_,_,_,myBackup> & prevH=curr & size=1 || curr::EntryNode<ele,next,prev> * ele::Node<_,myData1> * myData1::NodeData<_,_,_,_,_,myBackup> * nndll(next,curr,header,prevH,size1) & size=size1+1";
 		
-		String pred5 = "pred element(ele) == ele::Node<_,myData> * myData::NodeData<_,_,_,_,_,myBackup> & myBackup=null || ele::Node<_,myData> * myData::NodeData<_,_,_,_,_,myBackup> & myBackup=myData";
-		
-		String pred = pred1 + ";" + pred2 + ";" + pred3 + ";" + pred4 + ";" + pred5;
+		String pred = pred1 + ";" + pred2 + ";" + pred3 + ";" + pred4;
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -85,12 +83,12 @@ public class Gantt_rollBackTest extends TestJPF {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-				"+star.max_depth=5",
+				"+star.max_depth=4",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/ganttproject",
 				"+star.test_package=ganttproject",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities;ganttproject.LinkedList.Entry;",
+				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities;ganttproject.LinkedListNode.EntryNode;",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=ganttproject.DependencyGraph.rollbackTransaction()",

@@ -42,7 +42,7 @@ public class GraphData {
     }
 
     public GraphData() {
-		// TODO Auto-generated constructor stub
+    	this(new Transaction());
 	}
 
 	GraphData withTransaction() {

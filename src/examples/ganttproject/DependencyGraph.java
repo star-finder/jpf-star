@@ -50,6 +50,48 @@ import ganttproject.Task;
  * @author dbarashev
  */
 public class DependencyGraph {
+	
+	public boolean repOK(GraphData myData) {
+		if (myData.myTxn == null)
+			return false;
+		else if (myData.myTxn.myTouchedNodes == null)
+			return false;
+		else if (!myData.myTxn.myTouchedNodes.repOK())
+			return false;
+		else {
+			for (Node node : myTxn.myTouchedNodes) {
+				if (node.myData == null)
+					return false;
+			}
+		}
+		
+		if (myData.myBackup == null)
+			return true;
+		else
+			return repOK(myData.myBackup);
+	}
+
+	public boolean repOK() {
+		if (myTxn == null)
+			return false;
+		else if (myData == null)
+			return false;
+		else if (!repOK(myData))
+			return false;
+		else if (myTxn.myTouchedNodes == null)
+			return false;
+		else if (!myTxn.myTouchedNodes.repOK())
+			return false;
+		else {
+			for (Node node : myTxn.myTouchedNodes) {
+				if (node.myData == null)
+					return false;
+			}
+		}
+
+		return true;
+	}
+	
   /**
    * Dependency defines a constraint on its target task start and end dates. Constraints
    * are normally either points or semi-open intervals on the date axis.
