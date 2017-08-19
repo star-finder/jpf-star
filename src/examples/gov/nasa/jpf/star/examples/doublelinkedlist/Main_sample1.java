@@ -1,6 +1,6 @@
-package gov.nasa.jpf.star.examples.sample;
+package gov.nasa.jpf.star.examples.doublelinkedlist;
 
-import gov.nasa.jpf.star.examples.sample.DoubleLinkedList.Entry;
+import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;
 import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;

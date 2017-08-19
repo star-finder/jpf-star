@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.sample;
+package gov.nasa.jpf.star.examples.doublelinkedlist;
 
 public class Main {
 	private static final int N = 4;

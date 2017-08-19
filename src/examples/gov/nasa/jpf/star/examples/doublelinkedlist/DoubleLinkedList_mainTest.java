@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.sample;
+package gov.nasa.jpf.star.examples.doublelinkedlist;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class MyLinkedList_mainTest extends TestJPF {
+public class DoubleLinkedList_mainTest extends TestJPF {
 	
 	private void initDataNode() {
 //		String data = "data LinkedList{int modCount; Node first; Node last; int size}; data Node {Object item; Node next; Node prev}; data Object {}";
@@ -94,12 +94,12 @@ public class MyLinkedList_mainTest extends TestJPF {
 				"+star.max_depth=5",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/sample",
-				"+star.test_package=gov.nasa.jpf.star.examples.sample",
-				"+star.test_imports=gov.nasa.jpf.star.examples.sample.DoubleLinkedList.Entry;gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/doublelinkedlist",
+				"+star.test_package=gov.nasa.jpf.star.examples.doublelinkedlist",
+				"+star.test_imports=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.sample.Main.sample(sym#sym)",
+				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.Main.sample(sym#sym)",
 //				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Main m = new Main();
