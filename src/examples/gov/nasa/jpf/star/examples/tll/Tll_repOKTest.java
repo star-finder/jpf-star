@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.tll2;
+package gov.nasa.jpf.star.examples.tll;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
@@ -19,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class Tll_countTest extends TestJPF {
+public class Tll_repOKTest extends TestJPF {
 	
 	private void initDataNode() {
 		String data = "data Node {int val; Node parent; Node left; Node right; Node next}";
@@ -49,15 +49,15 @@ public class Tll_countTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre positiveLeafCount == tll(x,p,lr,ll)";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+//		String pre = "pre positiveLeafCount == tll(this_root,p,lr,ll)";
+//		
+//		ANTLRInputStream in = new ANTLRInputStream(pre);
+//		PreconditionLexer lexer = new PreconditionLexer(in);
+//        CommonTokenStream tokens = new CommonTokenStream(lexer);
+//        PreconditionParser parser = new PreconditionParser(tokens);
+//        
+//        Precondition[] ps = parser.pres().ps;
+//        PreconditionMap.put(ps);
 	}
 	
 	@Before
@@ -74,19 +74,19 @@ public class Tll_countTest extends TestJPF {
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 				"+star.max_depth=3",
+				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/tll2",
-				"+star.test_package=gov.nasa.jpf.star.examples.tll2",
+				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/tll",
+				"+star.test_package=gov.nasa.jpf.star.examples.tll",
 				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.tll2.Tll.positiveLeafCount(sym)",
-//				"+symbolic.fields=instance",
+				"+symbolic.method=gov.nasa.jpf.star.examples.tll.Tll.repOK()",
+				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Tll tll = new Tll();
-			Node x = new Node();
-			tll.positiveLeafCount(x);
+			tll.repOK();
 		}
 		
 		long end = System.currentTimeMillis();

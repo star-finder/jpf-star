@@ -19,10 +19,10 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class Tll_bt2tllTest extends TestJPF {
+public class Tll_countTest extends TestJPF {
 	
 	private void initDataNode() {
-		String data = "data Tree {Tree parent; Tree left; Tree right; Tree next}";
+		String data = "data Node {int val; Node parent; Node left; Node right; Node next}";
 		
 		ANTLRInputStream in = new ANTLRInputStream(data);
 		DataNodeLexer lexer = new DataNodeLexer(in);
@@ -34,7 +34,10 @@ public class Tll_bt2tllTest extends TestJPF {
 	}
 	
 	private void initPredicate() {
-		String pred = "pred bt(x,p,t) == x::Tree<dp,dl,r,dn> & r=null || x::Tree<dp,l,r,dn> * bt(l,x,lm) * bt(r,x,t) & r!=null";
+//		String pred1 = "pred tll(x) == x::Node<dv,dp,dl,r,dn> & r=null || x::Node<dv,dp,l,r,dn> * tll1(l,x,z,ll) * tll1(r,x,lr,z) & r!=null";
+		String pred = "pred tll(curr,p,lr,ll) == curr::Node<dv,p,dl,r,n> & curr=ll & r=null & n=lr || curr::Node<dv,p,l,r,dn> * tll(l,curr,z,ll) * tll(r,curr,lr,z) & r!=null";
+		
+//		String pred = pred1 + ";" + pred2;
 		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
@@ -46,7 +49,7 @@ public class Tll_bt2tllTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre bt2tll == bt(x,p,t)";
+		String pre = "pre positiveLeafCount == tll(this_root,p,lr,ll)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
@@ -66,25 +69,27 @@ public class Tll_bt2tllTest extends TestJPF {
 	
 	@Test
 	public void testMain() {
+		long begin = System.currentTimeMillis();
+		
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
-//				"+star.max_len_pc=6",
+				"+star.max_depth=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/tll",
 				"+star.test_package=gov.nasa.jpf.star.examples.tll",
-//				"+star.test_imports=...",
+				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.tll.Tll.bt2tll(sym#sym#sym)",
-//				"+symbolic.fields=instance",
+				"+symbolic.method=gov.nasa.jpf.star.examples.tll.Tll.positiveLeafCount()",
+				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Tll tll = new Tll();
-			Tree x = new Tree();
-			Tree p = new Tree();
-			Tree t = new Tree();
-			tll.bt2tll(x, p, t);
+			tll.positiveLeafCount();
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println(end - begin);
 	}
 
 }

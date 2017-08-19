@@ -7,6 +7,7 @@ import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList;
 import gov.nasa.jpf.star.examples.linkedlist.MyLinkedList;
 import gov.nasa.jpf.star.examples.rbt.TreeMap;
 import gov.nasa.jpf.star.examples.stack.StackLi;
+import gov.nasa.jpf.star.examples.tll.Tll;
 
 public class Utilities {
 	
@@ -33,6 +34,9 @@ public class Utilities {
 		} else if (obj instanceof AATree) {
 			AATree aat = (AATree) obj;
 			return aat.wellFormed();
+		} else if (obj instanceof Tll) {
+			Tll tll = (Tll) obj;
+			return tll.repOK();
 		} else {
 			return true;
 		}

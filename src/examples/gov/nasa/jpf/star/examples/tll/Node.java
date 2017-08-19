@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.examples.tll2;
+package gov.nasa.jpf.star.examples.tll;
 
 public class Node {
 
