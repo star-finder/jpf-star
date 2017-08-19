@@ -21,6 +21,7 @@ package gov.nasa.jpf.star.examples.stack;
  * @author Mark Allen Weiss
  */
 public class StackLi {
+	
 	// @ invariant isAcyclic();
 
 	/**

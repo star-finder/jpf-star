@@ -6,6 +6,7 @@ import gov.nasa.jpf.star.examples.bst.BinarySearchTree;
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList;
 import gov.nasa.jpf.star.examples.linkedlist.MyLinkedList;
 import gov.nasa.jpf.star.examples.rbt.TreeMap;
+import gov.nasa.jpf.star.examples.stack.StackLi;
 
 public class Utilities {
 	
@@ -16,7 +17,10 @@ public class Utilities {
 		} else if (obj instanceof DoubleLinkedList) {
 			DoubleLinkedList dll = (DoubleLinkedList) obj;
 			return dll.repOK();
-		} if (obj instanceof BinarySearchTree) {
+		} else if (obj instanceof StackLi) { 
+			StackLi stack = (StackLi) obj;
+			return stack.isAcyclic();
+		} else if (obj instanceof BinarySearchTree) {
 			BinarySearchTree bst = (BinarySearchTree) obj;
 			return bst.repOK(bst.root);
 		} else if (obj instanceof AvlTree) {
