@@ -4,12 +4,16 @@ import gov.nasa.jpf.star.examples.aatree.AATree;
 import gov.nasa.jpf.star.examples.avl.AvlTree;
 import gov.nasa.jpf.star.examples.bst.BinarySearchTree;
 import gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList;
+import gov.nasa.jpf.star.examples.linkedlist.MyLinkedList;
 import gov.nasa.jpf.star.examples.rbt.TreeMap;
 
 public class Utilities {
 	
 	public static boolean repOK(Object obj) {
-		if (obj instanceof DoubleLinkedList) {
+		if (obj instanceof MyLinkedList) {
+			MyLinkedList sll = (MyLinkedList) obj;
+			return sll.repOK();
+		} else if (obj instanceof DoubleLinkedList) {
 			DoubleLinkedList dll = (DoubleLinkedList) obj;
 			return dll.repOK();
 		} if (obj instanceof BinarySearchTree) {

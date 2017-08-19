@@ -2,9 +2,9 @@ package gov.nasa.jpf.star.examples;
 
 public class Sll3 {
 	
-	public Node x = new Node();
+	public Node_old x = new Node_old();
 	
-	public Node myMethod() {
+	public Node_old myMethod() {
 		if (x == null) {
 			return null;
 		} else {

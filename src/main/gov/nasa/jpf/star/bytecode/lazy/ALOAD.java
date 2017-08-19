@@ -146,9 +146,9 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 				pc.addEqNullTerm(newVar);
 			} else {
 				pc.addPointToTerm(newVar, type);
+				pc.putType(type, newVar);
 			}
 			
-			pc.putType(type, newVar);
 			pc.setDepth(pc.getDepth() + 1);
 			
 			if (Solver.checkSat(pc, conf)) {

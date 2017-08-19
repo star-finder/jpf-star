@@ -153,11 +153,6 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 						
 						return getNext(ti);
 					} else {
-						if (sym_v.toString().equals("this_root")) {
-							int i = 1;
-							i = i + 1;
-						}
-						
 						String type = fi.getType();
 						if (type.contains("."))
 							type = type.substring(type.lastIndexOf('.') + 1, type.length());
@@ -182,11 +177,6 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			
 			String name = sym_v.toString();
 			
-			if (name.equals("this_root")) {
-				int i = 1;
-				i = i + 1;
-			}
-			
 			String type = fi.getType();
 			if (type.contains("."))
 				type = type.substring(type.lastIndexOf('.') + 1, type.length());
@@ -210,9 +200,9 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				pc.addEqNullTerm(newVar);
 			} else {
 				pc.addPointToTerm(newVar, type);
+				pc.putType(type, newVar);
 			}
 			
-			pc.putType(type, newVar);
 			pc.setDepth(pc.getDepth() + 1);
 
 			if (Solver.checkSat(pc, conf)) {

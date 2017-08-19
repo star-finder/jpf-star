@@ -45,7 +45,7 @@ public class MyLinkedList_insertTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre insert == sllItr(p)";
+		String pre = "pre insert == this__header::MyListNode<element,next> * sllItr(p) & next=null";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);

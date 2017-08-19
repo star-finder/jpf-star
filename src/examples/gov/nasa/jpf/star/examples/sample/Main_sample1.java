@@ -24,7 +24,7 @@ public class Main_sample1 extends TestJPF {
 		header_2.element = ele_4;
 		header_2.next = header_145;
 		header_2.previous = header_146;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 
@@ -51,7 +51,7 @@ public class Main_sample1 extends TestJPF {
 		first_6.element = ele1_8;
 		first_6.next = header_145;
 		first_6.previous = header_146;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 
@@ -87,7 +87,7 @@ public class Main_sample1 extends TestJPF {
 		last_7.element = ele2_11;
 		last_7.next = nextL_12;
 		last_7.previous = prevL_13;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 
@@ -133,7 +133,7 @@ public class Main_sample1 extends TestJPF {
 		next1_25.element = item_28;
 		next1_25.next = next1_29;
 		next1_25.previous = prev1_30;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 
@@ -179,7 +179,7 @@ public class Main_sample1 extends TestJPF {
 		next1_25.element = item_28;
 		next1_25.next = next1_29;
 		next1_25.previous = prev1_30;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 
@@ -230,7 +230,7 @@ public class Main_sample1 extends TestJPF {
 		next1_29.element = item_32;
 		next1_29.next = next1_33;
 		next1_29.previous = prev1_34;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 
@@ -281,7 +281,7 @@ public class Main_sample1 extends TestJPF {
 		next1_29.element = item_32;
 		next1_29.next = next1_33;
 		next1_29.previous = prev1_34;
-		System.out.println(Utilities.repOK(obj));
+		System.out.println(Utilities.repOK(dll));
 		obj.sample(dll,o);
 	}
 

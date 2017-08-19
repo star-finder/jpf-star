@@ -112,14 +112,14 @@ public class GraphData {
     }
 
     GraphData rollback() {
-    	if (!myTxn.isRunning()) {
-    		return this;
-    	} else if (myBackup == null) {
-    		return this;
-    	} else {
-    		return myBackup.rollback();
-    	}
-//      return (!myTxn.isRunning() || myBackup == null) ? this : myBackup.rollback();
+//    	if (!myTxn.isRunning()) {
+//    		return this;
+//    	} else if (myBackup == null) {
+//    		return this;
+//    	} else {
+//    		return myBackup.rollback();
+//    	}
+      return (!myTxn.isRunning() || myBackup == null) ? this : myBackup.rollback();
     }
   }
 

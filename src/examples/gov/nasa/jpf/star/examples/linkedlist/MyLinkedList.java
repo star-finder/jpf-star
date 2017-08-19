@@ -5,7 +5,29 @@ package gov.nasa.jpf.star.examples.linkedlist;
 
 import java.io.*;
 
-class MyLinkedList {
+public class MyLinkedList {
+	
+	public boolean repOK() {
+		if (_header == null) return false;
+		else return !hasLoop(_header);
+	}
+	
+	private boolean hasLoop(MyListNode start) {
+		MyListNode slow = start;
+		MyListNode fast1 = start._next;
+		MyListNode fast2 = (fast1 != null) ? fast1._next : null;
+		
+		while (slow != null && fast1 != null && fast2 != null) {
+			if (slow == fast1 || slow == fast2) return true;
+			
+			fast1 = (fast2 != null) ? fast2._next : null;
+			fast2 = (fast1 != null) ? fast1._next : null;
+			slow = slow._next;
+		}
+		
+		return false;
+	}
+	
 	/* Class Member */
 	public MyListNode _header; // The list head pointer
 	public int _maxsize;

@@ -42,7 +42,7 @@ public class Gantt_rollBackTest extends TestJPF {
 	
 	private void initPredicate() {
 		String pred1 = "pred cond(trans,myData) == trans::Transaction<isRunning,myTouchedNodes> * backupPred(myData,trans) * myTouchedNodes::LinkedList<_,header,size> * dll(header,size)";
-		String pred2 = "pred backupPred(myData,trans) == myData::GraphData<_,backup,trans> & backup=null || myData::GraphData<_,backup,trans> * backupPred(backup,trans)";
+		String pred2 = "pred backupPred(myData,trans) == myData::GraphData<_,_,trans1> * trans1::Transaction<isRunning1,_> & isRunning1=0 || myData::GraphData<_,backup,trans> & backup=null || myData::GraphData<_,backup,trans> * backupPred(backup,trans)";
 		
 		String pred3 = "pred dll(header,size) == header::Entry<ele,header,header> & size=0 || header::Entry<ele,next,prev> * nndll(next,header,header,prev,size)";
 		String pred4 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<ele,header,prev> * element(ele) & prevH=curr & size=1 || curr::Entry<ele,next,prev> * nndll(next,curr,header,prevH,size1) * element(ele) & size=size1+1";

@@ -10,8 +10,8 @@ public class AvlTree_repOK3Steps extends TestJPF {
 	public void test_repOK1() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = null;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
@@ -26,8 +26,8 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
@@ -42,8 +42,8 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
@@ -51,15 +51,15 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = null;
-		AvlNode right_3 = left_2;
+		AvlNode right_3 = null;
 		int height_4 = 1;
 		int element_1 = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
@@ -67,51 +67,19 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = null;
-		AvlNode right_3 = left_2;
+		AvlNode right_3 = null;
 		int height_4 = 0;
 		int element_1 = 0;
 		obj.root.element = element_1;
 		obj.root.left = left_2;
 		obj.root.right = right_3;
 		obj.root.height = height_4;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
 	public void test_repOK6() throws Exception {
-		AvlTree obj = new AvlTree();
-		obj.root = new AvlNode();
-		AvlNode left_2 = null;
-		AvlNode right_3 = null;
-		int height_4 = 1;
-		int element_1 = 0;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		obj.root.height = height_4;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
-	}
-
-	@Test
-	public void test_repOK7() throws Exception {
-		AvlTree obj = new AvlTree();
-		obj.root = new AvlNode();
-		AvlNode left_2 = null;
-		AvlNode right_3 = null;
-		int height_4 = 0;
-		int element_1 = 0;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		obj.root.height = height_4;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
-	}
-
-	@Test
-	public void test_repOK8() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
@@ -130,12 +98,12 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		right_3.left = left_6;
 		right_3.right = right_7;
 		right_3.height = height_8;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
-	public void test_repOK9() throws Exception {
+	public void test_repOK7() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -154,12 +122,12 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		left_2.left = left_14;
 		left_2.right = right_15;
 		left_2.height = height_16;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
-	public void test_repOK10() throws Exception {
+	public void test_repOK8() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -178,12 +146,12 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		left_2.left = left_14;
 		left_2.right = right_15;
 		left_2.height = height_16;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
-	public void test_repOK11() throws Exception {
+	public void test_repOK9() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -210,12 +178,12 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		left_14.left = left_22;
 		left_14.right = right_23;
 		left_14.height = height_24;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 	@Test
-	public void test_repOK12() throws Exception {
+	public void test_repOK10() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -234,8 +202,8 @@ public class AvlTree_repOK3Steps extends TestJPF {
 		left_2.left = left_14;
 		left_2.right = right_15;
 		left_2.height = height_16;
-		System.out.println(Utilities.repOK(obj));
-		obj.repOK();
+		assertTrue(Utilities.repOK(obj));
+		//obj.repOK();
 	}
 
 }

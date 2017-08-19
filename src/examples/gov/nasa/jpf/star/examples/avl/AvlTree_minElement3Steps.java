@@ -51,7 +51,7 @@ public class AvlTree_minElement3Steps extends TestJPF {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = null;
-		AvlNode right_3 = left_2;
+		AvlNode right_3 = null;
 		int height_4 = 1;
 		int element_1 = 0;
 		obj.root.element = element_1;
@@ -67,7 +67,7 @@ public class AvlTree_minElement3Steps extends TestJPF {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = null;
-		AvlNode right_3 = left_2;
+		AvlNode right_3 = null;
 		int height_4 = 0;
 		int element_1 = 0;
 		obj.root.element = element_1;
@@ -80,38 +80,6 @@ public class AvlTree_minElement3Steps extends TestJPF {
 
 	@Test
 	public void test_repOK6() throws Exception {
-		AvlTree obj = new AvlTree();
-		obj.root = new AvlNode();
-		AvlNode left_2 = null;
-		AvlNode right_3 = null;
-		int height_4 = 1;
-		int element_1 = 0;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		obj.root.height = height_4;
-		if(Utilities.repOK(obj)) {obj.minElement(0);}
-		//obj.repOK();
-	}
-
-	@Test
-	public void test_repOK7() throws Exception {
-		AvlTree obj = new AvlTree();
-		obj.root = new AvlNode();
-		AvlNode left_2 = null;
-		AvlNode right_3 = null;
-		int height_4 = 0;
-		int element_1 = 0;
-		obj.root.element = element_1;
-		obj.root.left = left_2;
-		obj.root.right = right_3;
-		obj.root.height = height_4;
-		if(Utilities.repOK(obj)) {obj.minElement(0);}
-		//obj.repOK();
-	}
-
-	@Test
-	public void test_repOK8() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode right_3 = new AvlNode();
@@ -135,7 +103,7 @@ public class AvlTree_minElement3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK9() throws Exception {
+	public void test_repOK7() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -159,7 +127,7 @@ public class AvlTree_minElement3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK10() throws Exception {
+	public void test_repOK8() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -183,7 +151,7 @@ public class AvlTree_minElement3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK11() throws Exception {
+	public void test_repOK9() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();
@@ -215,7 +183,7 @@ public class AvlTree_minElement3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK12() throws Exception {
+	public void test_repOK10() throws Exception {
 		AvlTree obj = new AvlTree();
 		obj.root = new AvlNode();
 		AvlNode left_2 = new AvlNode();

@@ -2,9 +2,9 @@ package gov.nasa.jpf.star.examples;
 
 public class MyClass {
 	
-	static Node x;
+	static Node_old x;
 		
-	public Node foo(Node x) {
+	public Node_old foo(Node_old x) {
 		if (x == null) {
 			return null;
 		} else {
@@ -16,7 +16,7 @@ public class MyClass {
 		}
 	}
 
-	public Node foo1(Node x, Node y) {
+	public Node_old foo1(Node_old x, Node_old y) {
 		if (x == y) {
 			return x;
 		} else {
@@ -24,7 +24,7 @@ public class MyClass {
 		}
 	}
 	
-	public static Node myMethod(Node x) {
+	public static Node_old myMethod(Node_old x) {
 //		return foo(x);
 //		return foo1(x, x.next);
 //		while (x != null) {
@@ -45,11 +45,11 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod1(Node x, Node y) {
+	public Node_old myMethod1(Node_old x, Node_old y) {
 		if (x != y) {
 			return null;
 		} else {
-			Node z = y.next;
+			Node_old z = y.next;
 			if (z == null) {
 				return null;
 			} else {
@@ -58,7 +58,7 @@ public class MyClass {
 		}
 	}
 	
-	public Node myMethod2(int i, int j) {
+	public Node_old myMethod2(int i, int j) {
 //		i = i + j;
 //		if (i - 1 > 0) {
 //			i = 2 * i - 1;
@@ -84,7 +84,7 @@ public class MyClass {
 	// The test driver
 	public static void main(String[] args) {
 		MyClass mc = new MyClass();
-		Node x = new Node(null);
+		Node_old x = new Node_old(null);
 //		Node y = new Node();
 //		MyClass.myMethod(x);
 		int i = 0;

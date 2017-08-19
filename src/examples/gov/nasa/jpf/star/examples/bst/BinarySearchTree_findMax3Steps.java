@@ -51,21 +51,6 @@ public class BinarySearchTree_findMax3Steps extends TestJPF {
 		BinaryNode t = new BinaryNode();
 		obj.root = t;
 		BinaryNode left_2 = null;
-		BinaryNode right_3 = left_2;
-		int element_1 = 0;
-		t.element = element_1;
-		t.left = left_2;
-		t.right = right_3;
-		if(Utilities.repOK(obj)) {obj.findMax();}
-		//obj.repOK(t);
-	}
-
-	@Test
-	public void test_repOK5() throws Exception {
-		BinarySearchTree obj = new BinarySearchTree();
-		BinaryNode t = new BinaryNode();
-		obj.root = t;
-		BinaryNode left_2 = null;
 		BinaryNode right_3 = null;
 		int element_1 = 0;
 		t.element = element_1;
@@ -76,7 +61,7 @@ public class BinarySearchTree_findMax3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK6() throws Exception {
+	public void test_repOK5() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		BinaryNode t = new BinaryNode();
 		BinaryNode right_3 = new BinaryNode();
@@ -97,7 +82,7 @@ public class BinarySearchTree_findMax3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK7() throws Exception {
+	public void test_repOK6() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		BinaryNode t = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -118,7 +103,7 @@ public class BinarySearchTree_findMax3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK8() throws Exception {
+	public void test_repOK7() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		BinaryNode t = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -139,7 +124,7 @@ public class BinarySearchTree_findMax3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK9() throws Exception {
+	public void test_repOK8() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		BinaryNode t = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();
@@ -166,7 +151,7 @@ public class BinarySearchTree_findMax3Steps extends TestJPF {
 	}
 
 	@Test
-	public void test_repOK10() throws Exception {
+	public void test_repOK9() throws Exception {
 		BinarySearchTree obj = new BinarySearchTree();
 		BinaryNode t = new BinaryNode();
 		BinaryNode left_2 = new BinaryNode();

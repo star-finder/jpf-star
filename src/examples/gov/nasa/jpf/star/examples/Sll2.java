@@ -2,7 +2,7 @@ package gov.nasa.jpf.star.examples;
 
 public class Sll2 {
 	
-	public static Node myMethod(Node x) {
+	public static Node_old myMethod(Node_old x) {
 		if (x == null) {
 			return null;
 		} else {
@@ -16,7 +16,7 @@ public class Sll2 {
 	
 	// The test driver
 	public static void main(String[] args) {
-		Node x = new Node(null);
+		Node_old x = new Node_old(null);
 		Sll2.myMethod(x);
 	}
 

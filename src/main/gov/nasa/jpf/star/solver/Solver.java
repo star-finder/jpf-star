@@ -34,7 +34,7 @@ public class Solver {
 	private static Process p = null;
 	
 	public static boolean checkSat(Formula f, Config c) {
-		System.out.println(f);
+//		System.out.println(f);
 //		System.out.println(f.getDepth());
 		
 		ret = false; model = "";
@@ -64,7 +64,7 @@ public class Solver {
 	private static File printToFile(Formula f) {
 		try {
 			File file = File.createTempFile("sat", null);
-			System.out.println(file.getAbsolutePath());
+//			System.out.println(file.getAbsolutePath());
 			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsolutePath(), true));
 

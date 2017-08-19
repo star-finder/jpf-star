@@ -48,8 +48,7 @@ public class MyLinkedList_printListTest extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre printList == theList::MyLinkedList<header,size> * header::MyListNode<element,next> * sll(next)";
-//		String pre = "pre printList == this__header::MyListNode<element,next> * sll(next):";
+		String pre = "pre printList == this__header::MyListNode<element,nextH> * theList::MyLinkedList<header,size> * header::MyListNode<element,next> * sll(next) & nextH=null";
 		
 		ANTLRInputStream in = new ANTLRInputStream(pre);
 		PreconditionLexer lexer = new PreconditionLexer(in);
