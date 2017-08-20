@@ -27,30 +27,30 @@ public class EngineParameters {
     public EngineParameters() {}
 
     // CONFORMANCE MONITOR (CM) PARAMETERS
-//    private static final boolean DEFAULT_CM_LATERAL_WEIGHT_ON  = false;
-//    private static final boolean DEFAULT_CM_VERTICAL_WEIGHT_ON = false;
-//    private static final boolean DEFAULT_CM_ANGULAR_WEIGHT_ON  = false;
-//    private static final boolean DEFAULT_CM_SPEED_WEIGHT_ON    = false;
-    public boolean cmLateralWeightOn  = false; // DEFAULT_CM_LATERAL_WEIGHT_ON;
-    public boolean cmVerticalWeightOn = false; // DEFAULT_CM_VERTICAL_WEIGHT_ON;
-    public boolean cmAngularWeightOn  = false; // DEFAULT_CM_ANGULAR_WEIGHT_ON;
-    public boolean cmSpeedWeightOn    = false; // DEFAULT_CM_SPEED_WEIGHT_ON;
+    private static final boolean DEFAULT_CM_LATERAL_WEIGHT_ON  = false;
+    private static final boolean DEFAULT_CM_VERTICAL_WEIGHT_ON = false;
+    private static final boolean DEFAULT_CM_ANGULAR_WEIGHT_ON  = false;
+    private static final boolean DEFAULT_CM_SPEED_WEIGHT_ON    = false;
+    public boolean cmLateralWeightOn  = DEFAULT_CM_LATERAL_WEIGHT_ON;
+    public boolean cmVerticalWeightOn = DEFAULT_CM_VERTICAL_WEIGHT_ON;
+    public boolean cmAngularWeightOn  = DEFAULT_CM_ANGULAR_WEIGHT_ON;
+    public boolean cmSpeedWeightOn    = DEFAULT_CM_SPEED_WEIGHT_ON;
     
-//    private static final double DEFAULT_CM_LATERAL_THRESHOLD  = 18520.0;
-//    private static final double DEFAULT_CM_VERTICAL_THRESHOLD = 609.7561;
-//    private static final double DEFAULT_CM_ANGULAR_THRESHOLD  = 0.5;
-//    private static final double DEFAULT_CM_SPEED_THRESHOLD    = 100;
-    public double cmLateralThreshold  = 18520.0; // DEFAULT_CM_LATERAL_THRESHOLD;
-    public double cmVerticalThreshold = 609.7561; // DEFAULT_CM_VERTICAL_THRESHOLD;
-    public double cmAngularThreshold  = 0.5; /// DEFAULT_CM_ANGULAR_THRESHOLD;
-    public double cmSpeedThreshold    = 100; // DEFAULT_CM_SPEED_THRESHOLD;
+    private static final double DEFAULT_CM_LATERAL_THRESHOLD  = 18520.0;
+    private static final double DEFAULT_CM_VERTICAL_THRESHOLD = 609.7561;
+    private static final double DEFAULT_CM_ANGULAR_THRESHOLD  = 0.5;
+    private static final double DEFAULT_CM_SPEED_THRESHOLD    = 100;
+    public double cmLateralThreshold  = DEFAULT_CM_LATERAL_THRESHOLD;
+    public double cmVerticalThreshold = DEFAULT_CM_VERTICAL_THRESHOLD;
+    public double cmAngularThreshold  = DEFAULT_CM_ANGULAR_THRESHOLD;
+    public double cmSpeedThreshold    = DEFAULT_CM_SPEED_THRESHOLD;
 
-//    private static final double DEFAULT_CM_RESIDUAL_THRESHOLD = 1.0;
-    public double cmResidualThreshold = 1.0; // DEFAULT_CM_RESIDUAL_THRESHOLD;
+    private static final double DEFAULT_CM_RESIDUAL_THRESHOLD = 1.0;
+    public double cmResidualThreshold = DEFAULT_CM_RESIDUAL_THRESHOLD;
 
     // TRAJECTORY SYNTHESIZER (TS) PARAMETERS
-//    private static final long DEFAULT_TS_TIME_HORIZON = 3 * 60 * 1000;
-    public double tsTimeHorizon = 3 * 60 * 1000; // DEFAULT_TS_TIME_HORIZON;
+    private static final long DEFAULT_TS_TIME_HORIZON = 3 * 60 * 1000;
+    public double tsTimeHorizon = DEFAULT_TS_TIME_HORIZON;
 //MODI BEGIN
     //to help EvoSuite
     public void setCmLateralWeightOn(boolean val) {

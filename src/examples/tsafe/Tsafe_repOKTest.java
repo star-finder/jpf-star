@@ -19,7 +19,7 @@ import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
 
 @SuppressWarnings("deprecation")
-public class Tsafe_tsr3Test extends TestJPF {
+public class Tsafe_repOKTest extends TestJPF {
 	
 	private void initDataNode() {
 		String data1 = "data TrajectorySynthesizer {SimpleCalculator calc; EngineParameters params}";
@@ -47,8 +47,8 @@ public class Tsafe_tsr3Test extends TestJPF {
 		String pred1 = "pred cond(trajSynth,track,route) == trajSynth::TrajectorySynthesizer<calc,params> * calc::SimpleCalculator<minLat,minLon> *" +
 				"params::EngineParameters<latWtOn,verWtOn,angWtOn,speWtOn,latThres,verThres,angThres,speThres,resThres,tsTime> * " + 
 				"track::RouteTrack<lat,lon,alt,speed,heading,mTime,prevFix,nextFix> * prevFix::Fix<lat1,lon1,_> * nextFix::Fix<lat2,lon2,_> * " +
-				"route::Route<fixes> * fixes::LinkedList<_,header,size> * dll(header,size)";// & " +
-//				"latWtOn=0 & verWtOn=0 & angWtOn=0 & speWtOn=0 & latThres=18520.0 & verThres=609.7561 & angThres=0.5 & speThres=100 & resThres=1.0 & tsTime=180000";
+				"route::Route<fixes> * fixes::LinkedList<_,header,size> * dll(header,size) & " +
+				"latWtOn=0 & verWtOn=0 & angWtOn=0 & speWtOn=0 & latThres=18520.0 & verThres=609.7561 & angThres=0.5 & speThres=100 & resThres=1.0 & tsTime=180000";
 		String pred2 = "pred dll(header,size) == header::Entry<_,header,header> & size=0 || header::Entry<_,next,prev> * nndll(next,header,header,prev,size)";
 		String pred3 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<_,header,prev> & prevH=curr & size=1 || curr::Entry<_,next,prev> * nndll(next,curr,header,prevH,size1) & size=size1+1";
 				
@@ -64,15 +64,15 @@ public class Tsafe_tsr3Test extends TestJPF {
 	}
 	
 	private void initPrecondition() {
-		String pre = "pre TS_R_3 == cond(trajSynth,track,route)";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+//		String pre = "pre TS_R_3 == cond(trajSynth,track,route)";
+//		
+//		ANTLRInputStream in = new ANTLRInputStream(pre);
+//		PreconditionLexer lexer = new PreconditionLexer(in);
+//        CommonTokenStream tokens = new CommonTokenStream(lexer);
+//        PreconditionParser parser = new PreconditionParser(tokens);
+//        
+//        Precondition[] ps = parser.pres().ps;
+//        PreconditionMap.put(ps);
 	}
 	
 	@Before
@@ -89,6 +89,7 @@ public class Tsafe_tsr3Test extends TestJPF {
 		if (verifyNoPropertyViolation(
 				"+listener=.star.StarListener",
 				"+star.max_depth=1",
+				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/tsafe",
@@ -96,7 +97,7 @@ public class Tsafe_tsr3Test extends TestJPF {
 				"+star.test_imports=tsafe.LinkedList.Entry;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=tsafe.Driver_TS_R.TS_R_3(sym#sym#sym)",
+				"+symbolic.method=tsafe.Driver_TS_R.repOK(sym#sym#sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Driver_TS_R driver = new Driver_TS_R();
@@ -106,12 +107,7 @@ public class Tsafe_tsr3Test extends TestJPF {
 			TrajectorySynthesizer trajSynth = new TrajectorySynthesizer(calc, params);
 			RouteTrack track = new RouteTrack(new Fix("", 0, 0), new Fix("", 0, 0), 0, 0, 0, 0, 0, 0);
 			Route route = new Route();
-			try {
-				driver.TS_R_3(trajSynth, track, route);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			driver.repOK(trajSynth, track, route);
 		}
 		
 		long end = System.currentTimeMillis();

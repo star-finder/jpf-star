@@ -2,7 +2,6 @@ package gov.nasa.jpf.star;
 
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.star.bytecode.ATHROW;
-import gov.nasa.jpf.star.bytecode.ALOAD;
 import gov.nasa.jpf.star.bytecode.D2F;
 import gov.nasa.jpf.star.bytecode.D2I;
 import gov.nasa.jpf.star.bytecode.D2L;
@@ -15,6 +14,7 @@ import gov.nasa.jpf.star.bytecode.DMUL;
 import gov.nasa.jpf.star.bytecode.DNEG;
 import gov.nasa.jpf.star.bytecode.DREM;
 import gov.nasa.jpf.star.bytecode.DSUB;
+import gov.nasa.jpf.star.bytecode.EXECUTENATIVE;
 import gov.nasa.jpf.star.bytecode.F2D;
 import gov.nasa.jpf.star.bytecode.F2I;
 import gov.nasa.jpf.star.bytecode.F2L;
@@ -27,8 +27,6 @@ import gov.nasa.jpf.star.bytecode.FMUL;
 import gov.nasa.jpf.star.bytecode.FNEG;
 import gov.nasa.jpf.star.bytecode.FREM;
 import gov.nasa.jpf.star.bytecode.FSUB;
-import gov.nasa.jpf.star.bytecode.GETFIELD;
-import gov.nasa.jpf.star.bytecode.GETSTATIC;
 import gov.nasa.jpf.star.bytecode.I2B;
 import gov.nasa.jpf.star.bytecode.I2C;
 import gov.nasa.jpf.star.bytecode.I2D;
@@ -86,9 +84,9 @@ import gov.nasa.jpf.star.bytecode.LSHR;
 import gov.nasa.jpf.star.bytecode.LSUB;
 import gov.nasa.jpf.star.bytecode.LUSHR;
 import gov.nasa.jpf.star.bytecode.LXOR;
-import gov.nasa.jpf.star.bytecode.NEW;
 import gov.nasa.jpf.star.bytecode.TABLESWITCH;
 import gov.nasa.jpf.vm.Instruction;
+import gov.nasa.jpf.vm.NativeMethodInfo;
 
 // to perform symbolic execution, StarInstructionFactory should extend SymbolicInstructionFactory
 // because some instructions from SymbolicInstructionFactory perform initial set up for
@@ -550,6 +548,11 @@ public class StarInstructionFactory extends gov.nasa.jpf.symbc.SymbolicInstructi
 			return new gov.nasa.jpf.jvm.bytecode.NEW(clsName);
 		else
 			return new gov.nasa.jpf.star.bytecode.NEW(clsName);
+	}
+	
+	@Override
+	public Instruction executenative(NativeMethodInfo mi) {
+		return new EXECUTENATIVE(mi);
 	}
 
 }

@@ -35,7 +35,7 @@ class TrajectorySynthesizer {
 //MODI BEGIN
     //private 
 //MODI END
-    EngineCalculator calc;
+	SimpleCalculator calc;
 
     /**
      * Holds synthesis parameters
@@ -46,7 +46,7 @@ class TrajectorySynthesizer {
     EngineParameters params;
 
     /** Sole constructor */
-    public TrajectorySynthesizer(EngineCalculator calc, EngineParameters params) {
+    public TrajectorySynthesizer(SimpleCalculator calc, EngineParameters params) {
         this.calc = calc;
         this.params = params;
     }

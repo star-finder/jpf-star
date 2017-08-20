@@ -96,6 +96,27 @@ public class LinkedList<E>
     extends AbstractSequentialList<E>
     implements List<E>, Deque<E>, Set<E>, Cloneable, java.io.Serializable
 {
+	
+	public boolean repOK() {
+		if (header == null) {
+			return false;
+		}
+		Entry tmp = header;
+		int i = 0;
+		do {
+			if (!tmp.nonNullPointers() || !tmp.repOK()) {
+				return false;
+			}
+			tmp = tmp.next;
+			if (tmp != header) {
+				i++;
+			}
+		} while (tmp != header);
+		tmp = header;
+		return i == size;
+	}
+	
+	
 //MODI BEGIN
 //	private transient Entry<E> header = new Entry<E>(null, null, null, this);
 	transient Entry<E> header = new Entry<E>(null, null, null);

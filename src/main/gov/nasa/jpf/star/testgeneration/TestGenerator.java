@@ -59,6 +59,7 @@ public class TestGenerator {
 		init(test);
 		
 		for (String model : models) {
+			model = model.replaceAll("FLOAT 0.", "0");
 			String[] tmp = model.split(";");
 			
 			model = tmp[0];

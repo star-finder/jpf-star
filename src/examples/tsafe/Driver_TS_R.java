@@ -7,6 +7,64 @@ package tsafe;
  *
  */
 public class Driver_TS_R {	
+	
+	public boolean repOK(TrajectorySynthesizer trajSynth, RouteTrack track, Route route) {
+		return repOK(trajSynth) && repOK(track) && repOK(route);
+	}
+	
+	public boolean repOK(TrajectorySynthesizer trajSynth) {
+		if (trajSynth == null)
+			return false;
+		else if (trajSynth.calc == null)
+			return false;
+		else if (trajSynth.params == null)
+			return false;
+//		else if (trajSynth.params.cmLateralWeightOn != false)
+//			return false;
+//		else if (trajSynth.params.cmVerticalWeightOn != false)
+//			return false;
+//		else if (trajSynth.params.cmAngularWeightOn != false)
+//			return false;
+//		else if (trajSynth.params.cmSpeedWeightOn != false)
+//			return false;
+//		else if (trajSynth.params.cmLateralThreshold != 18520.0)
+//			return false;
+//		else if (trajSynth.params.cmVerticalThreshold != 609.7561)
+//			return false;
+//		else if (trajSynth.params.cmAngularThreshold != 0.5)
+//			return false;
+//		else if (trajSynth.params.cmSpeedThreshold != 100)
+//			return false;
+//		else if (trajSynth.params.cmResidualThreshold != 1.0)
+//			return false;
+//		else if (trajSynth.params.tsTimeHorizon != 180000)
+//			return false;
+		
+		return true;
+	}
+	
+	public boolean repOK(RouteTrack track) {
+		if (track == null)
+			return false;
+		else if (track.prevFix == null)
+			return false;
+		else if (track.nextFix == null)
+			return false;
+		
+		return true;
+	}
+	
+	public boolean repOK(Route route) {
+		if (route == null)
+			return false;
+		else if (route.fixes == null)
+			return false;
+		else if (!route.fixes.repOK())
+			return false;
+		
+		return true;
+	}
+	
 	//Methods to test
 	
 	public void TS_R_3(TrajectorySynthesizer trajSynth, RouteTrack track, Route route) throws Exception {
