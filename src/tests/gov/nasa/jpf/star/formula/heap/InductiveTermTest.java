@@ -10,13 +10,15 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.formula.Formula;
-import gov.nasa.jpf.star.formula.Utilities;
-import gov.nasa.jpf.star.formula.Variable;
-import gov.nasa.jpf.star.predicate.InductivePred;
-import gov.nasa.jpf.star.predicate.InductivePredLexer;
-import gov.nasa.jpf.star.predicate.InductivePredMap;
-import gov.nasa.jpf.star.predicate.InductivePredParser;
+import star.formula.Formula;
+import star.formula.Utilities;
+import star.formula.Variable;
+import star.formula.heap.HeapTerm;
+import star.formula.heap.InductiveTerm;
+import star.predicate.InductivePred;
+import star.predicate.InductivePredLexer;
+import star.predicate.InductivePredMap;
+import star.predicate.InductivePredParser;
 
 public class InductiveTermTest {
 	

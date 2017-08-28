@@ -4,19 +4,19 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.data.DataNode;
-import gov.nasa.jpf.star.data.DataNodeLexer;
-import gov.nasa.jpf.star.data.DataNodeMap;
-import gov.nasa.jpf.star.data.DataNodeParser;
-import gov.nasa.jpf.star.precondition.Precondition;
-import gov.nasa.jpf.star.precondition.PreconditionLexer;
-import gov.nasa.jpf.star.precondition.PreconditionMap;
-import gov.nasa.jpf.star.precondition.PreconditionParser;
-import gov.nasa.jpf.star.predicate.InductivePred;
-import gov.nasa.jpf.star.predicate.InductivePredLexer;
-import gov.nasa.jpf.star.predicate.InductivePredMap;
-import gov.nasa.jpf.star.predicate.InductivePredParser;
 import gov.nasa.jpf.util.test.TestJPF;
+import star.data.DataNode;
+import star.data.DataNodeLexer;
+import star.data.DataNodeMap;
+import star.data.DataNodeParser;
+import star.precondition.Precondition;
+import star.precondition.PreconditionLexer;
+import star.precondition.PreconditionMap;
+import star.precondition.PreconditionParser;
+import star.predicate.InductivePred;
+import star.predicate.InductivePredLexer;
+import star.predicate.InductivePredMap;
+import star.predicate.InductivePredParser;
 
 @SuppressWarnings("deprecation")
 public class Tsafe_repOKTest extends TestJPF {

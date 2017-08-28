@@ -8,9 +8,12 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.formula.heap.HeapTerm;
-import gov.nasa.jpf.star.formula.heap.InductiveTerm;
-import gov.nasa.jpf.star.formula.heap.PointToTerm;
+import star.formula.HeapFormula;
+import star.formula.Utilities;
+import star.formula.Variable;
+import star.formula.heap.HeapTerm;
+import star.formula.heap.InductiveTerm;
+import star.formula.heap.PointToTerm;
 
 public class HeapFormulaTest {
 	

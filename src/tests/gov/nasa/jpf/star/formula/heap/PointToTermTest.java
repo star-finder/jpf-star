@@ -8,8 +8,10 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.formula.Utilities;
-import gov.nasa.jpf.star.formula.Variable;
+import star.formula.Utilities;
+import star.formula.Variable;
+import star.formula.heap.HeapTerm;
+import star.formula.heap.PointToTerm;
 
 public class PointToTermTest {
 	

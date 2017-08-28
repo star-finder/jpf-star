@@ -1,8 +1,8 @@
 package ganttproject;
 
-import gov.nasa.jpf.star.examples.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
+import star.examples.Utilities;
 
 public class DependencyGraph_startTransaction1 extends TestJPF {
 

@@ -8,11 +8,14 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.formula.pure.EqNullTerm;
-import gov.nasa.jpf.star.formula.pure.EqTerm;
-import gov.nasa.jpf.star.formula.pure.NEqNullTerm;
-import gov.nasa.jpf.star.formula.pure.NEqTerm;
-import gov.nasa.jpf.star.formula.pure.PureTerm;
+import star.formula.PureFormula;
+import star.formula.Utilities;
+import star.formula.Variable;
+import star.formula.pure.EqNullTerm;
+import star.formula.pure.EqTerm;
+import star.formula.pure.NEqNullTerm;
+import star.formula.pure.NEqTerm;
+import star.formula.pure.PureTerm;
 
 public class PureFormulaTest {
 	

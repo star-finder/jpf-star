@@ -1,9 +1,10 @@
 package tsafe;
 
 import tsafe.LinkedList.Entry;
-import gov.nasa.jpf.star.examples.Utilities;
+
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
+import star.examples.Utilities;
 
 public class Driver_TS_R_TS_R_31 extends TestJPF {
 

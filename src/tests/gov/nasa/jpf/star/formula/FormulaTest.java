@@ -8,12 +8,17 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.formula.heap.HeapTerm;
-import gov.nasa.jpf.star.formula.heap.InductiveTerm;
-import gov.nasa.jpf.star.formula.heap.PointToTerm;
-import gov.nasa.jpf.star.formula.pure.EqNullTerm;
-import gov.nasa.jpf.star.formula.pure.NEqTerm;
-import gov.nasa.jpf.star.formula.pure.PureTerm;
+import star.formula.Formula;
+import star.formula.HeapFormula;
+import star.formula.PureFormula;
+import star.formula.Utilities;
+import star.formula.Variable;
+import star.formula.heap.HeapTerm;
+import star.formula.heap.InductiveTerm;
+import star.formula.heap.PointToTerm;
+import star.formula.pure.EqNullTerm;
+import star.formula.pure.NEqTerm;
+import star.formula.pure.PureTerm;
 
 public class FormulaTest {
 	

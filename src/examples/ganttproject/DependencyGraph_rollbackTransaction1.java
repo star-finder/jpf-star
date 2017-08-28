@@ -1,9 +1,9 @@
 package ganttproject;
 
-import gov.nasa.jpf.star.examples.Utilities;
 import ganttproject.LinkedListNode.EntryNode;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
+import star.examples.Utilities;
 
 public class DependencyGraph_rollbackTransaction1 extends TestJPF {
 
