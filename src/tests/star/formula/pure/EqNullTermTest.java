@@ -1,6 +1,6 @@
-package gov.nasa.jpf.star.formula.pure;
+package star.formula.pure;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,68 +10,68 @@ import org.junit.Test;
 
 import star.formula.Utilities;
 import star.formula.Variable;
-import star.formula.pure.NEqNullTerm;
+import star.formula.pure.EqNullTerm;
 import star.formula.pure.PureTerm;
 
-public class NEqNullTermTest {
-	
+public class EqNullTermTest {
+
 	@Before
 	public void init() {
 		Utilities.reset();
 	}
-
+	
 	@Test
 	public void testToString() {
 		Variable var = new Variable("x", "");
-		PureTerm neqNull = new NEqNullTerm(var);
+		PureTerm eqNull = new EqNullTerm(var);
 		
-		assertTrue(neqNull.toString().equals("x != null"));
+		assertTrue(eqNull.toString().equals("x = null"));
 	}
 	
 	@Test
 	public void testSubstitute1() {
 		Variable var = new Variable("x", "");
-		PureTerm neqNull1 = new NEqNullTerm(var);
+		PureTerm eqNull1 = new EqNullTerm(var);
 		
 		Variable[] fromVars = {new Variable("x", "")};
 		Variable[] toVars = {new Variable("y", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		PureTerm neqNull2 = neqNull1.substitute(fromVars, toVars, existVarSubMap);
+		PureTerm eqNull2 = eqNull1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(neqNull1.toString().equals("x != null"));
-		assertTrue(neqNull2.toString().equals("y != null"));
+		assertTrue(eqNull1.toString().equals("x = null"));
+		assertTrue(eqNull2.toString().equals("y = null"));
 	}
 	
 	@Test
 	public void testSubstitute2() {
 		Variable var = new Variable("x", "");
-		PureTerm neqNull1 = new NEqNullTerm(var);
+		PureTerm eqNull1 = new EqNullTerm(var);
 		
 		Variable[] fromVars = {new Variable("y", "")};
 		Variable[] toVars = {new Variable("z", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
-		PureTerm neqNull2 = neqNull1.substitute(fromVars, toVars, existVarSubMap);
+		PureTerm eqNull2 = eqNull1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(neqNull1.toString().equals("x != null"));
-		assertTrue(neqNull2.toString().equals("x_1 != null"));
+		assertTrue(eqNull1.toString().equals("x = null"));
+		assertTrue(eqNull2.toString().equals("x_1 = null"));
 	}
 	
 	@Test
 	public void testSubstitute3() {
 		Variable var = new Variable("x", "");
-		PureTerm neqNull1 = new NEqNullTerm(var);
+		PureTerm eqNull1 = new EqNullTerm(var);
 		
 		Variable[] fromVars = {new Variable("y", "")};
 		Variable[] toVars = {new Variable("z", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		existVarSubMap.put("x", "a");
 		
-		PureTerm neqNull2 = neqNull1.substitute(fromVars, toVars, existVarSubMap);
+		PureTerm eqNull2 = eqNull1.substitute(fromVars, toVars, existVarSubMap);
 		
-		assertTrue(neqNull1.toString().equals("x != null"));
-		assertTrue(neqNull2.toString().equals("a != null"));
+		assertTrue(eqNull1.toString().equals("x = null"));
+		assertTrue(eqNull2.toString().equals("a = null"));
 	}
 
 }

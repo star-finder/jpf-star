@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.formula.pure;
+package star.formula.pure;
 
 import static org.junit.Assert.assertTrue;
 

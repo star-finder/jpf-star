@@ -1,4 +1,4 @@
-package gov.nasa.jpf.star.inductive;
+package star.inductive;
 
 import static org.junit.Assert.assertTrue;
 
