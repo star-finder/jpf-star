@@ -73,6 +73,19 @@ public class MyLinkedList {
 	public MyLinkedListItr first() {
 		return new MyLinkedListItr(this._header._next);
 	}
+	
+	public boolean repOKIns(MyLinkedListItr p) {
+		if (!this.repOK())
+			return false;
+		else if (p == null)
+			return true;
+		else if (p._current == null)
+			return true;
+		else if (p._current._element != null && p._current._next == null)
+			return true;
+		
+		return false;
+	}
 
 	// Inserts element anywhere in list just after current
 	public void insert(Object x, MyLinkedListItr p) {

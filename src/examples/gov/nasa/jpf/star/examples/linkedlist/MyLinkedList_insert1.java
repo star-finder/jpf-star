@@ -18,6 +18,7 @@ public class MyLinkedList_insert1 extends TestJPF {
 		obj._header._element = element;
 		obj._header._next = next;
 		System.out.println(Utilities.repOK(obj));
+		System.out.println(obj.repOKIns(p));
 		obj.insert(x,p);
 	}
 
@@ -35,6 +36,7 @@ public class MyLinkedList_insert1 extends TestJPF {
 		obj._header._next = next;
 		p._current = current_1;
 		System.out.println(Utilities.repOK(obj));
+		System.out.println(obj.repOKIns(p));
 		obj.insert(x,p);
 	}
 
@@ -56,6 +58,7 @@ public class MyLinkedList_insert1 extends TestJPF {
 		current_1._element = element_2;
 		current_1._next = next_3;
 		System.out.println(Utilities.repOK(obj));
+		System.out.println(obj.repOKIns(p));
 		obj.insert(x,p);
 	}
 
