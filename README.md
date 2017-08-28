@@ -18,6 +18,8 @@ It will generate test files that end with 1.java.
 Note that you also need the solver S2SAT to run the examples. You should contact the authors of S2SAT to get the instructions
 how to compile and run the solver.
 
+The author of S2SAT can be contacted via email: lequangloc@gmail.com
+
 ### Who do I talk to? ###
 
 You can contact repo admin if you have any questions.
