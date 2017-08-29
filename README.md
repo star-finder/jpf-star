@@ -12,7 +12,7 @@ Version 1.0
 To run Java StarFinder you need Java PathFinder and Symbolic PathFinder. Go to Java PathFinder website then install the packages
 jpf-core and jpf-symbc. After that, pull this repo and configure similar to jpf-symbc.
 
-You can try some examples in gov/nasa/jpf/star/examples. Choose the files that end with Test.java and run it.
+You can try some examples in star/examples. Choose the files that end with Test.java and run it.
 It will generate test files that end with 1.java.
 
 Note that you also need the solver S2SAT to run the examples. You should contact the authors of S2SAT to get the instructions
