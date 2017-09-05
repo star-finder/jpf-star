@@ -4,7 +4,6 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.star.examples.rbt.TreeMap;
 import gov.nasa.jpf.util.test.TestJPF;
 import star.data.DataNode;
 import star.data.DataNodeLexer;
