@@ -195,6 +195,16 @@
         description="generate the ${ant.project.name} jar files" >
   </target>
 
+  <!-- Target #1. Set property value depends on check result -->
+  <target name="check-dir">
+    <available property="tmp.dir" file="build/tmp" type="dir"/>
+  </target>
+ 
+  <!-- target #2. Create dir 'tmp' if doesn't exist -->
+  <target name="create-tmp-dir" depends="check-dir" unless="tmp.dir">
+    <mkdir dir="build/tmp"/>
+  </target>
+
   <target name="-jar-jvm" if="have_jvm_code">
     <jar jarfile="build/${ant.project.name}.jar" whenmanifestonly="skip">
       <fileset dir="build/main" erroronmissingdir="false"/>

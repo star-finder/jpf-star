@@ -83,7 +83,7 @@ public class Avl_minElementTest extends TestJPF {
 				"+star.max_depth=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/avl",
+				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples/avl",
 				"+star.test_package=gov.nasa.jpf.star.examples.avl",
 				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 

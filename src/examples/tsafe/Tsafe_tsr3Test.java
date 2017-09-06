@@ -91,7 +91,7 @@ public class Tsafe_tsr3Test extends TestJPF {
 				"+star.max_depth=1",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/tsafe",
+				"+star.test_path=build/tmp/tsafe",
 				"+star.test_package=tsafe",
 				"+star.test_imports=tsafe.LinkedList.Entry;gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples", 

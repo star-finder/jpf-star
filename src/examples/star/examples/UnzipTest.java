@@ -73,12 +73,12 @@ public class UnzipTest extends TestJPF {
 				"+star.max_depth=4",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/gov/nasa/jpf/star/examples/",
-				"+star.test_package=gov.nasa.jpf.star.examples",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_path=build/tmp",
+				"+star.test_package=star.examples",
+				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.Unzip.unzip(sym#sym)",
+				"+symbolic.method=star.examples.Unzip.unzip(sym#sym)",
 //				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Unzip obj = new Unzip();

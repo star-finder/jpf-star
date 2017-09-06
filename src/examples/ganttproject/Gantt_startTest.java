@@ -76,7 +76,7 @@ public class Gantt_startTest extends TestJPF {
 				"+star.max_depth=1",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples/ganttproject",
+				"+star.test_path=build/tmp/ganttproject",
 				"+star.test_package=ganttproject",
 				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 

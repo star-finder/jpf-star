@@ -74,12 +74,12 @@ public class MyClassTest extends TestJPF {
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
+				"+star.test_path=build/tmp",
 //				"+star.test_package",
 //				"+star.test_imports",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod(sym)",
+				"+symbolic.method = star.examples.MyClass.myMethod(sym)",
 //				"+symbolic.fields = instance,static",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
@@ -106,7 +106,7 @@ public class MyClassTest extends TestJPF {
 				"+listener=star.StarListener",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",
+				"+star.test_path=build/tmp",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod2(sym#sym)",
