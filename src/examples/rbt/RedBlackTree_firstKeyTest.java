@@ -88,7 +88,7 @@ public class RedBlackTree_firstKeyTest extends TestJPF {
 				"+star.test_imports=star.examples.rbt.TreeMap.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.rbt.TreeMap.firstKey()",
+				"+symbolic.method=rbt.TreeMap.firstKey()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			TreeMap tree = new TreeMap();

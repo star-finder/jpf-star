@@ -82,7 +82,7 @@ public class Tll_repOKTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.tll.Tll.repOK()",
+				"+symbolic.method=tll.Tll.repOK()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Tll tll = new Tll();

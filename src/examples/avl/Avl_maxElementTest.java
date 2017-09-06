@@ -88,7 +88,7 @@ public class Avl_maxElementTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.maxElement(sym)",
+				"+symbolic.method=avl.AvlTree.maxElement(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

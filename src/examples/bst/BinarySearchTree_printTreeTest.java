@@ -83,7 +83,7 @@ public class BinarySearchTree_printTreeTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.bst.BinarySearchTree.printTree()",
+				"+symbolic.method=bst.BinarySearchTree.printTree()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			BinarySearchTree tree = new BinarySearchTree();

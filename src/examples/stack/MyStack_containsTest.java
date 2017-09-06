@@ -78,7 +78,7 @@ public class MyStack_containsTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.stack.StackLi.contains(sym)",
+				"+symbolic.method=stack.StackLi.contains(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();

@@ -99,7 +99,7 @@ public class DoubleLinkedList_mainTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.Main.sample(sym#sym)",
+				"+symbolic.method=doublelinkedlist.Main.sample(sym#sym)",
 //				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Main m = new Main();

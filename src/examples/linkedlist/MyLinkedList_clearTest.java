@@ -78,7 +78,7 @@ public class MyLinkedList_clearTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.linkedlist.MyLinkedList.clear()",
+				"+symbolic.method=linkedlist.MyLinkedList.clear()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			MyLinkedList list = new MyLinkedList();

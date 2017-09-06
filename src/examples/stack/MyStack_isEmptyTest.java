@@ -78,7 +78,7 @@ public class MyStack_isEmptyTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.stack.StackLi.isEmpty()",
+				"+symbolic.method=stack.StackLi.isEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();

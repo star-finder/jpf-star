@@ -88,7 +88,7 @@ public class Avl_printTreeTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.printTree()",
+				"+symbolic.method=avl.AvlTree.printTree()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

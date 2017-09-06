@@ -89,7 +89,7 @@ public class AATree_containsTest extends TestJPF {
 				"+star.test_imports=star.examples.aatree.AATree.AANode;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.aatree.AATree.contains(sym)",
+				"+symbolic.method=aatree.AATree.contains(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AATree tree = new AATree();

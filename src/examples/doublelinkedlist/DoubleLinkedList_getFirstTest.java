@@ -83,7 +83,7 @@ public class DoubleLinkedList_getFirstTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.getFirst()",
+				"+symbolic.method=doublelinkedlist.DoubleLinkedList.getFirst()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

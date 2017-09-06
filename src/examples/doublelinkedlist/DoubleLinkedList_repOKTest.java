@@ -84,7 +84,7 @@ public class DoubleLinkedList_repOKTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.repOK()",
+				"+symbolic.method=doublelinkedlist.DoubleLinkedList.repOK()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

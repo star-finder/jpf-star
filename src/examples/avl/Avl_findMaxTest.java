@@ -88,7 +88,7 @@ public class Avl_findMaxTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.findMax()",
+				"+symbolic.method=avl.AvlTree.findMax()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

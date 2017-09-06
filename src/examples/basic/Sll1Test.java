@@ -77,7 +77,7 @@ public class Sll1Test extends TestJPF {
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.Sll1.myMethod(sym)",
+				"+symbolic.method=basic.Sll1.myMethod(sym)",
 				"+symbolic.lazy=true"
 				)) {
 			Sll1 sll = new Sll1();

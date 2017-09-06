@@ -79,7 +79,7 @@ public class MyLinkedList_repOKInsertTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.linkedlist.MyLinkedList.repOKIns(sym)",
+				"+symbolic.method=linkedlist.MyLinkedList.repOKIns(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			MyLinkedList list = new MyLinkedList();

@@ -83,7 +83,7 @@ public class DoubleLinkedList_cloneTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.clone()",
+				"+symbolic.method=doublelinkedlist.DoubleLinkedList.clone()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

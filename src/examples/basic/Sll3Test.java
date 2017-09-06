@@ -77,7 +77,7 @@ public class Sll3Test extends TestJPF {
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.Sll3.myMethod()",
+				"+symbolic.method=basic.Sll3.myMethod()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Sll3.main(null);

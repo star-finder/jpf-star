@@ -84,7 +84,7 @@ public class DoubleLinkedList_inListTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.inList(sym)",
+				"+symbolic.method=doublelinkedlist.DoubleLinkedList.inList(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

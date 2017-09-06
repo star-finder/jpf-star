@@ -85,7 +85,7 @@ public class RedBlackTree_repOKTest extends TestJPF {
 				"+star.test_imports=star.examples.rbt.TreeMap.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.rbt.TreeMap.repOK()",
+				"+symbolic.method=rbt.TreeMap.repOK()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			TreeMap tree = new TreeMap();

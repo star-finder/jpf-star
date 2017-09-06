@@ -89,7 +89,7 @@ public class AATree_makeEmptyTest extends TestJPF {
 				"+star.test_imports=star.examples.aatree.AATree.AANode;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.aatree.AATree.makeEmpty()",
+				"+symbolic.method=aatree.AATree.makeEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AATree tree = new AATree();

@@ -78,7 +78,7 @@ public class MyStack_isFullTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.stack.StackLi.isFull()",
+				"+symbolic.method=stack.StackLi.isFull()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();

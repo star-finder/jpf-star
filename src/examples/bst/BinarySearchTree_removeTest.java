@@ -83,7 +83,7 @@ public class BinarySearchTree_removeTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.bst.BinarySearchTree.remove(sym)",
+				"+symbolic.method=bst.BinarySearchTree.remove(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			BinarySearchTree tree = new BinarySearchTree();

@@ -83,7 +83,7 @@ public class DoubleLinkedList_containsTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.contains(sym)",
+				"+symbolic.method=doublelinkedlist.DoubleLinkedList.contains(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

@@ -78,7 +78,7 @@ public class MyLinkedList_isEmptyTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.linkedlist.MyLinkedList.isEmpty()",
+				"+symbolic.method=linkedlist.MyLinkedList.isEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			MyLinkedList list = new MyLinkedList();

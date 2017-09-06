@@ -90,7 +90,7 @@ public class AATree_wellFormedTest extends TestJPF {
 				"+star.test_imports=star.examples.aatree.AATree.AANode;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.aatree.AATree.wellFormed()",
+				"+symbolic.method=aatree.AATree.wellFormed()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AATree tree = new AATree();

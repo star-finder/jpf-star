@@ -88,7 +88,7 @@ public class Avl_findMinTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.findMin()",
+				"+symbolic.method=avl.AvlTree.findMin()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

@@ -78,7 +78,7 @@ public class MyStack_pushTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.stack.StackLi.push(sym)",
+				"+symbolic.method=stack.StackLi.push(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();

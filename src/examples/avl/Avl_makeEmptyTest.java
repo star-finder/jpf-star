@@ -88,7 +88,7 @@ public class Avl_makeEmptyTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.makeEmpty()",
+				"+symbolic.method=avl.AvlTree.makeEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

@@ -88,7 +88,7 @@ public class RedBlackTree_containsKeyTest extends TestJPF {
 				"+star.test_imports=star.examples.rbt.TreeMap.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.rbt.TreeMap.containsKey(sym)",
+				"+symbolic.method=rbt.TreeMap.containsKey(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			TreeMap tree = new TreeMap();

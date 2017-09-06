@@ -78,7 +78,7 @@ public class MyLinkedList_findPreviousTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.linkedlist.MyLinkedList.findPrevious(sym)",
+				"+symbolic.method=linkedlist.MyLinkedList.findPrevious(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			MyLinkedList list = new MyLinkedList();

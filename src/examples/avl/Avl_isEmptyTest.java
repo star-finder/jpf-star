@@ -88,7 +88,7 @@ public class Avl_isEmptyTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.isEmpty()",
+				"+symbolic.method=avl.AvlTree.isEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

@@ -74,12 +74,12 @@ public class MyClassTest extends TestJPF {
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=build/tmp",
+				"+star.test_path=build/tmp/basic",
 //				"+star.test_package",
 //				"+star.test_imports",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = star.examples.MyClass.myMethod(sym)",
+				"+symbolic.method = basic.MyClass.myMethod(sym)",
 //				"+symbolic.fields = instance,static",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
@@ -93,7 +93,7 @@ public class MyClassTest extends TestJPF {
 				"+listener=star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod1(sym#sym)",
+				"+symbolic.method = basic.MyClass.myMethod1(sym#sym)",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}
@@ -109,7 +109,7 @@ public class MyClassTest extends TestJPF {
 				"+star.test_path=build/tmp",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method = MyClass.myMethod2(sym#sym)",
+				"+symbolic.method = basic.MyClass.myMethod2(sym#sym)",
 				"+symbolic.lazy=true")) {
 			MyClass.main(null);
 		}

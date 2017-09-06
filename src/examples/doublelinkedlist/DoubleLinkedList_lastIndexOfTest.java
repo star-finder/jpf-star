@@ -83,7 +83,7 @@ public class DoubleLinkedList_lastIndexOfTest extends TestJPF {
 				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.lastIndexOf(sym)",
+				"+symbolic.method=doublelinkedlist.DoubleLinkedList.lastIndexOf(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

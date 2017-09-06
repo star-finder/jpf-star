@@ -88,7 +88,7 @@ public class Avl_minElementTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.avl.AvlTree.minElement(sym)",
+				"+symbolic.method=avl.AvlTree.minElement(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

@@ -81,7 +81,7 @@ public class Tll_countTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.tll.Tll.positiveLeafCount()",
+				"+symbolic.method=tll.Tll.positiveLeafCount()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Tll tll = new Tll();

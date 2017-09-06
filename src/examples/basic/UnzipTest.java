@@ -78,7 +78,7 @@ public class UnzipTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.Unzip.unzip(sym#sym)",
+				"+symbolic.method=basic.Unzip.unzip(sym#sym)",
 //				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			Unzip obj = new Unzip();

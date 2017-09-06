@@ -78,7 +78,7 @@ public class MyStack_topAndPopTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.stack.StackLi.topAndPop()",
+				"+symbolic.method=stack.StackLi.topAndPop()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();

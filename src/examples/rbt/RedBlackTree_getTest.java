@@ -88,7 +88,7 @@ public class RedBlackTree_getTest extends TestJPF {
 				"+star.test_imports=star.examples.rbt.TreeMap.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.rbt.TreeMap.get(sym)",
+				"+symbolic.method=rbt.TreeMap.get(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			TreeMap tree = new TreeMap();

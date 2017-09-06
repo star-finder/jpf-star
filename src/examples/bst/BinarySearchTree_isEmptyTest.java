@@ -83,7 +83,7 @@ public class BinarySearchTree_isEmptyTest extends TestJPF {
 				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=star.examples.bst.BinarySearchTree.isEmpty()",
+				"+symbolic.method=bst.BinarySearchTree.isEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			BinarySearchTree tree = new BinarySearchTree();
