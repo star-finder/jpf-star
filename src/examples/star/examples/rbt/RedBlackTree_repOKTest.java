@@ -81,11 +81,11 @@ public class RedBlackTree_repOKTest extends TestJPF {
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples/rbt",
-				"+star.test_package=gov.nasa.jpf.star.examples.rbt",
-				"+star.test_imports=gov.nasa.jpf.star.examples.rbt.TreeMap.Entry;gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_package=star.examples.rbt",
+				"+star.test_imports=star.examples.rbt.TreeMap.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.rbt.TreeMap.repOK()",
+				"+symbolic.method=star.examples.rbt.TreeMap.repOK()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			TreeMap tree = new TreeMap();

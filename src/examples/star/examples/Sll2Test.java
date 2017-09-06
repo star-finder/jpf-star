@@ -73,11 +73,11 @@ public class Sll2Test extends TestJPF {
 //				"+star.max_int=100",
 //				"+star.lazy=false",
 				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples",
-				"+star.test_package=gov.nasa.jpf.star.examples",
+				"+star.test_package=star.examples",
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.Sll2.myMethod(sym)",
+				"+symbolic.method=star.examples.Sll2.myMethod(sym)",
 				"+symbolic.lazy=true")) {
 			Sll2.main(null);
 		}

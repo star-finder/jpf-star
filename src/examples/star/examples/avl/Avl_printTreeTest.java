@@ -84,11 +84,11 @@ public class Avl_printTreeTest extends TestJPF {
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples/avl",
-				"+star.test_package=gov.nasa.jpf.star.examples.avl",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_package=star.examples.avl",
+				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.avl.AvlTree.printTree()",
+				"+symbolic.method=star.examples.avl.AvlTree.printTree()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AvlTree tree = new AvlTree();

@@ -74,11 +74,11 @@ public class MyStack_popTest extends TestJPF {
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples/stack",
-				"+star.test_package=gov.nasa.jpf.star.examples.stack",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_package=star.examples.stack",
+				"+star.test_imports=star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.stack.StackLi.pop()",
+				"+symbolic.method=star.examples.stack.StackLi.pop()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			StackLi stack = new StackLi();

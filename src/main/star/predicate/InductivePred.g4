@@ -1,12 +1,12 @@
 grammar InductivePred;
 
 @header {
-package gov.nasa.jpf.star.predicate;
+package star.predicate;
 
-import gov.nasa.jpf.star.formula.*;
-import gov.nasa.jpf.star.formula.heap.*;
-import gov.nasa.jpf.star.formula.pure.*;
-import gov.nasa.jpf.star.formula.expression.*;
+import star.formula.*;
+import star.formula.heap.*;
+import star.formula.pure.*;
+import star.formula.expression.*;
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.symbc.numeric.Operator;
 }

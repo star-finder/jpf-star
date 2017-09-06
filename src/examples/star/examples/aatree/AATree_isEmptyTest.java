@@ -85,11 +85,11 @@ public class AATree_isEmptyTest extends TestJPF {
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples/aatree",
-				"+star.test_package=gov.nasa.jpf.star.examples.aatree",
-				"+star.test_imports=gov.nasa.jpf.star.examples.aatree.AATree.AANode;gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_package=star.examples.aatree",
+				"+star.test_imports=star.examples.aatree.AATree.AANode;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.aatree.AATree.isEmpty()",
+				"+symbolic.method=star.examples.aatree.AATree.isEmpty()",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			AATree tree = new AATree();

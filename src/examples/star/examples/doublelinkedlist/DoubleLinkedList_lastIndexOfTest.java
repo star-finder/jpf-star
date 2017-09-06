@@ -79,11 +79,11 @@ public class DoubleLinkedList_lastIndexOfTest extends TestJPF {
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/gov/nasa/jpf/star/examples/doublelinkedlist",
-				"+star.test_package=gov.nasa.jpf.star.examples.doublelinkedlist",
-				"+star.test_imports=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.Entry;gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_package=star.examples.doublelinkedlist",
+				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
-				"+symbolic.method=gov.nasa.jpf.star.examples.doublelinkedlist.DoubleLinkedList.lastIndexOf(sym)",
+				"+symbolic.method=star.examples.doublelinkedlist.DoubleLinkedList.lastIndexOf(sym)",
 				"+symbolic.fields=instance",
 				"+symbolic.lazy=true")) {
 			DoubleLinkedList list = new DoubleLinkedList();

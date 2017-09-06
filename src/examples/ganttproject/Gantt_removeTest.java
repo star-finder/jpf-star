@@ -119,7 +119,7 @@ public class Gantt_removeTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/ganttproject",
 				"+star.test_package=ganttproject",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities;ganttproject.LinkedList.Entry;",
+				"+star.test_imports=star.examples.Utilities;ganttproject.LinkedList.Entry;",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=ganttproject.DependencyGraph.removeImplicitDependencies(sym)",

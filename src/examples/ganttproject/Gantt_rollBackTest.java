@@ -88,7 +88,7 @@ public class Gantt_rollBackTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/ganttproject",
 				"+star.test_package=ganttproject",
-				"+star.test_imports=gov.nasa.jpf.star.examples.Utilities;ganttproject.LinkedListNode.EntryNode;",
+				"+star.test_imports=star.examples.Utilities;ganttproject.LinkedListNode.EntryNode;",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=ganttproject.DependencyGraph.rollbackTransaction()",

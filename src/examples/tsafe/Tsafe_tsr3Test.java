@@ -93,7 +93,7 @@ public class Tsafe_tsr3Test extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/tsafe",
 				"+star.test_package=tsafe",
-				"+star.test_imports=tsafe.LinkedList.Entry;gov.nasa.jpf.star.examples.Utilities",
+				"+star.test_imports=tsafe.LinkedList.Entry;star.examples.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=tsafe.Driver_TS_R.TS_R_3(sym#sym#sym)",

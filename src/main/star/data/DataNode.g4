@@ -1,9 +1,9 @@
 grammar DataNode;
 
 @header {
-package gov.nasa.jpf.star.data;
+package star.data;
 
-import gov.nasa.jpf.star.formula.*;
+import star.formula.*;
 }
 
 // parser
