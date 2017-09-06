@@ -1,8 +1,9 @@
 package ganttproject;
 
 import org.junit.Test;
+
+import basic.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
-import star.examples.Utilities;
 
 public class DependencyGraph_repOK4Steps extends TestJPF {
 
