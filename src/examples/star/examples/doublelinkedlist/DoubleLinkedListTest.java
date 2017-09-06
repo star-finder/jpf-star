@@ -1,7 +1,5 @@
 package star.examples.doublelinkedlist;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import star.examples.doublelinkedlist.DoubleLinkedList.Entry;

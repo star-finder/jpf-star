@@ -80,7 +80,7 @@ public class AATree_wellFormedTest extends TestJPF {
 		long begin = System.currentTimeMillis();
 		
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+star.max_depth=9",
 				"+star.lazy=true",
 //				"+star.min_int=-100",

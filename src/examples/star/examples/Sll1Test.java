@@ -67,7 +67,7 @@ public class Sll1Test extends TestJPF {
 	@Test
 	public void testMain() {
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

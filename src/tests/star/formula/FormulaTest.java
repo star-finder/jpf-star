@@ -8,11 +8,6 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import star.formula.Formula;
-import star.formula.HeapFormula;
-import star.formula.PureFormula;
-import star.formula.Utilities;
-import star.formula.Variable;
 import star.formula.heap.HeapTerm;
 import star.formula.heap.InductiveTerm;
 import star.formula.heap.PointToTerm;

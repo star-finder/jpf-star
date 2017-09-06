@@ -70,7 +70,7 @@ public class MyClassTest extends TestJPF {
 	public void testMain() {
 		if (verifyNoPropertyViolation(
 //				"+listener=.symbc.SymbolicListener",
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 //				"+star.max_len_pc=6",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
@@ -90,7 +90,7 @@ public class MyClassTest extends TestJPF {
 	public void testMain1() {
 		if (verifyNoPropertyViolation(
 //				"+listener=.symbc.SymbolicListener",
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method = MyClass.myMethod1(sym#sym)",
@@ -103,7 +103,7 @@ public class MyClassTest extends TestJPF {
 	public void testMain2() {
 		if (verifyNoPropertyViolation(
 //				"+listener=.symbc.SymbolicListener",
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=/Users/HongLongPham/Workspace/JPF_HOME/jpf-star/src/examples",

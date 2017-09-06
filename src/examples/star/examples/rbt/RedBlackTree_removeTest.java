@@ -79,7 +79,7 @@ public class RedBlackTree_removeTest extends TestJPF {
 		long begin = System.currentTimeMillis();
 		
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+star.max_depth=9",
 				"+star.max_time=3",
 //				"+star.min_int=-100",

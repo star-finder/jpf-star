@@ -79,7 +79,7 @@ public class Avl_repOKTest extends TestJPF {
 		long begin = System.currentTimeMillis();
 		
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+star.max_depth=5",
 				"+star.lazy=true",
 //				"+star.min_int=-100",

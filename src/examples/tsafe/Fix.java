@@ -19,8 +19,6 @@
 
 package tsafe;
 
-import java.util.*;
-
 /**
  * Represents a airpace fix, airport, or navaid.
  * This is an immutable data structure

@@ -9,10 +9,6 @@ import star.data.DataNode;
 import star.data.DataNodeLexer;
 import star.data.DataNodeMap;
 import star.data.DataNodeParser;
-import star.precondition.Precondition;
-import star.precondition.PreconditionLexer;
-import star.precondition.PreconditionMap;
-import star.precondition.PreconditionParser;
 import star.predicate.InductivePred;
 import star.predicate.InductivePredLexer;
 import star.predicate.InductivePredMap;
@@ -87,7 +83,7 @@ public class Tsafe_repOKTest extends TestJPF {
 		long begin = System.currentTimeMillis();
 		
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+star.max_depth=1",
 				"+star.lazy=true",
 //				"+star.min_int=-100",

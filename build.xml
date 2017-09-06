@@ -21,6 +21,7 @@
     NOTE: this file is local - it is never in the repository!
   -->
   <property file="local.properties"/>
+  <property environment="env"/>
 
   <!-- this is where we get the 'jpf.core' location from -->
   <property file="${user.home}/.jpf/site.properties"/>
@@ -97,6 +98,11 @@
       </or>
     </condition>
 
+	  <fail unless="env.JUNIT_HOME">
+		  The JUNIT_HOME environment variable must be set. 
+	  </fail>		  
+	  <!-- note this can be directly set in local.properties, which overrides this setting -->
+	  <property name="junit.home" value="${env.JUNIT_HOME}"/>
 
     <!-- optionally set the required artifacts here
     <fail unless="have_main">no src/main</fail>
@@ -156,6 +162,9 @@
            includes="*,gov/nasa/jpf/test/**">
       <classpath>
         <path refid="lib.path"/>
+	<fileset dir="${junit.home}">
+		<include name="**/*.jar"/>
+	</fileset> 
         <pathelement location="build/annotations"/>
         <pathelement location="build/classes"/>
       </classpath>
@@ -168,6 +177,9 @@
            debug="${debug}" source="${src_level}" deprecation="${deprecation}">
       <classpath>
         <path refid="lib.path"/>
+	<fileset dir="${junit.home}">
+		<include name="**/*.jar"/>
+	</fileset> 
         <pathelement location="build/annotations"/>
       </classpath>
     </javac>             

@@ -80,7 +80,7 @@ public class AATree_findMaxTest extends TestJPF {
 		long begin = System.currentTimeMillis();
 		
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+star.max_depth=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

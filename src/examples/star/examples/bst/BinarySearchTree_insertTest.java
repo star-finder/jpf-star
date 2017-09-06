@@ -74,7 +74,7 @@ public class BinarySearchTree_insertTest extends TestJPF {
 		long begin = System.currentTimeMillis();
 		
 		if (verifyNoPropertyViolation(
-				"+listener=.star.StarListener",
+				"+listener=star.StarListener",
 				"+star.max_depth=2",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
