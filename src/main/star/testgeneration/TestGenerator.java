@@ -1,5 +1,6 @@
 package star.testgeneration;
 
+import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -220,6 +221,18 @@ public class TestGenerator {
 	private static void writeToFile(StringBuffer test) {
 		String fileName = ci.getSimpleName() + "_" + mi.getName() + "1.java";
 		String path = conf.getProperty("star.test_path");
+		
+		// create the directory if it does not exist
+		try {
+			File dir = new File(path);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			} else{
+				// FileUtils.cleanDirectory(dir);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		try {
 			PrintWriter pw = new PrintWriter(path + "/" + fileName, "UTF-8");
