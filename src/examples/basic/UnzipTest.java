@@ -75,7 +75,7 @@ public class UnzipTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp",
 				"+star.test_package=star.examples",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=basic.Unzip.unzip(sym#sym)",

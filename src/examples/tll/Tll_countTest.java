@@ -78,7 +78,7 @@ public class Tll_countTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/tll",
 				"+star.test_package=star.examples.tll",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=tll.Tll.positiveLeafCount()",

@@ -2,7 +2,7 @@ package linkedlist;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class MyLinkedList_printList3Steps extends TestJPF {

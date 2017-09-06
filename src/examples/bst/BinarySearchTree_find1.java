@@ -2,7 +2,7 @@ package bst;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class BinarySearchTree_find1 extends TestJPF {

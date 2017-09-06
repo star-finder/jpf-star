@@ -3,7 +3,7 @@ package aatree;
 import org.junit.Test;
 
 import aatree.AATree.AANode;
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class AATree_wellFormed3Steps extends TestJPF {

@@ -2,7 +2,7 @@ package stack;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class StackLi_isAcyclic2Steps extends TestJPF {

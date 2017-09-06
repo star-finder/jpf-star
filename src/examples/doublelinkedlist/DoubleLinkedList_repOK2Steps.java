@@ -2,7 +2,7 @@ package doublelinkedlist;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import doublelinkedlist.DoubleLinkedList.Entry;
 import gov.nasa.jpf.util.test.TestJPF;
 

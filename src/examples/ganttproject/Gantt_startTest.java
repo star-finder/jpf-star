@@ -78,7 +78,7 @@ public class Gantt_startTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/ganttproject",
 				"+star.test_package=ganttproject",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=ganttproject.DependencyGraph.startTransaction()",

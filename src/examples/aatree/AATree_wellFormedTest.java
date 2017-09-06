@@ -87,7 +87,7 @@ public class AATree_wellFormedTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/aatree",
 				"+star.test_package=star.examples.aatree",
-				"+star.test_imports=star.examples.aatree.AATree.AANode;star.examples.Utilities",
+				"+star.test_imports=star.examples.aatree.AATree.AANode;common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=aatree.AATree.wellFormed()",

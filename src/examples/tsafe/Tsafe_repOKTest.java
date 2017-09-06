@@ -90,7 +90,7 @@ public class Tsafe_repOKTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/tsafe",
 				"+star.test_package=tsafe",
-				"+star.test_imports=tsafe.LinkedList.Entry;star.examples.Utilities",
+				"+star.test_imports=tsafe.LinkedList.Entry;common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=tsafe.Driver_TS_R.repOK(sym#sym#sym)",

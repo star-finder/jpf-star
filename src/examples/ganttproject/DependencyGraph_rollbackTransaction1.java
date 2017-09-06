@@ -3,7 +3,7 @@ package ganttproject;
 import ganttproject.LinkedListNode.EntryNode;
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class DependencyGraph_rollbackTransaction1 extends TestJPF {

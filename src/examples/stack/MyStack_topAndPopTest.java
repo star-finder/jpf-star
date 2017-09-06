@@ -75,7 +75,7 @@ public class MyStack_topAndPopTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/stack",
 				"+star.test_package=star.examples.stack",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=stack.StackLi.topAndPop()",

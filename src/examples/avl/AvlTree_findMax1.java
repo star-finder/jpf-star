@@ -2,7 +2,7 @@ package avl;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class AvlTree_findMax1 extends TestJPF {

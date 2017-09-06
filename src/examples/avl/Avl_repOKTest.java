@@ -86,7 +86,7 @@ public class Avl_repOKTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/avl",
 				"+star.test_package=star.examples.avl",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=avl.AvlTree.repOK()",

@@ -77,7 +77,7 @@ public class BinarySearchTree_findTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/bst",
 				"+star.test_package=star.examples.bst",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=bst.BinarySearchTree.find(sym)",

@@ -4,7 +4,7 @@ import tsafe.LinkedList.Entry;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class Driver_TS_R_TS_R_31 extends TestJPF {

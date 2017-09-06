@@ -2,7 +2,7 @@ package tll;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class Tll_positiveLeafCount1 extends TestJPF {

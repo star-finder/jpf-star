@@ -2,7 +2,7 @@ package basic;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 
 public class Unzip_unzip1 extends TestJPF {

@@ -85,7 +85,7 @@ public class RedBlackTree_containsValueTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/rbt",
 				"+star.test_package=star.examples.rbt",
-				"+star.test_imports=star.examples.rbt.TreeMap.Entry;star.examples.Utilities",
+				"+star.test_imports=star.examples.rbt.TreeMap.Entry;common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=rbt.TreeMap.containsValue(sym)",

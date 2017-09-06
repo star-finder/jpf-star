@@ -2,7 +2,7 @@ package rbt;
 
 import org.junit.Test;
 
-import basic.Utilities;
+import common.Utilities;
 import gov.nasa.jpf.util.test.TestJPF;
 import rbt.TreeMap;
 import rbt.TreeMap.Entry;

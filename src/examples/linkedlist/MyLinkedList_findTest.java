@@ -75,7 +75,7 @@ public class MyLinkedList_findTest extends TestJPF {
 //				"+star.max_int=100",
 				"+star.test_path=build/tmp/linkedlist",
 				"+star.test_package=star.examples.linkedlist",
-				"+star.test_imports=star.examples.Utilities",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=linkedlist.MyLinkedList.find(sym)",
