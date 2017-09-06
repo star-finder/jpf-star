@@ -98,12 +98,11 @@
       </or>
     </condition>
 
-	  <fail unless="env.JUNIT_HOME">
+<!--	  <fail unless="env.JUNIT_HOME">
 		  The JUNIT_HOME environment variable must be set. 
 	  </fail>		  
-	  <!-- note this can be directly set in local.properties, which overrides this setting -->
 	  <property name="junit.home" value="${env.JUNIT_HOME}"/>
-
+-->
     <!-- optionally set the required artifacts here
     <fail unless="have_main">no src/main</fail>
     <fail unless="have_annotations">no src/annotations</fail>
@@ -161,10 +160,11 @@
            debug="${debug}" source="${src_level}" deprecation="${deprecation}"
            includes="*,gov/nasa/jpf/test/**">
       <classpath>
-        <path refid="lib.path"/>
+<!--        <path refid="lib.path"/>
 	<fileset dir="${junit.home}">
 		<include name="**/*.jar"/>
 	</fileset> 
+-->
         <pathelement location="build/annotations"/>
         <pathelement location="build/classes"/>
       </classpath>
@@ -177,9 +177,11 @@
            debug="${debug}" source="${src_level}" deprecation="${deprecation}">
       <classpath>
         <path refid="lib.path"/>
+<!--
 	<fileset dir="${junit.home}">
 		<include name="**/*.jar"/>
 	</fileset> 
+-->
         <pathelement location="build/annotations"/>
       </classpath>
     </javac>             
