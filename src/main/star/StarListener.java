@@ -1,5 +1,7 @@
 package star;
 
+import java.util.Vector;
+
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPF;
 import gov.nasa.jpf.jvm.bytecode.JVMInvokeInstruction;
@@ -13,7 +15,6 @@ import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.bytecode.BytecodeUtils;
-import star.formula.Formula;
 import star.solver.Solver;
 import star.testgeneration.TestGenerator;
 
@@ -27,13 +28,24 @@ public class StarListener extends SymbolicListener {
 	public void instructionExecuted(VM vm, ThreadInfo currentThread, Instruction nextInstruction,
 			Instruction executedInstruction) {
 		if (!vm.getSystemState().isIgnored()) {
-			Instruction insn = executedInstruction;
 			Config conf = vm.getConfig();
 
-			if (insn instanceof JVMInvokeInstruction) {
-
-			} else if (insn instanceof JVMReturnInstruction) {
+			if (executedInstruction instanceof JVMInvokeInstruction) {
+				// Sang: lifted from INVOKEInstrSymbHelper
+				JVMInvokeInstruction insn = (JVMInvokeInstruction) executedInstruction;
 				MethodInfo mi = insn.getMethodInfo();
+				ClassInfo ci = mi.getClassInfo();
+				String fname = mi.getFullName();
+				String mname = insn.getInvokedMethodName();
+				String cname = insn.getInvokedMethodClassName();
+				int argSize = mi.getArgumentTypeNames().length;
+				boolean isClassSymbolic = BytecodeUtils.isClassSymbolic(conf, cname, mi, mname);
+				boolean isMethodSymbolic = BytecodeUtils.isMethodSymbolic(conf, fname, argSize, new Vector<String>());
+				if (isClassSymbolic || isMethodSymbolic) {
+					TestGenerator.setClassAndMethodInfo(ci, mi, conf);
+				}
+			} else if (executedInstruction instanceof JVMReturnInstruction) {
+				MethodInfo mi = executedInstruction.getMethodInfo();
 				ClassInfo ci = mi.getClassInfo();
 				if (ci != null) {
 					String className = ci.getName();

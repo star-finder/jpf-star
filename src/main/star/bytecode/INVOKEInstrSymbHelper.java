@@ -51,7 +51,8 @@ public class INVOKEInstrSymbHelper {
 				cg = new StarChoiceGenerator(1);
 				ti.getVM().getSystemState().setNextChoiceGenerator(cg);
 				
-				TestGenerator.setClassAndMethodInfo(ci, mi, conf);
+				// Sang: move the below statement to StarListener
+				// TestGenerator.setClassAndMethodInfo(ci, mi, conf);
 				
 				return 0;
 			} else {
