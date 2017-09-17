@@ -1,13 +1,21 @@
-# README #
+# Java StarFinder #
+Java StarFinder (JSF) is a unit test generation tool for programs that make extensive use of dynamically allocated data structures such as lists and trees. Users need to provide a precondition, an inductive predicate in separation logic, to describe the input data structure. JSF then performs symbolic execution on the program to generate test cases, and use the precondition to guide its search. *Star* in the name refers to the separating conjunction in separation logic, and there is *Finder* since it is an extension of the Java PathFinder framework.
 
-### What is this repository for? ###
+## Installation
+We provide two ways of installing JSF:
+* Virtual machine with Docker
+* Installation on local machine
 
-This is the source code for Java StarFinder project. Java StarFinder is a symbolic execution prototype based on separation logic.
-It can generate test cases for Java programs with data structures.
+### Docker
+Assuming you have [Docker](https://www.docker.com/) installed, simply run:
 
-Version 1.0
+```bash
+$ docker build -t star .
+# Will take some time to build the image...
+$ docker run -it star
+```
 
-### How do I get set up? ###
+### Local Machine ###
 
 To run Java StarFinder you need Java PathFinder and Symbolic PathFinder. Go to Java PathFinder website then install the packages
 jpf-core and jpf-symbc. After that, pull this repo and configure similar to jpf-symbc.
