@@ -1,10 +1,7 @@
 package star;
 
-import java.util.Vector;
-
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPF;
-import gov.nasa.jpf.jvm.bytecode.JVMInvokeInstruction;
 import gov.nasa.jpf.jvm.bytecode.JVMReturnInstruction;
 import gov.nasa.jpf.report.Publisher;
 import gov.nasa.jpf.symbc.SymbolicListener;
@@ -20,6 +17,8 @@ import star.testgeneration.TestGenerator;
 
 public class StarListener extends SymbolicListener {
 
+	private boolean first = true;
+	
 	public StarListener(Config conf, JPF jpf) {
 		super(conf, jpf);
 	}
@@ -29,20 +28,21 @@ public class StarListener extends SymbolicListener {
 			Instruction executedInstruction) {
 		if (!vm.getSystemState().isIgnored()) {
 			Config conf = vm.getConfig();
-
-			if (executedInstruction instanceof JVMInvokeInstruction) {
+			if (executedInstruction.isFirstInstruction() && first) {
 				// Sang: lifted from INVOKEInstrSymbHelper
-				JVMInvokeInstruction insn = (JVMInvokeInstruction) executedInstruction;
-				MethodInfo mi = insn.getMethodInfo();
+				MethodInfo mi = executedInstruction.getMethodInfo();
 				ClassInfo ci = mi.getClassInfo();
-				String fname = mi.getFullName();
-				String mname = insn.getInvokedMethodName();
-				String cname = insn.getInvokedMethodClassName();
-				int argSize = mi.getArgumentTypeNames().length;
-				boolean isClassSymbolic = BytecodeUtils.isClassSymbolic(conf, cname, mi, mname);
-				boolean isMethodSymbolic = BytecodeUtils.isMethodSymbolic(conf, fname, argSize, new Vector<String>());
-				if (isClassSymbolic || isMethodSymbolic) {
-					TestGenerator.setClassAndMethodInfo(ci, mi, conf);
+				if (ci != null) {
+					String className = ci.getName();
+					String methodName = mi.getName();
+					int numberOfArgs = mi.getNumberOfArguments();
+
+					boolean isClassSymbolic = BytecodeUtils.isClassSymbolic(conf, className, mi, methodName);
+					boolean isMethodSymbolic = BytecodeUtils.isMethodSymbolic(conf, mi.getFullName(), numberOfArgs, null);
+					if (isClassSymbolic || isMethodSymbolic) {
+						TestGenerator.setClassAndMethodInfo(ci, mi, conf);
+						first = false;
+					}
 				}
 			} else if (executedInstruction instanceof JVMReturnInstruction) {
 				MethodInfo mi = executedInstruction.getMethodInfo();

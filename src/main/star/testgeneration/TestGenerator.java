@@ -35,14 +35,15 @@ public class TestGenerator {
 	
 	private static int index = 1;
 	
+	private static boolean first = true;
+	
 	public static void setClassAndMethodInfo(ClassInfo ci, MethodInfo mi, Config conf) {
-		if (TestGenerator.ci == null)
+		if(first) {
 			TestGenerator.ci = ci;
-		
-		if (TestGenerator.mi == null)
 			TestGenerator.mi = mi;
-		
-		TestGenerator.conf = conf;
+			TestGenerator.conf = conf;
+			first = false;
+		}
 	}
 	
 	public static void addModel(String model) {
