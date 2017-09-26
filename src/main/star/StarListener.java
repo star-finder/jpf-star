@@ -28,7 +28,7 @@ public class StarListener extends SymbolicListener {
 			Instruction executedInstruction) {
 		if (!vm.getSystemState().isIgnored()) {
 			Config conf = vm.getConfig();
-			if (executedInstruction.isFirstInstruction() && first) {
+			if (first) {
 				// Sang: lifted from INVOKEInstrSymbHelper
 				MethodInfo mi = executedInstruction.getMethodInfo();
 				ClassInfo ci = mi.getClassInfo();
