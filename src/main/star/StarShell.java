@@ -45,8 +45,13 @@ public class StarShell implements JPFShell {
 
 	private void initPredicate() {
 		String pred = conf.getProperty("star.predicate");
-		assert pred != null;
-
+		if(pred == null) {
+			// TODO: for predicate that is longer than one line,
+			// allow users to put it in a file
+			pred = conf.getProperty("star.predicate.file");
+			assert pred != null;
+		}
+		
 		ANTLRInputStream in = new ANTLRInputStream(pred);
 		InductivePredLexer lexer = new InductivePredLexer(in);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
