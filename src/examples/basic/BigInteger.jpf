@@ -1,0 +1,19 @@
+target=basic.BigInteger
+
+classpath=${jpf-star}/build/examples;
+sourcepath=${jpf-star}/src/examples
+
+shell=star.StarShell
+symbolic.method=basic.BigInteger.add(sym#sym)
+listener=star.StarListener
+
+star.data=data Node {int val; Node next}
+star.predicate=pred precondition(a,b) == a=null & b=null || a::Node<_,next1> * b::Node<_,next2> * precondition(next1,next2)
+star.precondition=pre add == precondition(x,y)
+
+star.max_depth=4
+star.test_path=build/tmp
+star.test_package=star.examples
+star.test_imports=common.Utilities
+
+symbolic.lazy=true
