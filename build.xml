@@ -286,14 +286,13 @@
         <path refid="lib.path"/>
 
         <pathelement location="build/tests"/>
-        <pathelement location="build/classes"/>
-        <pathelement location="build/annotations"/>
+        <pathelement location="build/main"/>
+        <pathelement location="build/examples"/>
 
       </classpath>
 
       <batchtest todir="build/tests">
         <fileset dir="build/tests">
-          <exclude name="**/JPF_*.class"/>
           <include name="**/*Test.class"/>
         </fileset>
       </batchtest>
