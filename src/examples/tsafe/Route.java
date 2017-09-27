@@ -19,7 +19,11 @@
 
 package tsafe;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Represents a route, or 2-dimensional series of fixes

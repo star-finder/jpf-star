@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import gov.nasa.jpf.symbc.numeric.Operator;
-import star.formula.Utilities;
 import star.formula.Variable;
 
 public class UnaryExpression extends Expression {

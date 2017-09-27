@@ -1,7 +1,5 @@
 package star.bytecode;
 
-import java.util.Arrays;
-
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.symbc.numeric.Operator;
 import gov.nasa.jpf.vm.ChoiceGenerator;

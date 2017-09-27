@@ -3,8 +3,6 @@ package rbt;
 
 import java.util.NoSuchElementException;
 
-import rbt.Range;
-
 public class TreeMap  {
 
 	public boolean repOK() {

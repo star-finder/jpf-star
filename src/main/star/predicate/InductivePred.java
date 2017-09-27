@@ -1,8 +1,5 @@
 package star.predicate;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import star.formula.Formula;
 import star.formula.Variable;
 

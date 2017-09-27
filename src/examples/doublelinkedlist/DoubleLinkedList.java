@@ -1,12 +1,19 @@
 package doublelinkedlist;
 
-import java.util.*;
 /*
  * @(#)DoubleLinkedList.java	1.46 03/01/23
  *
  * Copyright 2003 Sun Microsystems, Inc. All rights reserved.
  * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.ConcurrentModificationException;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+import java.util.Vector;
 
 /**
  * Linked list implementation of the <tt>List</tt> interface. Implements all

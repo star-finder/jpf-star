@@ -1,8 +1,5 @@
 package ganttproject;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Transaction {
     public boolean isRunning;
     public LinkedListNode myTouchedNodes = /*INSTRUMENTATION: new HashSet<>()*/new LinkedListNode();

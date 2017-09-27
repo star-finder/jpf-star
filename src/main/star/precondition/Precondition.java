@@ -1,7 +1,6 @@
 package star.precondition;
 
 import star.formula.Formula;
-import star.formula.Variable;
 
 public class Precondition {
 

@@ -19,9 +19,6 @@
 
 package tsafe;
 
-import tsafe.Point2D;
-import tsafe.PointXY;
-
 /**
  * Calculates distances, angles, and converts lat/long coordinates to x,y coordinates
  */

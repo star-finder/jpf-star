@@ -10,8 +10,6 @@ import org.junit.Test;
 
 import star.formula.Utilities;
 import star.formula.Variable;
-import star.formula.heap.HeapTerm;
-import star.formula.heap.PointToTerm;
 
 public class PointToTermTest {
 	

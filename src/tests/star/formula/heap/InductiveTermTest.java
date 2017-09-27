@@ -1,6 +1,6 @@
 package star.formula.heap;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,8 +13,6 @@ import org.junit.Test;
 import star.formula.Formula;
 import star.formula.Utilities;
 import star.formula.Variable;
-import star.formula.heap.HeapTerm;
-import star.formula.heap.InductiveTerm;
 import star.predicate.InductivePred;
 import star.predicate.InductivePredLexer;
 import star.predicate.InductivePredMap;

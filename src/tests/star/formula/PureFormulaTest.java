@@ -8,9 +8,6 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import star.formula.PureFormula;
-import star.formula.Utilities;
-import star.formula.Variable;
 import star.formula.pure.EqNullTerm;
 import star.formula.pure.EqTerm;
 import star.formula.pure.NEqNullTerm;

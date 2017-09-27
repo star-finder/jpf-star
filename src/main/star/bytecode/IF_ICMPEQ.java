@@ -4,7 +4,6 @@ import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
-import star.bytecode.IFInstrSymbHelper;
 import star.formula.expression.Expression;
 
 public class IF_ICMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ICMPEQ {

@@ -2,13 +2,6 @@
 
 package star.predicate;
 
-import gov.nasa.jpf.symbc.numeric.Comparator;
-import gov.nasa.jpf.symbc.numeric.Operator;
-import star.formula.*;
-import star.formula.expression.*;
-import star.formula.heap.*;
-import star.formula.pure.*;
-
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;

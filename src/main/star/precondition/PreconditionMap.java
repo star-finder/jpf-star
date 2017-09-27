@@ -3,9 +3,6 @@ package star.precondition;
 import java.util.HashMap;
 import java.util.Map;
 
-import star.formula.Formula;
-import star.predicate.InductivePred;
-
 public class PreconditionMap {
 	
 	private static Map<String,Precondition> preMap = new HashMap<String,Precondition>();

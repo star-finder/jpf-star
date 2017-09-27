@@ -19,7 +19,10 @@
 
 package tsafe;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Represents a trajectory, or 4-Dimensional path

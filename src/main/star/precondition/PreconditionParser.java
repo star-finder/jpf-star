@@ -2,21 +2,46 @@
 
 package star.precondition;
 
+import java.util.List;
+
+import org.antlr.v4.runtime.FailedPredicateException;
+import org.antlr.v4.runtime.NoViableAltException;
+import org.antlr.v4.runtime.Parser;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.RuleContext;
+import org.antlr.v4.runtime.RuntimeMetaData;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.Vocabulary;
+import org.antlr.v4.runtime.VocabularyImpl;
+import org.antlr.v4.runtime.atn.ATN;
+import org.antlr.v4.runtime.atn.ATNDeserializer;
+import org.antlr.v4.runtime.atn.ParserATNSimulator;
+import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.tree.ParseTreeListener;
+import org.antlr.v4.runtime.tree.TerminalNode;
+
 import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.symbc.numeric.Operator;
-import star.formula.*;
-import star.formula.expression.*;
-import star.formula.heap.*;
-import star.formula.pure.*;
-
-import org.antlr.v4.runtime.atn.*;
-import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
-import org.antlr.v4.runtime.tree.*;
-import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
+import star.formula.Formula;
+import star.formula.HeapFormula;
+import star.formula.PureFormula;
+import star.formula.Variable;
+import star.formula.expression.BinaryExpression;
+import star.formula.expression.Expression;
+import star.formula.expression.LiteralExpression;
+import star.formula.expression.VariableExpression;
+import star.formula.heap.HeapTerm;
+import star.formula.heap.InductiveTerm;
+import star.formula.heap.PointToTerm;
+import star.formula.pure.ComparisonTerm;
+import star.formula.pure.EqNullTerm;
+import star.formula.pure.EqTerm;
+import star.formula.pure.NEqNullTerm;
+import star.formula.pure.NEqTerm;
+import star.formula.pure.PureTerm;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class PreconditionParser extends Parser {

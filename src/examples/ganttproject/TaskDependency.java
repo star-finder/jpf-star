@@ -18,8 +18,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package ganttproject;
 
-import java.util.Date;
-
 /**
  * Created by IntelliJ IDEA. User: bard Date: 14.02.2004 Time: 2:32:17 To change
  * this template use File | Settings | File Templates.

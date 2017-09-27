@@ -10,8 +10,6 @@ import org.junit.Test;
 
 import star.formula.Utilities;
 import star.formula.Variable;
-import star.formula.pure.EqTerm;
-import star.formula.pure.PureTerm;
 
 public class EqTermTest {
 	

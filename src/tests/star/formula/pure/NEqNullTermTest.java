@@ -1,6 +1,6 @@
 package star.formula.pure;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,8 +10,6 @@ import org.junit.Test;
 
 import star.formula.Utilities;
 import star.formula.Variable;
-import star.formula.pure.NEqNullTerm;
-import star.formula.pure.PureTerm;
 
 public class NEqNullTermTest {
 	
