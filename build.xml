@@ -154,19 +154,16 @@
     </javac>
   </target>
 
-  <target name="-compile-tests" if="have_tests" depends="-compile-annotations,-compile-main">
+  <target name="-compile-tests" if="have_tests" depends="-compile-annotations,-compile-main,-compile-examples">
     <mkdir dir="build/tests"/>
-    <javac srcdir="src/tests" destdir="build/tests" includeantruntime="false"
-           debug="${debug}" source="${src_level}" deprecation="${deprecation}"
-           includes="*,gov/nasa/jpf/test/**">
+    <javac srcdir="src/tests" destdir="build/tests"
+      debug="${debug}" source="${src_level}" deprecation="${deprecation}"
+      includeantruntime="false">
       <classpath>
-<!--        <path refid="lib.path"/>
-	<fileset dir="${junit.home}">
-		<include name="**/*.jar"/>
-	</fileset> 
--->
+        <path refid="lib.path"/>
+        <pathelement location="build/main"/>
+        <pathelement location="build/examples"/>
         <pathelement location="build/annotations"/>
-        <pathelement location="build/classes"/>
       </classpath>
     </javac>
   </target>
@@ -177,11 +174,6 @@
            debug="${debug}" source="${src_level}" deprecation="${deprecation}">
       <classpath>
         <path refid="lib.path"/>
-<!--
-	<fileset dir="${junit.home}">
-		<include name="**/*.jar"/>
-	</fileset> 
--->
         <pathelement location="build/annotations"/>
       </classpath>
     </javac>             
