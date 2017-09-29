@@ -69,7 +69,6 @@ public class MyClassTest extends TestStar {
 				"+listener=star.StarListener",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=" + Constant.TEST_PATH + "",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+star.test_path=" + Constant.TEST_PATH + "/basic",

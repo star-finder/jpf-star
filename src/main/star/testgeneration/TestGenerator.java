@@ -46,6 +46,10 @@ public class TestGenerator {
 		}
 	}
 	
+	public static void reset() {
+		first = true;
+	}
+	
 	public static void addModel(String model) {
 		if (model.length() > 0) {
 			for (String m : models) {
@@ -222,7 +226,6 @@ public class TestGenerator {
 	private static void writeToFile(StringBuffer test) {
 		String fileName = ci.getSimpleName() + "_" + mi.getName() + "1.java";
 		String path = conf.getProperty("star.test_path");
-		
 		// create the directory if it does not exist
 		try {
 			File dir = new File(path);

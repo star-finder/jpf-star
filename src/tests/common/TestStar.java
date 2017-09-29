@@ -3,6 +3,7 @@ package common;
 import org.junit.Before;
 
 import gov.nasa.jpf.util.test.TestJPF;
+import star.testgeneration.TestGenerator;
 
 public abstract class TestStar extends TestJPF {
 	
@@ -15,5 +16,6 @@ public abstract class TestStar extends TestJPF {
 		initDataNode();
 		initPredicate();
 		initPrecondition();
+		TestGenerator.reset();
 	}
 }
