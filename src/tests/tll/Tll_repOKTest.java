@@ -12,29 +12,6 @@ public class Tll_repOKTest extends TestStar {
 		String data = "data Node {int val; Node parent; Node left; Node right; Node next}";
 		Initializer.initDataNode(data);
 	}
-	
-	@Override
-	protected void initPredicate() {
-//		String pred1 = "pred tll(x) == x::Node<dv,dp,dl,r,dn> & r=null || x::Node<dv,dp,l,r,dn> * tll1(l,x,z,ll) * tll1(r,x,lr,z) & r!=null";
-		String pred = "pred tll(curr,p,lr,ll) == curr::Node<dv,p,dl,r,n> & curr=ll & r=null & n=lr || curr::Node<dv,p,l,r,dn> * tll(l,curr,z,ll) * tll(r,curr,lr,z) & r!=null";
-		
-//		String pred = pred1 + ";" + pred2;
-		Initializer.initPredicate(pred);
-	}
-	
-	@Override
-	protected void initPrecondition() {
-//		String pre = "pre positiveLeafCount == tll(this_root,p,lr,ll)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
-	}
-	
 
 	@Test
 	public void testMain() {

@@ -6,7 +6,7 @@ import java.util.Map;
 public class DataNodeMap {
 	
 	// contains all data definitions
-	private static Map<String, DataNode> dataNodeMap = null;
+	private static Map<String, DataNode> dataNodeMap = new HashMap<String, DataNode>();
 
 	public static void put(DataNode dn) {
 		String type = dn.getType();
@@ -22,7 +22,6 @@ public class DataNodeMap {
 
 	public static DataNode find(String type) {
 		DataNode dn = dataNodeMap.get(type);
-		assert dn != null;
 		return dn;
 	}
 	

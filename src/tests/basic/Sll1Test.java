@@ -35,7 +35,7 @@ public class Sll1Test extends TestStar {
 //				"+star.max_int=100",
 //				"+star.lazy=false",
 				"+star.test_path=" + Constant.TEST_PATH + "/basic",
-				"+star.test_package=star.examples",
+				"+star.test_package=basic",
 //				"+star.test_imports=...",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",

@@ -12,26 +12,6 @@ public class MyLinkedList_repOKInsertTest extends TestStar {
 		String data = "data MyLinkedListItr{MyListNode _current}; data MyListNode {Object _element; MyListNode _next}; data Object {}";
 		Initializer.initDataNode(data);
 	}
-	
-	@Override
-	protected void initPredicate() {
-		String pred = "pred sll(root) == root = null || root::MyListNode<element,next> * element::Object<> * sll(next)";
-		Initializer.initPredicate(pred);
-	}
-	
-	@Override
-	protected void initPrecondition() {
-//		String pre = "pre remove == this__header::MyListNode<element,next> * sll(next)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
-	}
-	
 
 	@Test
 	public void testMain() {

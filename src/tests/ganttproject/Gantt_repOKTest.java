@@ -22,21 +22,10 @@ public class Gantt_repOKTest extends TestStar {
 	
 	@Override
 	protected void initPredicate() {
-		String pred = "pred cond(trans,myData) == trans::Transaction<isRunning,_> * myData::GraphData<_,_,_>";
-		Initializer.initPredicate(pred);
 	}
 	
 	@Override
 	protected void initPrecondition() {
-//		String pre = "pre startTransaction == cond(this_myTxn,this_myData)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
 	}
 	
 
@@ -46,7 +35,7 @@ public class Gantt_repOKTest extends TestStar {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=star.StarListener",
-				"+star.max_depth=1",
+				"+star.max_depth=2",
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

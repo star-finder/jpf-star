@@ -12,26 +12,6 @@ public class MyStack_repOKTest extends TestStar {
 		String data = "data ListNode {Object element; ListNode next}";
 		Initializer.initDataNode(data);
 	}
-	
-	@Override
-	protected void initPredicate() {
-		String pred = "pred stack(root) == root = null || root::ListNode<element,next> * stack(next)";
-		Initializer.initPredicate(pred);
-	}
-	
-	@Override
-	protected void initPrecondition() {
-//		String pre = "pre contains == stack(this_topOfStack)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
-	}
-	
 
 	@Test
 	public void testMain() {

@@ -22,34 +22,6 @@ public class Tsafe_repOKTest extends TestStar {
 		String data = data1 + ";" + data2 + ";" + data3 + ";" + data4 + ";" + data5 + ";" + data6 + ";" + data7 + ";" + data8;;
 		Initializer.initDataNode(data);
 	}
-	
-	@Override
-	protected void initPredicate() {
-		String pred1 = "pred cond(trajSynth,track,route) == trajSynth::TrajectorySynthesizer<calc,params> * calc::SimpleCalculator<minLat,minLon> *" +
-				"params::EngineParameters<latWtOn,verWtOn,angWtOn,speWtOn,latThres,verThres,angThres,speThres,resThres,tsTime> * " + 
-				"track::RouteTrack<lat,lon,alt,speed,heading,mTime,prevFix,nextFix> * prevFix::Fix<lat1,lon1,_> * nextFix::Fix<lat2,lon2,_> * " +
-				"route::Route<fixes> * fixes::LinkedList<_,header,size> * dll(header,size) & " +
-				"latWtOn=0 & verWtOn=0 & angWtOn=0 & speWtOn=0 & latThres=18520.0 & verThres=609.7561 & angThres=0.5 & speThres=100 & resThres=1.0 & tsTime=180000";
-		String pred2 = "pred dll(header,size) == header::Entry<_,header,header> & size=0 || header::Entry<_,next,prev> * nndll(next,header,header,prev,size)";
-		String pred3 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<_,header,prev> & prevH=curr & size=1 || curr::Entry<_,next,prev> * nndll(next,curr,header,prevH,size1) & size=size1+1";
-				
-		String pred = pred1 + ";" + pred2 + ";" + pred3;
-		Initializer.initPredicate(pred);
-	}
-	
-	@Override
-	protected void initPrecondition() {
-//		String pre = "pre TS_R_3 == cond(trajSynth,track,route)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
-	}
-	
 
 	@Test
 	public void testMain() {

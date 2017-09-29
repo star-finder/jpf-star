@@ -12,36 +12,6 @@ public class RedBlackTree_repOKTest extends TestStar {
 		String data = "data Entry {int key; Object value; Entry left; Entry right; Entry parent; boolean color}";
 		Initializer.initDataNode(data);
 	}
-	
-	@Override
-	protected void initPredicate() {
-		String pred1 = "pred rbt(root,size) == root=null & size=0 || " +
-			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & parent=null & color=1 & size=sizeL+sizeR+1 & bhL=bhR";
-		
-		String pred2 = "pred rbtE(root,pa,minE,maxE,size,bh) == root=null & size=0 & bh=0 || " +
-			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=1 & size=sizeL+sizeR+1 & bhL=bhR & bh=1+bhL || " +
-			"root::Entry<key,value,left,right,parent,color> * rbtB(left,root,minE,key,sizeL,bhL) * rbtB(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=0 & size=sizeL+sizeR+1 & bhL=bhR & bh=bhL";
-		
-		String pred3 = "pred rbtB(root,pa,minE,maxE,size,bh) == root=null & size=0 & bh=0 || " +
-			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=1 & size=sizeL+sizeR+1 & bhL=bhR & bh=1+bhL";
-		
-		String pred = pred1 + ";" + pred2 + ";" + pred3;
-				Initializer.initPredicate(pred);
-	}
-	
-	@Override
-	protected void initPrecondition() {
-//		String pre = "pre containsKey == rbt(this_root,this_size)";
-//		
-//		ANTLRInputStream in = new ANTLRInputStream(pre);
-//		PreconditionLexer lexer = new PreconditionLexer(in);
-//        CommonTokenStream tokens = new CommonTokenStream(lexer);
-//        PreconditionParser parser = new PreconditionParser(tokens);
-//        
-//        Precondition[] ps = parser.pres().ps;
-//        PreconditionMap.put(ps);
-	}
-	
 
 	@Test
 	public void testMain() {
@@ -49,7 +19,7 @@ public class RedBlackTree_repOKTest extends TestStar {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=star.StarListener",
-				"+star.max_depth=14",
+				"+star.max_depth=9",
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",

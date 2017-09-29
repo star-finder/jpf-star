@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class PreconditionMap {
 	
-	private static Map<String,Precondition> preMap = null;
+	private static Map<String,Precondition> preMap = new HashMap<String,Precondition>();
 	
 	public static void put(Precondition pre) {
 		String methodName = pre.getMethodName();
@@ -21,7 +21,6 @@ public class PreconditionMap {
 	
 	public static Precondition find(String methodName) {
 		Precondition pre = preMap.get(methodName);
-		assert pre != null;
 		return pre;
 	}
 
