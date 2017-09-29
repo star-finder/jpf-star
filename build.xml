@@ -257,6 +257,8 @@
   <!-- public clean: cleanup from previous tasks/builds -->
   <target name="clean">
     <delete dir="build" />
+    <delete dir="logs" />
+    <delete file="oc.out" />
     <delete>
       <fileset dir="." includes="**/*~" defaultexcludes="no" />
       <fileset dir="." includes="**/*.bak" defaultexcludes="no" />
