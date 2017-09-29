@@ -1,27 +1,14 @@
 package ganttproject;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.util.test.TestJPF;
-import star.data.DataNode;
-import star.data.DataNodeLexer;
-import star.data.DataNodeMap;
-import star.data.DataNodeParser;
-import star.precondition.Precondition;
-import star.precondition.PreconditionLexer;
-import star.precondition.PreconditionMap;
-import star.precondition.PreconditionParser;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredMap;
-import star.predicate.InductivePredParser;
+import common.Constant;
+import common.TestStar;
+import star.precondition.Initializer;
 
-@SuppressWarnings("deprecation")
-public class Gantt_removeTest extends TestJPF {
+public class Gantt_removeTest extends TestStar {
 	
-	private void initDataNode() {
+	@Override
+	protected void initDataNode() {
 		String data1 = "data Transaction {boolean isRunning; LinkedList myTouchedNodes}";
 		String data2 = "data GraphData {void myLayers; GraphData myBackup; Transaction myTxn}";
 		String data3 = "data LinkedList {void modCount; Entry header; int size}";
@@ -33,17 +20,11 @@ public class Gantt_removeTest extends TestJPF {
 		String data9 = "data ImplicitSubSuperTaskDependency {void mySubTask; void mySuperTask; void myStartRange; void myEndRange}";
 		
 		String data = data1 + ";" + data2 + ";" + data3 + ";" + data4 + ";" + data5 + ";" + data6 + ";" + data7 + ";" + data8 + ";" + data9;
-		
-		ANTLRInputStream in = new ANTLRInputStream(data);
-		DataNodeLexer lexer = new DataNodeLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        DataNodeParser parser = new DataNodeParser(tokens);
-		
-        DataNode[] dns = parser.datas().dns;
-        DataNodeMap.put(dns);
+		Initializer.initDataNode(data);
 	}
 	
-	private void initPredicate() {
+	@Override
+	protected void initPredicate() {
 		String pred0 = "pred fst(root,trans,myData) == root::Node<_,nodeData> * nodeData::NodeData<_,myIncoming,myOutgoing,_,_,myBackup> * myIncoming::LinkedList<_,header1,size1> * dll1(header1,size1) * myOutgoing::LinkedList<_,header2,size2> * dll1(header2,size2) * cond(trans,myData) & myBackup=null || " + 
 				"root::Node<_,nodeData> * nodeData::NodeData<_,myIncoming,myOutgoing,_,_,myBackup> * myIncoming::LinkedList<_,header1,size1> * dll1(header1,size1) * myOutgoing::LinkedList<_,header2,size2> * dll1(header2,size2) * cond(trans,myData) & myBackup=myData || " +
 				"root::Node<_,nodeData> * nodeData::NodeData<_,myIncoming,myOutgoing,_,_,myBackup> * myIncoming::LinkedList<_,header1,size1> * dll2(header1,size1) * myOutgoing::LinkedList<_,header2,size2> * dll2(header2,size2) * cond(trans,myData) & myBackup=null || " +
@@ -79,35 +60,16 @@ public class Gantt_removeTest extends TestJPF {
 		
 		String pred = pred0 + ";" + pred1 + ";" + pred2 + ";" + pred3 + ";" + pred4 + ";" + pred5 + ";" + pred6 + ";" + pred7 + ";" + pred8 +
 				";" + pred9 + ";" + pred10 + ";" + pred11 + ";" + pred12 + ";" + pred13 + ";" + pred14;
-		
-		ANTLRInputStream in = new ANTLRInputStream(pred);
-		InductivePredLexer lexer = new InductivePredLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        InductivePredParser parser = new InductivePredParser(tokens);
-        
-        InductivePred[] ips = parser.preds().ips;
-        InductivePredMap.put(ips);
+		Initializer.initPredicate(pred);
 	}
 	
-	private void initPrecondition() {
+	@Override
+	protected void initPrecondition() {
 		String pre = "pre removeImplicitDependencies == fst(root,this_myTxn,this_myData)";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+		Initializer.initPrecondition(pre);
 	}
 	
-	@Before
-	public void init() {
-		initDataNode();
-		initPredicate();
-		initPrecondition();
-	}
-	
+
 	@Test
 	public void testMain() {
 		long begin = System.currentTimeMillis();
@@ -117,7 +79,7 @@ public class Gantt_removeTest extends TestJPF {
 				"+star.max_depth=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=build/tmp/ganttproject",
+				"+star.test_path=" + Constant.TEST_PATH + "/ganttproject",
 				"+star.test_package=ganttproject",
 				"+star.test_imports=common.Utilities;ganttproject.LinkedList.Entry;",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 

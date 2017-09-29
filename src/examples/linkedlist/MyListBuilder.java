@@ -1,10 +1,6 @@
 package linkedlist;
 
-//MyListBuilder.java
-//This class builds a shared list from given threads .
-
-import java.util.*;
-import java.io.*;
+import java.io.IOException;
 
 class MyListBuilder implements Runnable {
 	/* Class Members */

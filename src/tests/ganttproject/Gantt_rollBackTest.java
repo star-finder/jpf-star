@@ -1,27 +1,14 @@
 package ganttproject;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.util.test.TestJPF;
-import star.data.DataNode;
-import star.data.DataNodeLexer;
-import star.data.DataNodeMap;
-import star.data.DataNodeParser;
-import star.precondition.Precondition;
-import star.precondition.PreconditionLexer;
-import star.precondition.PreconditionMap;
-import star.precondition.PreconditionParser;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredMap;
-import star.predicate.InductivePredParser;
+import common.Constant;
+import common.TestStar;
+import star.precondition.Initializer;
 
-@SuppressWarnings("deprecation")
-public class Gantt_rollBackTest extends TestJPF {
+public class Gantt_rollBackTest extends TestStar {
 	
-	private void initDataNode() {
+	@Override
+	protected void initDataNode() {
 		String data1 = "data Transaction {boolean isRunning; LinkedListNode myTouchedNodes}";
 		String data2 = "data GraphData {void myLayers; GraphData myBackup; Transaction myTxn}";
 		String data3 = "data LinkedListNode {void modCount; EntryNode header; int size}";
@@ -30,17 +17,11 @@ public class Gantt_rollBackTest extends TestJPF {
 		String data6 = "data EntryNode {Node element; EntryNode next; EntryNode previous}";
 		
 		String data = data1 + ";" + data2 + ";" + data3 + ";" + data4 + ";" + data5 + ";" + data6;
-		
-		ANTLRInputStream in = new ANTLRInputStream(data);
-		DataNodeLexer lexer = new DataNodeLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        DataNodeParser parser = new DataNodeParser(tokens);
-		
-        DataNode[] dns = parser.datas().dns;
-        DataNodeMap.put(dns);
+		Initializer.initDataNode(data);
 	}
 	
-	private void initPredicate() {
+	@Override
+	protected void initPredicate() {
 		String pred1 = "pred cond(trans,myData) == trans::Transaction<isRunning,myTouchedNodes> * backupPred(myData) * myTouchedNodes::LinkedListNode<_,header,size> * dll(header,size)";
 		String pred2 = "pred backupPred(myData) == myData::GraphData<_,backup,trans> * trans::Transaction<isRunning,_> & backup=null || myData::GraphData<_,backup,trans> * trans::Transaction<isRunning,_> * backupPred(backup)";
 		
@@ -48,35 +29,16 @@ public class Gantt_rollBackTest extends TestJPF {
 		String pred4 = "pred nndll(curr,prev,header,prevH,size) == curr::EntryNode<ele,header,prev> * ele::Node<_,myData1> * myData1::NodeData<_,_,_,_,_,myBackup> & prevH=curr & size=1 || curr::EntryNode<ele,next,prev> * ele::Node<_,myData1> * myData1::NodeData<_,_,_,_,_,myBackup> * nndll(next,curr,header,prevH,size1) & size=size1+1";
 		
 		String pred = pred1 + ";" + pred2 + ";" + pred3 + ";" + pred4;
-		
-		ANTLRInputStream in = new ANTLRInputStream(pred);
-		InductivePredLexer lexer = new InductivePredLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        InductivePredParser parser = new InductivePredParser(tokens);
-        
-        InductivePred[] ips = parser.preds().ips;
-        InductivePredMap.put(ips);
+		Initializer.initPredicate(pred);
 	}
 	
-	private void initPrecondition() {
+	@Override
+	protected void initPrecondition() {
 		String pre = "pre rollbackTransaction == cond(this_myTxn,this_myData)";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+		Initializer.initPrecondition(pre);
 	}
 	
-	@Before
-	public void init() {
-		initDataNode();
-		initPredicate();
-		initPrecondition();
-	}
-	
+
 	@Test
 	public void testMain() {
 		long begin = System.currentTimeMillis();
@@ -86,7 +48,7 @@ public class Gantt_rollBackTest extends TestJPF {
 				"+star.max_depth=4",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=build/tmp/ganttproject",
+				"+star.test_path=" + Constant.TEST_PATH + "/ganttproject",
 				"+star.test_package=ganttproject",
 				"+star.test_imports=common.Utilities;ganttproject.LinkedListNode.EntryNode;",
 				"+classpath=build/examples;lib/ganttproject-guava.jar", 

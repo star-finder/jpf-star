@@ -13,7 +13,7 @@ star.precondition=pre add == precondition(x,y)
 
 star.max_depth=4
 star.test_path=build/tmp
-star.test_package=star.examples
-star.test_imports=common.Utilities
+star.test_package=basic
+star.test_imports=basic.BigInteger;common.Utilities
 
 symbolic.lazy=true

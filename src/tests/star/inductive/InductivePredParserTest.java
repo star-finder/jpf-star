@@ -10,7 +10,6 @@ import star.predicate.InductivePred;
 import star.predicate.InductivePredLexer;
 import star.predicate.InductivePredParser;
 
-@SuppressWarnings("deprecation")
 public class InductivePredParserTest {
 
 	@Test

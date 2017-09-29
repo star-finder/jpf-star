@@ -1,41 +1,22 @@
 package doublelinkedlist;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.util.test.TestJPF;
-import star.data.DataNode;
-import star.data.DataNodeLexer;
-import star.data.DataNodeMap;
-import star.data.DataNodeParser;
-import star.precondition.Precondition;
-import star.precondition.PreconditionLexer;
-import star.precondition.PreconditionMap;
-import star.precondition.PreconditionParser;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredMap;
-import star.predicate.InductivePredParser;
+import common.Constant;
+import common.TestStar;
+import star.precondition.Initializer;
 
-@SuppressWarnings("deprecation")
-public class DoubleLinkedList_mainTest extends TestJPF {
+public class DoubleLinkedList_mainTest extends TestStar {
 	
-	private void initDataNode() {
+	@Override
+	protected void initDataNode() {
 //		String data = "data LinkedList{int modCount; Node first; Node last; int size}; data Node {Object item; Node next; Node prev}; data Object {}";
 		
 		String data = "data DoubleLinkedList{int modCount; Entry header; int size}; data Entry {Object element; Entry next; Entry previous}; data Object {}";
-		
-		ANTLRInputStream in = new ANTLRInputStream(data);
-		DataNodeLexer lexer = new DataNodeLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        DataNodeParser parser = new DataNodeParser(tokens);
-		
-        DataNode[] dns = parser.datas().dns;
-        DataNodeMap.put(dns);
+		Initializer.initDataNode(data);
 	}
 	
-	private void initPredicate() {
+	@Override
+	protected void initPredicate() {
 //		String pred1 = "pred list(root) == root::LinkedList<modCount,first,last,size> & first=null & last=null & size=0 || " +
 //				"root::LinkedList<modCount,first,last,size> * first::Node<itemF,nextF,prevF> * itemF::Object<> & nextF=null & prevF=null & first=last & size=1 || " +
 //				"root::LinkedList<modCount,first,last,size> * first::Node<itemF,nextF,prevF> * last::Node<itemL,nextL,prevL> * itemF::Object<> * itemL::Object<> * lseg(nextF,first,last,prevL,size1) & prevF=null & nextL=null & size=2+size1";
@@ -56,35 +37,16 @@ public class DoubleLinkedList_mainTest extends TestJPF {
 //		String pred2 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<ele,header,prev> & prevH=curr & size=1 || curr::Entry<ele,next,prev> * nndll(next,curr,header,prevH,size1) & size=size1+1";
 				
 		String pred = pred1 + ";" + pred2;
-		
-		ANTLRInputStream in = new ANTLRInputStream(pred);
-		InductivePredLexer lexer = new InductivePredLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        InductivePredParser parser = new InductivePredParser(tokens);
-        
-        InductivePred[] ips = parser.preds().ips;
-        InductivePredMap.put(ips);
+		Initializer.initPredicate(pred);
 	}
 	
-	private void initPrecondition() {
+	@Override
+	protected void initPrecondition() {
 		String pre = "pre sample == list(dll) * o::Object<>";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+		Initializer.initPrecondition(pre);
 	}
 	
-	@Before
-	public void init() {
-		initDataNode();
-		initPredicate();
-		initPrecondition();
-	}
-	
+
 	@Test
 	public void testMain() {
 		long begin = System.currentTimeMillis();
@@ -94,9 +56,9 @@ public class DoubleLinkedList_mainTest extends TestJPF {
 				"+star.max_depth=5",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=build/tmp/doublelinkedlist",
-				"+star.test_package=star.examples.doublelinkedlist",
-				"+star.test_imports=star.examples.doublelinkedlist.DoubleLinkedList.Entry;common.Utilities",
+				"+star.test_path=" + Constant.TEST_PATH + "/doublelinkedlist",
+				"+star.test_package=doublelinkedlist",
+				"+star.test_imports=doublelinkedlist.DoubleLinkedList.Entry;common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=doublelinkedlist.Main.sample(sym#sym)",

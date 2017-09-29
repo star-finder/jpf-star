@@ -1,12 +1,5 @@
 package linkedlist;
 
-//BugTester.java
-//implements two threads that are building the same list
-//and are conflicting each other next pointer in the latency between
-//fetch and write back
-
-import java.util.*;
-
 public class BugTester {
 	public static void main(String[] args) {
 		int builders = 2;

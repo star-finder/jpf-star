@@ -2,8 +2,7 @@ package linkedlist;
 
 //MyLinkedList.java
 //This class implements a linked list class .
-
-import java.io.*;
+import java.io.IOException;
 
 public class MyLinkedList {
 	

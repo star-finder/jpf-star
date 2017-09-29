@@ -11,7 +11,6 @@ import star.predicate.InductivePredLexer;
 import star.predicate.InductivePredMap;
 import star.predicate.InductivePredParser;
 
-@SuppressWarnings("deprecation")
 public class InductivePredMapTest {
 
 	@Test

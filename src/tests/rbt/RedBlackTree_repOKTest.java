@@ -1,35 +1,20 @@
 package rbt;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.util.test.TestJPF;
-import star.data.DataNode;
-import star.data.DataNodeLexer;
-import star.data.DataNodeMap;
-import star.data.DataNodeParser;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredMap;
-import star.predicate.InductivePredParser;
+import common.Constant;
+import common.TestStar;
+import star.precondition.Initializer;
 
-@SuppressWarnings("deprecation")
-public class RedBlackTree_repOKTest extends TestJPF {
+public class RedBlackTree_repOKTest extends TestStar {
 	
-	private void initDataNode() {
+	@Override
+	protected void initDataNode() {
 		String data = "data Entry {int key; Object value; Entry left; Entry right; Entry parent; boolean color}";
-		
-		ANTLRInputStream in = new ANTLRInputStream(data);
-		DataNodeLexer lexer = new DataNodeLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        DataNodeParser parser = new DataNodeParser(tokens);
-		
-        DataNode[] dns = parser.datas().dns;
-        DataNodeMap.put(dns);
+		Initializer.initDataNode(data);
 	}
 	
-	private void initPredicate() {
+	@Override
+	protected void initPredicate() {
 		String pred1 = "pred rbt(root,size) == root=null & size=0 || " +
 			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & parent=null & color=1 & size=sizeL+sizeR+1 & bhL=bhR";
 		
@@ -41,17 +26,11 @@ public class RedBlackTree_repOKTest extends TestJPF {
 			"root::Entry<key,value,left,right,parent,color> * rbtE(left,root,minE,key,sizeL,bhL) * rbtE(right,root,key,maxE,sizeR,bhR) & minE<key & key<maxE & parent=pa & color=1 & size=sizeL+sizeR+1 & bhL=bhR & bh=1+bhL";
 		
 		String pred = pred1 + ";" + pred2 + ";" + pred3;
-				
-		ANTLRInputStream in = new ANTLRInputStream(pred);
-		InductivePredLexer lexer = new InductivePredLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        InductivePredParser parser = new InductivePredParser(tokens);
-        
-        InductivePred[] ips = parser.preds().ips;
-        InductivePredMap.put(ips);
+				Initializer.initPredicate(pred);
 	}
 	
-	private void initPrecondition() {
+	@Override
+	protected void initPrecondition() {
 //		String pre = "pre containsKey == rbt(this_root,this_size)";
 //		
 //		ANTLRInputStream in = new ANTLRInputStream(pre);
@@ -63,13 +42,7 @@ public class RedBlackTree_repOKTest extends TestJPF {
 //        PreconditionMap.put(ps);
 	}
 	
-	@Before
-	public void init() {
-		initDataNode();
-		initPredicate();
-		initPrecondition();
-	}
-	
+
 	@Test
 	public void testMain() {
 		long begin = System.currentTimeMillis();
@@ -80,9 +53,9 @@ public class RedBlackTree_repOKTest extends TestJPF {
 				"+star.lazy=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=build/tmp/rbt",
-				"+star.test_package=star.examples.rbt",
-				"+star.test_imports=star.examples.rbt.TreeMap.Entry;common.Utilities",
+				"+star.test_path=" + Constant.TEST_PATH + "/rbt",
+				"+star.test_package=rbt",
+				"+star.test_imports=rbt.TreeMap.Entry;common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=rbt.TreeMap.repOK()",

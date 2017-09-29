@@ -1,9 +1,7 @@
 package basic;
 
 public class MyClass {
-	
-	static Node_old x;
-		
+			
 	public Node_old foo(Node_old x) {
 		if (x == null) {
 			return null;
@@ -83,14 +81,25 @@ public class MyClass {
 
 	// The test driver
 	public static void main(String[] args) {
-		MyClass mc = new MyClass();
+		int select = Integer.parseInt(args[0]);
+		System.out.println(select);
 		Node_old x = new Node_old(null);
-//		Node y = new Node();
-//		MyClass.myMethod(x);
-		int i = 0;
-		int j = 0;
-		mc.myMethod2(i, j);
-//		mc.myMethod1(x, y);
+		MyClass mc = new MyClass();
+		switch (select) {
+		case 0:
+			MyClass.myMethod(x);
+			break;
+		case 1:
+			Node_old y = new Node_old();
+			mc.myMethod1(x, y);
+			break;
+		case 2:
+			int i = 0;
+			int j = 0;
+			mc.myMethod2(i, j);
+		default:
+			break;
+		}
 	}
 
 }

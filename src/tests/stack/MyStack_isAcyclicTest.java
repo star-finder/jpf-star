@@ -1,74 +1,36 @@
 package stack;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.junit.Before;
 import org.junit.Test;
 
-import gov.nasa.jpf.util.test.TestJPF;
-import star.data.DataNode;
-import star.data.DataNodeLexer;
-import star.data.DataNodeMap;
-import star.data.DataNodeParser;
-import star.precondition.Precondition;
-import star.precondition.PreconditionLexer;
-import star.precondition.PreconditionMap;
-import star.precondition.PreconditionParser;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredMap;
-import star.predicate.InductivePredParser;
+import common.Constant;
+import common.TestStar;
+import star.precondition.Initializer;
 
-@SuppressWarnings("deprecation")
-public class MyStack_isAcyclicTest extends TestJPF {
+public class MyStack_isAcyclicTest extends TestStar {
 	
-	private void initDataNode() {
+	@Override
+	protected void initDataNode() {
 		String data = "data ListNode {Object element; ListNode next}";
-		
-		ANTLRInputStream in = new ANTLRInputStream(data);
-		DataNodeLexer lexer = new DataNodeLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        DataNodeParser parser = new DataNodeParser(tokens);
-		
-        DataNode[] dns = parser.datas().dns;
-        DataNodeMap.put(dns);
+		Initializer.initDataNode(data);
 	}
 	
-	private void initPredicate() {
+	@Override
+	protected void initPredicate() {
 //		String pred = "pred stack(root) == root = null || root::ListNode<element,next> * stack(next)";
 		String pred1 = "pred stack(root) == root=null || root::ListNode<element,next> * lseg(next,dest) & dest=null || " +
 				"root::ListNode<element,next> * lseg(next,dest) & dest=root || root::ListNode<element,next> * lseg(next,tmp) * tmp::ListNode<element,tmpNext> * lseg(tmpNext,dest) & dest=tmp";
 		String pred2 = "pred lseg(root,dest) == root=dest || root::ListNode<element,next> * lseg(next,dest)";
 		
 		String pred = pred1 + ";" + pred2;
-		
-		ANTLRInputStream in = new ANTLRInputStream(pred);
-		InductivePredLexer lexer = new InductivePredLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        InductivePredParser parser = new InductivePredParser(tokens);
-        
-        InductivePred[] ips = parser.preds().ips;
-        InductivePredMap.put(ips);
+		Initializer.initPredicate(pred);
 	}
 	
-	private void initPrecondition() {
+	@Override
+	protected void initPrecondition() {
 		String pre = "pre isAcyclic == stack(this_topOfStack)";
-		
-		ANTLRInputStream in = new ANTLRInputStream(pre);
-		PreconditionLexer lexer = new PreconditionLexer(in);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        PreconditionParser parser = new PreconditionParser(tokens);
-        
-        Precondition[] ps = parser.pres().ps;
-        PreconditionMap.put(ps);
+		Initializer.initPrecondition(pre);
 	}
 	
-	@Before
-	public void init() {
-		initDataNode();
-		initPredicate();
-		initPrecondition();
-	}
-	
+
 	@Test
 	public void testMain() {
 		long begin = System.currentTimeMillis();
@@ -78,8 +40,8 @@ public class MyStack_isAcyclicTest extends TestJPF {
 				"+star.max_depth=3",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
-				"+star.test_path=build/tmp/stack",
-				"+star.test_package=star.examples.stack",
+				"+star.test_path=" + Constant.TEST_PATH + "/stack",
+				"+star.test_package=stack",
 				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
