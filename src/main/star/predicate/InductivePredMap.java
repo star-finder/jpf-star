@@ -6,7 +6,7 @@ import java.util.Map;
 public class InductivePredMap {
 	
 	// contains all inductive predicate definitions
-	private static Map<String,InductivePred> inductivePredMap = new HashMap<String,InductivePred>();
+	private static Map<String,InductivePred> inductivePredMap = null;
 	
 	public static void put(InductivePred ip) {
 		String predName = ip.getPredName();
@@ -31,4 +31,7 @@ public class InductivePredMap {
 		return ((InductivePred[]) inductivePredMap.values().toArray(ret));
 	}
 	
+	public static void reset() {
+		inductivePredMap = new HashMap<String,InductivePred>();
+	}
 }

@@ -6,7 +6,7 @@ import java.util.Map;
 public class DataNodeMap {
 	
 	// contains all data definitions
-	private static Map<String, DataNode> dataNodeMap = new HashMap<String, DataNode>();
+	private static Map<String, DataNode> dataNodeMap = null;
 
 	public static void put(DataNode dn) {
 		String type = dn.getType();
@@ -31,4 +31,8 @@ public class DataNodeMap {
 		return ((DataNode[]) dataNodeMap.values().toArray(ret));
 	}
 
+	public static void reset() {
+		dataNodeMap = new HashMap<String, DataNode>();
+	}
+	
 }
