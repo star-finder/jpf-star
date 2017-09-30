@@ -9,13 +9,13 @@ public class Sll2Test extends TestStar {
 	
 	@Override
 	protected void initDataNode() {
-		String data = "data Node {Node next}";
+		String data = "data Node_old {Node_old next}";
 		Initializer.initDataNode(data);
 	}
 	
 	@Override
 	protected void initPredicate() {
-		String pred = "pred sll(root) == root = null || root::Node<next> * sll(next)";
+		String pred = "pred sll(root) == root = null || root::Node_old<next> * sll(next)";
 		Initializer.initPredicate(pred);
 	}
 	
@@ -36,7 +36,7 @@ public class Sll2Test extends TestStar {
 //				"+star.lazy=false",
 				"+star.test_path=" + Constant.TEST_PATH + "/basic",
 				"+star.test_package=basic",
-//				"+star.test_imports=...",
+				"+star.test_imports=common.Utilities",
 				"+classpath=build/examples", 
 				"+sourcepath=src/examples",
 				"+symbolic.method=basic.Sll2.myMethod(sym)",
