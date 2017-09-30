@@ -33,13 +33,19 @@ class List {
 		return true;
 	}
 
-	  /*
-	  public static void mainSPIN15(String[] args){
-	    List L0 = new List();
-	    L0=(List) Debug.makeSymbolicRef("L0",L0);
-	    if(L0!=null)
-	      assert (L0.repOk());
-	    L0.head = L0.head.swapNode();
-	  }
-	  //*/
+	public static void main(String[] args) {
+		List L0 = new List();
+		L0.head = L0.head.swapNode();
+	}
+	
+	/*
+	public static void mainSPIN15(String[] args) {
+		List L0 = new List();
+		L0 = (List) Debug.makeSymbolicRef("L0", L0);
+		if (L0 != null)
+			assert (L0.repOk());
+		L0.head = L0.head.swapNode();
+	}
+	// */
+	
 	}

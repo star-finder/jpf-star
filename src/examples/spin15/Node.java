@@ -8,6 +8,11 @@ package spin15;
 class Node {
 	int elem;
 	Node next;
+	
+	public Node(int e, Node n) {
+		elem = e;
+		next = n;
+	}
 
 	public Node swapNode() {
 		if (elem > next.elem) {
@@ -17,5 +22,10 @@ class Node {
 			return t;
 		}
 		return this;
+	}
+	
+	public static void main (String[] args) {
+		Node x = new Node(1, null);
+		x = x.swapNode();
 	}
 }

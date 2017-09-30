@@ -1,0 +1,19 @@
+target=spin15.List
+
+classpath=${jpf-star}/build/examples;
+sourcepath=${jpf-star}/src/examples
+
+shell=star.StarShell
+symbolic.method=spin15.Node.swapNode()
+listener=star.StarListener
+
+star.data=data Node {int val; Node next}
+star.predicate=pred sll(a) == a=null || a::Node<_,next1> * sll(next1)
+star.precondition=pre swapNode == sll(this_x)
+
+star.max_depth=3
+star.test_path=build/tmp
+star.test_package=spin15
+star.test_imports=spin15.*;common.Utilities
+
+symbolic.lazy=true
