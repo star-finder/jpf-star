@@ -23,7 +23,7 @@ public class Node_swapNodeTest extends TestStar{
 	
 	@Override
 	protected void initPrecondition() {
-		String pre = "pre swapNode == sll(this_x)";
+		String pre = "pre swapNode == sll(this_next)";
 		Initializer.initPrecondition(pre);
 	}
 	

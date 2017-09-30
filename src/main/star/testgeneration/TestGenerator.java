@@ -182,8 +182,8 @@ public class TestGenerator {
 		
 		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
 		
-		if (!mi.isStatic())
-			test.append("\t\tSystem.out.println(Utilities.repOK(" + objName + "));\n");
+//		if (!mi.isStatic())
+//			test.append("\t\tSystem.out.println(Utilities.repOK(" + objName + "));\n");
 		
 		if (mi.isStatic())
 			test.append("\t\t" + clsName + "." + mi.getName() + "(");
