@@ -107,7 +107,7 @@ public class InductiveTermTest {
 	
 	@Test
 	public void testUnfold() {
-		String preds = "pred sll(root) == root = null || root->Node(next) * sll(next)";
+		String preds = "pred sll(root) == root = null || root::Node<next> * sll(next)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(preds);
         InductivePredLexer lexer = new InductivePredLexer(in);

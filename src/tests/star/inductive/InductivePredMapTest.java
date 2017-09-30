@@ -15,9 +15,12 @@ public class InductivePredMapTest {
 
 	@Test
 	public void testFind() {
-		String pred1 = "pred sll(root) == root = null || root->Node(next) * sll(next)";
-		String pred2 = "pred dll(root,prev) == root = null || root->Node2(prev,next) * dll(next,root)";
+		String pred1 = "pred sll(root) == root = null || root::Node<next> * sll(next)";
+		String pred2 = "pred dll(root,prev) == root = null || root::Node2<prev,next> * dll(next,root)";
 		String preds = pred1 + ";" + pred2;
+		
+		String outPred1 = "pred sll(root) == root = null || root->Node(next) * sll(next)";
+		String outPred2 = "pred dll(root,prev) == root = null || root->Node2(prev,next) * dll(next,root)";
 		
 		ANTLRInputStream in = new ANTLRInputStream(preds);
         InductivePredLexer lexer = new InductivePredLexer(in);
@@ -30,8 +33,8 @@ public class InductivePredMapTest {
         InductivePred sll = InductivePredMap.find("sll");
         InductivePred dll = InductivePredMap.find("dll");
         
-        assertTrue(sll.toString().equals(pred1));
-        assertTrue(dll.toString().equals(pred2));
+        assertTrue(sll.toString().equals(outPred1));
+        assertTrue(dll.toString().equals(outPred2));
 	}
 
 }
