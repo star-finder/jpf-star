@@ -183,18 +183,18 @@
   <!-- ======================= MISC SECTION ================================ -->
 
   <!-- build jars -->
-  <target name="build" depends="compile,-jar-jvm,-jar-jpf,-jar-annotations"
+  <target name="build" depends="compile,-jar-jvm,-jar-jpf,-jar-annotations,create-output-dir"
         description="generate the ${ant.project.name} jar files" >
   </target>
 
   <!-- Target #1. Set property value depends on check result -->
   <target name="check-dir">
-    <available property="tmp.dir" file="build/tmp" type="dir"/>
+    <available property="output.dir" file="src/output" type="dir"/>
   </target>
  
   <!-- target #2. Create dir 'tmp' if doesn't exist -->
-  <target name="create-tmp-dir" depends="check-dir" unless="tmp.dir">
-    <mkdir dir="build/tmp"/>
+  <target name="create-output-dir" depends="check-dir" unless="output.dir">
+    <mkdir dir="src/output"/>
   </target>
 
   <target name="-jar-jvm" if="have_jvm_code">
@@ -257,6 +257,7 @@
   <!-- public clean: cleanup from previous tasks/builds -->
   <target name="clean">
     <delete dir="build" />
+    <delete dir="src/output" />
     <delete dir="logs" />
     <delete file="oc.out" />
     <delete>
