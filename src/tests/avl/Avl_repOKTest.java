@@ -3,7 +3,6 @@ import org.junit.Test;
 
 import common.Constant;
 import common.TestStar;
-import star.data.DataNodeMap;
 import star.precondition.Initializer;
 
 public class Avl_repOKTest extends TestStar {

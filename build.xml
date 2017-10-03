@@ -98,11 +98,6 @@
       </or>
     </condition>
 
-<!--	  <fail unless="env.JUNIT_HOME">
-		  The JUNIT_HOME environment variable must be set. 
-	  </fail>		  
-	  <property name="junit.home" value="${env.JUNIT_HOME}"/>
--->
     <!-- optionally set the required artifacts here
     <fail unless="have_main">no src/main</fail>
     <fail unless="have_annotations">no src/annotations</fail>

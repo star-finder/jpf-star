@@ -3,10 +3,7 @@ import org.junit.Test;
 
 import common.Constant;
 import common.TestStar;
-import star.data.DataNodeMap;
 import star.precondition.Initializer;
-import star.precondition.PreconditionMap;
-import star.predicate.InductivePredMap;
 
 public class AATree_wellFormedTest extends TestStar {
 	

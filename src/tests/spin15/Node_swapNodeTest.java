@@ -2,7 +2,6 @@ package spin15;
 
 import org.junit.Test;
 
-import spin15.List;
 import common.Constant;
 import common.TestStar;
 import star.precondition.Initializer;
