@@ -12,8 +12,8 @@ star.predicate=pred precondition(a,b) == a=null & b=null || a::Node<_,next1> * b
 star.precondition=pre add == precondition(x,y)
 
 star.max_depth=4
-star.test_path=build/tmp
+star.test_path=src/output/basic
 star.test_package=basic
-star.test_imports=basic.BigInteger;common.Utilities
+star.test_imports=basic.*;common.Utilities
 
 symbolic.lazy=true

@@ -1,0 +1,19 @@
+target=basic.Sll4
+
+classpath=${jpf-star}/build/examples;
+sourcepath=${jpf-star}/src/examples
+
+shell=star.StarShell
+symbolic.method=basic.Sll4.myMethod()
+listener=star.StarListener
+
+star.data=data Node_old {Node_old next}
+star.predicate=pred sll(root) == root = null || root::Node_old<next> * sll(next)
+star.precondition=pre myMethod == sll(Sll4_x)
+
+star.max_depth=4
+star.test_path=src/output/basic
+star.test_package=basic
+star.test_imports=common.Utilities
+
+symbolic.lazy=true
