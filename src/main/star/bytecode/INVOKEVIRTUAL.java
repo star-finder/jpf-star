@@ -8,7 +8,7 @@ import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.solver.Solver;
+import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
 

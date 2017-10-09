@@ -6,7 +6,7 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.NativeMethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.solver.Solver;
+import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
 

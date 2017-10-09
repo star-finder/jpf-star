@@ -11,7 +11,7 @@ import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.solver.Solver;
+import starlib.solver.Solver;
 import starlib.formula.Formula;
 import starlib.formula.Variable;
 import starlib.formula.expression.Comparator;

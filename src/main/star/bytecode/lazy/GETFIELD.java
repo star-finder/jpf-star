@@ -18,7 +18,7 @@ import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
 import star.bytecode.StarBytecodeUtils;
-import star.solver.Solver;
+import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
 import starlib.formula.Utilities;

@@ -5,7 +5,7 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.solver.Solver;
+import starlib.solver.Solver;
 import starlib.formula.Formula;
 import starlib.formula.expression.BinaryExpression;
 import starlib.formula.expression.Comparator;
