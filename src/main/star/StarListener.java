@@ -13,7 +13,7 @@ import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.bytecode.BytecodeUtils;
-import star.solver.Solver;
+import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
 
 public class StarListener extends PropertyListenerAdapter {
