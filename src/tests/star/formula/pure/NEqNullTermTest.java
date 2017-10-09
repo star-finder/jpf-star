@@ -8,8 +8,10 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import star.formula.Utilities;
-import star.formula.Variable;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.pure.NEqNullTerm;
+import starlib.formula.pure.PureTerm;
 
 public class NEqNullTermTest {
 	

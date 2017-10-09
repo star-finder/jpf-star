@@ -5,21 +5,21 @@ import java.util.Vector;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.jvm.bytecode.JVMInvokeInstruction;
 import gov.nasa.jpf.symbc.bytecode.BytecodeUtils;
-import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
-import star.formula.Variable;
-import star.formula.expression.Expression;
-import star.formula.expression.LiteralExpression;
-import star.formula.expression.VariableExpression;
-import star.precondition.Precondition;
-import star.precondition.PreconditionMap;
 import star.solver.Solver;
+import starlib.formula.Formula;
+import starlib.formula.Variable;
+import starlib.formula.expression.Comparator;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.LiteralExpression;
+import starlib.formula.expression.VariableExpression;
+import starlib.precondition.Precondition;
+import starlib.precondition.PreconditionMap;
 
 public class INVOKEInstrSymbHelper {
 	

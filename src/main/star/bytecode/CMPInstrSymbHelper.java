@@ -1,15 +1,15 @@
 package star.bytecode;
 
-import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
-import star.formula.expression.Expression;
-import star.formula.expression.LiteralExpression;
 import star.solver.Solver;
+import starlib.formula.Formula;
+import starlib.formula.expression.Comparator;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.LiteralExpression;
 
 public class CMPInstrSymbHelper {
 	

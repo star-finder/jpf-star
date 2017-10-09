@@ -11,11 +11,11 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import gov.nasa.jpf.Config;
-import star.data.DataNode;
-import star.data.DataNodeMap;
-import star.formula.Formula;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredMap;
+import starlib.data.DataNode;
+import starlib.data.DataNodeMap;
+import starlib.formula.Formula;
+import starlib.predicate.InductivePred;
+import starlib.predicate.InductivePredMap;
 
 public class Solver {
 

@@ -11,5 +11,7 @@
 	<classpathentry kind="lib" path="lib/ganttproject-guava.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="lib/starlib-jpf.jar"/>
+	<classpathentry kind="lib" path="lib/starlib.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>
