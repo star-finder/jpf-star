@@ -5,6 +5,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+
 public class UtilityTest {
 	
 	@Before

@@ -4,7 +4,7 @@ import org.junit.Test;
 import common.Constant;
 import common.TestStar;
 import doublelinkedlist.DoubleLinkedList.Entry;
-import star.precondition.Initializer;
+import starlib.precondition.Initializer;
 
 public class DoubleLinkedList_inListTest extends TestStar {
 	

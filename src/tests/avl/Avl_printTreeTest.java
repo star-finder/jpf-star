@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import common.Constant;
 import common.TestStar;
-import star.precondition.Initializer;
+import starlib.precondition.Initializer;
 
 public class Avl_printTreeTest extends TestStar {
 	

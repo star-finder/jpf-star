@@ -8,9 +8,9 @@ import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
 import star.solver.Solver;
 import star.testgeneration.TestGenerator;
+import starlib.formula.Formula;
 
 public class INVOKEVIRTUAL extends gov.nasa.jpf.jvm.bytecode.INVOKEVIRTUAL {
 
