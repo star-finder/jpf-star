@@ -7,13 +7,14 @@ shell=star.StarShell
 symbolic.method=spin15.Node.swapNode()
 listener=star.StarListener
 
-star.data=data Node {int val; Node next}
-star.predicate=pred sll(a) == a=null || a::Node<_,next1> * sll(next1)
-star.precondition=pre swapNode == sll(this_x)
+star.data=data Node {int elem; Node next}
+star.predicate=pred sll(a) == a=null || a::Node<elem1,next1> * sll(next1)
+star.precondition=pre swapNode == sll(this_next)
 
 star.max_depth=3
 star.test_path=src/output/spin15
 star.test_package=spin15
 star.test_imports=spin15.*;common.Utilities
 
+symbolic.fields=instance
 symbolic.lazy=true
