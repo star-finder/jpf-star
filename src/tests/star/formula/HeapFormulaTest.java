@@ -8,9 +8,12 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import star.formula.heap.HeapTerm;
-import star.formula.heap.InductiveTerm;
-import star.formula.heap.PointToTerm;
+import starlib.formula.HeapFormula;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.heap.HeapTerm;
+import starlib.formula.heap.InductiveTerm;
+import starlib.formula.heap.PointToTerm;
 
 public class HeapFormulaTest {
 	

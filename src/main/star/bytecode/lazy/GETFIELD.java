@@ -17,15 +17,16 @@ import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
-import star.formula.Utilities;
-import star.formula.Variable;
-import star.formula.expression.Expression;
-import star.formula.expression.VariableExpression;
-import star.formula.heap.HeapTerm;
-import star.formula.heap.PointToTerm;
-import star.solver.Solver;
+import star.bytecode.StarBytecodeUtils;
+import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
+import starlib.formula.Formula;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.VariableExpression;
+import starlib.formula.heap.HeapTerm;
+import starlib.formula.heap.PointToTerm;
 
 public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
@@ -136,7 +137,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 						if (address == -1) {
 							address = pc.findAddress(pc.getAlias(name));
 							if (address == -1) {
-								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+								daIndex = StarBytecodeUtils.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 							} else {
 								daIndex = address;
 							}
@@ -218,7 +219,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 					if (address == -1) {
 						address = pc.findAddress(pc.getAlias(name));
 						if (address == -1) {
-							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+							daIndex = StarBytecodeUtils.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 						} else {
 							daIndex = address;
 						}

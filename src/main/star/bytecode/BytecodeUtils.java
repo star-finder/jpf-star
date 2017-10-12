@@ -38,13 +38,11 @@ import gov.nasa.jpf.symbc.numeric.IntegerExpression;
 import gov.nasa.jpf.symbc.numeric.MinMax;
 import gov.nasa.jpf.symbc.numeric.PCChoiceGenerator;
 import gov.nasa.jpf.symbc.numeric.PathCondition;
-import gov.nasa.jpf.symbc.numeric.PreCondition;
 import gov.nasa.jpf.symbc.numeric.RealExpression;
 import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
 import gov.nasa.jpf.symbc.numeric.SymbolicReal;
 import gov.nasa.jpf.symbc.string.StringExpression;
 import gov.nasa.jpf.symbc.string.StringSymbolic;
-import gov.nasa.jpf.vm.AnnotationInfo;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.ElementInfo;
@@ -54,7 +52,6 @@ import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.StackFrame;
-import gov.nasa.jpf.vm.SystemState;
 import gov.nasa.jpf.vm.ThreadInfo;
 
 public class BytecodeUtils {
@@ -584,73 +581,8 @@ public class BytecodeUtils {
 					outputString = outputString.substring(0, outputString.length() - 1);
 			}
 			// System.out.println(outputString);
-
-			// Now, set up the initial path condition for this method if the
-			// Annotation contains one
-			// we'll create a choice generator for this
-
-			// this is pretty inefficient especially when preconditions are not
-			// used -- fixed somehow -- TODO: testing
-
-			if (invInst.getInvokedMethod().getAnnotation("gov.nasa.jpf.symbc.Preconditions") != null) {
-				AnnotationInfo ai;
-				PathCondition pc = null;
-				// TODO: should still look at prev pc if we want to generate
-				// test sequences
-				// here we should get the prev pc
-				assert (cg instanceof PCChoiceGenerator) : "expected PCChoiceGenerator, got: " + cg;
-				ChoiceGenerator<?> prev_cg = cg.getPreviousChoiceGenerator();
-				while (!((prev_cg == null) || (prev_cg instanceof PCChoiceGenerator))) {
-					prev_cg = prev_cg.getPreviousChoiceGenerator();
-				}
-
-				if (prev_cg == null)
-					pc = new PathCondition();
-				else
-					pc = ((PCChoiceGenerator) prev_cg).getCurrentPC();
-
-				assert pc != null;
-
-				ai = invInst.getInvokedMethod().getAnnotation("gov.nasa.jpf.symbc.Preconditions");
-				String assumeString = (String) ai.getValue("value");
-
-				pc = (new PreCondition()).addConstraints(pc, assumeString, expressionMap);
-
-				// should check PC for satisfiability
-				if (!pc.simplify()) {// not satisfiable
-					// System.out.println("Precondition not satisfiable");
-					th.getVM().getSystemState().setIgnored(true);
-				} else {
-					// pc.solve();
-					((PCChoiceGenerator) cg).setCurrentPC(pc);
-					// System.out.println(((PCChoiceGenerator)
-					// cg).getCurrentPC());
-				}
-			}
 		}
 		return new InstructionOrSuper(true, null);
-	}
-
-	/**
-	 * Get the path condition of a SystemState's most recent PCChoiceGenerator.
-	 */
-	public static PathCondition getPC(SystemState ss) {
-		ChoiceGenerator<?> cg = ss.getChoiceGenerator();
-		while (cg != null && !(cg instanceof PCChoiceGenerator)) {
-			cg = cg.getPreviousChoiceGenerator();
-		}
-
-		if (cg == null) {
-			return null;
-		} else {
-			return ((PCChoiceGenerator) cg).getCurrentPC();
-		}
-	}
-
-	private static int symVarCounter = 1;
-
-	public static void clearSymVarCounter() {
-		symVarCounter = 1;
 	}
 
 	public enum VarType {

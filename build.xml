@@ -38,6 +38,11 @@
   <!-- get the jpf-symbc path properties -->
   <property file="${jpf-symbc}/jpf.properties"/>
 
+  <property name="starlib" value = "../starlib"/>
+
+  <!-- get the jpf-symbc path properties -->
+  <property file="${starlib}/jpf.properties"/>
+
 
   <!-- compiler settings -->
   <property name="src_level"     value="8"/>
@@ -64,6 +69,7 @@
     <pathelement path="${jpf-symbc.native_classpath}"/>
     <pathelement path="${jpf-symbc.classpath}"/>
 
+    <pathelement path="${starlib.native_classpath}"/>
   </path>
 
   <!-- init: common initialization -->

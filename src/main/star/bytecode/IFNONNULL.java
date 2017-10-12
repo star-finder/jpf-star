@@ -5,12 +5,12 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
-import star.formula.Utilities;
-import star.formula.Variable;
-import star.formula.heap.HeapTerm;
-import star.formula.heap.PointToTerm;
-import star.solver.Solver;
+import starlib.solver.Solver;
+import starlib.formula.Formula;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.heap.HeapTerm;
+import starlib.formula.heap.PointToTerm;
 
 public class IFNONNULL extends gov.nasa.jpf.jvm.bytecode.IFNONNULL {
 

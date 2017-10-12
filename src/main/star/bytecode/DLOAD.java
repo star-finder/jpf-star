@@ -5,9 +5,9 @@ import gov.nasa.jpf.symbc.numeric.SymbolicReal;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
-import star.formula.Variable;
-import star.formula.expression.Expression;
-import star.formula.expression.VariableExpression;
+import starlib.formula.Variable;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.VariableExpression;
 
 public class DLOAD extends gov.nasa.jpf.jvm.bytecode.DLOAD {
 

@@ -1,11 +1,11 @@
 package star.bytecode;
 
-import gov.nasa.jpf.symbc.numeric.Operator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
-import star.formula.expression.Expression;
-import star.formula.expression.UnaryExpression;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.Operator;
+import starlib.formula.expression.UnaryExpression;
 
 public class DNEG extends gov.nasa.jpf.jvm.bytecode.DNEG {
 

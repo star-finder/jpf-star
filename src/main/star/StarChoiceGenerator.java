@@ -1,7 +1,7 @@
 package star;
 
 import gov.nasa.jpf.symbc.numeric.PCChoiceGenerator;
-import star.formula.Formula;
+import starlib.formula.Formula;
 
 public class StarChoiceGenerator extends PCChoiceGenerator {
 

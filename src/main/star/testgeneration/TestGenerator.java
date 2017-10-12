@@ -9,19 +9,20 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 
 import gov.nasa.jpf.Config;
-import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.FieldInfo;
 import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
-import star.formula.Formula;
-import star.formula.Variable;
-import star.formula.expression.Expression;
-import star.formula.expression.LiteralExpression;
-import star.formula.expression.VariableExpression;
-import star.precondition.Precondition;
-import star.precondition.PreconditionLexer;
-import star.precondition.PreconditionParser;
+import starlib.formula.Formula;
+import starlib.formula.Variable;
+import starlib.formula.expression.Comparator;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.LiteralExpression;
+import starlib.formula.expression.VariableExpression;
+import starlib.jpf.PathFinderTestGenerator;
+import starlib.precondition.Precondition;
+import starlib.precondition.PreconditionLexer;
+import starlib.precondition.PreconditionParser;
 
 public class TestGenerator {
 	
@@ -180,7 +181,9 @@ public class TestGenerator {
 			}
 		}
 		
-		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+//		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+		PathFinderTestGenerator jpfGen = new PathFinderTestGenerator(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+		jpfGen.visit(f);
 		
 //		if (!mi.isStatic())
 //			test.append("\t\tSystem.out.println(Utilities.repOK(" + objName + "));\n");

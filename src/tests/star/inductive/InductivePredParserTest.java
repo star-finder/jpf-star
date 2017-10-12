@@ -6,9 +6,9 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Test;
 
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredParser;
+import starlib.predicate.InductivePred;
+import starlib.predicate.InductivePredLexer;
+import starlib.predicate.InductivePredParser;
 
 public class InductivePredParserTest {
 

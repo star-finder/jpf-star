@@ -14,15 +14,15 @@ import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
-import star.formula.Utilities;
-import star.formula.Variable;
-import star.formula.expression.Expression;
-import star.formula.expression.VariableExpression;
-import star.formula.heap.HeapTerm;
-import star.formula.heap.InductiveTerm;
-import star.formula.heap.PointToTerm;
-import star.solver.Solver;
+import starlib.solver.Solver;
+import starlib.formula.Formula;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.VariableExpression;
+import starlib.formula.heap.HeapTerm;
+import starlib.formula.heap.InductiveTerm;
+import starlib.formula.heap.PointToTerm;
 
 public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 
@@ -86,7 +86,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						if (address == -1) {
 							address = pc.findAddress(pc.getAlias(name));
 							if (address == -1) {
-								daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+								daIndex = StarBytecodeUtils.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 							} else {
 								daIndex = address;
 							}
@@ -139,7 +139,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 					if (address == -1) {
 						address = pc.findAddress(pc.getAlias(name));
 						if (address == -1) {
-							daIndex = Utilities.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
+							daIndex = StarBytecodeUtils.addNewHeapNode(ti, ei, typeClassInfo, sym_v, pc);
 						} else {
 							daIndex = address;
 						}
