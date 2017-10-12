@@ -1,4 +1,4 @@
-target=spin15.List
+target=spin15.Node
 
 classpath=${jpf-star}/build/examples;
 sourcepath=${jpf-star}/src/examples
@@ -12,7 +12,7 @@ star.predicate=pred sll(a) == a=null || a::Node<_,next1> * sll(next1)
 star.precondition=pre swapNode == sll(this_x)
 
 star.max_depth=3
-star.test_path=build/tmp
+star.test_path=src/output/spin15
 star.test_package=spin15
 star.test_imports=spin15.*;common.Utilities
 
