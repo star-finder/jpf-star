@@ -3,7 +3,7 @@ package star;
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPF;
 import gov.nasa.jpf.JPFShell;
-import star.precondition.Initializer;
+import starlib.precondition.Initializer;
 
 public class StarShell implements JPFShell {
 

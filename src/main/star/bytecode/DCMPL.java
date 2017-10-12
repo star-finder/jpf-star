@@ -1,10 +1,10 @@
 package star.bytecode;
 
-import gov.nasa.jpf.symbc.numeric.Comparator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
-import star.formula.expression.Expression;
+import starlib.formula.expression.Comparator;
+import starlib.formula.expression.Expression;
 
 public class DCMPL extends gov.nasa.jpf.jvm.bytecode.DCMPL {
 	

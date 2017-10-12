@@ -10,13 +10,15 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import star.formula.Formula;
-import star.formula.Utilities;
-import star.formula.Variable;
-import star.predicate.InductivePred;
-import star.predicate.InductivePredLexer;
-import star.predicate.InductivePredMap;
-import star.predicate.InductivePredParser;
+import starlib.formula.Formula;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.heap.HeapTerm;
+import starlib.formula.heap.InductiveTerm;
+import starlib.predicate.InductivePred;
+import starlib.predicate.InductivePredLexer;
+import starlib.predicate.InductivePredMap;
+import starlib.predicate.InductivePredParser;
 
 public class InductiveTermTest {
 	

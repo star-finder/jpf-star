@@ -1,12 +1,12 @@
 package star.bytecode;
 
-import gov.nasa.jpf.symbc.numeric.Operator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
-import star.formula.expression.BinaryExpression;
-import star.formula.expression.Expression;
-import star.formula.expression.LiteralExpression;
+import starlib.formula.expression.BinaryExpression;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.LiteralExpression;
+import starlib.formula.expression.Operator;
 
 public class LREM extends gov.nasa.jpf.jvm.bytecode.LREM {
 

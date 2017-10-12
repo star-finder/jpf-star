@@ -9,11 +9,11 @@ import gov.nasa.jpf.vm.LoadOnJPFRequired;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import star.formula.Formula;
-import star.formula.Utilities;
-import star.formula.Variable;
-import star.formula.expression.Expression;
-import star.formula.expression.VariableExpression;
+import starlib.formula.Formula;
+import starlib.formula.Utilities;
+import starlib.formula.Variable;
+import starlib.formula.expression.Expression;
+import starlib.formula.expression.VariableExpression;
 
 public class NEW extends gov.nasa.jpf.jvm.bytecode.NEW {
 
