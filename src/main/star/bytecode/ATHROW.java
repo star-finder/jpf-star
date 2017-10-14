@@ -4,10 +4,11 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.ThreadInfo;
+import gov.nasa.jpf.vm.VM;
 import star.StarChoiceGenerator;
-import starlib.solver.Solver;
-import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
+import starlib.jpf.NoErrorProperty;
+import starlib.solver.Solver;
 
 public class ATHROW extends gov.nasa.jpf.jvm.bytecode.ATHROW {
 
@@ -21,13 +22,8 @@ public class ATHROW extends gov.nasa.jpf.jvm.bytecode.ATHROW {
 			Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 			
 			if (Solver.checkSat(pc, conf)) {
-				System.out.println("Throw Exception");
-				System.out.println(pc);
-				
-				String model = Solver.getModel();
-				System.out.println(model);
-				
-				TestGenerator.addModel(model);
+				VM vm = ti.getVM();
+				vm.getSearch().error(new NoErrorProperty("Throw Exception"), vm.getClonedPath(), vm.getThreadList());
 			}
 		}
 		

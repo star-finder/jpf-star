@@ -16,10 +16,9 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
+import gov.nasa.jpf.vm.VM;
 import star.StarChoiceGenerator;
 import star.bytecode.StarBytecodeUtils;
-import starlib.solver.Solver;
-import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
@@ -27,6 +26,8 @@ import starlib.formula.expression.Expression;
 import starlib.formula.expression.VariableExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.PointToTerm;
+import starlib.jpf.NoErrorProperty;
+import starlib.solver.Solver;
 
 public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 
@@ -50,13 +51,10 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
 				if (Solver.checkSat(pc, conf)) {
-					System.out.println("java.lang.NullPointerException: referencing field '" + fname + "' on null object");
-					System.out.println(pc);
-					
-					String model = Solver.getModel();
-					System.out.println(model);
-					
-					TestGenerator.addModel(model);
+					VM vm = ti.getVM();
+					vm.getSearch().error(
+							new NoErrorProperty("java.lang.NullPointerException: referencing field '" + fname + "' on null object"),
+							vm.getClonedPath(), vm.getThreadList());
 				}
 			}
 			

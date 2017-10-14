@@ -282,8 +282,8 @@
       </not>
     </condition>
 
-    <junit printsummary="on" showoutput="off" haltonfailure="yes" dir="${basedir}"
-           fork="yes" forkmode="perTest" maxmemory="1024m" outputtoformatters="true">
+    <junit printsummary="on" showoutput="off" haltonfailure="no" dir="${basedir}"
+           fork="yes" forkmode="perTest" maxmemory="1024m" outputtoformatters="true" failureproperty="test.failed">
       <formatter type="plain" usefile="${junit.usefile}"/>
 
       <classpath>
@@ -302,7 +302,7 @@
       </batchtest>
 
     </junit>
-
+    <fail message="Test failure detected, check test results." if="test.failed" />
   </target>
 
 

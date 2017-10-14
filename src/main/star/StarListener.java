@@ -6,6 +6,7 @@ import gov.nasa.jpf.PropertyListenerAdapter;
 import gov.nasa.jpf.jvm.bytecode.JVMReturnInstruction;
 import gov.nasa.jpf.report.ConsolePublisher;
 import gov.nasa.jpf.report.Publisher;
+import gov.nasa.jpf.search.Search;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.Instruction;
@@ -13,8 +14,9 @@ import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.bytecode.BytecodeUtils;
-import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
+import starlib.formula.Formula;
+import starlib.solver.Solver;
 
 public class StarListener extends PropertyListenerAdapter {
 
@@ -23,6 +25,7 @@ public class StarListener extends PropertyListenerAdapter {
 	
 	public StarListener(Config conf, JPF jpf) {
 		jpf.addPublisherExtension(ConsolePublisher.class, this);
+		conf.setProperty("search.multiple_errors", "true");
 	}
 
 	@Override
@@ -78,6 +81,28 @@ public class StarListener extends PropertyListenerAdapter {
 					}
 				}
 			}
+		}
+	}
+	
+	@Override
+	public void propertyViolated(Search search) {
+
+		VM vm = search.getVM();
+
+		ChoiceGenerator<?> cg = vm.getChoiceGenerator();
+		if (!(cg instanceof StarChoiceGenerator)) {
+			ChoiceGenerator<?> prev_cg = cg.getPreviousChoiceGenerator();
+			while (!((prev_cg == null) || (prev_cg instanceof StarChoiceGenerator))) {
+				prev_cg = prev_cg.getPreviousChoiceGenerator();
+			}
+			cg = prev_cg;
+		}
+		if ((cg instanceof StarChoiceGenerator) && ((StarChoiceGenerator) cg).getCurrentPC() != null) {
+			String model = Solver.getModel();
+			TestGenerator.addModel(model);
+			// String error = search.getLastError().getDetails();
+			// System.out.println("Property Violated: result is  " + error);
+			// System.out.println("****************************");
 		}
 	}
 

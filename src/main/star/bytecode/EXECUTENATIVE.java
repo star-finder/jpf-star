@@ -5,10 +5,12 @@ import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.NativeMethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
+import gov.nasa.jpf.vm.VM;
 import star.StarChoiceGenerator;
 import starlib.solver.Solver;
 import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
+import starlib.jpf.NoErrorProperty;
 
 public class EXECUTENATIVE extends gov.nasa.jpf.jvm.bytecode.EXECUTENATIVE {
 
@@ -27,13 +29,8 @@ public class EXECUTENATIVE extends gov.nasa.jpf.jvm.bytecode.EXECUTENATIVE {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
 				if (Solver.checkSat(pc, conf)) {
-					System.out.println("Skip native method");
-					System.out.println(pc);
-					
-					String model = Solver.getModel();
-					System.out.println(model);
-					
-					TestGenerator.addModel(model);
+					VM vm = ti.getVM();
+					vm.getSearch().error(new NoErrorProperty("Skip native method"), vm.getClonedPath(), vm.getThreadList());
 				}
 			}
 			

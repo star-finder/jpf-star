@@ -7,10 +7,11 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
+import gov.nasa.jpf.vm.VM;
 import star.StarChoiceGenerator;
-import starlib.solver.Solver;
-import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
+import starlib.jpf.NoErrorProperty;
+import starlib.solver.Solver;
 
 public class INVOKEVIRTUAL extends gov.nasa.jpf.jvm.bytecode.INVOKEVIRTUAL {
 
@@ -30,13 +31,10 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.jvm.bytecode.INVOKEVIRTUAL {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
 				if (Solver.checkSat(pc, conf)) {
-					System.out.println("java.lang.NullPointerException: Calling '" + mname + "' on null object");
-					System.out.println(pc);
-					
-					String model = Solver.getModel();
-					System.out.println(model);
-					
-					TestGenerator.addModel(model);
+					VM vm = ti.getVM();
+					vm.getSearch().error(
+							new NoErrorProperty("java.lang.NullPointerException: Calling '" + mname + "' on null object"),
+							vm.getClonedPath(), vm.getThreadList());
 				}
 			}
 			
