@@ -19,7 +19,7 @@ import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
 import starlib.formula.expression.VariableExpression;
-import starlib.jpf.PathFinderTestGenerator;
+import starlib.jpf.testsuites.PathFinderTestGenerator;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionLexer;
 import starlib.precondition.PreconditionParser;
