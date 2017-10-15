@@ -4,8 +4,6 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPF;
 import gov.nasa.jpf.PropertyListenerAdapter;
 import gov.nasa.jpf.jvm.bytecode.JVMReturnInstruction;
-import gov.nasa.jpf.report.ConsolePublisher;
-import gov.nasa.jpf.report.Publisher;
 import gov.nasa.jpf.search.Search;
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.ClassInfo;
@@ -15,7 +13,7 @@ import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.bytecode.BytecodeUtils;
 import star.testgeneration.TestGenerator;
-import starlib.formula.Formula;
+import starlib.jpf.PathFinderUtils;
 import starlib.solver.Solver;
 
 public class StarListener extends PropertyListenerAdapter {
@@ -24,8 +22,9 @@ public class StarListener extends PropertyListenerAdapter {
 	private boolean DEBUG = false;
 	
 	public StarListener(Config conf, JPF jpf) {
-		jpf.addPublisherExtension(ConsolePublisher.class, this);
-		conf.setProperty("search.multiple_errors", "true");
+		jpf.getReporter().getPublishers().clear();
+		DEBUG = conf.getProperty("star.debug","false").equals("true");
+		DEBUG = true;
 	}
 
 	@Override
@@ -72,16 +71,23 @@ public class StarListener extends PropertyListenerAdapter {
 						if (cg != null && cg instanceof StarChoiceGenerator
 								&& ((StarChoiceGenerator) cg).getCurrentPCStar() != null) {
 							String model = Solver.getModel();
-							if(DEBUG) {
-								System.out.println(((StarChoiceGenerator) cg).getCurrentPCStar());
-								System.out.println(model);
-							}
 							TestGenerator.addModel(model);
+							if(DEBUG) {
+								System.out.println("\n\n===========================================");
+								printPathConditionAndModel(cg, model);
+							}
 						}
 					}
 				}
 			}
 		}
+	}
+	
+	private void printPathConditionAndModel(ChoiceGenerator<?> cg, String model) {
+		System.out.println("Path condition: " + ((StarChoiceGenerator) cg).getCurrentPCStar());
+		System.out.println();
+		System.out.println("Model: " + model);
+		System.out.println("-------------------------------------------");
 	}
 	
 	@Override
@@ -100,17 +106,17 @@ public class StarListener extends PropertyListenerAdapter {
 		if ((cg instanceof StarChoiceGenerator) && ((StarChoiceGenerator) cg).getCurrentPC() != null) {
 			String model = Solver.getModel();
 			TestGenerator.addModel(model);
-			// String error = search.getLastError().getDetails();
-			// System.out.println("Property Violated: result is  " + error);
-			// System.out.println("****************************");
+			if(DEBUG) {
+				System.out.println("\n\n===========================================");
+				PathFinderUtils.printErrorDetails(search);
+				printPathConditionAndModel(cg, model);
+			}
 		}
 	}
-
-	// -------- the publisher interface
+	
 	@Override
-	public void publishFinished(Publisher publisher) {
+	public void searchFinished(Search search) {
 		TestGenerator.generateTests();
-		System.out.println("finished");
+		System.out.println("\nTest generation completed.");
 	}
-
 }
