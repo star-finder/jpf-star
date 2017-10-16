@@ -3,7 +3,10 @@ package star.testgeneration;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -19,6 +22,7 @@ import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
 import starlib.formula.expression.VariableExpression;
+import starlib.jpf.PathFinderUtils;
 import starlib.jpf.testsuites.PathFinderTestGenerator;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionLexer;
@@ -113,29 +117,29 @@ public class TestGenerator {
 		FieldInfo[] insFields = ci.getInstanceFields();
 		FieldInfo[] staFields = ci.getDeclaredStaticFields();
 		
-		List<Variable> knownTypeVars = new ArrayList<Variable>();
+		HashMap<String,String> knownTypeVars = new HashMap<String,String>();
 		
 		for (LocalVarInfo arg : args) {
 			if (!arg.getName().equals("this")) {
 				String name = arg.getName();
-				String type = standarizeType(arg.getType());
+				String type = PathFinderUtils.standardizeType(arg.getType());
 				
-				knownTypeVars.add(new Variable(name, type));
+				knownTypeVars.put(name, type);
 			}
 		}
 		
 		for (FieldInfo field : insFields) {
 			String name = "this_" + field.getName();
-			String type = standarizeType(field.getType());
+			String type = PathFinderUtils.standardizeType(field.getType());
 				
-			knownTypeVars.add(new Variable(name, type));
+			knownTypeVars.put(name, type);
 		}
 		
 		for (FieldInfo field : staFields) {
 			String name = clsName + "_" + field.getName();
-			String type = standarizeType(field.getType());
+			String type = PathFinderUtils.standardizeType(field.getType());
 				
-			knownTypeVars.add(new Variable(name, type));
+			knownTypeVars.put(name, type);
 		}
 		
 		f.updateType(knownTypeVars);
@@ -151,7 +155,8 @@ public class TestGenerator {
 				String name = nameAndValue[0];
 				String value = nameAndValue[1];
 				
-				for (Variable var : knownTypeVars) {
+				for(Entry<String, String> entry : knownTypeVars.entrySet()) {
+					Variable var = new Variable(entry.getKey(), entry.getValue());
 					if (var.isPrim() && var.getName().equals(name)) {
 						Expression exp1 = new VariableExpression(new Variable(name, var.getType()));
 						Expression exp2 = new LiteralExpression(value);
@@ -161,12 +166,12 @@ public class TestGenerator {
 			}
 		}
 		
-		List<Variable> initVars = new ArrayList<Variable>();
+		HashSet<Variable> initVars = new HashSet<Variable>();
 		
 		for (FieldInfo field : insFields) {
 			if (field.isFinal() || field.isPrivate() || field.isProtected()) {
 				String name = "this_" + field.getName();
-				String type = standarizeType(field.getType());
+				String type = PathFinderUtils.standardizeType(field.getType());
 				
 				initVars.add(new Variable(name, type));
 			}
@@ -175,7 +180,7 @@ public class TestGenerator {
 		for (FieldInfo field : staFields) {
 			if (field.isFinal() || field.isPrivate() || field.isProtected()) {
 				String name = clsName + "_" + field.getName();
-				String type = standarizeType(field.getType());
+				String type = PathFinderUtils.standardizeType(field.getType());
 				
 				initVars.add(new Variable(name, type));
 			}
@@ -267,15 +272,4 @@ public class TestGenerator {
 		
 		return ret.substring(1);
 	}
-	
-	private static String standarizeType(String type) {
-		if (type.contains("."))
-			type = type.substring(type.lastIndexOf('.') + 1);
-		
-		if (type.contains("$"))
-			type = type.substring(type.lastIndexOf('$') + 1);
-		
-		return type;
-	}
-
 }
