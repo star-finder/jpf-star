@@ -36,7 +36,7 @@ public class TestGenerator {
 	
 	private static Config conf;
 	
-	private static List<String> models = new ArrayList<String>();
+	private static HashSet<String> models = new HashSet<String>();
 	
 	private static int index = 1;
 	
@@ -56,13 +56,7 @@ public class TestGenerator {
 	}
 	
 	public static void addModel(String model) {
-		if (model.length() > 0) {
-			for (String m : models) {
-				if (m.equals(model)) return;
-			}
-			
-			models.add(model);
-		}
+		models.add(model);
 	}
 	
 	public static void generateTests() {
