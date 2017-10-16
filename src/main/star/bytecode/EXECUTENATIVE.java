@@ -7,10 +7,9 @@ import gov.nasa.jpf.vm.NativeMethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.StarChoiceGenerator;
-import starlib.solver.Solver;
-import star.testgeneration.TestGenerator;
 import starlib.formula.Formula;
 import starlib.jpf.NoErrorProperty;
+import starlib.solver.Solver;
 
 public class EXECUTENATIVE extends gov.nasa.jpf.jvm.bytecode.EXECUTENATIVE {
 

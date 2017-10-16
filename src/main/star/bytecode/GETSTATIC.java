@@ -17,7 +17,6 @@ import gov.nasa.jpf.vm.MJIEnv;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import starlib.solver.Solver;
 import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
@@ -26,6 +25,7 @@ import starlib.formula.expression.VariableExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.InductiveTerm;
 import starlib.formula.heap.PointToTerm;
+import starlib.solver.Solver;
 
 public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 

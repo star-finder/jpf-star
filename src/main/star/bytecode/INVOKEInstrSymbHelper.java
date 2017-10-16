@@ -11,7 +11,6 @@ import gov.nasa.jpf.vm.LocalVarInfo;
 import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import starlib.solver.Solver;
 import starlib.formula.Formula;
 import starlib.formula.Variable;
 import starlib.formula.expression.Comparator;
@@ -20,6 +19,7 @@ import starlib.formula.expression.LiteralExpression;
 import starlib.formula.expression.VariableExpression;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionMap;
+import starlib.solver.Solver;
 
 public class INVOKEInstrSymbHelper {
 	

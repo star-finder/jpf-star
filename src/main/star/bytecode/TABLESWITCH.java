@@ -5,13 +5,13 @@ import gov.nasa.jpf.vm.Instruction;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import starlib.solver.Solver;
 import starlib.formula.Formula;
 import starlib.formula.expression.BinaryExpression;
 import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
 import starlib.formula.expression.Operator;
+import starlib.solver.Solver;
 
 public class TABLESWITCH extends gov.nasa.jpf.jvm.bytecode.TABLESWITCH
 		implements gov.nasa.jpf.vm.bytecode.TableSwitchInstruction {

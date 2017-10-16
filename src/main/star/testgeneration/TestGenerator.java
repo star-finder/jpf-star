@@ -2,10 +2,8 @@ package star.testgeneration;
 
 import java.io.File;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map.Entry;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
@@ -111,30 +109,7 @@ public class TestGenerator {
 		FieldInfo[] insFields = ci.getInstanceFields();
 		FieldInfo[] staFields = ci.getDeclaredStaticFields();
 		
-		HashMap<String,String> knownTypeVars = new HashMap<String,String>();
-		
-		for (LocalVarInfo arg : args) {
-			if (!arg.getName().equals("this")) {
-				String name = arg.getName();
-				String type = PathFinderUtils.standardizeType(arg.getType());
-				
-				knownTypeVars.put(name, type);
-			}
-		}
-		
-		for (FieldInfo field : insFields) {
-			String name = "this_" + field.getName();
-			String type = PathFinderUtils.standardizeType(field.getType());
-				
-			knownTypeVars.put(name, type);
-		}
-		
-		for (FieldInfo field : staFields) {
-			String name = clsName + "_" + field.getName();
-			String type = PathFinderUtils.standardizeType(field.getType());
-				
-			knownTypeVars.put(name, type);
-		}
+		HashMap<String,String> knownTypeVars = PathFinderUtils.initTypeVarMap(ci,mi);
 		
 		f.updateType(knownTypeVars);
 		f.removeTerm();
