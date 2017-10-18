@@ -4,6 +4,7 @@ import gov.nasa.jpf.Config;
 import gov.nasa.jpf.JPF;
 import gov.nasa.jpf.JPFShell;
 import starlib.precondition.Initializer;
+import starlib.solver.Solver;
 
 public class StarShell implements JPFShell {
 
@@ -43,6 +44,7 @@ public class StarShell implements JPFShell {
 		try {
 			JPF jpf = new JPF(conf);
 			jpf.run();
+			Solver.terminate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
