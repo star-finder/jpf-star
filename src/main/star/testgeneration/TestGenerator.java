@@ -21,7 +21,7 @@ import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
 import starlib.formula.expression.VariableExpression;
 import starlib.jpf.PathFinderUtils;
-import starlib.jpf.testsuites.PathFinderTestGenerator;
+import starlib.jpf.testsuites.TestGenVisitor;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionLexer;
 import starlib.precondition.PreconditionParser;
@@ -156,7 +156,7 @@ public class TestGenerator {
 		}
 		
 //		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
-		PathFinderTestGenerator jpfGen = new PathFinderTestGenerator(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
+		TestGenVisitor jpfGen = new TestGenVisitor(knownTypeVars, initVars, objName, clsName, insFields, staFields, test);
 		jpfGen.visit(f);
 		
 //		if (!mi.isStatic())

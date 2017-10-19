@@ -12,5 +12,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/junit-4.12.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/starlib"/>
+	<classpathentry kind="lib" path="/Users/HongLongPham/Workspace/JPF_HOME/jpf-star-public/lib/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>
