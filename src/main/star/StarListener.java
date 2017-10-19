@@ -23,8 +23,9 @@ public class StarListener extends PropertyListenerAdapter {
 	
 	public StarListener(Config conf, JPF jpf) {
 		jpf.getReporter().getPublishers().clear();
+		System.out.println();
+		conf.setProperty("search.multiple_errors","true");
 		DEBUG = conf.getProperty("star.debug","false").equals("true");
-		DEBUG = true;
 	}
 
 	@Override
@@ -110,6 +111,8 @@ public class StarListener extends PropertyListenerAdapter {
 				System.out.println("\n\n===========================================");
 				PathFinderUtils.printErrorDetails(search);
 				printPathConditionAndModel(cg, model);
+			} else {
+				PathFinderUtils.printErrorDetails(search);
 			}
 		}
 	}
