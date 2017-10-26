@@ -16,10 +16,7 @@ public class INEG extends gov.nasa.jpf.jvm.bytecode.INEG {
 		Expression sym_v1 = (Expression) sf.getOperandAttr();
 		int v1 = sf.pop();
 
-		if (sym_v1 == null)
-			sf.push(-v1);
-		else
-			sf.push(0);
+		sf.push(-v1);
 
 		Expression result = null;
 		if (sym_v1 != null) {

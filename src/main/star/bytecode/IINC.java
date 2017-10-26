@@ -16,17 +16,20 @@ public class IINC extends gov.nasa.jpf.jvm.bytecode.IINC {
 
 	@Override
 	public Instruction execute(ThreadInfo ti) {
-
 		StackFrame sf = ti.getModifiableTopFrame();
 
 		Expression sym_v = (Expression) sf.getLocalAttr(index);
 		if (sym_v == null) {
 			return super.execute(ti);
 		} else {
+			int v = sf.getLocalVariable(index);
+		    v += increment;
+
+		    sf.setLocalVariable(index, v, false);
+			
 			Expression result = new BinaryExpression(Operator.PLUS, sym_v, 
 					new LiteralExpression(increment));
 			
-			sf.setLocalVariable(index, 0, false);
 			sf.setLocalAttr(index, result);
 		}
 		
