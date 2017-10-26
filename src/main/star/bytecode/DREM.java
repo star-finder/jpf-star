@@ -22,7 +22,13 @@ public class DREM extends gov.nasa.jpf.jvm.bytecode.DREM {
 		else {
 			double v2 = sf.popDouble();
 			double v1 = sf.popDouble();
-			sf.pushDouble(0); // for symbolic expressions, the concrete value does not matter
+			
+			if (v2 == 0) {
+				return ti.createAndThrowException("java.lang.ArithmeticException",
+				                                        "division by zero");
+			}
+			
+			sf.pushDouble(v1 % v2); // support concolic
 			
 			Expression result = null;
 			
@@ -30,12 +36,7 @@ public class DREM extends gov.nasa.jpf.jvm.bytecode.DREM {
 				if (sym_v2 != null) {
 					result = new BinaryExpression(Operator.REM, sym_v1, sym_v2);
 				} else {
-					if (v2 == 0) {
-						return ti.createAndThrowException("java.lang.ArithmeticException",
-						                                        "division by zero");
-					} else {
-						result = new BinaryExpression(Operator.REM, sym_v1, new LiteralExpression(v2));
-					}
+					result = new BinaryExpression(Operator.REM, sym_v1, new LiteralExpression(v2));
 				}
 			} else {
 				result = new BinaryExpression(Operator.REM, new LiteralExpression(v1), sym_v2);

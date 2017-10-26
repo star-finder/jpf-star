@@ -16,11 +16,8 @@ public class DNEG extends gov.nasa.jpf.jvm.bytecode.DNEG {
 		Expression sym_v1 = (Expression) sf.getLongOperandAttr();
 		double v1 = sf.popDouble();
 
-		if (sym_v1 == null)
-			sf.pushDouble(-v1);
-		else
-			sf.pushDouble(0);
-
+		sf.pushDouble(-v1);
+		
 		Expression result = null;
 		if (sym_v1 != null) {
 			result = new UnaryExpression(Operator.MINUS, sym_v1);
