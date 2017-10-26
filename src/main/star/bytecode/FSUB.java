@@ -23,7 +23,7 @@ public class FSUB extends gov.nasa.jpf.jvm.bytecode.FSUB {
 		else {
 			float v2 = sf.popFloat();
 			float v1 = sf.popFloat();
-			sf.pushFloat(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushFloat(v1 - v2); // support concolic
 			
 			Expression result = null;
 			
