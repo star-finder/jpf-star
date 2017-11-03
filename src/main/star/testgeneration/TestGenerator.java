@@ -140,7 +140,7 @@ public class TestGenerator {
 		for (FieldInfo field : insFields) {
 			if (field.isFinal() || field.isPrivate() || field.isProtected()) {
 				String name = "this_" + field.getName();
-				String type = PathFinderUtils.toS2SATType(field.getType());
+				String type = PathFinderUtils.toJavaType(field.getType());
 				
 				initVars.add(new Variable(name, type));
 			}
@@ -149,7 +149,7 @@ public class TestGenerator {
 		for (FieldInfo field : staFields) {
 			if (field.isFinal() || field.isPrivate() || field.isProtected()) {
 				String name = clsName + "_" + field.getName();
-				String type = PathFinderUtils.toS2SATType(field.getType());
+				String type = PathFinderUtils.toJavaType(field.getType());
 				
 				initVars.add(new Variable(name, type));
 			}

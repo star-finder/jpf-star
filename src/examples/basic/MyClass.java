@@ -2,7 +2,7 @@ package basic;
 
 public class MyClass {
 			
-	public Node_old foo(Node_old x) {
+	public NodeOld foo(NodeOld x) {
 		if (x == null) {
 			return null;
 		} else {
@@ -14,7 +14,7 @@ public class MyClass {
 		}
 	}
 
-	public Node_old foo1(Node_old x, Node_old y) {
+	public NodeOld foo1(NodeOld x, NodeOld y) {
 		if (x == y) {
 			return x;
 		} else {
@@ -22,7 +22,7 @@ public class MyClass {
 		}
 	}
 	
-	public static Node_old myMethod(Node_old x) {
+	public static NodeOld myMethod(NodeOld x) {
 //		return foo(x);
 //		return foo1(x, x.next);
 //		while (x != null) {
@@ -43,11 +43,11 @@ public class MyClass {
 		}
 	}
 	
-	public Node_old myMethod1(Node_old x, Node_old y) {
+	public NodeOld myMethod1(NodeOld x, NodeOld y) {
 		if (x != y) {
 			return null;
 		} else {
-			Node_old z = y.next;
+			NodeOld z = y.next;
 			if (z == null) {
 				return null;
 			} else {
@@ -56,7 +56,7 @@ public class MyClass {
 		}
 	}
 	
-	public Node_old myMethod2(int i, int j) {
+	public NodeOld myMethod2(int i, int j) {
 //		i = i + j;
 //		if (i - 1 > 0) {
 //			i = 2 * i - 1;
@@ -83,14 +83,14 @@ public class MyClass {
 	public static void main(String[] args) {
 		int select = Integer.parseInt(args[0]);
 		System.out.println(select);
-		Node_old x = new Node_old(null);
+		NodeOld x = new NodeOld(null);
 		MyClass mc = new MyClass();
 		switch (select) {
 		case 0:
 			MyClass.myMethod(x);
 			break;
 		case 1:
-			Node_old y = new Node_old();
+			NodeOld y = new NodeOld();
 			mc.myMethod1(x, y);
 			break;
 		case 2:
