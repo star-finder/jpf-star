@@ -2,7 +2,7 @@ package basic;
 
 public class Sll2 {
 	
-	public static Node_old myMethod(Node_old x) {
+	public static NodeOld myMethod(NodeOld x) {
 		if (x == null) {
 			return null;
 		} else {
@@ -16,7 +16,7 @@ public class Sll2 {
 	
 	// The test driver
 	public static void main(String[] args) {
-		Node_old x = new Node_old(null);
+		NodeOld x = new NodeOld(null);
 		Sll2.myMethod(x);
 	}
 

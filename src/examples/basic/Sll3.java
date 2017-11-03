@@ -2,9 +2,9 @@ package basic;
 
 public class Sll3 {
 	
-	public Node_old x = new Node_old();
+	public NodeOld x = new NodeOld();
 	
-	public Node_old myMethod() {
+	public NodeOld myMethod() {
 		if (x == null) {
 			return null;
 		} else {

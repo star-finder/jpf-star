@@ -21,7 +21,7 @@ public class IMUL extends gov.nasa.jpf.jvm.bytecode.IMUL {
 		} else {
 			int v2 = sf.pop();
 			int v1 = sf.pop();
-			sf.push(0); // for symbolic expressions, the concrete value does not matter
+			sf.push(v2 * v1); // support concolic
 		
 			Expression result = null;
 			

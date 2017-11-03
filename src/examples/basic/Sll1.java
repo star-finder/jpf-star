@@ -2,7 +2,7 @@ package basic;
 
 public class Sll1 {
 	
-	public Node_old myMethod(Node_old x) {
+	public NodeOld myMethod(NodeOld x) {
 		if (x == null) {
 			return null;
 		} else {

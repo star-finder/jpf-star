@@ -22,7 +22,7 @@ public class DADD extends gov.nasa.jpf.jvm.bytecode.DADD {
 		else {
 			double v2 = sf.popDouble();
 			double v1 = sf.popDouble();
-			sf.pushDouble(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushDouble(v2 + v1); // support concolic
 			
 			Expression result = null;
 			

@@ -9,13 +9,13 @@ public class MyClassTest extends TestStar {
 	
 	@Override
 	protected void initDataNode() {
-		String data = "data Node_old {Node_old next}";
+		String data = "data NodeOld {NodeOld next}";
 		Initializer.initDataNode(data);
 	}
 	
 	@Override
 	protected void initPredicate() {
-		String pred = "pred sll(root) == root = null || root::Node_old<next> * sll(next)";
+		String pred = "pred sll(root) == root = null || root::NodeOld<next> * sll(next)";
 		Initializer.initPredicate(pred);
 	}
 	

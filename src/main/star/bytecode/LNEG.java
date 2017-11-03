@@ -16,11 +16,8 @@ public class LNEG extends gov.nasa.jpf.jvm.bytecode.LNEG {
 		Expression sym_v1 = (Expression) sf.getLongOperandAttr();
 		long v1 = sf.popLong();
 
-		if (sym_v1 == null)
-			sf.pushLong(-v1);
-		else
-			sf.pushLong(0);
-
+		sf.pushLong(-v1);
+		
 		Expression result = null;
 		if (sym_v1 != null) {
 			result = new UnaryExpression(Operator.MINUS, sym_v1);

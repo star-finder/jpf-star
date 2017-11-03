@@ -14,15 +14,15 @@ public class LUSHR extends gov.nasa.jpf.jvm.bytecode.LUSHR {
 	public Instruction execute(ThreadInfo ti) {
 		StackFrame sf = ti.getModifiableTopFrame();
 
-		Expression sym_v1 = (Expression) sf.getOperandAttr(3);
-		Expression sym_v2 = (Expression) sf.getOperandAttr(1);
+		Expression sym_v1 = (Expression) sf.getOperandAttr(2);
+		Expression sym_v2 = (Expression) sf.getOperandAttr(0);
 
 		if (sym_v1 == null && sym_v2 == null)
 			return super.execute(ti);// we'll still do the concrete execution
 		else {
-			long v2 = sf.popLong();
+			int v2 = sf.pop();
 			long v1 = sf.popLong();
-			sf.pushLong(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushLong(v1 >>> v2); // support concolic
 			
 			Expression result = null;
 			

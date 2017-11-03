@@ -22,7 +22,7 @@ public class DSUB extends gov.nasa.jpf.jvm.bytecode.DSUB {
 		else {
 			double v2 = sf.popDouble();
 			double v1 = sf.popDouble();
-			sf.pushDouble(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushDouble(v1 - v2); // support concolic
 			
 			Expression result = null;
 			

@@ -22,7 +22,7 @@ public class LSUB extends gov.nasa.jpf.jvm.bytecode.LSUB {
 		else {
 			long v2 = sf.popLong();
 			long v1 = sf.popLong();
-			sf.pushLong(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushLong(v1 - v2); // support concolic
 			
 			Expression result = null;
 			

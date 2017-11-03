@@ -21,7 +21,7 @@ public class IOR extends gov.nasa.jpf.jvm.bytecode.IOR {
 		} else {
 			int v2 = sf.pop();
 			int v1 = sf.pop();
-			sf.push(0); // for symbolic expressions, the concrete value does not matter
+			sf.push(v2 | v1); // for symbolic expressions, the concrete value does not matter
 		
 			Expression result = null;
 			

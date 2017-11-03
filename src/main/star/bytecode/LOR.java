@@ -22,7 +22,7 @@ public class LOR extends gov.nasa.jpf.jvm.bytecode.LOR {
 		else {
 			long v2 = sf.popLong();
 			long v1 = sf.popLong();
-			sf.pushLong(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushLong(v2 | v1); // support concolic
 			
 			Expression result = null;
 			

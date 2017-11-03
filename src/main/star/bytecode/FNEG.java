@@ -16,11 +16,8 @@ public class FNEG extends gov.nasa.jpf.jvm.bytecode.FNEG {
 		Expression sym_v1 = (Expression) sf.getOperandAttr();
 		float v1 = sf.popFloat();
 
-		if (sym_v1 == null)
-			sf.pushFloat(-v1);
-		else
-			sf.pushFloat(0);
-
+		sf.pushFloat(-v1);
+		
 		Expression result = null;
 		if (sym_v1 != null) {
 			result = new UnaryExpression(Operator.MINUS, sym_v1);

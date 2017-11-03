@@ -21,7 +21,7 @@ public class ISUB extends gov.nasa.jpf.jvm.bytecode.ISUB {
 		} else {
 			int v2 = sf.pop();
 			int v1 = sf.pop();
-			sf.push(0); // for symbolic expressions, the concrete value does not matter
+			sf.push(v1 - v2); // support concolic
 		
 			Expression result = null;
 			

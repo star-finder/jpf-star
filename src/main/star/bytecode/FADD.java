@@ -23,7 +23,7 @@ public class FADD extends gov.nasa.jpf.jvm.bytecode.FADD {
 		else {
 			float v2 = sf.popFloat();
 			float v1 = sf.popFloat();
-			sf.pushFloat(0); // for symbolic expressions, the concrete value does not matter
+			sf.pushFloat(v2 + v1); // support concolic
 			
 			Expression result = null;
 			

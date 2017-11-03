@@ -53,7 +53,7 @@ public class TABLESWITCH extends gov.nasa.jpf.jvm.bytecode.TABLESWITCH
 				int idx = (Integer) cg.getNextChoice();
 				
 				if (idx == targets.length) { // default branch
-					lastIdx = -1;
+					lastIdx = DEFAULT;
 					
 					for (int i = 0; i < targets.length; i++) {
 						pc.addComparisonTerm(Comparator.NE,
