@@ -1,7 +1,5 @@
 package star.testgeneration;
 
-import java.io.File;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
@@ -25,6 +23,7 @@ import starlib.jpf.testsuites.TestGenVisitor;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionLexer;
 import starlib.precondition.PreconditionParser;
+import starlib.solver.Model;
 
 public class TestGenerator {
 	
@@ -75,7 +74,7 @@ public class TestGenerator {
 				pure = "";
 			}
 						
-			model = standarizeModel(model);
+			model = Model.standardizeModel(model);
 			model = "pre temp == " + model;
 			
 			ANTLRInputStream in = new ANTLRInputStream(model);
@@ -92,7 +91,7 @@ public class TestGenerator {
 		test.append("}\n");
 //		System.out.println(test);
 		
-		writeToFile(test);
+		PathFinderUtils.writeToFile(test,conf,ci,mi);
 	}
 	
 	private static void generateTest(Formula f, StringBuffer test, String pure) {
@@ -200,45 +199,4 @@ public class TestGenerator {
 		test.append("public class " + ci.getSimpleName() + "_" + mi.getName() + "1 extends TestJPF {\n\n");
 	}
 	
-	private static void writeToFile(StringBuffer test) {
-		String fileName = ci.getSimpleName() + "_" + mi.getName() + "1.java";
-		String path = conf.getProperty("star.test_path");
-		// create the directory if it does not exist
-		try {
-			File dir = new File(path);
-			if (!dir.exists()) {
-				dir.mkdirs();
-			} else{
-				// FileUtils.cleanDirectory(dir);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			PrintWriter pw = new PrintWriter(path + "/" + fileName, "UTF-8");
-			pw.println(test.toString());
-			
-			pw.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private static String standarizeModel(String model) {
-		String ret = model;
-		
-		ret = ret.substring(8, model.length());
-		ret = ret.replaceAll("[\\[\\]]", "");
-		
-		if (ret.endsWith("@M")) {
-			ret = ret.replaceAll("@M,", " *");
-			ret = ret.replaceAll("@M", "");
-		} else {
-			ret = ret.replaceAll("@M,", " *");
-			ret = ret.replaceAll("@M", " &");
-		}
-		
-		return ret.substring(1);
-	}
 }
