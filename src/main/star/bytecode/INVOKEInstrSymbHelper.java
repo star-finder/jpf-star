@@ -16,7 +16,6 @@ import starlib.formula.Variable;
 import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
-import starlib.formula.expression.VariableExpression;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionMap;
 import starlib.solver.Solver;
@@ -85,8 +84,8 @@ public class INVOKEInstrSymbHelper {
 						if (argTypes[i].equals("int")) {
 							String name =  argInfo[i + 1].getName();
 							
-							Expression exp1 = new VariableExpression(new Variable(name, ""));
-							Expression exp2 = new VariableExpression(new Variable(name, ""));
+							Expression exp1 = new Variable(name);
+							Expression exp2 = new Variable(name);
 							
 							Expression lit1 = new LiteralExpression(Solver.getMinInt(conf));
 							Expression lit2 = new LiteralExpression(Solver.getMaxInt(conf));
@@ -96,8 +95,8 @@ public class INVOKEInstrSymbHelper {
 						} else if (argTypes[i].equals("long")) {
 							String name =  argInfo[i + 1].getName();
 							
-							Expression exp1 = new VariableExpression(new Variable(name, ""));
-							Expression exp2 = new VariableExpression(new Variable(name, ""));
+							Expression exp1 = new Variable(name);
+							Expression exp2 = new Variable(name);
 							
 							Expression lit1 = new LiteralExpression(Solver.getMinLong(conf));
 							Expression lit2 = new LiteralExpression(Solver.getMaxLong(conf));

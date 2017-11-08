@@ -20,7 +20,6 @@ import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
 import starlib.formula.expression.Expression;
-import starlib.formula.expression.VariableExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.InductiveTerm;
 import starlib.formula.heap.PointToTerm;
@@ -84,7 +83,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				name = "this_" + name.substring(index, length);
 			}
 			
-			Expression exp = new VariableExpression(new Variable(name, ""));
+			Expression exp = new Variable(name);
 			
 			sym_v = exp;
 			ei.setFieldAttr(fi, exp);

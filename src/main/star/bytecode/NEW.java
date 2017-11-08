@@ -9,11 +9,9 @@ import gov.nasa.jpf.vm.LoadOnJPFRequired;
 import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
-import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
 import starlib.formula.expression.Expression;
-import starlib.formula.expression.VariableExpression;
 
 public class NEW extends gov.nasa.jpf.jvm.bytecode.NEW {
 
@@ -46,10 +44,10 @@ public class NEW extends gov.nasa.jpf.jvm.bytecode.NEW {
 	    ChoiceGenerator<?> prevCG = ti.getVM().getSystemState().getChoiceGenerator();
 	    
 	    if (prevCG instanceof StarChoiceGenerator) {
-		    Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
-		    Variable newNode = Utilities.freshVar(new Variable("newNode", ""));
+		    // Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
+		    Variable newNode = Utilities.freshVar(new Variable("newNode"));
 		    
-		    Expression sym_v = new VariableExpression(newNode);
+		    Expression sym_v = new Variable(newNode);
 		    
 		    ElementInfo ei = heap.newObject(ci, ti);
 		    ei.setObjectAttr(sym_v);

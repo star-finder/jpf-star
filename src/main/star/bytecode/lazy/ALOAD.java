@@ -20,8 +20,9 @@ import star.bytecode.StarBytecodeUtils;
 import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
+import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
-import starlib.formula.expression.VariableExpression;
+import starlib.formula.expression.NullExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.PointToTerm;
 import starlib.solver.Solver;
@@ -49,7 +50,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 		}
 		
 		if (sym_v instanceof SymbolicInteger) {
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			Expression exp = new Variable(sym_v.toString());
 			sf.setLocalAttr(index, exp);
 		}
 		
@@ -142,9 +143,9 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			
 			if (currentChoice < vars.size()) {
 				Variable var = vars.get(currentChoice);
-				pc.addEqTerm(newVar, var);
+				pc.addComparisonTerm(Comparator.EQ, newVar, var);
 			} else if (currentChoice == vars.size()) {
-				pc.addEqNullTerm(newVar);
+				pc.addComparisonTerm(Comparator.EQ, newVar, NullExpression.getInstance());
 			} else {
 				pc.addPointToTerm(newVar, type);
 				pc.putType(type, newVar);

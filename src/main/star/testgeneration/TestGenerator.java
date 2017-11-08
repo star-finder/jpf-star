@@ -17,7 +17,6 @@ import starlib.formula.Variable;
 import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
-import starlib.formula.expression.VariableExpression;
 import starlib.jpf.PathFinderUtils;
 import starlib.jpf.testsuites.TestGenVisitor;
 import starlib.precondition.Precondition;
@@ -126,7 +125,7 @@ public class TestGenerator {
 				for(Entry<String, String> entry : knownTypeVars.entrySet()) {
 					Variable var = new Variable(entry.getKey(), entry.getValue());
 					if (var.isPrim() && var.getName().equals(name)) {
-						Expression exp1 = new VariableExpression(new Variable(name, var.getType()));
+						Expression exp1 = new Variable(name, var.getType());
 						Expression exp2 = new LiteralExpression(value);
 						f.addComparisonTerm(Comparator.EQ, exp1, exp2);
 					}

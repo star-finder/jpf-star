@@ -19,12 +19,9 @@ $ docker run -it star
 To run Java StarFinder you need Java PathFinder and Symbolic PathFinder. Go to Java PathFinder website then install the packages
 jpf-core and jpf-symbc. After that, pull this repo and configure similar to jpf-symbc.
 
-The S2SAT solver in the [repository](https://github.com/star-finder/s2sat) is built for Ubutu. It has been tested on Ubuntu 14.04 and 17.04. For other platforms, please contact the S2SAT author via lequangloc@gmail.com.
-
 ### Usage ###
 Try some examples in star/examples. Choose the files that end with Test.java and run it.
 It will generate test files that end with 1.java.
 
 ### Questions and Issues ###
 For common questions, bug reports, and feature requests, please use the [JPF Google Group](http://groups.google.com/group/java-pathfinder).
-Alternatively, you can drop a mail to longph1989@gmail.com.

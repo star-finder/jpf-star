@@ -18,7 +18,6 @@ import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
 import starlib.formula.expression.Expression;
-import starlib.formula.expression.VariableExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.InductiveTerm;
 import starlib.formula.heap.PointToTerm;
@@ -47,7 +46,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 		}
 		
 		if (sym_v instanceof SymbolicInteger) {
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), ""));
+			Expression exp = new Variable(sym_v.toString());
 			sf.setLocalAttr(index, exp);
 		}
 		

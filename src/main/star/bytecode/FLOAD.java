@@ -7,7 +7,6 @@ import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import starlib.formula.Variable;
 import starlib.formula.expression.Expression;
-import starlib.formula.expression.VariableExpression;
 
 public class FLOAD extends gov.nasa.jpf.jvm.bytecode.FLOAD {
 
@@ -22,7 +21,7 @@ public class FLOAD extends gov.nasa.jpf.jvm.bytecode.FLOAD {
 		
 		if (sym_v != null &&
 				(sym_v instanceof SymbolicInteger || sym_v instanceof SymbolicReal)) {
-			Expression exp = new VariableExpression(new Variable(sym_v.toString(), "float"));
+			Expression exp = new Variable(sym_v.toString(), "float");
 			sf.setLocalAttr(index, exp);
 		}
 		

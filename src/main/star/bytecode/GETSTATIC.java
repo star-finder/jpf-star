@@ -21,7 +21,6 @@ import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
 import starlib.formula.expression.Expression;
-import starlib.formula.expression.VariableExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.InductiveTerm;
 import starlib.formula.heap.PointToTerm;
@@ -80,7 +79,7 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 				name = tmp[last - 1] + "_" + tmp[last];
 			}
 			
-			Expression exp = new VariableExpression(new Variable(name, ""));
+			Expression exp = new Variable(name);
 			
 			sym_v = exp;
 			ei.setFieldAttr(fi, exp);
