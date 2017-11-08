@@ -275,7 +275,7 @@ public class CMPInstrSymbHelper {
 		} else if(v == 0) {
 			return NullExpression.getInstance();
 		} else {
-			return new Variable(Integer.toString(v));
+			return new LiteralExpression(v);
 		}
 	}
 
