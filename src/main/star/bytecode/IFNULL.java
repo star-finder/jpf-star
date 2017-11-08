@@ -8,6 +8,8 @@ import star.StarChoiceGenerator;
 import starlib.formula.Formula;
 import starlib.formula.Utilities;
 import starlib.formula.Variable;
+import starlib.formula.expression.Comparator;
+import starlib.formula.expression.NullExpression;
 import starlib.formula.heap.HeapTerm;
 import starlib.formula.heap.PointToTerm;
 import starlib.solver.Solver;
@@ -71,14 +73,14 @@ public class IFNULL extends gov.nasa.jpf.jvm.bytecode.IFNULL {
 					pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
 				
 				if (conditionValue) {
-					pc.addEqNullTerm(new Variable(sym_v.toString(), ""));
+					pc.addComparisonTerm(Comparator.EQ, new Variable(sym_v.toString()), NullExpression.getInstance());
 					if (Solver.checkSat(pc, ti.getVM().getConfig()))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);
 					return getTarget();
 				} else {
-					pc.addNEqNullTerm(new Variable(sym_v.toString(), ""));
+					pc.addComparisonTerm(Comparator.NE, new Variable(sym_v.toString()), NullExpression.getInstance());
 					if (Solver.checkSat(pc, ti.getVM().getConfig()))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else

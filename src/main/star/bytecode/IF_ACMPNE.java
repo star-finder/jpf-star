@@ -9,6 +9,8 @@ import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
 import starlib.formula.Formula;
 import starlib.formula.Variable;
+import starlib.formula.expression.Comparator;
+import starlib.formula.expression.Expression;
 import starlib.solver.Solver;
 
 public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
@@ -76,20 +78,11 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 				else
 					pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar().copy();
 				
+				Expression exp1 = CMPInstrSymbHelper.makeExpression(sym_v1, v1);
+				Expression exp2 = CMPInstrSymbHelper.makeExpression(sym_v2, v2);
+				
 				if (conditionValue) {
-					if (sym_v1 != null) {
-						if (sym_v2 != null) {
-							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
-						} else if (v2 == 0) {
-							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable("null", ""));
-						} else {
-							pc.addNEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
-						}
-					} else if (v1 == 0) {
-						pc.addNEqTerm(new Variable(sym_v2.toString(), ""), new Variable("null", ""));
-					} else {
-						pc.addNEqTerm(new Variable(sym_v2.toString(), ""), new Variable(v1 + "", ""));
-					}
+					pc.addComparisonTerm(Comparator.NE, exp1, exp2);
 
 					if (Solver.checkSat(pc, ti.getVM().getConfig()))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
@@ -97,19 +90,7 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 						ti.getVM().getSystemState().setIgnored(true);
 					return getTarget();
 				} else {
-					if (sym_v1 != null) {
-						if (sym_v2 != null) {
-							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(sym_v2.toString(), ""));
-						} else if (v2 == 0) {
-							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable("null", ""));
-						} else {
-							pc.addEqTerm(new Variable(sym_v1.toString(), ""), new Variable(v2 + "", ""));
-						}
-					} else if (v1 == 0) {
-						pc.addEqTerm(new Variable(sym_v2.toString(), ""), new Variable("null", ""));
-					} else {
-						pc.addEqTerm(new Variable(sym_v2.toString(), ""), new Variable(v1 + "", ""));
-					}
+					pc.addComparisonTerm(Comparator.EQ, exp1, exp2);
 					
 					if (Solver.checkSat(pc, ti.getVM().getConfig()))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
