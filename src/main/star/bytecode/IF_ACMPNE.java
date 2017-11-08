@@ -1,6 +1,6 @@
 package star.bytecode;
 
-import java.util.List;
+import java.util.Set;
 
 import gov.nasa.jpf.vm.ChoiceGenerator;
 import gov.nasa.jpf.vm.Instruction;
@@ -8,7 +8,6 @@ import gov.nasa.jpf.vm.StackFrame;
 import gov.nasa.jpf.vm.ThreadInfo;
 import star.StarChoiceGenerator;
 import starlib.formula.Formula;
-import starlib.formula.Variable;
 import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.solver.Solver;
@@ -36,8 +35,8 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 				if (prevCG instanceof StarChoiceGenerator) {
 					Formula pc = ((StarChoiceGenerator) prevCG).getCurrentPCStar();
 					
-					List<Variable> alias1 = null;
-					List<Variable> alias2 = null;
+					Set<String> alias1 = null;
+					Set<String> alias2 = null;
 					
 					if (sym_v1 != null) alias1 = pc.getAlias(sym_v1.toString());
 					if (sym_v2 != null) alias2 = pc.getAlias(sym_v2.toString());
