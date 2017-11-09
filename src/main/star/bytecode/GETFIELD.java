@@ -181,12 +181,9 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 				// add new object according to pc
 				int daIndex = 0; // index into JPF's dynamic area
 
-				System.out.println(sym_v.toString());
 				if (Utilities.isNull(pc, sym_v.toString())) {
-					System.out.println(sym_v.toString() + "--------------------------------------is NULL");
 					daIndex = MJIEnv.NULL;
 				} else {
-					System.out.println(sym_v.toString() + "--------------------------------------is not NULL");
 					String name = sym_v.toString();
 					
 					int address = pc.findAddress(name);
