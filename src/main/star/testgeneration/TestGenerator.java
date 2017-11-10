@@ -60,31 +60,8 @@ public class TestGenerator {
 		init(test);
 		
 		for (String model : models) {
-			model = model.replaceAll("FLOAT 0.", "0");
-			String[] tmp = model.split(";");
-			
-			model = tmp[0];
-			String pure = tmp[1];
-			
-			if (pure.contains("Sat")) {
-				pure = pure.substring(tmp[1].indexOf('[') + 1, tmp[1].length() - 1);
-				pure = pure.replaceAll("\\),", ");");
-			} else {
-				pure = "";
-			}
-						
-			model = Model.standardizeModel(model);
-			model = "pre temp == " + model;
-			
-			ANTLRInputStream in = new ANTLRInputStream(model);
-			PreconditionLexer lexer = new PreconditionLexer(in);
-	        CommonTokenStream tokens = new CommonTokenStream(lexer);
-	        PreconditionParser parser = new PreconditionParser(tokens);
-	        
-	        Precondition[] ps = parser.pres().ps;
-	        Formula f = ps[0].getFormula();
-			
-			generateTest(f, test, pure);
+	        Model m = new Model(model);
+			generateTest(m.getFormula(), test, m.getPure());
 		}
 		
 		test.append("}\n");
@@ -153,7 +130,6 @@ public class TestGenerator {
 			}
 		}
 		
-//		f.genTest(knownTypeVars, initVars, test, objName, clsName, insFields, staFields);
 		TestGenVisitor jpfGen = new TestGenVisitor(knownTypeVars, initVars, objName, clsName, insFields, staFields, test);
 		jpfGen.visit(f);
 		
