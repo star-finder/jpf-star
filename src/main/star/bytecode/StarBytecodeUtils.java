@@ -34,7 +34,6 @@ public class StarBytecodeUtils {
 		daIndex = Helper.addNewHeapNode(typeClassInfo, ti, sym, symPC, 
 				symInputHeap, numSymRefs, prevSymRefs, shared);
 		
-		pc.getPureFormula().printAliasMap();
 		PointToTerm pt = (PointToTerm) Utilities.findHeapTerm(pc, attr.toString());
 		Variable[] vars = pt.getVars();
 		
