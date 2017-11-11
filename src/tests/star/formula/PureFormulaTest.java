@@ -33,8 +33,8 @@ public class PureFormulaTest {
 	
 	@Test
 	public void testToString2() {
-		Variable x = new Variable("x", "");
-		Variable y = new Variable("y", "");
+		Variable x = new Variable("x");
+		Variable y = new Variable("y");
 		
 		PureTerm eqNull = new EqNullTerm(x);
 		PureTerm neq = new NEqTerm(x, y);

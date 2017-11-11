@@ -3,7 +3,7 @@ package avl;
 import common.TestStar;
 import starlib.precondition.Initializer;
 
-public class TestAvl extends TestStar{
+public class TestAvl extends TestStar {
 
 	@Override
 	protected void initDataNode() {

@@ -44,7 +44,7 @@ public class StarBytecodeUtils {
 		for (int i = 0; i < numberOfFields; i++) {
 			FieldInfo newFi = newEi.getFieldInfo(i);
 			// do we need to check type of the fields and add more precise symbolic value
-			Expression exp = new Variable(vars[i + 1].getName(), "");
+			Expression exp = new Variable(vars[i + 1].getName());
 			newEi.setFieldAttr(newFi, exp);
 		}
 		

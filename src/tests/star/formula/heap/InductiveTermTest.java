@@ -29,7 +29,7 @@ public class InductiveTermTest {
 
 	@Test
 	public void testToString1() {
-		Variable root = new Variable("root", "");
+		Variable root = new Variable("root");
 		HeapTerm it = new InductiveTerm("sll", root);
 		
 		assertTrue(it.toString().equals("sll(root)"));
@@ -37,7 +37,7 @@ public class InductiveTermTest {
 	
 	@Test
 	public void testToString2() {
-		Variable root = new Variable("root", "");
+		Variable root = new Variable("root");
 		Variable next = new Variable("next", "");
 		HeapTerm it = new InductiveTerm("sll", root, next);
 		
@@ -46,9 +46,9 @@ public class InductiveTermTest {
 	
 	@Test
 	public void testToString3() {
-		Variable root = new Variable("x", "");
-		Variable y = new Variable("y", "");
-		Variable z = new Variable("z", "");
+		Variable root = new Variable("x");
+		Variable y = new Variable("y");
+		Variable z = new Variable("z");
 		HeapTerm it = new InductiveTerm("dll", root, y, z);
 		
 		assertTrue(it.toString().equals("dll(x,y,z)"));
@@ -56,12 +56,12 @@ public class InductiveTermTest {
 	
 	@Test
 	public void testSubstitute1() {
-		Variable root = new Variable("root", "");
+		Variable root = new Variable("root");
 		Variable var = new Variable("next", "");
 		
 		HeapTerm it1 = new InductiveTerm("sll", root, var);
 		
-		Variable[] fromVars = {new Variable("root", ""), new Variable("next", "")};
+		Variable[] fromVars = {new Variable("root"), new Variable("next", "")};
 		Variable[] toVars = {new Variable("next", ""), new Variable("next1", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
@@ -73,14 +73,14 @@ public class InductiveTermTest {
 	
 	@Test
 	public void testSubstitute2() {
-		Variable root = new Variable("root", "");
+		Variable root = new Variable("root");
 		Variable var1 = new Variable("next", "");
 		Variable var2 = new Variable("prev", "");
 		
 		HeapTerm it1 = new InductiveTerm("dll", root, var1, var2);
 		
-		Variable[] fromVars = {new Variable("root", ""), new Variable("next", ""), new Variable("prev", "")};
-		Variable[] toVars = {new Variable("next", ""), new Variable("next1", ""), new Variable("root", "")};
+		Variable[] fromVars = {new Variable("root"), new Variable("next", ""), new Variable("prev", "")};
+		Variable[] toVars = {new Variable("next", ""), new Variable("next1", ""), new Variable("root")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		
 		HeapTerm it2 = it1.substitute(fromVars, toVars, existVarSubMap);
@@ -91,13 +91,13 @@ public class InductiveTermTest {
 	
 	@Test
 	public void testSubstitute3() {
-		Variable root = new Variable("root", "");
+		Variable root = new Variable("root");
 		Variable var1 = new Variable("next", "");
 		Variable var2 = new Variable("k", "");
 		
 		HeapTerm it1 = new InductiveTerm("sll", root, var1, var2);
 		
-		Variable[] fromVars = {new Variable("root", ""), new Variable("next", "")};
+		Variable[] fromVars = {new Variable("root"), new Variable("next", "")};
 		Variable[] toVars = {new Variable("next", ""), new Variable("next1", "")};
 		Map<String,String> existVarSubMap = new HashMap<String,String>();
 		

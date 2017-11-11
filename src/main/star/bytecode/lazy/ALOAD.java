@@ -139,7 +139,7 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 			
 			List<Variable> vars = pc.findType(type);
 			
-			Variable newVar = new Variable(name, "");
+			Variable newVar = new Variable(name);
 			
 			if (currentChoice < vars.size()) {
 				Variable var = vars.get(currentChoice);

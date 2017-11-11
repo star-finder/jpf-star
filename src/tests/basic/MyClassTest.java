@@ -5,19 +5,7 @@ import common.Constant;
 import common.TestStar;
 import starlib.precondition.Initializer;
 
-public class MyClassTest extends TestStar {
-	
-	@Override
-	protected void initDataNode() {
-		String data = "data NodeOld {NodeOld next}";
-		Initializer.initDataNode(data);
-	}
-	
-	@Override
-	protected void initPredicate() {
-		String pred = "pred sll(root) == root = null || root::NodeOld<next> * sll(next)";
-		Initializer.initPredicate(pred);
-	}
+public class MyClassTest extends TestSll {
 	
 	@Override
 	protected void initPrecondition() {

@@ -4,9 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
 
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-
 import gov.nasa.jpf.Config;
 import gov.nasa.jpf.vm.ClassInfo;
 import gov.nasa.jpf.vm.FieldInfo;
@@ -19,9 +16,6 @@ import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
 import starlib.jpf.PathFinderUtils;
 import starlib.jpf.testsuites.TestGenVisitor;
-import starlib.precondition.Precondition;
-import starlib.precondition.PreconditionLexer;
-import starlib.precondition.PreconditionParser;
 import starlib.solver.Model;
 
 public class TestGenerator {
@@ -53,6 +47,10 @@ public class TestGenerator {
 	
 	public static void addModel(String model) {
 		models.add(model);
+	}
+	
+	public static void addModels(HashSet<String> models) {
+		TestGenerator.models = models;
 	}
 	
 	public static void generateTests() {
