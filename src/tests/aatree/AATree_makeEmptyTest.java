@@ -2,7 +2,6 @@ package aatree;
 import org.junit.Test;
 
 import common.Constant;
-import common.TestStar;
 import starlib.precondition.Initializer;
 
 public class AATree_makeEmptyTest extends TestAa {

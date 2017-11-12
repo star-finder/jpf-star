@@ -267,7 +267,7 @@ public class AvlTree {
 		this.root = null;
 	}
 
-	boolean maxElement(final int maxE) {
+	public boolean maxElement(final int maxE) {
 		return maxElement(maxE, this.root);
 	}
 
@@ -281,7 +281,7 @@ public class AvlTree {
 		return maxElement(maxE, t.left) && maxElement(maxE, t.right);
 	}
 
-	boolean minElement(final int minE) {
+	public boolean minElement(final int minE) {
 		return minElement(minE, this.root);
 	}
 

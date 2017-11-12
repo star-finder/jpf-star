@@ -2,7 +2,6 @@ package basic;
 import org.junit.Test;
 
 import common.Constant;
-import common.TestStar;
 import starlib.precondition.Initializer;
 
 public class MyClassTest extends TestSll {

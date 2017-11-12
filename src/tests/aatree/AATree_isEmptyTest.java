@@ -2,7 +2,6 @@ package aatree;
 import org.junit.Test;
 
 import common.Constant;
-import common.TestStar;
 import starlib.precondition.Initializer;
 
 public class AATree_isEmptyTest extends TestAa {
@@ -13,7 +12,6 @@ public class AATree_isEmptyTest extends TestAa {
 		Initializer.initPrecondition(pre);
 	}
 	
-
 	@Test
 	public void testMain() {
 		long begin = System.currentTimeMillis();

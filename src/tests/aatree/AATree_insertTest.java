@@ -7,9 +7,9 @@ import starlib.precondition.Initializer;
 public class AATree_insertTest extends TestAa {
 	
 	@Override
-	protected void initDataNode() {
-		String data = "data AANode {int element; AANode left; AANode right; int level}";
-		Initializer.initDataNode(data);
+	protected void initPrecondition() {
+		String pre = "pre insert == aat(this_root, this_nullNode)";
+		Initializer.initPrecondition(pre);
 	}
 
 	@Test
