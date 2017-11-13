@@ -12,8 +12,8 @@ import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.bytecode.BytecodeUtils;
-import star.testgeneration.TestGenerator;
 import starlib.jpf.PathFinderUtils;
+import starlib.jpf.testsuites.TestGenerator;
 import starlib.solver.Solver;
 
 public class StarListener extends PropertyListenerAdapter {

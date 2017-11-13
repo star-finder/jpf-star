@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 
 import gov.nasa.jpf.util.test.TestJPF;
-import star.testgeneration.TestGenerator;
+import starlib.jpf.testsuites.TestGenerator;
 import starlib.solver.Solver;
 
 public abstract class TestStar extends TestJPF {

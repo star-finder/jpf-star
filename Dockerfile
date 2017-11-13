@@ -44,10 +44,11 @@ ENV TOOLS_ROOT /tools
 RUN mkdir /root/.jpf
 RUN echo "jpf-core = ${TOOLS_ROOT}/jpf-core" >> /root/.jpf/site.properties
 RUN echo "jpf-symbc = ${TOOLS_ROOT}/jpf-symbc" >> /root/.jpf/site.properties
+RUN echo "starlib = ${TOOLS_ROOT}/starlib" >> /root/.jpf/site.properties
 RUN echo "jpf-star = ${TOOLS_ROOT}/jpf-star" >> /root/.jpf/site.properties
 
 # Set extensions var
-RUN echo "extensions=\${jpf-core},\${jpf-symbc},\${jpf-star}" >> /root/.jpf/site.properties
+RUN echo "extensions=\${jpf-core},\${jpf-symbc},\${starlib},\${jpf-star}" >> /root/.jpf/site.properties
 
 # Install jpf-core
 WORKDIR ${TOOLS_ROOT}
@@ -67,6 +68,12 @@ WORKDIR ${TOOLS_ROOT}
 RUN git clone https://github.com/star-finder/s2sat
 # The s2sat solver uses the absolute path
 RUN cp -a s2sat/. /usr/local/bin/
+
+WORKDIR ${TOOLS_ROOT}
+RUN git clone https://github.com/star-finder/starlib
+
+WORKDIR ${TOOLS_ROOT}/starlib
+RUN ant
 
 # Finally, get jpf-star
 WORKDIR ${TOOLS_ROOT}
