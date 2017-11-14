@@ -89,6 +89,7 @@
     <available file="src/classes"     type="dir" property="have_classes"/>
     <available file="src/tests"       type="dir" property="have_tests"/>
     <available file="src/examples"    type="dir" property="have_examples"/>
+    <available file="src/output"      type="dir" property="have_output"/>
 
     <condition property="have_jvm_code">
       <or>
@@ -178,6 +179,19 @@
         <pathelement location="build/annotations"/>
       </classpath>
     </javac>             
+  </target>
+  
+  <target name="build-output">
+    <mkdir dir="build/output"/>
+    <javac srcdir="src/output" destdir="build/output"
+      debug="${debug}" source="${src_level}" deprecation="${deprecation}"
+      includeantruntime="false">
+      <classpath>
+        <path refid="lib.path"/>
+        <pathelement location="build/main"/>
+        <pathelement location="build/examples"/>
+      </classpath>
+    </javac>
   </target>
 
 
