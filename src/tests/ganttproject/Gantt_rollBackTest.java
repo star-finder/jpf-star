@@ -5,7 +5,7 @@ import common.Constant;
 import common.TestStar;
 import starlib.precondition.Initializer;
 
-public class Gantt_rollBackTestBackup extends TestStar {
+public class Gantt_rollBackTest extends TestStar {
 	
 	@Override
 	protected void initDataNode() {

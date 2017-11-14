@@ -5,7 +5,7 @@ import common.Constant;
 import common.TestStar;
 import starlib.precondition.Initializer;
 
-public class Gantt_startTestBackup extends TestStar {
+public class Gantt_startTest extends TestStar {
 	
 	@Override
 	protected void initDataNode() {
