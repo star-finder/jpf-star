@@ -302,10 +302,37 @@
       </batchtest>
 
     </junit>
+    
+    
 <!--    
     <fail message="Test failure detected, check test results." if="test.failed" />
 -->
   </target>
 
+  <property name="unit.test" value="*.class" />
+  <target name="test-single" depends="build"
+          description="compile and run core regression tests" if="have_tests">
+
+    <junit printsummary="on" showoutput="off" haltonfailure="no" dir="${basedir}"
+           fork="yes" forkmode="perTest" maxmemory="1024m" outputtoformatters="true" failureproperty="test.failed">
+      <formatter type="plain" usefile="${junit.usefile}"/>
+      
+      <classpath>
+        <path refid="lib.path"/>
+
+        <pathelement location="build/tests"/>
+        <pathelement location="build/main"/>
+        <pathelement location="build/examples"/>
+
+      </classpath>
+
+      <batchtest todir="build/tests">
+        <fileset dir="build/tests">
+          <include name="**/${unit.test}.class"/>
+        </fileset>
+      </batchtest>
+
+    </junit>
+  </target>    
 
 </project>
