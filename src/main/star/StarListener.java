@@ -12,6 +12,7 @@ import gov.nasa.jpf.vm.MethodInfo;
 import gov.nasa.jpf.vm.ThreadInfo;
 import gov.nasa.jpf.vm.VM;
 import star.bytecode.BytecodeUtils;
+import starlib.GlobalVariables;
 import starlib.jpf.PathFinderUtils;
 import starlib.jpf.testsuites.TestGenerator;
 import starlib.solver.Solver;
@@ -25,6 +26,14 @@ public class StarListener extends PropertyListenerAdapter {
 		jpf.getReporter().getPublishers().clear();
 		System.out.println();
 		conf.setProperty("search.multiple_errors","true");
+		String s = conf.getProperty("star.max_time");
+		if (s != null) {
+			GlobalVariables.MAX_TIME = Integer.parseInt(s);
+		}
+		s = conf.getProperty("star.max_depth");
+		if (s != null) {
+			GlobalVariables.MAX_DEPTH = Integer.parseInt(s);
+		}
 		DEBUG = conf.getProperty("star.debug","false").equals("true");
 	}
 
