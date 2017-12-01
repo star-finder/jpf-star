@@ -51,7 +51,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			if (errorCG instanceof StarChoiceGenerator) {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
-				if (Solver.checkSat(pc, conf)) {
+				if (Solver.checkSat(pc)) {
 					VM vm = ti.getVM();
 					vm.getSearch().error(
 							new NoErrorProperty("java.lang.NullPointerException: referencing field '" + fname + "' on null object"),
@@ -205,7 +205,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			
 			pc.setDepth(pc.getDepth() + 1);
 
-			if (Solver.checkSat(pc, conf)) {
+			if (Solver.checkSat(pc)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 
 				// add new object according to pc

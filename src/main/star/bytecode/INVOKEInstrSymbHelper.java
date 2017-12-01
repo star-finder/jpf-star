@@ -16,6 +16,7 @@ import starlib.formula.Variable;
 import starlib.formula.expression.Comparator;
 import starlib.formula.expression.Expression;
 import starlib.formula.expression.LiteralExpression;
+import starlib.jpf.PathFinderUtils;
 import starlib.precondition.Precondition;
 import starlib.precondition.PreconditionMap;
 import starlib.solver.Solver;
@@ -69,7 +70,7 @@ public class INVOKEInstrSymbHelper {
 					
 					if (pre != null) {
 						pc = pre.getFormula();
-						if (!Solver.checkSat(pc, conf)) {
+						if (!Solver.checkSat(pc)) {
 							System.out.println(">>>>> PC is " + pc.toString());
 							System.out.println("Precondition is not satisfiable");
 							ti.getVM().getSystemState().setIgnored(true);
@@ -87,8 +88,8 @@ public class INVOKEInstrSymbHelper {
 							Expression exp1 = new Variable(name);
 							Expression exp2 = new Variable(name);
 							
-							Expression lit1 = new LiteralExpression(Solver.getMinInt(conf));
-							Expression lit2 = new LiteralExpression(Solver.getMaxInt(conf));
+							Expression lit1 = new LiteralExpression(PathFinderUtils.getMinInt(conf));
+							Expression lit2 = new LiteralExpression(PathFinderUtils.getMaxInt(conf));
 							
 							pc.addComparisonTerm(Comparator.GE, exp1, lit1);
 							pc.addComparisonTerm(Comparator.LE, exp2, lit2);
@@ -98,8 +99,8 @@ public class INVOKEInstrSymbHelper {
 							Expression exp1 = new Variable(name);
 							Expression exp2 = new Variable(name);
 							
-							Expression lit1 = new LiteralExpression(Solver.getMinLong(conf));
-							Expression lit2 = new LiteralExpression(Solver.getMaxLong(conf));
+							Expression lit1 = new LiteralExpression(PathFinderUtils.getMinLong(conf));
+							Expression lit2 = new LiteralExpression(PathFinderUtils.getMaxLong(conf));
 							
 							pc.addComparisonTerm(Comparator.GE, exp1, lit1);
 							pc.addComparisonTerm(Comparator.LE, exp2, lit2);

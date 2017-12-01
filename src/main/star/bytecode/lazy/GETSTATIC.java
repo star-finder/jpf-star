@@ -196,7 +196,7 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 			
 			pc.setDepth(pc.getDepth() + 1);
 
-			if (Solver.checkSat(pc, conf)) {
+			if (Solver.checkSat(pc)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 
 				// add new object according to pc

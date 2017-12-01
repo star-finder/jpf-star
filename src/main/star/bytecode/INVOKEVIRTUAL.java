@@ -30,7 +30,7 @@ public class INVOKEVIRTUAL extends gov.nasa.jpf.jvm.bytecode.INVOKEVIRTUAL {
 			if (errorCG instanceof StarChoiceGenerator) {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
-				if (Solver.checkSat(pc, conf)) {
+				if (Solver.checkSat(pc)) {
 					VM vm = ti.getVM();
 					vm.getSearch().error(
 							new NoErrorProperty("java.lang.NullPointerException: Calling '" + mname + "' on null object"),

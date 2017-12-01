@@ -165,7 +165,7 @@ public class GETSTATIC extends gov.nasa.jpf.jvm.bytecode.GETSTATIC {
 			InductiveTerm it = (InductiveTerm) ht;
 			pc.unfold(it, (Integer) cg.getNextChoice());
 
-			if (Solver.checkSat(pc, conf)) {
+			if (Solver.checkSat(pc)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 
 				// add new object according to pc

@@ -47,7 +47,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			if (errorCG instanceof StarChoiceGenerator) {
 				Formula pc = ((StarChoiceGenerator) errorCG).getCurrentPCStar();
 				
-				if (Solver.checkSat(pc, conf)) {
+				if (Solver.checkSat(pc)) {
 					VM vm = ti.getVM();
 					vm.getSearch()
 							.error(new NoErrorProperty(
@@ -175,7 +175,7 @@ public class GETFIELD extends gov.nasa.jpf.jvm.bytecode.GETFIELD {
 			InductiveTerm it = (InductiveTerm) ht;
 			pc.unfold(it, (Integer) cg.getNextChoice());
 
-			if (Solver.checkSat(pc, conf)) {
+			if (Solver.checkSat(pc)) {
 				((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 
 				// add new object according to pc
