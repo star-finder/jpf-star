@@ -61,7 +61,7 @@ public class IFInstrSymbHelper {
 					pc.addComparisonTerm(trueComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -77,7 +77,7 @@ public class IFInstrSymbHelper {
 					pc.addComparisonTerm(falseComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);

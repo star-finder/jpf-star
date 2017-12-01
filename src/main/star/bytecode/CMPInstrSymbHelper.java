@@ -56,7 +56,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(fstComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -71,7 +71,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(sndComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -86,7 +86,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(trdComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -139,7 +139,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(fstComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -154,7 +154,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(sndComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -169,7 +169,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(trdComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -222,7 +222,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(fstComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -237,7 +237,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(sndComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);
@@ -252,7 +252,7 @@ public class CMPInstrSymbHelper {
 					pc.addComparisonTerm(trdComparator, new LiteralExpression(v1), sym_v2);
 				}
 				
-				if (Solver.checkSat(pc, ti.getVM().getConfig()))
+				if (Solver.checkSat(pc))
 					((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 				else
 					ti.getVM().getSystemState().setIgnored(true);

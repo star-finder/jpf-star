@@ -56,7 +56,7 @@ public class LOOKUPSWITCH extends gov.nasa.jpf.jvm.bytecode.LOOKUPSWITCH
 					for (int i = 0; i < matches.length; i++)
 						pc.addComparisonTerm(Comparator.NE, sym_v, new LiteralExpression(matches[i]));
 
-					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					if (Solver.checkSat(pc))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);
@@ -68,7 +68,7 @@ public class LOOKUPSWITCH extends gov.nasa.jpf.jvm.bytecode.LOOKUPSWITCH
 
 					pc.addComparisonTerm(Comparator.EQ, sym_v, new LiteralExpression(matches[idx]));
 
-					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					if (Solver.checkSat(pc))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);

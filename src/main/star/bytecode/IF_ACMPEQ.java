@@ -83,7 +83,7 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 				if (conditionValue) {
 					pc.addComparisonTerm(Comparator.EQ, exp1, exp2);
 					
-					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					if (Solver.checkSat(pc))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);
@@ -91,7 +91,7 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 				} else {
 					pc.addComparisonTerm(Comparator.NE, exp1, exp2);
 
-					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					if (Solver.checkSat(pc))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);

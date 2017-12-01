@@ -61,7 +61,7 @@ public class TABLESWITCH extends gov.nasa.jpf.jvm.bytecode.TABLESWITCH
 								new LiteralExpression(i));
 					}
 					
-					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					if (Solver.checkSat(pc))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);
@@ -75,7 +75,7 @@ public class TABLESWITCH extends gov.nasa.jpf.jvm.bytecode.TABLESWITCH
 							new BinaryExpression(Operator.MINUS, sym_v, new LiteralExpression(getMin())),
 							new LiteralExpression(idx));
 					
-					if (Solver.checkSat(pc, ti.getVM().getConfig()))
+					if (Solver.checkSat(pc))
 						((StarChoiceGenerator) cg).setCurrentPCStar(pc);
 					else
 						ti.getVM().getSystemState().setIgnored(true);
