@@ -40,7 +40,7 @@ public class Tll {
 		return true;
 	}
 
-	int positiveLeafCount() {
+	public int positiveLeafCount() {
 		int count = 0;
 
 		Node ll = root;
