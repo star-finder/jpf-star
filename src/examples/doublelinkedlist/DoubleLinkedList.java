@@ -135,7 +135,7 @@ public class DoubleLinkedList {
 		return dll.getLast() == o;
 	}
 
-	boolean inList(Entry e) {
+	public boolean inList(Entry e) {
 		if (header == e) {
 			return true;
 		}
