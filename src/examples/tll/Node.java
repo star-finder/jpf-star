@@ -2,14 +2,14 @@ package tll;
 
 public class Node {
 
-	int val;
+	public int val;
 	
-	Node parent;
+	public Node parent;
 	
-	Node left;
+	public Node left;
 	
-	Node right;
+	public Node right;
 	
-	Node next;
+	public Node next;
 
 }
