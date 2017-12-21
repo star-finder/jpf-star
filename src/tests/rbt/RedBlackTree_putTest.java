@@ -42,8 +42,8 @@ public class RedBlackTree_putTest extends TestStar {
 		
 		if (verifyNoPropertyViolation(
 				"+listener=star.StarListener",
-				"+star.max_depth=14",
-				"+star.max_time=3",
+				"+star.max_depth=7",
+				"+star.max_time=5",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=" + Constant.TEST_PATH + "/rbt",

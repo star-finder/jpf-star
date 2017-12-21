@@ -720,7 +720,7 @@ public class TreeMap  {
             p.left = p.right = p.parent = null;
 
             // Fix replacement
-            if (p.color == BLACK)
+            if (p.color == BLACK) // 1 of 2
                 fixAfterDeletion(replacement);
         } else if (p.parent == null) { // return if we are the only node.
             root = null;
@@ -728,10 +728,10 @@ public class TreeMap  {
             if (p.color == BLACK)
                 fixAfterDeletion(p);
 
-            if (p.parent != null) {
+            if (p.parent != null) { // 1 of 2
                 if (p == p.parent.left)
                     p.parent.left = null;
-                else if (p == p.parent.right)
+                else if (p == p.parent.right) // 1 of 2
                     p.parent.right = null;
                 p.parent = null;
             }
