@@ -5,7 +5,7 @@ import common.Utilities;
 import org.junit.Test;
 import gov.nasa.jpf.util.test.TestJPF;
 
-public class TreeMap_put75 extends TestJPF {
+public class TreeMap_put1 extends TestJPF {
 
 	@Test
 	public void test_put1() throws Exception {
