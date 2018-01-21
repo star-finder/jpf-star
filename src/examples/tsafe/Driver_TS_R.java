@@ -169,3 +169,9 @@ public class Driver_TS_R {
 		}
 	}	
 }
+
+//Driver_TS_R: 34 branches
+//Trajectory: 4 branches
+//Route: 2 branches
+//TrajectorySynthesizer: 14 branches
+
