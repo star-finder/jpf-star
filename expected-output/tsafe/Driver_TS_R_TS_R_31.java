@@ -74,7 +74,7 @@ public class Driver_TS_R_TS_R_31 extends TestJPF {
 		fixes_27.size = size_29;
 		header_28.next = header_28;
 		header_28.previous = header_28;
-		//System.out.println(Utilities.repOK(obj));
+		//System.out.println(obj.repOK(trajSynth,track,route));
 		obj.TS_R_3(trajSynth,track,route);
 	}
 
@@ -145,7 +145,7 @@ public class Driver_TS_R_TS_R_31 extends TestJPF {
 		fixes_27.size = size_29;
 		header_28.next = header_28;
 		header_28.previous = header_28;
-		//System.out.println(Utilities.repOK(obj));
+		//System.out.println(obj.repOK(trajSynth,track,route));
 		obj.TS_R_3(trajSynth,track,route);
 	}
 
@@ -216,7 +216,7 @@ public class Driver_TS_R_TS_R_31 extends TestJPF {
 		fixes_27.size = size_29;
 		header_28.next = header_28;
 		header_28.previous = header_28;
-		//System.out.println(Utilities.repOK(obj));
+		//System.out.println(obj.repOK(trajSynth,track,route));
 		obj.TS_R_3(trajSynth,track,route);
 	}
 
@@ -287,7 +287,7 @@ public class Driver_TS_R_TS_R_31 extends TestJPF {
 		fixes_27.size = size_29;
 		header_28.next = header_28;
 		header_28.previous = header_28;
-		//System.out.println(Utilities.repOK(obj));
+		//System.out.println(obj.repOK(trajSynth,track,route));
 		obj.TS_R_3(trajSynth,track,route);
 	}
 
@@ -358,7 +358,7 @@ public class Driver_TS_R_TS_R_31 extends TestJPF {
 		fixes_27.size = size_29;
 		header_28.next = header_28;
 		header_28.previous = header_28;
-		//System.out.println(Utilities.repOK(obj));
+		//System.out.println(obj.repOK(trajSynth,track,route));
 		obj.TS_R_3(trajSynth,track,route);
 	}
 
