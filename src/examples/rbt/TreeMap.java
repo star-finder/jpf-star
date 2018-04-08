@@ -6,8 +6,8 @@ import java.util.NoSuchElementException;
 public class TreeMap  {
 
 	public boolean repOK() {
-		if (root == null) return true;
-		return root.consistency();
+		if (root == null) return size == realSize();
+		return root.consistency() && size == realSize();
 	}
 	
     //@ invariant (root == null || root.consistency()) && size == realSize();
