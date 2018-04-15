@@ -30,8 +30,7 @@ public class Utilities {
 			return avl.ordered() && avl.balanced() && avl.wellFormed();
 		} else if (obj instanceof TreeMap) {
 			TreeMap rbt = (TreeMap) obj;
-			if (rbt.root == null) return true;
-			return rbt.root.consistency();
+			return rbt.repOK();
 		} else if (obj instanceof AATree) {
 			AATree aat = (AATree) obj;
 			return aat.wellFormed();
