@@ -130,5 +130,6 @@ public class StarListener extends PropertyListenerAdapter {
 	public void searchFinished(Search search) {
 		TestGenerator.generateTests();
 		System.out.println("\nTest generation completed.");
+		System.out.println("Call = " + Solver.getCount());
 	}
 }
