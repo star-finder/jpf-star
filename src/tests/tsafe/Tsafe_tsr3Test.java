@@ -16,7 +16,7 @@ public class Tsafe_tsr3Test extends TestStar {
 		String data4 = "data RouteTrack{double lat; double lon; double alt; double speed; double heading; double mTime; Fix prevFix; Fix nextFix}";
 		String data5 = "data Fix {double lat; double lon; void id}";
 		String data6 = "data LinkedList {int modCount; Entry header; int size}";
-		String data7 = "data Entry {void element; Entry next; Entry previous}";
+		String data7 = "data Entry {Fix element; Entry next; Entry previous}";
 		String data8 = "data Route {LinkedList fixes}";
 		
 		String data = data1 + ";" + data2 + ";" + data3 + ";" + data4 + ";" + data5 + ";" + data6 + ";" + data7 + ";" + data8;;
@@ -30,8 +30,8 @@ public class Tsafe_tsr3Test extends TestStar {
 				"track::RouteTrack<lat,lon,alt,speed,heading,mTime,prevFix,nextFix> * prevFix::Fix<lat1,lon1,_> * nextFix::Fix<lat2,lon2,_> * " +
 				"route::Route<fixes> * fixes::LinkedList<_,header,size> * dll(header,size)";// & " +
 //				"latWtOn=0 & verWtOn=0 & angWtOn=0 & speWtOn=0 & latThres=18520.0 & verThres=609.7561 & angThres=0.5 & speThres=100 & resThres=1.0 & tsTime=180000";
-		String pred2 = "pred dll(header,size) == header::Entry<_,header,header> & size=0 || header::Entry<_,next,prev> * nndll(next,header,header,prev,size)";
-		String pred3 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<_,header,prev> & prevH=curr & size=1 || curr::Entry<_,next,prev> * nndll(next,curr,header,prevH,size1) & size=size1+1";
+		String pred2 = "pred dll(header,size) == header::Entry<element,header,header> * element::Fix<lat,lon,_> & size=0 || header::Entry<element,next,prev> * element::Fix<lat,lon,_> * nndll(next,header,header,prev,size)";
+		String pred3 = "pred nndll(curr,prev,header,prevH,size) == curr::Entry<element,header,prev> * element::Fix<lat,lon,_> & prevH=curr & size=1 || curr::Entry<element,next,prev> * element::Fix<lat,lon,_> * nndll(next,curr,header,prevH,size1) & size=size1+1";
 				
 		String pred = pred1 + ";" + pred2 + ";" + pred3;
 		Initializer.initPredicate(pred);

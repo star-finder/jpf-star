@@ -44,5 +44,19 @@ public class InductivePredParserTest {
         assertTrue(ips[0].toString().equals(outPred0));
         assertTrue(ips[1].toString().equals(outPred1));
 	}
+	
+	@Test
+	public void test3() {
+		String pred = "pred sll(x) == -1#x=0";
+		String outPred = "pred sll(x) == (-1 * x) = 0";
+		
+		ANTLRInputStream in = new ANTLRInputStream(pred);
+        InductivePredLexer lexer = new InductivePredLexer(in);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        InductivePredParser parser = new InductivePredParser(tokens);
+        
+        InductivePred[] ips = parser.preds().ips;
+        assertTrue(ips[0].toString().equals(outPred));
+	}
 
 }
