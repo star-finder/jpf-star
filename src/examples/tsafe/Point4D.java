@@ -25,18 +25,20 @@ package tsafe;
  */
 public class Point4D {
 
-    private double lat, lon, alt;
-    private /*MODI bug fix long*/ double time;
+    double lat, lon, alt;
+    /*MODI bug fix long*/ double tim;
+    
+    public Point4D() {}
 
     public Point4D(double lat, double lon, double alt, /*MODI bug fix long*/ double time) {
         this.lat = lat;
         this.lon = lon;
         this.alt = alt;
-        this.time = time;
+        this.tim = time;
     }
 
     public double getLatitude()  {return lat;}
     public double getLongitude() {return lon;}
     public double getAltitude()  {return alt;}
-    public /*MODI bug fix long*/ double getTime() {return time;}
+    public /*MODI bug fix long*/ double getTime() {return tim;}
 }

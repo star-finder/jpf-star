@@ -95,7 +95,8 @@ public class TreeMap  {
 
     private boolean valueSearchNonNull(Entry n, Object value) {
         // Check this node for the value
-        if (value.equals(n.value))
+//        if (value.equals(n.value))
+    	if (value == n.value)
             return true;
 
         // Check left and right subtrees for value

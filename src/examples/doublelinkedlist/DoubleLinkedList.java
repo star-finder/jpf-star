@@ -438,7 +438,7 @@ public class DoubleLinkedList {
 	 */
 	private Entry entry(int index) {
 		if (index < 0 || index >= size)
-			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+			throw new IndexOutOfBoundsException("");
 		Entry e = header;
 		// if (index < (size >> 1)) { // Kiasan can not handle bit shifting
 		// currently.

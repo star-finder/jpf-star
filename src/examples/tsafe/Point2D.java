@@ -29,6 +29,8 @@ public class Point2D {
 	public
 //MODI END
 	double lat, lon;
+	
+	public Point2D() {}
 
     public Point2D(double lat, double lon) {
         this.lat = lat;

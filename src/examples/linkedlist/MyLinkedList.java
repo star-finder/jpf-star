@@ -124,7 +124,8 @@ public class MyLinkedList {
 	public MyLinkedListItr find(Object x) {
 		MyListNode itr = this._header._next;
 
-		while (itr != null && !itr._element.equals(x))
+//		while (itr != null && !itr._element.equals(x))
+		while (itr != null && !(itr._element == x))
 			itr = itr._next;
 
 		return new MyLinkedListItr(itr);
@@ -134,7 +135,8 @@ public class MyLinkedList {
 	public MyLinkedListItr findPrevious(Object x) {
 		MyListNode itr = this._header;
 
-		while (itr._next != null && !itr._next._element.equals(x))
+//		while (itr._next != null && !itr._next._element.equals(x))
+		while (itr._next != null && !(itr._next._element == x))
 			itr = itr._next;
 
 		return new MyLinkedListItr(itr);

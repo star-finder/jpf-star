@@ -17,6 +17,10 @@ public class Transaction {
     }
 
     public void rollback() {
+//      for (int i = 0; i < myTouchedNodes.size; i++) {
+//    	  Node node = myTouchedNodes.get(i);
+//    	  node.revertData();
+//      }
       for (Node node : myTouchedNodes) {
         node.revertData();
       }

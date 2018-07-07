@@ -291,7 +291,8 @@ public class AATree {
 
 			// Step 3: Otherwise, we are not at the bottom; rebalance
 			else if ((t.left.level < t.level - 1) || (t.right.level < t.level - 1)) {
-				if (t.right.level > --t.level) {
+				t.level = t.level - 1;
+				if (t.right.level > t.level) {
 					t.right.level = t.level;
 				}
 				t = skew(t);

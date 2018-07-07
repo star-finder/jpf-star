@@ -41,7 +41,7 @@ public class Utilities {
 			DependencyGraph graph = (DependencyGraph) obj;
 			return graph.repOK();
 		} else {
-			return true;
+			return false;
 		}
 	}
 

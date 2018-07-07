@@ -27,6 +27,8 @@ public class PointXY {
 
     private double x, y;
 
+    public PointXY() {}
+    
     public PointXY(double x, double y) {
         this.x = x;
         this.y = y;

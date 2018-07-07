@@ -94,28 +94,35 @@ class TrajectorySynthesizer {
         routeTraj.addPoint(currPoint);
 
         // Move cursor to the next fix in the route
-        Iterator fixIter = r.fixIterator();
-        if (!fixIter.hasNext()) {
+//        Iterator fixIter = r.fixIterator();
+        int i = 0;
+//        if (!fixIter.hasNext()) {
+        if (i >= r.fixes.size) {
+//        if (r.fixes.header == r.fixes.header.next) {
 //MODI BEGIN
             //System.out.println("Trajectory Synthesizer: ROUTE HAS NO POINTS.");
 //MODI END
             return getDeadReckoningTrajectory(rt);
         }
         Fix nextFix = rt.getNextFix();
-        Fix f = (Fix)fixIter.next();
+//        Fix f = (Fix)fixIter.next();
+        Fix f = (Fix)r.fixes.get(i); i++;
 //MODI BEGIN
         Fix f_prev = null;
 //MODI END
         while(!f.equals(nextFix)) {
+//        while (f != nextFix) {
 //MODI BEGIN
         	//discards the case where rt.next is not a fix in r
-        	if (fixIter.hasNext()) {
+//        	if (fixIter.hasNext()) {
+        	if (i < r.fixes.size) {
         		f_prev = f;
         	} else {
 //        		ignore();
         	}
 //MODI END
-        	                       f = (Fix)fixIter.next();}
+//        	                       f = (Fix)fixIter.next();}
+        	f = (Fix)r.fixes.get(i); i++;}
 //MODI BEGIN
     	//TODO quite unclear what to do when f_prev == null reaches this point (i.e., when rt.next is the first point of the route)
 //        final boolean _ROUTE_TRACK_SEGMENT_NOT_IN_ROUTE = force(!rt.getPrevFix().equals(f_prev));
@@ -145,8 +152,10 @@ class TrajectorySynthesizer {
             //bug fix
 //            completeTrajectoryToTimeHorizon = false;
 //MODI END
-            while(fixIter.hasNext()) {
-                nextFix = (Fix)fixIter.next();
+//            while(fixIter.hasNext()) {
+            while (i < r.fixes.size) {
+//                nextFix = (Fix)fixIter.next();
+            	nextFix = (Fix)r.fixes.get(i); i++;
                 dist = calc.distanceLL(currPoint.getLatitude(), currPoint.getLongitude(), nextFix);
                 timeToNextFix = /*MODI bug fix (long)*/ (dist / rt.getSpeed());
 
@@ -185,7 +194,8 @@ class TrajectorySynthesizer {
         //has been already taken from the iterator into nextFix (indeed, the body of 
         //the next if statement does not invoke fixIter.next(), and uses directly
         //nextFix).
-        if (fixIter.hasNext()) {
+//        if (fixIter.hasNext()) {
+        if (i < r.fixes.size) {
 //        if (completeTrajectoryToTimeHorizon) {
 //MODI END
             double heading = calc.angleLL(currPoint.getLatitude(), currPoint.getLongitude(), nextFix);
