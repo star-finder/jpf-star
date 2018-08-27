@@ -5,6 +5,8 @@ Java StarFinder (JSF) is a unit test generation tool for programs that make exte
 Algorithmic details:
 - Long H. Pham, Quang Loc Le, Quoc-Sang Phan, Jun Sun, Shengchao Qin. **Poster: Testing Heap-Based Programs with Java StarFinder**. ICSE 2018. \[[PDF](http://qsphan.github.io/papers/icse18.pdf)\]
 - Long H. Pham, Quang Loc Le, Quoc-Sang Phan, Jun Sun, Shengchao Qin. **Enhancing Symbolic Execution of Heap-based Programs with Separation Logic for Test Input Generation**. Preprint. \[[PDF](https://arxiv.org/pdf/1712.06025.pdf)\]
+Applications:
+- Guolong Zheng, Quang Loc Le, ThanhVu Nguyen, Quoc-Sang Phan. **Automatic Data Structure Repair using Separation Logic**. JPF 2018. \[[PDF](http://star-finder.github.io/papers/jpf18.pdf)\]
 
 ## Installation
 We provide two ways of installing JSF:
