@@ -101,7 +101,14 @@ public class ALOAD extends gov.nasa.jpf.jvm.bytecode.ALOAD {
 						return getNext(ti);
 					} else if (ht instanceof InductiveTerm) {
 						InductiveTerm it = (InductiveTerm) ht;
-						Formula[] fs = it.unfold();
+						Formula[] fs = null;
+						
+						boolean withFixPoint = Boolean.parseBoolean(conf.getProperty("star.fixpoint", "false"));
+						
+						if (!withFixPoint)
+							fs = it.unfold();
+						else
+							fs = pc.unfoldWithFixPoint();
 
 						cg = new StarChoiceGenerator(fs.length);
 						ti.getVM().getSystemState().setNextChoiceGenerator(cg);
