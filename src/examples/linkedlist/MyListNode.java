@@ -3,12 +3,12 @@ package linkedlist;
 //MyListNode.java
 //This class implements basic node stored in a linked list .
 
-class MyListNode {
+public class MyListNode {
 	/* Class Members */
 	public Object _element; // Node's data
 	public MyListNode _next; // Pointer to next node
 
-	MyListNode() {
+	public MyListNode() {
 		this(null, null);
 	}
 	

@@ -3,7 +3,7 @@ package linkedlist;
 //MyLinkedListItr.java
 //This class implements iterator to a linked list .
 
-class MyLinkedListItr {
+public class MyLinkedListItr {
 	/* Class Memeber */
 	public MyListNode _current; // Current position
 
@@ -12,7 +12,7 @@ class MyLinkedListItr {
 	}
 	
 	// C'tor
-	MyLinkedListItr(MyListNode theNode) {
+	public MyLinkedListItr(MyListNode theNode) {
 		this._current = theNode;
 	}
 

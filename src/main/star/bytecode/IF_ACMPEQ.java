@@ -89,6 +89,11 @@ public class IF_ACMPEQ extends gov.nasa.jpf.jvm.bytecode.IF_ACMPEQ {
 						ti.getVM().getSystemState().setIgnored(true);
 					return getTarget();
 				} else {
+					if (exp1.toString().equals(exp2.toString())) {
+						ti.getVM().getSystemState().setIgnored(true);
+						return getNext(ti);
+					}
+					
 					pc.addComparisonTerm(Comparator.NE, exp1, exp2);
 
 					if (Solver.checkSat(pc))

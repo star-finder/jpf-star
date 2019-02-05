@@ -171,9 +171,9 @@ public class Driver_TS_R {
 }
 
 //Driver_TS_R: 34 branches
-//Trajectory: 4 branches (firstPoint + lastPoint)
-//Route: 2 branches (lastFix)
 //TrajectorySynthesizer: 14 branches
 //Fix??? --> 12 branches
 //EngineCalculator??? --> 8 branches
-
+//Trajectory: 4 branches (firstPoint + lastPoint)
+//Route: 2 branches (lastFix)
+//74 branches???

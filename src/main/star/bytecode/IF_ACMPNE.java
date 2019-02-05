@@ -81,6 +81,11 @@ public class IF_ACMPNE extends gov.nasa.jpf.jvm.bytecode.IF_ACMPNE {
 				Expression exp2 = CMPInstrSymbHelper.makeExpression(sym_v2, v2);
 				
 				if (conditionValue) {
+					if (exp1.toString().equals(exp2.toString())) {
+						ti.getVM().getSystemState().setIgnored(true);
+						return getTarget();
+					}
+					
 					pc.addComparisonTerm(Comparator.NE, exp1, exp2);
 
 					if (Solver.checkSat(pc))
