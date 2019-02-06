@@ -14,15 +14,16 @@ public abstract class TestStar extends TestJPF {
 	protected void initPrecondition() {}
 	
 	@Before
-	public void init() {
+	public void init() {		
 		initDataNode();
 		initPredicate();
 		initPrecondition();
 		TestGenerator.reset();
+		Solver.reset();
 	}
 	
 	@After
-	public void terminate() {
+	public void terminate() {		
 		Solver.terminate();
 	}
 }
