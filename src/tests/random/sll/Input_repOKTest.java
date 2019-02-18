@@ -34,6 +34,7 @@ public class Input_repOKTest extends TestStar {
 				"+listener=star.StarListener",
 				"+star.max_depth=4",
 				"+star.lazy=true",
+				"+star.random_default=true",
 //				"+star.min_int=-100",
 //				"+star.max_int=100",
 				"+star.test_path=" + Constant.TEST_PATH + "/random/sll",

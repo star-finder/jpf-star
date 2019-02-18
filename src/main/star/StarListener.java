@@ -128,7 +128,8 @@ public class StarListener extends PropertyListenerAdapter {
 	
 	@Override
 	public void searchFinished(Search search) {
-		TestGenerator.generateTests();
+		Config conf = search.getVM().getConfig();
+		TestGenerator.generateTests(Boolean.parseBoolean(conf.getProperty("star.random_default", "false")));
 		System.out.println("\nTest generation completed.");
 		System.out.println("Call = " + Solver.getCount());
 	}
