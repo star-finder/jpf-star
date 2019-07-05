@@ -3,6 +3,7 @@ Java StarFinder (JSF) is a unit test generation tool for programs that make exte
 
 ## Publications
 Algorithmic details:
+- Long H. Pham, Quang Loc Le, Quoc-Sang Phan, Jun Sun. **Concolic Testing Heap-Manipulating Programs**. FM 2019. \[[PDF](http://qsphan.github.io/papers/fm19.pdf)\]
 - Long H. Pham, Quang Loc Le, Quoc-Sang Phan, Jun Sun, Shengchao Qin. **Enhancing Symbolic Execution of Heap-based Programs with Separation Logic for Test Input Generation**. ATVA 2019. \[[PDF](http://qsphan.github.io/papers/atva19.pdf)\]
 - Long H. Pham, Quang Loc Le, Quoc-Sang Phan, Jun Sun, Shengchao Qin. **Poster: Testing Heap-Based Programs with Java StarFinder**. ICSE 2018. \[[PDF](http://qsphan.github.io/papers/icse18.pdf)\]
 
